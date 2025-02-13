@@ -93,10 +93,10 @@ sections:
               borderRadius: x-large
       - title: $170M
         subtitle: Recovered Through Compliance
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          Built a custom seeding-money tracker that flagged unreported
+          transactions, strengthening regulatory adherence and minimizing risk
+          exposure.
         image:
           url: /images/icon2.svg
           altText: Featured icon two
