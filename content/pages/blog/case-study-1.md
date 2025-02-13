@@ -1,5 +1,5 @@
 ---
-title: 'Lime Case Study: '
+title: 'Lime Case Study: Identifying Trends in Battery Theft'
 slug: case-study-1
 date: '2022-01-05'
 excerpt: >-
