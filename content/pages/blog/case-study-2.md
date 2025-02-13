@@ -1,5 +1,5 @@
 ---
-title: 'Bloomberg Intelligence: AMS SW Primer '
+title: AMS SW Primer
 slug: case-study-2
 date: '2022-02-16'
 excerpt: >-
