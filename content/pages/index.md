@@ -176,7 +176,7 @@ sections:
       - url: /images/bloomberg-logo-vector.png
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/CaptialGroup_Logo_Horizontal.png
+      - url: /images/CaptialGroup_Logo_Horizontal.jpg
         altText: Vise logo
         type: ImageBlock
       - altText: Telus logo
