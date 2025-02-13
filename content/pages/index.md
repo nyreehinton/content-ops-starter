@@ -605,7 +605,7 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: List of features here
+      text: Certifications
       color: text-primary
       styles:
         self:
