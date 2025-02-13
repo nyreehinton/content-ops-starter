@@ -181,7 +181,7 @@ sections:
         type: ImageBlock
       - altText: Telus logo
         type: ImageBlock
-        url: /images/Thirdbrige.png
+        url: /images/Thirdbrige.png.jpg
         styles:
           self:
             borderWidth: 1
