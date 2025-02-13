@@ -39,7 +39,7 @@ sections:
       elementId: ''
       type: ImageBlock
     badge:
-      label: ''
+      label: Data Product Management
       color: text-primary
       type: Badge
     elementId: ''
