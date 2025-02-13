@@ -88,34 +88,8 @@ styles:
 type: PostLayout
 ---
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Bloomberg Internship AMS SW Presentation</title>
-</head>
-<body>
 
-  <h1>Bloomberg Internship AMS SW Presentation</h1>
-
-  <h2>News Story</h2>
-  <p><strong>Nyree Hinton<br />
-  Former BI Analyst</strong></p>
-  
-  <p><strong>Financial Review</strong><br />
-  <strong>Earnings</strong><br />
-  <strong>Financial Trends</strong><br />
-  <strong>Key Research</strong><br />
-  <strong>Smartphone Opportunity</strong><br />
-  <strong>Hardware</strong><br />
-  <strong>Automotive</strong><br />
-  <strong>Competitive Strategy</strong><br />
-  <strong>Valuation</strong></p>
-
-  <h2>Table of Contents</h2>
-  <p>AMS SW Primer<br />
-  BI Intern Board 3, North America Dashboard</p>
-
-  <hr />
+ <hr />
 
   <h3>1. TEST-Ams Well Positioned to Benefit from 3D Sensor Demand</h3>
   <p>(Bloomberg Intelligence) -- Ams is well positioned to take advantage of the growing demand of 3D technology
@@ -153,7 +127,7 @@ type: PostLayout
   <h4>3. TEST-Optical Sensing Growth</h4>
   <p>Ams has placed a large bet on the growth and adoption of 3D technology. So far, 3D sensing has proved to be a
   well-timed investment strategy. From 2016, total revenues by segment have made a large shift from equal to
-  overweight consumer &amp; communications. The consumer &amp; communications segment of total revenues has grown
+  overweight consumer \& communications. The consumer \& communications segment of total revenues has grown
   from 51% to almost 73%. We can attribute this 22% increase to large customers such as Apple who are leading
   the way in 3D implementation.</p>
   <p>To sustain growth in this market, ams must continue to win product designs from its primary customer. Demand
@@ -174,7 +148,7 @@ type: PostLayout
   profitability has lowered sequentially. Going forward, 2H18 revenues should provide a much needed boost to EPS.</p>
   <p>Consensus is implying ams will continue to provide a large share of Apple's 3D sensing needs through 2020,
   which will continue to fluctuate as more suppliers enter the market. (08/10/18)</p>
-  <p><em>Bloomberg &reg; 08/10/2018 10:29:29</em></p>
+  <p><em>Bloomberg \® 08/10/2018 10:29:29</em></p>
 
   <hr />
 
@@ -211,7 +185,7 @@ type: PostLayout
   <p>VCSELs are estimated to cost $6-7 per phone. Lumentum is the current supplier of VCSELs for Apple, however,
   Finisar was recently awarded US$390 million as a prepayment for future orders. The recent purchase of
   Princeton Optronics, a developer of VCSELs, could open the door for ams to capture market share. Other VCSEL
-  suppliers such as Phillips Photonics &amp; Finisar are coping with technological challenges that allow successful
+  suppliers such as Phillips Photonics \& Finisar are coping with technological challenges that allow successful
   integration of smartphones. Princeton Optronics differentiates itself by having developed fully optimized VCSELs
   for over 10 years, formally funded by the US military.</p>
   <p>If ams can capture 20% of VCSEL market share from Apple, it would translate to an additional $110 million in
@@ -236,7 +210,7 @@ type: PostLayout
   <h2>Automotive</h2>
 
   <h4>13. TEST-The Hype of Self-Driving Cars</h4>
-  <p>Ams is looking to shift business revenues by segment to 60% consumer &amp; 40% non-consumer, which will largely
+  <p>Ams is looking to shift business revenues by segment to 60% consumer \& 40% non-consumer, which will largely
   depend on the growth of non-smartphone revenue. According to IHS, the market for automotive LIDAR systems
   will grow from $290 million in 2016 to $2.7 billion by 2026. (08/10/18)</p>
 
@@ -265,7 +239,7 @@ type: PostLayout
   software for facial recognition. It's yet to be seen how this acquisition will affect bottom line but, going by Ams's
   track record, they have proven the ability to successfully integrate multiple businesses. (08/10/18)</p>
 
-  <h4>M&A Strategy</h4>
+  <h4>M\&A Strategy</h4>
   <p>17. TEST-Gearing Up</p>
   <p>Ams, Lumentum, and Finsar are all expanding capacity, which could imply a large ramp up of shipments in the 2H
   of 2018. Ams has shown its competitive advantage by tripling its market cap within a year to almost $6 billion
