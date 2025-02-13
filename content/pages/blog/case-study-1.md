@@ -87,15 +87,20 @@ styles:
     flexDirection: col
 type: PostLayout
 ---
+**Battery Theft Analysis**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem, tincidunt ac leo efficitur, feugiat tempor odio. Curabitur at auctor sapien. Etiam at cursus enim. Suspendisse sed augue tortor. Nunc eu magna vitae lorem pellentesque fermentum. Sed in facilisis dui. Nulla molestie risus in mi dapibus, eget porta lorem semper. Donec sed facilisis nibh. Curabitur eget dui in libero euismod commodo nec sit amet est. Etiam id ipsum aliquam, vehicula erat sit amet, consequat tortor.
+In Q4 2022, I analyzed a simulated dataset on scooter battery theft to uncover where and how losses occurred most frequently. By scrutinizing city-by-city breakdowns and model-specific vulnerabilities, I discovered that London, Los Angeles, and Paris accounted for a disproportionate share of theft incidents, suggesting the need for heightened security measures in those regions. Additionally, the data indicated that certain battery models—particularly the B40S—were targeted more often, hinting at design or security gaps that merited a hardware-focused response. I recommended creating a centralized reporting and alert system to highlight sudden spikes in loss rates and streamline interventions across Lime’s global footprint.
 
-> Etiam facilisis lacus nec pretium lobortis. Praesent dapibus justo non efficitur efficitur. Nullam viverra justo arcu, eget egestas tortor pretium id. Sed imperdiet mattis eleifend. Vivamus suscipit et neque imperdiet venenatis. In malesuada sed urna eget vehicula. Donec fermentum tortor sit amet nisl elementum fringilla. Pellentesque dapibus suscipit faucibus. Nullam malesuada sed urna quis rutrum. Donec facilisis lorem id maximus mattis. Vestibulum quis elit magna. Vestibulum accumsan blandit consequat. Phasellus quis posuere quam.
->
-> _By Clara White - VP of Marketing_
 
-Vestibulum ullamcorper risus auctor eleifend consequat. Vivamus mollis in tellus ac ullamcorper. Vestibulum sit amet bibendum ipsum, vitae rutrum ex. Nullam cursus, urna et dapibus aliquam, urna leo euismod metus, eu luctus justo mi eget mauris. Proin felis leo, volutpat et purus in, lacinia luctus eros. Pellentesque lobortis massa scelerisque lorem ullamcorper, sit amet elementum nulla scelerisque. In volutpat efficitur nulla, aliquam ornare lectus ultricies ac. Mauris sagittis ornare dictum. Nulla vel felis ut purus fermentum pretium. Sed id lectus ac diam aliquet venenatis. Etiam ac auctor enim. Nunc velit mauris, viverra vel orci ut, egestas rhoncus diam. Morbi scelerisque nibh tellus, vel varius urna malesuada sed. Etiam ultricies sem consequat, posuere urna non, maximus ex. Mauris gravida diam sed augue condimentum pulvinar vel ac dui. Integer vel convallis justo.
+![](/images/Lime%20Battery%20Loss%20Analysis%20\(2\).png)
 
-![](/images/img-placeholder.svg)
+**SQL Proficiency**
 
-Nam rutrum magna sed pellentesque lobortis. Etiam quam mauris, iaculis eget ex ac, rutrum scelerisque nisl. Cras finibus dictum ex sed tincidunt. Morbi facilisis neque porta, blandit mauris quis, pharetra odio. Aliquam dictum quam quis elit auctor, at vestibulum ex pulvinar. Quisque lobortis a lectus quis faucibus. Nulla vitae pellentesque nibh, et fringilla erat. Praesent placerat ac est at tincidunt. Praesent ultricies a ex at ultrices. Etiam sed tincidunt elit. Nulla sagittis neque neque, ultrices dignissim sapien pellentesque faucibus. Donec tempor orci sed consectetur dictum. Ut viverra ut enim ac semper. Integer lacinia sem in arcu tempor faucibus eget non urna. Praesent vel nunc eu libero aliquet interdum non vitae elit. Maecenas pharetra ipsum dolor, et iaculis elit ornare ac.
+To complement the analytics portion, I produced a series of complex SQL queries designed to retrieve operational insights under varying conditions, such as how many batteries remained functional on specific days or whether certain carrier types faced higher rates of failure. By filtering and grouping the data around operational status, calendar dates, and region identifiers, I demonstrated how Lime could expose performance bottlenecks and rapidly identify areas requiring enhanced maintenance or resources. This segment underscored my ability to move seamlessly between high-level strategy and day-to-day data manipulation, providing leaders with actionable information supported by real-world metrics.
+
+![](/images/Lime%20Slide.png)
+**Standard Operating Procedure: Painting Scooters Gold**
+
+The final component of the take-home task called for a standard operating procedure to paint a thousand scooters metallic gold in celebration of Lime’s 500-millionth ride. I drafted a structured process covering everything from ordering paint and equipment, to following branding guidelines, to overseeing post-deployment checks for consistent quality. By specifying roles, timelines, and steps for safety and uniformity, I aimed to ensure local market teams could adopt the initiative efficiently. This SOP highlighted how strong documentation practices and clear communication can facilitate high-visibility projects—even when executed across multiple regions and teams.
+
+![](/images/Solutions.png)
