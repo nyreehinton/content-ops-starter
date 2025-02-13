@@ -140,7 +140,7 @@ sections:
             flexDirection: row
         type: FeaturedItem
     actions:
-      - label: Get started
+      - label: See more
         altText: ''
         url: /
         showIcon: false
