@@ -186,8 +186,7 @@ sections:
         type: ImageBlock
       - altText: Sanity logo
         type: ImageBlock
-      - url: /images/Screenshot 2025-02-13 at 8.27.35 AM.png
-        altText: ''
+      - altText: ''
         type: ImageBlock
     motion: move-to-left
     colors: bg-light-fg-dark
