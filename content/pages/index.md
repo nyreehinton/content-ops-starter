@@ -180,8 +180,7 @@ sections:
       - url: /images/CaptialGroup_Logo_Horizontal.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/telus-logo.svg
-        altText: Telus logo
+      - altText: Telus logo
         type: ImageBlock
       - url: /images/contenful-logo.svg
         altText: Contentful logo
