@@ -66,10 +66,9 @@ sections:
       - type: FeaturedItem
         title: $31B+
         subtitle: Global ETF Transaction Data
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          Spearheaded ingestion of multiple data sources, boosting transparency
+          and advanced analytics for multi-billion-dollar ETF product suites.
         actions: []
         elementId: null
         colors: bg-neutralAlt-fg-dark
