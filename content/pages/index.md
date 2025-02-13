@@ -190,6 +190,11 @@ sections:
               - pl-1
               - pb-1
               - pr-1
+            margin:
+              - mt-1
+              - ml-1
+              - mb-1
+              - mr-1
       - altText: Contentful logo
         type: ImageBlock
       - altText: Sanity logo
