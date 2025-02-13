@@ -190,7 +190,7 @@ sections:
       - url: /images/sanity-logo.svg
         altText: Sanity logo
         type: ImageBlock
-      - url: /images/OctusReorg_Logo_White.png
+      - url: /images/Screenshot 2025-02-13 at 8.27.35 AM.png
         altText: ''
         type: ImageBlock
     motion: move-to-left
