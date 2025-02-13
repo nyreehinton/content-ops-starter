@@ -82,7 +82,7 @@
             "type": "Button"
         },
         {
-            "label": "Log in",
+            "label": "LinkedIn",
             "url": "/",
             "icon": "arrowRight",
             "iconPosition": "right",
