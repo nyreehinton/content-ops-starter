@@ -9,9 +9,11 @@ sections:
       type: TitleBlock
     subtitle: Subtitle goes here
     text: >
-      A Netlify Create website is a git repo that you own. Every code commit is
-      instantly reflected in the visual editor and since every visual edit is a
-      git commit, git workflows and collaboration just work.
+      I’m a Product Manager & Data Specialist based in Los Angeles with
+      experience in data analytics, governance, and product development. Drawing
+      on years of hands-on work in capital markets, machine learning, and agile
+      project management, I aim to turn complex data problems into strategic
+      solutions that drive business results.
     actions:
       - label: Get started
         altText: ''
