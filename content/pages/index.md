@@ -15,7 +15,7 @@ sections:
       project management, I aim to turn complex data problems into strategic
       solutions that drive business results.
     actions:
-      - label: Get started
+      - label: Bio
         altText: ''
         url: /
         showIcon: false
