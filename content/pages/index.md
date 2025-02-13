@@ -185,6 +185,11 @@ sections:
         styles:
           self:
             borderWidth: 1
+            padding:
+              - pt-1
+              - pl-1
+              - pb-1
+              - pr-1
       - altText: Contentful logo
         type: ImageBlock
       - altText: Sanity logo
