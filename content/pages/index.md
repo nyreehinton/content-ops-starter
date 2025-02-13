@@ -196,6 +196,7 @@ sections:
               - mb-1
               - mr-1
             borderRadius: x-small
+            borderColor: border-light
       - altText: Contentful logo
         type: ImageBlock
       - altText: Sanity logo
