@@ -8,7 +8,7 @@ excerpt: >-
   Etiam at cursus enim. Suspendisse sed augue tortor. Nunc eu magna vitae lorem
   pellentesque fermentum. Sed in facilisis dui.
 featuredImage:
-  url: /images/Lime.jpg
+  url: /images/Lime Battery Loss Analysis (2).png
   altText: Case study 1
   styles:
     self:
