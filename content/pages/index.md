@@ -64,7 +64,7 @@ sections:
     subtitle: Real metrics and outcomes from my data-driven career
     items:
       - type: FeaturedItem
-        title: 500k
+        title: $31B+
         subtitle: Global ETF Transaction Data
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
