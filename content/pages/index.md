@@ -758,7 +758,10 @@ sections:
     type: GenericSection
 seo:
   metaTitle: Home - Nyree Hinton
-  metaDescription: This demo site is built with Netlify Create.
+  metaDescription: >-
+    <meta name="description" content="Explore Nyree Hinton’s professional
+    portfolio. Discover her background in data analytics, product management,
+    and cross-functional collaboration." />
   socialImage: /images/main-hero.jpg
   type: Seo
 type: PageLayout
