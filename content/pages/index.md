@@ -7,7 +7,7 @@ sections:
       text: Welcome to My Portfolio
       color: text-dark
       type: TitleBlock
-    subtitle: Subtitle goes here
+    subtitle: 'Hello, I''m Nyree Hinton'
     text: >
       I’m a Product Manager & Data Specialist based in Los Angeles with
       experience in data analytics, governance, and product development. Drawing
