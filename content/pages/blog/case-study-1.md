@@ -1,5 +1,5 @@
 ---
-title: Case study 1
+title: 'Lime Case Study: Identifying Trends in Battery Theft'
 slug: case-study-1
 date: '2022-01-05'
 excerpt: >-
@@ -8,7 +8,7 @@ excerpt: >-
   Etiam at cursus enim. Suspendisse sed augue tortor. Nunc eu magna vitae lorem
   pellentesque fermentum. Sed in facilisis dui.
 featuredImage:
-  url: /images/img-placeholder.svg
+  url: /images/Lime Battery Loss Analysis (2).png
   altText: Case study 1
   styles:
     self:

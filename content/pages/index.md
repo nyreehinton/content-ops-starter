@@ -173,22 +173,36 @@ sections:
     images:
       - altText: Empathy logo
         type: ImageBlock
-      - url: /images/bloomberg-logo-vector.png
+      - url: /images/bloomberg-logo-vector.png.jpg
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/CaptialGroup_Logo_Horizontal.png
+      - url: /images/CaptialGroup_Logo_Horizontal.jpg
         altText: Vise logo
         type: ImageBlock
       - altText: Telus logo
         type: ImageBlock
-        url: /images/Thirdbrige.png
+        url: /images/Thirdbrige.png.jpg
+        styles:
+          self:
+            borderWidth: 1
+            padding:
+              - pt-1
+              - pl-1
+              - pb-1
+              - pr-1
+            margin:
+              - mt-1
+              - ml-1
+              - mb-1
+              - mr-1
+            borderRadius: x-small
       - altText: Contentful logo
         type: ImageBlock
       - altText: Sanity logo
         type: ImageBlock
-      - url: /images/Screenshot 2025-02-13 at 8.27.35 AM.png
-        altText: ''
+      - altText: ''
         type: ImageBlock
+        url: /images/Screenshot 2025-02-13 at 8.27.35 AM.jpg
     motion: move-to-left
     colors: bg-light-fg-dark
     styles:
@@ -204,7 +218,7 @@ sections:
     showThumbnail: true
     showDate: true
     showAuthor: true
-    variant: three-col-grid
+    variant: two-col-grid
     colors: bg-light-fg-dark
     styles:
       self:
