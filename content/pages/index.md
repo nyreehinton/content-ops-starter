@@ -202,7 +202,7 @@ sections:
         type: ImageBlock
       - altText: ''
         type: ImageBlock
-        url: /images/Screenshot 2025-02-13 at 8.27.35 AM.png
+        url: /images/Screenshot 2025-02-13 at 8.27.35 AM.jpg
     motion: move-to-left
     colors: bg-light-fg-dark
     styles:
