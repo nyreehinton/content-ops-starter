@@ -61,7 +61,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Subtitle goes here
+    subtitle: Real metrics and outcomes from my data-driven career
     items:
       - type: FeaturedItem
         title: 500k
