@@ -87,7 +87,7 @@ styles:
     flexDirection: col
 type: PostLayout
 ---
-<!DOCTYPE html>
+`<!DOCTYPE html>`
 
 ```
 <html>
@@ -376,4 +376,3 @@ type: PostLayout
 
 ```
 ```
-
