@@ -87,8 +87,6 @@ styles:
     flexDirection: col
 type: PostLayout
 ---
-<!DOCTYPE html>
-
  <hr />
 
   <h3>1. TEST-Ams Well Positioned to Benefit from 3D Sensor Demand</h3>
