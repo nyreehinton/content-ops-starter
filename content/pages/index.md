@@ -151,7 +151,7 @@ sections:
         elementId: ''
         type: Button
     badge:
-      label: This is a badge
+      label: MY TRACK RECORD
       color: text-primary
       styles:
         self:
