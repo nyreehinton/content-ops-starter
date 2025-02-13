@@ -190,7 +190,7 @@ sections:
       - url: /images/sanity-logo.svg
         altText: Sanity logo
         type: ImageBlock
-      - url: /images/rangle-logo.svg
+      - url: /images/OctusReorg_Logo_White.png
         altText: Rangle logo
         type: ImageBlock
     motion: move-to-left
