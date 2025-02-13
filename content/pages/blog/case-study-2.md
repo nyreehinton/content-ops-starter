@@ -56,7 +56,7 @@ bottomSections:
             flexDirection: row
         type: FeaturedItem
     variant: small-list
-    colors: bg-light-fg-dark
+    colors: bg-dark-fg-light
     styles:
       self:
         margin:
