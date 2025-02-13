@@ -191,7 +191,7 @@ sections:
         altText: Sanity logo
         type: ImageBlock
       - url: /images/OctusReorg_Logo_White.png
-        altText: Rangle logo
+        altText: ''
         type: ImageBlock
     motion: move-to-left
     colors: bg-light-fg-dark
