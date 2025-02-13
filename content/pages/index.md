@@ -34,7 +34,7 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/main-hero.svg
+      url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
