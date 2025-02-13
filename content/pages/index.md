@@ -182,6 +182,9 @@ sections:
       - altText: Telus logo
         type: ImageBlock
         url: /images/Thirdbrige.png
+        styles:
+          self:
+            borderWidth: 1
       - altText: Contentful logo
         type: ImageBlock
       - altText: Sanity logo
