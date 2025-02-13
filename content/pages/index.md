@@ -118,10 +118,10 @@ sections:
         type: FeaturedItem
       - title: 70%
         subtitle: Faster Processing
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          Optimized Apache Spark ETL pipelines with SQL & Python in Databricks,
+          cutting data processing time by over two-thirds and accelerating
+          insights.
         image:
           url: /images/icon3.svg
           altText: Featured icon three
