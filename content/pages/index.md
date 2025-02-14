@@ -306,7 +306,8 @@ sections:
     actions: []
     media:
       title: AI
-      url: 'Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
+      url: >-
+        https://github.com/nyreehinton/content-ops-starter/blob/ab945ece100d6f42f95600ccfd9badf97263d8ec/public/images/Gen-3%20Alpha%20Turbo%204244437924%2C%20image-prompt%2C%20M%205.mp4
       autoplay: true
       loop: true
       muted: true
