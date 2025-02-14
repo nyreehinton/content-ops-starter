@@ -330,7 +330,7 @@ sections:
       subtitle:
         textAlign: left
   - title:
-      text: Social Media Management
+      text: '"Open to Work"'
       color: text-dark
       type: TitleBlock
     subtitle: Increase your reach
