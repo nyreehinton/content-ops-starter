@@ -298,19 +298,15 @@ sections:
           textAlign: left
       type: TitleBlock
     subtitle: Section with a video subtitle
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+    text: ''
     actions: []
     media:
       title: AI
-      url: 'public/images/Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
+      url: 'https://youtube.com/shorts/EKc4FnsEeOY'
       autoplay: true
       loop: true
       muted: true
-      controls: false
+      controls: true
       aspectRatio: '16:9'
       styles:
         self:
@@ -324,6 +320,7 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
+      elementId: ''
     elementId: null
     colors: bg-light-fg-dark
     styles:
@@ -333,21 +330,19 @@ sections:
       subtitle:
         textAlign: left
   - title:
-      text: Social Media Management
+      text: '"Open to Work"'
       color: text-dark
       type: TitleBlock
     subtitle: Increase your reach
-    text: >
-      A service that helps businesses to manage their social media accounts and
-      posts.
+    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
     actions:
-      - label: Get started
-        url: /
+      - label: LinkedIn
+        url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
         iconPosition: right
         style: secondary
         type: Button
-      - label: See Tutorials
+      - label: Contact
         url: /
         showIcon: true
         icon: arrowRight
@@ -355,7 +350,7 @@ sections:
         style: primary
         type: Link
     media:
-      url: /images/hero2.svg
+      url: /images/HeadshotAI.gif
       altText: Fun feature preview
       type: ImageBlock
     badge:

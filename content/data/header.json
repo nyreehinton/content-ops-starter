@@ -75,7 +75,7 @@
         {
             "label": "Github",
             "altText": "Sign up",
-            "url": "https://app.netlify.com/signup",
+            "url": "https://github.com/nyreehinton",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
@@ -83,7 +83,7 @@
         },
         {
             "label": "LinkedIn",
-            "url": "www.linkedin.com/in/nyree-hinton",
+            "url": "https://www.linkedin.com/in/nyree-hinton",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "primary",
