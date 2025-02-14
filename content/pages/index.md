@@ -336,7 +336,7 @@ sections:
     subtitle: Increase your reach
     text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
     actions:
-      - label: Get started
+      - label: LinkedIn
         url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
         iconPosition: right
