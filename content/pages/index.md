@@ -304,7 +304,7 @@ sections:
       title: AI
       url: '/public/images/Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
       autoplay: true
-      loop: false
+      loop: true
       muted: true
       controls: true
       aspectRatio: '16:9'
