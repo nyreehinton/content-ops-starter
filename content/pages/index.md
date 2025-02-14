@@ -231,7 +231,7 @@ sections:
         justifyContent: center
     type: FeaturedPostsSection
     hoverEffect: move-up
-    subtitle: Case Studies
+    subtitle: ''
   - title: Divider
     colors: bg-light-fg-dark
     styles:
