@@ -1,5 +1,5 @@
 ---
-title: AMS SW Primer
+title: 'Apple Semiconductor Analysis: AMS SW Primer'
 slug: case-study-2
 date: '2022-02-16'
 excerpt: >-
