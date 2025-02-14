@@ -306,7 +306,8 @@ sections:
     actions: []
     media:
       title: Title of the video
-      url: /images/placeholder-video.mp4
+      url: >-
+        https://1drv.ms/v/c/834b9da059e3c0b7/EVBLnhQtr6FOn4225gfeDb4BIMTrbz0hw-YLrJCND_4cLQ?e=8TDYar
       autoplay: true
       loop: true
       muted: true
