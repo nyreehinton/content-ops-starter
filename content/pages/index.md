@@ -302,7 +302,7 @@ sections:
     actions: []
     media:
       title: AI
-      url: '/public/images/Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
+      url: 'https://www.youtube.com/watch?v=opSTK_xI8l8&t=25s'
       autoplay: true
       loop: true
       muted: true
