@@ -342,7 +342,7 @@ sections:
         iconPosition: right
         style: secondary
         type: Button
-      - label: See Tutorials
+      - label: Contact
         url: /
         showIcon: true
         icon: arrowRight
