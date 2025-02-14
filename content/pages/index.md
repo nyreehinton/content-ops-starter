@@ -320,6 +320,7 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
+      elementId: 'public/images/Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
     elementId: null
     colors: bg-light-fg-dark
     styles:
