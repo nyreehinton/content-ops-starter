@@ -251,39 +251,6 @@ sections:
           - pr-7
     type: DividerSection
   - title:
-      text: '"Open to Work"'
-      color: text-dark
-      type: TitleBlock
-    subtitle: Increase your reach
-    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
-    actions:
-      - label: LinkedIn
-        url: 'https://www.linkedin.com/in/nyree-hinton'
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        type: Button
-      - label: Contact
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Link
-    media:
-      url: /images/HeadshotAI.gif
-      altText: Fun feature preview
-      type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        alignItems: center
-    type: GenericSection
-  - title:
       text: Grow your business 10x faster
       color: text-dark
       styles:
@@ -330,6 +297,39 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+    type: GenericSection
+  - title:
+      text: '"Open to Work"'
+      color: text-dark
+      type: TitleBlock
+    subtitle: Increase your reach
+    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
+    actions:
+      - label: LinkedIn
+        url: 'https://www.linkedin.com/in/nyree-hinton'
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        type: Button
+      - label: Contact
+        url: /
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        type: Link
+    media:
+      url: /images/HeadshotAI.gif
+      altText: Fun feature preview
+      type: ImageBlock
+    badge:
+      label: ''
+      color: text-primary
+      type: Badge
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
     type: GenericSection
   - type: GenericSection
     title:
