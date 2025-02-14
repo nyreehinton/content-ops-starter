@@ -305,7 +305,7 @@ sections:
       vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
     actions: []
     media:
-      title: Title of the video
+      title: AI
       url: 'Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
       autoplay: true
       loop: true
