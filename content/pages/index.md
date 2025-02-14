@@ -302,7 +302,7 @@ sections:
     actions: []
     media:
       title: AI
-      url: 'https://www.youtube.com/watch?v=opSTK_xI8l8&t=25s'
+      url: 'https://app.runwayml.com/creation/dfed3913-6950-4170-bfa0-36bc7c9344a2'
       autoplay: true
       loop: true
       muted: true
