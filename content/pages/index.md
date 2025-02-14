@@ -306,8 +306,7 @@ sections:
     actions: []
     media:
       title: Title of the video
-      url: >-
-        https://1drv.ms/v/c/834b9da059e3c0b7/EVBLnhQtr6FOn4225gfeDb4BIMTrbz0hw-YLrJCND_4cLQ?e=8TDYar
+      url: 'Gen-3 Alpha Turbo 4244437924, image-prompt, M 5.mp4'
       autoplay: true
       loop: true
       muted: true
