@@ -9,7 +9,7 @@ excerpt: >-
   pellentesque fermentum. Sed in facilisis dui.
 featuredImage:
   url: /images/960x0.webp
-  altText: Case study 1
+  altText: ''
   styles:
     self:
       borderRadius: large
