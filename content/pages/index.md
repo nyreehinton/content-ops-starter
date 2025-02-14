@@ -320,7 +320,7 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
-      elementId: 'https://youtube.com/shorts/EKc4FnsEeOY'
+      elementId: ''
     elementId: null
     colors: bg-light-fg-dark
     styles:
