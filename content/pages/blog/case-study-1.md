@@ -1,15 +1,15 @@
 ---
-title: 'Lime Case Study: Identifying Trends in Battery Theft'
+title: 'Lime Scooters: Identifying Trends in Battery Theft'
 slug: case-study-1
-date: '2022-01-05'
+date: '2024-06-05'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem,
   tincidunt ac leo efficitur, feugiat tempor odio. Curabitur at auctor sapien.
   Etiam at cursus enim. Suspendisse sed augue tortor. Nunc eu magna vitae lorem
   pellentesque fermentum. Sed in facilisis dui.
 featuredImage:
-  url: /images/Lime Battery Loss Analysis (2).png
-  altText: Case study 1
+  url: /images/960x0.webp
+  altText: ''
   styles:
     self:
       borderRadius: large

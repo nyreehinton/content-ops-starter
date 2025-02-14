@@ -231,6 +231,15 @@ sections:
         justifyContent: center
     type: FeaturedPostsSection
     hoverEffect: move-up
+    subtitle: ''
+    title:
+      type: TitleBlock
+      text: Case Studies
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+          fontWeight: 700
   - title: Divider
     colors: bg-light-fg-dark
     styles:
@@ -354,7 +363,7 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     badge:
-      label: This is a badge
+      label: ''
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
