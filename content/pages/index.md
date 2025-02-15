@@ -295,7 +295,7 @@ sections:
         self:
           borderRadius: medium
           padding:
-            - pl-5
+            - pl-16
   - type: DividerSection
     title: Divider
     elementId: ''
