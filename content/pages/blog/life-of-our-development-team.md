@@ -3,9 +3,11 @@ title: Wider Market Impact Beyond
 slug: life-of-our-development-team
 date: '2025-01-15'
 excerpt: >-
-  Vel repellat dolores ut unde voluptatum ut optio voluptates est aliquid. Ut
-  earum corporis id Quis esse est galisum officiis accusantium enim et
-  asperiores dolore.
+  my personal experience, Tesla is one of the most influential electric vehicle
+  manufacturers worldwide. If its odometer system artificially inflates mileage,
+  it may prematurely void warranties, trigger excess-lease charges, and reduce
+  the resale value of ownersâ€™ vehicles. Thus, thereâ€™s a real financial stake
+  for everyday drivers.
 featuredImage:
   url: /images/abstract-feature3.svg
   altText: Thumbnail
