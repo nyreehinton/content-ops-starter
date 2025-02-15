@@ -46,7 +46,7 @@ sections:
       type: BackgroundImage
       altText: Yolk Steering
       backgroundSize: cover
-      backgroundPosition: center
+      backgroundPosition: left-bottom
       backgroundRepeat: repeat
       opacity: 10
       url: /images/IMG_4464.jpeg
