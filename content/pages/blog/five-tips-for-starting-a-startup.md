@@ -1,5 +1,5 @@
 ---
-title: Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to 60%
+title: ''
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
 excerpt: >-
