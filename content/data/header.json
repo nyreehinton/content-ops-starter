@@ -89,10 +89,10 @@
             "self": {
                 "borderRadius": "medium",
                 "padding": [
-                    "pl-60",
-                    "pt-60",
-                    "pb-60",
-                    "pr-60"
+                    "pl-96",
+                    "pt-96",
+                    "pb-96",
+                    "pr-96"
                 ],
                 "borderWidth": 2,
                 "borderStyle": "solid",
