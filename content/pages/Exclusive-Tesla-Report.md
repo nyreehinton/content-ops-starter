@@ -285,7 +285,7 @@ sections:
             textAlign: left
             borderRadius: none
             flexDirection: col-reverse
-            justifyContent: flex-end
+            justifyContent: center
         text: >+
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
           subsequent odometer readings to illustrate our thesis. Purchased at
