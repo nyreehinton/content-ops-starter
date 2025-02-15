@@ -103,13 +103,13 @@ To kick things off, I emphasized the importance of understanding Purples origins
 
 #### Question #1:
 
-> Given the crowded bed-in-a-box market and the drop in average mattress price points, how do you see Purple sustaining premium pricing without sacrificing market share?
+> *Given the crowded bed-in-a-box market and the drop in average mattress price points, how do you see Purple sustaining premium pricing without sacrificing market share?*
 
 Sam highlighted that much of Purples success stems from genuine product differentiation”an intersection of geometry and chemistry that few rivals can replicate. This, in turn, supports premium pricing and helps maintain brand loyalty.
 
 #### Question #2:
 
-> With Purple proprietary machinery and R\&D focus, how do you manage capacity constraints while ensuring consistent quality across multiple manufacturing facilities?
+> *With Purple proprietary machinery and R\&D focus, how do you manage capacity constraints while ensuring consistent quality across multiple manufacturing facilities?*
 
 Sam acknowledged that while rapid growth can strain production, the vertical integration and tailored machinery allow Purple to carefully scale. He also touched on how building a new facility on the East Coast was a deliberate step to expand capacity without compromising product quality.
 
