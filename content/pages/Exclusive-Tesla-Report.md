@@ -131,7 +131,7 @@ sections:
       - content/pages/blog/this-is-a-blog-post-with-related-posts.md
     showThumbnail: true
     showExcerpt: false
-    showDate: true
+    showDate: false
     showAuthor: true
     actions: []
     elementId: ''
