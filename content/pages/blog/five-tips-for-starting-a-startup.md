@@ -33,7 +33,7 @@ Subsequently, at Third Bridge Group, I moderated over 125 executive-level discus
 
 #### Strengthening Data Culture and Governance
 
-Across each role, Iâ€™ve focused on embedding strong data practices at every stage of the product lifecycle. At Capital Group, for instance, I championed a Data Governance framework that spanned several teams and systemsâ€”BI tools, data lakes, and warehousesâ€”ensuring that ETF analytics aligned with regulatory standards and top-line objectives. Beyond policy creation, I helped introduce a seeding-money tracker that flagged over $170M in unreported transactions, reflecting the tangible impact a data-driven mindset can have on compliance and risk mitigation.
+Across each role, Ive focused on embedding strong data practices at every stage of the product lifecycle. At Capital Group, for instance, I championed a Data Governance framework that spanned several teams and systems ”BI tools, data lakes, and warehouses”ensuring that ETF analytics aligned with regulatory standards and top-line objectives. Beyond policy creation, I helped introduce a seeding-money tracker that flagged over $170M in unreported transactions, reflecting the tangible impact a data-driven mindset can have on compliance and risk mitigation.
 
 #### Driving Innovation Through Automation and Visualization
 
@@ -41,8 +41,8 @@ Efficiency and insight go hand-in-hand. Whether it was wrangling data with PySpa
 
 #### Global Perspective and Cross-Functional Collaboration
 
-My time at Third Bridge, where I hosted over 125 executive-level forums, underscored the value of clear communication across divergent stakeholder groupsâ€”ranging from R\&D experts to senior VPs in finance. Similarly, forging partnerships at Reorg Research to launch a Pre-Deal-M\&A Database required deep collaboration with data scientists, compliance teams, and vendor managers. These experiences taught me how to unify distinct perspectives under a shared product vision, guaranteeing that technical, operational, and strategic concerns received balanced attention.
+My time at Third Bridge, where I hosted over 125 executive-level forums, underscored the value of clear communication across divergent stakeholder groups”ranging from R\&D experts to senior VPs in finance. Similarly, forging partnerships at Reorg Research to launch a Pre-Deal-M\&A Database required deep collaboration with data scientists, compliance teams, and vendor managers. These experiences taught me how to unify distinct perspectives under a shared product vision, guaranteeing that technical, operational, and strategic concerns received balanced attention.
 
 ## Future Ambitions
 
-I see my next move as an opportunity to leverage AI-augmented analytics and advanced data governance to solve complex business challenges. The range of my backgroundâ€”capital markets, machine learning, agile frameworksâ€”positions me to help organizations streamline their data ecosystems, enhance product decisions, and remain nimble in rapidly shifting competitive landscapes. By blending robust technical acumen with a knack for leading cross-functional teams, I aim to continue delivering solutions that both simplify operations and unlock new revenue streams.
+I see my next move as an opportunity to leverage AI-augmented analytics and advanced data governance to solve complex business challenges. The range of my background”capital markets, machine learning, agile frameworks”positions me to help organizations streamline their data ecosystems, enhance product decisions, and remain nimble in rapidly shifting competitive landscapes. By blending robust technical acumen with a knack for leading cross-functional teams, I aim to continue delivering solutions that both simplify operations and unlock new revenue streams.
