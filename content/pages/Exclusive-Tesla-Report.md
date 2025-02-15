@@ -53,7 +53,7 @@ sections:
   - type: RecentPostsSection
     title:
       type: TitleBlock
-      text: Recent posts
+      text: 'Part 1: Why investigate anyway?'
       color: text-dark
       styles:
         self:
