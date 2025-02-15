@@ -1,5 +1,5 @@
 ---
-title: Anecdotal Triggers
+title: ''
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
 excerpt: >-
@@ -9,7 +9,6 @@ excerpt: >-
   the Teslas recorded mileage, I broadened the investigation, collecting
   examples from other drivers who had similar concerns.
 featuredImage:
-  url: /images/IMG_1187.png
   altText: Thumbnail
   type: ImageBlock
   styles:
