@@ -26,7 +26,7 @@ sections:
         iconPosition: right
         style: primary
         type: Button
-    colors: bg-neutral-fg-dark
+    colors: bg-dark-fg-light
     styles:
       self:
         padding:
