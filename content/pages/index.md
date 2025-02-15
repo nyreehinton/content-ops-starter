@@ -521,7 +521,7 @@ sections:
             self:
               borderRadius: medium
       - title: Databricks
-        tagline: Platorm
+        tagline: ''
         subtitle: Platform
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
