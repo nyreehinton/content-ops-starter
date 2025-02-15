@@ -50,7 +50,7 @@ sections:
       backgroundPosition: bottom
       backgroundRepeat: repeat-y
       opacity: 10
-      url: /images/IMG_4464.jpeg
+      url: /images/IMG_0367.jpeg
   - type: RecentPostsSection
     title:
       type: TitleBlock
