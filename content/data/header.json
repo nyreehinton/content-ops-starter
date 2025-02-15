@@ -84,7 +84,7 @@
     "logo": {
         "type": "ImageBlock",
         "url": "/images/4BA77F46-D6DA-460F-9922-1891693824A0.webp",
-        "altText": "Image alt text placeholder",
+        "altText": "",
         "elementId": "",
         "styles": {
             "self": {
