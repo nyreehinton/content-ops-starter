@@ -47,7 +47,7 @@ sections:
       altText: Yolk Steering
       backgroundSize: cover
       backgroundPosition: center
-      backgroundRepeat: repeat-y
+      backgroundRepeat: no-repeat
       opacity: 10
       url: /images/IMG_0270.jpeg
   - type: RecentPostsSection
