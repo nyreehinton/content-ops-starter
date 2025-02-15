@@ -135,7 +135,7 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: Class Action Civil Complaint
-        subtitle: Engineering
+        subtitle: '2025'
         text: ''
         colors: bg-neutral-fg-dark
         styles:
