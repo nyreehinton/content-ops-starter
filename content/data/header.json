@@ -94,7 +94,7 @@
                     "pb-28",
                     "pr-28"
                 ],
-                "borderWidth": 0,
+                "borderWidth": 1,
                 "borderStyle": "dashed",
                 "margin": [
                     "mt-24",
