@@ -512,6 +512,14 @@ sections:
             flexDirection: row
             justifyContent: center
         type: FeaturedItem
+        image:
+          type: ImageBlock
+          url: /images/hero2.svg
+          altText: Image alt text placeholder
+          elementId: ''
+          styles:
+            self:
+              borderRadius: medium
       - title: >-
           "Design is a plan for arranging elements in such a way as best to
           accomplish a particular purpose."
