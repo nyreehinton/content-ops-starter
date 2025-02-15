@@ -23,7 +23,7 @@
         {
             "label": "Exclusive Tesla Report",
             "altText": "",
-            "url": "/about",
+            "url": "/",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
