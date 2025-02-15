@@ -67,7 +67,7 @@ sections:
     recentCount: 2
     showThumbnail: true
     showExcerpt: true
-    showDate: true
+    showDate: false
     showAuthor: true
     actions: []
     elementId: ''
