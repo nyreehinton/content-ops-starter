@@ -270,7 +270,7 @@ sections:
               - pl-0
               - pb-0
               - pr-0
-            textAlign: right
+            textAlign: left
             borderRadius: none
             flexDirection: row
             justifyContent: center
