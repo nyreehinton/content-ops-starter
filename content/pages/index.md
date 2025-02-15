@@ -309,7 +309,7 @@ sections:
         justifyContent: center
         alignItems: center
       subtitle:
-        textAlign: left
+        textAlign: center
   - title:
       text: Certifications
       color: text-primary
