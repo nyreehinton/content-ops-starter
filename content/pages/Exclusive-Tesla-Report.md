@@ -118,7 +118,7 @@ sections:
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
-      text: Items on sale
+      text: What were the results?
       color: text-dark
       styles:
         self:
