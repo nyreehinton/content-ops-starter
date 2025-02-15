@@ -230,50 +230,6 @@ sections:
           inconsistent with current driving conditions or failed to account for
           edge cases, such as abrupt route changes or sensor malfunctions.
       - type: FeaturedItem
-        title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
-        subtitle: Tesla Admits Dealers Manually Set Energy Efficiency of Vehicles
-        image:
-          type: ImageBlock
-          altText: Chunky Cotton Knit Throw
-          elementId: ''
-          styles:
-            self:
-              borderRadius: medium
-        actions: []
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            flexDirection: row
-            textAlign: center
-            padding:
-              - pt-0
-              - pl-0
-              - pb-0
-              - pr-0
-            margin:
-              - mt-9
-              - ml-9
-              - mb-9
-              - mr-9
-        text: >
-          Tesla explicitly links odometer functionality to energy consumption
-          metrics, as suggested by the patent’s description of the
-          miles-to-energy conversion process. The relationship is foundational,
-          stating:
-
-
-          > *“Controller 301… applies an electrical energy per mile conversion
-          factor stored in memory (e.g., 4.6 miles/kilowatt-hour),… the
-          electrical energy per mile conversion factor is set by the
-          factory/dealer… updated over time to reflect the conversion efficiency
-          obtained by that particular vehicle”.*
-
-
-          When these factors are improperly calibrated or updated
-          inappropriately (e.g., due to battery degradation or software
-          updates), odometer readings derived from energy usage may deviate from
-          true travel distances.
-      - type: FeaturedItem
         title: A Thorough Analysis of Locally Stored Data
         subtitle: >-
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
@@ -364,6 +320,50 @@ sections:
           2.  The odometer *inflates* the distance traveled relative to actual
           road miles.
 
+      - type: FeaturedItem
+        title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
+        subtitle: Tesla Admits Dealers Manually Set Energy Efficiency of Vehicles
+        image:
+          type: ImageBlock
+          altText: Chunky Cotton Knit Throw
+          elementId: ''
+          styles:
+            self:
+              borderRadius: medium
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            flexDirection: row
+            textAlign: center
+            padding:
+              - pt-0
+              - pl-0
+              - pb-0
+              - pr-0
+            margin:
+              - mt-9
+              - ml-9
+              - mb-9
+              - mr-9
+        text: >
+          Tesla explicitly links odometer functionality to energy consumption
+          metrics, as suggested by the patent’s description of the
+          miles-to-energy conversion process. The relationship is foundational,
+          stating:
+
+
+          > *“Controller 301… applies an electrical energy per mile conversion
+          factor stored in memory (e.g., 4.6 miles/kilowatt-hour),… the
+          electrical energy per mile conversion factor is set by the
+          factory/dealer… updated over time to reflect the conversion efficiency
+          obtained by that particular vehicle”.*
+
+
+          When these factors are improperly calibrated or updated
+          inappropriately (e.g., due to battery degradation or software
+          updates), odometer readings derived from energy usage may deviate from
+          true travel distances.
     actions: []
     elementId: ''
     variant: small-list
