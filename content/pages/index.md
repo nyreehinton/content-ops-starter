@@ -290,6 +290,26 @@ sections:
       styles:
         self:
           borderRadius: medium
+  - type: GenericSection
+    title:
+      text: Education
+      color: text-dark
+      styles:
+        self:
+          textAlign: left
+      type: TitleBlock
+    subtitle: The PennsylvaniaStateUniversity
+    text: ''
+    actions: []
+    elementId: null
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        flexDirection: row
+        justifyContent: center
+        alignItems: center
+      subtitle:
+        textAlign: left
   - title:
       text: '"Open to Work"'
       color: text-dark
@@ -323,26 +343,6 @@ sections:
       self:
         alignItems: center
     type: GenericSection
-  - type: GenericSection
-    title:
-      text: Education
-      color: text-dark
-      styles:
-        self:
-          textAlign: left
-      type: TitleBlock
-    subtitle: The PennsylvaniaStateUniversity
-    text: ''
-    actions: []
-    elementId: null
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: row
-        justifyContent: center
-        alignItems: center
-      subtitle:
-        textAlign: left
   - title:
       text: Certifications
       color: text-primary
