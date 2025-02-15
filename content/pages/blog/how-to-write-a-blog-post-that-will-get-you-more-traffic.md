@@ -1,6 +1,8 @@
 ---
 type: PostLayout
-title: Tesla Mimics Apple’s Tactics to Mask Battery Degradation
+title: >-
+  Tesla Inflates Odometer Readings Using Predictive Algorithms Readings to
+  AccelerateWarranty Expiration
 slug: how-to-write-a-blog-post-that-will-get-you-more-traffic
 date: '2023-01-18'
 excerpt: >-
