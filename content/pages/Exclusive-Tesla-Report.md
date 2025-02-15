@@ -58,7 +58,7 @@ sections:
       styles:
         self:
           textAlign: center
-    recentCount: 3
+    recentCount: 2
     showThumbnail: true
     showExcerpt: true
     showDate: true
