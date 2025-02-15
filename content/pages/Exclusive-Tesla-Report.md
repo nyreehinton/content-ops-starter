@@ -144,10 +144,10 @@ sections:
           requirements to meet these travel needs. The patent states:
 
 
-          > “converting the total travel miles to a second quantity of
+          > *“converting the total travel miles to a second quantity of
           electrical energy using a miles-to- electrical energy conversion
           factor, wherein said miles-to-electrical energy conversion factor
-          varies based on road and traffic condition information”
+          varies based on road and traffic condition information”*
 
 
           This indicates that Tesla’s calculation of traveled distance is
