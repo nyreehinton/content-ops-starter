@@ -21,18 +21,18 @@
             "type": "Link"
         },
         {
-            "label": "Exclusive Tesla Report",
-            "altText": "",
-            "url": "/",
+            "label": "Experience",
+            "altText": "Experience",
+            "url": "/experience",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "Experience",
-            "altText": "Experience",
-            "url": "/experience",
+            "label": "Exclusive Tesla Report",
+            "altText": "",
+            "url": "/",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
