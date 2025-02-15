@@ -32,7 +32,7 @@ seo:
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: row
+    flexDirection: col
 ---
 # Patent US8054038B2: The Odometer is an *Estimation*, and Nothing More
 
