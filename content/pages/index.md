@@ -321,7 +321,7 @@ sections:
     items:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
-        subtitle: This is the item subtitle
+        subtitle: ''
         text: >
           An industry-recognized credential demonstrating advanced insight into
           how environmental, social, and governance factors shape investment
