@@ -318,7 +318,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: The PennsylvaniaStateUniversity
+    subtitle: The Pennsylvania State University
     text: ''
     actions: []
     elementId: null
