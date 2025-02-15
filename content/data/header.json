@@ -97,10 +97,10 @@
                 "borderWidth": 2,
                 "borderStyle": "none",
                 "margin": [
-                    "mt-3",
-                    "ml-3",
-                    "mb-3",
-                    "mr-3"
+                    "mt-11",
+                    "ml-11",
+                    "mb-11",
+                    "mr-11"
                 ],
                 "borderColor": "border-primary"
             }
