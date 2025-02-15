@@ -284,7 +284,7 @@ sections:
       loop: true
       muted: true
     badge:
-      label: ''
+      label: Exclusive Report
       color: text-primary
       styles:
         self:
