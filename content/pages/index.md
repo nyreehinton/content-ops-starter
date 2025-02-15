@@ -251,40 +251,24 @@ sections:
           - pr-7
     type: DividerSection
   - title:
-      text: Grow your business 10x faster
+      text: Tesla
       color: text-dark
       styles:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: This is a subtitle
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
-    media:
-      title: Title of the video
-      url: /images/placeholder-video.mp4
-      controls: false
-      aspectRatio: '16:9'
-      styles:
-        self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: VideoBlock
-      autoplay: true
-      loop: true
-      muted: true
+    subtitle: An Deep-Dive Into Tesla Patents & Technology
+    text: >
+      I conducted an in-depth review of Tesla’s patent filings and underlying
+      technology to understand how they approach **vehicle range, odometer
+      systems, and battery management**. My analysis focused on comparing
+      Tesla’s predictive algorithms and real-world metrics, offering insights
+      into the broader implications for both consumers and the EV market. While
+      there were additional considerations that arose during my research, I
+      primarily concentrated on how Tesla’s core engineering decisions impact
+      everyday drivers.
     badge:
-      label: Key Benefits
+      label: Exclusive consumer Report
       color: text-primary
       styles:
         self:
@@ -297,6 +281,47 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+    type: GenericSection
+    media:
+      type: ImageBlock
+      url: /images/IMG_0129.png
+      altText: Image alt text placeholder
+      elementId: ''
+      styles:
+        self:
+          borderRadius: medium
+  - title:
+      text: '"Open to Work"'
+      color: text-dark
+      type: TitleBlock
+    subtitle: Increase your reach
+    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
+    actions:
+      - label: LinkedIn
+        url: 'https://www.linkedin.com/in/nyree-hinton'
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        type: Button
+      - label: Contact
+        url: /
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        type: Link
+    media:
+      url: /images/HeadshotAI.gif
+      altText: Fun feature preview
+      type: ImageBlock
+    badge:
+      label: ''
+      color: text-primary
+      type: Badge
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
     type: GenericSection
   - type: GenericSection
     title:
@@ -338,39 +363,6 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: left
-  - title:
-      text: '"Open to Work"'
-      color: text-dark
-      type: TitleBlock
-    subtitle: Increase your reach
-    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
-    actions:
-      - label: LinkedIn
-        url: 'https://www.linkedin.com/in/nyree-hinton'
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        type: Button
-      - label: Contact
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Link
-    media:
-      url: /images/HeadshotAI.gif
-      altText: Fun feature preview
-      type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        alignItems: center
-    type: GenericSection
   - title:
       text: Business Consulting
       color: text-dark
