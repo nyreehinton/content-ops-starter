@@ -514,7 +514,7 @@ sections:
         type: FeaturedItem
         image:
           type: ImageBlock
-          url: /images/hero2.svg
+          url: /images/IMG_1163.png
           altText: Image alt text placeholder
           elementId: ''
           styles:
