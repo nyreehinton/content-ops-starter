@@ -97,10 +97,10 @@
                 "borderWidth": 2,
                 "borderStyle": "solid",
                 "margin": [
-                    "mt-96",
-                    "ml-96",
-                    "mb-96",
-                    "mr-96"
+                    "mt-4",
+                    "ml-4",
+                    "mb-4",
+                    "mr-4"
                 ]
             }
         },
