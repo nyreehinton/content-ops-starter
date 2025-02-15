@@ -348,7 +348,7 @@ sections:
         type: FeaturedItem
       - title: Certified SAFe® 6 Practitioner from
         tagline: 'Scaled Agile, Inc.'
-        subtitle: This is the item subtitle
+        subtitle: ''
         text: >
           A recognized qualification in the Scaled Agile Framework (SAFe),
           emphasizing an ability to coordinate and streamline agile practices
