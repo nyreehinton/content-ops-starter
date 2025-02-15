@@ -25,19 +25,19 @@ bottomSections:
       - title: About Third Bridge
         tagline: ''
         subtitle: >-
-          About the AuthorThird Bridge is a global research firm that connects
-          investors and business leaders with vital intelligence, leveraging a
-          network of industry specialists and in-depth interviews. By bridging
-          first-hand insights and real-world data, Third Bridge helps clients
-          make informed strategic decisions—particularly where deep market
-          knowledge or niche expertise is essential.During my tenure at Third
-          Bridge, I served as a Sector Analyst, conducting high-level interviews
-          with C-suite executives, founders, and industry veterans. My role
-          centered on curating detailed conversations that distill complex
-          market dynamics into practical, actionable intelligence. By blending
-          rigorous research with an ability to navigate strategic discussions, I
-          helped inform clients’ investment theses, operational strategies, and
-          competitive positioning.
+          Third Bridge is a global research firm that connects investors and
+          business leaders with vital intelligence, leveraging a network of
+          industry specialists and in-depth interviews. By bridging first-hand
+          insights and real-world data, Third Bridge helps clients make informed
+          strategic decisions—particularly where deep market knowledge or niche
+          expertise is essential.During my tenure at Third Bridge, I served as a
+          Sector Analyst, conducting high-level interviews with C-suite
+          executives, founders, and industry veterans. My role centered on
+          curating detailed conversations that distill complex market dynamics
+          into practical, actionable intelligence. By blending rigorous research
+          with an ability to navigate strategic discussions, I helped inform
+          clients’ investment theses, operational strategies, and competitive
+          positioning.
         image:
           url: /images/IMG_0132.jpeg
           altText: Company logo
