@@ -287,11 +287,13 @@ sections:
             flexDirection: col
             justifyContent: center
         text: >+
+          ![](/images/IMG_1206.jpeg)
+
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
           subsequent odometer readings to illustrate our thesis. Purchased at
           36,772 miles, the vehicle recorded 13,228 miles over approximately
           seven months, reaching 50,000 miles by warranty expiration. However,
-          we noticed significant inconsistencies: 
+          we noticed significant inconsistencies:
 
 
           **Charging Data and Energy Efficiency**
@@ -319,7 +321,7 @@ sections:
 
           We repeat the above analysis using the provided charging data and the
           real-world (displayed inside of the vehicle) energy efficiency of 370
-          Wh/mi. 
+          Wh/mi.
 
 
           Using this efficiency, we can calculate the effective mileage and
