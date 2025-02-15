@@ -27,7 +27,7 @@ bottomSections:
     type: DividerSection
   - items:
       - title: About This Report
-        tagline: This is the tagline
+        tagline: ''
         subtitle: >-
           This presentation was created as part of a multi-stage interview
           process with Lime, a leading provider in the micromobility space. In
