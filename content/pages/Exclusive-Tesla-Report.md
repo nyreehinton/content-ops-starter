@@ -1,5 +1,5 @@
 ---
-title: careers
+title: Exclusive Tesla Report
 slug: Exclusive Tesla Report
 sections:
   - title:
@@ -207,5 +207,5 @@ seo:
   socialImage: /images/main-hero.jpg
   type: Seo
 type: PageLayout
-isDraft: true
+isDraft: false
 ---
