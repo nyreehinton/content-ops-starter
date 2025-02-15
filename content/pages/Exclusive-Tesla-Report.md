@@ -48,7 +48,7 @@ sections:
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
-      opacity: 23
+      opacity: 10
       url: /images/IMG_0270.jpeg
   - type: RecentPostsSection
     title:
