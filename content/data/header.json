@@ -98,7 +98,7 @@
                 "borderStyle": "solid",
                 "margin": [
                     "mt-4",
-                    "ml-4",
+                    "ml-0",
                     "mb-4",
                     "mr-4"
                 ]
