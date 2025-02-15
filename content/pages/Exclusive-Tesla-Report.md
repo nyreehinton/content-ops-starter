@@ -198,6 +198,24 @@ sections:
         styles:
           self:
             flexDirection: row
+        text: >
+          Tesla’s systems incorporate memory-based algorithms to store and
+          utilize historical driving data. According to the patent, this
+          includes previous routes, average vehicle efficiency, and
+          driver-specific patterns
+
+
+          > “Controller 301 is also coupled to memory 311, thereby providing
+          controller 301 with access to historical data, for example driving
+          routines, average vehicle mileage, specific driver practices, previous
+          driving routes”.
+
+
+          This recursive validation mechanism suggests that the system may be
+          extrapolating miles based on past behaviors, potentially inflating
+          current mileage if those past conditions were overly optimistic or
+          inconsistent with current driving conditions or failed to account for
+          edge cases, such as abrupt route changes or sensor malfunctions.
       - type: FeaturedItem
         title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
         subtitle: $117
