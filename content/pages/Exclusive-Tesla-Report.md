@@ -45,7 +45,7 @@ sections:
     backgroundImage:
       type: BackgroundImage
       altText: Yolk Steering
-      backgroundSize: auto
+      backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: repeat
       opacity: 10
