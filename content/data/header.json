@@ -97,10 +97,10 @@
                 "borderWidth": 1,
                 "borderStyle": "double",
                 "margin": [
-                    "mt-5",
-                    "ml-5",
-                    "mb-5",
-                    "mr-5"
+                    "mt-32",
+                    "ml-32",
+                    "mb-32",
+                    "mr-32"
                 ],
                 "borderColor": "border-primary"
             }
