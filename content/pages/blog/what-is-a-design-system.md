@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
+title: ''
 slug: what-is-a-design-system
 date: '2023-02-14'
 excerpt: >-
