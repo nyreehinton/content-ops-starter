@@ -22,7 +22,7 @@ bottomSections:
           - pr-7
     type: DividerSection
   - items:
-      - title: About Third Bridge
+      - title: About This Report
         tagline: ''
         subtitle: >-
           Third Bridge is a global research firm that connects investors and
