@@ -446,7 +446,7 @@ sections:
     title: null
     subtitle: Tech Stack
     items:
-      - title: “Visualization.”
+      - title: Visualization
         tagline: Tableau
         subtitle: 'Maria Walters, Company'
         text: >-
