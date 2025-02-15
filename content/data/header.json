@@ -2,7 +2,7 @@
     "primaryLinks": [
         {
             "label": "Home",
-            "url": "/https://nyreehinton.com",
+            "url": "/home",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
