@@ -381,8 +381,12 @@ sections:
       - title: Certified SAFe® 6 Practitioner from
         tagline: 'Scaled Agile, Inc.'
         subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first awesome Netlify Create site.
+        text: >
+          A recognized qualification in the Scaled Agile Framework (SAFe),
+          emphasizing an ability to coordinate and streamline agile practices
+          across large teams. This certification underscores my capacity to
+          drive collaborative planning, continuous delivery, and iterative
+          improvements at the enterprise level.
         image:
           url: /images/Certified SAFe 6 Practitioner.png
           altText: Placeholder image
