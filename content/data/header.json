@@ -21,15 +21,6 @@
             "type": "Link"
         },
         {
-            "label": "Experience",
-            "altText": "Experience",
-            "url": "/experience",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
             "label": "Projects",
             "altText": "Projects",
             "links": [
@@ -60,6 +51,15 @@
             ],
             "labelStyle": "secondary",
             "type": "SubNav"
+        },
+        {
+            "label": "Experience",
+            "altText": "Experience",
+            "url": "/experience",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
         },
         {
             "label": "Exclusive Tesla Report",
