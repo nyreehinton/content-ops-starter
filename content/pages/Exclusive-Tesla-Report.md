@@ -20,13 +20,7 @@ sections:
       walk you through the data sources, investigative steps, and final
       takeaways of my research”along with practical tips for anyone looking to
       understand, validate, or challenge their own Teslas odometer readings.
-    actions:
-      - label: See open positions
-        url: /
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Button
+    actions: []
     colors: bg-dark-fg-light
     styles:
       self:
