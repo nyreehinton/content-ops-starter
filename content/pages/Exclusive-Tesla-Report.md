@@ -150,7 +150,7 @@ sections:
         type: FeaturedItem
     actions:
       - label: Request Copies
-        url: /
+        url: /nyreehinton@gmail.com
         icon: arrowRight
         iconPosition: right
         style: primary
