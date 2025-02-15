@@ -317,7 +317,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Featured items section subtitle
+    subtitle: ''
     items:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
