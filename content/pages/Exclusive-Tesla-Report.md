@@ -46,7 +46,7 @@ sections:
       type: BackgroundImage
       altText: Yolk Steering
       backgroundSize: cover
-      backgroundPosition: left
+      backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 10
       url: /images/IMG_0270.jpeg
