@@ -284,7 +284,7 @@ sections:
       loop: true
       muted: true
     badge:
-      label: Exclusive Report
+      label: Exclusive consumer Report
       color: text-primary
       styles:
         self:
