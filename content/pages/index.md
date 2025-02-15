@@ -398,7 +398,7 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Securities Industry Essentials® (SIE®)
-        tagline: This is the tagline
+        tagline: Financial Industry Regulatory Authority
         subtitle: This is the item subtitle
         text: >
           Learn from the tutorial and build your first awesome Netlify Create
