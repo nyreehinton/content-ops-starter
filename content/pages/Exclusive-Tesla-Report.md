@@ -9,7 +9,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Section subtitle
+    subtitle: Are the readings accurate?
     text: >
       Over the past year, Ive conducted an in-depth review of Teslasodometer
       systems, analyzing everything from patent filings and charging logs to
