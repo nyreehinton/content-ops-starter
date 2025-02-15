@@ -269,7 +269,7 @@ sections:
       everyday drivers.
     media:
       title: Title of the video
-      url: /images/placeholder-video.mp4
+      url: /public/images/IMG_0129.png
       controls: false
       aspectRatio: '16:9'
       styles:
