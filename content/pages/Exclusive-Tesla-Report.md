@@ -182,7 +182,9 @@ sections:
             justifyContent: center
             borderStyle: dotted
       - type: FeaturedItem
-        title: Cotton Knit Throws
+        title: >-
+          Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
+          60%
         subtitle: $ 44.99 – $ 90
         image:
           type: ImageBlock
