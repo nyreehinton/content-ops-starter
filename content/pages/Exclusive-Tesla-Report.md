@@ -126,17 +126,6 @@ sections:
           - pl-3
           - pb-3
           - pr-3
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-20
-          - pl-20
-          - pb-20
-          - pr-20
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
@@ -389,6 +378,17 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-20
+          - pl-20
+          - pb-20
+          - pr-20
   - title:
       text: Full Reports
       color: text-dark
