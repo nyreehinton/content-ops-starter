@@ -221,7 +221,6 @@ sections:
         subtitle: Tesla Admits Dealers Manually Set Energy Efficiency of Vehicles
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
           altText: Chunky Cotton Knit Throw
           elementId: ''
           styles:
