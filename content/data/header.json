@@ -96,7 +96,13 @@
                     "pr-1"
                 ],
                 "borderWidth": 2,
-                "borderStyle": "solid"
+                "borderStyle": "solid",
+                "margin": [
+                    "mt-1",
+                    "ml-1",
+                    "mb-1",
+                    "mr-1"
+                ]
             }
         }
     }
