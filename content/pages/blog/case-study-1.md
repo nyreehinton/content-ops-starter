@@ -39,7 +39,7 @@ bottomSections:
           can help organizations like Lime innovate responsibly while scaling
           operations across multiple regions.
         image:
-          url: /images/telus-logo.svg
+          url: /images/960x0.webp
           altText: Company logo
           styles:
             self:
