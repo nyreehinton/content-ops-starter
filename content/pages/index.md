@@ -413,7 +413,7 @@ sections:
       color: text-dark
       type: TitleBlock
     subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
-    text: "I’m actively exploring new opportunities in **data analytics, product management, and financial technolog**y where I can leverage my expertise in data strategy, business intelligence, and cross-functional collaboration.\_\n\nI’m particularly interested in roles that focus on **data governance, product insights, and fintech innovation**, where I can drive efficiency, enhance reporting, and translate complex datasets into actionable business strategies. Open to full-time roles, consulting engagements, and leadership opportunities—let’s connect!\n"
+    text: "As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!\n"
     actions:
       - label: LinkedIn
         url: 'https://www.linkedin.com/in/nyree-hinton'
