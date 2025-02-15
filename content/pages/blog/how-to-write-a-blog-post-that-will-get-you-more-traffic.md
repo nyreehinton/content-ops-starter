@@ -1,6 +1,10 @@
 ---
 type: PostLayout
-title: What were the results?
+title: >-
+  Tesla Inflates Odometer Readings Using Predictive Algorithms Readings to
+  Accelerate
+
+  Warranty Expiration
 slug: how-to-write-a-blog-post-that-will-get-you-more-traffic
 date: '2023-01-18'
 excerpt: >-
