@@ -205,10 +205,10 @@ sections:
           driver-specific patterns
 
 
-          > “Controller 301 is also coupled to memory 311, thereby providing
+          > *“Controller 301 is also coupled to memory 311, thereby providing
           controller 301 with access to historical data, for example driving
           routines, average vehicle mileage, specific driver practices, previous
-          driving routes”.
+          driving routes”.*
 
 
           This recursive validation mechanism suggests that the system may be
