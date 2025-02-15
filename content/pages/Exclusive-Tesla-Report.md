@@ -252,7 +252,7 @@ sections:
           true travel distances.
 
       - type: FeaturedItem
-        title: Tesla Mimics Apple’s Tactics to Mask Battery Degradation
+        title: A Thorough Analysis of Locally Stored Data
         subtitle: $ 88 – $ 176
         image:
           type: ImageBlock
