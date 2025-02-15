@@ -72,7 +72,7 @@ sections:
       self:
         justifyContent: center
   - title:
-      text: Meet the team
+      text: 'Part 2: Methodology & Data Sources'
       color: text-dark
       styles:
         self:
