@@ -273,7 +273,7 @@ sections:
             textAlign: left
             borderRadius: none
             flexDirection: row-reverse
-            justifyContent: center
+            justifyContent: flex-start
     actions: []
     elementId: ''
     variant: small-list
