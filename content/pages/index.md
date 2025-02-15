@@ -397,7 +397,7 @@ sections:
             borderRadius: x-large
             flexDirection: col
         type: FeaturedItem
-      - title: Feature Item Three
+      - title: Securities Industry Essentials® (SIE®)
         tagline: This is the tagline
         subtitle: This is the item subtitle
         text: >
