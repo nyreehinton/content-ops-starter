@@ -1,6 +1,6 @@
 ---
 title: Exclusive Tesla Report
-slug: careers
+slug: Exclusive Tesla Report
 sections:
   - title:
       text: A team that works closely together
