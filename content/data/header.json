@@ -89,10 +89,10 @@
             "self": {
                 "borderRadius": "x-small",
                 "padding": [
-                    "pl-3",
-                    "pt-3",
-                    "pb-3",
-                    "pr-3"
+                    "pl-1",
+                    "pt-1",
+                    "pb-1",
+                    "pr-1"
                 ],
                 "borderWidth": 0,
                 "borderStyle": "none",
