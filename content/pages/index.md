@@ -267,26 +267,6 @@ sections:
       there were additional considerations that arose during my research, I
       primarily concentrated on how Tesla’s core engineering decisions impact
       everyday drivers.
-    media:
-      title: Title of the video
-      url: /public/images/IMG_0129.png
-      controls: false
-      aspectRatio: '16:9'
-      styles:
-        self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: VideoBlock
-      autoplay: true
-      loop: true
-      muted: true
     badge:
       label: Exclusive consumer Report
       color: text-primary
