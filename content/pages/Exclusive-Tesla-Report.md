@@ -11,7 +11,7 @@ sections:
       type: TitleBlock
     subtitle: Are the readings accurate?
     text: >
-      Over the past year, Ive conducted an in-depth review of Teslasodometer
+      Over the past year, Ive conducted an in-depth review of Tesla’s odometer
       systems, analyzing everything from patent filings and charging logs to
       user testimonies on social media. My primary goal has been to determine
       whether Tesla vehicles accurately measure mileage or if certain
