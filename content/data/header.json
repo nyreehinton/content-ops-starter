@@ -90,9 +90,9 @@
                 "borderRadius": "medium",
                 "padding": [
                     "pl-0",
-                    "pt-1",
-                    "pb-4",
-                    "pr-96"
+                    "pt-0",
+                    "pb-0",
+                    "pr-0"
                 ],
                 "borderWidth": 2,
                 "borderStyle": "solid",
