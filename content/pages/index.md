@@ -733,7 +733,7 @@ sections:
         style: primary
         elementId: null
     badge:
-      label: General Inq
+      label: General Inquiries
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
