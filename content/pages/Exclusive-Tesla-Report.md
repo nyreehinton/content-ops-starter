@@ -203,7 +203,7 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Exclusive Tesla Report
-  metaDescription: An analysis of Tesla Patents and Technology
+  metaDescription: ''
   socialImage: /images/main-hero.jpg
   type: Seo
 type: PageLayout
