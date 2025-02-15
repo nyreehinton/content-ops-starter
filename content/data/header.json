@@ -78,8 +78,8 @@
             "type": "Button"
         }
     ],
-    "variant": "logo-left-primary-nav-left",
-    "colors": "bg-light-fg-dark",
+    "variant": "logo-left-primary-nav-centered",
+    "colors": "bg-neutral-fg-dark",
     "type": "Header",
     "logo": {
         "type": "ImageBlock",
