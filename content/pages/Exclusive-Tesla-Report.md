@@ -197,7 +197,7 @@ sections:
         colors: bg-light-fg-dark
         styles:
           self:
-            flexDirection: row
+            flexDirection: col
             textAlign: center
             justifyContent: flex-start
         text: >
