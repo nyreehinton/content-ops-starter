@@ -278,7 +278,7 @@ sections:
               - pl-0
               - pb-0
               - pr-0
-            textAlign: justify
+            textAlign: left
             borderRadius: none
             flexDirection: row-reverse
             justifyContent: flex-start
