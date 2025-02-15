@@ -1,16 +1,4 @@
 {
-    "logo": {
-        "url": "/images/IMG_1167.jpeg",
-        "altText": "Logo dark",
-        "styles": {
-            "self": {
-                "margin": [
-                    "mr-3"
-                ]
-            }
-        },
-        "type": "ImageBlock"
-    },
     "primaryLinks": [
         {
             "label": "Home",
