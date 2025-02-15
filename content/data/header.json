@@ -91,7 +91,7 @@
                 "padding": [
                     "pl-80",
                     "pt-1",
-                    "pb-96",
+                    "pb-4",
                     "pr-1"
                 ],
                 "borderWidth": 2,
