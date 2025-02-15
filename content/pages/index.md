@@ -332,7 +332,6 @@ sections:
       opacity: 100
     media:
       type: ImageBlock
-      url: /images/IMG_1170.webp
       altText: Image alt text placeholder
       elementId: ''
       styles:
