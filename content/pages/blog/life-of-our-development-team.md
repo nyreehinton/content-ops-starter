@@ -9,7 +9,7 @@ excerpt: >-
   the resale value of owner's vehicles. Thus, theres a real financial stake for
   everyday drivers.
 featuredImage:
-  url: /images/abstract-feature3.svg
+  url: /images/IMG_1188.webp
   altText: Thumbnail
   type: ImageBlock
   styles:
