@@ -250,7 +250,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: An Deep-Dive Into Tesla Patents & Technology
+    subtitle: A Deep-Dive Into Tesla’s Patents & Technology
     text: >+
       <div style="text-align: center">I conducted an in-depth review of Tesla’s
       patent filings and underlying technology to understand how they approach
@@ -289,6 +289,16 @@ sections:
             - pb-36
             - pt-36
             - pr-36
+    actions:
+      - type: Button
+        label: Enter
+        altText: ''
+        url: /
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
   - type: DividerSection
     title: Divider
     elementId: ''
@@ -308,7 +318,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: The PennsylvaniaStateUniversity
+    subtitle: The Pennsylvania State University
     text: ''
     actions: []
     elementId: null
@@ -436,9 +446,9 @@ sections:
     title: null
     subtitle: Tech Stack
     items:
-      - title: “Visualization.”
+      - title: Visualization
         tagline: Tableau
-        subtitle: 'Maria Walters, Company'
+        subtitle: ''
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.

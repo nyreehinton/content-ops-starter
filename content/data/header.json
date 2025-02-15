@@ -43,7 +43,7 @@
         {
             "label": "Experience",
             "altText": "Experience",
-            "url": "/experience",
+            "url": "/Experience",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
