@@ -8,7 +8,7 @@ excerpt: >-
   Etiam at cursus enim. Suspendisse sed augue tortor. Nunc eu magna vitae lorem
   pellentesque fermentum. Sed in facilisis dui.
 featuredImage:
-  url: /images/Bloomberg Intellegence.png
+  url: /images/IMG_0130.png
   altText: Case study 2
   styles:
     self:
