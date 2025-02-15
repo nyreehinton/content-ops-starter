@@ -491,9 +491,7 @@ sections:
     title: null
     subtitle: Tech Stack
     items:
-      - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
+      - title: “Visualization.”
         tagline: Tableau
         subtitle: 'Maria Walters, Company'
         text: >-
