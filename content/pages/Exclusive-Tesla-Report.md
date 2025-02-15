@@ -21,7 +21,7 @@ sections:
       takeaways of my research”along with practical tips for anyone looking to
       understand, validate, or challenge their own Teslas odometer readings.
     actions: []
-    colors: bg-neutral-fg-dark
+    colors: bg-dark-fg-light
     styles:
       self:
         padding:
