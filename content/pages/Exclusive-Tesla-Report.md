@@ -174,7 +174,7 @@ sections:
               - pl-6
               - pb-6
               - pr-6
-            textAlign: left
+            textAlign: center
             borderColor: border-neutralAlt
             borderWidth: 2
             borderRadius: x-small
