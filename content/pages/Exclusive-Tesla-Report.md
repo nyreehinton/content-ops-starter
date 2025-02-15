@@ -135,7 +135,7 @@ sections:
       type: TitleBlock
     subtitle: Subtitle goes here
     items:
-      - title: Odometer Report Pt.1 Executive
+      - title: Odometer Report Pt.1
         subtitle: '2023'
         text: ''
         colors: bg-neutral-fg-dark
