@@ -90,7 +90,7 @@
             "self": {
                 "borderRadius": "medium",
                 "padding": [
-                    "pl-1",
+                    "pl-4",
                     "pt-1",
                     "pb-1",
                     "pr-1"
