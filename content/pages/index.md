@@ -250,7 +250,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: An Deep-Dive Into Tesla Patents & Technology
+    subtitle: A Deep-Dive Into Tesla’s Patents & Technology
     text: >+
       <div style="text-align: center">I conducted an in-depth review of Tesla’s
       patent filings and underlying technology to understand how they approach
