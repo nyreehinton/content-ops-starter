@@ -297,6 +297,7 @@ sections:
           padding:
             - pl-36
             - pb-36
+            - pt-36
   - type: DividerSection
     title: Divider
     elementId: ''
