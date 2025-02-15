@@ -198,6 +198,7 @@ sections:
         styles:
           self:
             flexDirection: row
+            textAlign: center
         text: >
           Tesla’s systems incorporate memory-based algorithms to store and
           utilize historical driving data. According to the patent, this
