@@ -273,7 +273,7 @@ sections:
               - pr-0
             textAlign: left
             borderRadius: none
-            flexDirection: col
+            flexDirection: row
             justifyContent: center
     actions: []
     elementId: ''
