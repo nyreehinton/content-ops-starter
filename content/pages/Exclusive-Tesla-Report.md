@@ -149,7 +149,7 @@ sections:
             flexDirection: row
         type: FeaturedItem
     actions:
-      - label: Apply now
+      - label: Request Copies
         url: /
         icon: arrowRight
         iconPosition: right
