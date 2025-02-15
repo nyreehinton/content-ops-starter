@@ -119,7 +119,7 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: Odometer Report Pt.2
-        subtitle: Marketing
+        subtitle: '2024'
         text: ''
         colors: bg-neutral-fg-dark
         styles:
