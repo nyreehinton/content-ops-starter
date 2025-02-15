@@ -94,7 +94,7 @@
                     "pb-1",
                     "pr-1"
                 ],
-                "borderWidth": 0,
+                "borderWidth": 2,
                 "borderStyle": "none",
                 "margin": [
                     "mt-0",
