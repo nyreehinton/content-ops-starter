@@ -30,7 +30,7 @@ bottomSections:
           industry specialists and in-depth interviews. By bridging first-hand
           insights and real-world data, Third Bridge helps clients make informed
           strategic decisions—particularly where deep market knowledge or niche
-          expertise is essential.
+          expertise is essential.  
         image:
           url: /images/IMG_0132.jpeg
           altText: Company logo
