@@ -1,6 +1,6 @@
 ---
 title: Exclusive Tesla Report
-slug: Exclusive Tesla Report
+slug: Exclusive-Tesla-Report
 sections:
   - title:
       text: Tesla Odometer Investigation
@@ -202,8 +202,8 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Exclusive Tesla Report
-  metaDescription: An analysis of Tesla Patents and Technology
+  metaTitle: ''
+  metaDescription: ''
   socialImage: /images/main-hero.jpg
   type: Seo
 type: PageLayout
