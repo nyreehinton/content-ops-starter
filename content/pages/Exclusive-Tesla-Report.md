@@ -218,7 +218,7 @@ sections:
           edge cases, such as abrupt route changes or sensor malfunctions.
       - type: FeaturedItem
         title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
-        subtitle: $117
+        subtitle: Tesla Admits Dealers Manually Set Energy Efficiency of Vehicles
         image:
           type: ImageBlock
           url: /images/img-placeholder.svg
