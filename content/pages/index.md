@@ -231,7 +231,7 @@ sections:
         justifyContent: center
     type: FeaturedPostsSection
     hoverEffect: move-up
-    subtitle: ''
+    subtitle: A cumulation of previous research.
     title:
       type: TitleBlock
       text: Case Studies
