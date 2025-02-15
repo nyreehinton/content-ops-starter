@@ -49,6 +49,7 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 100
+      url: /images/Tesla yoke 1.JPG
   - title:
       text: Meet the team
       color: text-dark
