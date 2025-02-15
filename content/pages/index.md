@@ -306,7 +306,7 @@ sections:
     styles:
       self:
         flexDirection: row-reverse
-        justifyContent: center
+        justifyContent: flex-end
         alignItems: flex-end
       subtitle:
         textAlign: left
