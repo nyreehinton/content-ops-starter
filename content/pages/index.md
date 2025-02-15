@@ -515,7 +515,7 @@ sections:
         image:
           type: ImageBlock
           url: /images/IMG_1163.png
-          altText: Image alt text placeholder
+          altText: ''
           elementId: ''
           styles:
             self:
