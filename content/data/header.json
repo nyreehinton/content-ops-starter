@@ -95,7 +95,7 @@
                     "pr-1"
                 ],
                 "borderWidth": 2,
-                "borderStyle": "double",
+                "borderStyle": "solid",
                 "margin": [
                     "mt-52",
                     "ml-52",
