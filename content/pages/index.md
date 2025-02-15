@@ -408,39 +408,6 @@ sections:
       subtitle:
         textAlign: center
     type: FeaturedItemsSection
-  - title:
-      text: '"Open to Work"'
-      color: text-dark
-      type: TitleBlock
-    subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
-    text: "As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!\n"
-    actions:
-      - label: LinkedIn
-        url: 'https://www.linkedin.com/in/nyree-hinton'
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        type: Button
-      - label: Contact
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Link
-    media:
-      url: /images/HeadshotAI.gif
-      altText: Fun feature preview
-      type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        alignItems: center
-    type: GenericSection
   - type: CarouselSection
     title: null
     subtitle: Tech Stack
@@ -628,6 +595,39 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+  - title:
+      text: '"Open to Work"'
+      color: text-dark
+      type: TitleBlock
+    subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
+    text: "As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!\n"
+    actions:
+      - label: LinkedIn
+        url: 'https://www.linkedin.com/in/nyree-hinton'
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        type: Button
+      - label: Contact
+        url: /
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        type: Link
+    media:
+      url: /images/HeadshotAI.gif
+      altText: Fun feature preview
+      type: ImageBlock
+    badge:
+      label: ''
+      color: text-primary
+      type: Badge
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+    type: GenericSection
   - title:
       text: Business Consulting
       color: text-dark
