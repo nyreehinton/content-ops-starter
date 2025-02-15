@@ -136,63 +136,6 @@ sections:
           textAlign: center
     items:
       - type: FeaturedItem
-        title: >-
-          Tesla Inflates Odometer Readings Using Predictive Algorithms Readings
-          to AccelerateWarranty Expiration
-        subtitle: 'Patent US8054038B2: The Odometer is an Estimation, and Nothing More'
-        text: >
-          Tesla’s system for calculating the distance already traveled is
-          heavily reliant on predictive algorithms and sensor data, which do not
-          follow traditional odometer mechanisms. Tesla vehicles use a
-          combination of GPS data, wheel speed sensors, and historical usage
-          patterns to calculate mileage.
-
-
-          According to Patent US8054038B2, the vehicle’s charging controller
-          calculates the total travel distance based on the user’s inputted
-          travel plan. The system inputs location and travel details into the
-          charging system, which subsequently computes the battery’s energy
-          requirements to meet these travel needs. The patent states:
-
-
-          > *“converting the total travel miles to a second quantity of
-          electrical energy using a miles-to- electrical energy conversion
-          factor, wherein said miles-to-electrical energy conversion factor
-          varies based on road and traffic condition information”*
-
-
-          This indicates that Tesla’s calculation of traveled distance is
-          influenced by conditions that modify the baseline energy efficiency
-          model.
-        image:
-          type: ImageBlock
-          altText: Faux Fur Throw
-          elementId: ''
-          styles:
-            self:
-              borderRadius: medium
-              padding:
-                - pt-0
-                - pl-0
-                - pb-0
-                - pr-0
-        actions: []
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            textAlign: center
-            borderColor: border-neutralAlt
-            borderWidth: 2
-            borderRadius: x-small
-            flexDirection: row-reverse
-            justifyContent: center
-            borderStyle: none
-      - type: FeaturedItem
         title: A Thorough Analysis of Locally Stored Data
         subtitle: >-
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
@@ -283,6 +226,63 @@ sections:
           2.  The odometer *inflates* the distance traveled relative to actual
           road miles.
 
+      - type: FeaturedItem
+        title: >-
+          Tesla Inflates Odometer Readings Using Predictive Algorithms Readings
+          to AccelerateWarranty Expiration
+        subtitle: 'Patent US8054038B2: The Odometer is an Estimation, and Nothing More'
+        text: >
+          Tesla’s system for calculating the distance already traveled is
+          heavily reliant on predictive algorithms and sensor data, which do not
+          follow traditional odometer mechanisms. Tesla vehicles use a
+          combination of GPS data, wheel speed sensors, and historical usage
+          patterns to calculate mileage.
+
+
+          According to Patent US8054038B2, the vehicle’s charging controller
+          calculates the total travel distance based on the user’s inputted
+          travel plan. The system inputs location and travel details into the
+          charging system, which subsequently computes the battery’s energy
+          requirements to meet these travel needs. The patent states:
+
+
+          > *“converting the total travel miles to a second quantity of
+          electrical energy using a miles-to- electrical energy conversion
+          factor, wherein said miles-to-electrical energy conversion factor
+          varies based on road and traffic condition information”*
+
+
+          This indicates that Tesla’s calculation of traveled distance is
+          influenced by conditions that modify the baseline energy efficiency
+          model.
+        image:
+          type: ImageBlock
+          altText: Faux Fur Throw
+          elementId: ''
+          styles:
+            self:
+              borderRadius: medium
+              padding:
+                - pt-0
+                - pl-0
+                - pb-0
+                - pr-0
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-6
+              - pl-6
+              - pb-6
+              - pr-6
+            textAlign: center
+            borderColor: border-neutralAlt
+            borderWidth: 2
+            borderRadius: x-small
+            flexDirection: row-reverse
+            justifyContent: center
+            borderStyle: none
       - type: FeaturedItem
         title: >-
           Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
