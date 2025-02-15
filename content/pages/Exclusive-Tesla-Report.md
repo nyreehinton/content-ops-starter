@@ -1,6 +1,6 @@
 ---
 title: Exclusive Tesla Report
-slug: Exclusive Tesla Report
+slug: Exclusive-Tesla-Report
 sections:
   - title:
       text: Tesla Odometer Investigation
