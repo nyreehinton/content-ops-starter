@@ -264,15 +264,7 @@ sections:
           true travel distances.
       - type: FeaturedItem
         title: A Thorough Analysis of Locally Stored Data
-        subtitle: >-
-          The 2020 Tesla Model Y’s odometer readings present a stark
-          illustration of the problem. Purchased at
-
-          36,772 miles, the vehicle recorded 13,228 miles over approximately
-          seven months, reaching 50,000 miles
-
-          by warranty expiration. However, the analysis reveals significant
-          inconsistencies:
+        subtitle: ''
         image:
           type: ImageBlock
           altText: ''
