@@ -47,7 +47,7 @@ sections:
       altText: Yolk Steering
       backgroundSize: cover
       backgroundPosition: bottom
-      backgroundRepeat: repeat
+      backgroundRepeat: repeat-y
       opacity: 10
       url: /images/IMG_4464.jpeg
   - type: RecentPostsSection
