@@ -399,7 +399,7 @@ sections:
         type: FeaturedItem
       - title: Securities Industry Essentials® (SIE®)
         tagline: Financial Industry Regulatory Authority
-        subtitle: This is the item subtitle
+        subtitle: Exam Scheduled*
         text: ''
         image:
           url: /images/IMG_0138.png
