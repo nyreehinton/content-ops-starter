@@ -272,7 +272,6 @@ sections:
           styles:
             self:
               borderRadius: medium
-          url: /images/IMG_1206.jpeg
         actions: []
         colors: bg-light-fg-dark
         styles:
