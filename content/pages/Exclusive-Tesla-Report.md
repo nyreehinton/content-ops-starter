@@ -130,7 +130,8 @@ sections:
           to AccelerateWarranty Expiration
         subtitle: $ 88 – $ 176
         text: >
-          # Patent US8054038B2: The Odometer is an Estimation, and Nothing More
+          ###### Patent US8054038B2: The Odometer is an Estimation, and Nothing
+          More
 
 
           Tesla’s system for calculating the distance already traveled is
