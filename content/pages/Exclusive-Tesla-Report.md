@@ -130,6 +130,9 @@ sections:
           to AccelerateWarranty Expiration
         subtitle: $ 88 – $ 176
         text: >
+          # Patent US8054038B2: The Odometer is an Estimation, and Nothing More
+
+
           Tesla’s system for calculating the distance already traveled is
           heavily reliant on predictive algorithms and sensor data, which do not
           follow traditional odometer mechanisms. Tesla vehicles use a
