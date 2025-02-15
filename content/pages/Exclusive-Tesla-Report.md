@@ -8,6 +8,7 @@ sections:
       styles:
         self:
           textAlign: center
+          fontWeight: 400
       type: TitleBlock
     subtitle: Are the readings accurate?
     text: >
