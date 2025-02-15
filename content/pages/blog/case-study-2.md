@@ -1,7 +1,7 @@
 ---
 title: 'Apple Semiconductor Analysis: AMS SW Primer'
 slug: case-study-2
-date: '2022-02-16'
+date: '2020-02-16'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem,
   tincidunt ac leo efficitur, feugiat tempor odio. Curabitur at auctor sapien.
