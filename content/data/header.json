@@ -14,20 +14,43 @@
     "primaryLinks": [
         {
             "label": "Home",
-            "url": "Home",
+            "url": "/https://nyreehinton.com",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "About",
-            "altText": "About",
-            "url": "/about",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
+            "label": "Projects",
+            "altText": "Projects",
+            "links": [
+                {
+                    "label": "Lime Scooters",
+                    "url": "/https://nyreehinton.com/blog/case-study-1",
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "AWS SW: Apple Semiconductor Supplier",
+                    "url": "/https://nyreehinton.com/blog/case-study-2",
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "Thirdbridge  Group Limited",
+                    "url": "/",
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "type": "Link"
+                }
+            ],
+            "labelStyle": "secondary",
+            "type": "SubNav"
         },
         {
             "label": "Experience",
@@ -39,36 +62,13 @@
             "type": "Link"
         },
         {
-            "label": "Projects",
-            "altText": "Projects",
-            "links": [
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                },
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                },
-                {
-                    "label": "Dropdown item",
-                    "url": "/",
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "type": "Link"
-                }
-            ],
-            "labelStyle": "secondary",
-            "type": "SubNav"
+            "label": "Exclusive Tesla Report",
+            "altText": "",
+            "url": "/",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
         }
     ],
     "secondaryLinks": [
