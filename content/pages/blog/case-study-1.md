@@ -29,9 +29,15 @@ bottomSections:
       - title: About Company
         tagline: This is the tagline
         subtitle: >-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante
-          lorem, tincidunt ac leo efficitur, feugiat tempor odio. Curabitur at
-          auctor sapien.
+          This presentation was created as part of a multi-stage interview
+          process with Lime, a leading provider in the micromobility space. In
+          developing the battery-theft analysis, SQL queries, and standard
+          operating procedure, I applied a blend of data analytics, operational
+          strategy, and clear process documentation—skills essential for
+          optimizing rapidly growing fleets. The goal was to illustrate how
+          thoughtful, data-driven insights and strong communication practices
+          can help organizations like Lime innovate responsibly while scaling
+          operations across multiple regions.
         image:
           url: /images/telus-logo.svg
           altText: Company logo
