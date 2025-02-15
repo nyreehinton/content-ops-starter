@@ -202,7 +202,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Exclusive Tesla Report
+  metaTitle: ''
   metaDescription: ''
   socialImage: /images/main-hero.jpg
   type: Seo
