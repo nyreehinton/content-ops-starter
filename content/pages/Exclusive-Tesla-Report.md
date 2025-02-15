@@ -286,6 +286,73 @@ sections:
             borderRadius: none
             flexDirection: row-reverse
             justifyContent: flex-start
+        text: >+
+          For this report we analyzed a 2020 Tesla Model Y’s  and it’s
+          subsequent odometer readings to illustrate our thesis. Purchased at
+          36,772 miles, the vehicle recorded 13,228 miles over approximately
+          seven months, reaching 50,000 miles by warranty expiration. However,
+          we noticed significant inconsistencies: 
+
+
+          **Charging Data and Energy Efficiency**
+
+
+          *   From the charging data, we know that *5,582 kWh* of energy was
+          added to the vehicle over the specified time frame.
+
+
+          *   Tesla’s advertised energy efficiency is *265 Wh/mi* (EPA-rated).
+
+
+          With **5,582 kWh** of total energy added during this time period,
+          expected mileage using EPA efficiency (or total distance the vehicle
+          should have traveled) is **21,064 miles**.
+
+
+          However, as noted above, according to the odometer, the vehicle
+          travels only 13,228 miles. Meaning, there is a gap of 7,000 miles.
+
+
+          We try to solve this by adjusting for Real-World Avg Energy
+          Efficiency, which is displayed inside of the vehicle.
+
+
+          We repeat the above analysis using the provided charging data and the
+          real-world (displayed inside of the vehicle) energy efficiency of 370
+          Wh/mi. 
+
+
+          Using this efficiency, we can calculate the effective mileage and
+          battery performance over time:
+
+
+          **Energy Added and Estimated Mileage**
+
+
+          *   Total energy added: 5,582 kWh
+
+
+          *   Real-world energy efficiency: 370 Wh/mi
+
+
+          **Recorded Odometer Mileage**
+
+
+          *   Odometer reading during the same period: 13,228 miles.
+
+
+          The recorded mileage is approximately *12.4% lower* than the estimated
+          actual mileage based on energy  consumption. This discrepancy suggests
+          that either:
+
+
+          1.  The vehicle’s efficiency is *worse* than 370 Wh/mi in real-world
+          conditions.
+
+
+          2.  The odometer *inflates* the distance traveled relative to actual
+          road miles.
+
     actions: []
     elementId: ''
     variant: small-list
