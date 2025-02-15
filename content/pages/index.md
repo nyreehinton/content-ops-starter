@@ -258,15 +258,16 @@ sections:
           textAlign: center
       type: TitleBlock
     subtitle: An Deep-Dive Into Tesla Patents & Technology
-    text: >
-      I conducted an in-depth review of Tesla’s patent filings and underlying
-      technology to understand how they approach **vehicle range, odometer
-      systems, and battery management**. My analysis focused on comparing
-      Tesla’s predictive algorithms and real-world metrics, offering insights
-      into the broader implications for both consumers and the EV market. While
-      there were additional considerations that arose during my research, I
-      primarily concentrated on how Tesla’s core engineering decisions impact
-      everyday drivers.
+    text: >+
+      <div style="text-align: center">I conducted an in-depth review of Tesla’s
+      patent filings and underlying technology to understand how they approach
+      **vehicle range, odometer systems, and battery management**. My analysis
+      focused on comparing Tesla’s predictive algorithms and real-world metrics,
+      offering insights into the broader implications for both consumers and the
+      EV market. While there were additional considerations that arose during my
+      research, I primarily concentrated on how Tesla’s core engineering
+      decisions impact everyday drivers.</div>
+
     badge:
       label: Exclusive consumer Report
       color: text-primary
