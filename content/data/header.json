@@ -95,7 +95,7 @@
                     "pr-24"
                 ],
                 "borderWidth": 0,
-                "borderStyle": "solid",
+                "borderStyle": "dashed",
                 "margin": [
                     "mt-24",
                     "ml-24",
