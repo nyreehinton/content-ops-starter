@@ -219,7 +219,7 @@ sections:
     showThumbnail: true
     showDate: true
     showAuthor: true
-    variant: big-list
+    variant: small-list
     colors: bg-light-fg-dark
     styles:
       self:
