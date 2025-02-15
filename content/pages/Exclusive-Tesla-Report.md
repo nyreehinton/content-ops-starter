@@ -142,10 +142,7 @@ sections:
         type: FeaturedItem
       - title: Class Action Civil Complaint
         subtitle: Engineering
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: ''
         colors: bg-neutral-fg-dark
         styles:
           self:
