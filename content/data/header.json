@@ -30,15 +30,6 @@
             "type": "Link"
         },
         {
-            "label": "Exclusive Tesla Report",
-            "altText": "",
-            "url": "/",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
             "label": "Projects",
             "altText": "Projects",
             "links": [
@@ -69,6 +60,15 @@
             ],
             "labelStyle": "secondary",
             "type": "SubNav"
+        },
+        {
+            "label": "Exclusive Tesla Report",
+            "altText": "",
+            "url": "/",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
         }
     ],
     "secondaryLinks": [
