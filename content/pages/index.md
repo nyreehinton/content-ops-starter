@@ -298,6 +298,7 @@ sections:
             - pl-36
             - pb-36
             - pt-36
+            - pr-36
   - type: DividerSection
     title: Divider
     elementId: ''
