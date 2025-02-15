@@ -50,6 +50,27 @@ sections:
       backgroundRepeat: no-repeat
       opacity: 23
       url: /images/Tesla yoke 1.JPG
+  - type: RecentPostsSection
+    title:
+      type: TitleBlock
+      text: Recent posts
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+    recentCount: 3
+    showThumbnail: true
+    showExcerpt: true
+    showDate: true
+    showAuthor: true
+    actions: []
+    elementId: ''
+    variant: three-col-grid
+    colors: bg-light-fg-dark
+    hoverEffect: thin-underline
+    styles:
+      self:
+        justifyContent: center
   - title:
       text: Meet the team
       color: text-dark
