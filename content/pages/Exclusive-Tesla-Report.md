@@ -49,7 +49,7 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 23
-      url: /images/IMG_0291.jpeg
+      url: /images/IMG_0270.jpeg
   - type: RecentPostsSection
     title:
       type: TitleBlock
