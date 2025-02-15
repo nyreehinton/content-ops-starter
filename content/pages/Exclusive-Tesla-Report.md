@@ -235,10 +235,10 @@ sections:
             flexDirection: row
             textAlign: center
             padding:
-              - pt-9
-              - pl-9
-              - pb-9
-              - pr-9
+              - pt-0
+              - pl-0
+              - pb-0
+              - pr-0
         text: >
           Tesla explicitly links odometer functionality to energy consumption
           metrics, as suggested by the patent’s description of the
