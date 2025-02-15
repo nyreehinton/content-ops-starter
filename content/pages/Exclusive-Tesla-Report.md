@@ -284,7 +284,7 @@ sections:
               - pr-0
             textAlign: left
             borderRadius: none
-            flexDirection: row-reverse
+            flexDirection: row
             justifyContent: center
         text: >+
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
