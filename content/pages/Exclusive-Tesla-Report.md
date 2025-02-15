@@ -185,7 +185,7 @@ sections:
         title: >-
           Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
           60%
-        subtitle: $ 44.99 – $ 90
+        subtitle: Historical Data Utilization and Recursive Validation
         image:
           type: ImageBlock
           url: /images/img-placeholder.svg
