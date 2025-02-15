@@ -683,7 +683,7 @@ sections:
       text: Always Happy to Chat
       color: text-dark
       type: TitleBlock
-    subtitle: Section with a form subtitle
+    subtitle: "\U0001F4F2"
     text: >
       If you found something of interest or have a general question feel free to
       reach out!
