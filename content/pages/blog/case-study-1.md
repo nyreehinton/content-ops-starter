@@ -26,7 +26,7 @@ bottomSections:
           - pr-7
     type: DividerSection
   - items:
-      - title: About Company
+      - title: About This Report
         tagline: This is the tagline
         subtitle: >-
           This presentation was created as part of a multi-stage interview
