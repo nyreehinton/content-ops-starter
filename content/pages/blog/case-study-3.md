@@ -1,7 +1,7 @@
 ---
 title: 'Purple Innovation Inc: Insights from Former CEO '
 slug: case-study-3
-date: '2021-08-08'
+date: '2021-08-18'
 excerpt: ''
 featuredImage:
   url: /images/IMG_0132.jpeg
