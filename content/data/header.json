@@ -97,10 +97,10 @@
                 "borderWidth": 1,
                 "borderStyle": "double",
                 "margin": [
-                    "mt-64",
-                    "ml-64",
-                    "mb-64",
-                    "mr-64"
+                    "mt-52",
+                    "ml-52",
+                    "mb-52",
+                    "mr-52"
                 ],
                 "borderColor": "border-primary"
             }
