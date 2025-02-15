@@ -240,7 +240,7 @@ sections:
         self:
           textAlign: center
           fontWeight: 700
-    showExcerpt: true
+    showExcerpt: false
   - title: Divider
     colors: bg-light-fg-dark
     styles:
