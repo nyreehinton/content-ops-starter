@@ -188,7 +188,6 @@ sections:
         subtitle: Historical Data Utilization and Recursive Validation
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
           altText: Cotton Knit Throws
           elementId: ''
           styles:
