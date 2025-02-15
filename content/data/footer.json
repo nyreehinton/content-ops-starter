@@ -41,7 +41,7 @@
         "links": [
             {
                 "label": "LinkedIn",
-                "altText": "careers page",
+                "altText": "",
                 "url": "/careers",
                 "icon": "arrowRight",
                 "iconPosition": "right",
