@@ -325,7 +325,7 @@ sections:
     type: GenericSection
   - type: GenericSection
     title:
-      text: General
+      text: Education
       color: text-dark
       styles:
         self:
