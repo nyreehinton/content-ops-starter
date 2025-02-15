@@ -9,7 +9,7 @@
             "self": {
                 "borderRadius": "medium",
                 "margin": [
-                    "mb-8"
+                    "mb-10"
                 ]
             }
         },
