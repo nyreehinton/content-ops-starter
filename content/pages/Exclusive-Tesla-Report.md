@@ -200,7 +200,7 @@ sections:
           self:
             flexDirection: row
       - type: FeaturedItem
-        title: Chunky Cotton Knit Throw
+        title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
         subtitle: $117
         image:
           type: ImageBlock
