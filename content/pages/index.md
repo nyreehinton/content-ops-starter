@@ -550,7 +550,7 @@ sections:
         type: FeaturedItem
       - title: 'SQL, Python, Excel'
         tagline: ''
-        subtitle: 'Maria Walters, Company'
+        subtitle: 'Prefer '
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
