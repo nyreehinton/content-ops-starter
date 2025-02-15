@@ -128,7 +128,7 @@ sections:
         title: >-
           Tesla Inflates Odometer Readings Using Predictive Algorithms Readings
           to AccelerateWarranty Expiration
-        subtitle: $ 88 – $ 176
+        subtitle: 'Patent US8054038B2: The Odometer is an Estimation, and Nothing More'
         text: >
           Tesla’s system for calculating the distance already traveled is
           heavily reliant on predictive algorithms and sensor data, which do not
