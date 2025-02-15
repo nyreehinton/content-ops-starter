@@ -521,7 +521,7 @@ sections:
             self:
               borderRadius: medium
       - title: Databricks
-        tagline: Testimonial 2
+        tagline: Platorm
         subtitle: 'John Doe, Company'
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
