@@ -354,8 +354,12 @@ sections:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
         subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first Netlify Create site.
+        text: >
+          An industry-recognized credential demonstrating advanced insight into
+          how environmental, social, and governance factors shape investment
+          decisions. Widely adopted by finance professionals, this certificate
+          emphasizes responsible and sustainable approaches to portfolio
+          management.
         image:
           url: /images/IMG_0135.jpeg
           altText: Placeholder Image
