@@ -180,7 +180,7 @@ sections:
             borderRadius: x-small
             flexDirection: row-reverse
             justifyContent: center
-            borderStyle: solid
+            borderStyle: dashed
       - type: FeaturedItem
         title: >-
           Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
