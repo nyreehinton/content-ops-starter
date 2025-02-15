@@ -118,7 +118,7 @@ sections:
   - type: FeaturedPostsSection
     title:
       type: TitleBlock
-      text: Featured posts
+      text: 'Part 3: What Were The Results?'
       color: text-dark
       styles:
         self:
