@@ -193,43 +193,6 @@ sections:
             justifyContent: center
             borderStyle: none
       - type: FeaturedItem
-        title: >-
-          Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
-          60%
-        subtitle: Historical Data Utilization and Recursive Validation
-        image:
-          type: ImageBlock
-          altText: Cotton Knit Throws
-          elementId: ''
-          styles:
-            self:
-              borderRadius: medium
-        actions: []
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            flexDirection: col
-            textAlign: center
-            justifyContent: flex-start
-        text: >
-          Tesla’s systems incorporate memory-based algorithms to store and
-          utilize historical driving data. According to the patent, this
-          includes previous routes, average vehicle efficiency, and
-          driver-specific patterns
-
-
-          > *“Controller 301 is also coupled to memory 311, thereby providing
-          controller 301 with access to historical data, for example driving
-          routines, average vehicle mileage, specific driver practices, previous
-          driving routes”.*
-
-
-          This recursive validation mechanism suggests that the system may be
-          extrapolating miles based on past behaviors, potentially inflating
-          current mileage if those past conditions were overly optimistic or
-          inconsistent with current driving conditions or failed to account for
-          edge cases, such as abrupt route changes or sensor malfunctions.
-      - type: FeaturedItem
         title: A Thorough Analysis of Locally Stored Data
         subtitle: >-
           For this report we analyzed a 2020 Tesla Model Y’s  and it’s
@@ -320,6 +283,43 @@ sections:
           2.  The odometer *inflates* the distance traveled relative to actual
           road miles.
 
+      - type: FeaturedItem
+        title: >-
+          Real-World Data Confirms Tesla Overstates Energy Efficiency by Up to
+          60%
+        subtitle: Historical Data Utilization and Recursive Validation
+        image:
+          type: ImageBlock
+          altText: Cotton Knit Throws
+          elementId: ''
+          styles:
+            self:
+              borderRadius: medium
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            flexDirection: col
+            textAlign: center
+            justifyContent: flex-start
+        text: >
+          Tesla’s systems incorporate memory-based algorithms to store and
+          utilize historical driving data. According to the patent, this
+          includes previous routes, average vehicle efficiency, and
+          driver-specific patterns
+
+
+          > *“Controller 301 is also coupled to memory 311, thereby providing
+          controller 301 with access to historical data, for example driving
+          routines, average vehicle mileage, specific driver practices, previous
+          driving routes”.*
+
+
+          This recursive validation mechanism suggests that the system may be
+          extrapolating miles based on past behaviors, potentially inflating
+          current mileage if those past conditions were overly optimistic or
+          inconsistent with current driving conditions or failed to account for
+          edge cases, such as abrupt route changes or sensor malfunctions.
       - type: FeaturedItem
         title: Tesla Patents Prove Manipulated Mileage and Performance Metrics
         subtitle: Tesla Admits Dealers Manually Set Energy Efficiency of Vehicles
