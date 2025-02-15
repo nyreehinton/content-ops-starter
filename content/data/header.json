@@ -89,10 +89,10 @@
             "self": {
                 "borderRadius": "large",
                 "padding": [
-                    "pl-28",
-                    "pt-28",
-                    "pb-28",
-                    "pr-28"
+                    "pl-24",
+                    "pt-24",
+                    "pb-24",
+                    "pr-24"
                 ],
                 "borderWidth": 0,
                 "borderStyle": "dashed",
