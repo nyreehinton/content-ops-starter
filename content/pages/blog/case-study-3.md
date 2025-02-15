@@ -39,7 +39,7 @@ bottomSections:
           helped inform clients’ investment theses, operational strategies, and
           competitive positioning.
         image:
-          url: /images/telus-logo.svg
+          url: /images/IMG_0132.jpeg
           altText: Company logo
           styles:
             self:
