@@ -95,7 +95,7 @@
                     "pr-0"
                 ],
                 "borderWidth": 0,
-                "borderStyle": "none",
+                "borderStyle": "solid",
                 "margin": [
                     "mt-0",
                     "ml-0",
