@@ -130,7 +130,7 @@ sections:
       - content/pages/blog/what-is-a-design-system.md
       - content/pages/blog/this-is-a-blog-post-with-related-posts.md
     showThumbnail: true
-    showExcerpt: true
+    showExcerpt: false
     showDate: true
     showAuthor: true
     actions: []
