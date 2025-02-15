@@ -23,7 +23,7 @@ bottomSections:
     type: DividerSection
   - items:
       - title: About Third Bridge
-        tagline: This is the tagline
+        tagline: ''
         subtitle: >-
           About the AuthorThird Bridge is a global research firm that connects
           investors and business leaders with vital intelligence, leveraging a
