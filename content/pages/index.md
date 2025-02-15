@@ -529,7 +529,7 @@ sections:
           explicabo.
         image:
           url: /images/IMG_1164.png
-          altText: John Doe
+          altText: ''
           styles:
             self:
               borderRadius: full
