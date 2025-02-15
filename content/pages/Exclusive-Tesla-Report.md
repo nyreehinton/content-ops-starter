@@ -3,7 +3,7 @@ title: Exclusive Tesla Report
 slug: Exclusive Tesla Report
 sections:
   - title:
-      text: 'Tesla Odometer Investigations: Are the Readings Accurate?'
+      text: 'Tesla Odometer Investigation: Are the Readings Accurate?'
       color: text-dark
       styles:
         self:
