@@ -291,7 +291,7 @@ sections:
             - pr-36
     actions:
       - type: Button
-        label: Get started
+        label: Enter
         altText: ''
         url: /
         showIcon: false
