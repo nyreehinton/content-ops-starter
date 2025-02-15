@@ -5,7 +5,7 @@ date: '2021-11-18'
 excerpt: ''
 featuredImage:
   url: /images/IMG_0132.jpeg
-  altText: Case study 3
+  altText: ''
   styles:
     self:
       borderRadius: x-large
