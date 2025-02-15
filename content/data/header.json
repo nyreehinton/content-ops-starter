@@ -95,7 +95,7 @@
                     "pr-96"
                 ],
                 "borderWidth": 2,
-                "borderStyle": "solid",
+                "borderStyle": "none",
                 "margin": [
                     "mt-4",
                     "ml-7",
