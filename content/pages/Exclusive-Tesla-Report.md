@@ -49,7 +49,7 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 23
-      url: /images/Tesla yoke 1.JPG
+      url: /images/IMG_0291.jpeg
   - type: RecentPostsSection
     title:
       type: TitleBlock
