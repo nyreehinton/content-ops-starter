@@ -61,7 +61,7 @@ sections:
     actions: []
     elementId: ''
     variant: two-col-grid
-    colors: bg-dark-fg-light
+    colors: bg-neutral-fg-dark
     hoverEffect: thin-underline
     styles:
       self:
