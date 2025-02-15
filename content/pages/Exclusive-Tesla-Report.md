@@ -44,7 +44,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: Yolk Steering
       backgroundSize: auto
       backgroundPosition: center
       backgroundRepeat: no-repeat
