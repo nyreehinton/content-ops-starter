@@ -1,18 +1,20 @@
 ---
-title: A Day in the Life of Our Development Team
+title: Wider Market Impact Beyond
 slug: life-of-our-development-team
 date: '2025-01-15'
 excerpt: >-
-  Vel repellat dolores ut unde voluptatum ut optio voluptates est aliquid. Ut
-  earum corporis id Quis esse est galisum officiis accusantium enim et
-  asperiores dolore.
+  My personal experience, Tesla is one of the most influential electric vehicle
+  manufacturers worldwide. If its odometer system artificially inflates mileage,
+  it may prematurely void warranties, trigger excess-lease charges, and reduce
+  the resale value of owner's vehicles. Thus, theres a real financial stake for
+  everyday drivers.
 featuredImage:
-  url: /images/abstract-feature3.svg
+  url: /images/IMG_1188.webp
   altText: Thumbnail
   type: ImageBlock
   styles:
     self:
-      borderRadius: medium
+      borderRadius: xx-small
 seo:
   metaTitle: A Day in the Life of Our Development Team
   metaDescription: You can add the excerpt and main keywords of your blog post here.
@@ -20,7 +22,6 @@ seo:
   type: Seo
 colors: bg-light-fg-dark
 type: PostLayout
-author: content/data/person2.json
 styles:
   self:
     flexDirection: col

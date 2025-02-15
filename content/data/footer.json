@@ -1,10 +1,9 @@
 {
     "logo": {
-        "url": "/images/logo-white.svg",
         "altText": "Logo light",
         "type": "ImageBlock"
     },
-    "text": "Data Product Manager\n",
+    "text": "[Email](nyreehinton@gmail.com)\n",
     "primaryLinks": {
         "title": "Home",
         "links": [

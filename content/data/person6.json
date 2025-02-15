@@ -1,9 +1,9 @@
 {
     "type": "Person",
-    "name": "Harrison Tally",
+    "name": "Other EV Manufacturers",
     "role": "Co-founder & CEO",
     "image": {
-        "url": "/images/avatar6.svg",
+        "url": "/images/IMG_1197.jpeg",
         "altText": "Harrison Tally",
         "styles": {
             "self": {
@@ -33,5 +33,5 @@
             "justifyContent": "center"
         }
     },
-    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
+    "bio": ".\n"
 }
