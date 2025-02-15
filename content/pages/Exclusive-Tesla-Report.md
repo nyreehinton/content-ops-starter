@@ -11,11 +11,14 @@ sections:
       type: TitleBlock
     subtitle: Section subtitle
     text: >
-      There are many variations of passages of Lorem Ipsum available, but the
-      majority have suffered alteration in some form, by injected humour, or
-      randomised words which don't look even slightly believable. If you are
-      going to use a passage of Lorem Ipsum, you need to be sure there isn't
-      anything embarrassing hidden in the middle of text.
+      Over the past year, Ive conducted an in-depth review of Teslasodometer
+      systems, analyzing everything from patent filings and charging logs to
+      user testimonies on social media. My primary goal has been to determine
+      whether Tesla vehicles accurately measure mileage or if certain
+      algorithmic factors are inflating those readings. In this section, Ill
+      walk you through the data sources, investigative steps, and final
+      takeaways of my research”along with practical tips for anyone looking to
+      understand, validate, or challenge their own Teslas odometer readings.
     actions:
       - label: See open positions
         url: /
