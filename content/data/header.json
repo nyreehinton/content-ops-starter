@@ -87,7 +87,7 @@
         "elementId": "",
         "styles": {
             "self": {
-                "borderRadius": "x-small",
+                "borderRadius": "large",
                 "padding": [
                     "pl-0",
                     "pt-0",
