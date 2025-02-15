@@ -239,6 +239,11 @@ sections:
               - pl-0
               - pb-0
               - pr-0
+            margin:
+              - mt-9
+              - ml-9
+              - mb-9
+              - mr-9
         text: >
           Tesla explicitly links odometer functionality to energy consumption
           metrics, as suggested by the patent’s description of the
