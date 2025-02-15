@@ -160,7 +160,7 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Exclusive Tesla Report
-  metaDescription: This is the careers page built with Netlify Create.
+  metaDescription: An analysis of Tesla Patents and Technology
   socialImage: /images/main-hero.jpg
   type: Seo
 type: PageLayout
