@@ -352,7 +352,7 @@ sections:
     subtitle: Featured items section subtitle
     items:
       - title: Certificate in ESG Investing from CFA
-        tagline: Charted Financial Analysts Inc
+        tagline: Charted Financial Analyst Institute
         subtitle: This is the item subtitle
         text: |
           Follow the tutorial to build your first Netlify Create site.
