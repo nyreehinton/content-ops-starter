@@ -375,7 +375,7 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Certified SAFe® 6 Practitioner from
-        tagline: This is the tagline
+        tagline: 'Scaled Agile, Inc.'
         subtitle: This is the item subtitle
         text: |
           Follow the tutorial to build your first awesome Netlify Create site.
