@@ -480,10 +480,12 @@ sections:
       - title: Databricks
         tagline: ''
         subtitle: Platform
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          Using Databricks, I engineered robust ETL pipelines that integrate 9
+          ETF data sources representing $31B in assets. My workflows, built on
+          Delta Tables and optimized SQL views, have accelerated data processing
+          by up to 70%, ensuring rapid and reliable insights for both internal
+          and external teams.
         image:
           url: /images/IMG_1164.png
           altText: ''
