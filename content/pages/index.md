@@ -510,10 +510,24 @@ sections:
       - title: 'SQL, Python, Excel'
         tagline: ''
         subtitle: Preferred coding languages
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          My expertise in Python, combined with libraries such as Pandas and
+          PySpark, drives efficient data ingestion, transformation, and
+          automation. Through custom scripts and job scheduling, Iâ€™ve
+          successfully flagged over $170M in unreported seed transactions and
+          continuously maintained data accuracy across 867 processed files.
+
+
+          SQL
+
+
+          I utilize SQL to transform and analyze large datasets, optimizing
+          query performance through strategic partitioning, indexing, and the
+          use of Delta Tables. This rigorous approach underpins my ability to
+          generate actionable insights that directly enhance the strategic
+          decisions reflected in our Tableau dashboards.
+
+
         image:
           url: /images/person-placeholder-light.png
           altText: Maria Walters
