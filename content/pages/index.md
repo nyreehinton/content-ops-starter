@@ -449,10 +449,12 @@ sections:
       - title: Visualization
         tagline: Tableau
         subtitle: ''
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          I have designed and deployed 36 interactive dashboards that streamline
+          decision-making for global stakeholders. By leveraging hyper-extract
+          automation and optimized data sources, my Tableau implementations have
+          significantly reduced load times and improved usability across Capital
+          Groupâ€™s ETF product suite.
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
