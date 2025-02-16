@@ -511,21 +511,18 @@ sections:
         tagline: ''
         subtitle: Preferred coding languages
         text: >+
-          My expertise in Python, combined with libraries such as Pandas and
-          PySpark, drives efficient data ingestion, transformation, and
-          automation. Through custom scripts and job scheduling, Iâ€™ve
-          successfully flagged over $170M in unreported seed transactions and
-          continuously maintained data accuracy across 867 processed files.
+          I use SQL as the primary tool to structure and optimize large
+          datasets. My experience with advanced SQL techniquesâ€”such as window
+          functions, partitioning, and indexingâ€”helps me maintain data
+          integrity and improve query performance, which is essential for both
+          reporting and analytical projects.
 
 
-          SQL
-
-
-          I utilize SQL to transform and analyze large datasets, optimizing
-          query performance through strategic partitioning, indexing, and the
-          use of Delta Tables. This rigorous approach underpins my ability to
-          generate actionable insights that directly enhance the strategic
-          decisions reflected in our Tableau dashboards.
+          Python complements my SQL skills by allowing me to build flexible ETL
+          pipelines. Using libraries like Pandas and PySpark within Databricks,
+          I extend SQLâ€™s capabilities to handle diverse data transformation
+          tasks. This approach enables me to automate workflows and adjust to
+          various project complexities.
 
 
         image:
