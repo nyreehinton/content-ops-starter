@@ -449,10 +449,12 @@ sections:
       - title: Visualization
         tagline: Tableau
         subtitle: ''
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          I have designed and deployed 36 interactive dashboards that streamline
+          decision-making for global stakeholders. By leveraging hyper-extract
+          automation and optimized data sources, my Tableau implementations have
+          significantly reduced load times and improved usability across Capital
+          Groupâ€™s ETF product suite.
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
@@ -478,10 +480,12 @@ sections:
       - title: Databricks
         tagline: ''
         subtitle: Platform
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >
+          Using Databricks, I engineered robust ETL pipelines that integrate 9
+          ETF data sources representing $31B in assets. My workflows, built on
+          Delta Tables and optimized SQL views, have accelerated data processing
+          by up to 70%, ensuring rapid and reliable insights for both internal
+          and external teams.
         image:
           url: /images/IMG_1164.png
           altText: ''
@@ -506,10 +510,21 @@ sections:
       - title: 'SQL, Python, Excel'
         tagline: ''
         subtitle: Preferred coding languages
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          I use SQL as the primary tool to structure and optimize large
+          datasets. My experience with advanced SQL techniquesâ€”such as window
+          functions, partitioning, and indexingâ€”helps me maintain data
+          integrity and improve query performance, which is essential for both
+          reporting and analytical projects.
+
+
+          Python complements my SQL skills by allowing me to build flexible ETL
+          pipelines. Using libraries like Pandas and PySpark within Databricks,
+          I extend SQLâ€™s capabilities to handle diverse data transformation
+          tasks. This approach enables me to automate workflows and adjust to
+          various project complexities.
+
+
         image:
           url: /images/person-placeholder-light.png
           altText: Maria Walters
@@ -519,96 +534,6 @@ sections:
           type: ImageBlock
         actions: []
         colors: bg-neutralAlt-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
-        tagline: Testimonial 4
-        subtitle: 'Maria Walters, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-neutralAlt-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          "Design can be art. Design can be aesthetics. Design is so simple,
-          that's why it is so complicated."
-        tagline: Testimonial 5
-        subtitle: 'Jane Walters, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-neutralAlt-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          “Quote from some important person goes right here. I love using
-          Netlify Create.”
-        tagline: Testimonial 6
-        subtitle: 'Jane Doe, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/img-placeholder-dark.png
-          altText: Jane Doe
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-dark-fg-light
         styles:
           self:
             padding:
