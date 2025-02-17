@@ -475,7 +475,7 @@ sections:
           decision-making for global stakeholders. By leveraging hyper-extract
           automation and optimized data sources, my Tableau implementations have
           significantly reduced load times and improved usability across Capital
-          Groupâ€™s ETF product suite.
+          Group’s ETF product suite.
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
