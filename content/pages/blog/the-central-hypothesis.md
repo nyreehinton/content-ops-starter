@@ -22,7 +22,7 @@ seo:
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: row
+    flexDirection: col
     textAlign: center
 featuredImage:
   type: ImageBlock
