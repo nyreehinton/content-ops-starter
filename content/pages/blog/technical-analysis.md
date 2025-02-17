@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: Technical Analysis of A Tesla Model Y’s Odometer
-slug: what-is-a-design-system
+slug: technical-analysis
 date: '2023-02-14'
 excerpt: >-
   A Design System is a comprehensive set of standards, principles, and tools
