@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: Technical Analysis of Vehicle Data
+title: 'The Central Hypothesis: Tesla’s Odometer Is Not a Simple Distance Tracker'
 slug: telsa
 date: '2023-01-18'
 excerpt: >-
