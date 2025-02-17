@@ -140,7 +140,7 @@ sections:
       - content/pages/blog/fundamental-market-misdiagnoses.md
     showThumbnail: true
     showExcerpt: true
-    showDate: true
+    showDate: false
     showAuthor: true
     actions: []
     elementId: ''
