@@ -46,7 +46,7 @@ The central hypothesis of this investigation is that Tesla does not use traditio
 
 To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US8054038B2, and evaluate how Tesla’s odometer integrates predictive modeling, memory-based algorithms, and real-time sensor data to estimate mileage rather than strictly measure it.
 
-<div style="text-align: center">## Tesla’s Patent US8054038B2</div>
+<div style="text-align: center">## Patent US8054038B2:</div>
 
 <div style="text-align: center">### The Odometer is an Estimation, Not a True Distance Tracker</div>
 
