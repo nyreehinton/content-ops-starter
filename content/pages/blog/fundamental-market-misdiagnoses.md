@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: Everyone Got It Wrong
+title: Broader Market Implications
 slug: fundamental-market-misdiagnoses
 date: '2023-02-20'
 excerpt: >-
