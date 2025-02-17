@@ -91,7 +91,7 @@
                     "type": "Link",
                     "altText": "",
                     "url": "fundamental-market-misdiagnoses",
-                    "showIcon": true,
+                    "showIcon": false,
                     "icon": "twitter",
                     "iconPosition": "left",
                     "style": "secondary",
