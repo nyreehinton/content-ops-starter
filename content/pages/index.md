@@ -169,7 +169,7 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-  - subtitle: Past Experience
+  - subtitle: ''
     images:
       - url: /images/bloomberg-logo-vector.png.jpg
         altText: Wellster logo
