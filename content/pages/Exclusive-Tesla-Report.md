@@ -169,7 +169,7 @@ sections:
           - pb-20
           - pr-20
   - title:
-      text: Full Reports
+      text: Other Material
       color: text-dark
       styles:
         self:
