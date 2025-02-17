@@ -1,5 +1,5 @@
 ---
-title: ''
+title: Initial Concerns
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
 excerpt: >-
@@ -14,6 +14,7 @@ featuredImage:
   styles:
     self:
       borderRadius: medium
+  url: /images/IMG_1187.png
 bottomSections: []
 isFeatured: false
 isDraft: false
@@ -26,6 +27,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
+    textAlign: center
 type: PostLayout
 ---
 Ive built my career around transforming data into strategic advantage, with roles that span equity research, product management, and cross-functional collaboration. At Bloomberg L.P., I learned the fundamentals of equity analysis in the TMT space, managing a 70-company portfolio and ensuring timely, accurate insights for clients. From there, I moved to Reorg Research, where I leveraged machine learning to detect potential shareholder-activist and M\&A scenarios, championing a Pre-Deal-M\&A Database that tracked hundreds of companies under strategic review.
