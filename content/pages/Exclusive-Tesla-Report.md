@@ -80,6 +80,7 @@ sections:
       self:
         alignItems: center
         justifyContent: center
+        flexDirection: row
   - type: DividerSection
     title: Divider
     elementId: ''
