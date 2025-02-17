@@ -95,7 +95,8 @@
                     "icon": "twitter",
                     "iconPosition": "left",
                     "style": "secondary",
-                    "elementId": ""
+                    "elementId": "",
+                    "label": "Everyone Else Got It Wrong"
                 }
             ],
             "labelStyle": "secondary"
