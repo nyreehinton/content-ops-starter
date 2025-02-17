@@ -53,6 +53,17 @@ sections:
           - pl-16
           - pb-16
           - pr-16
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
   - type: FeaturedItemsSection
     title:
       text: What I’ve Achieved
@@ -169,14 +180,23 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-  - subtitle: Past Experience
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
+  - subtitle: ''
     images:
-      - altText: Empathy logo
-        type: ImageBlock
       - url: /images/bloomberg-logo-vector.png.jpg
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/CaptialGroup_Logo_Horizontal.jpg
+      - url: /images/Capital_Group_Companies.jpg
         altText: Vise logo
         type: ImageBlock
       - altText: Telus logo
@@ -212,6 +232,24 @@ sections:
       subtitle:
         textAlign: center
     type: ImageGallerySection
+    title:
+      type: TitleBlock
+      text: Past Experience
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
   - posts:
       - content/pages/blog/case-study-1.md
       - content/pages/blog/case-study-2.md
@@ -219,15 +257,15 @@ sections:
     showThumbnail: true
     showDate: true
     showAuthor: true
-    variant: small-list
+    variant: three-col-grid
     colors: bg-light-fg-dark
     styles:
       self:
         padding:
-          - pt-16
-          - pl-16
-          - pb-16
-          - pr-16
+          - pt-0
+          - pl-0
+          - pb-0
+          - pr-0
         justifyContent: center
       subtitle:
         textAlign: center
@@ -243,6 +281,17 @@ sections:
           textAlign: center
           fontWeight: 700
     showExcerpt: false
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
   - title:
       text: Tesla
       color: text-dark
@@ -298,40 +347,6 @@ sections:
           - pl-3
           - pb-3
           - pr-3
-  - type: GenericSection
-    title:
-      text: Education
-      color: text-dark
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: The Pennsylvania State University
-    text: ''
-    actions: []
-    elementId: null
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: col-reverse
-        justifyContent: center
-        alignItems: center
-      subtitle:
-        textAlign: center
-    backgroundImage:
-      type: BackgroundImage
-      altText: altText of the image
-      backgroundSize: auto
-      backgroundPosition: center
-      backgroundRepeat: no-repeat
-      opacity: 100
-    media:
-      type: ImageBlock
-      altText: Image alt text placeholder
-      elementId: ''
-      styles:
-        self:
-          borderRadius: medium
   - title:
       text: Certifications
       color: text-primary
@@ -339,7 +354,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: ''
+    subtitle: The Pennsylvania State University
     items:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
@@ -430,6 +445,24 @@ sections:
       subtitle:
         textAlign: center
     type: FeaturedItemsSection
+    badge:
+      type: Badge
+      label: Education
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
   - type: CarouselSection
     title: null
     subtitle: Tech Stack
@@ -542,26 +575,42 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-3
+          - pb-3
+          - pr-3
   - title:
       text: '"Open to Work"'
       color: text-dark
       type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
     text: "<div style=\"text-align: left\">As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback.</div>\n\n<div style=\"text-align: left\">I’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!</div>\n\n"
     actions:
       - label: LinkedIn
         url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
-        iconPosition: right
+        iconPosition: left
         style: secondary
         type: Button
-      - label: Contact
-        url: /
+      - type: Link
+        label: Send email
+        altText: Play
+        url: /nyreehinton@gmail.com
         showIcon: true
-        icon: arrowRight
+        icon: mail
         iconPosition: right
-        style: primary
-        type: Link
+        style: secondary
+        elementId: ''
     media:
       url: /images/HeadshotAI.gif
       altText: Fun feature preview
@@ -585,63 +634,6 @@ sections:
           - pb-7
           - pr-7
     type: DividerSection
-  - title:
-      text: Always Happy to Chat
-      color: text-dark
-      type: TitleBlock
-    subtitle: "\U0001F4F2"
-    text: >
-      If you found something of interest or have a general question feel free to
-      reach out!
-    media:
-      fields:
-        - name: name
-          label: Name
-          hideLabel: true
-          placeholder: Your name
-          isRequired: true
-          width: full
-          type: TextFormControl
-        - name: email
-          label: Email
-          hideLabel: true
-          placeholder: Your email
-          isRequired: true
-          width: full
-          type: EmailFormControl
-        - name: message
-          label: Message
-          hideLabel: true
-          placeholder: Your message
-          width: full
-          type: TextareaFormControl
-      elementId: contact-form
-      styles:
-        self:
-          padding:
-            - pt-6
-            - pb-6
-            - pl-6
-            - pr-6
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: FormBlock
-      submitButton:
-        type: SubmitButtonFormControl
-        label: Submit
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: null
-    badge:
-      label: General Inquiries
-      color: text-primary
-      type: Badge
-    colors: bg-light-fg-dark
-    type: GenericSection
 seo:
   metaTitle: Home - Nyree Hinton
   metaDescription: >-
