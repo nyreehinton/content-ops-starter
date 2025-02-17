@@ -17,10 +17,10 @@ featuredImage:
     self:
       borderRadius: medium
       padding:
-        - pt-10
-        - pl-10
-        - pb-10
-        - pr-10
+        - pt-11
+        - pl-11
+        - pb-11
+        - pr-11
   url: /images/IMG_1242.png
 bottomSections: []
 isFeatured: false
