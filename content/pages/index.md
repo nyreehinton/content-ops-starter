@@ -435,6 +435,10 @@ sections:
       subtitle:
         textAlign: center
     type: FeaturedItemsSection
+    badge:
+      type: Badge
+      label: Education
+      color: text-primary
   - type: CarouselSection
     title: null
     subtitle: Tech Stack
