@@ -566,10 +566,6 @@ sections:
       url: /images/HeadshotAI.gif
       altText: Fun feature preview
       type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
     colors: bg-light-fg-dark
     styles:
       self:
