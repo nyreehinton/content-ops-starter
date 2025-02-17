@@ -2,6 +2,42 @@
 type: PageLayout
 title: Experience
 sections:
+  - type: GenericSection
+    title:
+      type: TitleBlock
+      text: Business Consulting
+      color: text-dark
+    subtitle: Be in good company
+    text: >
+      A service that provides advice and guidance to startups and small
+      businesses.
+    actions:
+      - type: Button
+        label: Get started
+        url: /
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+      - type: Link
+        label: See Tutorials
+        url: /
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+    media:
+      type: ImageBlock
+      url: /images/hero3.svg
+      altText: Dope design preview
+    badge:
+      type: Badge
+      label: This is a badge
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row-reverse
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
@@ -89,42 +125,6 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-  - type: GenericSection
-    title:
-      type: TitleBlock
-      text: Business Consulting
-      color: text-dark
-    subtitle: Be in good company
-    text: >
-      A service that provides advice and guidance to startups and small
-      businesses.
-    actions:
-      - type: Button
-        label: Get started
-        url: /
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-      - type: Link
-        label: See Tutorials
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-    media:
-      type: ImageBlock
-      url: /images/hero3.svg
-      altText: Dope design preview
-    badge:
-      type: Badge
-      label: This is a badge
-      color: text-primary
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row-reverse
 slug: Experience
 isDraft: false
 seo:
