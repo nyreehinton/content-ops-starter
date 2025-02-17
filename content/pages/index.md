@@ -573,7 +573,7 @@ sections:
     colors: bg-light-fg-dark
     styles:
       self:
-        alignItems: center
+        alignItems: flex-start
         flexDirection: col
     type: GenericSection
   - title: Divider
