@@ -1,8 +1,6 @@
 ---
 type: PostLayout
-title: >-
-  Tesla Inflates Odometer Readings Using Predictive Algorithms Readings to
-  AccelerateWarranty Expiration
+title: Technical Analysis of Vehicle Data
 slug: telsa
 date: '2023-01-18'
 excerpt: >-
