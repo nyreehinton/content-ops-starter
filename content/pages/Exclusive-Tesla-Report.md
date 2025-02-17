@@ -76,6 +76,9 @@ sections:
       styles:
         self:
           borderRadius: medium
+    styles:
+      self:
+        alignItems: center
   - type: DividerSection
     title: Divider
     elementId: ''
