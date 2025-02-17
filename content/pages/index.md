@@ -605,7 +605,7 @@ sections:
       - type: Link
         label: Send email
         altText: Play
-        url: /nyreehinton@gmail.com
+        url: /Nyreehinton@gmail.com
         showIcon: true
         icon: mail
         iconPosition: right
