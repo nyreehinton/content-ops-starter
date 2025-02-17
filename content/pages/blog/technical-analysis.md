@@ -34,6 +34,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
+    textAlign: center
 ---
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
