@@ -25,7 +25,7 @@ seo:
   metaDescription: You can add the excerpt and main keywords of your blog post here.
   socialImage: /images/abstract-feature3.svg
   type: Seo
-colors: bg-neutral-fg-dark
+colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
@@ -36,7 +36,9 @@ With the theoretical foundation established regarding Tesla’s software-driven 
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
-### 1. Data Sources and Collection Process
+![](/images/IMG_1248.jpeg)
+
+<div style="text-align: center">### 1. Data Sources and Collection Process</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
@@ -44,21 +46,31 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 Tesla vehicles store various logs locally, including:
 
-• Odometer Readings: The official mileage displayed inside the vehicle.
+*   Odometer Readings: The official mileage displayed inside the vehicle.
 
-• Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+<!---->
 
-• Range Estimations: Projected range remaining based on battery percentage.
+*   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+
+<!---->
+
+*   Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-• Charge Start/End Time (UTC).
+*   Charge Start/End Time (UTC).
 
-• Charge Duration (s).
+<!---->
 
-• Energy Added (kWh).
+*   Charge Duration (s).
 
-• Odometer Readings (not consistently available).
+<!---->
+
+*   Energy Added (kWh).
+
+<!---->
+
+*   Odometer Readings (not consistently available).
 
 #### B. Service Center Odometer Logs
 
@@ -72,7 +84,7 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 
 By manually tracking actual road miles driven using Google Maps or GPS logs, we can compare them to Tesla’s odometer readings.
 
-### 2. Equations and Methodology for Technical Analysis
+<div style="text-align: center">### 2. Equations and Methodology for Technical Analysis</div>
 
 #### A. Energy Efficiency Calculations
 
@@ -82,21 +94,23 @@ Tesla’s energy efficiency is a key variable in determining mileage:
 
 Where:
 
-• Energy Added (kWh) is obtained from charging logs.
+*   Energy Added (kWh) is obtained from charging logs.
 
-• Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
+<!---->
+
+*   Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
 
 Example Calculation:
 
-• If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
+*   If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
 
 > \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
 
-• If real-world efficiency is 370 Wh/mile, then: 
+*   If real-world efficiency is 370 Wh/mile, then: 
 
 > \frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
 
-• However, actual odometer readings showed only 13,228 miles recorded.
+*   However, actual odometer readings showed only 13,228 miles recorded.
 
 This discrepancy suggests that Tesla’s mileage calculations are not purely based on physical travel distance but are instead influenced by software-based estimations.
 
@@ -130,13 +144,15 @@ The efficiency calculation uses: 
 
 Where:
 
-• Aggressive Mode Multiplier (<1.0) inflates mileage, increasing recorded miles per kWh.
+*   Aggressive Mode Multiplier (<1.0) inflates mileage, increasing recorded miles per kWh.
 
-• Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
+<!---->
+
+*   Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
 
 Example:
 
-• If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
+*   If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
 
 > 4 \times 0.95 = 3.8 \text{ miles/kWh}
 
@@ -144,7 +160,7 @@ This means more miles will be logged than actual road distance traveled.
 
 If a Tesla continuously logs mileage at a reduced efficiency due to driving style penalties, the total odometer reading will increase faster than expected.
 
-### 3. Key Findings from the Data Analysis
+<div style="text-align: center">### 3. Key Findings from the Data Analysis</div>
 
 After conducting the technical analysis, the following major findings emerged:
 
@@ -168,23 +184,31 @@ After conducting the technical analysis, the following major findings emerged:
 
 #### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
-• Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
+*   Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
 
-• This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
+<!---->
+
+*   This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
 
 #### D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
 
-• Comparing Tesla’s service visit odometer records against charging logs revealed inconsistencies.
+*   Comparing Tesla’s service visit odometer records against charging logs revealed inconsistencies.
 
-• Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
+<!---->
 
-### 4. Implications of the Findings
+*   Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
 
-• Warranty Expiration Acceleration: Inflated mileage readings lead to premature warranty expirations, forcing owners to pay out-of-pocket for repairs.
+<div style="text-align: center">### 4. Implications of the Findings</div>
 
-• Overstated Lease Mileage: Tesla owners with leases may face higher mileage overage fees if the odometer records more miles than actually driven.
+*   Warranty Expiration Acceleration: Inflated mileage readings lead to premature warranty expirations, forcing owners to pay out-of-pocket for repairs.
 
-• Obscured Battery Degradation: By adjusting efficiency factors, Tesla can mask real battery degradation, making it seem like the vehicle is more efficient than it truly is. 
+<!---->
+
+*   Overstated Lease Mileage: Tesla owners with leases may face higher mileage overage fees if the odometer records more miles than actually driven.
+
+<!---->
+
+*   Obscured Battery Degradation: By adjusting efficiency factors, Tesla can mask real battery degradation, making it seem like the vehicle is more efficient than it truly is. 
 
 Tesla owners should be aware that:
 
