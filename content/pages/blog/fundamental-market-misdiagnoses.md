@@ -4,9 +4,13 @@ title: Everyone Else Got It Wrong
 slug: fundamental-market-misdiagnoses
 date: '2023-02-20'
 excerpt: >-
-  Sit ratione eligendi et quis distinctio et maiores accusantium aut accusamus
-  facere sit repellat quidem qui alias nostrum et earum enim. Cum quis sint eos
-  dolor quas ad odit ipsum qui quia eius.
+  For years, the focus of scrutiny on Tesla has been misdirected.
+  Investigations, lawsuits, and consumer complaints have zeroed in on range
+  discrepancies, cold weather performance issues, efficiency inconsistencies,
+  and misleading odometer readings. From the Schwartz v. Tesla lawsuit on
+  exaggerated range claims to the Reuters exposé on Tesla’s secret team
+  suppressing range complaints, everyone has been looking at individual symptoms
+  instead of the root cause.
 featuredImage:
   url: /images/IMG_1246.webp
   altText: Thumbnail
