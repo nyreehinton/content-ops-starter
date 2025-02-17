@@ -53,7 +53,7 @@ To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US
 ![](/images/IMG_1247.png)
 Traditional vehicles measure distance by counting wheel revolutions. This method is highly accurate since the circumference of the wheel is known, and the vehicle moves a predictable distance per rotation. However, Tesla departs from this standard method in favor of a software-driven mileage calculation system.
 
-#### Key Excerpts from Tesla’s Patent US8054038B2
+<div style="text-align: center">#### Key Excerpts from Tesla’s Patent US8054038B2</div>
 
 Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:
 
@@ -61,7 +61,7 @@ Tesla’s patent explicitly describes how odometer readings are generated throug
 
 This means that the odometer is not a direct measurement of distance traveled, but rather a calculation based on the estimated energy required to drive a certain number of miles. 
 
-#### What This Means in Practical Terms
+<div style="text-align: center">#### What This Means in Practical Terms</div>
 
 Tesla’s odometer is influenced by:
 
@@ -91,7 +91,7 @@ Another key discovery in the patent reveals that Tesla’s factory or dealership
 
 This confirms that Tesla has the ability to remotely alter how many miles are recorded per unit of energy consumed. If a Tesla reduces a vehicle’s efficiency setting (in Wh/mi), then more miles will be logged for the same amount of energy used.
 
-####  Tesla has the ability to:
+<div style="text-align: center">####  Tesla has the ability to:</div>
 
 *   Modify the efficiency conversion factor remotely via software updates.
 
@@ -105,7 +105,7 @@ This means that a Tesla can record additional miles simply by recalibrating its 
 
 Tesla applies multipliers based on driving behavior to modify energy efficiency calculations. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption.
 
-#### Tesla categorizes driving behaviors into different modes:
+<div style="text-align: center">#### Tesla categorizes driving behaviors into different modes:</div>
 
 *   Efficient Mode: The system rewards conservative driving by decreasing mileage recorded for energy consumed.
 
