@@ -348,13 +348,13 @@ sections:
           - pb-3
           - pr-3
   - title:
-      text: Certifications
+      text: The Pennsylvania State University
       color: text-primary
       styles:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: The Pennsylvania State University
+    subtitle: Certifications
     items:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
@@ -605,7 +605,7 @@ sections:
       - type: Link
         label: Send email
         altText: Play
-        url: /nyreehinton@gmail.com
+        url: 'mailto:nyreehinton@gmail.com'
         showIcon: true
         icon: mail
         iconPosition: right
