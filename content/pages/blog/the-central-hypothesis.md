@@ -46,7 +46,7 @@ The central hypothesis of this investigation is that Tesla does not use traditio
 
 To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US8054038B2, and evaluate how Tesla’s odometer integrates predictive modeling, memory-based algorithms, and real-time sensor data to estimate mileage rather than strictly measure it.
 
-## 1. Tesla’s Patent US8054038B2: The Odometer is an Estimation, Not a True Distance Tracker
+<div style="text-align: center">## Tesla’s Patent US8054038B2: The Odometer is an Estimation, Not a True Distance Tracker</div>
 
 ![](/images/IMG_1247.png)
 Traditional vehicles measure distance by counting wheel revolutions. This method is highly accurate since the circumference of the wheel is known, and the vehicle moves a predictable distance per rotation. However, Tesla departs from this standard method in favor of a software-driven mileage calculation system.
@@ -55,7 +55,7 @@ Traditional vehicles measure distance by counting wheel revolutions. This method
 
 Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:
 
-> \*“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.” \*
+> *“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.” *
 
 This means that the odometer is not a direct measurement of distance traveled, but rather a calculation based on the estimated energy required to drive a certain number of miles. 
 
@@ -71,7 +71,7 @@ Tesla’s odometer is influenced by:
 
 This means that two Tesla vehicles could drive the same physical distance, yet record different mileage on their odometers depending on driving behavior and environmental conditions.
 
-## 2. Memory-Based Algorithms: How Tesla Uses Historical Data to Influence Mileage Calculations
+<div style="text-align: center">## Memory-Based Algorithms Influence Mileage Calculations</div>
 
 Tesla’s patent further elaborates on how memory-based data storage and machine learning play a role in mileage calculations.
 
@@ -81,7 +81,7 @@ This means that Tesla vehicles “learn” from previous driving behavior and us
 
 This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver’s habits—a mile is a mile. In Tesla’s case, the odometer is a software-driven variable that adjusts dynamically.
 
-## 3. Tesla Dealers Have the Ability to Set and Adjust the Vehicle’s Energy Efficiency
+<div style="text-align: center">## Tesla Dealers Have the Ability to Set and Adjust the Vehicle’s Energy Efficiency</div>
 
 Another key discovery in the patent reveals that Tesla’s factory or dealership can manually adjust a vehicle’s energy efficiency rating, which directly impacts how many miles are recorded on the odometer. 
 
@@ -99,7 +99,7 @@ This confirms that Tesla has the ability to remotely alter how many miles are re
 
 This means that a Tesla can record additional miles simply by recalibrating its energy efficiency metrics, even if the driver has not physically traveled that distance.
 
-## 4. Driving Behavior Multipliers: The “Aggressive Driving Penalty”
+<div style="text-align: center">## Driving Behavior Multipliers: The “Aggressive Driving Penalty”</div>
 
 Tesla applies multipliers based on driving behavior to modify energy efficiency calculations. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption.
 
@@ -113,7 +113,7 @@ Tesla applies multipliers based on driving behavior to modify energy efficiency 
 
 For example, if a Tesla driver consistently accelerates rapidly and brakes hard, the vehicle may apply a multiplier of 0.95 to the miles-per-kWh ratio. This means that for every 95 miles actually driven, the odometer could record 100 miles. Over time, this artificially inflates the mileage accumulation, pushing the vehicle closer to warranty expiration faster than expected. 
 
-## Conclusion: Tesla’s Odometer is a Software-Generated Variable, Not a True Distance Tracker
+<div style="text-align: center">## Conclusion</div>
 
 Tesla’s patent literature and real-world findings suggest that the odometer is a calculated estimate using predictive algorithms, memory-based learning, and energy efficiency multipliers, fundamentally altering how mileage is recorded. Unlike traditional vehicles where one mile equals one mile, Tesla’s system:
 
