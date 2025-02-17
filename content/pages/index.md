@@ -609,6 +609,15 @@ sections:
         iconPosition: right
         style: primary
         type: Link
+      - type: Link
+        label: Send email
+        altText: Play
+        url: /nyreehinton@gmail.com
+        showIcon: true
+        icon: mail
+        iconPosition: right
+        style: secondary
+        elementId: ''
     media:
       url: /images/HeadshotAI.gif
       altText: Fun feature preview
