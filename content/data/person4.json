@@ -1,7 +1,7 @@
 {
     "type": "Person",
     "name": "Reddit",
-    "role": "User Reports",
+    "role": "",
     "image": {
         "url": "/images/IMG_1190.png",
         "altText": "Nina Mercado",
@@ -33,5 +33,5 @@
             "justifyContent": "center"
         }
     },
-    "bio": ".\n"
+    "bio": ""
 }
