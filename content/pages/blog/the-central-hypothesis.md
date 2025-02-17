@@ -23,7 +23,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
-    textAlign: left
+    textAlign: center
 featuredImage:
   type: ImageBlock
   url: /images/IMG_1243.webp
