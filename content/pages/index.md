@@ -354,7 +354,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: The Pennsylvania State University
+    subtitle: Certifications
     items:
       - title: Certificate in ESG Investing from CFA
         tagline: Charted Financial Analyst Institute
