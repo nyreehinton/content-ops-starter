@@ -602,13 +602,6 @@ sections:
         iconPosition: right
         style: secondary
         type: Button
-      - label: Contact
-        url: nyreehinton@gmail.com
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Link
       - type: Link
         label: Send email
         altText: Play
