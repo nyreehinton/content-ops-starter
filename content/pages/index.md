@@ -439,6 +439,9 @@ sections:
       type: Badge
       label: Education
       color: text-primary
+      styles:
+        self:
+          textAlign: center
   - type: CarouselSection
     title: null
     subtitle: Tech Stack
