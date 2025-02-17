@@ -68,10 +68,6 @@ sections:
       erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
       vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
     actions: []
-    badge:
-      type: Badge
-      label: Contact Us
-      color: text-primary
     colors: bg-light-fg-dark
     media:
       type: ImageBlock
