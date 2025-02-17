@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: 'The Central Hypothesis: Tesla’s Odometer Is Not a Simple Distance Tracker'
-slug: telsa
+slug: the-central-hypothesis
 date: '2023-01-18'
 excerpt: >-
   Patent US8054038B2: The Odometer is an Estimation, and Nothing MoreTesla’s
