@@ -33,7 +33,7 @@ seo:
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: row-reverse
+    flexDirection: row
     textAlign: left
 ---
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
