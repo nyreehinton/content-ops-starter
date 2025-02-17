@@ -50,7 +50,7 @@ sections:
           - pr-3
   - title:
       text: Methodology & Data Sources
-      color: text-primary
+      color: text-light
       styles:
         self:
           textAlign: center
