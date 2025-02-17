@@ -48,28 +48,6 @@ sections:
           - pl-3
           - pb-3
           - pr-3
-  - type: GenericSection
-    title:
-      type: TitleBlock
-      text: Why Investigate Anyway?
-      color: text-primary
-    subtitle: ''
-    text: ''
-    actions: []
-    colors: bg-light-fg-dark
-    media:
-      type: ImageBlock
-      url: /images/IMG_4464.jpeg
-      altText: Image alt text placeholder
-      elementId: ''
-      styles:
-        self:
-          borderRadius: medium
-    styles:
-      self:
-        alignItems: center
-        justifyContent: center
-        flexDirection: row
   - type: DividerSection
     title: Divider
     elementId: ''
