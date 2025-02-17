@@ -271,7 +271,7 @@ sections:
     colors: bg-light-fg-dark
     styles:
       self:
-        flexDirection: row
+        flexDirection: row-reverse
         justifyContent: center
       subtitle:
         textAlign: center
