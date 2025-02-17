@@ -2,7 +2,7 @@
 type: PostLayout
 title: Technical Analysis of A Tesla Model Y’s Odometer
 slug: technical-analysis
-date: '2023-02-14'
+date: '2025-02-14'
 excerpt: >-
   With the theoretical foundation established regarding Tesla’s software-driven
   odometer calculations, the next step is to implement a rigorous technical
@@ -25,12 +25,12 @@ seo:
   metaDescription: You can add the excerpt and main keywords of your blog post here.
   socialImage: /images/abstract-feature3.svg
   type: Seo
-colors: bg-light-fg-dark
+colors: bg-neutral-fg-dark
 styles:
   self:
     flexDirection: col
 ---
-## Applying Technical Analysis to a Tesla Model Y: Data Sources, Equations, and Findings
+<div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step is to implement a rigorous technical analysis using real-world data sources from a subject vehicle: a 2020 Tesla Model Y.
 
