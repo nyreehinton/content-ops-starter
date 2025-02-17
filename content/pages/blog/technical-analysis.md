@@ -14,6 +14,7 @@ featuredImage:
   styles:
     self:
       borderRadius: medium
+  url: /images/IMG_1242.png
 bottomSections: []
 isFeatured: false
 isDraft: false
