@@ -75,7 +75,7 @@ sections:
     colors: bg-light-fg-dark
     media:
       type: ImageBlock
-      url: /images/hero2.svg
+      url: /images/IMG_4464.jpeg
       altText: Image alt text placeholder
       elementId: ''
       styles:
