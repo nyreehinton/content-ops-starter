@@ -129,7 +129,7 @@ sections:
   - type: FeaturedPostsSection
     title:
       type: TitleBlock
-      text: ''
+      text: 3. The Report
       color: text-dark
       styles:
         self:
