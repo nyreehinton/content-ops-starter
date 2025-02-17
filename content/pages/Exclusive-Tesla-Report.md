@@ -61,7 +61,7 @@ sections:
       type: TitleBlock
       text: 1. Why Investigate Anyway?
       color: text-dark
-    subtitle: Section with a form subtitle
+    subtitle: ''
     text: |-
       Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
       Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
