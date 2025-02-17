@@ -171,8 +171,6 @@ sections:
         textAlign: center
   - subtitle: Past Experience
     images:
-      - altText: Empathy logo
-        type: ImageBlock
       - url: /images/bloomberg-logo-vector.png.jpg
         altText: Wellster logo
         type: ImageBlock
