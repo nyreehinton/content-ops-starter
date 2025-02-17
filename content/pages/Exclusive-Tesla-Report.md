@@ -92,7 +92,7 @@ sections:
           - pr-3
   - title:
       text: 'Part 2: Methodology & Data Sources'
-      color: text-dark
+      color: text-primary
       styles:
         self:
           textAlign: center
