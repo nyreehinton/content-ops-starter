@@ -46,9 +46,9 @@ The central hypothesis of this investigation is that Tesla does not use traditio
 
 To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US8054038B2, and evaluate how Tesla’s odometer integrates predictive modeling, memory-based algorithms, and real-time sensor data to estimate mileage rather than strictly measure it.
 
-<div style="text-align: center">## Tesla’s Patent US8054038B2  </div>
+<div style="text-align: center">## Tesla’s Patent US8054038B2</div>
 
-### The Odometer is an Estimation, Not a True Distance Tracker
+<div style="text-align: center">### The Odometer is an Estimation, Not a True Distance Tracker</div>
 
 ![](/images/IMG_1247.png)
 Traditional vehicles measure distance by counting wheel revolutions. This method is highly accurate since the circumference of the wheel is known, and the vehicle moves a predictable distance per rotation. However, Tesla departs from this standard method in favor of a software-driven mileage calculation system.
