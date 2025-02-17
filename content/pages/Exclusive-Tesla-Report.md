@@ -10,7 +10,7 @@ sections:
           textAlign: center
           fontWeight: 400
       type: TitleBlock
-    subtitle: Are the readings accurate?
+    subtitle: ''
     text: >
       Over the past two years year, I’ve conducted an in-depth review of Tesla’s
       odometer systems, analyzing everything from patent filings and charging
@@ -170,81 +170,6 @@ sections:
           - pl-20
           - pb-20
           - pr-20
-  - title:
-      text: Other Material
-      color: text-dark
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: Confidently Accompanying Information
-    items:
-      - title: Odometer Report Pt.1
-        subtitle: '2023'
-        text: ''
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            textAlign: left
-            borderRadius: x-large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: Odometer Report Pt.2
-        subtitle: '2024'
-        text: ''
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            textAlign: left
-            borderRadius: x-large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: Class Action Civil Complaint
-        subtitle: '2025'
-        text: ''
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: row
-        type: FeaturedItem
-    actions:
-      - label: Request Copies
-        url: /nyreehinton@gmail.com
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        type: Button
-    variant: toggle-list
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pb-40
-          - pt-16
-          - pl-3
-          - pr-3
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
 seo:
   metaTitle: ''
   metaDescription: ''
