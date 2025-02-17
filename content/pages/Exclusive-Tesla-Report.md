@@ -25,7 +25,7 @@ sections:
         flexDirection: row-reverse
         justifyContent: center
       text:
-        textAlign: center
+        textAlign: left
       subtitle:
         textAlign: center
     type: GenericSection
