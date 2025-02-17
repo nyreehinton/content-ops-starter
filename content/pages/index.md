@@ -575,7 +575,7 @@ sections:
       self:
         alignItems: flex-end
         flexDirection: row-reverse
-        justifyContent: flex-end
+        justifyContent: flex-start
     type: GenericSection
   - title: Divider
     colors: bg-light-fg-dark
