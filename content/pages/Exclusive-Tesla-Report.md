@@ -78,7 +78,7 @@ sections:
           borderRadius: medium
     styles:
       self:
-        alignItems: flex-end
+        alignItems: center
         justifyContent: center
   - type: DividerSection
     title: Divider
