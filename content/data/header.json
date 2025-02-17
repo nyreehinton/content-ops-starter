@@ -50,13 +50,56 @@
             "type": "Link"
         },
         {
+            "type": "SubNav",
             "label": "Exclusive Tesla Report",
-            "altText": "",
-            "url": "/Exclusive-Tesla-Report",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
+            "altText": "Dropdown",
+            "links": [
+                {
+                    "type": "Link",
+                    "label": "Background",
+                    "altText": "",
+                    "url": "Exclusive-Tesla-Report",
+                    "showIcon": false,
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "elementId": ""
+                },
+                {
+                    "type": "Link",
+                    "label": "The Central Hypothesis",
+                    "altText": "",
+                    "url": "the-central-hypothesis",
+                    "showIcon": false,
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "elementId": ""
+                },
+                {
+                    "type": "Link",
+                    "label": "Technical Analysis",
+                    "altText": "",
+                    "url": "technical-analysis",
+                    "showIcon": false,
+                    "icon": "arrowRight",
+                    "iconPosition": "right",
+                    "style": "secondary",
+                    "elementId": ""
+                },
+                {
+                    "type": "Link",
+                    "altText": "",
+                    "url": "fundamental-market-misdiagnoses",
+                    "showIcon": true,
+                    "icon": "twitter",
+                    "iconPosition": "left",
+                    "style": "secondary",
+                    "elementId": "",
+                    "label": "Everyone Else Got It Wrong"
+                }
+            ],
+            "labelStyle": "secondary"
         }
     ],
     "secondaryLinks": [
@@ -81,31 +124,6 @@
     "variant": "logo-left-primary-nav-centered",
     "colors": "bg-neutral-fg-dark",
     "type": "Header",
-    "logo": {
-        "type": "ImageBlock",
-        "altText": "",
-        "elementId": "",
-        "styles": {
-            "self": {
-                "borderRadius": "small",
-                "padding": [
-                    "pl-4",
-                    "pt-4",
-                    "pb-4",
-                    "pr-4"
-                ],
-                "borderWidth": 0,
-                "borderStyle": "none",
-                "margin": [
-                    "mt-4",
-                    "ml-4",
-                    "mb-4",
-                    "mr-4"
-                ],
-                "borderColor": "border-light"
-            }
-        }
-    },
     "styles": {
         "self": {
             "padding": [
