@@ -30,7 +30,7 @@ styles:
   self:
     flexDirection: col
 ---
-## Data Sources, Equations, and Findings
+<div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step is to implement a rigorous technical analysis using real-world data sources from a subject vehicle: a 2020 Tesla Model Y.
 
