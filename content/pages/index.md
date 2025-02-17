@@ -531,21 +531,19 @@ sections:
       - title: 'SQL, Python, Excel'
         tagline: ''
         subtitle: Preferred coding languages
-        text: >+
+        text: >
           I use SQL as the primary tool to structure and optimize large
-          datasets. My experience with advanced SQL techniquesâ€”such as window
-          functions, partitioning, and indexingâ€”helps me maintain data
-          integrity and improve query performance, which is essential for both
-          reporting and analytical projects.
+          datasets. My experience with advanced SQL techniques, such as window
+          functions, partitioning, and indexing helps me maintain data integrity
+          and improve query performance, which is essential for both reporting
+          and analytical projects.
 
 
           Python complements my SQL skills by allowing me to build flexible ETL
           pipelines. Using libraries like Pandas and PySpark within Databricks,
-          I extend SQLâ€™s capabilities to handle diverse data transformation
+          I extend SQL’s capabilities to handle diverse data transformation
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
-
-
         image:
           url: /images/person-placeholder-light.png
           altText: Maria Walters
