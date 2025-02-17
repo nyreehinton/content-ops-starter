@@ -603,7 +603,7 @@ sections:
         style: secondary
         type: Button
       - label: Contact
-        url: /
+        url: nyreehinton@gmail.com
         showIcon: true
         icon: arrowRight
         iconPosition: right
