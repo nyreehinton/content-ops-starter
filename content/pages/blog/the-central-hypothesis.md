@@ -2,7 +2,7 @@
 type: PostLayout
 title: 'The Central Hypothesis: Tesla’s Odometer Is Not a Simple Distance Tracker'
 slug: the-central-hypothesis
-date: '2023-01-18'
+date: '2023-02-18'
 excerpt: >-
   The central hypothesis of this investigation is that Tesla does not use
   traditional methods of odometer tracking (such as counting wheel rotations)
