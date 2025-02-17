@@ -4,10 +4,12 @@ title: Technical Analysis of A Tesla Model Y’s Odometer
 slug: technical-analysis
 date: '2023-02-14'
 excerpt: >-
-  A Design System is a comprehensive set of standards, principles, and tools
-  that guide the design and development of a product or service. It provides a
-  unified framework to ensure consistency, efficiency, and scalability across a
-  product's user interface (UI) and user experience (UX).
+  With the theoretical foundation established regarding Tesla’s software-driven
+  odometer calculations, the next step is to implement a rigorous technical
+  analysis using real-world data sources from a subject vehicle: a 2020 Tesla
+  Model Y. This section details the methods, data sources, equations, and key
+  findings used to analyze whether the odometer readings accurately reflect
+  physical distance traveled.
 featuredImage:
   altText: Thumbnail
   type: ImageBlock
@@ -28,9 +30,7 @@ styles:
   self:
     flexDirection: col
 ---
-# Technical Analysis of Tesla Odometer : Data Sources, Equations, and Findings
-
-## Introduction: Applying Technical Analysis to a Tesla Model Y
+## Applying Technical Analysis to a Tesla Model Y: Data Sources, Equations, and Findings
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step is to implement a rigorous technical analysis using real-world data sources from a subject vehicle: a 2020 Tesla Model Y.
 
