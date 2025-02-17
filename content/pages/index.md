@@ -293,7 +293,7 @@ sections:
       - type: Button
         label: Enter
         altText: ''
-        url: /
+        url: Exclusive-Tesla-Report
         showIcon: false
         icon: arrowRight
         iconPosition: right
