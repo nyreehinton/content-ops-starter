@@ -3,7 +3,7 @@ type: PostLayout
 title: >-
   Tesla Inflates Odometer Readings Using Predictive Algorithms Readings to
   AccelerateWarranty Expiration
-slug: how-to-write-a-blog-post-that-will-get-you-more-traffic
+slug: Tesla
 date: '2023-01-18'
 excerpt: >-
   Patent US8054038B2: The Odometer is an Estimation, and Nothing MoreTesla’s
