@@ -93,7 +93,7 @@ sections:
           - pb-3
           - pr-3
   - title:
-      text: 'Part 2: Methodology & Data Sources'
+      text: Methodology & Data Sources
       color: text-primary
       styles:
         self:
