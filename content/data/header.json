@@ -100,15 +100,6 @@
                 }
             ],
             "labelStyle": "secondary"
-        },
-        {
-            "label": "Exclusive Tesla Report",
-            "altText": "",
-            "url": "/Exclusive-Tesla-Report",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
         }
     ],
     "secondaryLinks": [
