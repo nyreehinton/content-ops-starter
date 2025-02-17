@@ -46,21 +46,31 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 Tesla vehicles store various logs locally, including:
 
-• Odometer Readings: The official mileage displayed inside the vehicle.
+*   Odometer Readings: The official mileage displayed inside the vehicle.
 
-• Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+<!---->
 
-• Range Estimations: Projected range remaining based on battery percentage.
+*   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+
+<!---->
+
+*   Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-• Charge Start/End Time (UTC).
+*   Charge Start/End Time (UTC).
 
-• Charge Duration (s).
+<!---->
 
-• Energy Added (kWh).
+*   Charge Duration (s).
 
-• Odometer Readings (not consistently available).
+<!---->
+
+*   Energy Added (kWh).
+
+<!---->
+
+*   Odometer Readings (not consistently available).
 
 #### B. Service Center Odometer Logs
 
@@ -84,21 +94,23 @@ Tesla’s energy efficiency is a key variable in determining mileage:
 
 Where:
 
-• Energy Added (kWh) is obtained from charging logs.
+*   Energy Added (kWh) is obtained from charging logs.
 
-• Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
+<!---->
+
+*   Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
 
 Example Calculation:
 
-• If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
+*   If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
 
 > \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
 
-• If real-world efficiency is 370 Wh/mile, then: 
+*   If real-world efficiency is 370 Wh/mile, then: 
 
 > \frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
 
-• However, actual odometer readings showed only 13,228 miles recorded.
+*   However, actual odometer readings showed only 13,228 miles recorded.
 
 This discrepancy suggests that Tesla’s mileage calculations are not purely based on physical travel distance but are instead influenced by software-based estimations.
 
@@ -132,13 +144,15 @@ The efficiency calculation uses: 
 
 Where:
 
-• Aggressive Mode Multiplier (<1.0) inflates mileage, increasing recorded miles per kWh.
+*   Aggressive Mode Multiplier (<1.0) inflates mileage, increasing recorded miles per kWh.
 
-• Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
+<!---->
+
+*   Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
 
 Example:
 
-• If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
+*   If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
 
 > 4 \times 0.95 = 3.8 \text{ miles/kWh}
 
@@ -172,7 +186,9 @@ After conducting the technical analysis, the following major findings emerged:
 
 *   Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
 
-• This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
+<!---->
+
+*   This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
 
 #### D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
 
