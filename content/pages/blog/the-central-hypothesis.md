@@ -33,10 +33,6 @@ styles:
     flexDirection: col
     textAlign: left
 ---
-# Tesla’s Odometer is Not a Simple Distance Tracker: A Deep Dive into Patents and Predictive Algorithms
-
-## Introduction: The Central Hypothesis
-
 Tesla’s vehicles are often lauded for their cutting-edge technology, but beneath the surface lies a fundamental question: Does the odometer truly measure physical distance traveled, or is it an estimated value manipulated by software?
 
 The central hypothesis of this investigation is that Tesla does not use traditional methods of odometer tracking (such as counting wheel rotations) but instead calculates miles driven based on a predictive energy consumption model. This means that mileage displayed on the odometer may not reflect the actual road distance covered, but rather a software-generated estimation that can be adjusted dynamically based on energy efficiency calculations, driving style, and Tesla’s internal algorithms. 
@@ -51,7 +47,7 @@ Traditional vehicles measure distance by counting wheel revolutions. This method
 
 Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:
 
-> *“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.” *
+> \*“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.” \*
 
 This means that the odometer is not a direct measurement of distance traveled, but rather a calculation based on the estimated energy required to drive a certain number of miles. 
 
