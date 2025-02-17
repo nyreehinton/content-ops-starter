@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: Broader Market Implications
-slug: broader-market-implications
+slug: fundamental-market-misdiagnoses
 date: '2023-02-20'
 excerpt: >-
   Sit ratione eligendi et quis distinctio et maiores accusantium aut accusamus
