@@ -28,9 +28,7 @@ styles:
   self:
     flexDirection: col
 ---
-# Technical Analysis of Tesla Odometer : Data Sources, Equations, and Findings
-
-## Introduction: Applying Technical Analysis to a Tesla Model Y
+## Applying Technical Analysis to a Tesla Model Y: Data Sources, Equations, and Findings
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step is to implement a rigorous technical analysis using real-world data sources from a subject vehicle: a 2020 Tesla Model Y.
 
