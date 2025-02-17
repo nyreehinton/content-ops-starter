@@ -599,7 +599,7 @@ sections:
       - label: LinkedIn
         url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
-        iconPosition: right
+        iconPosition: left
         style: secondary
         type: Button
       - type: Link
