@@ -75,19 +75,9 @@ By manually tracking actual road miles driven using Google Maps or GPS logs, we 
 
 #### A. Energy Efficiency Calculations
 
- 
-
 Tesla’s energy efficiency is a key variable in determining mileage:
 
- 
-
- 
-
-\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}
-
- 
-
- 
+> \text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}
 
 Where:
 
@@ -95,55 +85,29 @@ Where:
 
 • Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
 
- 
-
 Example Calculation:
 
-• If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then:
+• If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
 
- 
+> \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
 
-\frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
+• If real-world efficiency is 370 Wh/mile, then: 
 
- 
-
-• If real-world efficiency is 370 Wh/mile, then:
-
- 
-
-\frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
-
- 
+> \frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
 
 • However, actual odometer readings showed only 13,228 miles recorded.
 
- 
-
 This discrepancy suggests that Tesla’s mileage calculations are not purely based on physical travel distance but are instead influenced by software-based estimations.
 
- 
-
-B. Verifying Tesla’s Energy-to-Miles Conversion Against Odometer Data
-
- 
+#### B. Verifying Tesla’s Energy-to-Miles Conversion Against Odometer Data
 
 Tesla’s mileage calculations assume an energy efficiency conversion factor stored in memory, which can be adjusted remotely.
 
 The odometer reading is computed using:
 
- 
+> \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
 
- 
-
-\text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}}
-
- 
-
- 
-
-Since Tesla’s stored efficiency factor can be modified via software updates, it means Tesla can adjust how many miles get recorded per unit of energy used—a key method of inflating odometer readings.
-
- 
+Since Tesla’s stored efficiency factor can be modified via software updates, it means Tesla can adjust how many miles get recorded per unit of energy used—a key method of inflating odometer readings. 
 
 Verification Process:
 
@@ -153,29 +117,15 @@ Verification Process:
 
 3\. Analyze efficiency discrepancies between Tesla’s displayed values and real-world results.
 
- 
-
 If the actual road miles consistently fall below Tesla’s odometer readings, it suggests Tesla’s efficiency factor is being manipulated to inflate recorded miles.
 
- 
-
-C. Driving Behavior Multipliers and Their Effect on Mileage
-
- 
+#### C. Driving Behavior Multipliers and Their Effect on Mileage
 
 Tesla’s system applies a multiplier to energy efficiency based on driving style.
 
-The efficiency calculation uses:
+The efficiency calculation uses: 
 
- 
-
- 
-
-\text{Adjusted Efficiency} = \text{Base Efficiency} \times \text{Driving Mode Multiplier}
-
- 
-
- 
+> \text{Adjusted Efficiency} = \text{Base Efficiency} \times \text{Driving Mode Multiplier} 
 
 Where:
 
@@ -183,35 +133,21 @@ Where:
 
 • Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
 
- 
-
 Example:
 
 • If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
 
- 
-
-4 \times 0.95 = 3.8 \text{ miles/kWh}
-
- 
+> 4 \times 0.95 = 3.8 \text{ miles/kWh}
 
 This means more miles will be logged than actual road distance traveled.
 
- 
-
 If a Tesla continuously logs mileage at a reduced efficiency due to driving style penalties, the total odometer reading will increase faster than expected.
-
- 
 
 ### 3. Key Findings from the Data Analysis
 
- 
-
 After conducting the technical analysis, the following major findings emerged:
 
- 
-
-A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
+#### A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
 
 • The Tesla Model Y recorded 13,228 miles over 7 months.
 
@@ -221,9 +157,7 @@ A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
 
 • Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
 
- 
-
-B. GPS-Tracked Mileage vs. Tesla Odometer Mileage Showed Discrepancies
+#### B. GPS-Tracked Mileage vs. Tesla Odometer Mileage Showed Discrepancies
 
 • Multiple trips were tracked via Google Maps and GPS logs.
 
@@ -231,23 +165,17 @@ B. GPS-Tracked Mileage vs. Tesla Odometer Mileage Showed Discrepancies
 
 • Some trips recorded 10-20% more miles than the actual physical route.
 
- 
-
-C. Tesla’s Efficiency Factor Appears to Change Over Time
+#### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
 • Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
 
 • This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
 
- 
-
-D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
+#### D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
 
 • Comparing Tesla’s service visit odometer records against charging logs revealed inconsistencies.
 
 • Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
-
- 
 
 ### 4. Implications of the Findings
 
@@ -255,17 +183,7 @@ D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
 
 • Overstated Lease Mileage: Tesla owners with leases may face higher mileage overage fees if the odometer records more miles than actually driven.
 
-• Obscured Battery Degradation: By adjusting efficiency factors, Tesla can mask real battery degradation, making it seem like the vehicle is more efficient than it truly is.
-
- 
-
-Conclusion: Tesla’s Odometer is Influenced by Software, Not Just Physical Distance
-
- 
-
-This technical analysis confirms that Tesla’s odometer is not a simple measurement of miles traveled, but rather a dynamic calculation influenced by energy efficiency factors, driving style multipliers, and software-based assumptions.
-
- 
+• Obscured Battery Degradation: By adjusting efficiency factors, Tesla can mask real battery degradation, making it seem like the vehicle is more efficient than it truly is. 
 
 Tesla owners should be aware that:
 
@@ -276,7 +194,3 @@ Tesla owners should be aware that:
 3.  Driving style penalties can artificially inflate odometer readings.
 
 Stay tuned for further updates and a deeper look into Tesla’s software manipulation strategies.
-
- 
-
- 
