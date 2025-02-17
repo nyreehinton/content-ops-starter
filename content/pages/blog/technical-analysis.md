@@ -2,7 +2,7 @@
 type: PostLayout
 title: Technical Analysis of A Tesla Model Y’s Odometer
 slug: technical-analysis
-date: '2023-02-14'
+date: '2025-02-14'
 excerpt: >-
   With the theoretical foundation established regarding Tesla’s software-driven
   odometer calculations, the next step is to implement a rigorous technical
