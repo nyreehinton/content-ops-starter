@@ -134,7 +134,7 @@ sections:
     title:
       type: TitleBlock
       text: 3. The Report
-      color: text-dark
+      color: text-primary
       styles:
         self:
           textAlign: center
