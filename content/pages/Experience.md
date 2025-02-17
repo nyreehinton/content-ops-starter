@@ -128,7 +128,7 @@ sections:
   - type: FeaturedPostsSection
     title:
       type: TitleBlock
-      text: Featured posts
+      text: Bio
       color: text-dark
       styles:
         self:
