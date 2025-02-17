@@ -59,7 +59,7 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Generic Section With A Form
+      text: 1. Why Investigate Anyway?
       color: text-dark
     subtitle: Section with a form subtitle
     text: |-
