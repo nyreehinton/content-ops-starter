@@ -29,7 +29,7 @@ seo:
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: col
+    flexDirection: row
     textAlign: center
 author: content/data/person5.json
 ---
