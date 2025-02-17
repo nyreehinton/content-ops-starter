@@ -574,7 +574,7 @@ sections:
     styles:
       self:
         alignItems: center
-        flexDirection: row
+        flexDirection: col
     type: GenericSection
   - title: Divider
     colors: bg-light-fg-dark
