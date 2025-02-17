@@ -173,7 +173,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Subtitle goes here
+    subtitle: Confidently Accompanying Information
     items:
       - title: Odometer Report Pt.1
         subtitle: '2023'
