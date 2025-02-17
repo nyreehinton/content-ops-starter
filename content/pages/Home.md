@@ -259,7 +259,7 @@ sections:
       offering insights into the broader implications for both consumers and the
       EV market. While there were additional considerations that arose during my
       research, I primarily concentrated on how Tesla’s core engineering
-      decisions impact everyday drivers.</div>
+      decisions impact everyday drivers.![](/images/IMG_0129.png)</div>
 
     badge:
       label: Exclusive consumer Report
