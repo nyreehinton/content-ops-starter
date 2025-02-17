@@ -12,14 +12,17 @@ sections:
       type: TitleBlock
     subtitle: Are the readings accurate?
     text: >
-      Over the past year, I’ve conducted an in-depth review of Tesla’s odometer
-      systems, analyzing everything from patent filings and charging logs to
-      user testimonies on social media. My primary goal has been to determine
-      whether Tesla vehicles accurately measure mileage or if certain
-      algorithmic factors are inflating those readings. In this section, Ill
-      walk you through the data sources, investigative steps, and final
-      takeaways of my research”along with practical tips for anyone looking to
-      understand, validate, or challenge their own Teslas odometer readings.
+      Over the past two years year, I’ve conducted an in-depth review of Tesla’s
+      odometer systems, analyzing everything from patent filings and charging
+      logs to user testimonies on social media. My primary goal has been to
+      determine whether Tesla vehicles ***accurately*** measure mileage, or
+      distanced traveled. 
+
+
+
+      Through this abstract, I’ll walk you through the data sources,
+      investigative steps, and final takeaways of my research, along with my
+      thoughts on implications for the broader electric vehicle industry.
     actions: []
     colors: bg-dark-fg-light
     styles:
