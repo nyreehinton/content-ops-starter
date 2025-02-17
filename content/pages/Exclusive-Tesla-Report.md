@@ -56,27 +56,6 @@ sections:
           - pl-3
           - pb-3
           - pr-3
-  - type: RecentPostsSection
-    title:
-      type: TitleBlock
-      text: 'Part 1: Why investigate anyway?'
-      color: text-dark
-      styles:
-        self:
-          textAlign: center
-    recentCount: 2
-    showThumbnail: true
-    showExcerpt: true
-    showDate: false
-    showAuthor: true
-    actions: []
-    elementId: ''
-    variant: two-col-grid
-    colors: bg-light-fg-dark
-    hoverEffect: thin-underline
-    styles:
-      self:
-        justifyContent: center
   - type: GenericSection
     title:
       type: TitleBlock
