@@ -12,7 +12,7 @@ excerpt: >-
   can be adjusted dynamically based on energy efficiency calculations, driving
   style, and Tesla’s internal algorithms.
 bottomSections: []
-isFeatured: true
+isFeatured: false
 isDraft: false
 seo:
   metaTitle: How to Write a Blog Post That Will Get You More Traffic
