@@ -134,7 +134,10 @@ sections:
       styles:
         self:
           textAlign: center
-    posts: []
+    posts:
+      - content/pages/blog/the-central-hypothesis.md
+      - content/pages/blog/technical-analysis.md
+      - content/pages/blog/fundamental-market-misdiagnoses.md
     showThumbnail: true
     showExcerpt: true
     showDate: true
