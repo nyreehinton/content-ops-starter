@@ -80,7 +80,7 @@
                     "type": "Link",
                     "label": "Technical Analysis",
                     "altText": "",
-                    "url": "technical-analysis",
+                    "url": "/blog/technical-analysis",
                     "showIcon": false,
                     "icon": "arrowRight",
                     "iconPosition": "right",
