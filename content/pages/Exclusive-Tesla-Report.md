@@ -10,7 +10,7 @@ sections:
           textAlign: center
           fontWeight: 400
       type: TitleBlock
-    subtitle: Are the readings accurate?
+    subtitle: ''
     text: >
       Over the past two years year, I’ve conducted an in-depth review of Tesla’s
       odometer systems, analyzing everything from patent filings and charging
