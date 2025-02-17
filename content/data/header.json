@@ -89,7 +89,7 @@
                 },
                 {
                     "type": "Link",
-                    "altText": "Twitter",
+                    "altText": "",
                     "url": "/",
                     "showIcon": true,
                     "icon": "twitter",
