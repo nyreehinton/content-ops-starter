@@ -273,7 +273,7 @@ sections:
       self:
         flexDirection: col
         justifyContent: center
-        alignItems: flex-start
+        alignItems: center
       subtitle:
         textAlign: center
     type: GenericSection
