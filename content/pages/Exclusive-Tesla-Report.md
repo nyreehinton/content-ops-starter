@@ -12,14 +12,17 @@ sections:
       type: TitleBlock
     subtitle: Are the readings accurate?
     text: >
-      Over the past year, I’ve conducted an in-depth review of Tesla’s odometer
-      systems, analyzing everything from patent filings and charging logs to
-      user testimonies on social media. My primary goal has been to determine
-      whether Tesla vehicles accurately measure mileage or if certain
-      algorithmic factors are inflating those readings. In this section, Ill
-      walk you through the data sources, investigative steps, and final
-      takeaways of my research”along with practical tips for anyone looking to
-      understand, validate, or challenge their own Teslas odometer readings.
+      Over the past two years year, I’ve conducted an in-depth review of Tesla’s
+      odometer systems, analyzing everything from patent filings and charging
+      logs to user testimonies on social media. My primary goal has been to
+      determine whether Tesla vehicles ***accurately*** measure mileage, or
+      distanced traveled. 
+
+
+
+      Through this abstract, I’ll walk you through the data sources,
+      investigative steps, and final takeaways of my research, along with my
+      thoughts on implications for the broader electric vehicle industry.
     actions: []
     colors: bg-dark-fg-light
     styles:
@@ -56,27 +59,26 @@ sections:
           - pl-3
           - pb-3
           - pr-3
-  - type: RecentPostsSection
+  - type: GenericSection
     title:
       type: TitleBlock
-      text: 'Part 1: Why investigate anyway?'
+      text: 1. Why Investigate Anyway?
       color: text-dark
+    subtitle: ''
+    text: "Like many Tesla buyers, I was drawn in by the promise of cutting-edge technology, efficiency, and long-term savings. I spent $60,000 on a used 2020 Tesla Model Y, expecting a reliable, high-performance vehicle. Instead, I found myself bringing it in for service at least once every month for the first 6-7 months. On top of that, I spent over $5,000 on tires, watching them wear out at an alarming rate. My preconceived notions about electric vehicles—lower maintenance, long-lasting components, and superior efficiency—were quickly turned upside down.\_\n\nThen I noticed something even stranger: the miles on my odometer were accumulating far too quickly. Given how often the car was either in service or unusable, I suspected something was off. But what really cemented my suspicion was my own driving history—I had previously owned a Chevy Camaro, a Mercedes, and another Camaro, and none of those vehicles had ever felt this *disconnected* from reality in terms of mileage, efficiency, or required maintenance. Something about the Tesla just felt… **off**.\n\nOnce Tesla refused to honor repairs after my warranty expired, I revisited the odometer issue and conducted a simple Google search, which led me to Reddit threads full of Tesla owners experiencing the same discrepancies. That moment sent me down the rabbit hole. **Given my extensive background in capital markets, fundamental equity research, data analytics, and shareholder governance, it was only natural to leverage those skills—not from the usual lens of institutional investing, but from one of consumer protection.** What began as a frustrating ownership experience quickly turned into a large-scale investigation into Tesla’s practices, uncovering something far more deceptive.\n"
+    actions: []
+    colors: bg-light-fg-dark
+    media:
+      type: ImageBlock
+      url: /images/IMG_4464.jpeg
+      altText: Image alt text placeholder
+      elementId: ''
       styles:
         self:
-          textAlign: center
-    recentCount: 2
-    showThumbnail: true
-    showExcerpt: true
-    showDate: false
-    showAuthor: true
-    actions: []
-    elementId: ''
-    variant: two-col-grid
-    colors: bg-light-fg-dark
-    hoverEffect: thin-underline
+          borderRadius: medium
     styles:
       self:
-        justifyContent: center
+        alignItems: center
   - type: DividerSection
     title: Divider
     elementId: ''

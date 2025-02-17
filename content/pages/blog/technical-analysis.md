@@ -16,6 +16,11 @@ featuredImage:
   styles:
     self:
       borderRadius: medium
+      padding:
+        - pt-0
+        - pl-0
+        - pb-0
+        - pr-0
   url: /images/IMG_1242.png
 bottomSections: []
 isFeatured: false
@@ -28,7 +33,8 @@ seo:
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: col
+    flexDirection: row
+    textAlign: left
 ---
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
