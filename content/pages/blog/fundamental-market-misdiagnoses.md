@@ -28,17 +28,11 @@ styles:
     flexDirection: col
 author: content/data/person5.json
 ---
-Everyone Got It Wrong: The True Issue is Tesla’s Batteries
-
- 
+# The True Issue is Tesla’s Batteries
 
 For years, the focus of scrutiny on Tesla has been misdirected. Investigations, lawsuits, and consumer complaints have zeroed in on range discrepancies, cold weather performance issues, efficiency inconsistencies, and misleading odometer readings. From the Schwartz v. Tesla lawsuit on exaggerated range claims to the Reuters exposé on Tesla’s secret team suppressing range complaints, everyone has been looking at individual symptoms instead of the root cause.
 
- 
-
-But the real issue, as my analysis proves, is far more fundamental—Tesla’s batteries are degrading at an accelerated rate, much faster than the company acknowledges, and everything else (range, odometer manipulation, and energy efficiency distortions) stems from this fact.
-
- 
+But the real issue, as my analysis proves, is far more fundamental—Tesla’s batteries are degrading at an accelerated rate, much faster than the company acknowledges, and everything else (range, odometer manipulation, and energy efficiency distortions) stems from this fact. 
 
 1\. Odometer Manipulation Proves the Batteries Are Deficient
 
