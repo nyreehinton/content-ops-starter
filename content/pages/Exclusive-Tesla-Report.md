@@ -104,7 +104,7 @@ sections:
       - content/data/person4.json
       - content/data/person5.json
       - content/data/person6.json
-    variant: three-col-grid
+    variant: four-col-grid
     colors: bg-light-fg-dark
     styles:
       self:
