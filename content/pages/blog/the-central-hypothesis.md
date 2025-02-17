@@ -24,6 +24,14 @@ styles:
   self:
     flexDirection: col
     textAlign: left
+featuredImage:
+  type: ImageBlock
+  url: /images/hero2.svg
+  altText: Image alt text placeholder
+  elementId: ''
+  styles:
+    self:
+      borderRadius: medium
 ---
 Tesla’s vehicles are often lauded for their cutting-edge technology, but beneath the surface lies a fundamental question: Does the odometer truly measure physical distance traveled, or is it an estimated value manipulated by software?
 
