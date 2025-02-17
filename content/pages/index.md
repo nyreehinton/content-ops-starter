@@ -212,7 +212,7 @@ sections:
     type: ImageGallerySection
     title:
       type: TitleBlock
-      text: This Is A Big Headline
+      text: Past Experience
       color: text-dark
   - posts:
       - content/pages/blog/case-study-1.md
