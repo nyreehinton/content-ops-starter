@@ -214,6 +214,9 @@ sections:
       type: TitleBlock
       text: Past Experience
       color: text-dark
+      styles:
+        self:
+          textAlign: center
   - posts:
       - content/pages/blog/case-study-1.md
       - content/pages/blog/case-study-2.md
