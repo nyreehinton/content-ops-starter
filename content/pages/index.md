@@ -546,6 +546,9 @@ sections:
       text: '"Open to Work"'
       color: text-dark
       type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
     text: "<div style=\"text-align: left\">As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback.</div>\n\n<div style=\"text-align: left\">I’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!</div>\n\n"
     actions:
