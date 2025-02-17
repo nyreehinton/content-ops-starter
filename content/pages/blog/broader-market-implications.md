@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: Track the right analytics for your business
-slug: track-the-right-analytics-for-your-business
+slug: broader-market-implications
 date: '2023-02-20'
 excerpt: >-
   Sit ratione eligendi et quis distinctio et maiores accusantium aut accusamus
