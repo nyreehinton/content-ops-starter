@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: Track the right analytics for your business
+title: Broader Market Implications
 slug: broader-market-implications
 date: '2023-02-20'
 excerpt: >-
