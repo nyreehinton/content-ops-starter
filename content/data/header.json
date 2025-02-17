@@ -122,31 +122,6 @@
     "variant": "logo-left-primary-nav-centered",
     "colors": "bg-neutral-fg-dark",
     "type": "Header",
-    "logo": {
-        "type": "ImageBlock",
-        "altText": "",
-        "elementId": "",
-        "styles": {
-            "self": {
-                "borderRadius": "small",
-                "padding": [
-                    "pl-4",
-                    "pt-4",
-                    "pb-4",
-                    "pr-4"
-                ],
-                "borderWidth": 0,
-                "borderStyle": "none",
-                "margin": [
-                    "mt-4",
-                    "ml-4",
-                    "mb-4",
-                    "mr-4"
-                ],
-                "borderColor": "border-light"
-            }
-        }
-    },
     "styles": {
         "self": {
             "padding": [
