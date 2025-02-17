@@ -348,7 +348,7 @@ sections:
           - pb-3
           - pr-3
   - title:
-      text: Certifications
+      text: The Pennsylvania State University
       color: text-primary
       styles:
         self:
