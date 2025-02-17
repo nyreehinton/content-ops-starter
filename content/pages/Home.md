@@ -277,19 +277,6 @@ sections:
       subtitle:
         textAlign: center
     type: GenericSection
-    media:
-      type: ImageBlock
-      url: /images/IMG_0129.png
-      altText: Image alt text placeholder
-      elementId: ''
-      styles:
-        self:
-          borderRadius: medium
-          padding:
-            - pl-36
-            - pb-36
-            - pt-36
-            - pr-36
     actions:
       - type: Button
         label: Enter
