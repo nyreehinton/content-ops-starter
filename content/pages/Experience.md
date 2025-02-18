@@ -5,7 +5,7 @@ sections:
   - type: FeaturedPostsSection
     title:
       type: TitleBlock
-      text: Bio
+      text: Welcome to My Professional Journey
       color: text-dark
       styles:
         self:
