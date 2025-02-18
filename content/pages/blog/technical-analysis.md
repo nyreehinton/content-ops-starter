@@ -36,17 +36,16 @@ styles:
     flexDirection: row
     textAlign: left
 ---
-<div style="text-align: left">The formula is ```
-$ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $
+<div style="text-align: left">The formula is \`\`\`
+$ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $</div>
 
-```
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.</div>
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
-!\[]\(/images/IMG\_1248.jpeg)
+!\\\[]\\(/images/IMG\\\_1248.jpeg)
 
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
@@ -65,28 +64,28 @@ Key Terms
 •	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
 •	EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
 
-\####
+\\####
 
 A. Tesla’s In-Car Data Logs
 
 Tesla vehicles store various logs locally, including:
 
-\*   Odometer Readings: The official mileage displayed inside the vehicle.
-\*   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-\*   Range Estimations: Projected range remaining based on battery percentage.
+\\\*   Odometer Readings: The official mileage displayed inside the vehicle.
+\\\*   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+\\\*   Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-\*   Charge Start/End Time (UTC)
-\*   Charge Duration (s).
-\*   Energy Added (kWh).
-\*   Odometer Readings (not consistently available).
+\\\*   Charge Start/End Time (UTC)
+\\\*   Charge Duration (s).
+\\\*   Energy Added (kWh).
+\\\*   Odometer Readings (not consistently available).
 
-\#### B. Service Center Odometer Logs
+\\#### B. Service Center Odometer Logs
 
 Tesla service visits provide third-party validation of mileage readings. By comparing these timestamped odometer readings to the in-car logs, we can check whether the mileage increase was reasonable.
 
-\#### C. Charging Session Data
+\\#### C. Charging Session Data
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
@@ -108,7 +107,7 @@ Under ideal conditions, the vehicle should have traveled approximately 21,064 mi
 
 The formula is
 
-\`<sub>$\frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$</sub>\`
+\\\`<sub>$\frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$</sub>\\\`
 
 A. Energy Efficiency Calculations
 
@@ -118,18 +117,19 @@ $$\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Effi
 
 Where:
 
-\\\*\*\*Energy Added (kWh)\*\* is obtained from charging logs.
+\\\\\\\*\\\*\\\*Energy Added (kWh)\\\*\\\* is obtained from charging logs.
 
-\\\*\*\*Energy Efficiency (Wh/mile)\*\* is based on real-world trip data from the in-car system.
+\\\\\\\*\\\*\\\*Energy Efficiency (Wh/mile)\\\*\\\* is based on real-world trip data from the in-car system.
 
-\### Example Calculation:
+\\### Example Calculation:
 
-\*   If \*\*5,582 kWh\*\* of energy was added and the \*\*EPA-rated efficiency\*\* is \*\*265 Wh/mile\*\*, then:
+\\\*   If \\\*\\\*5,582 kWh\\\*\\\* of energy was added and the \\\*\\\*EPA-rated efficiency\\\*\\\* is \\\*\\\*265 Wh/mile\\\*\\\*, then:
 
-```
+
 $$
 \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
 $$
+
 ```
 
 If \*\*real-world efficiency\*\* is \*\*370 Wh/mile\*\*, then:
@@ -196,3 +196,5 @@ Calculation:
 
 Interpretation:
 Actual energy consumption averaged 475 Wh/mi – 79% higher than EPA’s 265 Wh/mi rating.
+```
+
