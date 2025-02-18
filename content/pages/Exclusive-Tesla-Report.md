@@ -29,14 +29,6 @@ sections:
       subtitle:
         textAlign: center
     type: GenericSection
-    backgroundImage:
-      type: BackgroundImage
-      altText: Yolk Steering
-      backgroundSize: cover
-      backgroundPosition: bottom
-      backgroundRepeat: repeat-y
-      opacity: 10
-      url: /images/IMG_0367.jpeg
   - type: DividerSection
     title: Divider
     elementId: ''
