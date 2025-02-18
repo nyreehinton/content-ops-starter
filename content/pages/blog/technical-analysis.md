@@ -38,7 +38,9 @@ styles:
 ---
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
-With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step is to implement a rigorous technical analysis using real-world data sources from a subject vehicle: a 2020 Tesla Model Y.
+With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements. 
+
+The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
@@ -47,6 +49,13 @@ This section details the methods, data sources, equations, and key findings used
 <div style="text-align: center">### 1. Data Sources and Collection Process</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
+
+Vehicle Specifications
+•	Model: 2020 Tesla Model Y Long Range Dual Motor
+•	Battery Capacity: 78 kWh (75 kWh usable)
+•	Original EPA Range: 326 miles (265 Wh/mi)
+•	Odometer Start: 36,772 miles
+•	Odometer End: 49,987 miles
 
 #### A. Tesla’s In-Car Data Logs
 
