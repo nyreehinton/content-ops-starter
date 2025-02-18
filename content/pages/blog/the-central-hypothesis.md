@@ -82,7 +82,7 @@ This means that Tesla vehicles “learn” from previous driving behavior and us
 
 This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver’s habits—a mile is a mile.
 
-The Role of Factor Multipliers: The “Aggressive Driving Penalty”
+<div style="text-align: center">## The Role of Factor Multipliers: The “Aggressive Driving Penalty”</div>
 
 Central to Tesla’s predictive odometer system is the application of multipliers that adjust energy-to-mile conversion rates based on driving style. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption. Driving behaviors are categorized into modes, such as:
 
