@@ -44,46 +44,38 @@ This section details the methods, data sources, equations, and key findings used
 
 !\\\[]\\(/images/IMG\\\_1248.jpeg)
 
-<div style="text-align: center">## Data Sources, Equations, and Findings</div>
+<div style="text-align: center"># Data Sources</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
 **Vehicle Specifications:**
 
-> Model: 2020 Tesla Model Y Long Range Dual Motor
-> Battery Capacity: 78 kWh (75 kWh usable)
-> Original EPA Range: 326 miles (265 Wh/mi)
-> Odometer Start: 36,772 miles
-> Odometer End: 49,987 miles
+Model: 2020 Tesla Model Y Long Range Dual Motor
+Battery Capacity: 78 kWh (75 kWh usable)
+Original EPA Range: 326 miles (265 Wh/mi)
+Odometer Start: 36,772 miles
+Odometer End: 49,987 miles
 
 **Key Terms**
 
-> Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
-> Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
-> Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
-> EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
-
-
+Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
+Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
+Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
+EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
 
 A. Tesla’s In-Car Data Logs
 
-> Tesla vehicles store various logs locally, including:
-
-> Odometer Readings: The official mileage displayed inside the vehicle.
-
-> Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-
-> Range Estimations: Projected range remaining based on battery percentage.
+Tesla vehicles store various logs locally, including:
+Odometer Readings: The official mileage displayed inside the vehicle.
+Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-> Charge Start/End Time (UTC)
-
-> Charge Duration (s).
-
-> Energy Added (kWh).
-
-> Odometer Readings (not consistently available).
+Charge Start/End Time (UTC)
+Charge Duration (s).
+Energy Added (kWh).
+Odometer Readings (not consistently available).
 
 B. Service Center Odometer Logs
 
@@ -93,7 +85,7 @@ C. Charging Session Data
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
-<div style="text-align: center">### 2. Equations and Methodology for Technical Analysis</div>
+<div style="text-align: center"># Equations</div>
 
 Total Energy Added to the Battery
 
@@ -153,6 +145,10 @@ The odometer reading is computed using:
 
 \\> \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
 
+<div style="text-align: center">Findings
+
+</div>
+
 After conducting the technical analysis, the following major findings emerged:
 
 \\#### A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
@@ -171,21 +167,22 @@ After conducting the technical analysis, the following major findings emerged:
 Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
 ```
 
-\\#### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
-\\\*   Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
+C. Tesla’s Efficiency Factor Appears to Change Over Time
 
-<!---->
-
-\\\*   This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
-
-\\#### D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
-
-\\\*   Comparing Tesla’s service visit odometer records against charging logs revealed inconsistencies.
+Reviewing charging logs over multiple months, the vehicle’s reported efficiency changed, even though no significant driving condition changes occurred.
 
 <!---->
 
-\\\*   Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
+This suggests that Tesla is modifying the efficiency factor via software updates, affecting odometer readings dynamically.
+
+D. Service Center Logs Show Odometer Jumps That Do Not Match Driving Behavior
+
+Comparing Tesla’s service visit odometer records against charging logs revealed inconsistencies.
+
+<!---->
+
+Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
 
 Step 1: Baseline Energy-to-Mile Conversion
 Formula:
@@ -193,6 +190,7 @@ Formula:
 Data Inputs:
 •	Total energy added via charging: 5,582 kWh
 •	EPA efficiency rate: 0.265 kWh/mi (265 Wh/mi)
+
 Calculation:
 
 Interpretation:
