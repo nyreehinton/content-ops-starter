@@ -2,12 +2,7 @@
 title: Capital Group
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
-excerpt: >-
-  I initially became suspicious when I observed sudden surges in my own Tesla
-  Model Ys odometer, especially leading up to my warranty's mileage cutoffs.
-  After I discovered a noticeable mismatch between my actual driving habits and
-  the Teslas recorded mileage, I broadened the investigation, collecting
-  examples from other drivers who had similar concerns.
+excerpt: ''
 featuredImage:
   altText: Thumbnail
   type: ImageBlock
