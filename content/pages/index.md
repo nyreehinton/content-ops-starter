@@ -479,6 +479,16 @@ sections:
       styles:
         self:
           textAlign: center
+    actions:
+      - type: Button
+        label: See More
+        altText: ''
+        url: /Experience
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
   - type: DividerSection
     title: Divider
     elementId: ''
@@ -491,8 +501,11 @@ sections:
           - pb-3
           - pr-3
   - type: CarouselSection
-    title: null
-    subtitle: Tech Stack
+    title:
+      type: TitleBlock
+      text: Tech Stack
+      color: text-dark
+    subtitle: ''
     items:
       - title: Visualization
         tagline: Tableau
@@ -572,8 +585,8 @@ sections:
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
         image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
+          url: /images/techstack.png
+          altText: ''
           styles:
             self:
               borderRadius: full
