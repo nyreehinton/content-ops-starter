@@ -156,7 +156,7 @@ sections:
         subtitle: Equity Research Data Analyst (TMT)
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
+          url: /images/IMG_0130.png
           altText: Faux Fur Throw
           elementId: ''
           styles:
