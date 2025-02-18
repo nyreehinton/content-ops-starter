@@ -36,12 +36,13 @@ styles:
     flexDirection: row
     textAlign: left
 ---
-<div style="text-align: left">`<sub><p> Tesla’s energy efficiency is a key variable in determining mileage: </p>
+<div style="text-align: left">```
+<sub><p> Tesla’s energy efficiency is a key variable in determining mileage: </p>
 \<script type="math/tex; mode=display">
-\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} </script></sub>`</div>
+\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} </script></sub>
+```</div>
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
-
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
@@ -127,9 +128,11 @@ Where:
 
 \*   If \*\*5,582 kWh\*\* of energy was added and the \*\*EPA-rated efficiency\*\* is \*\*265 Wh/mile\*\*, then:
 
-    $$
-    \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
-    $$
+```
+$$
+\frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
+$$
+```
 
 If \*\*real-world efficiency\*\* is \*\*370 Wh/mile\*\*, then:
 
