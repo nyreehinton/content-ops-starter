@@ -186,10 +186,25 @@ sections:
       - type: FeaturedItem
         title: AWS Certified Cloud Practitioner
         subtitle: Sales
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          Demonstrated a foundational understanding of AWS Cloud architecture,
+          services, and security. Gained expertise in cloud concepts, core AWS
+          services, and basic AWS architecture best practices, enhancing my
+          ability to contribute to cloud-based solutions in product management.
+
+
+          Proficient in utilizing services like EC2, S3, and IAM, enhancing my
+          ability to oversee the integration of scalable and efficient AWS
+          solutions in product development and operations.
+
+
+          Mastered knowledge of AWS’s global infrastructure and network
+          technologies, positioning me to strategize and implement efficient,
+          distributed solutions in product development.
+
+
+
+
         actions: []
         colors: bg-neutral-fg-dark
         styles:
