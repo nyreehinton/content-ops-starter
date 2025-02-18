@@ -176,7 +176,7 @@ sections:
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
-      text: Open positions
+      text: Continuous Improvement
       color: text-dark
       styles:
         self:
