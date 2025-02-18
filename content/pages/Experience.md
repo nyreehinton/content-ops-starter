@@ -33,6 +33,9 @@ sections:
       type: TitleBlock
       text: Welcome to My Professional Journey
       color: text-dark
+      styles:
+        self:
+          textAlign: center
     subtitle: Investment Research | Data Analytics | Product
     text: >
       Over the past several years, I have honed my expertise as a Product
