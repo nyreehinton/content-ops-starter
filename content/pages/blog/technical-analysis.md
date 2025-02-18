@@ -28,7 +28,7 @@ isDraft: false
 seo:
   metaTitle: ''
   metaDescription: ''
-  socialImage: /images/abstract-feature3.svg
+  socialImage: /images/4514E66D-6C1E-4DC4-9680-A1A70FBA90B1.jpeg
   type: Seo
 colors: bg-light-fg-dark
 styles:
