@@ -261,10 +261,21 @@ sections:
       - type: FeaturedItem
         title: Bloomberg Market Concepts (BMC)
         subtitle: Marketing
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          Built a solid foundation in financial markets, covering economic
+          indicators, fixed income, currencies, and equities.
+
+
+          Learned to navigate Bloomberg terminal functionalities for advanced
+          data analysis and market insights.
+
+
+          Strengthened analytical capabilities to leverage real-time financial
+          data for informed decision-making.
+
+
+
+
         actions: []
         colors: bg-neutral-fg-dark
         styles:
