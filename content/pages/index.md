@@ -576,7 +576,7 @@ sections:
           various project complexities.
         image:
           url: /images/person-placeholder-light.png
-          altText: Maria Walters
+          altText: ''
           styles:
             self:
               borderRadius: full
