@@ -493,7 +493,7 @@ sections:
   - type: CarouselSection
     title:
       type: TitleBlock
-      text: This Is A Big Headline
+      text: Tech Stack
       color: text-dark
     subtitle: ''
     items:
