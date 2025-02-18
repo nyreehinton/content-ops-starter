@@ -31,7 +31,7 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Welcome to My Professional Journey
+      text: ''
       color: text-dark
       styles:
         self:
