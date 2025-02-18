@@ -479,6 +479,16 @@ sections:
       styles:
         self:
           textAlign: center
+    actions:
+      - type: Button
+        label: Get started
+        altText: ''
+        url: /Experience
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
   - type: DividerSection
     title: Divider
     elementId: ''
