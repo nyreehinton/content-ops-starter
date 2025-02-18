@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: 'Part 2: Technical Analysis of A Tesla Model Y’s Odometer'
+title: Comparative Analysis of A Tesla Model Y’s Odometer (Part 2)
 slug: technical-analysis
 date: '2025-02-14'
 excerpt: >-
