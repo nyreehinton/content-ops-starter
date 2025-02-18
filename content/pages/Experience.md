@@ -119,7 +119,7 @@ sections:
             borderStyle: dotted
       - type: FeaturedItem
         title: Third Bridge Group
-        subtitle: $ 44.99 – $ 90
+        subtitle: Sector Analyst (Consumer Staples)
         image:
           type: ImageBlock
           url: /images/img-placeholder.svg
