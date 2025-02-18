@@ -356,7 +356,7 @@ sections:
       type: TitleBlock
     subtitle: Certifications
     items:
-      - title: Certificate in ESG Investing from CFA
+      - title: Certificate in ESG Investing
         tagline: Charted Financial Analyst Institute (CFA)
         subtitle: ''
         text: >
