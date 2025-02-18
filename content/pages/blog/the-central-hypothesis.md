@@ -67,7 +67,6 @@ $$ \text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Effici
 
 This approach results in odometer readings that can fluctuate based on factors beyond simple distance measurement.
 
-
 The central hypothesis of this investigation is that Tesla does not use traditional methods of odometer tracking (such as counting wheel rotations) but instead calculates miles driven based on a predictive energy consumption model. This means that mileage displayed on the odometer may not reflect the actual road distance covered, but rather a software-generated estimation that can be adjusted dynamically based on energy efficiency calculations, driving style, and Tesla’s internal algorithms. 
 
 To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US8054038B2, and evaluate how Tesla’s odometer integrates predictive modeling, memory-based algorithms, and real-time sensor data to estimate mileage rather than strictly measure it.
