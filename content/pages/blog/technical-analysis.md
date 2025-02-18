@@ -112,7 +112,10 @@ Theoretical Distance Based on EPA-Rated Efficiency
 
 The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the expected distance the vehicle should have traveled under ideal conditions using 5,582 kWh of energy.
 
+```
 Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
+```
+
 
 The formula is
 
@@ -158,13 +161,19 @@ After conducting the technical analysis, the following major findings emerged:
 
 \\#### A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
 
+```
 • The Tesla Model Y recorded 13,228 miles over 7 months.
+```
 
+```
 • Based on real-world efficiency (370 Wh/mi), the vehicle should have recorded 15,089 miles.
+```
 
+```
 • However, using EPA-rated efficiency (265 Wh/mi), the mileage should have been 21,064 miles.
 
-• Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
+Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
+```
 
 \\#### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
