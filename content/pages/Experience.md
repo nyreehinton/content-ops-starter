@@ -173,7 +173,7 @@ sections:
               - pr-0
             textAlign: left
             borderRadius: none
-            flexDirection: row
+            flexDirection: row-reverse
             justifyContent: center
         text: "At Bloomberg, I managed data for 70 companies within the media and communications sector, contributing to the accuracy and comprehensiveness of content critical to clients. My role required technical expertise, attention to detail, and client-centric problem-solving. Contributions include:\n\n*   **Data Quality Assurance:**\_Identified and corrected over 5,000 data records, improving Bloomberg Intelligence dashboards for timely and accurate decision-making.\n\n*   **Strategic Analysis:**\_Investigated market drivers, including ams AG’s advancements in 3D sensing and VCSEL technology, to provide technical insights on product integration and market trends.\n\n*   **Client Engagement:**\_Acted as the primary contact for resolving data-related inquiries, maintaining high service standards for institutional clients.\n\n"
     actions: []
