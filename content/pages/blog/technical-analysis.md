@@ -147,8 +147,6 @@ The odometer reading is computed using:
 
 <div style="text-align: center"># Findings</div>
 
-</div>
-
 After conducting the technical analysis, the following major findings emerged:
 
 \\#### A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
