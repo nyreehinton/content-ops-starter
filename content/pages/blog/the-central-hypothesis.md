@@ -80,9 +80,7 @@ Tesla’s patent further elaborates on how memory-based data storage and machine
 
 This means that Tesla vehicles “learn” from previous driving behavior and use it to estimate future mileage calculations. If a driver historically drove in an energy-efficient manner, the system might assume similar efficiency going forward, even if conditions change. Conversely, if a driver has been classified as an “aggressive” driver, the system may permanently adjust the odometer’s mileage calculations to assume higher energy consumption, potentially leading to an inflated odometer reading.
 
-This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver’s habits—a mile is a mile. 
-
-
+This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver’s habits—a mile is a mile.
 
 The Role of Factor Multipliers: The “Aggressive Driving Penalty”
 
@@ -95,7 +93,6 @@ Central to Tesla’s predictive odometer system is the application of multiplier
 | Efficient  | >1         | The system rewards conservative driving by decreasing mileage recorded for energy consumed.         |
 
 For example, if a Tesla driver consistently accelerates rapidly and brakes hard, the vehicle may apply a multiplier of 0.95 to the miles-per-kWh ratio. This means that for every 95 miles actually driven, the odometer could record 100 miles. Over time, this artificially inflates the mileage accumulation, pushing the vehicle closer to warranty expiration faster than expected.
-
 
 Tesla Dealers Have the Ability to Set and Adjust the Vehicle’s Energy Efficiency
 
