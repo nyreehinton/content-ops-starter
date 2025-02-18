@@ -291,7 +291,7 @@ sections:
             justifyContent: center
       - type: FeaturedItem
         title: Certified SAFe® 6 Practitioner
-        subtitle: Engineering
+        subtitle: 'Scaled Agile, Inc.'
         text: >+
           In this certification, I gained an in-depth understanding of the SAFe®
           framework, learning how to align strategy with execution across
