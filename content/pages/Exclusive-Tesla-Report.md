@@ -21,7 +21,7 @@ sections:
           - pl-0
           - pb-0
           - pr-0
-        alignItems: center
+        alignItems: flex-start
         flexDirection: row-reverse
         justifyContent: center
       text:
