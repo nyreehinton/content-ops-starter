@@ -50,7 +50,7 @@ sections:
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
-      text: Previouse Work Experience
+      text: Previous Work Experience
       color: text-dark
       styles:
         self:
