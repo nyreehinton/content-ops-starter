@@ -36,13 +36,7 @@ styles:
     flexDirection: row
     textAlign: left
 ---
-<div style="text-align: left">The formula is ```
-$ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $.
-```</div>
-
-
-
-
+<div style="text-align: left">The formula is \`\`\``$ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $.`</div>
 
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
 
