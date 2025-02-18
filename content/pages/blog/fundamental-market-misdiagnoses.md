@@ -12,7 +12,7 @@ excerpt: >-
   suppressing range complaints, everyone has been looking at individual symptoms
   instead of the root cause.
 featuredImage:
-  url: /images/IMG_1246.webp
+  url: /images/Tesla with Question Mark.jpg
   altText: Thumbnail
   type: ImageBlock
   styles:
