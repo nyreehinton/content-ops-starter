@@ -11,7 +11,7 @@ sections:
         self:
           textAlign: center
     subtitle: 'Hello, I''m Nyree Hinton'
-    text: "I’m a Product Manager & Data Specialist based in Los Angeles with experience in data analytics, governance, and product development. Throughout my career, I have cultivated deep expertise at the intersection of data, financial products, and capital markets.\_The goal of this portfolio is to highlight my professional journey and showcase my roles at leading organizations, the challenges I overcame, and the metrics that underscore my contributions.\n"
+    text: "I’m a Product Manager & Data Specialist based in Los Angeles with experience in data analytics, governance, and product development. Throughout my career, I have cultivated deep expertise at the intersection of data, financial products, and capital markets.\_\n\nThe goal of this portfolio is to highlight my professional journey and showcase my roles at leading organizations, the challenges I overcame, and the metrics that underscore my contributions.\n"
     actions: []
     media:
       url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
