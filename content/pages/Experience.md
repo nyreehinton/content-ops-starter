@@ -31,7 +31,7 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Business Consulting
+      text: Welcome to My Professional Journey
       color: text-dark
     subtitle: Be in good company
     text: >
