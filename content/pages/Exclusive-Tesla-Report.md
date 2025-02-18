@@ -72,7 +72,7 @@ sections:
           - pl-0
           - pb-0
           - pr-0
-        justifyContent: flex-start
+        justifyContent: center
       subtitle:
         textAlign: center
     type: FeaturedPeopleSection
