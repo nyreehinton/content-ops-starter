@@ -3,13 +3,6 @@ title: Capital Group
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
 excerpt: ''
-featuredImage:
-  altText: Thumbnail
-  type: ImageBlock
-  styles:
-    self:
-      borderRadius: medium
-  url: /images/IMG_1187.png
 bottomSections: []
 isFeatured: false
 isDraft: false
