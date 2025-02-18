@@ -63,7 +63,8 @@ Key Terms
 •	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
 •	EPA Efficiency: 265 Wh/mi (baseline energy consumption rate per EPA certification).l
 
-#### 
+####
+
 A. Tesla’s In-Car Data Logs
 
 Tesla vehicles store various logs locally, including:
@@ -102,9 +103,7 @@ Tesla service visits provide third-party validation of mileage readings. By comp
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
-#### D. GPS-Tracked Mileage vs. Odometer Mileage 
 
-By manually tracking actual road miles driven using Google Maps or GPS logs, we can compare them to Tesla’s odometer readings.
 
 <div style="text-align: center">### 2. Equations and Methodology for Technical Analysis</div>
 
@@ -134,8 +133,6 @@ Example Calculation:
 
 *   However, actual odometer readings showed only 13,228 miles recorded.
 
-This discrepancy suggests that Tesla’s mileage calculations are not purely based on physical travel distance but are instead influenced by software-based estimations.
-
 #### B. Verifying Tesla’s Energy-to-Miles Conversion Against Odometer Data
 
 Tesla’s mileage calculations assume an energy efficiency conversion factor stored in memory, which can be adjusted remotely.
@@ -144,45 +141,9 @@ The odometer reading is computed using:
 
 > \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
 
-Since Tesla’s stored efficiency factor can be modified via software updates, it means Tesla can adjust how many miles get recorded per unit of energy used—a key method of inflating odometer readings. 
 
-Verification Process:
 
-1\. Compare actual road miles traveled (GPS data) to Tesla’s odometer reading.
-
-2\. Compare expected miles driven based on charging logs to Tesla’s odometer.
-
-3\. Analyze efficiency discrepancies between Tesla’s displayed values and real-world results.
-
-If the actual road miles consistently fall below Tesla’s odometer readings, it suggests Tesla’s efficiency factor is being manipulated to inflate recorded miles.
-
-#### C. Driving Behavior Multipliers and Their Effect on Mileage
-
-Tesla’s system applies a multiplier to energy efficiency based on driving style.
-
-The efficiency calculation uses: 
-
-> \text{Adjusted Efficiency} = \text{Base Efficiency} \times \text{Driving Mode Multiplier} 
-
-Where:
-
-*   Aggressive Mode Multiplier (<1.0) inflates mileage, increasing recorded miles per kWh.
-
-<!---->
-
-*   Efficient Mode Multiplier (>1.0) reduces recorded mileage, making energy usage seem more efficient.
-
-Example:
-
-*   If normal efficiency is 4 miles/kWh, but an aggressive driving penalty of 0.95 is applied:
-
-> 4 \times 0.95 = 3.8 \text{ miles/kWh}
-
-This means more miles will be logged than actual road distance traveled.
-
-If a Tesla continuously logs mileage at a reduced efficiency due to driving style penalties, the total odometer reading will increase faster than expected.
-
-<div style="text-align: center">### 3. Key Findings from the Data Analysis</div>
+<div style="text-align: center">###</div>
 
 After conducting the technical analysis, the following major findings emerged:
 
@@ -196,13 +157,7 @@ After conducting the technical analysis, the following major findings emerged:
 
 • Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
 
-#### B. GPS-Tracked Mileage vs. Tesla Odometer Mileage Showed Discrepancies
 
-• Multiple trips were tracked via Google Maps and GPS logs.
-
-• Odometer consistently showed more miles than actual distance traveled.
-
-• Some trips recorded 10-20% more miles than the actual physical route.
 
 #### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
@@ -220,3 +175,23 @@ After conducting the technical analysis, the following major findings emerged:
 
 *   Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
 
+Step 1: Baseline Energy-to-Mile Conversion
+Formula:
+
+Data Inputs:
+•	Total energy added via charging: 5,582 kWh
+•	EPA efficiency rate: 0.265 kWh/mi (265 Wh/mi)
+Calculation:
+
+Interpretation:
+If the vehicle operated at EPA efficiency, 5,582 kWh of energy should theoretically equate to 21,064 miles driven.
+Step 2: Real-World Energy Efficiency
+Formula:
+
+Data Inputs:
+•	Total physical distance (GPS): 11,743 miles
+•	Total energy consumed: 5,582,000 Wh (5,582 kWh × 1,000)
+Calculation:
+
+Interpretation:
+Actual energy consumption averaged 475 Wh/mi – 79% higher than EPA’s 265 Wh/mi rating.
