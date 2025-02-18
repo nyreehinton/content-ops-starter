@@ -88,7 +88,7 @@ sections:
             borderRadius: x-small
             flexDirection: col
             justifyContent: center
-            borderStyle: solid
+            borderStyle: none
       - type: FeaturedItem
         title: Third Bridge Group
         subtitle: Sector Analyst (Consumer Staples)
