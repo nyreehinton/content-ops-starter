@@ -185,7 +185,7 @@ sections:
     items:
       - type: FeaturedItem
         title: AWS Certified Cloud Practitioner
-        subtitle: Sales
+        subtitle: ''
         text: >+
           Demonstrated a foundational understanding of AWS Cloud architecture,
           services, and security. Gained expertise in cloud concepts, core AWS
