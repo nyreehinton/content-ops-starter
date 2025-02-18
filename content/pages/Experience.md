@@ -25,12 +25,6 @@ sections:
       reflects my ability to bridge data science, product management, and
       analytics, creating lasting value across organizations.
     actions:
-      - type: Button
-        label: Get started
-        url: /
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
       - type: Link
         label: See Tutorials
         url: /
