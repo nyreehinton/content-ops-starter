@@ -73,10 +73,12 @@ Tesla vehicles store various logs locally, including:
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-\\\*   Charge Start/End Time (UTC)
-\\\*   Charge Duration (s).
-\\\*   Energy Added (kWh).
-\\\*   Odometer Readings (not consistently available).
+```
+\*   Charge Start/End Time (UTC)
+\*   Charge Duration (s).
+\*   Energy Added (kWh).
+\*   Odometer Readings (not consistently available).
+```
 
 \\#### B. Service Center Odometer Logs
 
@@ -125,7 +127,6 @@ Where:
 $$
 \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
 $$
-
 
 If \\\*\\\*real-world efficiency\\\*\\\* is \\\*\\\*370 Wh/mile\\\*\\\*, then:
 
@@ -191,4 +192,3 @@ Calculation:
 
 Interpretation:
 Actual energy consumption averaged 475 Wh/mi – 79% higher than EPA’s 265 Wh/mi rating.
-
