@@ -436,8 +436,16 @@ sections:
         title: Bloomberg Market Concepts (BMC)
         tagline: This is the tagline
         subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first Netlify Create site.
+        text: >+
+          Foundational Financial Market Insights: BMC offers a comprehensive
+          overview of key financial markets and instruments. Through modules on
+          Economic Indicators, Fixed Income, Currencies, and Equities, I gained
+          a solid grounding in market mechanics and the principles that drive
+          global financial markets.
+
+
+
+
         image:
           type: ImageBlock
           url: /images/Bloomberg Market Concepts.jpg
