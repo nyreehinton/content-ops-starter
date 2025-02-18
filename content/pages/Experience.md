@@ -24,14 +24,7 @@ sections:
       applied, and the measurable outcomes I've delivered. This detailed account
       reflects my ability to bridge data science, product management, and
       analytics, creating lasting value across organizations.
-    actions:
-      - type: Link
-        label: See Tutorials
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
+    actions: []
     media:
       type: ImageBlock
       url: /images/Bloomberg First Day.jpeg
