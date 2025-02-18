@@ -204,24 +204,3 @@ After conducting the technical analysis, the following major findings emerged:
 
 *   Mileage increased faster than expected in the weeks leading up to warranty expiration, suggesting possible manipulation to accelerate warranty end dates.
 
-<div style="text-align: center">### 4. Implications of the Findings</div>
-
-*   Warranty Expiration Acceleration: Inflated mileage readings lead to premature warranty expirations, forcing owners to pay out-of-pocket for repairs.
-
-<!---->
-
-*   Overstated Lease Mileage: Tesla owners with leases may face higher mileage overage fees if the odometer records more miles than actually driven.
-
-<!---->
-
-*   Obscured Battery Degradation: By adjusting efficiency factors, Tesla can mask real battery degradation, making it seem like the vehicle is more efficient than it truly is. 
-
-Tesla owners should be aware that:
-
-1.  Your odometer reading may not reflect the actual road miles you’ve driven.
-
-2.  Tesla can remotely modify efficiency calculations, affecting how miles are recorded.
-
-3.  Driving style penalties can artificially inflate odometer readings.
-
-Stay tuned for further updates and a deeper look into Tesla’s software manipulation strategies.
