@@ -102,9 +102,7 @@ The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the ex
 
 Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
 
-The formula is 
-
-$ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $.
+The formula is $ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $.
 
 A. Energy Efficiency Calculations
 
