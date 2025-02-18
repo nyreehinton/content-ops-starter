@@ -292,10 +292,29 @@ sections:
       - type: FeaturedItem
         title: 'Certified SAFe® 6 Practitioner from Scaled Agile, Inc.'
         subtitle: Engineering
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          In this certification, I gained an in-depth understanding of the SAFe®
+          framework, learning how to align strategy with execution across
+          multiple teams. I mastered the principles of agile, lean, and product
+          development flow, which enables the smooth scaling of agile practices
+          across large, complex organizations.
+
+
+          The course emphasized practical techniques for facilitating agile
+          ceremonies, managing agile backlogs, and executing iterative project
+          cycles. It honed my skills in fostering cross-functional
+          collaboration, ensuring teams can rapidly adapt to change while
+          delivering high-quality results.
+
+
+          Driving Continuous Improvement: With a focus on lean portfolio
+          management and agile governance, I developed strategies to identify
+          bottlenecks, drive continuous improvement, and implement data-driven
+          decision-making processes across an enterprise environment.
+
+
+
+
         actions: []
         colors: bg-neutral-fg-dark
         styles:
