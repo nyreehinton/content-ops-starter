@@ -23,7 +23,7 @@ sections:
           - pr-0
         alignItems: flex-start
         flexDirection: row-reverse
-        justifyContent: flex-start
+        justifyContent: center
       text:
         textAlign: left
       subtitle:
