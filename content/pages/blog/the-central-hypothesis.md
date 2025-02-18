@@ -35,7 +35,7 @@ featuredImage:
 seo:
   type: Seo
 ---
-<div style="text-align: center">### *Your odometer isn’t measuring distance - it’s **simulating** it.*</div>
+<div style="text-align: center">## *Your odometer isn’t measuring distance - it’s **simulating** it.*</div>
 
 The central hypothesis of this investigation is that Tesla does not use traditional methods of odometer track **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference.One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
