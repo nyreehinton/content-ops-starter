@@ -68,29 +68,14 @@ A. Tesla’s In-Car Data Logs
 Tesla vehicles store various logs locally, including:
 
 *   Odometer Readings: The official mileage displayed inside the vehicle.
-
-<!---->
-
 *   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-
-<!---->
-
 *   Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
 *   Charge Start/End Time (UTC)
-
-<!---->
-
 *   Charge Duration (s).
-
-<!---->
-
 *   Energy Added (kWh).
-
-<!---->
-
 *   Odometer Readings (not consistently available).
 
 #### B. Service Center Odometer Logs
@@ -121,25 +106,29 @@ A. Energy Efficiency Calculations
 
 Tesla’s energy efficiency is a key variable in determining mileage:
 
-> \text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}
+$$
+\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}
+$$
 
 Where:
 
-*   Energy Added (kWh) is obtained from charging logs.
+*   **Energy Added (kWh)** is obtained from charging logs.
 
-<!---->
+*   **Energy Efficiency (Wh/mile)** is based on real-world trip data from the in-car system.
 
-*   Energy Efficiency (Wh/mile) is based on real-world trip data from the in-car system.
+### Example Calculation:
 
-Example Calculation:
+*   If **5,582 kWh** of energy was added and the **EPA-rated efficiency** is **265 Wh/mile**, then:
 
-*   If 5,582 kWh of energy was added and the EPA-rated efficiency is 265 Wh/mile, then: 
+    $$
+    \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
+    $$
 
-> \frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
+If **real-world efficiency** is **370 Wh/mile**, then:
 
-*   If real-world efficiency is 370 Wh/mile, then: 
-
-> \frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
+$$
+\frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
+$$
 
 *   However, actual odometer readings showed only 13,228 miles recorded.
 
@@ -150,8 +139,6 @@ Tesla’s mileage calculations assume an energy efficiency conversion factor sto
 The odometer reading is computed using:
 
 > \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
-
-<div style="text-align: center">###</div>
 
 After conducting the technical analysis, the following major findings emerged:
 
