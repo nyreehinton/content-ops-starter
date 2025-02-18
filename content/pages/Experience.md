@@ -118,7 +118,7 @@ sections:
             justifyContent: center
             borderStyle: dotted
       - type: FeaturedItem
-        title: Cotton Knit Throws
+        title: Third Bridge Group
         subtitle: $ 44.99 – $ 90
         image:
           type: ImageBlock
