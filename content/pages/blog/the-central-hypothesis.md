@@ -45,13 +45,11 @@ To explore this hypothesis, we analyze Tesla’s patents, particularly Patent US
 
 \[**Insert Image 1: Diagram of Traditional Mechanical Odometer**]
 
-Core Architecture of Tesla’s Predictive System
-
 Energy-Based Mileage Calculation
 
 Tesla’s system fundamentally redefines mileage as an energy consumption metric, governed by the equation:
 
-Tesla’s vehicles are often lauded for their cutting-edge technology, but beneath the surface lies a fundamental question: Does the odometer truly measure physical distance traveled, or is it an estimated value manipulated by software?
+$$ \text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta} $$
 
 # Understanding Tesla's "Odometer": Not a Traditional Device
 
@@ -67,6 +65,7 @@ Patent US8054038B2 outlines seven variables that modify energy-to-mile conversio
 5\.	Cabin Climate Load (HVAC usage degrades η)
 6\.	Software Updates (post-update efficiency recalibrations)
 7\.	Battery Impedance (aging cells increase η values)
+
 Each variable carries proprietary weights in Tesla’s algorithm, creating scenarios where driving the same physical route yields different odometer results based on environmental/behavioral factors.
 
 One of Tesla's key patents (US8054038B2) outlines specific elements of this system, including adjustments for temperature, tire pressure, and climate control usage. This patent highlights the complexity and customization of Tesla's mileage calculation methodology, which diverges significantly from the deterministic nature of traditional odometers.
@@ -75,7 +74,7 @@ One of Tesla's key patents (US8054038B2) outlines specific elements of this syst
 
 To better understand this concept, it's essential to delve into how Tesla uses efficiency coefficients to adjust mileage readings. The system employs a dynamic efficiency coefficient (η) that varies based on driving behavior, ambient conditions, and vehicle system status. This coefficient is applied to the vehicle's baseline energy efficiency rating to estimate distance traveled. The formula for this calculation is as follows:
 
-$$ \text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta} $$
+
 
 This approach results in odometer readings that can fluctuate based on factors beyond simple distance measurement.
 
@@ -84,7 +83,7 @@ This approach results in odometer readings that can fluctuate based on factors b
 <div style="text-align: center">### The Odometer is an Estimation, Nothing More</div>
 
 ![](/images/IMG_1247.png)
-Traditional vehicles measure distance by counting wheel revolutions. This method is highly accurate since the circumference of the wheel is known, and the vehicle moves a predictable distance per rotation. However, Tesla departs from this standard method in favor of a software-driven mileage calculation system.
+
 
 <div style="text-align: center">#### Key Excerpts from Tesla’s Patent US8054038B2</div>
 
@@ -93,18 +92,6 @@ Tesla’s patent explicitly describes how odometer readings are generated throug
 > \*“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.” \*
 
 This means that the odometer is not a direct measurement of distance traveled, but rather a calculation based on the estimated energy required to drive a certain number of miles. 
-
-<div style="text-align: center">#### What This Means in Practical Terms</div>
-
-Tesla’s odometer is influenced by:
-
-*   Road conditions and elevation changes: If energy consumption increases due to an uphill climb, Tesla’s system may assume that the vehicle has traveled further than it actually has.
-
-*   Traffic conditions: If stop-and-go traffic increases energy use, the vehicle may register more miles than physically driven.
-
-*   Driving style multipliers: More aggressive driving consumes more energy, which Tesla’s system penalizes by recording additional miles. 
-
-This means that two Tesla vehicles could drive the same physical distance, yet record different mileage on their odometers depending on driving behavior and environmental conditions.
 
 <div style="text-align: center">## Memory-Based Algorithms Influence Mileage Calculations</div>
 
