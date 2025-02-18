@@ -186,10 +186,30 @@ sections:
       - type: FeaturedItem
         title: 'Certificate in ESG Investing – CFA '
         subtitle: Sales
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        text: >+
+          Gained comprehensive knowledge in ESG (Environmental, Social, and
+          Governance) factors, understanding their integration into investment
+          strategies and decision-making processes. This includes recognizing
+          the significance of externalities, stewardship principles, and the
+          Sustainability Accounting Standards Board (SASB) in promoting
+          responsible sustainable and impact investments.
+
+
+          Developed expertise in ESG market dynamics, including the application
+          of the Principles for Responsible Investment (PRI), the role of the
+          Task Force on Climate-related Financial Disclosures (TCFD) in
+          assessing climate change risks and opportunities, and strategies for
+          aligning investments with the Paris Agreement to limit global warming.
+
+
+          Acquired skills in ESG analysis, valuation, and integration,
+          encompassing both qualitative and quantitative methods. This involved
+          understanding the importance of materiality assessments in identifying
+          ESG issues impacting financial
+
+
+
+
         actions: []
         colors: bg-neutral-fg-dark
         styles:
