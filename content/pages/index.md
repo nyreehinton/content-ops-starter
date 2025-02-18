@@ -435,7 +435,7 @@ sections:
       - type: FeaturedItem
         title: Bloomberg Market Concepts (BMC)
         tagline: This is the tagline
-        subtitle: This is the item subtitle
+        subtitle: Bloomberg L.P.
         text: >+
           Foundational Financial Market Insights: BMC offers a comprehensive
           overview of key financial markets and instruments. Through modules on
