@@ -145,7 +145,7 @@ The odometer reading is computed using:
 
 \\> \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
 
-<div style="text-align: center">Findings
+<div style="text-align: center"># Findings</div>
 
 </div>
 
@@ -166,7 +166,6 @@ After conducting the technical analysis, the following major findings emerged:
 
 Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
 ```
-
 
 C. Tesla’s Efficiency Factor Appears to Change Over Time
 
