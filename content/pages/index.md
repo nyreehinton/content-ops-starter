@@ -356,8 +356,8 @@ sections:
       type: TitleBlock
     subtitle: Certifications
     items:
-      - title: Certificate in ESG Investing from CFA
-        tagline: Charted Financial Analyst Institute
+      - title: Certificate in ESG Investing
+        tagline: Charted Financial Analyst Institute (CFA)
         subtitle: ''
         text: >
           An industry-recognized credential demonstrating advanced insight into
@@ -383,7 +383,7 @@ sections:
             borderRadius: x-large
             flexDirection: col
         type: FeaturedItem
-      - title: Certified SAFe® 6 Practitioner from
+      - title: Certified SAFe® 6 Practitioner
         tagline: 'Scaled Agile, Inc.'
         subtitle: ''
         text: >
@@ -432,6 +432,33 @@ sections:
             borderRadius: x-large
             flexDirection: col
         type: FeaturedItem
+      - type: FeaturedItem
+        title: Bloomberg Market Concepts (BMC)
+        tagline: Bloomberg L.P.
+        subtitle: ''
+        text: >
+          BMC offers a comprehensive overview of key financial markets and
+          instruments. Through modules on Economic Indicators, Fixed Income,
+          Currencies, and Equities, I gained a solid grounding in market
+          mechanics and the principles that drive global financial markets.
+        image:
+          type: ImageBlock
+          url: /images/Bloomberg Market Concepts.jpg
+          altText: Placeholder text
+          styles:
+            self:
+              borderRadius: x-large
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-8
+              - pl-8
+              - pb-8
+              - pr-8
+            borderRadius: x-large
+            flexDirection: col
     variant: three-col-grid
     colors: bg-neutral-fg-dark
     styles:
