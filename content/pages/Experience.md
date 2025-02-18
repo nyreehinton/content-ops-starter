@@ -101,7 +101,7 @@ sections:
 
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
+          url: /images/CaptialGroup_Logo_Horizontal.png
           altText: Faux Fur Throw
           elementId: ''
           styles:
