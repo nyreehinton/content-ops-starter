@@ -181,7 +181,7 @@ sections:
       styles:
         self:
           textAlign: center
-    subtitle: Subtitle goes here
+    subtitle: Certifications
     items:
       - type: FeaturedItem
         title: Certificate in ESG Investing
