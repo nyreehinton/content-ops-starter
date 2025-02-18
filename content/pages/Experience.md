@@ -126,6 +126,7 @@ sections:
           self:
             flexDirection: row
             borderWidth: 4
+            borderColor: border-neutralAlt
         text: "At Reorg Research, I collaborated with data science teams to develop machine learning tools for event prediction and strategic data aggregation. My role involved designing and launching products that offered clients deeper visibility into potential market events. Highlights include:\n\n*   **Machine Learning Integration:**\_Contributed to the development of an ML model scanning SEC filings for shareholder activism, reducing manual monitoring efforts and increasing detection accuracy.\n\n*   **Product Development:**\_Led the launch of a Pre-Deal-M\\&A Database, tracking over 200 companies under strategic review or activist takeover.\n\n*   **Refinement of Insights:**\_Regularly analyzed and enhanced model outputs by identifying false positives and refining input variables, ensuring accuracy for institutional clients.\n\n\n"
       - type: FeaturedItem
         title: 'Bloomberg, L.P.'
