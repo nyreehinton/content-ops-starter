@@ -139,7 +139,7 @@ sections:
         subtitle: Data Analyst (M&A and Shareholder Activism)
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
+          url: /images/Reorg.jpg
           altText: Chunky Cotton Knit Throw
           elementId: ''
           styles:
