@@ -36,9 +36,7 @@ styles:
     flexDirection: row
     textAlign: left
 ---
-<div style="text-align: center">## Data Sources, Equations, and Findings</div>
-
-With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
+<div style="text-align: left">With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.</div>
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
@@ -46,7 +44,7 @@ This section details the methods, data sources, equations, and key findings used
 
 ![](/images/IMG_1248.jpeg)
 
-<div style="text-align: center">### 1. Data Sources and Collection Process</div>
+<div style="text-align: center">### 1.Data Sources, Equations, and Findings</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
@@ -61,7 +59,9 @@ Key Terms
 •	Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
 •	Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
 •	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
-•	EPA Efficiency: 265 Wh/mi (baseline energy consumption rate per EPA certification).l
+•	EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
+
+
 
 ####
 
@@ -79,9 +79,10 @@ Tesla vehicles store various logs locally, including:
 
 *   Range Estimations: Projected range remaining based on battery percentage.
 
+
 The Tesla Vehicle Data Request provided official logs that included:
 
-*   Charge Start/End Time (UTC).
+*   Charge Start/End Time (UTC) 
 
 <!---->
 
@@ -103,11 +104,24 @@ Tesla service visits provide third-party validation of mileage readings. By comp
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
-
-
 <div style="text-align: center">### 2. Equations and Methodology for Technical Analysis</div>
 
-#### A. Energy Efficiency Calculations
+Total Energy Added to the Battery
+
+Over the course of 6 months, the Tesla Model Y was charged consistently, adding 5,582 kWh of energy to the battery. This value accounts for all energy added through home charging, supercharging, and public charging stations.
+
+•	Total Energy Added: 5,582 kWh
+
+This figure represents the energy used to power the vehicle. Importantly, it includes not only the energy consumed during driving but also other energy sinks, such as climate control usage, battery conditioning, and system overhead.
+
+Theoretical Distance Based on EPA-Rated Efficiency
+
+The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the expected distance the vehicle should have traveled under ideal conditions using 5,582 kWh of energy.
+
+Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
+
+
+A. Energy Efficiency Calculations
 
 Tesla’s energy efficiency is a key variable in determining mileage:
 
@@ -141,8 +155,6 @@ The odometer reading is computed using:
 
 > \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
 
-
-
 <div style="text-align: center">###</div>
 
 After conducting the technical analysis, the following major findings emerged:
@@ -156,8 +168,6 @@ After conducting the technical analysis, the following major findings emerged:
 • However, using EPA-rated efficiency (265 Wh/mi), the mileage should have been 21,064 miles.
 
 • Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
-
-
 
 #### C. Tesla’s Efficiency Factor Appears to Change Over Time
 
