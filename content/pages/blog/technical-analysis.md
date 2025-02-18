@@ -104,7 +104,7 @@ Under ideal conditions, the vehicle should have traveled approximately 21,064 mi
 
 The formula is
 
-`$\frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$`
+`<sub>$\frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$</sub>`
 
 A. Energy Efficiency Calculations
 
