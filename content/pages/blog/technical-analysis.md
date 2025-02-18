@@ -48,45 +48,42 @@ This section details the methods, data sources, equations, and key findings used
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-Vehicle Specifications:
+**Vehicle Specifications:**
 
-Model: 2020 Tesla Model Y Long Range Dual Motor
+> Model: 2020 Tesla Model Y Long Range Dual Motor
+> Battery Capacity: 78 kWh (75 kWh usable)
+> Original EPA Range: 326 miles (265 Wh/mi)
+> Odometer Start: 36,772 miles
+> Odometer End: 49,987 miles
 
-Battery Capacity: 78 kWh (75 kWh usable)
+**Key Terms**
 
-Original EPA Range: 326 miles (265 Wh/mi)
+> Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
+> Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
+> Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
+> EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
 
-Odometer Start: 36,772 miles
 
-Odometer End: 49,987 miles
-
-Key Terms
-•	Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
-•	Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
-•	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
-•	EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
-
-\\####
 
 A. Tesla’s In-Car Data Logs
 
-Tesla vehicles store various logs locally, including:
+> Tesla vehicles store various logs locally, including:
 
-Odometer Readings: The official mileage displayed inside the vehicle.
+> Odometer Readings: The official mileage displayed inside the vehicle.
 
-Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+> Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
 
-Range Estimations: Projected range remaining based on battery percentage.
+> Range Estimations: Projected range remaining based on battery percentage.
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-Charge Start/End Time (UTC)
+> Charge Start/End Time (UTC)
 
-Charge Duration (s).
+> Charge Duration (s).
 
-Energy Added (kWh).
+> Energy Added (kWh).
 
-Odometer Readings (not consistently available).
+> Odometer Readings (not consistently available).
 
 B. Service Center Odometer Logs
 
@@ -115,7 +112,6 @@ The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the ex
 ```
 Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
 ```
-
 
 The formula is
 
