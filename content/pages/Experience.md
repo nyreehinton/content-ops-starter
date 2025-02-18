@@ -86,7 +86,7 @@ sections:
     items:
       - type: FeaturedItem
         title: Capital Group
-        subtitle: $ 88 – $ 176
+        subtitle: Data Product Manager
         text: >+
           Available in a range of colors and patterns, we make it easy to pick
           the perfect look for you.
