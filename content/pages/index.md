@@ -383,7 +383,7 @@ sections:
             borderRadius: x-large
             flexDirection: col
         type: FeaturedItem
-      - title: Certified SAFe® 6 Practitioner from
+      - title: Certified SAFe® 6 Practitioner
         tagline: 'Scaled Agile, Inc.'
         subtitle: ''
         text: >
