@@ -48,7 +48,7 @@ This section details the methods, data sources, equations, and key findings used
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-**Vehicle Specifications:**
+<div style="text-align: center">**Vehicle Specifications:**</div>
 
 | Model              | 2020 Tesla Model Y Long Range Dual Motor |
 | ------------------ | ---------------------------------------- |
@@ -56,8 +56,6 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | Original EPA Range | 326 miles (265 Wh/mi)                    |
 | Odometer Start     | 36,772 miles                             |
 | Odometer End       | 49,987 miles                             |
-
-
 
 **Key Terms**
 
