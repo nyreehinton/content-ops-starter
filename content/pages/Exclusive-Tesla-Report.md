@@ -53,7 +53,7 @@ sections:
       color: text-dark
       styles:
         self:
-          textAlign: left
+          textAlign: center
       type: TitleBlock
     people:
       - content/data/person1.json
