@@ -28,7 +28,7 @@ styles:
     textAlign: center
 featuredImage:
   type: ImageBlock
-  url: /images/IMG_0291.jpeg
+  url: /images/IMG_0367.jpeg
   altText: Image alt text placeholder
   elementId: ''
   styles:
