@@ -50,26 +50,15 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 Vehicle Specifications:
 
-```
 Model: 2020 Tesla Model Y Long Range Dual Motor
-```
 
-```
 Battery Capacity: 78 kWh (75 kWh usable)
-```
 
-```
 Original EPA Range: 326 miles (265 Wh/mi)
-```
 
-```
 Odometer Start: 36,772 miles
-```
 
-```
 Odometer End: 49,987 miles
-```
-
 
 Key Terms
 •	Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
@@ -83,35 +72,21 @@ A. Tesla’s In-Car Data Logs
 
 Tesla vehicles store various logs locally, including:
 
-```
 Odometer Readings: The official mileage displayed inside the vehicle.
-```
 
-```
 Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-```
 
-```
 Range Estimations: Projected range remaining based on battery percentage.
-```
 
 The Tesla Vehicle Data Request provided official logs that included:
 
-```
 Charge Start/End Time (UTC)
-```
 
-```
 Charge Duration (s).
-```
 
-```
 Energy Added (kWh).
-```
 
-```
 Odometer Readings (not consistently available).
-```
 
 B. Service Center Odometer Logs
 
