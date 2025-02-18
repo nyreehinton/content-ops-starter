@@ -102,6 +102,8 @@ The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the ex
 
 Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
 
+The formula is $ \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}} $.
+
 A. Energy Efficiency Calculations
 
 Tesla’s energy efficiency is a key variable in determining mileage:
@@ -110,9 +112,9 @@ $$\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Effi
 
 Where:
 
-***Energy Added (kWh)** is obtained from charging logs.
+\***Energy Added (kWh)** is obtained from charging logs.
 
-***Energy Efficiency (Wh/mile)** is based on real-world trip data from the in-car system.
+\***Energy Efficiency (Wh/mile)** is based on real-world trip data from the in-car system.
 
 ### Example Calculation:
 
