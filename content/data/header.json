@@ -26,7 +26,7 @@
                     "url": "/blog/case-study-1",
                     "icon": "",
                     "iconPosition": "left",
-                    "style": "secondary",
+                    "style": "primary",
                     "type": "Link",
                     "showIcon": false
                 },
