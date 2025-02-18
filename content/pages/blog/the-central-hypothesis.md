@@ -1,8 +1,6 @@
 ---
 type: PostLayout
-title: >-
-  Part 1: The Central Hypothesis: Tesla’s Odometer Is Not a Simple Distance
-  Tracker
+title: 'Part 1: How Tesla Redefined Mileage'
 slug: the-central-hypothesis
 date: '2025-02-16'
 excerpt: >-
