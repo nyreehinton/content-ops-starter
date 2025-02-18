@@ -87,18 +87,7 @@ sections:
       - type: FeaturedItem
         title: Capital Group
         subtitle: Data Product Manager
-        text: >+
-          Available in a range of colors and patterns, we make it easy to pick
-          the perfect look for you.
-
-
-
-
-          Our faux fur is incredibly soft, plush and oh-so inviting. It's like
-          the real deal (but better)!
-
-
-
+        text: "At Capital Group, I led data-driven initiatives that transformed the transparency and accessibility of global ETF transaction insights for a $31B product suite. My responsibilities required cross-team coordination, technical implementation, and a strategic focus on data governance. Key achievements include:\n\n*   **Data Governance:**\_Designed and implemented a governance framework across seven teams, aligning stakeholders and integrating six critical systems, including data lakes and business intelligence tools.\n\n*   **Pipeline Automation and Optimization:**\_Reduced ETF data pipeline processing times by 70% through the use of Python, SQL, and Databricks, enabling faster insights for end-users.\n\n*   **Compliance and Risk Reduction:**\_Built a custom seeding-money tracker that identified $170M in unreported transactions, mitigating compliance exposure and increasing adherence to regulatory standards.\n\n*   **Interactive Dashboards:**\_Created and deployed 36 Tableau dashboards, integrating hyper-extract automation and optimized PySpark-generated data sources for improved load times and user experience globally.\n\n*   **Strategic Data Integration:**\_Spearheaded ingestion of nine new ETF data sources, enhancing visibility and analytics capabilities while improving stakeholder confidence in reporting accuracy.\n\n"
         image:
           type: ImageBlock
           url: /images/CaptialGroup_Logo_Horizontal.png
