@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: 'Part 1: How Tesla Redefined Mileage'
+title: How Tesla Redefined Mileage (Part 1)
 slug: the-central-hypothesis
 date: '2025-02-16'
 excerpt: >-
