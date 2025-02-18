@@ -27,7 +27,8 @@
                     "icon": "",
                     "iconPosition": "left",
                     "style": "secondary",
-                    "type": "Link"
+                    "type": "Link",
+                    "showIcon": false
                 },
                 {
                     "label": "AWS SW: Apple Semiconductor Supplier",
