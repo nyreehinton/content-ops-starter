@@ -84,7 +84,7 @@ sections:
               - pr-6
             textAlign: left
             borderColor: border-neutralAlt
-            borderWidth: 4
+            borderWidth: 0
             borderRadius: x-small
             flexDirection: col
             justifyContent: center
