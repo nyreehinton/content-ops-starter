@@ -107,7 +107,7 @@ sections:
             flexDirection: row-reverse
             borderStyle: none
             borderColor: border-neutralAlt
-            borderWidth: 0
+            borderWidth: 4
         text: "At Third Bridge, I conducted high-level discussions with C-suite executives, generating actionable insights for institutional clients. My work highlighted trends impacting consumer staples, services, and agricultural markets. Key contributions include:\n\n*   **Executive Engagement:**\_Moderated over 125 discussions with senior leadership, exploring topics such as competitive positioning, pricing strategies, and consumer behavior.\n\n*   **Market Expansion:**\_Expanded research coverage by adding 142 equity names across Consumer Staples and related sectors, enhancing the value proposition for clients.\n\n*   **Research Leadership:**\_Directed a team of three research associates, providing mentorship and ensuring the timely delivery of valuable sector analyses.\n\n"
       - type: FeaturedItem
         title: Reorg Research
