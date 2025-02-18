@@ -38,7 +38,7 @@ styles:
 ---
 <div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
-With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements. 
+With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
@@ -57,7 +57,14 @@ Vehicle Specifications
 •	Odometer Start: 36,772 miles
 •	Odometer End: 49,987 miles
 
-#### A. Tesla’s In-Car Data Logs
+Key Terms
+•	Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
+•	Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
+•	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
+•	EPA Efficiency: 265 Wh/mi (baseline energy consumption rate per EPA certification).l
+
+#### 
+A. Tesla’s In-Car Data Logs
 
 Tesla vehicles store various logs locally, including:
 
