@@ -185,7 +185,7 @@ sections:
     items:
       - type: FeaturedItem
         title: 'Certificate in ESG Investing – CFA '
-        subtitle: Sales
+        subtitle: ''
         text: >+
           Gained comprehensive knowledge in ESG (Environmental, Social, and
           Governance) factors, understanding their integration into investment
