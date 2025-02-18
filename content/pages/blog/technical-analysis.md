@@ -44,7 +44,7 @@ This section details the methods, data sources, equations, and key findings used
 
 ![](/images/IMG_1248.jpeg)
 
-<div style="text-align: center">### 1.Data Sources, Equations, and Findings</div>
+<div style="text-align: center">## Data Sources, Equations, and Findings</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
@@ -60,8 +60,6 @@ Key Terms
 •	Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
 •	Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
 •	EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
-
-
 
 ####
 
@@ -79,10 +77,9 @@ Tesla vehicles store various logs locally, including:
 
 *   Range Estimations: Projected range remaining based on battery percentage.
 
-
 The Tesla Vehicle Data Request provided official logs that included:
 
-*   Charge Start/End Time (UTC) 
+*   Charge Start/End Time (UTC)
 
 <!---->
 
@@ -119,7 +116,6 @@ Theoretical Distance Based on EPA-Rated Efficiency
 The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the expected distance the vehicle should have traveled under ideal conditions using 5,582 kWh of energy.
 
 Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
-
 
 A. Energy Efficiency Calculations
 
