@@ -22,15 +22,6 @@ sections:
         style: secondary
         elementId: ''
         type: Button
-      - label: Past Projects
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Link
     media:
       url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
       altText: Unblock your team boost your time to production preview
