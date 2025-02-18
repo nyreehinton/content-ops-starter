@@ -77,7 +77,7 @@ sections:
     styles:
       self:
         alignItems: center
-        flexDirection: col-reverse
+        flexDirection: row-reverse
       subtitle:
         textAlign: center
   - type: FeaturedItemsSection
