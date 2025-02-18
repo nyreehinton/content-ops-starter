@@ -78,6 +78,8 @@ sections:
       self:
         alignItems: center
         flexDirection: row-reverse
+      subtitle:
+        textAlign: center
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
