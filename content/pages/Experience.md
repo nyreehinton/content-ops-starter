@@ -35,19 +35,19 @@ sections:
       color: text-dark
     subtitle: Be in good company
     text: >
-      With a history grounded in excellence, data-driven insights, and strategic
-      problem-solving, I’ve dedicated my career to delivering innovative
-      solutions across diverse industries. From harnessing the power of machine
-      learning for corporate data governance to managing multi-billion-dollar
-      ETF product pipelines, my career is defined by a relentless pursuit of
-      impactful results.
+      Over the past several years, I have honed my expertise as a Product
+      Manager and Data Specialist, addressing complex data challenges and
+      delivering actionable insights that drive strategic decision-making. My
+      career spans diverse industries—finance, technology, and consumer
+      staples—where I’ve collaborated with cross-functional teams, led
+      data-driven projects, and developed scalable solutions.
 
 
-      Below, I delve deeper into the key roles and achievements that have shaped
-      my career, highlighting the challenges I’ve tackled and the measurable
-      success I’ve driven. Each step of my journey reflects my adaptability,
-      technical expertise, and dedication to empowering businesses through data
-      and technology.
+      The following sections provide a comprehensive overview of my professional
+      journey, showcasing the projects I've led, the technical skills I've
+      applied, and the measurable outcomes I've delivered. This detailed account
+      reflects my ability to bridge data science, product management, and
+      analytics, creating lasting value across organizations.
     actions:
       - type: Button
         label: Get started
