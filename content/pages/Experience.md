@@ -354,7 +354,7 @@ slug: Experience
 isDraft: false
 seo:
   type: Seo
-  metaTitle: Landing Page
+  metaTitle: ''
   metaDescription: ''
   addTitleSuffix: true
   socialImage: /images/main-hero.jpg
