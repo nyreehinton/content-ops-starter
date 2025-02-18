@@ -492,7 +492,7 @@ sections:
           - pr-3
   - type: CarouselSection
     title: null
-    subtitle: Tech Stack
+    subtitle: ''
     items:
       - title: Visualization
         tagline: Tableau
