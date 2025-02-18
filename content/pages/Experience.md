@@ -184,7 +184,7 @@ sections:
     subtitle: Subtitle goes here
     items:
       - type: FeaturedItem
-        title: 'Certificate in ESG Investing – CFA '
+        title: Certificate in ESG Investing
         subtitle: Charted Financial Analyst Institute (CFA)
         text: >+
           Gained comprehensive knowledge in ESG (Environmental, Social, and
