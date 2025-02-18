@@ -491,7 +491,10 @@ sections:
           - pb-3
           - pr-3
   - type: CarouselSection
-    title: null
+    title:
+      type: TitleBlock
+      text: This Is A Big Headline
+      color: text-dark
     subtitle: ''
     items:
       - title: Visualization
