@@ -290,7 +290,7 @@ sections:
             flexDirection: row
             justifyContent: center
       - type: FeaturedItem
-        title: Certified SAFe® 6 Practitioner from
+        title: 'Certified SAFe® 6 Practitioner from Scaled Agile, Inc.'
         subtitle: Engineering
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
