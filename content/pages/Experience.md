@@ -307,6 +307,7 @@ sections:
               - pr-8
             borderRadius: x-large
             flexDirection: row
+        tagline: 'Scaled Agile, Inc.'
     actions:
       - type: Button
         label: Apply now
