@@ -1,7 +1,7 @@
 {
     "type": "Person",
     "name": "Reuters",
-    "role": "Job title",
+    "role": "",
     "image": {
         "type": "ImageBlock",
         "url": "/images/avatar1.svg",
