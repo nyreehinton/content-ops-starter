@@ -153,7 +153,7 @@ sections:
     actions:
       - label: See more
         altText: ''
-        url: /
+        url: /Experience
         showIcon: false
         icon: arrowRight
         iconPosition: right
