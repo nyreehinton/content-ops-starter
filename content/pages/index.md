@@ -575,7 +575,7 @@ sections:
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
         image:
-          url: /images/person-placeholder-light.png
+          url: /images/techstack.png
           altText: ''
           styles:
             self:
