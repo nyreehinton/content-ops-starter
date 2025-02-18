@@ -42,13 +42,13 @@ The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in De
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
-!\\\[]\\(/images/IMG\\\_1248.jpeg)
+
 
 <div style="text-align: center"># Data Sources</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-<div style="text-align: center">**Vehicle Specifications:**</div>
+<div style="text-align: left">**Vehicle Specifications:**</div>
 
 | Model              | 2020 Tesla Model Y Long Range Dual Motor |
 | ------------------ | ---------------------------------------- |
@@ -57,7 +57,8 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | Odometer Start     | 36,772 miles                             |
 | Odometer End       | 49,987 miles                             |
 
-**Key Terms**
+**
+Key Terms**
 
 Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
 Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
