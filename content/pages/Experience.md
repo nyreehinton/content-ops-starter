@@ -289,6 +289,7 @@ sections:
             borderRadius: x-large
             flexDirection: row
             justifyContent: center
+        tagline: Bloomberg L.P.
       - type: FeaturedItem
         title: Certified SAFe® 6 Practitioner
         subtitle: 'Scaled Agile, Inc.'
