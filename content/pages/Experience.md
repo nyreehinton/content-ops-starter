@@ -39,11 +39,10 @@ sections:
     subtitle: Investment Research | Data Analytics | Product
     text: >
       Over the past several years, I have honed my expertise as a Product
-      Manager and Data Specialist, addressing complex data challenges and
-      delivering actionable insights that drive strategic decision-making. My
-      career spans diverse industries—finance, technology, and consumer
-      staples—where I’ve collaborated with cross-functional teams, led
-      data-driven projects, and developed scalable solutions.
+      Manager and Data Specialist, addressing complex data challenges. My career
+      spans diverse industries—finance, technology, and consumer staples—where
+      I’ve collaborated with cross-functional teams, led data-driven projects,
+      and developed scalable solutions.
 
 
       The following sections provide a comprehensive overview of my professional
