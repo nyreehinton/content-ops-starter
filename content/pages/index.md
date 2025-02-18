@@ -481,7 +481,7 @@ sections:
           textAlign: center
     actions:
       - type: Button
-        label: Get started
+        label: See More
         altText: ''
         url: /Experience
         showIcon: false
