@@ -48,12 +48,28 @@ This section details the methods, data sources, equations, and key findings used
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-Vehicle Specifications
-•	Model: 2020 Tesla Model Y Long Range Dual Motor
-•	Battery Capacity: 78 kWh (75 kWh usable)
-•	Original EPA Range: 326 miles (265 Wh/mi)
-•	Odometer Start: 36,772 miles
-•	Odometer End: 49,987 miles
+Vehicle Specifications:
+
+```
+Model: 2020 Tesla Model Y Long Range Dual Motor
+```
+
+```
+Battery Capacity: 78 kWh (75 kWh usable)
+```
+
+```
+Original EPA Range: 326 miles (265 Wh/mi)
+```
+
+```
+Odometer Start: 36,772 miles
+```
+
+```
+Odometer End: 49,987 miles
+```
+
 
 Key Terms
 •	Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
@@ -67,24 +83,41 @@ A. Tesla’s In-Car Data Logs
 
 Tesla vehicles store various logs locally, including:
 
-\\\*   Odometer Readings: The official mileage displayed inside the vehicle.
-\\\*   Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-\\\*   Range Estimations: Projected range remaining based on battery percentage.
+```
+Odometer Readings: The official mileage displayed inside the vehicle.
+```
+
+```
+Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
+```
+
+```
+Range Estimations: Projected range remaining based on battery percentage.
+```
 
 The Tesla Vehicle Data Request provided official logs that included:
 
 ```
-\*   Charge Start/End Time (UTC)
-\*   Charge Duration (s).
-\*   Energy Added (kWh).
-\*   Odometer Readings (not consistently available).
+Charge Start/End Time (UTC)
 ```
 
-\\#### B. Service Center Odometer Logs
+```
+Charge Duration (s).
+```
+
+```
+Energy Added (kWh).
+```
+
+```
+Odometer Readings (not consistently available).
+```
+
+B. Service Center Odometer Logs
 
 Tesla service visits provide third-party validation of mileage readings. By comparing these timestamped odometer readings to the in-car logs, we can check whether the mileage increase was reasonable.
 
-\\#### C. Charging Session Data
+C. Charging Session Data
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
@@ -94,7 +127,9 @@ Total Energy Added to the Battery
 
 Over the course of 6 months, the Tesla Model Y was charged consistently, adding 5,582 kWh of energy to the battery. This value accounts for all energy added through home charging, supercharging, and public charging stations.
 
+```
 •	Total Energy Added: 5,582 kWh
+```
 
 This figure represents the energy used to power the vehicle. Importantly, it includes not only the energy consumed during driving but also other energy sinks, such as climate control usage, battery conditioning, and system overhead.
 
