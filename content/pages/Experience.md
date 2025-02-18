@@ -122,7 +122,7 @@ sections:
         subtitle: Sector Analyst (Consumer Staples)
         image:
           type: ImageBlock
-          url: /images/img-placeholder.svg
+          url: /images/IMG_0132.jpeg
           altText: Cotton Knit Throws
           elementId: ''
           styles:
