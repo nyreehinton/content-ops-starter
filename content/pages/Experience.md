@@ -354,7 +354,7 @@ slug: Experience
 isDraft: false
 seo:
   type: Seo
-  metaTitle: ''
+  metaTitle: Previous Work Experience
   metaDescription: ''
   addTitleSuffix: true
   socialImage: /images/main-hero.jpg
