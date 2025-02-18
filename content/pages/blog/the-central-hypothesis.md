@@ -34,6 +34,8 @@ featuredImage:
         - pl-12
         - pb-12
         - pr-12
+seo:
+  type: Seo
 ---
 <div style="text-align: center">## Traditional Odometers: A Baseline for Comparison</div>
 
