@@ -35,8 +35,19 @@ sections:
       color: text-dark
     subtitle: Be in good company
     text: >
-      A service that provides advice and guidance to startups and small
-      businesses.
+      With a history grounded in excellence, data-driven insights, and strategic
+      problem-solving, I’ve dedicated my career to delivering innovative
+      solutions across diverse industries. From harnessing the power of machine
+      learning for corporate data governance to managing multi-billion-dollar
+      ETF product pipelines, my career is defined by a relentless pursuit of
+      impactful results.
+
+
+      Below, I delve deeper into the key roles and achievements that have shaped
+      my career, highlighting the challenges I’ve tackled and the measurable
+      success I’ve driven. Each step of my journey reflects my adaptability,
+      technical expertise, and dedication to empowering businesses through data
+      and technology.
     actions:
       - type: Button
         label: Get started
