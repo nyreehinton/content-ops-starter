@@ -114,7 +114,7 @@ sections:
             borderColor: border-neutralAlt
             borderWidth: 2
             borderRadius: x-small
-            flexDirection: row-reverse
+            flexDirection: col-reverse
             justifyContent: center
             borderStyle: dotted
       - type: FeaturedItem
