@@ -22,7 +22,7 @@ sections:
           - pb-0
           - pr-0
         alignItems: flex-start
-        flexDirection: col-reverse
+        flexDirection: col
         justifyContent: center
       text:
         textAlign: left
