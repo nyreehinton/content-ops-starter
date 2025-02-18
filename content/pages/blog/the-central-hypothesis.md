@@ -138,25 +138,13 @@ This means that a Tesla can record additional miles simply by recalibrating its 
 
 <div style="text-align: center">## The Role of Factor Multipliers: The “Aggressive Driving Penalty”</div>
 
-Central to Tesla’s predictive odometer system is the application of multipliers that adjust energy-to-mile conversion rates based on driving style. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption.
+Central to Tesla’s predictive odometer system is the application of multipliers that adjust energy-to-mile conversion rates based on driving style. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption. Driving behaviors are categorized into modes, such as:
 
-Driving behaviors are categorized into modes, such as:
-
-| Mode       | Multiplier | Energy-to-mile Conversion |   |
-| ---------- | ---------- | ------------------------- | - |
-| Aggressive | <1         |                           |   |
-| Normal     | = 1        |                           |   |
-| Efficient  | >1         |                           |   |
-
-Mode: Multiplier < 1. For aggressive acceleration and braking, the system assumes higher energy consumption, artificially inflating the recorded mileage.
-•	Normal Mode: Multiplier = 1. A baseline conversion factor is applied, assuming average energy efficiency.
-•	Efficient Mode: Multiplier > 1. For conservative driving, the system assumes lower energy consumption, resulting in reduced mileage accumulation.
-
-*   Efficient Mode: The system rewards conservative driving by decreasing mileage recorded for energy consumed.
-
-*   Normal Mode: A baseline miles-to-energy conversion factor is applied.
-
-*   Aggressive Mode: The system penalizes aggressive driving by increasing mileage recorded per unit of energy consumed.
+| Mode       | Multiplier | Energy-to-mile Conversion                                                                           |
+| ---------- | ---------- | --------------------------------------------------------------------------------------------------- |
+| Aggressive | <1         | The system penalizes aggressive driving by increasing mileage recorded per unit of energy consumed. |
+| Normal     | = 1        | A baseline miles-to-energy conversion factor is applied.                                            |
+| Efficient  | >1         | The system rewards conservative driving by decreasing mileage recorded for energy consumed.         |
 
 For example, if a Tesla driver consistently accelerates rapidly and brakes hard, the vehicle may apply a multiplier of 0.95 to the miles-per-kWh ratio. This means that for every 95 miles actually driven, the odometer could record 100 miles. Over time, this artificially inflates the mileage accumulation, pushing the vehicle closer to warranty expiration faster than expected. 
 
