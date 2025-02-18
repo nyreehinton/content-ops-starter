@@ -653,7 +653,7 @@ sections:
 seo:
   metaTitle: Home - Nyree Hinton
   metaDescription: >-
-    Explore Nyree Hinton’s professional portfolio. Discover her background in
+    Explore Nyree Hinton’s professional portfolio. Discover his background in
     data analytics, product management, and cross-functional collaboration.
   socialImage: /images/IMG_1266.jpeg
   type: Seo
