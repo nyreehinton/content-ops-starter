@@ -655,7 +655,7 @@ seo:
   metaDescription: >-
     Explore Nyree Hinton’s professional portfolio. Discover her background in
     data analytics, product management, and cross-functional collaboration.
-  socialImage: /images/main-hero.jpg
+  socialImage: /images/IMG_1266.jpeg
   type: Seo
 type: PageLayout
 ---
