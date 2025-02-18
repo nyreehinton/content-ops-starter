@@ -7,41 +7,17 @@ sections:
       text: Welcome to My Portfolio
       color: text-dark
       type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     subtitle: 'Hello, I''m Nyree Hinton'
-    text: >
-      I’m a Product Manager & Data Specialist based in Los Angeles with
-      experience in data analytics, governance, and product development. Drawing
-      on years of hands-on work in capital markets, machine learning, and agile
-      project management, I aim to turn complex data problems into strategic
-      solutions that drive business results.
-    actions:
-      - label: Bio
-        altText: ''
-        url: /
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Button
-      - label: Past Projects
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Link
+    text: "<div style=\"text-align: center\">I’m a Product Manager & Data Specialist based in Los Angeles with experience in data analytics, governance, and product development. Throughout my career, I have cultivated deep expertise at the intersection of data, financial products, and capital markets.\_</div>\n\n<div style=\"text-align: center\">The goal of this portfolio is to highlight my professional journey and showcase my roles at leading organizations, the challenges I overcame, and the metrics that underscore my contributions.</div>\n\n"
+    actions: []
     media:
       url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
-    badge:
-      label: Data Product Management
-      color: text-primary
-      type: Badge
     elementId: ''
     colors: bg-light-fg-dark
     styles:
@@ -53,6 +29,8 @@ sections:
           - pl-16
           - pb-16
           - pr-16
+      subtitle:
+        textAlign: center
   - type: DividerSection
     title: Divider
     elementId: ''
@@ -153,7 +131,7 @@ sections:
     actions:
       - label: See more
         altText: ''
-        url: /
+        url: /Experience
         showIcon: false
         icon: arrowRight
         iconPosition: right
