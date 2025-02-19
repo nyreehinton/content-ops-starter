@@ -1,6 +1,6 @@
 ---
 title: Databricks Automation
-slug: five-tips-for-starting-a-startup
+slug: automation
 date: '2025-02-14'
 excerpt: ''
 bottomSections: []
