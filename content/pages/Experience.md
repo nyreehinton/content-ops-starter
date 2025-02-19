@@ -76,7 +76,7 @@ sections:
                 - pr-0
         actions:
           - type: Button
-            label: Get started
+            label: Exchange Traded Funds (ETF)
             altText: ''
             url: /
             showIcon: false
