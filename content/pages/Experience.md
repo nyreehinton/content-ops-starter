@@ -361,7 +361,7 @@ sections:
             justifyContent: center
       - type: FeaturedItem
         title: Bloomberg Market Concepts (BMC)
-        subtitle: Marketing
+        subtitle: Bloomberg Education
         text: >+
           Built a solid foundation in financial markets, covering economic
           indicators, fixed income, currencies, and equities.
