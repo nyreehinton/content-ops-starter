@@ -139,14 +139,6 @@ sections:
       - type: FeaturedItem
         title: Reorg Research
         subtitle: Data Analyst (M&A and Shareholder Activism)
-        image:
-          type: ImageBlock
-          url: /images/Reorg (1).jpg
-          altText: Chunky Cotton Knit Throw
-          elementId: ''
-          styles:
-            self:
-              borderRadius: medium
         actions:
           - type: Button
             label: Get started
