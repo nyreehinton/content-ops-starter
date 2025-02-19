@@ -46,7 +46,7 @@ This section details the methods, data sources, equations, and key findings used
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-<div style="text-align: center">**Vehicle Specifications:**</div>
+<div style="text-align: center">**Vehicle Specifications**</div>
 
 |                   Model                  |    Battery Capacity    | Original EPA Range    | Odometer Start | Odometer End |
 | :--------------------------------------: | :--------------------: | --------------------- | -------------- | ------------ |
@@ -54,7 +54,7 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 <div style="text-align: center"></div>
 
-**Key Terms**</div>
+<div style="text-align: center">**Key Terms**</div>
 
 |             **Term**             | **Description**                                                                                                                                              |
 | :------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
