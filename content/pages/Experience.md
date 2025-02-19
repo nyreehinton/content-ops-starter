@@ -73,7 +73,16 @@ sections:
                 - pl-0
                 - pb-0
                 - pr-0
-        actions: []
+        actions:
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
         colors: bg-light-fg-dark
         styles:
           self:
