@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: 'Part 3: Everyone Else Got It Wrong'
+title: Everyone Else Got It Wrong (Part 3)
 slug: fundamental-market-misdiagnoses
 date: '2023-02-20'
 excerpt: >-
