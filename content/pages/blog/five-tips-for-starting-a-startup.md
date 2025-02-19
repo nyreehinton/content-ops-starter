@@ -1,5 +1,5 @@
 ---
-title: Capital Group
+title: Databricks Automation
 slug: five-tips-for-starting-a-startup
 date: '2025-02-14'
 excerpt: ''
