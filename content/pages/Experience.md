@@ -83,15 +83,6 @@ sections:
             iconPosition: right
             style: primary
             elementId: ''
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
         colors: bg-light-fg-dark
         styles:
           self:
