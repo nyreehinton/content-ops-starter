@@ -1,5 +1,5 @@
 ---
-title: Surround Yourself With the Right People
+title: Exchange Traded Funds
 slug: etf
 date: '2024-03-26'
 excerpt: >-
