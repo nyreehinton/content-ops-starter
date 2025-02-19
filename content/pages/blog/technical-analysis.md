@@ -44,6 +44,19 @@ With the theoretical foundation established regarding Tesla’s software-driven 
 4.  <div style="text-align: center">What is the efficiency adjustment factor (η) used by Tesla’s system?</div>
 5.  <div style="text-align: center">What is the discrepancy percentage between Tesla’s odometer and real-world data?</div>
 
+<svg width="1200" height="800" xmlns="http\://www\.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#121212" />
+  <!-- Questions Text -->
+  <text x="50" y="100" font-family="Arial, sans-serif" font-size="28" fill="#FFFFFF">
+    <tspan x="50" dy="0">What is the expected mileage based on the EPA-rated energy consumption standard?</tspan>
+    <tspan x="50" dy="40">What is the real-world mileage based on actual energy consumption rates?</tspan>
+    <tspan x="50" dy="40">How does the odometer reading compare to expected and real-world mileage?</tspan>
+    <tspan x="50" dy="40">What is the efficiency adjustment factor (η) used by Tesla’s system?</tspan>
+    <tspan x="50" dy="40">What is the discrepancy percentage between Tesla’s odometer and real-world data?</tspan>
+  </text>
+</svg>
+
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
