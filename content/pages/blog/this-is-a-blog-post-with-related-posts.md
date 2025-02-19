@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: ''
+title: AGILE Methods
 date: '2022-10-10'
 author: content/data/person1.json
 excerpt: >-
