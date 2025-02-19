@@ -55,7 +55,7 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | Odometer Start     | 36,772 miles                             |
 | Odometer End       | 49,987 miles                             |
 
-<div style="text-align: center">
+<div style="text-align: center"></div>
 
 **Key Terms**</div>
 
@@ -67,10 +67,6 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | Odometer Miles                   | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                          |
 | Efficiency Adjustment Factor (η) | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions. |
 | Discrepancy                      | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.            |
-
-
-
-
 
 A. Tesla’s In-Car Data Logs
 
@@ -96,102 +92,43 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 
 <div style="text-align: center"># Equations</div>
 
-
 Parameter
 
 Value
 
-| Energy Consumed (Total) | 5,582 kWh |
+\| Energy Consumed (Total) | 5,582 kWh |
 
-| Odometer Reading (End of Period) | 13,228 miles |
+\| Odometer Reading (End of Period) | 13,228 miles |
 
-| EPA Wh/mi (Nominal Efficiency) | 265 Wh/mi |
+\| EPA Wh/mi (Nominal Efficiency) | 265 Wh/mi |
 
-| Actual Wh/mi (Calculated) | 370 Wh/mi |
+\| Actual Wh/mi (Calculated) | 370 Wh/mi |
 
-| Physical GPS Mileage (Real-World Distance) | 11,743 miles |
-
-
+\| Physical GPS Mileage (Real-World Distance) | 11,743 miles |
 
 
 
-Total Energy Added to the Battery
 
-Over the course of 6 months, the Tesla Model Y was charged consistently, adding 5,582 kWh of energy to the battery. This value accounts for all energy added through home charging, supercharging, and public charging stations.
 
-```
-•	Total Energy Added: 5,582 kWh
-```
 
-This figure represents the energy used to power the vehicle. Importantly, it includes not only the energy consumed during driving but also other energy sinks, such as climate control usage, battery conditioning, and system overhead.
 
-Theoretical Distance Based on EPA-Rated Efficiency
 
-The EPA-rated efficiency of 265 Wh/mi provides a baseline for calculating the expected distance the vehicle should have traveled under ideal conditions using 5,582 kWh of energy.
 
-```
-Under ideal conditions, the vehicle should have traveled approximately 21,064 miles using the energy added to the battery.
-```
-
-The formula is
-
-\\\`<sub>$\frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$</sub>\\\`
-
-A. Energy Efficiency Calculations
-
-Tesla’s energy efficiency is a key variable in determining mileage:
-
-$$\text{Miles} = \frac{\text{Energy Added (kWh)} \times 1,000}{\text{Energy Efficiency (Wh/mile)}}$$
-
-Where:
-
-\\\\\\\*\\\*\\\*Energy Added (kWh)\\\*\\\* is obtained from charging logs.
-
-\\\\\\\*\\\*\\\*Energy Efficiency (Wh/mile)\\\*\\\* is based on real-world trip data from the in-car system.
-
-\\### Example Calculation:
-
-\\\*   If \\\*\\\*5,582 kWh\\\*\\\* of energy was added and the \\\*\\\*EPA-rated efficiency\\\*\\\* is \\\*\\\*265 Wh/mile\\\*\\\*, then:
-
-$$
-\frac{5,582 \times 1,000}{265} = 21,064 \text{ miles (expected)}
-$$
-
-If \\\*\\\*real-world efficiency\\\*\\\* is \\\*\\\*370 Wh/mile\\\*\\\*, then:
-
-$$
-\frac{5,582 \times 1,000}{370} = 15,089 \text{ miles (expected)}
-$$
-
-\\\*   However, actual odometer readings showed only 13,228 miles recorded.
-
-\\#### B. Verifying Tesla’s Energy-to-Miles Conversion Against Odometer Data
-
-Tesla’s mileage calculations assume an energy efficiency conversion factor stored in memory, which can be adjusted remotely.
-
-The odometer reading is computed using:
-
-\\> \text{Odometer Increment} = \frac{\text{Energy Consumed (Wh)}}{\text{Stored Efficiency Factor (Wh/mile)}} 
-
-<div style="text-align: center"># Findings</div>
+Over the course of 6 months, the Tesla Model Y was charged consistently, adding 5,582 kWh of energy to the Findings
 
 After conducting the technical analysis, the following major findings emerged:
 
+
+
 \\#### A. Odometer Readings Exceeded Expected Mileage Based on Energy Consumption
 
-```
 • The Tesla Model Y recorded 13,228 miles over 7 months.
-```
 
-```
 • Based on real-world efficiency (370 Wh/mi), the vehicle should have recorded 15,089 miles.
-```
 
-```
 • However, using EPA-rated efficiency (265 Wh/mi), the mileage should have been 21,064 miles.
 
 Both methods fail to explain the exact odometer reading, suggesting Tesla’s system dynamically alters mileage calculations.
-```
 
 C. Tesla’s Efficiency Factor Appears to Change Over Time
 
