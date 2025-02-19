@@ -36,7 +36,7 @@ styles:
     flexDirection: row
     textAlign: left
 ---
-<div style="text-align: left">With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.</div>
+<div style="text-align: left">With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.1. What is the expected mileage based on the EPA-rated energy consumption standard?2. What is the real-world mileage based on actual energy consumption rates?3. How does the odometer reading compare to expected and real-world mileage?4. What is the efficiency adjustment factor (η) used by Tesla’s system?5. What is the discrepancy percentage between Tesla’s odometer and real-world data?</div>
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
 
