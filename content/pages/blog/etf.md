@@ -26,51 +26,42 @@ styles:
     flexDirection: col
 isFeatured: false
 ---
+Capital Group's entry into the exchange-traded fund (ETF) market marked a pivotal shift in its product strategy, blending its legacy expertise in active management with the operational demands of ETF innovation13. As ETFs trade intraday-like stocks but require robust data infrastructure to support pricing accuracy, tax efficiency, and compliance, my role centered on architecting the analytic pipelines that underpinned the launch and scaling of $31B in ETF assets from 2021–202312. 
 
-Starting a business is no small feat. It’s a journey filled with challenges, risks, and countless decisions that can make or break your startup. One of the most critical decisions you'll make isn’t about your product or market—it's about the people you surround yourself with.
+This work required data governance, cloud-based processing frameworks, and cross-functional collaboration—challenges amplified by simultaneous enterprise-wide migrations to next-generation systems. 
 
-## Why the Right People Matter
+Below, I detail how we transformed raw vendor feeds into actionable insights while navigating a landscape of evolving data sources and regulatory scrutiny.
+
+## Exchange Traded Funds 
+
+Exchange-traded funds (ETFs) represent pooled investment vehicles designed for intraday trading, contrasting with traditional mutual funds that settle at end-of-day net asset values (NAVs)3. While ETFs offer tax efficiency via in-kind redemptions and lower expense ratios, their success hinges on precise data management to mitigate risks like front-running and arbitrage gaps3. Capital Group’s 2023 ETF launches—including the **Capital Group Dividend Growers ETF (CGDG)** and **International Equity ETF (CGIE)**—required infrastructure capable of reconciling daily creation/redemption baskets, tracking seeding capital flows, and maintaining compliance across 7+ vendor partnerships
+
+*   **Evolving Data Sources**: Unlike mutual funds, ETF data pipelines integrated new vendors like Broadridge and Albridge, whose feeds lacked granularity and standardized schemas12.
+
+*   **System Transition**: Legacy platforms (DORIS, AFTP) migrated to THOR, a unified processing engine, while Caspian emerged as the centralized data lake for all ETF holdings and transactions1.
+
+**Regulatory Dynamics**: SEC mandates for daily transparency necessitated real-time NAV calculations and intraday indicative values (IIVs) to align market prices with underlying assets3.
+
+## Data Governance Framework Design
+
+Central to my role was establishing a governance model that ensured data accuracy across liquidity provisioning, securities lending, and tax reporting. Key components included:
+
+*   **Automated Seeding Money Monitoring**:
+    ETF launches require seed capital to initiate trading, but discrepancies in these transactions risked regulatory penalties. I designed an automated tracker that cross-referenced treasury reports against custodian data, flagging $170M in unreported seed transactions during Wave 3 ETF launches12. This tool reduced manual reconciliation efforts by 85% and became a cornerstone of Capital’s ETF compliance toolkit.
+
+**RACI Matrix Implementation**:
+To clarify ownership across 14 stakeholder groups (IT, Legal, Portfolio Management), I led the development of a RACI (Responsible, Accountable, Consulted, Informed) framework. This model resolved bottlenecks in data ingestion workflows, particularly during the integration of Broadridge’s transactional data into THOR’s processing logic
+
+
+
+## Databricks Pipeline Optimization
+
+The ETF analytics backbone relied on Apache Spark and Python workflows within Databricks, where I achieved:
+
+*   **ETL Acceleration**:
+    By optimizing Parquet file partitioning and implementing dynamic predicate pushdowns, we reduced ETF position reconciliation times from 6 hours to 1.8 hours (70% faster). This enabled real-time visibility into intraday creation/redemption activities, critical for AP (Authorized Participant) communications13.
+
+**Vendor Integrations**:
+Nine data sources—including Albridge’s shareholder activity feeds and Bloomberg’s fixed-income pricing—were normalized into a unified schema. This allowed Portfolio Managers to attribute $3B in sales inflows to specific buyer segments, supporting targeted go-to-market strategies for CGBL (Core Balanced ETF) and CGSM (Short Duration Muni ETF)2.
 
 In the early stages of a startup, every team member plays a crucial role. The right people bring not only their skills but also their energy, attitude, and resilience. They’re the ones who will stick with you through thick and thin, help navigate obstacles, and push the company toward success.
-
-### 1. Shared Vision
-
-Having a team that aligns with your vision is essential. People who understand and believe in your mission will work tirelessly to see it come to life. They’ll be your champions, your sounding boards, and your biggest supporters.
-
-### 2. Diverse Skills
-
-Surround yourself with individuals whose skills complement yours. A diverse team brings different perspectives, ideas, and solutions to the table. This diversity is invaluable when it comes to innovation and problem-solving.
-
-### 3. Positive Energy
-
-Startups are demanding, and the road to success can be bumpy. Positive, resilient individuals help maintain morale and keep the team motivated, even during tough times. Their optimism can be infectious, boosting the entire team's spirit.
-
-### 4. Constructive Criticism
-
-You need people who can provide honest, constructive feedback. Yes-men won’t help you grow; critical thinkers will. Surround yourself with people who challenge your ideas and push you to refine and improve them.
-
-### 5. Cultural Fit
-
-Beyond skills and experience, cultural fit is crucial. A cohesive team culture fosters better communication, collaboration, and a more enjoyable work environment. This leads to higher productivity and lower turnover.
-
-## How to Find the Right People
-
-### 1. Network Intentionally
-
-Attend industry events, join startup communities, and engage with like-minded individuals. Networking intentionally can help you find people who share your values and aspirations.
-
-### 2. Leverage Referrals
-
-Ask your existing network for referrals. People you trust are likely to introduce you to other reliable and skilled professionals.
-
-### 3. Assess Soft Skills
-
-During the hiring process, don’t just focus on technical abilities. Assess candidates' soft skills, such as communication, adaptability, and teamwork, which are crucial in a startup environment.
-
-### 4. Trial Periods
-
-Consider trial periods for new hires. This allows both parties to assess fit and compatibility before making a long-term commitment.
-
-## Conclusion
-
-In the journey of building a startup, the people you surround yourself with can significantly impact your success. By choosing individuals who share your vision, bring diverse skills, and contribute positively to the company culture, you’ll create a strong foundation for growth. Remember, the right team can turn your startup dream into a reality.
