@@ -42,13 +42,11 @@ The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in De
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
-
-
 <div style="text-align: center"># Data Sources</div>
 
 The analysis relies on multiple independent data sources to cross-validate the mileage recorded by the Tesla Model Y. These data sources include:
 
-<div style="text-align: left">**Vehicle Specifications:**</div>
+<div style="text-align: center">**Vehicle Specifications:**</div>
 
 | Model              | 2020 Tesla Model Y Long Range Dual Motor |
 | ------------------ | ---------------------------------------- |
@@ -57,13 +55,22 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | Odometer Start     | 36,772 miles                             |
 | Odometer End       | 49,987 miles                             |
 
-**
-Key Terms**
+<div style="text-align: center">
 
-Odometer Reading: Miles displayed on the vehicle’s touchscreen (software-calculated).
-Energy Consumed: Kilowatt-hours (kWh) expended, recorded via Tesla API.
-Physical Travel: GPS-measured distance (Trimble GNSS system, ±0.5% accuracy).
-EPA-Rated Efficiency: 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)
+**Key Terms**</div>
+
+| **Term**                         | **Description**                                                                                                                                              |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Energy Consumed (kWh)            | Kilowatt-hours (kWh) expended, recorded via Tesla API.                                                                                                       |
+| EPA-Rated Efficiency             | 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)                                  |
+| Actual Wh/mi                     | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                         |
+| Odometer Miles                   | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                          |
+| Efficiency Adjustment Factor (η) | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions. |
+| Discrepancy                      | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.            |
+
+
+
+
 
 A. Tesla’s In-Car Data Logs
 
@@ -88,6 +95,25 @@ C. Charging Session Data
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
 <div style="text-align: center"># Equations</div>
+
+
+Parameter
+
+Value
+
+| Energy Consumed (Total) | 5,582 kWh |
+
+| Odometer Reading (End of Period) | 13,228 miles |
+
+| EPA Wh/mi (Nominal Efficiency) | 265 Wh/mi |
+
+| Actual Wh/mi (Calculated) | 370 Wh/mi |
+
+| Physical GPS Mileage (Real-World Distance) | 11,743 miles |
+
+
+
+
 
 Total Energy Added to the Battery
 
