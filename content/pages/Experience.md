@@ -85,7 +85,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: Automation
+            label: Automation with Databricks
             altText: ''
             url: /
             showIcon: false
