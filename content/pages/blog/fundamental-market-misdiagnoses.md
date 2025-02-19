@@ -33,7 +33,7 @@ styles:
     textAlign: center
 author: content/data/person5.json
 ---
-# A Fundamental Misdiagnosis by the Market: The True Issue is Tesla’s Batteries
+<div style="text-align: center"># A Fundamental Misdiagnosis by the Market: The True Issue is Tesla’s Batteries</div>
 
 ![](/images/IMG_1245.webp)
 For years, the focus of scrutiny on Tesla has been misdirected. Investigations, lawsuits, and consumer complaints have zeroed in on range discrepancies, cold weather performance issues, efficiency inconsistencies, and misleading odometer readings. From the Schwartz v. Tesla lawsuit on exaggerated range claims to the Reuters exposé on Tesla’s secret team suppressing range complaints, everyone has been looking at individual symptoms instead of the root cause.
