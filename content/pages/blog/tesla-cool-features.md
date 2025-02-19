@@ -1,6 +1,6 @@
 ---
 title: 5 Cool Features Your Tesla Can (Will) Do
-slug: life-of-our-development-team
+slug: tesla-cool-features
 date: '2025-01-15'
 excerpt: >-
   My personal experience, Tesla is one of the most influential electric vehicle
