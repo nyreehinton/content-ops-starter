@@ -56,14 +56,14 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 <div style="text-align: center">**Key Terms**</div>
 
-|               **Term**               | **Description**                                                                                                                                              |
-| :----------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|       **Energy Consumed (kWh)**      | Kilowatt-hours (kWh) expended, recorded via Tesla API.                                                                                                       |
-|       **EPA-Rated Efficiency**       | 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)                                  |
-|           **Actual Wh/mi**           | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                         |
-|          **Odometer Miles**          | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                          |
+| **Term**                             | **Description**                                                                                                                                              |
+| :----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Energy Consumed (kWh)**            | Kilowatt-hours (kWh) expended, recorded via Tesla API.                                                                                                       |
+| **EPA-Rated Efficiency**             | 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)                                  |
+| **Actual Wh/mi**                     | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                         |
+| **Odometer Miles**                   | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                          |
 | **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions. |
-|            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.            |
+| **Discrepancy**                      | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.            |
 
 A. Tesla’s In-Car Data Logs
 
