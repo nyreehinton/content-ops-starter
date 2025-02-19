@@ -48,8 +48,9 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 <div style="text-align: center">**Vehicle Specifications:**</div>
 
-|     | Model2020 Tesla Model Y Long Range Dual Motor | Battery Capacity78 kWh (75 kWh usable) | Original EPA Range326 miles (265 Wh/mi) | Odometer Start36,772 miles | Odometer End49,987 miles |   |
-| :-: | :-------------------------------------------: | -------------------------------------- | --------------------------------------- | -------------------------- | ------------------------ | - |
+|                   Model                  |    Battery Capacity    | Original EPA Range    | Odometer Start | Odometer End |
+| :--------------------------------------: | :--------------------: | --------------------- | -------------- | ------------ |
+| 2020 Tesla Model Y Long Range Dual Motor | 78 kWh (75 kWh usable) | 326 miles (265 Wh/mi) | 36,772 miles   | 49,987 miles |
 
 <div style="text-align: center"></div>
 
