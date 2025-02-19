@@ -1,6 +1,6 @@
 ---
 title: Architecting the Data Pipeline
-slug: top-ten-lessons-we-learned
+slug: data-pipeline
 date: '2025-01-02'
 excerpt: >-
   Sit ratione eligendi et quis distinctio et maiores accusantium aut accusamus
