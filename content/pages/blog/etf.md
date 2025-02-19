@@ -32,7 +32,7 @@ This work required data governance, cloud-based processing frameworks, and cross
 
 Below, I detail how we transformed raw vendor feeds into actionable insights while navigating a landscape of evolving data sources and regulatory scrutiny.
 
-## Exchange Traded Funds 
+<div style="text-align: center">## Exchange Traded Funds</div>
 
 Exchange-traded funds (ETFs) represent pooled investment vehicles designed for intraday trading, contrasting with traditional mutual funds that settle at end-of-day net asset values (NAVs)3. While ETFs offer tax efficiency via in-kind redemptions and lower expense ratios, their success hinges on precise data management to mitigate risks like front-running and arbitrage gaps3. Capital Group’s 2023 ETF launches—including the **Capital Group Dividend Growers ETF (CGDG)** and **International Equity ETF (CGIE)**—required infrastructure capable of reconciling daily creation/redemption baskets, tracking seeding capital flows, and maintaining compliance across 7+ vendor partnerships
 
@@ -42,7 +42,7 @@ Exchange-traded funds (ETFs) represent pooled investment vehicles designed for i
 
 **Regulatory Dynamics**: SEC mandates for daily transparency necessitated real-time NAV calculations and intraday indicative values (IIVs) to align market prices with underlying assets3.
 
-## Data Governance Framework Design
+<div style="text-align: center">## Data Governance Framework Design</div>
 
 Central to my role was establishing a governance model that ensured data accuracy across liquidity provisioning, securities lending, and tax reporting. Key components included:
 
@@ -52,9 +52,7 @@ Central to my role was establishing a governance model that ensured data accurac
 **RACI Matrix Implementation**:
 To clarify ownership across 14 stakeholder groups (IT, Legal, Portfolio Management), I led the development of a RACI (Responsible, Accountable, Consulted, Informed) framework. This model resolved bottlenecks in data ingestion workflows, particularly during the integration of Broadridge’s transactional data into THOR’s processing logic
 
-
-
-## Databricks Pipeline Optimization
+<div style="text-align: center">## Databricks Pipeline Optimization</div>
 
 The ETF analytics backbone relied on Apache Spark and Python workflows within Databricks, where I achieved:
 
