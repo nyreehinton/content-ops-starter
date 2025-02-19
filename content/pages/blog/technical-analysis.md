@@ -21,7 +21,7 @@ featuredImage:
         - pl-0
         - pb-0
         - pr-0
-  url: /images/4514E66D-6C1E-4DC4-9680-A1A70FBA90B1.jpeg
+  url: /images/image (3).jpg
 bottomSections: []
 isFeatured: false
 isDraft: false
