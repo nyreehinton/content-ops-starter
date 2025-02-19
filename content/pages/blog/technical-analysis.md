@@ -44,20 +44,7 @@ With the theoretical foundation established regarding Tesla’s software-driven 
 4.  <div style="text-align: center">What is the efficiency adjustment factor (η) used by Tesla’s system?</div>
 5.  <div style="text-align: center">What is the discrepancy percentage between Tesla’s odometer and real-world data?</div>
 
-<svg width="1200" height="800" xmlns="http\://www\.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="#FFFFFF" />
-  <!-- Subtle Border -->
-  <rect x="10" y="10" width="1180" height="780" fill="none" stroke="#DDDDDD" stroke-width="2"/>
-  <!-- Questions Text -->
-  <text x="50" y="100" font-family="Helvetica, sans-serif" font-size="28" fill="#000000">
-    <tspan x="50" dy="0">What is the expected mileage based on the EPA-rated energy consumption standard?</tspan>
-    <tspan x="50" dy="40">What is the real-world mileage based on actual energy consumption rates?</tspan>
-    <tspan x="50" dy="40">How does the odometer reading compare to expected and real-world mileage?</tspan>
-    <tspan x="50" dy="40">What is the efficiency adjustment factor (η) used by Tesla’s system?</tspan>
-    <tspan x="50" dy="40">What is the discrepancy percentage between Tesla’s odometer and real-world data?</tspan>
-  </text>
-</svg>
+
 
 
 
