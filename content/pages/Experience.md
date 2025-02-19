@@ -139,16 +139,7 @@ sections:
       - type: FeaturedItem
         title: Reorg Research
         subtitle: Data Analyst (M&A and Shareholder Activism)
-        actions:
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
+        actions: []
         colors: bg-light-fg-dark
         styles:
           self:
