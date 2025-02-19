@@ -62,14 +62,14 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 <div style="text-align: center">**Key Terms**</div>
 
-|               **Term**               | **Description**                                                                                                                                              |
-| :----------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|       **Energy Consumed (kWh)**      | Kilowatt-hours (kWh) expended, recorded via Tesla API.                                                                                                       |
-|       **EPA-Rated Efficiency**       | 265 Wh/mi (a standardized value assigned during EPA testing to estimate energy consumption per mile under ideal conditions)                                  |
-|           **Actual Wh/mi**           | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                         |
-|          **Odometer Miles**          | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                          |
-| **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions. |
-|            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.            |
+|               **Term**               | **Description**                                                                                                                                                                                     |
+| :----------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|       **Energy Consumed (kWh)**      | The total amount of electrical energy used by the vehicle over a given period of time or distance.                                                                                                  |
+|             **EPA Wh/mi**            | The U.S. Environmental Protection Agency's (EPA) estimate of energy consumption per mile in watt-hours, based on a controlled test cycle. For the 2020 Model Y Long Range, this value is 265 Wh/mi. |
+|           **Vehicle Wh/mi**          | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                                                                |
+|          **Odometer Miles**          | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                                                                 |
+| **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
+|            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
 
 A. Tesla’s In-Car Data Logs
 
@@ -93,9 +93,11 @@ C. Charging Session Data
 
 By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
 
-<div style="text-align: center"># Equations</div>
+<div style="text-align: center"># Step by Step Calculation Process (Equations)</div>
 
-Parameter
+## Parameters
+
+1.  Input Data from Case Study: For this analysis, we used telematics and charging data collected over a 7-month period with the following details:
 
 Value
 
