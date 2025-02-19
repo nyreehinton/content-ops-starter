@@ -1,5 +1,5 @@
 ---
-title: Exchange Traded Funds
+title: Building the Analytic Foundation for Capital Group's ETF Ecosystem
 slug: etf
 date: '2024-03-26'
 excerpt: >-
