@@ -18,6 +18,20 @@ styles:
     textAlign: center
 type: PostLayout
 ---
+## Databricks Pipeline Optimization
+
+The ETF analytics backbone relied on Apache Spark and Python workflows within Databricks, where I achieved:
+
+1.  **ETL Acceleration**:
+    By optimizing Parquet file partitioning and implementing dynamic predicate pushdowns, we reduced ETF position reconciliation times from 6 hours to 1.8 hours (70% faster). This enabled real-time visibility into intraday creation/redemption activities, critical for AP (Authorized Participant) communications13.
+
+2.  **Vendor Integrations**:
+    Nine data sources—including Albridge’s shareholder activity feeds and Bloomberg’s fixed-income pricing—were normalized into a unified schema. This allowed Portfolio Managers to attribute $3B in sales inflows to specific buyer segments, supporting targeted go-to-market strategies for CGBL (Core Balanced ETF) and CGSM (Short Duration Muni ETF)2.
+
+
+
+
+
 Ive built my career around transforming data into strategic advantage, with roles that span equity research, product management, and cross-functional collaboration. At Bloomberg L.P., I learned the fundamentals of equity analysis in the TMT space, managing a 70-company portfolio and ensuring timely, accurate insights for clients. From there, I moved to Reorg Research, where I leveraged machine learning to detect potential shareholder-activist and M\&A scenarios, championing a Pre-Deal-M\&A Database that tracked hundreds of companies under strategic review.
 
 Subsequently, at Third Bridge Group, I moderated over 125 executive-level discussions on consumer staples and adjacent sectors, deepening my capacity to extract critical insights from industry leaders. And most recently, as an ETF Data Product Manager for a multi-billion-dollar product suite at Capital Group, I orchestrated data ingestion for nine new ETF data sources, implemented governance frameworks across cross-functional teams, and enhanced global transparency into buyer/seller trends. Each chapter of my career has reinforced a core skill: the ability to blend analytics, communication, and product visionâ€”ensuring data and technology consistently drive business impact.
