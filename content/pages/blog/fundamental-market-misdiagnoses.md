@@ -21,11 +21,6 @@ featuredImage:
 bottomSections: []
 isFeatured: false
 isDraft: false
-seo:
-  metaTitle: Track the right analytics for your business
-  metaDescription: You can add the excerpt and main keywords of your blog post here.
-  socialImage: /images/abstract-feature3.svg
-  type: Seo
 colors: bg-light-fg-dark
 styles:
   self:
