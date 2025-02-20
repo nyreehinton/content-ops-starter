@@ -85,6 +85,15 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
             label: AGILE
             altText: ''
             url: /
