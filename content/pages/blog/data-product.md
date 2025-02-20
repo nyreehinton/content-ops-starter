@@ -101,18 +101,23 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
     *   Introduced automated validation methods to cross-check incoming vendor data with internal systems (e.g., reconciling Broadridge’s aggregated sales data against State Street’s NAV files).
     *   Identified and addressed discrepancies consistently, ensuring accurate and timely reporting.
 
+***
+
 ### **2. Advanced Analytics and Reporting Enablement**
 
 *   Enabled **actionable insights** for stakeholders across Sales Compensation, Marketing, and Product teams by transforming raw vendor feeds into advanced Tableau dashboards. Key deliverables included:
     *   **Sales Attribution Dashboards**: Tracked regional and advisor-level inflows for CGDG and other ETFs, empowering sales teams to focus on high-performing territories.
     *   **Liquidity Monitoring Tools**: Created dashboards visualizing Authorized Participant (AP) activity to assess fund liquidity and market-making trends.
 *   Partnered with Sales Compensation teams to reconcile **$6.3 billion** in ETF transactions across datasets, ensuring accurate sales crediting and downstream adjustments.
+
 ***
 
 ### **3. Addressing Data Latency and Accuracy Challenges**
 
 *   **Real-Time Visibility Models**: Mitigated data delays from T+1 vendor feeds by developing interim calculation models to extrapolate data, maintaining the operational flow of insights during high-demand periods like CGDG’s launch.
 *   **Enhanced Data Validation Pipeline**: Designed processes to reconcile vendor files with output systems such as AFTP and LASR, improving data reliability for reporting and compliance.
+
+***
 
 ### **4. Integrated Data into Enterprise Systems**
 
