@@ -51,8 +51,6 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-
-
 `subgraph Secondary Market
 A[Investor A] -- Buys/Sells Shares --> B((Broker/Exchange))
 C[Investor B] -- Buys/Sells Shares --> B
