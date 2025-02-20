@@ -53,21 +53,14 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 
 
 
+`subgraph Secondary Market
+A[Investor A] -- Buys/Sells Shares --> B((Broker/Exchange))
+C[Investor B] -- Buys/Sells Shares --> B
+end`
 
-
-
-
-```flowchart LR
-subgraph Secondary Market
-    A[Investor A] -- Buys/Sells Shares --> B((Broker/Exchange))
-    C[Investor B] -- Buys/Sells Shares --> B
-end
-
-subgraph Primary Market - Creation/Redemption
-    B -- Creation/Redemption Order --> D[Authorized Participant (AP)]
-    D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-    E -- Issues/Redeems Creation Units --> D
-    D -- Sends ETF Shares --> B
-end
-```
-
+`subgraph Primary Market - Creation/Redemption
+B -- Creation/Redemption Order --> D[Authorized Participant (AP)]
+D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+E -- Issues/Redeems Creation Units --> D
+D -- Sends ETF Shares --> B
+end`
