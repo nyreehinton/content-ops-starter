@@ -29,6 +29,8 @@ Capital Group’s 2022 ETF launches marked the firm’s strategic *entry* into t
 
 my role centered on architecting the analytic pipelines that underpinned the launch and scaling of $31B in ETF assets from 2021–202312. This work required data governance, cloud-based processing frameworks, and cross-functional collaboration—challenges amplified by simultaneous enterprise-wide migrations to next-generation systems. Below, I detail how we transformed raw vendor feeds into actionable insights while navigating a landscape of evolving data sources and regulatory scrutiny.
 
+![](/images/ETF-VS-MF-Graphics_8.11.22-01-RGB.jpg)
+
 <div style="text-align: center">## Product Launches and Market Positioning</div>
 
 As ETFs trade intraday-like stocks but require robust data infrastructure to support pricing accuracy, tax efficiency, and compliance,  
