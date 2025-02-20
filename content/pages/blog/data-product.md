@@ -68,7 +68,7 @@ This lack of direct data creates operational and strategic challenges:
     *   Established automated pipelines to process ETF sales and assets consistently across all systems.
     *   Created backfill solutions for legacy data gaps, ensuring continuity in reporting.
 
-## Challenges in Acquiring and Managing Third-Party Data
+<div style="text-align: center">## Challenges in Acquiring and Managing Third-Party Data</div>
 
 1.  **Vendor Schema Mismatches**:
 
