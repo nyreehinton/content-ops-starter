@@ -1,5 +1,5 @@
 ---
-title: Architecting the Data Pipeline
+title: What's a Data Product?
 slug: data-pipeline
 date: '2025-01-02'
 excerpt: >-
