@@ -93,6 +93,7 @@ This lack of direct data creates operational and strategic challenges:
 As the Data Product Manager for ETF analytics, I drove the pipeline’s creation and continuous improvement to meet the demands of a fast-paced launch environment. My contributions were integral to the seamless onboarding of new data providers, ensuring high data quality, and facilitating impactful analytics for the ETF launch.
 
 ### **1. End-to-End Pipeline Development**
+
 *   **Designed and Built the ETF Data Ingestion Pipeline**:
     *   Orchestrated the systematic flow of vendor data from acquisition to reporting, ensuring that data was accurately ingested, processed, and delivered for downstream use.
     *   Established a robust infrastructure supporting multiple data formats (e.g., Broadridge, Fidelity, State Street) and transformed disparate datasets into a unified schema.
@@ -100,75 +101,51 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
     *   Introduced automated validation methods to cross-check incoming vendor data with internal systems (e.g., reconciling Broadridge’s aggregated sales data against State Street’s NAV files).
     *   Identified and addressed discrepancies consistently, ensuring accurate and timely reporting.
 
-***
-
 ### **2. Advanced Analytics and Reporting Enablement**
+
 *   Enabled **actionable insights** for stakeholders across Sales Compensation, Marketing, and Product teams by transforming raw vendor feeds into advanced Tableau dashboards. Key deliverables included:
     *   **Sales Attribution Dashboards**: Tracked regional and advisor-level inflows for CGDG and other ETFs, empowering sales teams to focus on high-performing territories.
     *   **Liquidity Monitoring Tools**: Created dashboards visualizing Authorized Participant (AP) activity to assess fund liquidity and market-making trends.
 *   Partnered with Sales Compensation teams to reconcile **$6.3 billion** in ETF transactions across datasets, ensuring accurate sales crediting and downstream adjustments.
 
-***
-
 ### **3. Addressing Data Latency and Accuracy Challenges**
+
 *   **Real-Time Visibility Models**: Mitigated data delays from T+1 vendor feeds by developing interim calculation models to extrapolate data, maintaining the operational flow of insights during high-demand periods like CGDG’s launch.
 *   **Enhanced Data Validation Pipeline**: Designed processes to reconcile vendor files with output systems such as AFTP and LASR, improving data reliability for reporting and compliance.
 
-***
-
 ### **4. Integrated Data into Enterprise Systems**
+
 *   Led the integration of ETF data feeds into **THOR** (processing platform) and **Caspian** (data lake) during the transition from legacy systems, ensuring seamless adoption with minimal disruption.
 *   Built fallback mechanisms to account for vendor outages (e.g., using Bloomberg secondary market data when Broadridge files were unavailable), ensuring operational continuity even during data delivery lapses.
 
 ***
 
 ### **5. Vendor Onboarding and Collaboration**
+
 *   **Established Vendor Relationships**: Partnered with key providers like Broadridge, Albridge, and Fidelity to define data requirements, negotiate SLAs, and onboard datasets critical to ETF operations.
 *   **Solved Schema Challenges**: Built Python-based scripts to map and normalize vendor data into Capital Group’s internal systems, streamlining disparate formats into a cohesive structure fit for downstream consumption.
 
 ***
 
 ### **6. Cross-Functional Collaboration**
+
 *   Acted as the central liaison between **IT, Sales, Product, and Business Reporting teams**, ensuring that all stakeholders' requirements were met in the data product lifecycle.
 *   **Resolved Recurring Vendor Issues**: Proactively escalated and addressed recurring problems, such as Broadridge data latency, by renegotiating SLAs and aligning vendor teams with Capital Group's operational priorities.
 
 ***
 
 ## Key Outcomes of My Work
+
 *   **Accelerated ETF Launch Readiness**:\
     Successfully onboarded and operationalized three critical data vendors within six months, meeting a tight go-live timeline for five ETFs.
 *   **Enhanced Data Transparency**:\
     Improved visibility into shareholder activity by integrating and enriching aggregated vendor data, enabling targeted marketing and efficient sales reporting across five funds.
 *   **Improved Operational Efficiency**:\
     Achieved a **50% reduction in manual validation processes** by automating data ingestion and processing, saving significant time and resources.
-*   **Mitigated Compliance Risks**:\
-    Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
-
-***
-
-## Solving the Transfer Agent Data Gap: My Vision
-
-### The Problem: No Transfer Agent for ETFs
-ETFs, unlike mutual funds, lack a transfer agent to feed detailed shareholder-level data directly to Capital Group. Instead, ETF transactions are processed through custodians, clearinghouses, and Authorized Participants (APs), resulting in:
-
-*   **Limited Granularity**: Vendor feeds often aggregate trades at the office or omnibus account level, obscuring advisor or account-specific details.
-*   **Delayed Data**: Some datasets, such as Broadridge's omnibus feeds, arrive on a T+1 basis, impeding real-time insights.
-*   **High Variability**: Different vendors deliver data in inconsistent formats, requiring significant normalization and transformation to make it usable.
-
-***
-
-### How I Solved It: Creating a Cohesive Data Product
-1.  **Acquiring and Consolidating Data**:
-    *   Partnered with vendors like Broadridge, Albridge, and Fidelity to acquire key datasets covering shareholder activity, NAVs, and transaction flows.
-    *   Resolved schema inconsistencies by developing adaptable data normalization pipelines to ensure compatibility with internal systems like LASR and THOR.
-2.  **Building the Missing Visibility**:
-    *   Used predictive modeling to fill gaps in missing advisor-level data, such as extrapolating account types (e.g., IRA, 529) from partial datasets.
-    *   Enhanced sales reporting accuracy by reconciling Broadridge omnibus data against Fidelity's account-level files.
-3.  **Delivering an End-to-End Solution**:
-    *   Architected a **data pipeline** that ingests, validates, and enriches vendor feeds, transforming them into actionable outputs for analytics, reporting, and compensation.
-    *   Integrated enterprise-wide governance processes to ensure long-term scalability and adaptability of the ETF data product lifecycle.
+*   **Mitigated Compliance Risks**:Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
 
 ***
 
 ## Conclusion
+
 The ETF data product I built at Capital Group bridges the fundamental gap created by the lack of a transfer agent, turning fragmented and incomplete third-party data into a reliable analytics foundation. By addressing issues in granularity, frequency, and latency, I delivered a scalable solution that empowers stakeholders, accelerates decision-making, and ensures compliance. This work not only supported the successful launch of Capital Group’s ETF offerings but also established a data management framework that will scale with future product growth.
