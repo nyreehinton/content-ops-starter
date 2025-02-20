@@ -51,12 +51,11 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-<div style="text-align: center">## ETF Primary & Secondary Markets</div>
+ ETF Primary & Secondary Markets
 
-<div style="text-align: left">\*\*
-Primary Market – Creation and Redemption\*\*
-\------------------------------------------The **Primary Market** is where new ETF shares are created or redeemed. This process involves direct interactions between the **ETF issuer**, **Authorized Participants (APs)**, and the underlying securities of the fund:1.  **Authorized Participants (APs)**:
-APs are institutional entities, such as banks or market makers, authorized to interact directly with the ETF issuer. They act as intermediaries enabling the creation and redemption of ETF shares.</div>
+Primary Market – Creation and Redemption
+The **Primary Market** is where new ETF shares are created or redeemed. This process involves direct interactions between the **ETF issuer**, **Authorized Participants (APs)**, and the underlying securities of the fund:1.  **Authorized Participants (APs)**:
+APs are institutional entities, such as banks or market makers, authorized to interact directly with the ETF issuer. They act as intermediaries enabling the creation and redemption of ETF shares.
 
 2.  **Creation Process**:
 
