@@ -1,6 +1,6 @@
 ---
 title: What's a Data Product?
-slug: data-pipeline
+slug: data-product
 date: '2025-01-02'
 excerpt: >-
   Sit ratione eligendi et quis distinctio et maiores accusantium aut accusamus
