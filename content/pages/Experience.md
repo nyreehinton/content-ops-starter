@@ -458,6 +458,5 @@ seo:
   metaTitle: Previous Work Experience
   metaDescription: ''
   addTitleSuffix: true
-  socialImage: /images/main-hero.jpg
   metaTags: []
 ---
