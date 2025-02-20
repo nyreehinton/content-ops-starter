@@ -55,7 +55,7 @@ Tesla’s system fundamentally redefines mileage as an energy consumption metric
 
 Essentially, is an energy-based estimation system embedded within the vehicle's software architecture that calculates the vehicle's mileage by tracking energy consumption rather than physical wheel rotations. 
 
-<div style="text-align: center">## Patent US8054038B2: Technical Architecture Explained</div>
+<div style="text-align: center">## Energy-to-Miles Conversion FactorsPatent US8054038B2: Technical Architecture Explained</div>
 
 Patent US8054038B2 outlines seven variables that modify energy-to-mile conversion rates dynamically:
 
