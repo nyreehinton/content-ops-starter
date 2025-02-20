@@ -85,6 +85,15 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
+            label: AGILE
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
             label: Automation with Databricks
             altText: ''
             url: /
@@ -95,15 +104,6 @@ sections:
             elementId: ''
           - type: Button
             label: Business Intelligence
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
-          - type: Button
-            label: AGILE
             altText: ''
             url: /
             showIcon: false
