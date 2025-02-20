@@ -20,13 +20,11 @@ styles:
     flexDirection: row
 type: PostLayout
 ---
-### A High-Level Overview
+<div style="text-align: center">### A High-Level Overview</div>
 
 A **data product** is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has **clear ownership, repeatable processes, and governance** that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
 
-***
-
-## Why Data Acquisition Is Critical for ETFs
+<div style="text-align: center">## Why Data Acquisition Is Critical for ETFs</div>
 
 ### The Role of Data in ETFs
 
@@ -41,7 +39,7 @@ Without high-quality, frequent, and well-structured data, ETF operations would f
 
 ***
 
-### Types of Data Required for ETF Operations
+<div style="text-align: center">### Types of Data Required for ETF Operations</div>
 
 The ETF data acquisition process integrates multiple third-party sources to generate a complete picture of fund operations. Key types of data include:
 
@@ -50,9 +48,7 @@ The ETF data acquisition process integrates multiple third-party sources to gene
 3.  **Market Data**: Provides bid/ask prices and trading volume, essential for monitoring secondary market activity.
 4.  **Omnibus Account Data**: Aggregates investor activity through custodial and clearinghouse systems, offering indirect insights into shareholder demographics.
 
-***
-
-### Characteristics of ETF Data
+<div style="text-align: center">### Characteristics of ETF Data</div>
 
 ETF data differs significantly from that of mutual funds, introducing new challenges:
 
@@ -64,7 +60,7 @@ These differences demanded innovative approaches to ingestion and transformation
 
 ***
 
-## Challenges in Acquiring and Managing Third-Party Data
+<div style="text-align: center">## Challenges in Acquiring and Managing Third-Party Data</div>
 
 1.  **Vendor Schema Mismatches**:
     *   Different vendors, such as Broadridge and Albridge, delivered data in non-standardized formats (e.g., CSV, JSON) with inconsistent column structures, requiring transformation and mapping logic before ingestion.
@@ -79,9 +75,7 @@ These differences demanded innovative approaches to ingestion and transformation
 4.  **Data Gaps**:
     *   Certain data points, like account type (e.g., IRA, 529), were missing in vendor feeds, complicating the task of reconciling sales data across platforms.
 
-***
-
-## My Impact on the ETF Data Product
+<div style="text-align: center">## My Impact on the ETF Data Product</div>
 
 As a Data Product Manager, I was responsible for building and improving the ETF analytics pipeline to meet the demands of a fast-paced and high-stakes launch. My specific contributions included:
 
@@ -121,9 +115,7 @@ As a Data Product Manager, I was responsible for building and improving the ETF 
 
 ***
 
-## Conclusion
 
-A robust data product is the foundation of any successful ETF launch, enabling real-time insights, operational efficiency, and compliance adherence. My work at Capital Group—spanning vendor onboarding, pipeline development, and cross-functional collaboration—demonstrates the critical role data products play in empowering innovation and scaling new financial products. As ETFs continue to grow within Capital Group’s portfolio, the data infrastructure I helped build ensures long-term scalability and adaptability in a rapidly evolving market.
 
 ## The Third-Party Data Imperative
 
