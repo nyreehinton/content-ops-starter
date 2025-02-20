@@ -45,30 +45,30 @@ This lack of direct data creates operational and strategic challenges:
 
 ### Strategic Approach to Solve the Problem
 
-1.  **Vendor Onboarding for Third-Party Data Acquisition**\
+1.  **Vendor Onboarding for Third-Party Data Acquisition**
     To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
     *   **Examples of Data Sources**:
         *   **Broadridge**: Monthly data with office-level granularity, providing visibility into \~95% of CG ETF transactions.
         *   **Fidelity**: Daily account-level transaction data, offering a detailed view but for a subset of accounts.
         *   **State Street**: Daily NAV and outstanding share data for accounting and reconciliation purposes.
 
-2.  **Data Transformation and Normalization**\
+2.  **Data Transformation and Normalization**
     The raw data from vendors arrived in disparate formats and varied levels of granularity. To build a usable data product, we:
     *   **Developed Transformation Logic**: Using Python and SQL, I created transformation scripts to normalize data across different vendors, ensuring compatibility with downstream systems.
     *   **Standardized Schema**: Mapped critical fields (e.g., account type, transaction types) into a unified schema, enabling consistent reporting and analytics.
 
-3.  **Overcoming Omnibus Account Challenges**\
-    Many vendors, such as Broadridge, provided shareholder activity data at the **office level** rather than the individual advisor or account level. As a result, key data points like the **line of business**, **advisor name**, or specific account types (e.g., IRA, 529) were missing.\
+3.  **Overcoming Omnibus Account Challenges**
+    Many vendors, such as Broadridge, provided shareholder activity data at the **office level** rather than the individual advisor or account level. As a result, key data points like the **line of business**, **advisor name**, or specific account types (e.g., IRA, 529) were missing.
     **Solutions Implemented**:
     *   Extrapolated missing details using available patterns in other data feeds (e.g., matching CUSIPs to transaction flows in Fidelity files).
     *   Designed validation processes to flag and fill data gaps where possible.
 
-4.  **Integration into Capital Group Systems**\
+4.  **Integration into Capital Group Systems**
     We integrated these transformed, standardized datasets into Capital Group’s enterprise platforms, such as **THOR** (processing platform), **Caspian** (data lake), and **LASR** (reporting system).
     *   Established automated pipelines to process ETF sales and assets consistently across all systems.
     *   Created backfill solutions for legacy data gaps, ensuring continuity in reporting.
 
-## Challenges in Acquiring and Managing Third-Party Data
+<div style="text-align: center">## Challenges in Acquiring and Managing Third-Party Data</div>
 
 1.  **Vendor Schema Mismatches**:
 
@@ -87,6 +87,8 @@ This lack of direct data creates operational and strategic challenges:
 4.  **Data Gaps**:
 
     *   Certain data points, like account type (e.g., IRA, 529), were missing in vendor feeds, complicating the task of reconciling sales data across platforms.
+
+***
 
 <div style="text-align: center">## My Contributions to the ETF Data Product</div>
 
@@ -144,12 +146,12 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
 
 <div style="text-align: center">## Key Outcomes of My Work</div>
 
-*   **Accelerated ETF Launch Readiness**:\
+*   **Accelerated ETF Launch Readiness**:
     Successfully onboarded and operationalized three critical data vendors within six months, meeting a tight go-live timeline for five ETFs.
-*   **Enhanced Data Transparency**:\
+*   **Enhanced Data Transparency**:
     Improved visibility into shareholder activity by integrating and enriching aggregated vendor data, enabling targeted marketing and efficient sales reporting across five funds.
-*   **Improved Operational Efficiency**:\
+*   **Improved Operational Efficiency**:
     Achieved a **50% reduction in manual validation processes** by automating data ingestion and processing, saving significant time and resources.
-*   **Mitigated Compliance Risks**:Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
+*   **Mitigated Compliance Risks**: Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
 
 The ETF data product I built at Capital Group bridges the fundamental gap created by the lack of a transfer agent, turning fragmented and incomplete third-party data into a reliable analytics foundation. By addressing issues in granularity, frequency, and latency, I delivered a scalable solution that empowers stakeholders, accelerates decision-making, and ensures compliance. This work not only supported the successful launch of Capital Group’s ETF offerings but also established a data management framework that will scale with future product growth.
