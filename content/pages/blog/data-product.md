@@ -45,7 +45,7 @@ This lack of direct data creates operational and strategic challenges:
 
 ### Strategic Approach to Solve the Problem
 
-1.  **Vendor Onboarding for Third-Party Data Acquisition**\
+1.  **Vendor Onboarding for Third-Party Data Acquisition**
     To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
     *   **Examples of Data Sources**:
         *   **Broadridge**: Monthly data with office-level granularity, providing visibility into \~95% of CG ETF transactions.
