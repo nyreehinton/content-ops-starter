@@ -47,13 +47,9 @@ Tesla’s patents, particularly Patent US8054038B2, and evaluate how Elon Musk�
 
 ![](/images/IMG_1270.jpeg)
 
-<div style="text-align: center">```
-Energy-to-Miles Conversion Factors 
+<div style="text-align: center"># Energy-to-Miles Conversion Factors</div>
 
-```Patent US8054038B2: Technical Architecture Explained\`\`\````
-```</div>
-
-
+### Patent US8054038B2: Technical Architecture Explained
 
 Understanding Tesla's "Odometer": Energy-Based Mileage Calculation, Tesla’s system fundamentally redefines mileage as an energy consumption metric, governed by the equation: “\text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta}” Essentially, is an energy-based estimation system embedded within the vehicle's software architecture that calculates the vehicle's mileage by tracking energy consumption rather than physical wheel rotations.
 
@@ -114,3 +110,7 @@ This means that a Tesla can record additional miles simply by recalibrating its 
 Conclusion
 
 While this adaptive feature demonstrates Tesla’s technological sophistication, it introduces subjectivity into the odometer system, diverging from the objective nature of traditional odometers.Stay tuned for further analysis on how this issue affects real-world Tesla ownership.
+
+```
+```
+
