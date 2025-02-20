@@ -44,10 +44,7 @@ Odometer doesn’t exist.
 Tesla’s patents, particularly Patent US8054038B2, and evaluate how Elon Musk’s engineers rebuilt “mileage” as a predictive energy consumption metric weighted by 7 dynamic variables.
 
 ![](/images/IMG_1270.jpeg)
-
-<div style="text-align: center">\*Your odometer isn’t measuring distance - it’s **simulating** it.
-\*Understanding Tesla's "Odometer": Energy-Based Mileage Calculation
---------------------------------------------------------------------</div>
+Understanding Tesla's "Odometer": Energy-Based Mileage Calculation
 
 Tesla’s system fundamentally redefines mileage as an energy consumption metric, governed by the equation:
 
@@ -73,7 +70,8 @@ Each variable carries proprietary weights in Tesla’s algorithm, creating scena
 
 <div style="text-align: center">## A Mile is A Mile</div>
 
-<div style="text-align: left">Key Excerpts from Tesla’s Patent US8054038B2Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:</div>
+<div style="text-align: left">Your Tesla isn’t measuring physical distance in the past, it’s simulating it, subject to future changes.
+Key Excerpts from Tesla’s Patent US8054038B2Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:</div>
 
 “Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.”
 
