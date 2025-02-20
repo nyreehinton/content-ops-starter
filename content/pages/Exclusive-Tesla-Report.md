@@ -49,7 +49,7 @@ sections:
           - pb-3
           - pr-3
   - title:
-      text: Methodology & Data Sources
+      text: Data Sources
       color: text-dark
       styles:
         self:
