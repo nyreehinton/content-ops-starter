@@ -21,7 +21,13 @@ styles:
 type: PostLayout
 author: content/data/person1.json
 ---
+A data product is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has clear ownership, repeatable processes, and governance that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
+
+
 ## The Third-Party Data Imperative
+
+In the context of ETF analytics, acquiring third-party data is critical for tapping into information that does not originate internally. For instance, we partnered with industry providers such as Broadridge, Janney, Fidelity, and State Street to capture transaction-level or aggregated information relevant to ETF performance and investor behavior. The type of data ranged from granular trade records to daily net asset values (NAVs) to monthly distribution files. Different vendors delivered these feeds at varying frequencies (daily, monthly, or even ad-hoc), reflecting each provider’s standard cadence and their role in the ETF ecosystem. By carefully negotiating the data terms and formats up front, we ensured that each feed integrated smoothly into the Capital Group data architecture.
+
 
 Exchange-traded funds (ETFs) represent pooled investment vehicles designed for intraday trading, contrasting with traditional mutual funds that settle at end-of-day net asset values (NAVs)3. While ETFs offer tax efficiency via in-kind redemptions and lower expense ratios, their success hinges on precise data management to mitigate risks like front-running and arbitrage gaps3. Capital Group’s 2023 ETF launches—including the **Capital Group Dividend Growers ETF (CGDG)** and **International Equity ETF (CGIE)**—s
 
