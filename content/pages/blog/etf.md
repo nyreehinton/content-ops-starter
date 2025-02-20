@@ -51,14 +51,49 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-`subgraph Secondary Market
-A[Investor A] -- Buys/Sells Shares --> B((Broker/Exchange))
-C[Investor B] -- Buys/Sells Shares --> B
-end`
+``
 
-`subgraph Primary Market - Creation/Redemption
-B -- Creation/Redemption Order --> D[Authorized Participant (AP)]
-D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-E -- Issues/Redeems Creation Units --> D
-D -- Sends ETF Shares --> B
-end`
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ETF Market Diagram</title>
+  <!-- Mermaid.js library from jsDelivr CDN -->
+  \<script src="https\://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  \<script>
+    // Initialize Mermaid on page load
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+<body>
+
+<h1>ETF Primary & Secondary Markets</h1>
+
+<div class="mermaid">
+flowchart LR
+    subgraph Secondary Market
+        A\[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
+        C\[Investor B] -- Buys/Sells ETF Shares --> B
+    end
+
+    subgraph Primary Market - Creation/Redemption
+        B -- Creation/Redemption Order --> D[Authorized Participant]
+        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+        E -- Issues or Redeems Creation Units --> D
+        D -- Sends ETF Shares --> B
+    end
+
+</div>
+
+<p>
+  This diagram illustrates the two different ways ETF shares circulate:
+  <strong>Secondary Market</strong> (where individual investors trade shares) 
+  and the <strong>Primary Market</strong> (where shares are created or 
+  redeemed in large blocks by an Authorized Participant in conjunction with 
+  the ETF sponsor).
+</p>
+
+</body>
+</html>
+
