@@ -43,7 +43,7 @@ The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in De
 
 This section details the methods, data sources, equations, and key findings used to analyze whether the odometer readings accurately reflect physical distance traveled or if they were inflated based on energy efficiency manipulations.
 
-![](/images/4514E66D-6C1E-4DC4-9680-A1A70FBA90B1.jpeg)
+
 
 <div style="text-align: center"># Data Sources</div>
 
