@@ -34,7 +34,7 @@ Capital Group’s 2022 ETF launches marked the firm’s strategic *entry* into t
 
 my role centered on architecting the analytic pipelines that underpinned the launch and scaling of $31B in ETF assets from 2021–202312. This work required data governance, cloud-based processing frameworks, and cross-functional collaboration—challenges amplified by simultaneous enterprise-wide migrations to next-generation systems. Below, I detail how we transformed raw vendor feeds into actionable insights while navigating a landscape of evolving data sources and regulatory scrutiny.
 
-<div style="text-align: center">## Capital Group’s ETF Product Launches and Market Positioning</div>
+<div style="text-align: center">## Product Launches and Market Positioning</div>
 
 As ETFs trade intraday-like stocks but require robust data infrastructure to support pricing accuracy, tax efficiency, and compliance,  
 
@@ -52,7 +52,7 @@ Capital Group unveiled five ETFs in late 2023, each targeting distinct investor 
 
 *   **CGBL**: Multi-asset balanced ETF combining equity and fixed-income sleeves2.
 
-<div style="text-align: center">## The Third-Party Data Imperative </div>
+<div style="text-align: center">## The Third-Party Data Imperative</div>
 
 Exchange-traded funds (ETFs) represent pooled investment vehicles designed for intraday trading, contrasting with traditional mutual funds that settle at end-of-day net asset values (NAVs)3. While ETFs offer tax efficiency via in-kind redemptions and lower expense ratios, their success hinges on precise data management to mitigate risks like front-running and arbitrage gaps3. Capital Group’s 2023 ETF launches—including the **Capital Group Dividend Growers ETF (CGDG)** and **International Equity ETF (CGIE)**—s
 
@@ -89,4 +89,3 @@ SEC mandates required ETFs to disseminate holdings and iNAV every 15 seconds dur
 ## Schema Fragmentation
 
 Legacy mutual fund systems like DORIS and AFTP used CUSIP-based identifiers, while Broadridge’s ETF feeds adopted ISINs. Resolving these discrepancies consumed 23% of engineering resources during Caspian data lake migrations—a project compromising 92% of fixed-income security mappings but leaving 8% of privately placed bonds unmatched12.
-
