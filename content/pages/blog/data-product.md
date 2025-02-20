@@ -107,6 +107,7 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
     *   **Sales Attribution Dashboards**: Tracked regional and advisor-level inflows for CGDG and other ETFs, empowering sales teams to focus on high-performing territories.
     *   **Liquidity Monitoring Tools**: Created dashboards visualizing Authorized Participant (AP) activity to assess fund liquidity and market-making trends.
 *   Partnered with Sales Compensation teams to reconcile **$6.3 billion** in ETF transactions across datasets, ensuring accurate sales crediting and downstream adjustments.
+***
 
 ### **3. Addressing Data Latency and Accuracy Challenges**
 
@@ -143,7 +144,5 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
 *   **Improved Operational Efficiency**:\
     Achieved a **50% reduction in manual validation processes** by automating data ingestion and processing, saving significant time and resources.
 *   **Mitigated Compliance Risks**:Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
-
-
 
 The ETF data product I built at Capital Group bridges the fundamental gap created by the lack of a transfer agent, turning fragmented and incomplete third-party data into a reliable analytics foundation. By addressing issues in granularity, frequency, and latency, I delivered a scalable solution that empowers stakeholders, accelerates decision-making, and ensures compliance. This work not only supported the successful launch of Capital Group’s ETF offerings but also established a data management framework that will scale with future product growth.
