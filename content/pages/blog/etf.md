@@ -21,6 +21,30 @@ my role centered on architecting the analytic pipelines that underpinned the lau
 
 ![](/images/etfmutual.png)
 
+<div style="text-align: center">## ETF Processing: Primary and Secondary Markets</div>
+
+### Primary Market
+*   **Creation Process**:
+    *   **Authorized Participants (APs)**, often large financial institutions, work directly with the ETF issuer to create new ETF shares.
+    *   APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).
+*   **Redemption Process**:
+    *   APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.
+    *   This mechanism ensures the ETF’s supply matches market demand.
+
+### Secondary Market
+*   **Investors Trading ETF Shares**:
+    *   Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.
+    *   Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.
+
+### Arbitrage Mechanism
+*   **Role of APs and Market Makers**:
+    *   APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.
+    *   If the ETF trades above its NAV, APs create shares to increase supply, lowering the price. If it trades below, they redeem shares to decrease supply, raising the price.
+
+This dual-market structure ensures liquidity, efficient pricing, and a seamless investment vehicle for a wide range of participants.
+
+![](/images/Primary%20Market.webp)
+
 <div style="text-align: center">## Capital Group's ETF Product Launches & Data Strategy</div>
 
 Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales – an impressive feat for a relatively new entrant in the ETF space.
