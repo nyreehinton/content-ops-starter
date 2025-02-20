@@ -34,6 +34,7 @@ sections:
       self:
         alignItems: center
         flexDirection: row-reverse
+        justifyContent: center
       subtitle:
         textAlign: center
   - type: DividerSection
@@ -73,7 +74,52 @@ sections:
                 - pl-0
                 - pb-0
                 - pr-0
-        actions: []
+        actions:
+          - type: Button
+            label: Exchange Traded Funds (ETF)
+            altText: ''
+            url: /blog/etf
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: What's a Data Product?
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: AGILE
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Automation with Databricks
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Tableau (Business Intelligence)
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         colors: bg-light-fg-dark
         styles:
           self:
@@ -100,7 +146,61 @@ sections:
           styles:
             self:
               borderRadius: medium
-        actions: []
+        actions:
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         colors: bg-light-fg-dark
         styles:
           self:
@@ -112,14 +212,6 @@ sections:
       - type: FeaturedItem
         title: Reorg Research
         subtitle: Data Analyst (M&A and Shareholder Activism)
-        image:
-          type: ImageBlock
-          url: /images/Reorg (1).jpg
-          altText: Chunky Cotton Knit Throw
-          elementId: ''
-          styles:
-            self:
-              borderRadius: medium
         actions: []
         colors: bg-light-fg-dark
         styles:
@@ -140,7 +232,16 @@ sections:
           styles:
             self:
               borderRadius: medium
-        actions: []
+        actions:
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         colors: bg-light-fg-dark
         styles:
           self:
@@ -269,7 +370,7 @@ sections:
             justifyContent: center
       - type: FeaturedItem
         title: Bloomberg Market Concepts (BMC)
-        subtitle: Marketing
+        subtitle: Bloomberg Education
         text: >+
           Built a solid foundation in financial markets, covering economic
           indicators, fixed income, currencies, and equities.
@@ -354,9 +455,8 @@ slug: Experience
 isDraft: false
 seo:
   type: Seo
-  metaTitle: Landing Page
-  metaDescription: Write here your new page's description including most relevant keywords.
+  metaTitle: Previous Work Experience
+  metaDescription: ''
   addTitleSuffix: true
-  socialImage: /images/main-hero.jpg
   metaTags: []
 ---
