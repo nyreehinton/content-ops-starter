@@ -78,7 +78,7 @@ sections:
           - type: Button
             label: Exchange Traded Funds (ETF)
             altText: ''
-            url: /etf/
+            url: /blog/etf
             showIcon: false
             icon: arrowRight
             iconPosition: right
