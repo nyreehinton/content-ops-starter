@@ -51,9 +51,19 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
+![](/images/Primary%20Market.webp)</details>
 
+### How to Display the Diagram
 
+*   If your static site setup **natively supports Mermaid in Markdown** (e.g., certain documentation sites do), this code fence will render the chart automatically.
 
+*   If **not**, you’ll need a Mermaid-aware plugin or script to convert Mermaid blocks at build time (for static site generators) or at runtime (in the browser). Examples include:
 
-![](/images/Primary%20Market.webp)
+    *   **Hugo** + [Mermaid shortcode or extension](https://gohugo.io/hugo-modules/).
+
+    *   **Gatsby** + [gatsby-remark-mermaid](https://www.gatsbyjs.com/plugins/gatsby-remark-mermaid/).
+
+    *   **MDX** (in Next.js) with a [remark plugin for Mermaid](https://github.com/remarkjs/remark-mermaid).
+
+But in the simplest sense, **that’s all the Markdown** you need: a heading, a Mermaid code fence, and some text.
 
