@@ -85,7 +85,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: Building A Financial Data Product
+            label: Data Product
             altText: ''
             url: /
             showIcon: false
