@@ -1,5 +1,5 @@
 ---
-title: Capital Group's ETF Expansion & Data Architecture
+title: Capital Group's ETF Entry & Data Architecture
 slug: etf
 date: '2024-03-26'
 excerpt: >-
