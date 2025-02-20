@@ -51,9 +51,7 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-``
-
-<!DOCTYPE html>
+\`\`
 
 <html lang="en">
 <head>
@@ -77,12 +75,14 @@ flowchart LR
         C\[Investor B] -- Buys/Sells ETF Shares --> B
     end
 
-    subgraph Primary Market - Creation/Redemption
-        B -- Creation/Redemption Order --> D[Authorized Participant]
-        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-        E -- Issues or Redeems Creation Units --> D
-        D -- Sends ETF Shares --> B
-    end
+```
+subgraph Primary Market - Creation/Redemption
+    B -- Creation/Redemption Order --> D[Authorized Participant]
+    D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+    E -- Issues or Redeems Creation Units --> D
+    D -- Sends ETF Shares --> B
+end
+```
 
 </div>
 
@@ -95,5 +95,4 @@ flowchart LR
 </p>
 
 </body>
-</html>
 
