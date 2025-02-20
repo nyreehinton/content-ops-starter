@@ -33,29 +33,31 @@ my role centered on architecting the analytic pipelines that underpinned the lau
 
 Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales – an impressive feat for a relatively new entrant in the ETF space.
 
-\| Symbol | Fund Name                                                       |
-\|:------:|-----------------------------------------------------------------|
-\| CGGE   | Capital Group Global Equity ETF                                 |
-\| CGXU   | Capital Group International Focus Equity ETF                    |
-\| N/A    | Capital Group New Geography Equity ETF                          |
-\| CGGR   | Capital Group Growth ETF                                        |
-\| CGGO   | Capital Group Global Growth Equity ETF                          |
-\| CGIE   | Capital Group International Equity ETF                          |
-\| CGIC   | Capital Group International Core Equity ETF                     |
-\| CGGE   | Capital Group Global Equity ETF                                 |
-\| CGCV   | Capital Group Conservative Equity ETF                           |
-\| CGUS   | Capital Group Core Equity ETF                                   |
-\| N/A    | Capital Group Dividend Growers ETF                              |
-\| CGDV   | Capital Group Dividend Value ETF                                |
-\| N/A    | Capital Group Core Bond ETF                                     |
-\| CGCP   | Capital Group Core Plus Income ETF                              |
-\| CGIB   | Capital Group International Bond ETF (USD-Hedged)               |
-\| CGSD   | Capital Group Short Duration Income ETF                         |
-\| CGMS   | Capital Group U.S. Multi-Sector Income ETF                      |
-\| CGUI   | Capital Group Ultra Short Income ETF                            |
-\| CGHM   | Capital Group Municipal High-Income ETF                         |
-\| CGMU   | Capital Group Municipal Income ETF (14020Y 20 1 40309)          |
-\| CGSM   | Capital Group Short Duration Municipal Income ETF               |
+```
+| Symbol | Fund Name                                                       |
+|:------:|-----------------------------------------------------------------|
+| CGGE   | Capital Group Global Equity ETF                                 |
+| CGXU   | Capital Group International Focus Equity ETF                    |
+| N/A    | Capital Group New Geography Equity ETF                          |
+| CGGR   | Capital Group Growth ETF                                        |
+| CGGO   | Capital Group Global Growth Equity ETF                          |
+| CGIE   | Capital Group International Equity ETF                          |
+| CGIC   | Capital Group International Core Equity ETF                     |
+| CGGE   | Capital Group Global Equity ETF                                 |
+| CGCV   | Capital Group Conservative Equity ETF                           |
+| CGUS   | Capital Group Core Equity ETF                                   |
+| N/A    | Capital Group Dividend Growers ETF                              |
+| CGDV   | Capital Group Dividend Value ETF                                |
+| N/A    | Capital Group Core Bond ETF                                     |
+| CGCP   | Capital Group Core Plus Income ETF                              |
+| CGIB   | Capital Group International Bond ETF (USD-Hedged)               |
+| CGSD   | Capital Group Short Duration Income ETF                         |
+| CGMS   | Capital Group U.S. Multi-Sector Income ETF                      |
+| CGUI   | Capital Group Ultra Short Income ETF                            |
+| CGHM   | Capital Group Municipal High-Income ETF                         |
+| CGMU   | Capital Group Municipal Income ETF (14020Y 20 1 40309)          |
+| CGSM   | Capital Group Short Duration Municipal Income ETF               |
+```
 
 <div style="text-align: center">## The Third-Party Data Imperative</div>
 
