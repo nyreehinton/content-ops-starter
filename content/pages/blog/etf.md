@@ -29,23 +29,14 @@ my role centered on architecting the analytic pipelines that underpinned the lau
 
 ![](/images/etfmutual.png)
 
-<div style="text-align: center">## Product Launches and Market Positioning</div>
+<div style="text-align: center">## Capital Group's ETF Product Launches & Data Strategy</div>
 
-As ETFs trade intraday-like stocks but require robust data infrastructure to support pricing accuracy, tax efficiency, and compliance,  
+Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales – an impressive feat for a relatively new entrant in the ETF space.
 
-## The 2023 ETF Portfolio
+|   | CGGE Capital Group Global Equity ETFCapital Group International Focus Equity ETF CGXUCapital Group New Geography Equity ETFCapital Group Growth ETF	CGGR | Capital Group Global Growth Equity ETF	CGGO	Capital Group International Equity ETF	CGIECapital Group International Core Equity ETF	CGIC | Capital Group Global Equity ETF	CGGECapital Group Conservative Equity ETF	CGCVCapital Group Core Equity ETF	CGUSCapital Group Dividend Growers ETF | Capital Group Dividend Value ETF	CGDV	 | Capital Group Core Bond ETFCapital Group Core Plus Income ETF	CGCPCapital Group International Bond ETF (USD-Hedged)	CGIB	Capital Group Short Duration Income ETF	CGSD | Capital Group U.S. Multi-Sector Income ETF	CGMSCapital Group Ultra Short Income ETF CGUI | Capital Group Municipal High-Income ETF	CGHMCapital Group Municipal Income ETF	CGMU	14020Y 20 1	40309Capital Group Short Duration Municipal Income ETF CGSM |   |
+| - | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
 
-Capital Group unveiled five ETFs in late 2023, each targeting distinct investor needs:
 
-*   **CGIE**: Developed-market international equities with capped emerging market exposure (10% prospectus limit) and a 54-basis-point fee2.
-
-*   **CGDG**: Global dividend growers blending yield and growth, benchmarked against MSCI ACWI with a 47-basis-point fee2.
-
-*   **CGCB**: Core bond strategy replicating Bloomberg U.S. Aggregate Index exposure at 27 basis points.
-
-*   **CGSM**: Short-duration municipal bonds for tax-efficient income.
-
-*   **CGBL**: Multi-asset balanced ETF combining equity and fixed-income sleeves2.
 
 <div style="text-align: center">## The Third-Party Data Imperative</div>
 
