@@ -51,29 +51,27 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
- ETF Primary & Secondary Markets
+## ETF Processing: Primary and Secondary Markets
 
-Primary Market – Creation and Redemption
-The **Primary Market** is where new ETF shares are created or redeemed. This process involves direct interactions between the **ETF issuer**, **Authorized Participants (APs)**, and the underlying securities of the fund:1.  **Authorized Participants (APs)**:
-APs are institutional entities, such as banks or market makers, authorized to interact directly with the ETF issuer. They act as intermediaries enabling the creation and redemption of ETF shares.
+### Primary Market
+- **Creation Process**:  
+  - **Authorized Participants (APs)**, often large financial institutions, work directly with the ETF issuer to create new ETF shares.  
+  - APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).
+- **Redemption Process**:  
+  - APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.  
+  - This mechanism ensures the ETF’s supply matches market demand.
 
-2.  **Creation Process**:
+### Secondary Market
+- **Investors Trading ETF Shares**:  
+  - Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.  
+  - Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.  
 
-    *   When demand for an ETF increases, APs acquire a "creation basket" of securities (or cash) that mirrors the ETF's holdings.
+### Arbitrage Mechanism
+- **Role of APs and Market Makers**:  
+  - APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.  
+  - If the ETF trades above its NAV, APs create shares to increase supply, lowering the price. If it trades below, they redeem shares to decrease supply, raising the price.  
 
-    *   They deliver this basket to the ETF issuer in exchange for new ETF shares, which are then sold to the market.
+This dual-market structure ensures liquidity, efficient pricing, and a seamless investment vehicle for a wide range of participants.
 
-3.  **Redemption Process**:
-
-    *   Conversely, if demand for ETF shares decreases, APs return ETF shares to the issuer in exchange for an equivalent basket of underlying securities (or cash).## **Secondary Market – Trading Among Investors**The **Secondary Market** is where ETF shares are actively bought and sold by retail and institutional investors on stock exchanges, similar to individual stocks. Transactions in the Secondary Market do not affect the ETF's underlying assets.1.  **Market Makers**:
-        Market makers help ensure liquidity in the Secondary Market. They maintain bid-ask spreads by buying and selling ETF shares to meet supply and demand imbalances.
-
-4.  **Institutional and Retail Clients**:
-
-    *   **Institutional Clients**: Large-scale investors, such as pension funds, hedge funds, or asset managers, trade ETFs for portfolio diversification or hedging purposes.
-
-    *   **Retail Clients**: Individual investors buy ETFs for accessibility to diversified asset classes.**Benefits of the Secondary Market**:\*   Intraday Trading: Investors can trade ETFs throughout the day at market-determined prices.
-
-*   Liquidity: High trading volume ensures that buyers and sellers can easily execute trades.
 
 ![](/images/Primary%20Market.webp)
