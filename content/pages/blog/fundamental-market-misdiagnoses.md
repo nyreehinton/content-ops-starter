@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: 'Part 3: Everyone Else Got It Wrong'
+title: Everyone Else Got It Wrong (Part 3)
 slug: fundamental-market-misdiagnoses
 date: '2023-02-20'
 excerpt: >-
@@ -21,28 +21,20 @@ featuredImage:
 bottomSections: []
 isFeatured: false
 isDraft: false
-seo:
-  metaTitle: Track the right analytics for your business
-  metaDescription: You can add the excerpt and main keywords of your blog post here.
-  socialImage: /images/abstract-feature3.svg
-  type: Seo
 colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col-reverse
     textAlign: center
-author: content/data/person5.json
 ---
-# A Fundamental Misdiagnosis by the Market: The True Issue is Tesla’s Batteries
-
-![](/images/IMG_1245.webp)
-For years, the focus of scrutiny on Tesla has been misdirected. Investigations, lawsuits, and consumer complaints have zeroed in on range discrepancies, cold weather performance issues, efficiency inconsistencies, and misleading odometer readings. From the Schwartz v. Tesla lawsuit on exaggerated range claims to the Reuters exposé on Tesla’s secret team suppressing range complaints, everyone has been looking at individual symptoms instead of the root cause.
+<div style="text-align: center">![](/images/IMG_1245.webp)
+For years, the focus of scrutiny on Tesla has been misdirected. Investigations, lawsuits, and consumer complaints have zeroed in on range discrepancies, cold weather performance issues, efficiency inconsistencies, and misleading odometer readings. From the Schwartz v. Tesla lawsuit on exaggerated range claims to the Reuters exposé on Tesla’s secret team suppressing range complaints, everyone has been looking at individual symptoms instead of the root cause.</div>
 
 But the real issue, as my analysis proves, is far more fundamental—Tesla’s batteries are degrading at an accelerated rate, much faster than the company acknowledges, and everything else (range, odometer manipulation, and energy efficiency distortions) stems from this fact. 
 
 ### 1. Odometer Manipulation Proves the Batteries Are Deficient
 
-My Tesla odometer analysis proved that Tesla’s vehicles do not record mileage purely based on physical distance traveled. Instead, they use energy-based calculations that Tesla actively modifies through predictive algorithms, driving behavior multipliers, and efficiency recalibrations. 
+Tesla odometer analysis proved that Tesla’s vehicles do not record mileage purely based on physical distance traveled. Instead, they use energy-based calculations that Tesla actively modifies through predictive algorithms, driving behavior multipliers, and efficiency recalibrations. 
 
 This manipulation is directly tied to concealing how fast the battery degrades. If Tesla allowed the odometer to reflect real-world driving distances without interference, the degradation rate would become immediately apparent to consumers. Instead:
 
