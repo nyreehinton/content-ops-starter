@@ -57,6 +57,12 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 
 # ETF Primary & Secondary Markets
 
+---
+title: ETF Market Diagram
+---
+
+# ETF Primary & Secondary Markets
+
 ```mermaid
 flowchart LR
     subgraph Secondary Market
@@ -70,3 +76,4 @@ flowchart LR
         E -- Issues or Redeems Creation Units --> D
         D -- Sends ETF Shares --> B
     end
+
