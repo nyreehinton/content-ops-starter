@@ -20,110 +20,112 @@ styles:
     flexDirection: row
 type: PostLayout
 ---
-# What Is a Data Product?  
 ### A High-Level Overview
 
 A **data product** is a system, tool, or resource designed to collect, process, and deliver data in a way that creates value for its users. Unlike raw datasets, data products are carefully curated and engineered to provide insights, utility, and decision-making support. In the context of Capital Group's ETF launches, the data product serves as the backbone of analytics, providing stakeholders with the information they need to understand fund performance, manage liquidity, and ensure regulatory compliance.
 
 For the ETF data product, the process involved acquiring, processing, and transforming third-party data sources into actionable insights. Below, we explore the nuances of this data acquisition process, why it was critical, and the challenges it presented, followed by a detailed look at my contributions to building and improving this foundational data product.
 
----
-
 ## Why Data Acquisition Is Critical for ETFs
 
 ### The Role of Data in ETFs
-Unlike mutual funds, ETFs require robust real-time data pipelines to support their unique structural and operational needs. Data acquisition ensures that the processes of portfolio management, compliance, and investor servicing run seamlessly. Specifically, ETF data serves purposes such as:  
-- **Tracking Creation and Redemption Activity**: Facilitates authorized participants (APs) in maintaining liquidity and price alignment with NAV.
-- **Calculating Intraday Indicative Values (IIVs)**: Supports real-time pricing and transparency.
-- **Market Intelligence**: Provides insights into investor flows and trading patterns.
-- **Compliance and Reporting**: Ensures adherence to regulatory mandates and accurate shareholder reporting.
+
+Unlike mutual funds, ETFs require robust real-time data pipelines to support their unique structural and operational needs. Data acquisition ensures that the processes of portfolio management, compliance, and investor servicing run seamlessly. Specifically, ETF data serves purposes such as:
+
+*   **Tracking Creation and Redemption Activity**: Facilitates authorized participants (APs) in maintaining liquidity and price alignment with NAV.
+*   **Calculating Intraday Indicative Values (IIVs)**: Supports real-time pricing and transparency.
+*   **Market Intelligence**: Provides insights into investor flows and trading patterns.
+*   **Compliance and Reporting**: Ensures adherence to regulatory mandates and accurate shareholder reporting.
 
 Without high-quality, frequent, and well-structured data, ETF operations would face inefficiencies, pricing inaccuracies, and penalties from regulatory authorities.
 
----
+***
 
 ### Types of Data Required for ETF Operations
-The ETF data acquisition process integrates multiple third-party sources to generate a complete picture of fund operations. Key types of data include:  
-1. **Position Data**: Details the securities held within the ETF, necessary for calculating NAV and disseminating IIVs.  
-2. **Transaction Data**: Includes creation/redemption activity from APs, used to track fund inflows and outflows.  
-3. **Market Data**: Provides bid/ask prices and trading volume, essential for monitoring secondary market activity.  
-4. **Omnibus Account Data**: Aggregates investor activity through custodial and clearinghouse systems, offering indirect insights into shareholder demographics.  
 
----
+The ETF data acquisition process integrates multiple third-party sources to generate a complete picture of fund operations. Key types of data include:
+
+1.  **Position Data**: Details the securities held within the ETF, necessary for calculating NAV and disseminating IIVs.
+2.  **Transaction Data**: Includes creation/redemption activity from APs, used to track fund inflows and outflows.
+3.  **Market Data**: Provides bid/ask prices and trading volume, essential for monitoring secondary market activity.
+4.  **Omnibus Account Data**: Aggregates investor activity through custodial and clearinghouse systems, offering indirect insights into shareholder demographics.
+
+***
 
 ### Characteristics of ETF Data
-ETF data differs significantly from that of mutual funds, introducing new challenges:  
-- **Granularity**: ETF data is often at an aggregate or basket level (e.g., creation/redemption activity), whereas mutual funds provide position-level transparency.  
-- **Frequency**: ETF data flows occur intraday or daily to support real-time operations, compared to mutual funds' less frequent reporting cadence.  
-- **Standardization**: Each vendor delivers data in distinct formats, requiring extensive normalization before integration into analytics workflows.  
+
+ETF data differs significantly from that of mutual funds, introducing new challenges:
+
+*   **Granularity**: ETF data is often at an aggregate or basket level (e.g., creation/redemption activity), whereas mutual funds provide position-level transparency.
+*   **Frequency**: ETF data flows occur intraday or daily to support real-time operations, compared to mutual funds' less frequent reporting cadence.
+*   **Standardization**: Each vendor delivers data in distinct formats, requiring extensive normalization before integration into analytics workflows.
 
 These differences demanded innovative approaches to ingestion and transformation, as existing mutual fund systems were not equipped for the speed and complexity of ETF data.
 
----
+***
 
-## Challenges in Acquiring and Managing Third-Party Data  
+## Challenges in Acquiring and Managing Third-Party Data
 
-1. **Vendor Schema Mismatches**:  
-   - Different vendors, such as Broadridge and Albridge, delivered data in non-standardized formats (e.g., CSV, JSON) with inconsistent column structures, requiring transformation and mapping logic before ingestion.  
-   - For example, Broadridge provided office-level data, limiting visibility into specific advisors within multi-advisor offices, which impacted sales attribution accuracy.
+1.  **Vendor Schema Mismatches**:
+    *   Different vendors, such as Broadridge and Albridge, delivered data in non-standardized formats (e.g., CSV, JSON) with inconsistent column structures, requiring transformation and mapping logic before ingestion.
+    *   For example, Broadridge provided office-level data, limiting visibility into specific advisors within multi-advisor offices, which impacted sales attribution accuracy.
 
-2. **Data Latency**:  
-   - While ETFs require intraday updates for IIV calculations, certain vendor feeds (like omnibus account data) were only available on a T+1 basis. This delay impacted the ability to attribute flows accurately and required interim extrapolation models.  
+2.  **Data Latency**:
+    *   While ETFs require intraday updates for IIV calculations, certain vendor feeds (like omnibus account data) were only available on a T+1 basis. This delay impacted the ability to attribute flows accurately and required interim extrapolation models.
 
-3. **Integration with Legacy Systems**:  
-   - Capital Group transitioned from older systems like DORIS and AFTP to modern platforms like THOR and Caspian during the ETF launch. This migration posed risks of data loss or schema conflicts, particularly for complex security types such as fixed income instruments.  
+3.  **Integration with Legacy Systems**:
+    *   Capital Group transitioned from older systems like DORIS and AFTP to modern platforms like THOR and Caspian during the ETF launch. This migration posed risks of data loss or schema conflicts, particularly for complex security types such as fixed income instruments.
 
-4. **Data Gaps**:  
-   - Certain data points, like account type (e.g., IRA, 529), were missing in vendor feeds, complicating the task of reconciling sales data across platforms.
+4.  **Data Gaps**:
+    *   Certain data points, like account type (e.g., IRA, 529), were missing in vendor feeds, complicating the task of reconciling sales data across platforms.
 
----
+***
 
-## My Impact on the ETF Data Product  
+## My Impact on the ETF Data Product
 
 As a Data Product Manager, I was responsible for building and improving the ETF analytics pipeline to meet the demands of a fast-paced and high-stakes launch. My specific contributions included:
 
-### 1. Vendor Onboarding & Data Normalization  
-- **Engaged Third-Party Providers**: Coordinated with vendors such as Broadridge, Albridge, and Fidelity to define requirements, delivery formats, and SLAs.  
-- **Overcame Schema Challenges**: Developed Python-based scripts to automate the mapping and transformation of vendor data into the standardized schemas required by downstream systems like Caspian.  
+### 1. Vendor Onboarding & Data Normalization
 
-### 2. Addressing Data Latency and Accuracy  
-- **Extrapolated Missing Data**: Created interim models to fill gaps in T+1 feeds, enabling real-time visibility into investor flows during CGDG’s high-demand launch period.  
-- **Enhanced Data Quality Pipeline**: Established validation and reconciliation steps between raw vendor files and processed outputs to ensure consistency across systems like AFTP and LASR.  
+*   **Engaged Third-Party Providers**: Coordinated with vendors such as Broadridge, Albridge, and Fidelity to define requirements, delivery formats, and SLAs.
+*   **Overcame Schema Challenges**: Developed Python-based scripts to automate the mapping and transformation of vendor data into the standardized schemas required by downstream systems like Caspian.
 
-### 3. Integrated Data into Enterprise Systems  
-- Worked with engineering teams to migrate ETF data feeds into the THOR platform, ensuring minimal downtime during the transition.  
-- Designed fallback mechanisms to handle Broadridge file outages, leveraging secondary market data from Bloomberg to maintain operational continuity.  
+### 2. Addressing Data Latency and Accuracy
 
-### 4. Developed Analytics and Reporting  
-- Enabled downstream analytics by delivering clean, reliable data that powered 36 Tableau dashboards, including reports on AP activity and sales attribution.  
-- Partnered with Sales Compensation teams to reconcile \$6.3B in flows processed through Broadridge, ensuring accurate crediting for key sales stakeholders.  
+*   **Extrapolated Missing Data**: Created interim models to fill gaps in T+1 feeds, enabling real-time visibility into investor flows during CGDG’s high-demand launch period.
+*   **Enhanced Data Quality Pipeline**: Established validation and reconciliation steps between raw vendor files and processed outputs to ensure consistency across systems like AFTP and LASR.
 
-### 5. Led Cross-Functional Collaboration  
-- Acted as the primary liaison between Product, IT, and Business teams, ensuring alignment across stakeholders on priorities, timelines, and deliverables.  
-- Identified and escalated data discrepancies to vendors, leading to quicker resolution of recurring issues.  
+### 3. Integrated Data into Enterprise Systems
 
----
+*   Worked with engineering teams to migrate ETF data feeds into the THOR platform, ensuring minimal downtime during the transition.
+*   Designed fallback mechanisms to handle Broadridge file outages, leveraging secondary market data from Bloomberg to maintain operational continuity.
 
-## Key Outcomes of My Work  
-- **Accelerated ETF Launch Readiness**: Successfully onboarded and integrated three critical data vendors within six months, meeting a tight go-live deadline.  
-- **Enhanced Data Transparency**: Improved visibility into shareholder activity across five funds, enabling targeted marketing and investor engagement.  
-- **Operational Efficiency**: Reduced manual data validation processes by 50% through automation, saving significant time for downstream teams.  
-- **Compliance Risk Mitigation**: Addressed regulatory data gaps proactively, preventing potential compliance violations during SEC audits.  
+### 4. Developed Analytics and Reporting
 
----
+*   Enabled downstream analytics by delivering clean, reliable data that powered 36 Tableau dashboards, including reports on AP activity and sales attribution.
+*   Partnered with Sales Compensation teams to reconcile $6.3B in flows processed through Broadridge, ensuring accurate crediting for key sales stakeholders.
 
-## Conclusion  
+### 5. Led Cross-Functional Collaboration
 
-A robust data product is the foundation of any successful ETF launch, enabling real-time insights, operational efficiency, and compliance adherence. My work at Capital Group—spanning vendor onboarding, pipeline development, and cross-functional collaboration—demonstrates the critical role data products play in empowering innovation and scaling new financial products. As ETFs continue to grow within Capital Group’s portfolio, the data infrastructure I helped build ensures long-term scalability and adaptability in a rapidly evolving market.  
+*   Acted as the primary liaison between Product, IT, and Business teams, ensuring alignment across stakeholders on priorities, timelines, and deliverables.
+*   Identified and escalated data discrepancies to vendors, leading to quicker resolution of recurring issues.
 
+***
 
+## Key Outcomes of My Work
 
+*   **Accelerated ETF Launch Readiness**: Successfully onboarded and integrated three critical data vendors within six months, meeting a tight go-live deadline.
+*   **Enhanced Data Transparency**: Improved visibility into shareholder activity across five funds, enabling targeted marketing and investor engagement.
+*   **Operational Efficiency**: Reduced manual data validation processes by 50% through automation, saving significant time for downstream teams.
+*   **Compliance Risk Mitigation**: Addressed regulatory data gaps proactively, preventing potential compliance violations during SEC audits.
+
+***
+
+## Conclusion
+
+A robust data product is the foundation of any successful ETF launch, enabling real-time insights, operational efficiency, and compliance adherence. My work at Capital Group—spanning vendor onboarding, pipeline development, and cross-functional collaboration—demonstrates the critical role data products play in empowering innovation and scaling new financial products. As ETFs continue to grow within Capital Group’s portfolio, the data infrastructure I helped build ensures long-term scalability and adaptability in a rapidly evolving market.
 
 A data product is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has clear ownership, repeatable processes, and governance that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
-
-
-
-
 
 ## The Third-Party Data Imperative
 
