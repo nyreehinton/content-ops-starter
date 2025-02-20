@@ -24,19 +24,72 @@ type: PostLayout
 
 A **data product** is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has **clear ownership, repeatable processes, and governance** that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
 
-### The Fundamental Issue: ETFs Without a Transfer Agent  
-One of the most significant challenges ETFs present for firms like Capital Group compared to traditional mutual funds is the lack of a **transfer agent**. Mutual funds rely on a transfer agent to directly record individual shareholder transactions, providing granular, real-time data. This data is the backbone for reporting, analytics, and critical processes such as **sales compensation**.  
+<div style="text-align: center">### The Fundamental Issue: ETFs Without a Transfer Agent</div>
 
-For ETFs, however, there is no transfer agent; instead, shares are traded on the secondary market through exchanges and facilitated by **Authorized Participants (APs)** in the primary market. As a result:  
-- **Capital Group does not receive direct, granular data on shareholder activity.**  
-- Instead, ETF shareholder activity is processed and aggregated by custodians, clearinghouses, and third-party data vendors. These intermediaries provide insight into sales and ownership, but the information is delayed, incomplete, and often aggregated at high levels (e.g., at the office or omnibus account level).  
+One of the most significant challenges ETFs present for firms like Capital Group compared to traditional mutual funds is the lack of a **transfer agent**. Mutual funds rely on a transfer agent to directly record individual shareholder transactions, providing granular, real-time data. This data is the backbone for reporting, analytics, and critical processes such as **sales compensation**.
 
-### Why This Matters  
-This lack of direct data creates operational and strategic challenges:  
-- **Sales Crediting**: Without granular data, compensating sales teams for ETF inflows accurately becomes difficult. For mutual funds, each transaction can be traced to an individual shareholder, while ETFs require reverse-engineering aggregated data to determine flows.  
-- **Reporting**: High-level data makes it difficult to provide detailed analytics to stakeholders across sales, marketing, and product management.  
-- **Analytics and Decision-Making**: Granularity is essential for understanding fund dynamics, identifying key channels driving flows, and adjusting strategies accordingly.  
+For ETFs, however, there is no transfer agent; instead, shares are traded on the secondary market through exchanges and facilitated by **Authorized Participants (APs)** in the primary market. As a result:
 
+*   **Capital Group does not receive direct, granular data on shareholder activity.**
+*   Instead, ETF shareholder activity is processed and aggregated by custodians, clearinghouses, and third-party data vendors. These intermediaries provide insight into sales and ownership, but the information is delayed, incomplete, and often aggregated at high levels (e.g., at the office or omnibus account level).
+
+<div style="text-align: center">### Why This Matters</div>
+
+This lack of direct data creates operational and strategic challenges:
+
+*   **Sales Crediting**: Without granular data, compensating sales teams for ETF inflows accurately becomes difficult. For mutual funds, each transaction can be traced to an individual shareholder, while ETFs require reverse-engineering aggregated data to determine flows.
+*   **Reporting**: High-level data makes it difficult to provide detailed analytics to stakeholders across sales, marketing, and product management.
+*   **Analytics and Decision-Making**: Granularity is essential for understanding fund dynamics, identifying key channels driving flows, and adjusting strategies accordingly.
+
+
+## Closing the Gap: Building the ETF Data Product  
+
+### Strategic Approach to Solve the Problem  
+
+1. **Vendor Onboarding for Third-Party Data Acquisition**  
+   To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.  
+   - **Examples of Data Sources**:  
+     - **Broadridge**: Monthly data with office-level granularity, providing visibility into ~95% of CG ETF transactions.  
+     - **Fidelity**: Daily account-level transaction data, offering a detailed view but for a subset of accounts.  
+     - **State Street**: Daily NAV and outstanding share data for accounting and reconciliation purposes.  
+
+2. **Data Transformation and Normalization**  
+   The raw data from vendors arrived in disparate formats and varied levels of granularity. To build a usable data product, we:  
+   - **Developed Transformation Logic**: Using Python and SQL, I created transformation scripts to normalize data across different vendors, ensuring compatibility with downstream systems.  
+   - **Standardized Schema**: Mapped critical fields (e.g., account type, transaction types) into a unified schema, enabling consistent reporting and analytics.  
+
+3. **Overcoming Omnibus Account Challenges**  
+   Many vendors, such as Broadridge, provided shareholder activity data at the **office level** rather than the individual advisor or account level. As a result, key data points like the **line of business**, **advisor name**, or specific account types (e.g., IRA, 529) were missing.  
+   **Solutions Implemented**:  
+   - Extrapolated missing details using available patterns in other data feeds (e.g., matching CUSIPs to transaction flows in Fidelity files).  
+   - Designed validation processes to flag and fill data gaps where possible.  
+
+4. **Integration into Capital Group Systems**  
+   We integrated these transformed, standardized datasets into Capital Group’s enterprise platforms, such as **THOR** (processing platform), **Caspian** (data lake), and **LASR** (reporting system).  
+   - Established automated pipelines to process ETF sales and assets consistently across all systems.  
+   - Created backfill solutions for legacy data gaps, ensuring continuity in reporting.  
+
+---
+
+### My Impact: Designing and Delivering a Comprehensive ETF Data Product  
+
+As the Data Product Manager, my role was to lead the development, standardization, and operationalization of the ETF data pipeline, turning disparate and incomplete vendor data into a cohesive data product. Key contributions include:  
+
+1. **End-to-End Pipeline Development**  
+   - Designed and managed the **ETF data ingestion pipeline**, ensuring consistent flow from acquisition to transformation to reporting.  
+   - Implemented quality control processes to validate incoming data (e.g., cross-referencing Broadridge files with State Street’s NAV data to identify discrepancies).  
+
+2. **Advanced Analytics and Reporting Enablement**  
+   - Delivered reliable data to downstream systems, enabling high-impact dashboards in Tableau and Power BI for internal stakeholders.  
+   - Empowered sales teams with actionable insights by enriching vendor data, such as identifying regional trends in CGDG inflows.  
+
+3. **Cross-Functional Collaboration**  
+   - Partnered with Sales Compensation, IT, and Product teams to ensure that the data product met all stakeholder requirements.  
+   - Escalated recurring vendor issues (e.g., Broadridge file latency) to negotiate better SLAs and improve data delivery standards.  
+
+4. **Impactful Metrics**  
+   - **\$6.3B** in transactions reconciled using Broadridge data, enabling accurate day-to-day sales crediting for the sales force.  
+   - **50% Reduction in Manual Processes**: Leveraged automation to eliminate manual validation steps, saving significant time for business teams.  
 
 <div style="text-align: center">### Characteristics of ETF Data</div>
 
