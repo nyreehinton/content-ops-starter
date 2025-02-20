@@ -22,11 +22,8 @@ type: PostLayout
 ---
 ### A High-Level Overview
 
-A **data product** is a system, tool, or resource designed to collect, process, and deliver data in a way that creates value for its users. Unlike raw datasets, data products are carefully curated and engineered to provide insights, utility, and decision-making support. In the context of Capital Group's ETF launches, the data product serves as the backbone of analytics, providing stakeholders with the information they need to understand fund performance, manage liquidity, and ensure regulatory compliance.
-
-For the ETF data product, the process involved acquiring, processing, and transforming third-party data sources into actionable insights. Below, we explore the nuances of this data acquisition process, why it was critical, and the challenges it presented, followed by a detailed look at my contributions to building and improving this foundational data product.
-
-
+A **data product** is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has **clear ownership, repeatable processes, and governance** that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
+***
 
 ## Why Data Acquisition Is Critical for ETFs
 
@@ -127,7 +124,7 @@ As a Data Product Manager, I was responsible for building and improving the ETF 
 
 A robust data product is the foundation of any successful ETF launch, enabling real-time insights, operational efficiency, and compliance adherence. My work at Capital Group—spanning vendor onboarding, pipeline development, and cross-functional collaboration—demonstrates the critical role data products play in empowering innovation and scaling new financial products. As ETFs continue to grow within Capital Group’s portfolio, the data infrastructure I helped build ensures long-term scalability and adaptability in a rapidly evolving market.
 
-A data product is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has clear ownership, repeatable processes, and governance that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
+
 
 ## The Third-Party Data Imperative
 
