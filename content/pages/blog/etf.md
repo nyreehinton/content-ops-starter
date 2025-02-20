@@ -53,7 +53,7 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 
 <div style="text-align: center">## ETF Processing: Primary and Secondary Markets</div>
 
-### Primary Market
+<div style="text-align: center">### Primary Market</div>
 
 *   **Creation Process**:
     *   **Authorized Participants (APs)**, often large financial institutions, work directly with the ETF issuer to create new ETF shares.
@@ -62,13 +62,13 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
     *   APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.
     *   This mechanism ensures the ETF’s supply matches market demand.
 
-### Secondary Market
+<div style="text-align: center">### Secondary Market</div>
 
 *   **Investors Trading ETF Shares**:
     *   Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.
     *   Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.
 
-### Arbitrage Mechanism
+<div style="text-align: center">### Arbitrage Mechanism</div>
 
 *   **Role of APs and Market Makers**:
     *   APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.
