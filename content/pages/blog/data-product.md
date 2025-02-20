@@ -19,7 +19,6 @@ styles:
   self:
     flexDirection: row
 type: PostLayout
-author: content/data/person1.json
 ---
 A data product is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has clear ownership, repeatable processes, and governance that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
 
