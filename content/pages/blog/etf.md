@@ -51,29 +51,33 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-![](/images/Primary%20Market.webp)</details>
 
-###
 
-# ETF Primary & Secondary Markets
+<div style="text-align: center">## ETF Primary & Secondary Markets</div>
 
----
-title: ETF Market Diagram
----
+<div style="text-align: left">**
+Primary Market – Creation and Redemption**
+------------------------------------------The **Primary Market** is where new ETF shares are created or redeemed. This process involves direct interactions between the **ETF issuer**, **Authorized Participants (APs)**, and the underlying securities of the fund:1.  **Authorized Participants (APs)**:
+    APs are institutional entities, such as banks or market makers, authorized to interact directly with the ETF issuer. They act as intermediaries enabling the creation and redemption of ETF shares.
 
-# ETF Primary & Secondary Markets
+2.  **Creation Process**:
 
-```mermaid
-flowchart LR
-    subgraph Secondary Market
-        A[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
-        C[Investor B] -- Buys/Sells ETF Shares --> B
-    end
+    *   When demand for an ETF increases, APs acquire a "creation basket" of securities (or cash) that mirrors the ETF's holdings.
 
-    subgraph Primary Market - Creation/Redemption
-        B -- Creation/Redemption Order --> D[Authorized Participant]
-        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-        E -- Issues or Redeems Creation Units --> D
-        D -- Sends ETF Shares --> B
-    end
+    *   They deliver this basket to the ETF issuer in exchange for new ETF shares, which are then sold to the market.
+
+3.  **Redemption Process**:
+
+    *   Conversely, if demand for ETF shares decreases, APs return ETF shares to the issuer in exchange for an equivalent basket of underlying securities (or cash).## **Secondary Market – Trading Among Investors**The **Secondary Market** is where ETF shares are actively bought and sold by retail and institutional investors on stock exchanges, similar to individual stocks. Transactions in the Secondary Market do not affect the ETF's underlying assets.1.  **Market Makers**:
+    Market makers help ensure liquidity in the Secondary Market. They maintain bid-ask spreads by buying and selling ETF shares to meet supply and demand imbalances.
+
+2.  **Institutional and Retail Clients**:
+
+    *   **Institutional Clients**: Large-scale investors, such as pension funds, hedge funds, or asset managers, trade ETFs for portfolio diversification or hedging purposes.
+
+    *   **Retail Clients**: Individual investors buy ETFs for accessibility to diversified asset classes.**Benefits of the Secondary Market**:*   Intraday Trading: Investors can trade ETFs throughout the day at market-determined prices.
+
+*   Liquidity: High trading volume ensures that buyers and sellers can easily execute trades.
+
+![](/images/Primary%20Market.webp)</div>
 
