@@ -2,24 +2,16 @@
 title: Exchange Traded Funds
 slug: etf
 date: '2024-03-26'
-excerpt: >-
-  Starting a business is no small feat. It’s a journey filled with challenges,
-  risks, and countless decisions that can make or break your startup. One of the
-  most critical decisions you'll make isn’t about your product or market—it's
-  about the people you surround yourself with.
-featuredImage:
-  altText: Thumbnail
-  type: ImageBlock
-  url: /images/abstract-feature1.svg
-  styles:
-    self:
-      borderRadius: medium
+excerpt: ''
 colors: bg-light-fg-dark
 type: PostLayout
 styles:
   self:
     flexDirection: col
 isFeatured: false
+seo:
+  type: Seo
+  metaTitle: ETF
 ---
 <div style="text-align: left">**Exchange-traded funds** (ETFs) represent a transformative shift in investment vehicles, combining the intraday liquidity of stocks with the diversified exposure of mutual funds. Unlike mutual funds, which settle at end-of-day net asset values (NAVs), ETFs require real-time price discovery mechanisms to maintain parity between market prices and underlying assets. </div>
 
