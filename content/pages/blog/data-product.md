@@ -144,11 +144,11 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
 
 <div style="text-align: center">## Key Outcomes of My Work</div>
 
-*   **Accelerated ETF Launch Readiness**:\
+*   **Accelerated ETF Launch Readiness**:
     Successfully onboarded and operationalized three critical data vendors within six months, meeting a tight go-live timeline for five ETFs.
-*   **Enhanced Data Transparency**:\
+*   **Enhanced Data Transparency**:
     Improved visibility into shareholder activity by integrating and enriching aggregated vendor data, enabling targeted marketing and efficient sales reporting across five funds.
-*   **Improved Operational Efficiency**:\
+*   **Improved Operational Efficiency**:
     Achieved a **50% reduction in manual validation processes** by automating data ingestion and processing, saving significant time and resources.
 *   **Mitigated Compliance Risks**: Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
 
