@@ -88,79 +88,10 @@ This lack of direct data creates operational and strategic challenges:
 
     *   Certain data points, like account type (e.g., IRA, 529), were missing in vendor feeds, complicating the task of reconciling sales data across platforms.
 
-##
+<div style="text-align: center">## My Contributions to the ETF Data Product</div>
 
-<div style="text-align: center">### My Impact: Designing and Delivering a Comprehensive ETF Data Product</div>
-
-As the Data Product Manager, my role was to lead the development, standardization, and operationalization of the ETF data pipeline, turning disparate and incomplete vendor data into a cohesive data product. Key contributions include:
-
-1.  **End-to-End Pipeline Development**
-    *   Designed and managed the **ETF data ingestion pipeline**, ensuring consistent flow from acquisition to transformation to reporting.
-    *   Implemented quality control processes to validate incoming data (e.g., cross-referencing Broadridge files with State Street’s NAV data to identify discrepancies).
-
-2.  **Advanced Analytics and Reporting Enablement**
-    *   Delivered reliable data to downstream systems, enabling high-impact dashboards in Tableau and Power BI for internal stakeholders.
-    *   Empowered sales teams with actionable insights by enriching vendor data, such as identifying regional trends in CGDG inflows.
-
-3.  **Cross-Functional Collaboration**
-    *   Partnered with Sales Compensation, IT, and Product teams to ensure that the data product met all stakeholder requirements.
-    *   Escalated recurring vendor issues (e.g., Broadridge file latency) to negotiate better SLAs and improve data delivery standards.
-
-4.  **Impactful Metrics**
-    *   **$6.3B** in transactions reconciled using Broadridge data, enabling accurate day-to-day sales crediting for the sales force.
-    *   **50% Reduction in Manual Processes**: Leveraged automation to eliminate manual validation steps, saving significant time for business teams.
-
-## My Impact on the ETF Data Product
-
-As a Data Product Manager, I was responsible for building and improving the ETF analytics pipeline to meet the demands of a fast-paced and high-stakes launch. My specific contributions included:
-
-### 1. Vendor Onboarding & Data Normalization
-
-*   **Engaged Third-Party Providers**: Coordinated with vendors such as Broadridge, Albridge, and Fidelity to define requirements, delivery formats, and SLAs.
-
-*   **Overcame Schema Challenges**: Developed Python-based scripts to automate the mapping and transformation of vendor data into the standardized schemas required by downstream systems like Caspian.
-
-### 2. Addressing Data Latency and Accuracy
-
-*   **Extrapolated Missing Data**: Created interim models to fill gaps in T+1 feeds, enabling real-time visibility into investor flows during CGDG’s high-demand launch period.
-
-*   **Enhanced Data Quality Pipeline**: Established validation and reconciliation steps between raw vendor files and processed outputs to ensure consistency across systems like AFTP and LASR.
-
-### 3. Integrated Data into Enterprise Systems
-
-*   Worked with engineering teams to migrate ETF data feeds into the THOR platform, ensuring minimal downtime during the transition.
-
-*   Designed fallback mechanisms to handle Broadridge file outages, leveraging secondary market data from Bloomberg to maintain operational continuity.
-
-### 4. Developed Analytics and Reporting
-
-*   Enabled downstream analytics by delivering clean, reliable data that powered 36 Tableau dashboards, including reports on AP activity and sales attribution.
-
-*   Partnered with Sales Compensation teams to reconcile $6.3B in flows processed through Broadridge, ensuring accurate crediting for key sales stakeholders.
-
-### 5. Led Cross-Functional Collaboration
-
-*   Acted as the primary liaison between Product, IT, and Business teams, ensuring alignment across stakeholders on priorities, timelines, and deliverables.
-
-*   Identified and escalated data discrepancies to vendors, leading to quicker resolution of recurring issues.
-
-## Key Outcomes of My Work
-
-*   **Accelerated ETF Launch Readiness**: Successfully onboarded and integrated three critical data vendors within six months, meeting a tight go-live deadline.
-
-*   **Enhanced Data Transparency**: Improved visibility into shareholder activity across five funds, enabling targeted marketing and investor engagement.
-
-*   **Operational Efficiency**: Reduced manual data validation processes by 50% through automation, saving significant time for downstream teams.
-
-*   **Compliance Risk Mitigation**: Addressed regulatory data gaps proactively, preventing potential compliance violations during SEC audits.
-
-<div style="text-align: center">###</div>
-
-
-
-***
-
-<div style="text-align: center"></div>
-
-<div style="text-align: center">##</div>
+<div style="text-align: left">As the Data Product Manager for ETF analytics, I drove the pipeline’s creation and continuous improvement to meet the demands of a fast-paced launch environment. My contributions were integral to the seamless onboarding of new data providers, ensuring high data quality, and facilitating impactful analytics for the ETF launch. Key areas of focus included:
+1\. Vendor Onboarding & Data Normalization	•	Engaged Third-Party Providers: Coordinated with critical vendors such as Broadridge, Albridge, and Fidelity to establish clear data requirements, delivery formats, and SLAs to ensure reliable data delivery.	•	Overcame Schema Challenges: Developed Python-based scripts to automate the mapping and transformation of vendor data into the standardized schemas required by downstream systems like Caspian and THOR, which greatly reduced manual intervention and accelerated the pipeline setup.
+2\. Addressing Data Latency and Accuracy	•	Extrapolated Missing Data: In the high-demand launch period for CGDG, I created interim models to fill gaps in the T+1 data feeds, enabling real-time visibility into investor flows and ensuring operational continuity even during data delays.	•	Enhanced Data Quality Pipeline: Established robust validation and reconciliation processes to cross-check raw vendor files with processed outputs, ensuring consistent and reliable data delivery across platforms like AFTP, LASR, and THOR.
+3\. Integrated Data into Enterprise Systems	•	Migrated ETF Data Feeds to THOR: Worked closely with engineering teams to migrate ETF data feeds into the new THOR platform with minimal downtime, ensuring a seamless transition and continued support for business operations.	•	Developed Fallback Mechanisms: Designed contingency processes to handle outages in critical data feeds, such as leveraging secondary market data from Bloomberg when Broadridge files faced delays, ensuring no disruption in analytics or reporting.4. Developed Analytics and Reporting	•	Enabled Downstream Analytics: Delivered clean, validated data that powered 36 critical Tableau dashboards, enabling teams to track metrics such as AP activity, investor trends, and sales attribution.	•	Sales Compensation Support: Partnered with the Sales Compensation team to reconcile over $6.3B in ETF flows, ensuring accurate and timely compensation for the salesforce, improving motivation and business outcomes.5. Led Cross-Functional Collaboration	•	Primary Liaison for Stakeholder Alignment: Acted as the central point of contact between the Product, IT, and Business teams, ensuring clear communication and alignment on priorities, timelines, and deliverables.	•	Escalated Data Issues: Identified recurring data issues with vendors and worked with them to negotiate better delivery standards and resolve inconsistencies, ensuring a more efficient and reliable data pipeline.</div>
 
