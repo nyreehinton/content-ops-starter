@@ -103,7 +103,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: Business Intelligence
+            label: Tableau (Business Intelligence)
             altText: ''
             url: /
             showIcon: false
