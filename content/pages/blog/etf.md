@@ -51,46 +51,34 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
 
-\`\`
-
-```
 // pages/index.js
 import React from 'react';
-```
 
-```
-// We only keep the relevant markup—no  or  tags here
+// We only keep the relevant markup—no <html> or <head> tags here
 export default function HomePage() {
-return (
-<>
-ETF Primary & Secondary Markets
-```
+  return (
+    <>
+      <h1>ETF Primary & Secondary Markets</h1>
+      <div className="mermaid">
+        flowchart LR
+          subgraph Secondary Market
+            A[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
+            C[Investor B] -- Buys/Sells ETF Shares --> B
+          end
 
-```
-flowchart LR
-subgraph Secondary Market
-A[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
-C[Investor B] -- Buys/Sells ETF Shares --> B
-end
-```
-
-```
-      subgraph Primary Market - Creation/Redemption
-        B -- Creation/Redemption Order --> D[Authorized Participant]
-        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-        E -- Issues or Redeems Creation Units --> D
-        D -- Sends ETF Shares --> B
-      end
-  </div>
-  <p>
-    This diagram illustrates the two different ways ETF shares circulate:
-    <strong>Secondary Market</strong> and the <strong>Primary Market</strong>.
-  </p>
-</>
-```
-
-```
-);
+          subgraph Primary Market - Creation/Redemption
+            B -- Creation/Redemption Order --> D[Authorized Participant]
+            D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+            E -- Issues or Redeems Creation Units --> D
+            D -- Sends ETF Shares --> B
+          end
+      </div>
+      <p>
+        This diagram illustrates the two different ways ETF shares circulate:
+        <strong>Secondary Market</strong> and the <strong>Primary Market</strong>.
+      </p>
+    </>
+  );
 }
-```
+
 
