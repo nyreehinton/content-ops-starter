@@ -26,6 +26,8 @@ A **data product** is a system, tool, or resource designed to collect, process, 
 
 For the ETF data product, the process involved acquiring, processing, and transforming third-party data sources into actionable insights. Below, we explore the nuances of this data acquisition process, why it was critical, and the challenges it presented, followed by a detailed look at my contributions to building and improving this foundational data product.
 
+
+
 ## Why Data Acquisition Is Critical for ETFs
 
 ### The Role of Data in ETFs
