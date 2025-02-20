@@ -85,7 +85,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: Data Product
+            label: What's A Data Product?
             altText: ''
             url: /
             showIcon: false
