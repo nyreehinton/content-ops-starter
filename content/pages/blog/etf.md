@@ -53,33 +53,44 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 
 \`\`
 
+```
 // pages/index.js
 import React from 'react';
+```
 
+```
 // We only keep the relevant markup—no  or  tags here
 export default function HomePage() {
 return (
 <>
 ETF Primary & Secondary Markets
+```
 
+```
 flowchart LR
 subgraph Secondary Market
-A\[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
-C\[Investor B] -- Buys/Sells ETF Shares --> B
+A[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
+C[Investor B] -- Buys/Sells ETF Shares --> B
 end
+```
 
-          subgraph Primary Market - Creation/Redemption
-            B -- Creation/Redemption Order --> D[Authorized Participant]
-            D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
-            E -- Issues or Redeems Creation Units --> D
-            D -- Sends ETF Shares --> B
-          end
-      </div>
-      <p>
-        This diagram illustrates the two different ways ETF shares circulate:
-        <strong>Secondary Market</strong> and the <strong>Primary Market</strong>.
-      </p>
-    </>
+```
+      subgraph Primary Market - Creation/Redemption
+        B -- Creation/Redemption Order --> D[Authorized Participant]
+        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+        E -- Issues or Redeems Creation Units --> D
+        D -- Sends ETF Shares --> B
+      end
+  </div>
+  <p>
+    This diagram illustrates the two different ways ETF shares circulate:
+    <strong>Secondary Market</strong> and the <strong>Primary Market</strong>.
+  </p>
+</>
+```
 
+```
 );
 }
+```
+
