@@ -53,17 +53,20 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 
 ![](/images/Primary%20Market.webp)</details>
 
-### How to Display the Diagram
+###
 
-*   If your static site setup **natively supports Mermaid in Markdown** (e.g., certain documentation sites do), this code fence will render the chart automatically.
+# ETF Primary & Secondary Markets
 
-*   If **not**, you’ll need a Mermaid-aware plugin or script to convert Mermaid blocks at build time (for static site generators) or at runtime (in the browser). Examples include:
+```mermaid
+flowchart LR
+    subgraph Secondary Market
+        A[Investor A] -- Buys/Sells ETF Shares --> B((Broker/Exchange))
+        C[Investor B] -- Buys/Sells ETF Shares --> B
+    end
 
-    *   **Hugo** + [Mermaid shortcode or extension](https://gohugo.io/hugo-modules/).
-
-    *   **Gatsby** + [gatsby-remark-mermaid](https://www.gatsbyjs.com/plugins/gatsby-remark-mermaid/).
-
-    *   **MDX** (in Next.js) with a [remark plugin for Mermaid](https://github.com/remarkjs/remark-mermaid).
-
-But in the simplest sense, **that’s all the Markdown** you need: a heading, a Mermaid code fence, and some text.
-
+    subgraph Primary Market - Creation/Redemption
+        B -- Creation/Redemption Order --> D[Authorized Participant]
+        D -- Delivers Basket of Securities --> E((ETF Sponsor/Fund))
+        E -- Issues or Redeems Creation Units --> D
+        D -- Sends ETF Shares --> B
+    end
