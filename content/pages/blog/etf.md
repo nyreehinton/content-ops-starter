@@ -3,13 +3,6 @@ title: Exchange Traded Funds
 slug: etf
 date: '2024-03-26'
 excerpt: ''
-featuredImage:
-  altText: Thumbnail
-  type: ImageBlock
-  url: /images/abstract-feature1.svg
-  styles:
-    self:
-      borderRadius: medium
 colors: bg-light-fg-dark
 type: PostLayout
 styles:
