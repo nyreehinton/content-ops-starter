@@ -1,5 +1,5 @@
 ---
-title: 'Capital Group''s ETF Expansion: Achicutextering a New Analytics Foundations'
+title: 'Capital Group''s ETF Expansion: Achicutexteringg a New Analytics Foundations'
 slug: etf
 date: '2024-03-26'
 excerpt: >-
