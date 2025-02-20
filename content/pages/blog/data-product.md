@@ -134,7 +134,7 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
 
 ***
 
-## Key Outcomes of My Work
+<div style="text-align: center">## Key Outcomes of My Work</div>
 
 *   **Accelerated ETF Launch Readiness**:\
     Successfully onboarded and operationalized three critical data vendors within six months, meeting a tight go-live timeline for five ETFs.
@@ -144,8 +144,6 @@ As the Data Product Manager for ETF analytics, I drove the pipeline’s creation
     Achieved a **50% reduction in manual validation processes** by automating data ingestion and processing, saving significant time and resources.
 *   **Mitigated Compliance Risks**:Addressed regulatory data gaps proactively, ensuring adherence to SEC transparency requirements and avoiding potential compliance violations.
 
-***
 
-## Conclusion
 
 The ETF data product I built at Capital Group bridges the fundamental gap created by the lack of a transfer agent, turning fragmented and incomplete third-party data into a reliable analytics foundation. By addressing issues in granularity, frequency, and latency, I delivered a scalable solution that empowers stakeholders, accelerates decision-making, and ensures compliance. This work not only supported the successful launch of Capital Group’s ETF offerings but also established a data management framework that will scale with future product growth.
