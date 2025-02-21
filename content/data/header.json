@@ -28,7 +28,7 @@
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
-                    "showIcon": false
+                    "showIcon": true
                 },
                 {
                     "label": "Third Bridge Group Limited",
