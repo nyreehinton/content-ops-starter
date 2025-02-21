@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: Scaled Agile Framework
-date: '2022-10-10'
+date: '2025-02-10'
 excerpt: ''
 bottomSections:
   - type: DividerSection
