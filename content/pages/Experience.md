@@ -87,7 +87,7 @@ sections:
           - type: Button
             label: What's a Data Product?
             altText: ''
-            url: /
+            url: /blog/data-product/
             showIcon: false
             icon: arrowRight
             iconPosition: right
