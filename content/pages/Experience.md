@@ -114,7 +114,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: AGILE
+            label: SAFe
             altText: ''
             url: /blog/safe/
             showIcon: false
