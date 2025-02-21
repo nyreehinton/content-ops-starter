@@ -43,26 +43,15 @@ One of the most significant challenges ETFs present for firms like Capital Group
 
 <div style="text-align: center">## Closing the Gap</div>
 
-<div style="text-align: center">### Building the ETF Data Product</div>
+Building the ETF Data Product to address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
 
-1.  **Vendor Onboarding for Third-Party Data Acquisition**
-    To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
-    *   **Examples of Data Sources**:
-        *   **Broadridge**: Monthly data with office-level granularity, providing visibility into \~95% of CG ETF transactions.
-        *   **Fidelity**: Daily account-level transaction data, offering a detailed view but for a subset of accounts.
-        *   **State Street**: Daily NAV and outstanding share data for accounting and reconciliation purposes.
+<div style="text-align: center">### Vendor Data Ecosystem for ETF Operations</div>
 
-### Vendor Data Ecosystem for ETF Operations  
-
-| **Data Vendor** | **Data Type**               | **Granularity**         | **Frequency** | **Coverage**  | **Limitations**                                                                 |  
-|-----------------|-----------------------------|-------------------------|---------------|----------------|----------------------------------------------------------------------------------|  
-| Broadridge      | Omnibus transactions        | Office-level            | Monthly       | ~95% of flows  | Aggregated by office; lacks advisor/account-level detail (e.g., IRA vs. taxable). |  
-| Fidelity        | Account-level transactions  | Individual accounts      | Daily          | ~18% of AUM    | Limited to Fidelity-cleared accounts only.                                      |  
-| State Street    | NAV, shares outstanding      | Fund-level aggregates    | Daily          | 100%           | Does not include transaction or shareholder data.                              |  
-
----
-
-#### Data Flow Diagram  
+| **Data Vendor** | **Data Type**              | **Granularity**       | **Frequency** | **Coverage**   | **Limitations**                                                                   |
+| --------------- | -------------------------- | --------------------- | ------------- | -------------- | --------------------------------------------------------------------------------- |
+| Broadridge      | Omnibus transactions       | Office-level          | Monthly       | \~95% of flows | Aggregated by office; lacks advisor/account-level detail (e.g., IRA vs. taxable). |
+| Fidelity        | Account-level transactions | Individual accounts   | Daily         | \~18% of AUM   | Limited to Fidelity-cleared accounts only.                                        |
+| State Street    | NAV, shares outstanding    | Fund-level aggregates | Daily         | 100%           | Does not include transaction or shareholder data.                                 |
 
 
 
