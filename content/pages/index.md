@@ -87,7 +87,7 @@ sections:
           transactions, strengthening regulatory adherence and minimizing risk
           exposure.
         image:
-          url: /images/Shares Outstanding.png
+          url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
           altText: Featured icon two
           elementId: ''
           type: ImageBlock
