@@ -1,7 +1,7 @@
 ---
 type: PostLayout
 title: Scaled Agile Framework
-date: '2022-10-10'
+date: '2025-02-10'
 excerpt: ''
 bottomSections:
   - type: DividerSection
@@ -145,160 +145,68 @@ styles:
 
 In my role as the ETF Data Product Manager at Capital Group, I recognized early on the importance of adopting **SAFe® (Scaled Agile Framework)** principles to manage the complexity and velocity of our ETF data product development. My responsibility went beyond just setting up pipelines; I was tasked with orchestrating a system that could evolve rapidly to meet market needs, manage vendor dependencies, and deliver high-quality, actionable insights in real-time.![](/images/BP-Overview_6_WEB.webp)
 
-### Why SAFe?
+<div style="text-align: center">## Why Agile for the ETF Data Product?</div>
 
-SAFe offered the scalability and alignment necessary to manage multiple Agile Release Trains (ARTs) and cross-functional teams simultaneously. Here are the reasons behind this choice:
+The ETF data product presented several unique challenges:
 
-*   **Enterprise Agility**: SAFe's comprehensive framework aligned our ETF launches with the overarching enterprise goals, ensuring our product strategy was coherent with the firm's vision.
-*   **Cross-Team Alignment**: With 7+ teams, 7-8 systems, and 4-5 different ingestion pipelines, SAFe provided a structure for alignment through PI Planning, synchronization, and a shared Vision.
-*   **Built-in Quality**: Lean principles within SAFe emphasize Built-In Quality, ensuring the data product met Capital Group's rigorous standards for accuracy and compliance.
+*   **Lack of a Transfer Agent**: Unlike mutual funds, there was no direct access to shareholder-level data, which required creating workarounds to reconcile aggregated, delayed data from third-party vendors.
+*   **Cross-Functional Coordination**: Managing input from 7+ teams (Sales, Legal, IT, Compliance, Product, etc.) using 8+ systems with varying requirements.
+*   **Frequent Change Management**: Data pipelines were impacted by regulatory updates, vendor schema shifts, and enterprise migrations to platforms like THOR and Caspian.
+*   **High Stakeholder Expectations**: Delivering data products that aligned with sales compensation policies, analytics needs, and compliance guidelines.
 
-### Key Elements of SAFe Implementation
+An Agile framework provided the structure and flexibility needed to address these challenges by emphasizing collaboration, incremental delivery, and responsiveness to change.
 
-#### 1. **PI Planning: Synchronizing Teams Across the ART**
+<div style="text-align: center">## Key Agile Practices</div>
 
-*   **Vision and Roadmaps**: Articulating the future state of the ETF data product, connecting it to business strategy and market opportunities for rapid pivoting.
-*   **PI Objectives**: Teams committed to PI Objectives, creating shared understanding and alignment on deliverables across 8-12 week Planning Intervals (PIs).
-*   **ART Backlog**: Created a centralized ART Backlog, containing Features (both business and architectural) prioritized using WSJF (Weighted Shortest Job First).
+### 1. **Defining Clear Roles and Responsibilities**
 
-#### 2. **Kanban and Scrum for Teams**
+To ensure alignment across teams, I established a **RACI (Responsible, Accountable, Consulted, Informed)** model during the early phases of the project. This clarified expectations and decision-making authority for each stakeholder.
 
-*   **SAFe Team Kanban**: Enabled new business teams to manage continuously changing demands and prioritize work efficiently, with daily review and adjustment.
-*   **SAFe Scrum**: Provided new technology teams with structured events like Daily Stand-ups, Iteration Planning, and Retrospectives for enhanced team alignment and predictability.
+*   **Product Owner (My Role)**: Defined the vision for the ETF data product, prioritized the backlog, and acted as the primary liaison between business and IT teams.
+*   **Scrum Master**: Ensured smooth sprint execution, facilitated stand-ups, and coached the team on Agile best practices.
+*   **Cross-Functional Teams**: Collaborated on development, data validation, and reporting as part of an Agile Release Train (ART).
 
-#### 3. **Cross-Functional Teams and Topologies**
+![](/images/Picture1.png)
 
-*   **Stream-Aligned Teams**: Formed teams around the flow of work, ensuring the ability to deliver value directly to the Customer as foreseen in the ART Backlog.
-*   **Enabling Teams**: Specialized teams with focused expertise for tasks like designing complex data schemas or solving data latency issues.
+### 2. **Backlog Creation and Prioritization**
 
-#### 4. **Lean Principles in Practice**
+I built and maintained a comprehensive **product backlog** to manage the end-to-end pipeline:
 
-*   **Taking an Economic View**: Every Feature was justified by a benefit hypothesis that quantified the value to shareholders and the business.
-*   **Applying Systems Thinking**: Approached data ingestion as part of a larger ecosystem, considering the impact of each change on the entire system.
-*   **Unlocking Knowledge Worker Motivation**: Fostered an environment for cross-functional collaboration, allowing every team member to flourish and contribute to product innovation.
+*   **Epics**: High-level objectives such as "Enable Sales Crediting" or "Integrate Vendor Data Sources."
+*   **Features**: Subcomponents of epics, such as onboarding Broadridge and automating downstream validation.
+*   **User Stories**: Specific deliverables, written in the "As a \[Role], I want \[Functionality], so that \[Business Value]" format to connect tasks to business outcomes.
 
-#### 5. **Continuous Learning and Adaptation**
+Example User Story:
 
-*   **Retrospectives**: Conducted regularly after each Iteration, focusing on improving processes, quality, and team dynamics.
-*   **Spikes**: Used when facing high uncertainty or technical risk, allowing data science and engineering teams to research potential solutions before planning.
+*   *"As a sales manager, I want visibility into investor flows by advisor office so that I can properly attribute sales credit and incentivize performance."*
 
-### Outcomes and Impact
+### 3. **Incremental Development and Delivery**
 
-*   **Launch Readiness**: Successfully integrated 3 critical data vendors into our ART pipeline, meeting tight go-live deadlines for the $31B ETF launch.
-*   **Operational Efficiency**: Reduced manual data validation by 50% through automation, decreasing time for data reconciliation by 70%.
-*   **Increased Transparency**: Improved data transparency, enhancing investor communication by 30% and enabling real-time AP activity monitoring.
-*   **Enhanced Quality**: Achieved a 98% data accuracy rate, minimizing market intelligence arbitrage gaps across vendor feeds.
+The ETF data product was developed incrementally to deliver tangible value at each iteration:
 
-### Continuous Improvement
+*   **Two-Week Sprints**: Delivered features like initial vendor integrations, schema validations, and reporting dashboards in biweekly cycles.
+*   **Minimum Viable Product (MVP)**: Focused initial development on core functionalities, such as reconciling creation/redemption activity and NAV reporting. Further enhancements were prioritized in subsequent sprints.
 
-I led the team in relentless improvement through:
+### 4. **Daily Stand-Ups and Sprint Ceremonies**
 
-*   **Lean-Agile Training**: Facilitated SAFe® training for all teams, increasing their understanding and commitment to the Agile mindset.
-*   **Problem-Solving Workshops**: Hosted workshops to improve data ingestion processes and introduce innovations.
+Regular communication was key to maintaining team alignment and addressing blockers:
 
-## The Challenge: Traditional Waterfall vs. Agile in ETF Data Operations
+*   **Daily Stand-Ups**: 15-minute updates to discuss progress, impediments, and upcoming goals.
+*   **Sprint Planning**: Planned workload for each iteration, ensuring commitments aligned with team capacity.
+*   **Sprint Reviews**: Demonstrated completed work to stakeholders, collecting feedback for continuous improvement.
+*   **Retrospectives**: Identified what went well and areas for improvement to refine processes.
 
-### Before Agile:
+### 5. **Visualizing Work Through Kanban Boards**
 
-*   6-9 month development cycles
-*   Rigid requirements often outdated by launch
-*   Limited stakeholder visibility and engagement
-*   Difficulty adapting to regulatory changes mid-development
+I created Kanban boards to streamline the workflow and track progress in real time:
 
-### Agile Goals:
+*   **Columns**: To-Do, In Progress, In Review, Done.
+*   **Stories as Cards**: Each user story was represented as a card, ensuring transparency and prioritization.
 
-*   Reduce time-to-market by 50%
-*   Increase stakeholder satisfaction by 40%
-*   Improve data quality and reduce defects by 30%
-*   Enhance team productivity and morale
+### 6. **Continuous Feedback Loops**
 
-## My Approach: Tailored Agile Implementation
+I emphasized collaboration and feedback at every stage to ensure deliverables met business needs:
 
-### 1. Scrum Adaptation for ETF Data Flows
-
-*   **Sprint Planning**: Bi-weekly sprints aligned with ETF NAV calculation cycles
-*   **Daily Stand-ups**: Cross-functional meetings including Data Engineers, Business Analysts, and Compliance
-*   **Sprint Reviews**: Demos of new data pipelines and dashboards to stakeholders
-*   **Retrospectives**: Continuous improvement focus, especially on data quality and processing speed
-
-### 2. Kanban for Ongoing Data Operations
-
-*   Visualized workflow for data ingestion, transformation, and delivery
-*   WIP limits to prevent bottlenecks in data processing
-*   Continuous flow for daily NAV calculations and AP basket creation
-
-### 3. User Stories and Acceptance Criteria
-
-*   Collaborated with Sales, Compliance, and Portfolio Managers to create detailed user stories
-*   Example: "As a Sales Manager, I want daily AP creation/redemption data so that I can attribute flows to specific channels"
-*   Defined clear acceptance criteria for each data product feature
-
-### 4. Automated Testing and Continuous Integration
-
-*   Implemented automated data quality checks using Python and SQL
-*   Continuous integration pipeline for nightly data reconciliation
-*   Reduced manual QA effort by 60%
-
-### 5. DevOps Practices for Data Pipeline Management
-
-*   Adopted Infrastructure as Code for data pipeline deployment
-*   Implemented feature flags to safely roll out new data transformations
-*   Achieved 99.99% uptime for critical ETF data feeds
-
-## Key Achievements and Metrics
-
-1.  **Accelerated Time-to-Market**
-    *   Reduced new data product feature delivery from 6 months to 6 weeks
-    *   Launched 5 new ETFs in 8 months, surpassing industry average by 40%
-
-2.  **Enhanced Data Quality**
-    *   Reduced data defects by 45% through automated testing
-    *   Achieved 99.9% accuracy in daily NAV calculations
-
-3.  **Improved Stakeholder Satisfaction**
-    *   Increased stakeholder satisfaction scores from 65% to 92%
-    *   Enabled Sales team to attribute 98% of flows within 24 hours, up from 70% in 5 days
-
-4.  **Regulatory Compliance Agility**
-    *   Implemented new SEC reporting requirements 2 months ahead of deadline
-    *   Zero compliance violations in first year of ETF operations
-
-5.  **Team Performance and Morale**
-    *   Increased team velocity by 35% over 6 months
-    *   Reduced overtime hours by 50% while increasing output
-
-## Agile Tools and Techniques Mastered
-
-*   **Jira**: For sprint planning, backlog management, and tracking velocity
-*   **Confluence**: Knowledge base for user stories, acceptance criteria, and sprint documentation
-*   **GitLab**: Version control and CI/CD pipeline management
-*   **Tableau**: Agile metrics dashboards for stakeholder transparency
-
-## Overcoming Challenges: Agile in a Regulated Environment
-
-1.  **Challenge**: Balancing Agility with Compliance
-    *   **Solution**: Integrated compliance officers into sprint planning and reviews
-    *   **Outcome**: 100% regulatory compliance while maintaining agile velocity
-
-2.  **Challenge**: Resistance to Change from Traditional Teams
-    *   **Solution**: Conducted workshops and paired experienced agile practitioners with skeptics
-    *   **Outcome**: 95% team buy-in within 3 months
-
-3.  **Challenge**: Adapting Scrum to 24/7 ETF Operations
-    *   **Solution**: Implemented a "Follow the Sun" model with distributed teams
-    *   **Outcome**: Continuous development and support without sacrificing work-life balance
-
-## Leadership and Mentorship
-
-*   Led Agile transformation for a team of 25 across Data Engineering, Analytics, and Business Intelligence
-*   Mentored 5 Scrum Masters, all of whom achieved certification within 6 months
-*   Conducted bi-monthly Agile best practices sessions, attended by 100+ employees across the organization
-
-## Conclusion: Agile as a Competitive Advantage in ETF Management
-
-By implementing Agile methodologies, we transformed our ETF data product management from a reactive, slow-moving process to a proactive, market-leading operation. This agility not only improved our operational efficiency but also positioned Capital Group as an innovator in the ETF space, capable of rapidly adapting to market changes and client needs.
-
-The success of this Agile transformation demonstrates my ability to lead complex, cross-functional initiatives, drive cultural change, and deliver measurable business value through innovative project management approaches.
-
-***
+*   **Regular Stakeholder Updates**: Presented progress via dashboards and sprint demos to engage sales, legal, and compliance teams.
+*   **Automated Data Validations**: Built processes to identify and resolve discrepancies early, minimizing downstream issues.
 
