@@ -68,16 +68,14 @@ sections:
           governance.
 
 
-          ![](/images/ingestion%20process.jpg)
-
-
           From streamlining data ingestion pipelines and integrating nine
           critical ETF data sources to pioneering the use of platforms like
           Databricks and Tableau, my work ensured seamless access to reliable,
           high-quality data across the organization. Whether accelerating
           pipeline performance, enhancing sales attribution accuracy, or
           mitigating compliance risks, my contributions reflect a deep
-          commitment to driving data-driven decision-making at scale.
+          commitment to driving data-driven decision-making at
+          scale.![](/images/ingestion%20process.jpg)
 
 
           To explore specific aspects of my work, click the buttons below to
