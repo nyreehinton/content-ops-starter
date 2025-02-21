@@ -112,7 +112,7 @@ sections:
           cutting data processing time by over two-thirds and accelerating
           insights.
         image:
-          url: /images/icon3.svg
+          url: /images/152794C6-0491-49D7-9CAE-CFD3DC70FEB7.jpeg
           altText: Featured icon three
           elementId: ''
           type: ImageBlock
