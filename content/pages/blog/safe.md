@@ -156,8 +156,6 @@ The ETF data product presented several unique challenges:
 
 An Agile framework provided the structure and flexibility needed to address these challenges by emphasizing collaboration, incremental delivery, and responsiveness to change.
 
-***
-
 ## Key Agile Practices
 
 ### 1. **Defining Clear Roles and Responsibilities**
@@ -167,6 +165,8 @@ To ensure alignment across teams, I established a **RACI (Responsible, Accountab
 *   **Product Owner (My Role)**: Defined the vision for the ETF data product, prioritized the backlog, and acted as the primary liaison between business and IT teams.
 *   **Scrum Master**: Ensured smooth sprint execution, facilitated stand-ups, and coached the team on Agile best practices.
 *   **Cross-Functional Teams**: Collaborated on development, data validation, and reporting as part of an Agile Release Train (ART).
+
+![](/images/Picture1.png)
 
 ### 2. **Backlog Creation and Prioritization**
 
