@@ -12,26 +12,26 @@ excerpt: >-
   can be adjusted dynamically based on energy efficiency calculations, driving
   style, and Tesla’s internal algorithms.
 bottomSections: []
-isFeatured: false
+isFeatured: true
 isDraft: false
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: col-reverse
+    flexDirection: row-reverse
     textAlign: center
 featuredImage:
   type: ImageBlock
-  url: /images/IMG_1242.png
+  url: /images/Tesla Patent.png
   altText: Image alt text placeholder
   elementId: ''
   styles:
     self:
       borderRadius: medium
       padding:
-        - pt-12
-        - pl-12
-        - pb-12
-        - pr-12
+        - pt-0
+        - pl-0
+        - pb-0
+        - pr-0
 seo:
   type: Seo
   socialImage: /images/IMG_0129.png
