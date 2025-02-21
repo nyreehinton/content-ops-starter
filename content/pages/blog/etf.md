@@ -21,6 +21,8 @@ my role centered on architecting the analytic pipelines that underpinned the lau
 
 ![](/images/Screenshot%202025-02-20%20at%204.06.12%E2%80%AFPM.png)
 
+***
+
 <div style="text-align: center">## ETF Processing: Primary and Secondary Markets</div>
 
 ### Primary Market
@@ -77,4 +79,3 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGMU   | Capital Group Municipal Income ETF (14020Y 20 1 40309)          |
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
-
