@@ -35,7 +35,7 @@ featuredImage:
 seo:
   type: Seo
 ---
-What’s a well.. odometer?
+Well......what's an odometer?
 
 The central hypothesis of this investigation is that Tesla does not use traditional methods of odometer tracking. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
