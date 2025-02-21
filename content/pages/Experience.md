@@ -27,7 +27,7 @@ sections:
     actions: []
     media:
       type: ImageBlock
-      url: /images/Bloomberg First Day.jpeg
+      url: /images/IMG_3240.JPG
       altText: Dope design preview
     colors: bg-light-fg-dark
     styles:
