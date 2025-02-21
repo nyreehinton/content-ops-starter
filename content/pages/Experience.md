@@ -474,6 +474,6 @@ seo:
   type: Seo
   metaTitle: Previous Work Experience
   metaDescription: ''
-  addTitleSuffix: true
+  addTitleSuffix: false
   metaTags: []
 ---
