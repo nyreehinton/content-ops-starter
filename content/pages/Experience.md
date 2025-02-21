@@ -96,7 +96,7 @@ sections:
           - type: Button
             label: AGILE
             altText: ''
-            url: /
+            url: /blog/safe/
             showIcon: false
             icon: arrowRight
             iconPosition: right
