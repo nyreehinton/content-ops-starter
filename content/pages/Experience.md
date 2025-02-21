@@ -61,11 +61,12 @@ sections:
         title: Capital Group
         subtitle: Data Product Manager
         text: >
-          At Capital Group, I led data-driven initiatives that transformed the
-          transparency and accessibility of global ETF transaction insights for
-          a $31B product suite. My responsibilities required engagement with
-          cross-disciplinary efforts across IT, compliance, product management,
-          and sales teams, with a strategic focus on data governance.
+          At Capital Group, I led data-driven initiatives that transformed and
+          ensured seamless access to reliable, high-quality data across the
+          organization of global ETF transaction insights for a $31B product
+          suite. My responsibilities required engagement with cross-disciplinary
+          efforts across IT, compliance, product management, and sales teams,
+          with a strategic focus on data governance.
 
 
           The ETF data ecosystem at Capital Group required robust solutions to
@@ -73,11 +74,7 @@ sections:
           vendor feeds, and the ever-evolving demands of ETF operations.  I
           designed and implemented data ingestion pipelines and integrated nine
           critical ETF data sources while pioneering the use of platforms like
-          Databricks and Tableau. 
-
-
-          My work ensured seamless access to reliable, high-quality data across
-          the organization. ![](/images/ingestion%20process.jpg)
+          Databricks and Tableau.![](/images/ingestion%20process.jpg)
 
 
           To explore specific aspects of my work, click the buttons below to
