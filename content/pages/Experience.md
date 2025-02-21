@@ -72,12 +72,15 @@ sections:
           The $31B ETF ecosystem at Capital Group posed unique challenges due to
           the absence of a transfer agent, requiring us to build a custom
           solution that integrated fragmented data from third-party vendors such
-          as Broadridge. ![](/images/ingestion%20process.jpg)
+          as Broadridge. 
 
 
           To explore specific aspects of my work, click the buttons below to
           learn more about ETFs, data products, my application of Agile
           practices, and the use of tools like Databricks and Tableau.
+
+
+          ![](/images/ingestion%20process.jpg)
         image:
           type: ImageBlock
           url: /images/CaptialGroup_Logo_Horizontal.png
