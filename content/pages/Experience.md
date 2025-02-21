@@ -63,23 +63,16 @@ sections:
         text: >
           At Capital Group, my work focused on developing and managing the
           analytics infrastructure required to support ETF operations,
-          reporting, wholesaler compensation, and compliance.
-
-
-          This involved engagement with cross-disciplinary teams, including IT,
-          compliance, product management, and sales, with a strategic focus on
-          data governance.
+          reporting, wholesaler compensation, and compliance. This involved
+          engagement with cross-disciplinary teams, including IT, compliance,
+          product management, and sales, with a strategic focus on data
+          governance.
 
 
           The $31B ETF ecosystem at Capital Group posed unique challenges due to
           the absence of a transfer agent, requiring us to build a custom
           solution that integrated fragmented data from third-party vendors such
           as Broadridge. ![](/images/ingestion%20process.jpg)
-
-
-          I designed and implemented data ingestion pipelines and integrated
-          nine critical ETF data sources while pioneering the use of platforms
-          like Databricks and Tableau.
 
 
           To explore specific aspects of my work, click the buttons below to
