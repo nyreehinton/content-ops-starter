@@ -60,7 +60,28 @@ sections:
       - type: FeaturedItem
         title: Capital Group
         subtitle: Data Product Manager
-        text: "At Capital Group, I led data-driven initiatives that transformed the transparency and accessibility of global ETF transaction insights for a $31B product suite. My responsibilities required cross-team coordination, technical implementation, and a strategic focus on data governance. Key achievements include:\n\n*   **Data Governance:**\_Designed and implemented a governance framework across seven teams, aligning stakeholders and integrating six critical systems, including data lakes and business intelligence tools.\n\n*   **Pipeline Automation and Optimization:**\_Reduced ETF data pipeline processing times by 70% through the use of Python, SQL, and Databricks, enabling faster insights for end-users.\n\n*   **Compliance and Risk Reduction:**\_Built a custom seeding-money tracker that identified $170M in unreported transactions, mitigating compliance exposure and increasing adherence to regulatory standards.\n\n*   **Interactive Dashboards:**\_Created and deployed 36 Tableau dashboards, integrating hyper-extract automation and optimized PySpark-generated data sources for improved load times and user experience globally.\n\n*   **Strategic Data Integration:**\_Spearheaded ingestion of nine new ETF data sources, enhancing visibility and analytics capabilities while improving stakeholder confidence in reporting accuracy.\n\n"
+        text: >
+          At Capital Group, I led data-driven initiatives that transformed the
+          transparency and accessibility of global ETF transaction insights for
+          a $31B product suite. My responsibilities required cross-team
+          coordination, technical implementation, and a strategic focus on data
+          governance.
+
+
+          The ETF data ecosystem at Capital Group required robust solutions to
+          counter the absence of traditional transfer agent data, fragmented
+          vendor feeds, and the ever-evolving demands of ETF operations. Leading
+          cross-disciplinary efforts across IT, compliance, product management,
+          and sales teams, I designed and implemented data ingestion pipelines
+          and integrated nine critical ETF data sources while pioneering the use
+          of platforms like Databricks and Tableau. My work ensured seamless
+          access to reliable, high-quality data across the organization.
+          ![](/images/ingestion%20process.jpg)
+
+
+          To explore specific aspects of my work, click the buttons below to
+          learn more about ETFs, data products, my application of Agile
+          practices, and the use of tools like Databricks and Tableau.
         image:
           type: ImageBlock
           url: /images/CaptialGroup_Logo_Horizontal.png
@@ -94,7 +115,7 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: AGILE
+            label: SAFe
             altText: ''
             url: /blog/safe/
             showIcon: false
