@@ -28,6 +28,15 @@ A **data product** is a curated asset that packages information for a specific b
 
 One of the most significant challenges ETFs present for firms like Capital Group compared to traditional mutual funds is the lack of a **transfer agent**. Mutual funds rely on a transfer agent to directly record individual shareholder transactions, providing granular, real-time data. This data is the backbone for reporting, analytics, and critical processes such as **sales compensation**.
 
+| **Aspect**            | **Mutual Funds** | **Current ETFs**                                                                 | **Business Impact**                                                                                   |  
+|-----------------------|------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|  
+| **Transfer Agent**    | Records **individual shareholder transactions** directly (name, account type, etc.). | No transfer agent; shareholder activity tracked **only via APs and DTC custodial aggregations**. | **Sales Crediting**: ETF flows must be reverse-engineered from AP/daily custodian reports, delaying accuracy in sales compensation payouts. |  
+| **Data Source**       | Direct feeds from transfer agents, brokers, and custodians.                         | **Third-party vendors** (e.g., Broadridge, Albridge) provide **aggregated omnibus account data**. | **Reporting**: High-level data limits granular insights into investor demographics like IRA vs. taxable accounts. |  
+| **Data Granularity**  | **Individual account-level**: Enables precise tracking of flows per investor.        | **Office/AP-level**: Example: Broadridge data identifies advisor offices but not individual advisors. | **Analytics**: Inability to map transactions to specific financial advisors complicates channel attribution. |  
+| **Data Latency**       | Real-time or T+1 access via transfer agent systems. | **T+1 to T+5 delay** for vendor data (e.g., monthly Broadridge files). | **Decision-Making**: Sales teams lack real-time visibility into trends (e.g., surge in CGDG inflows from RIAs). |  
+| **Compliance**         | Direct visibility into dividend distributions and cost basis reporting. | **Omnibus gaps**: Missing account-type data (e.g., IRA vs. 529) risks tax reporting errors. | **Regulatory Risk**: Potential penalties if tax forms misreport shareholder distributions. |  
+| **Portfolio Analytics** | Position-level transparency via quarterly filings. | Holdings disclosed daily at **basket level** (AP creation/redemption units, not full fund). | **Risk Modeling**: Limited visibility into full fund holdings complicates liquidity stress testing. |  
+
 For ETFs, however, there is no transfer agent; instead, shares are traded on the secondary market through exchanges and facilitated by **Authorized Participants (APs)** in the primary market. As a result:
 
 *   **Capital Group does not receive direct, granular data on shareholder activity.**
@@ -40,6 +49,8 @@ This lack of direct data creates operational and strategic challenges:
 *   **Sales Crediting**: Without granular data, compensating sales teams for ETF inflows accurately becomes difficult. For mutual funds, each transaction can be traced to an individual shareholder, while ETFs require reverse-engineering aggregated data to determine flows.
 *   **Reporting**: High-level data makes it difficult to provide detailed analytics to stakeholders across sales, marketing, and product management.
 *   **Analytics and Decision-Making**: Granularity is essential for understanding fund dynamics, identifying key channels driving flows, and adjusting strategies accordingly.
+
+
 
 <div style="text-align: center">## Closing the Gap: Building the ETF Data Product</div>
 
