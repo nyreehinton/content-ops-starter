@@ -50,6 +50,8 @@ This dual-market structure ensures liquidity, efficient pricing, and a seamless 
 
 ![](/images/Primary%20Market.webp)
 
+***
+
 <div style="text-align: center">## Capital Group's ETF Product Launches & Data Strategy</div>
 
 Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales – an impressive feat for a relatively new entrant in the ETF space.
