@@ -94,10 +94,10 @@
                     "type": "Link",
                     "altText": "",
                     "url": "/blog/fundamental-market-misdiagnoses",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
                     "iconPosition": "left",
-                    "style": "secondary",
+                    "style": "primary",
                     "elementId": "",
                     "label": "Everyone Else Got It Wrong"
                 }
