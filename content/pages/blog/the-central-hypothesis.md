@@ -12,7 +12,7 @@ excerpt: >-
   can be adjusted dynamically based on energy efficiency calculations, driving
   style, and Tesla’s internal algorithms.
 bottomSections: []
-isFeatured: false
+isFeatured: true
 isDraft: false
 colors: bg-light-fg-dark
 styles:
