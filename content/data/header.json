@@ -73,7 +73,7 @@
                     "label": "The Central Hypothesis",
                     "altText": "",
                     "url": "/blog/the-central-hypothesis",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
                     "iconPosition": "right",
                     "style": "secondary",
