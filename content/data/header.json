@@ -42,7 +42,7 @@
                 {
                     "label": "Apple Semiconductor Supplier",
                     "url": "/blog/case-study-2",
-                    "icon": "",
+                    "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
