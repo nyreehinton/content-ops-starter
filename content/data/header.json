@@ -108,7 +108,7 @@
         {
             "label": "Github",
             "altText": "Sign up",
-            "url": "https://github.com/nyreehinton",
+            "url": "",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
