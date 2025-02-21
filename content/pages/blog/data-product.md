@@ -24,7 +24,11 @@ type: PostLayout
 
 A **data product** is a curated asset that packages information for a specific business purpose, solving distinct needs through analytics, reporting, or other decision-support tools. Unlike a simple raw dataset, a data product has **clear ownership, repeatable processes, and governance** that ensure its ongoing quality and relevance. At Capital Group, launching a robust data product for Exchange Traded Funds (ETFs) required integrating various new and existing data sources into a single, cohesive pipeline. This unified approach enabled stakeholders across the organization—from sales and marketing teams to finance and compliance—to derive trustworthy insights from a centralized source.
 
-<div style="text-align: center">### The Fundamental Issue: ETFs Without a Transfer Agent</div>
+![](/images/F260552C-E031-4ACA-9871-B8E7F1EEEF45.jpeg)
+
+<div style="text-align: center">## The Fundamental Issue</div>
+
+<div style="text-align: center">### ETFs Without a Transfer Agent</div>
 
 One of the most significant challenges ETFs present for firms like Capital Group compared to traditional mutual funds is the lack of a **transfer agent**. Mutual funds rely on a transfer agent to directly record individual shareholder transactions, providing granular, real-time data. This data is the backbone for reporting, analytics, and critical processes such as **sales compensation**.
 
@@ -37,32 +41,19 @@ One of the most significant challenges ETFs present for firms like Capital Group
 | **Compliance**          | Direct visibility into dividend distributions and cost basis reporting.              | **Omnibus gaps**: Missing account-type data (e.g., IRA vs. 529) risks tax reporting errors.           | **Regulatory Risk**: Potential penalties if tax forms misreport shareholder distributions.                                                  |
 | **Portfolio Analytics** | Position-level transparency via quarterly filings.                                   | Holdings disclosed daily at **basket level** (AP creation/redemption units, not full fund).           | **Risk Modeling**: Limited visibility into full fund holdings complicates liquidity stress testing.                                         |
 
-<div style="text-align: center">## Closing the Gap: Building the ETF Data Product</div>
+***
 
-### Strategic Approach to Solve the Problem
+<div style="text-align: center">## Closing the Gap</div>
 
-1.  **Vendor Onboarding for Third-Party Data Acquisition**
-    To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
-    *   **Examples of Data Sources**:
-        *   **Broadridge**: Monthly data with office-level granularity, providing visibility into \~95% of CG ETF transactions.
-        *   **Fidelity**: Daily account-level transaction data, offering a detailed view but for a subset of accounts.
-        *   **State Street**: Daily NAV and outstanding share data for accounting and reconciliation purposes.
+Building the ETF Data Product to address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
 
-2.  **Data Transformation and Normalization**
-    The raw data from vendors arrived in disparate formats and varied levels of granularity. To build a usable data product, we:
-    *   **Developed Transformation Logic**: Using Python and SQL, I created transformation scripts to normalize data across different vendors, ensuring compatibility with downstream systems.
-    *   **Standardized Schema**: Mapped critical fields (e.g., account type, transaction types) into a unified schema, enabling consistent reporting and analytics.
+<div style="text-align: center">### Vendor Data Ecosystem for ETF Operations</div>
 
-3.  **Overcoming Omnibus Account Challenges**
-    Many vendors, such as Broadridge, provided shareholder activity data at the **office level** rather than the individual advisor or account level. As a result, key data points like the **line of business**, **advisor name**, or specific account types (e.g., IRA, 529) were missing.
-    **Solutions Implemented**:
-    *   Extrapolated missing details using available patterns in other data feeds (e.g., matching CUSIPs to transaction flows in Fidelity files).
-    *   Designed validation processes to flag and fill data gaps where possible.
-
-4.  **Integration into Capital Group Systems**
-    We integrated these transformed, standardized datasets into Capital Group’s enterprise platforms, such as **THOR** (processing platform), **Caspian** (data lake), and **LASR** (reporting system).
-    *   Established automated pipelines to process ETF sales and assets consistently across all systems.
-    *   Created backfill solutions for legacy data gaps, ensuring continuity in reporting.
+| **Data Vendor** | **Data Type**              | **Granularity**       | **Frequency** | **Coverage**   | **Limitations**                                                                   |
+| --------------- | -------------------------- | --------------------- | ------------- | -------------- | --------------------------------------------------------------------------------- |
+| Broadridge      | Omnibus transactions       | Office-level          | Monthly       | \~95% of flows | Aggregated by office; lacks advisor/account-level detail (e.g., IRA vs. taxable). |
+| Fidelity        | Account-level transactions | Individual accounts   | Daily         | \~18% of AUM   | Limited to Fidelity-cleared accounts only.                                        |
+| State Street    | NAV, shares outstanding    | Fund-level aggregates | Daily         | 100%           | Does not include transaction or shareholder data.                                 |
 
 <div style="text-align: center">## Challenges in Acquiring and Managing Third-Party Data</div>
 
