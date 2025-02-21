@@ -129,7 +129,7 @@ sections:
           - pr-20
 seo:
   metaTitle: ''
-  metaDescription: ''
+  metaDescription: tesla
   socialImage: /images/IMG_0129.jpeg
   type: Seo
 type: PageLayout
