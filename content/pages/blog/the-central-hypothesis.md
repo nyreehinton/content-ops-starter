@@ -21,7 +21,7 @@ styles:
     textAlign: center
 featuredImage:
   type: ImageBlock
-  url: /images/IMG_1242.png
+  url: /images/Tesla Patent.png
   altText: Image alt text placeholder
   elementId: ''
   styles:
