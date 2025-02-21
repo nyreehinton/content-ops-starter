@@ -153,7 +153,7 @@ styles:
   self:
     flexDirection: col
 ---
-<div style="text-align: center"># Implementing Agile Framework for ETF Data Product Management</div>
+<div style="text-align: center"></div>
 
 ### Introduction: Embracing Agility at Capital Group
 
@@ -163,52 +163,52 @@ In my role as the ETF Data Product Manager at Capital Group, I recognized early 
 
 SAFe offered the scalability and alignment necessary to manage multiple Agile Release Trains (ARTs) and cross-functional teams simultaneously. Here are the reasons behind this choice:
 
-- **Enterprise Agility**: SAFe's comprehensive framework aligned our ETF launches with the overarching enterprise goals, ensuring our product strategy was coherent with the firm's vision.
-- **Cross-Team Alignment**: With 7+ teams, 7-8 systems, and 4-5 different ingestion pipelines, SAFe provided a structure for alignment through PI Planning, synchronization, and a shared Vision.
-- **Built-in Quality**: Lean principles within SAFe emphasize Built-In Quality, ensuring the data product met Capital Group's rigorous standards for accuracy and compliance.
+*   **Enterprise Agility**: SAFe's comprehensive framework aligned our ETF launches with the overarching enterprise goals, ensuring our product strategy was coherent with the firm's vision.
+*   **Cross-Team Alignment**: With 7+ teams, 7-8 systems, and 4-5 different ingestion pipelines, SAFe provided a structure for alignment through PI Planning, synchronization, and a shared Vision.
+*   **Built-in Quality**: Lean principles within SAFe emphasize Built-In Quality, ensuring the data product met Capital Group's rigorous standards for accuracy and compliance.
 
 ### Key Elements of SAFe Implementation
 
 #### 1. **PI Planning: Synchronizing Teams Across the ART**
 
-- **Vision and Roadmaps**: Articulating the future state of the ETF data product, connecting it to business strategy and market opportunities for rapid pivoting.
-- **PI Objectives**: Teams committed to PI Objectives, creating shared understanding and alignment on deliverables across 8-12 week Planning Intervals (PIs).
-- **ART Backlog**: Created a centralized ART Backlog, containing Features (both business and architectural) prioritized using WSJF (Weighted Shortest Job First).
+*   **Vision and Roadmaps**: Articulating the future state of the ETF data product, connecting it to business strategy and market opportunities for rapid pivoting.
+*   **PI Objectives**: Teams committed to PI Objectives, creating shared understanding and alignment on deliverables across 8-12 week Planning Intervals (PIs).
+*   **ART Backlog**: Created a centralized ART Backlog, containing Features (both business and architectural) prioritized using WSJF (Weighted Shortest Job First).
 
 #### 2. **Kanban and Scrum for Teams**
 
-- **SAFe Team Kanban**: Enabled new business teams to manage continuously changing demands and prioritize work efficiently, with daily review and adjustment.
-- **SAFe Scrum**: Provided new technology teams with structured events like Daily Stand-ups, Iteration Planning, and Retrospectives for enhanced team alignment and predictability.
+*   **SAFe Team Kanban**: Enabled new business teams to manage continuously changing demands and prioritize work efficiently, with daily review and adjustment.
+*   **SAFe Scrum**: Provided new technology teams with structured events like Daily Stand-ups, Iteration Planning, and Retrospectives for enhanced team alignment and predictability.
 
 #### 3. **Cross-Functional Teams and Topologies**
 
-- **Stream-Aligned Teams**: Formed teams around the flow of work, ensuring the ability to deliver value directly to the Customer as foreseen in the ART Backlog.
-- **Enabling Teams**: Specialized teams with focused expertise for tasks like designing complex data schemas or solving data latency issues.
+*   **Stream-Aligned Teams**: Formed teams around the flow of work, ensuring the ability to deliver value directly to the Customer as foreseen in the ART Backlog.
+*   **Enabling Teams**: Specialized teams with focused expertise for tasks like designing complex data schemas or solving data latency issues.
 
 #### 4. **Lean Principles in Practice**
 
-- **Taking an Economic View**: Every Feature was justified by a benefit hypothesis that quantified the value to shareholders and the business.
-- **Applying Systems Thinking**: Approached data ingestion as part of a larger ecosystem, considering the impact of each change on the entire system.
-- **Unlocking Knowledge Worker Motivation**: Fostered an environment for cross-functional collaboration, allowing every team member to flourish and contribute to product innovation.
+*   **Taking an Economic View**: Every Feature was justified by a benefit hypothesis that quantified the value to shareholders and the business.
+*   **Applying Systems Thinking**: Approached data ingestion as part of a larger ecosystem, considering the impact of each change on the entire system.
+*   **Unlocking Knowledge Worker Motivation**: Fostered an environment for cross-functional collaboration, allowing every team member to flourish and contribute to product innovation.
 
 #### 5. **Continuous Learning and Adaptation**
 
-- **Retrospectives**: Conducted regularly after each Iteration, focusing on improving processes, quality, and team dynamics.
-- **Spikes**: Used when facing high uncertainty or technical risk, allowing data science and engineering teams to research potential solutions before planning.
+*   **Retrospectives**: Conducted regularly after each Iteration, focusing on improving processes, quality, and team dynamics.
+*   **Spikes**: Used when facing high uncertainty or technical risk, allowing data science and engineering teams to research potential solutions before planning.
 
 ### Outcomes and Impact
 
-- **Launch Readiness**: Successfully integrated 3 critical data vendors into our ART pipeline, meeting tight go-live deadlines for the $31B ETF launch.
-- **Operational Efficiency**: Reduced manual data validation by 50% through automation, decreasing time for data reconciliation by 70%.
-- **Increased Transparency**: Improved data transparency, enhancing investor communication by 30% and enabling real-time AP activity monitoring.
-- **Enhanced Quality**: Achieved a 98% data accuracy rate, minimizing market intelligence arbitrage gaps across vendor feeds.
+*   **Launch Readiness**: Successfully integrated 3 critical data vendors into our ART pipeline, meeting tight go-live deadlines for the $31B ETF launch.
+*   **Operational Efficiency**: Reduced manual data validation by 50% through automation, decreasing time for data reconciliation by 70%.
+*   **Increased Transparency**: Improved data transparency, enhancing investor communication by 30% and enabling real-time AP activity monitoring.
+*   **Enhanced Quality**: Achieved a 98% data accuracy rate, minimizing market intelligence arbitrage gaps across vendor feeds.
 
 ### Continuous Improvement
 
 I led the team in relentless improvement through:
-- **Lean-Agile Training**: Facilitated SAFe® training for all teams, increasing their understanding and commitment to the Agile mindset.
-- **Problem-Solving Workshops**: Hosted workshops to improve data ingestion processes and introduce innovations.
 
+*   **Lean-Agile Training**: Facilitated SAFe® training for all teams, increasing their understanding and commitment to the Agile mindset.
+*   **Problem-Solving Workshops**: Hosted workshops to improve data ingestion processes and introduce innovations.
 
 ## The Challenge: Traditional Waterfall vs. Agile in ETF Data Operations
 
