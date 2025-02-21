@@ -34,6 +34,7 @@ featuredImage:
         - pr-12
 seo:
   type: Seo
+  socialImage: /images/IMG_0129.png
 ---
 Well......what's an odometer?
 
