@@ -75,8 +75,8 @@
                     "url": "/blog/the-central-hypothesis",
                     "showIcon": true,
                     "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
+                    "iconPosition": "left",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
