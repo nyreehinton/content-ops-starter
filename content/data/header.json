@@ -33,7 +33,7 @@
                 {
                     "label": "Third Bridge Group Limited",
                     "url": "/blog/case-study-3",
-                    "icon": "",
+                    "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
