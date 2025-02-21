@@ -95,6 +95,7 @@ type: PostLayout
 seo:
   type: Seo
   socialImage: /images/960x0.webp
+  metaDescription: lime scooters
 ---
 **Battery Theft Analysis**
 
