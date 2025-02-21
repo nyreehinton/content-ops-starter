@@ -46,7 +46,7 @@
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
-                    "showIcon": false
+                    "showIcon": true
                 }
             ],
             "labelStyle": "primary",
