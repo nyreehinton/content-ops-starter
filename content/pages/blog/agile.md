@@ -154,7 +154,7 @@ styles:
 ---
 <div style="text-align: center"></div>
 
-### Introduction: Embracing Agility at Capital Group
+<div style="text-align: center">### Introduction: Embracing Agility at Capital Group</div>
 
 In my role as the ETF Data Product Manager at Capital Group, I recognized early on the importance of adopting **SAFe® (Scaled Agile Framework)** principles to manage the complexity and velocity of our ETF data product development. My responsibility went beyond just setting up pipelines; I was tasked with orchestrating a system that could evolve rapidly to meet market needs, manage vendor dependencies, and deliver high-quality, actionable insights in real-time.
 
