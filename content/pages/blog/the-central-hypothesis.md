@@ -17,7 +17,7 @@ isDraft: false
 colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: col-reverse
+    flexDirection: row-reverse
     textAlign: center
 featuredImage:
   type: ImageBlock
