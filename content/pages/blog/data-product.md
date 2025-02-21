@@ -52,21 +52,19 @@ One of the most significant challenges ETFs present for firms like Capital Group
         *   **Fidelity**: Daily account-level transaction data, offering a detailed view but for a subset of accounts.
         *   **State Street**: Daily NAV and outstanding share data for accounting and reconciliation purposes.
 
-2.  **Data Transformation and Normalization**
-    The raw data from vendors arrived in disparate formats and varied levels of granularity. To build a usable data product, we:
-    *   **Developed Transformation Logic**: Using Python and SQL, I created transformation scripts to normalize data across different vendors, ensuring compatibility with downstream systems.
-    *   **Standardized Schema**: Mapped critical fields (e.g., account type, transaction types) into a unified schema, enabling consistent reporting and analytics.
+### Vendor Data Ecosystem for ETF Operations  
 
-3.  **Overcoming Omnibus Account Challenges**
-    Many vendors, such as Broadridge, provided shareholder activity data at the **office level** rather than the individual advisor or account level. As a result, key data points like the **line of business**, **advisor name**, or specific account types (e.g., IRA, 529) were missing.
-    **Solutions Implemented**:
-    *   Extrapolated missing details using available patterns in other data feeds (e.g., matching CUSIPs to transaction flows in Fidelity files).
-    *   Designed validation processes to flag and fill data gaps where possible.
+| **Data Vendor** | **Data Type**               | **Granularity**         | **Frequency** | **Coverage**  | **Limitations**                                                                 |  
+|-----------------|-----------------------------|-------------------------|---------------|----------------|----------------------------------------------------------------------------------|  
+| Broadridge      | Omnibus transactions        | Office-level            | Monthly       | ~95% of flows  | Aggregated by office; lacks advisor/account-level detail (e.g., IRA vs. taxable). |  
+| Fidelity        | Account-level transactions  | Individual accounts      | Daily          | ~18% of AUM    | Limited to Fidelity-cleared accounts only.                                      |  
+| State Street    | NAV, shares outstanding      | Fund-level aggregates    | Daily          | 100%           | Does not include transaction or shareholder data.                              |  
 
-4.  **Integration into Capital Group Systems**
-    We integrated these transformed, standardized datasets into Capital Group’s enterprise platforms, such as **THOR** (processing platform), **Caspian** (data lake), and **LASR** (reporting system).
-    *   Established automated pipelines to process ETF sales and assets consistently across all systems.
-    *   Created backfill solutions for legacy data gaps, ensuring continuity in reporting.
+---
+
+#### Data Flow Diagram  
+
+
 
 <div style="text-align: center">## Challenges in Acquiring and Managing Third-Party Data</div>
 
