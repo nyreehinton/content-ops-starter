@@ -84,7 +84,7 @@
                     "label": "Technical Analysis",
                     "altText": "",
                     "url": "/blog/technical-analysis",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
                     "iconPosition": "right",
                     "style": "secondary",
