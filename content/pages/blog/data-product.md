@@ -37,8 +37,6 @@ One of the most significant challenges ETFs present for firms like Capital Group
 | **Compliance**          | Direct visibility into dividend distributions and cost basis reporting.              | **Omnibus gaps**: Missing account-type data (e.g., IRA vs. 529) risks tax reporting errors.           | **Regulatory Risk**: Potential penalties if tax forms misreport shareholder distributions.                                                  |
 | **Portfolio Analytics** | Position-level transparency via quarterly filings.                                   | Holdings disclosed daily at **basket level** (AP creation/redemption units, not full fund).           | **Risk Modeling**: Limited visibility into full fund holdings complicates liquidity stress testing.                                         |
 
-<div style="text-align: center">###</div>
-
 <div style="text-align: center">## Closing the Gap: Building the ETF Data Product</div>
 
 ### Strategic Approach to Solve the Problem
