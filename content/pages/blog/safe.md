@@ -145,7 +145,7 @@ bottomSections:
       subtitle:
         textAlign: center
 slug: safe
-isFeatured: false
+isFeatured: true
 isDraft: false
 colors: bg-light-fg-dark
 styles:
