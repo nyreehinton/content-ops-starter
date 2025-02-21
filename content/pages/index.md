@@ -76,7 +76,7 @@ sections:
           type: ImageBlock
           altText: Lightning bolt symbol on red background
           elementId: ''
-          url: /images/icon1.svg
+          url: /images/IMG_1167.jpeg
           styles:
             self:
               borderRadius: x-large
@@ -87,7 +87,7 @@ sections:
           transactions, strengthening regulatory adherence and minimizing risk
           exposure.
         image:
-          url: /images/icon2.svg
+          url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
           altText: Featured icon two
           elementId: ''
           type: ImageBlock
@@ -112,7 +112,7 @@ sections:
           cutting data processing time by over two-thirds and accelerating
           insights.
         image:
-          url: /images/icon3.svg
+          url: /images/152794C6-0491-49D7-9CAE-CFD3DC70FEB7.jpeg
           altText: Featured icon three
           elementId: ''
           type: ImageBlock
@@ -653,9 +653,9 @@ sections:
 seo:
   metaTitle: Home - Nyree Hinton
   metaDescription: >-
-    Explore Nyree Hinton’s professional portfolio. Discover her background in
+    Explore Nyree Hinton’s professional portfolio. Discover his background in
     data analytics, product management, and cross-functional collaboration.
-  socialImage: /images/IMG_1266.jpeg
+  socialImage: /images/Bloomberg Princeton.JPG
   type: Seo
 type: PageLayout
 ---
