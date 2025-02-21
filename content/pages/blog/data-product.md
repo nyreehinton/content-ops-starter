@@ -39,9 +39,9 @@ One of the most significant challenges ETFs present for firms like Capital Group
 | **Compliance**          | Direct visibility into dividend distributions and cost basis reporting.              | **Omnibus gaps**: Missing account-type data (e.g., IRA vs. 529) risks tax reporting errors.           | **Regulatory Risk**: Potential penalties if tax forms misreport shareholder distributions.                                                  |
 | **Portfolio Analytics** | Position-level transparency via quarterly filings.                                   | Holdings disclosed daily at **basket level** (AP creation/redemption units, not full fund).           | **Risk Modeling**: Limited visibility into full fund holdings complicates liquidity stress testing.                                         |
 
-<div style="text-align: center">## Closing the Gap: Building the ETF Data Product</div>
+<div style="text-align: center">## Closing the Gap</div>
 
-### Strategic Approach to Solve the Problem
+<div style="text-align: center">### Building the ETF Data Product </div>
 
 1.  **Vendor Onboarding for Third-Party Data Acquisition**
     To address the gap caused by the absence of a transfer agent, we established partnerships with external data providers like Broadridge, Fidelity, and others. These vendors provided aggregated data on shareholder activity, though with limitations in granularity and frequency.
