@@ -2,9 +2,7 @@
 type: PostLayout
 title: Scaled Agile Framework
 date: '2022-10-10'
-excerpt: >-
-  Facilisis dui. Nulla molestie risus in mi dapibus, eget porta lorem semper.
-  Donec sed facilisis nibh.
+excerpt: ''
 bottomSections:
   - type: DividerSection
     title: Divider
