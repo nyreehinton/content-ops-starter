@@ -183,13 +183,11 @@ Tesla’s odometer reading is inflated by **12.64%** relative to the actual phys
 | Metric                       | Value (miles) | Percent Difference    |
 | ---------------------------- | ------------- | --------------------- |
 | **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer)  |
-| **Tesla Efficiency Mileage** | 15,089        | +13.9% (vs Odometer)  |
-| **Odometer Mileage**         | 13,228        | +12.64% (vs Physical) |
-| **Physical Mileage**         | 11,743        | Baseline              |
+| **Tesla Efficiency Mileage** | --            | +13.9% (vs Odometer)  |
+| **Odometer Mileage**         | --            | +12.64% (vs Physical) |
+| **Physical Mileage**         | --            | Baseline              |
 
 ### Observations
 
 1.  **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
-2.  **Tesla Efficiency-Based Mileage**: Tesla’s reported efficiency aligns more closely with odometer readings but still results in a 13.9% overstatement compared to physical mileage.
-3.  **Odometer Inflation**: Tesla’s energy-based odometer system inflates the recorded mileage by 12.64% compared to physical mileage.
 
