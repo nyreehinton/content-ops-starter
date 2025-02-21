@@ -94,6 +94,8 @@ This lack of direct data creates operational and strategic challenges:
 
 As the Data Product Manager for ETF analytics, I drove the pipeline’s creation and continuous improvement to meet the demands of a fast-paced launch environment. My contributions were integral to the seamless onboarding of new data providers, ensuring high data quality, and facilitating impactful analytics for the ETF launch.
 
+![](/images/Data%20Management%20Framework.png)
+
 ***
 
 ### **1. End-to-End Pipeline Development**
