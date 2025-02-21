@@ -86,8 +86,8 @@
                     "url": "/blog/technical-analysis",
                     "showIcon": true,
                     "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
+                    "iconPosition": "left",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
