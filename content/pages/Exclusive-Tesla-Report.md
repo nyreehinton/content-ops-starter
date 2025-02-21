@@ -130,7 +130,7 @@ sections:
 seo:
   metaTitle: ''
   metaDescription: ''
-  socialImage: /images/main-hero.jpg
+  socialImage: /images/IMG_0129.jpeg
   type: Seo
 type: PageLayout
 isDraft: false
