@@ -24,7 +24,7 @@
                 {
                     "label": "Lime Scooters",
                     "url": "/blog/case-study-1",
-                    "icon": "arrowDown",
+                    "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
