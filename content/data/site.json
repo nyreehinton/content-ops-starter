@@ -1,8 +1,7 @@
 {
-    "favicon": "/images/favicon.svg",
+    "favicon": "/images/IMG_1167.jpeg",
     "footer": "content/data/footer.json",
-    "titleSuffix": "Theme Demo",
-    "defaultSocialImage": "/images/main-hero.jpg",
+    "titleSuffix": "Nyree Hinton",
     "type": "Config",
     "header": "content/data/header.json"
 }
