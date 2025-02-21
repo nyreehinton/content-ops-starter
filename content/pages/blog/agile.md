@@ -1,6 +1,6 @@
 ---
 type: PostLayout
-title: Implementing Agile Framework for ETF Data Product Management
+title: Scaled Agile Framework
 date: '2022-10-10'
 author: content/data/person1.json
 excerpt: >-
