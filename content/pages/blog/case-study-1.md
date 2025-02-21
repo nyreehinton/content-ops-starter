@@ -94,6 +94,7 @@ styles:
 type: PostLayout
 seo:
   type: Seo
+  socialImage: /images/960x0.webp
 ---
 **Battery Theft Analysis**
 
