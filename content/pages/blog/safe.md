@@ -144,7 +144,7 @@ bottomSections:
         justifyContent: center
       subtitle:
         textAlign: center
-slug: agile
+slug: safe
 isFeatured: false
 isDraft: false
 colors: bg-light-fg-dark
