@@ -476,4 +476,5 @@ seo:
   metaDescription: ''
   addTitleSuffix: false
   metaTags: []
+  socialImage: /images/Bloomberg Princeton.JPG
 ---
