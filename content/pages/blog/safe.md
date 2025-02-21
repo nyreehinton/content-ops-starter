@@ -156,7 +156,7 @@ The ETF data product presented several unique challenges:
 
 An Agile framework provided the structure and flexibility needed to address these challenges by emphasizing collaboration, incremental delivery, and responsiveness to change.
 
-## Key Agile Practices
+<div style="text-align: center">## Key Agile Practices</div>
 
 ### 1. **Defining Clear Roles and Responsibilities**
 
