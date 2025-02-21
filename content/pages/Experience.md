@@ -27,7 +27,7 @@ sections:
     actions: []
     media:
       type: ImageBlock
-      url: /images/Bloomberg First Day.jpeg
+      url: /images/IMG_3240.JPG
       altText: Dope design preview
     colors: bg-light-fg-dark
     styles:
@@ -61,20 +61,18 @@ sections:
         title: Capital Group
         subtitle: Data Product Manager
         text: >
-          At Capital Group, I led data-driven initiatives that transformed and
-          ensured seamless access to reliable, high-quality data across the
-          organization of global ETF transaction insights for a $31B product
-          suite. My responsibilities required engagement with cross-disciplinary
-          efforts across IT, compliance, product management, and sales teams,
-          with a strategic focus on data governance.
+          At Capital Group, my work focused on developing and managing the
+          analytics infrastructure required to support ETF operations,
+          reporting, wholesaler compensation, and compliance. This involved
+          engagement with cross-disciplinary teams, including IT, compliance,
+          product management, and sales, with a strategic focus on data
+          governance.
 
 
-          The ETF data ecosystem at Capital Group required robust solutions to
-          counter the absence of traditional transfer agent data, fragmented
-          vendor feeds, and the ever-evolving demands of ETF operations.  I
-          designed and implemented data ingestion pipelines and integrated nine
-          critical ETF data sources while pioneering the use of platforms like
-          Databricks and Tableau.![](/images/ingestion%20process.jpg)
+          The $31B ETF ecosystem at Capital Group posed unique challenges due to
+          the absence of a transfer agent, requiring us to build a custom
+          solution that integrated fragmented data from third-party vendors such
+          as Broadridge. ![](/images/ingestion%20process.jpg)
 
 
           To explore specific aspects of my work, click the buttons below to
