@@ -92,6 +92,8 @@ styles:
     borderRadius: none
     flexDirection: col
 type: PostLayout
+seo:
+  type: Seo
 ---
 **Battery Theft Analysis**
 
