@@ -24,28 +24,29 @@
                 {
                     "label": "Lime Scooters",
                     "url": "/blog/case-study-1",
-                    "icon": "",
+                    "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
                     "type": "Link",
-                    "showIcon": false
+                    "showIcon": true
                 },
                 {
-                    "label": "AWS SW: Apple Semiconductor Supplier",
-                    "url": "/blog/case-study-2",
-                    "icon": "",
-                    "iconPosition": "left",
-                    "style": "primary",
-                    "type": "Link",
-                    "showIcon": false
-                },
-                {
-                    "label": "Thirdbridge  Group Limited",
+                    "label": "Third Bridge Group Limited",
                     "url": "/blog/case-study-3",
-                    "icon": "",
+                    "icon": "arrowRight",
                     "iconPosition": "left",
-                    "style": "secondary",
-                    "type": "Link"
+                    "style": "primary",
+                    "type": "Link",
+                    "showIcon": true
+                },
+                {
+                    "label": "Apple Semiconductor Supplier",
+                    "url": "/blog/case-study-2",
+                    "icon": "arrowRight",
+                    "iconPosition": "left",
+                    "style": "primary",
+                    "type": "Link",
+                    "showIcon": true
                 }
             ],
             "labelStyle": "primary",
@@ -61,10 +62,10 @@
                     "label": "Background",
                     "altText": "",
                     "url": "/Exclusive-Tesla-Report",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
+                    "iconPosition": "left",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
@@ -72,10 +73,10 @@
                     "label": "The Central Hypothesis",
                     "altText": "",
                     "url": "/blog/the-central-hypothesis",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
+                    "iconPosition": "left",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
@@ -83,20 +84,20 @@
                     "label": "Technical Analysis",
                     "altText": "",
                     "url": "/blog/technical-analysis",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
+                    "iconPosition": "left",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
                     "type": "Link",
                     "altText": "",
                     "url": "/blog/fundamental-market-misdiagnoses",
-                    "showIcon": false,
-                    "icon": "chevronBigLeft",
+                    "showIcon": true,
+                    "icon": "arrowRight",
                     "iconPosition": "left",
-                    "style": "secondary",
+                    "style": "primary",
                     "elementId": "",
                     "label": "Everyone Else Got It Wrong"
                 }
