@@ -94,8 +94,6 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 
 1.  Input Data from Case Study: For this analysis, we used telematics and charging data collected over a 7-month period with the following details:
 
-Value
-
 | Metric                       | Value   | Source           |
 | ---------------------------- | ------- | ---------------- |
 | **Energy Consumed (kWh)**    | 5,582   | Charging Logs    |
