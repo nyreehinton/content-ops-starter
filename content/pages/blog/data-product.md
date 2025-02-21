@@ -37,15 +37,7 @@ One of the most significant challenges ETFs present for firms like Capital Group
 | **Compliance**          | Direct visibility into dividend distributions and cost basis reporting.              | **Omnibus gaps**: Missing account-type data (e.g., IRA vs. 529) risks tax reporting errors.           | **Regulatory Risk**: Potential penalties if tax forms misreport shareholder distributions.                                                  |
 | **Portfolio Analytics** | Position-level transparency via quarterly filings.                                   | Holdings disclosed daily at **basket level** (AP creation/redemption units, not full fund).           | **Risk Modeling**: Limited visibility into full fund holdings complicates liquidity stress testing.                                         |
 
-
-
-<div style="text-align: center">### Why This Matters</div>
-
-This lack of direct data creates operational and strategic challenges:
-
-*   **Sales Crediting**: Without granular data, compensating sales teams for ETF inflows accurately becomes difficult. For mutual funds, each transaction can be traced to an individual shareholder, while ETFs require reverse-engineering aggregated data to determine flows.
-*   **Reporting**: High-level data makes it difficult to provide detailed analytics to stakeholders across sales, marketing, and product management.
-*   **Analytics and Decision-Making**: Granularity is essential for understanding fund dynamics, identifying key channels driving flows, and adjusting strategies accordingly.
+<div style="text-align: center">###</div>
 
 <div style="text-align: center">## Closing the Gap: Building the ETF Data Product</div>
 
