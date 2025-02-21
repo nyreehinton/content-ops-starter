@@ -78,7 +78,7 @@ sections:
           - type: Button
             label: Exchange Traded Funds (ETF)
             altText: ''
-            url: /blog/etf
+            url: /blog/etf/
             showIcon: false
             icon: arrowRight
             iconPosition: right
@@ -96,7 +96,7 @@ sections:
           - type: Button
             label: AGILE
             altText: ''
-            url: /
+            url: /blog/safe/
             showIcon: false
             icon: arrowRight
             iconPosition: right
