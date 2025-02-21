@@ -473,7 +473,7 @@ isDraft: false
 seo:
   type: Seo
   metaTitle: Previous Work Experience
-  metaDescription: ''
+  metaDescription: nyree hinton bloomberg
   addTitleSuffix: false
   metaTags: []
   socialImage: /images/Bloomberg Princeton.JPG
