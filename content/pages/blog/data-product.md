@@ -3,13 +3,6 @@ title: What's a Data Product?
 slug: data-product
 date: '2025-01-02'
 excerpt: ''
-featuredImage:
-  url: /images/abstract-feature2.svg
-  altText: Thumbnail
-  type: ImageBlock
-  styles:
-    self:
-      borderRadius: medium
 isFeatured: true
 colors: bg-light-fg-dark
 styles:
