@@ -68,14 +68,15 @@ sections:
           governance.
 
 
-          From streamlining data ingestion pipelines and integrating nine
-          critical ETF data sources to pioneering the use of platforms like
-          Databricks and Tableau, my work ensured seamless access to reliable,
-          high-quality data across the organization. Whether accelerating
-          pipeline performance, enhancing sales attribution accuracy, or
-          mitigating compliance risks, my contributions reflect a deep
-          commitment to driving data-driven decision-making at
-          scale.![](/images/ingestion%20process.jpg)
+          The ETF data ecosystem at Capital Group required robust solutions to
+          counter the absence of traditional transfer agent data, fragmented
+          vendor feeds, and the ever-evolving demands of ETF operations. Leading
+          cross-disciplinary efforts across IT, compliance, product management,
+          and sales teams, I designed and implemented data ingestion pipelines
+          and integrated nine critical ETF data sources while pioneering the use
+          of platforms like Databricks and Tableau. My work ensured seamless
+          access to reliable, high-quality data across the organization.
+          ![](/images/ingestion%20process.jpg)
 
 
           To explore specific aspects of my work, click the buttons below to
