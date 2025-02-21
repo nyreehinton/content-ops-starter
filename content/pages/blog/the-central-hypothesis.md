@@ -37,7 +37,7 @@ seo:
 ---
 Well......what's an odometer?
 
-The central hypothesis of this investigation is that Tesla does not use traditional methods of odometer tracking. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
+The central hypothesis of this report is that the distance traveled displayed on Tesla's MCU screen does not use traditional methods of odometer tracking. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
 ![](/images/IMG_1270.jpeg)
 
