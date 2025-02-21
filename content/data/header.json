@@ -65,7 +65,7 @@
                     "showIcon": true,
                     "icon": "arrowRight",
                     "iconPosition": "left",
-                    "style": "secondary",
+                    "style": "primary",
                     "elementId": ""
                 },
                 {
