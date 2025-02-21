@@ -19,11 +19,14 @@ Capital Group’s 2022 ETF launches marked the firm’s strategic *entry* into t
 
 my role centered on architecting the analytic pipelines that underpinned the launch and scaling of $31B in ETF assets from 2021–202312. This work required data governance, cloud-based processing frameworks, and cross-functional collaboration—challenges amplified by simultaneous enterprise-wide migrations to next-generation systems. Below, I detail how we transformed raw vendor feeds into actionable insights while navigating a landscape of evolving data sources and regulatory scrutiny.
 
-![](/images/etfmutual.png)
+![](/images/Screenshot%202025-02-20%20at%204.06.12%E2%80%AFPM.png)
+
+***
 
 <div style="text-align: center">## ETF Processing: Primary and Secondary Markets</div>
 
 ### Primary Market
+
 *   **Creation Process**:
     *   **Authorized Participants (APs)**, often large financial institutions, work directly with the ETF issuer to create new ETF shares.
     *   APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).
@@ -32,11 +35,13 @@ my role centered on architecting the analytic pipelines that underpinned the lau
     *   This mechanism ensures the ETF’s supply matches market demand.
 
 ### Secondary Market
+
 *   **Investors Trading ETF Shares**:
     *   Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.
     *   Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.
 
 ### Arbitrage Mechanism
+
 *   **Role of APs and Market Makers**:
     *   APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.
     *   If the ETF trades above its NAV, APs create shares to increase supply, lowering the price. If it trades below, they redeem shares to decrease supply, raising the price.
@@ -44,6 +49,8 @@ my role centered on architecting the analytic pipelines that underpinned the lau
 This dual-market structure ensures liquidity, efficient pricing, and a seamless investment vehicle for a wide range of participants.
 
 ![](/images/Primary%20Market.webp)
+
+***
 
 <div style="text-align: center">## Capital Group's ETF Product Launches & Data Strategy</div>
 
@@ -74,4 +81,3 @@ Over two years, Capital Group launched 21 ETFs, representing over $31 billion in
 | CGMU   | Capital Group Municipal Income ETF (14020Y 20 1 40309)          |
 | CGSM   | Capital Group Short Duration Municipal Income ETF               |
 ```
-
