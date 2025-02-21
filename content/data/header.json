@@ -62,7 +62,7 @@
                     "label": "Background",
                     "altText": "",
                     "url": "/Exclusive-Tesla-Report",
-                    "showIcon": false,
+                    "showIcon": true,
                     "icon": "arrowRight",
                     "iconPosition": "right",
                     "style": "secondary",
