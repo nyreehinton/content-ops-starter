@@ -66,8 +66,7 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
 |            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
 
-
-# Telementry Data
+<div style="text-align: center"># Telementry Data</div>
 
 <details>
   <summary><strong>A. Tesla’s In-Car Data Logs</strong></summary>
