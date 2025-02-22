@@ -146,7 +146,7 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 
 ***
 
-## Findings
+<div style="text-align: center">## Findings</div>
 
 ### Mileage Comparison
 
@@ -157,6 +157,6 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 | **Odometer Mileage**         | --            | +% (vs Physical)     |
 | **Physical Mileage**         | --            | Baseline             |
 
-### Observations
+<div style="text-align: center">### Observations</div>
 
 **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
