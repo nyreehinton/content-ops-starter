@@ -46,23 +46,33 @@ The central hypothesis of this report is that the mileage displayed on Tesla’s
 
 ### Patent US8054038B2: Technical Architecture Explained
 
-Tesla, however, has reimagined the concept of mileage. Rather than relying on mechanical measurements, Tesla’s system calculates “mileage” based on energy consumption. This means that what appears as an odometer reading is actually a predictive metric that estimates distance traveled using a dynamic energy-to-mile conversion factor.
+Tesla’s system redefines how mileage is calculated. Instead of relying on physical wheel rotations, Tesla uses an energy-based metric to estimate the distance traveled. **Patent US8054038B2** reveals that Tesla’s engineers have transformed “mileage” into a predictive energy consumption metric that is dynamically weighted by seven key variables.
 
-Tesla’s patents, particularly Patent US8054038B2, evaluate how Elon Musk’s engineers rebuilt “mileage” as a predictive energy consumption metric weighted by 7 dynamic variables.
+### Tesla’s Energy-Based Mileage Calculation
 
-Understanding Tesla's "Odometer": Energy-Based Mileage Calculation, Tesla’s system fundamentally redefines mileage as an energy consumption metric, governed by the equation: “\text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta}” Essentially, is an energy-based estimation system embedded within the vehicle's software architecture that calculates the vehicle's mileage by tracking energy consumption rather than physical wheel rotations.
+At the core of Tesla's approach is the following equation:
 
-Patent US8054038B2 outlines seven variables that modify energy-to-mile conversion rates dynamically:
+$$
+\text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta}
+$$
 
-1.  Historical Route Efficiency (learned from past trips)
-2.  Ambient Temperature (cold climates reduce efficiency)
-3.  Tire Pressure Status (underinflation triggers penalty)
-4.  Regenerative Braking Utilization (lower usage reduces η)
-5.  Cabin Climate Load (HVAC usage degrades η)
-6.  Software Updates (post-update efficiency recalibrations)
-7.  Battery Impedance (aging cells increase η values)
+In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
 
-Each variable carries proprietary weights in Tesla’s algorithm, creating scenarios where driving the same physical route yields different odometer results based on environmental/behavioral factors.This patent highlights the complexity and customization of Tesla's mileage calculation methodology, which diverges significantly from the deterministic nature of traditional odometers.
+### Key Dynamic Variables
+
+Patent US8054038B2 outlines seven variables that modify the energy-to-mile conversion rate:
+
+- **Historical Route Efficiency:** Efficiency data gathered from previous trips.
+- **Ambient Temperature:** Colder temperatures tend to reduce efficiency.
+- **Tire Pressure Status:** Underinflated tires result in efficiency penalties.
+- **Regenerative Braking Utilization:** Reduced use of regenerative braking lowers the efficiency factor (reduces η).
+- **Cabin Climate Load:** Increased HVAC usage negatively affects overall efficiency (degrades η).
+- **Software Updates:** Efficiency recalibrations occur after updates.
+- **Battery Impedance:** Aging cells increase η values.
+
+Each variable is assigned a proprietary weight within Tesla's algorithm, meaning that even when driving the same route, the calculated mileage can vary based on environmental conditions and driving behavior. 
+
+This patent highlights the complexity and customization of Tesla's mileage calculation methodology, which diverges significantly from the deterministic nature of traditional odometers, and more important, consumer expectations.
 
 ![](/images/IMG_1247.png)
 
@@ -112,3 +122,4 @@ While this adaptive feature demonstrates Tesla’s technological sophistication,
 
 ```
 ```
+
