@@ -116,7 +116,6 @@ Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected milea
 
 Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
 
-
 ![](/images/Tesla%20Energy-Efficiency%20Mileage.png)
 
 This value represents the expected mileage based on Tesla’s **real-world energy consumption metrics**.
@@ -147,14 +146,14 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 
 ### Mileage Comparison
 
-| Metric                       | Value (miles) | Percent Difference    |
-| ---------------------------- | ------------- | --------------------- |
-| **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer)  |
-| **Tesla Efficiency Mileage** | --            | +13.9% (vs Odometer)  |
-| **Odometer Mileage**         | --            | +12.64% (vs Physical) |
-| **Physical Mileage**         | --            | Baseline              |
+| Metric                       | Value (miles) | Percent Difference   |
+| ---------------------------- | ------------- | -------------------- |
+| **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer) |
+| **Tesla Efficiency Mileage** | --            | +% (vs Odometer)     |
+| **Odometer Mileage**         | --            | +% (vs Physical)     |
+| **Physical Mileage**         | --            | Baseline             |
 
 ### Observations
 
-1.  **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
+**EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
 
