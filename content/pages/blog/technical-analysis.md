@@ -66,27 +66,31 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
 |            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
 
-A. Tesla’s In-Car Data Logs
+<div style="text-align: center"># Telementry Data</div>
 
-Tesla vehicles store various logs locally, including:
-Odometer Readings: The official mileage displayed inside the vehicle.
-Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-Range Estimations: Projected range remaining based on battery percentage.
+<details>
+  <summary><strong>A. Tesla’s In-Car Data Logs</strong></summary>
+  - **Local Logs Stored:**
+    - Odometer Readings: Official vehicle mileage.
+    - Trip Data: Energy efficiency (Wh/mi), distance, energy consumed.
+    - Range Estimations based on battery percentage.
+  - **Data Request Logs:**
+    - Charge Start/End Time (UTC)
+    - Charge Duration (s)
+    - Energy Added (kWh)
+    - Odometer Readings (sometimes unavailable)
+</details>
 
-The Tesla Vehicle Data Request provided official logs that included:
+<details>
+  <summary><strong>B. Service Center Odometer Logs</strong></summary>
+  - Provides third-party mileage validation.
+  - Comparison with in-car logs to ensure mileage increase is reasonable.
+</details>
 
-Charge Start/End Time (UTC)
-Charge Duration (s).
-Energy Added (kWh).
-Odometer Readings (not consistently available).
-
-B. Service Center Odometer Logs
-
-Tesla service visits provide third-party validation of mileage readings. By comparing these timestamped odometer readings to the in-car logs, we can check whether the mileage increase was reasonable.
-
-C. Charging Session Data
-
-By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
+<details>
+  <summary><strong>C. Charging Session Data</strong></summary>
+  - Uses charging logs to estimate the vehicle's traveled distance based on energy consumption.
+</details>
 
 ***
 
@@ -102,92 +106,57 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 | **Odometer Mileage (miles)** | 13,228  | Tesla Dashboard  |
 | **Physical Mileage (miles)** | 11,743  | GPS Tracking     |
 
-## Step-by-Step Calculations
+<div style="text-align: center">### **Step-by-Step Calculations**</div>
 
-### 1. EPA-Estimated Mileage
+#### **1. EPA-Estimated Mileage**
 
-Using the EPA efficiency value of 265 Wh/mi, we calculate the expected mileage based on the total energy consumed:
+Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected mileage based on the total energy consumed:
 
-$$
-\text{Mileage}\_{\text{EPA}} = \frac{\text{Energy Consumed} \times 1000}{\text{EPA Efficiency}}
-$$
-
-$$
-\text{Mileage}\_{\text{EPA}} = \frac{5582 , \text{kWh} \times 1000}{265 , \text{Wh/mi}}
-$$
-
-$$
-\text{Mileage}\_{\text{EPA}} = 21,064 , \text{miles}
-$$
-
-This represents the mileage Tesla's Model Y would hypothetically achieve if it adhered strictly to its EPA-rated efficiency.
+![](/images/EPA-Estimated%20Mileage.png)
 
 ***
 
-### 2. Tesla Energy-Efficiency Mileage
+#### **2. Tesla Energy-Efficiency Mileage**
 
-Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from 299 to 370 Wh/mi during the study. Using the average efficiency for simplicity:
+Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
 
-$$
-\text{Mileage}\_{\text{Tesla}} = \frac{\text{Energy Consumed} \times 1000}{\text{Tesla Efficiency}}
-$$
+![](/images/Tesla%20Energy-Efficiency%20Mileage.png)
 
-$$
-\text{Mileage}\_{\text{Tesla}} = \frac{5582 , \text{kWh} \times 1000}{\text{Average Efficiency (370 , \text{Wh/mi})}}
-$$
-
-$$
-\text{Mileage}\_{\text{Tesla}} = 15,089 , \text{miles}
-$$
-
-This value represents the expected mileage based on Tesla’s real-world energy consumption metrics.
+This value represents the expected mileage based on Tesla’s **real-world energy consumption metrics**.
 
 ***
 
-### 3. Physical Mileage
+#### **3. Physical Mileage**
 
-The physical mileage was calculated using the sum of GPS-verified trip distances:
+The **physical mileage** was calculated using the sum of GPS-verified trip distances:
 
-$$
-\text{Mileage}\_{\text{Physical}} = 11,743 , \text{miles}
-$$
+![](/images/Physical%20Mileage.png)
 
-This represents the actual ground distance traveled and acts as the baseline for comparison.
+This represents the actual ground distance traveled and serves as the baseline for comparison.
 
 ***
 
-### 4. Odometer Discrepancy
+#### **4. Odometer Discrepancy**
 
-Finally, we calculate the percentage discrepancy between Tesla’s reported odometer mileage and the physically measured mileage:
+Finally, we calculate the **percentage discrepancy** between Tesla’s reported odometer mileage and the physically measured mileage:
 
-$$
-\text{Discrepancy} = \frac{\text{Mileage}*{\text{Odometer}} - \text{Mileage}*{\text{Physical}}}{\text{Mileage}\_{\text{Physical}}} \times 100
-$$
+![](/images/Odometer%20Discrepancy.png)
 
-$$
-\text{Discrepancy} = \frac{13,228 - 11,743}{11,743} \times 100
-$$
-
-$$
-\text{Discrepancy} = 12.64% , \text{(Inflation)}
-$$
-
-Tesla’s odometer reading is inflated by **12.64%** relative to the actual physical distance measured.
+Tesla’s odometer reading is **inflated by 12.64%** relative to the actual physical distance measured.
 
 ***
 
-## Findings
+<div style="text-align: center">## Findings</div>
 
 ### Mileage Comparison
 
-| Metric                       | Value (miles) | Percent Difference    |
-| ---------------------------- | ------------- | --------------------- |
-| **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer)  |
-| **Tesla Efficiency Mileage** | --            | +13.9% (vs Odometer)  |
-| **Odometer Mileage**         | --            | +12.64% (vs Physical) |
-| **Physical Mileage**         | --            | Baseline              |
+| Metric                       | Value (miles) | Percent Difference   |
+| ---------------------------- | ------------- | -------------------- |
+| **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer) |
+| **Tesla Efficiency Mileage** | --            | +% (vs Odometer)     |
+| **Odometer Mileage**         | --            | +% (vs Physical)     |
+| **Physical Mileage**         | --            | Baseline             |
 
-### Observations
+<div style="text-align: center">### Observations</div>
 
-1.  **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
-
+**EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
