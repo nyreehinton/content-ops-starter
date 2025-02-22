@@ -128,7 +128,7 @@ This value represents the expected mileage based on Tesla’s **real-world energ
 
 #### **3. Physical Mileage**
 
-The **physical mileage** was calculated using the sum of GPS-verified trip distances:
+The **physical mileage** was calculated using the using odometer displayed in-vehicle:
 
 ![](/images/Physical%20Mileage.png)
 
@@ -152,10 +152,10 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 
 | Metric                       | Value (miles) | Percent Difference   |
 | ---------------------------- | ------------- | -------------------- |
-| **EPA-Estimated Mileage**    | 21,064        | +79.4% (vs Odometer) |
-| **Tesla Efficiency Mileage** | --            | +% (vs Odometer)     |
-| **Odometer Mileage**         | --            | +% (vs Physical)     |
-| **Physical Mileage**         | --            | Baseline             |
+| **EPA-Estimated Mileage**    | --redacted    | +79.4% (vs Odometer) |
+| **Tesla Efficiency Mileage** | --redacted    | +% (vs Odometer)     |
+| **Odometer Mileage**         | --redacted    | +% (vs Physical)     |
+| **Physical Mileage**         | --redacted    | Baseline             |
 
 <div style="text-align: center">### Observations</div>
 
