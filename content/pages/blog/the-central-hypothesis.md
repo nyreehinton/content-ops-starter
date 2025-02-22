@@ -41,6 +41,7 @@ Well......what's an odometer?
 The central hypothesis of this report is that the mileage displayed on Tesla’s MCU isn't the true distance you traveled.. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
 ![](/images/IMG_1270.jpeg)
+***
 
 <div style="text-align: center"># Energy-to-Miles Conversion Factors</div>
 
@@ -52,6 +53,39 @@ Tesla’s system redefines how mileage is calculated. Instead of relying on phys
 
 At the core of Tesla's approach is the following equation:
 
+flowchart TD
+    A[Energy Consumed (kWh)]
+    B[Base Efficiency]
+    C[Dynamic Efficiency Factor (η)]
+    D[Denominator: B × C]
+    E[Odometer Miles]
+
+    A --> |"Divide by"| D
+    D --> E
+
+    %% Breakdown of the Dynamic Efficiency Factor (η)
+    subgraph Dynamic Factors for η
+      F1[Historical Route Efficiency]
+      F2[Ambient Temperature]
+      F3[Tire Pressure Status]
+      F4[Regenerative Braking Utilization]
+      F5[Cabin Climate Load]
+      F6[Software Updates]
+      F7[Battery Impedance]
+    end
+
+    %% Connect η to the dynamic factors
+    C --- F1
+    C --- F2
+    C --- F3
+    C --- F4
+    C --- F5
+    C --- F6
+    C --- F7
+
+    %% Labeling the equation process
+    D --- |"Base Efficiency × η"| C
+
 $$
 \text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta}
 $$
@@ -62,15 +96,15 @@ In this equation, **η** represents a dynamic efficiency factor that adjusts bas
 
 Patent US8054038B2 outlines seven variables that modify the energy-to-mile conversion rate:
 
-- **Historical Route Efficiency:** Efficiency data gathered from previous trips.
-- **Ambient Temperature:** Colder temperatures tend to reduce efficiency.
-- **Tire Pressure Status:** Underinflated tires result in efficiency penalties.
-- **Regenerative Braking Utilization:** Reduced use of regenerative braking lowers the efficiency factor (reduces η).
-- **Cabin Climate Load:** Increased HVAC usage negatively affects overall efficiency (degrades η).
-- **Software Updates:** Efficiency recalibrations occur after updates.
-- **Battery Impedance:** Aging cells increase η values.
+*   **Historical Route Efficiency:** Efficiency data gathered from previous trips.
+*   **Ambient Temperature:** Colder temperatures tend to reduce efficiency.
+*   **Tire Pressure Status:** Underinflated tires result in efficiency penalties.
+*   **Regenerative Braking Utilization:** Reduced use of regenerative braking lowers the efficiency factor (reduces η).
+*   **Cabin Climate Load:** Increased HVAC usage negatively affects overall efficiency (degrades η).
+*   **Software Updates:** Efficiency recalibrations occur after updates.
+*   **Battery Impedance:** Aging cells increase η values.
 
-Each variable is assigned a proprietary weight within Tesla's algorithm, meaning that even when driving the same route, the calculated mileage can vary based on environmental conditions and driving behavior. 
+Each variable is assigned a proprietary weight within Tesla's algorithm, meaning that even when driving the same route, the calculated mileage can vary based on environmental conditions and driving behavior.
 
 This patent highlights the complexity and customization of Tesla's mileage calculation methodology, which diverges significantly from the deterministic nature of traditional odometers, and more important, consumer expectations.
 
@@ -122,4 +156,3 @@ While this adaptive feature demonstrates Tesla’s technological sophistication,
 
 ```
 ```
-
