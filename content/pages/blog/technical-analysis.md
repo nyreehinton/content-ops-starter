@@ -108,19 +108,17 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 
 Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected mileage based on the total energy consumed:
 
-$
-text{Mileage}_{\text{EPA}} = frac{\text{Energy Consumed} \times 1000}{\text{EPA Efficiency}}
-$
 
-$$
-\text{Mileage}\_{\text{EPA}} = \frac{5582 \times 1000 \text{ kWh}}{265 \text{ Wh/mi}}
-$
+\text{Mileage}_{\text{EPA}} = \frac{\text{Energy Consumed} \times 1000}{\text{EPA Efficiency}}
 
-$$
-\text{Mileage}\_{\text{EPA}} = 21,064 \text{ miles}
-$$
 
-This represents the mileage Tesla’s Model Y would hypothetically achieve if it adhered strictly to its **EPA-rated efficiency**.
+
+\text{Mileage}_{\text{EPA}} = \frac{5582 \times 1000 \text{ kWh}}{265 \text{ Wh/mi}}
+
+
+
+\text{Mileage}_{\text{EPA}} = 21,064 \text{ miles}
+
 
 ***
 
@@ -129,11 +127,11 @@ This represents the mileage Tesla’s Model Y would hypothetically achieve if it
 Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
 
 $
-text{Mileage}_{\text{Tesla}} = frac{text{Energy Consumed} times 1000}{text{Tesla Efficiency}}
+text{Mileage}\_{\text{Tesla}} = frac{text{Energy Consumed} times 1000}{text{Tesla Efficiency}}
 $
 
 $$
-text{Mileage}_{text{Tesla}} = frac{5582 times 1000 text{ kWh}}{370 text{ Wh/mi}}
+text{Mileage}\_{text{Tesla}} = frac{5582 times 1000 text{ kWh}}{370 text{ Wh/mi}}
 $$
 
 $$
