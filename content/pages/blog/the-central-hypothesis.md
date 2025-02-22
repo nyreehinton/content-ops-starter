@@ -58,40 +58,102 @@ At the core of Tesla's approach is the following equation:
 
 In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
 
-flowchart TD
-A\[Energy Consumed (kWh)]
-B\[Base Efficiency]
-C\[Dynamic Efficiency Factor (η)]
-D\[Denominator: B × C]
-E\[Odometer Miles]
+<details>
+  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Tesla Energy Conversion Diagram (Click to Expand)</summary>
 
-```
-A --> |"Divide by"| D
-D --> E
+<div style="margin: 20px 0; text-align: center;">
+  <svg viewBox="0 0 1000 600" style="width: 100%; max-width: 850px; height: auto; border: 1px solid #ccc; border-radius: 8px; background: #fff;">
+    <!-- Arrowhead marker definition -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+      </marker>
+      <!-- Gradients -->
+      <linearGradient id="gradEnergy" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#89CFF0"/>
+        <stop offset="100%" stop-color="#1E90FF"/>
+      </linearGradient>
+      <linearGradient id="gradEfficiency" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#98FB98"/>
+        <stop offset="100%" stop-color="#2E8B57"/>
+      </linearGradient>
+      <linearGradient id="gradMiles" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#FFDAB9"/>
+        <stop offset="100%" stop-color="#FF8C00"/>
+      </linearGradient>
+      <linearGradient id="gradDynamic" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#FFE4E1"/>
+        <stop offset="100%" stop-color="#CD5C5C"/>
+      </linearGradient>
+    </defs>
 
-%% Breakdown of the Dynamic Efficiency Factor (η)
-subgraph Dynamic Factors for η
-  F1[Historical Route Efficiency]
-  F2[Ambient Temperature]
-  F3[Tire Pressure Status]
-  F4[Regenerative Braking Utilization]
-  F5[Cabin Climate Load]
-  F6[Software Updates]
-  F7[Battery Impedance]
-end
+    <!-- Main Flow: Energy Consumed -> Equation -> Odometer Miles -->
+    <!-- Energy Consumed Box -->
+    <rect x="50" y="50" width="220" height="60" fill="url(#gradEnergy)" stroke="#1E90FF" stroke-width="2" rx="8" ry="8"/>
+    <text x="160" y="85" text-anchor="middle" fill="#fff" font-weight="bold">Energy Consumed</text>
+    <text x="160" y="105" text-anchor="middle" fill="#fff">(kWh)</text>
+    
+    <!-- Equation Box -->
+    <rect x="350" y="50" width="280" height="60" fill="url(#gradEfficiency)" stroke="#2E8B57" stroke-width="2" rx="8" ry="8"/>
+    <text x="490" y="85" text-anchor="middle" fill="#fff" font-weight="bold">Mileage =</text>
+    <text x="490" y="105" text-anchor="middle" fill="#fff">Energy / (BaseEff. × η)</text>
+    
+    <!-- Odometer Miles Box -->
+    <rect x="700" y="50" width="220" height="60" fill="url(#gradMiles)" stroke="#FF8C00" stroke-width="2" rx="8" ry="8"/>
+    <text x="810" y="85" text-anchor="middle" fill="#fff" font-weight="bold">Odometer</text>
+    <text x="810" y="105" text-anchor="middle" fill="#fff">Miles</text>
+    
+    <!-- Arrows in Main Flow -->
+    <line x1="270" y1="80" x2="350" y2="80" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="630" y1="80" x2="700" y2="80" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-%% Connect η to the dynamic factors
-C --- F1
-C --- F2
-C --- F3
-C --- F4
-C --- F5
-C --- F6
-C --- F7
+    <!-- Dynamic Efficiency Factor (η) Box -->
+    <rect x="400" y="150" width="200" height="50" fill="url(#gradDynamic)" stroke="#CD5C5C" stroke-width="2" rx="8" ry="8"/>
+    <text x="500" y="180" text-anchor="middle" fill="#fff" font-weight="bold">Dynamic Efficiency Factor</text>
+    <text x="500" y="195" text-anchor="middle" fill="#fff">(η)</text>
+    
+    <!-- Arrow from Equation Box to Dynamic Efficiency Factor -->
+    <line x1="490" y1="110" x2="500" y2="150" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-%% Labeling the equation process
-D --- |"Base Efficiency × η"| C
-```
+    <!-- Dynamic Factors (arranged in two columns) -->
+    <!-- Left Column -->
+    <rect x="50" y="250" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="200" y="280" text-anchor="middle" fill="#333">Historical Route Efficiency</text>
+    
+    <rect x="50" y="310" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="200" y="340" text-anchor="middle" fill="#333">Ambient Temperature</text>
+    
+    <rect x="50" y="370" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="200" y="400" text-anchor="middle" fill="#333">Tire Pressure Status</text>
+    
+    <rect x="50" y="430" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="200" y="460" text-anchor="middle" fill="#333">Regenerative Braking Utilization</text>
+    
+    <!-- Right Column -->
+    <rect x="650" y="250" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="800" y="280" text-anchor="middle" fill="#333">Cabin Climate Load</text>
+    
+    <rect x="650" y="310" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="800" y="340" text-anchor="middle" fill="#333">Software Updates</text>
+    
+    <rect x="650" y="370" width="300" height="40" fill="#f5f5f5" stroke="#aaa" stroke-width="2" rx="8" ry="8"/>
+    <text x="800" y="400" text-anchor="middle" fill="#333">Battery Impedance</text>
+    
+    <!-- Connecting Lines from Dynamic Efficiency Factor to each Dynamic Factor -->
+    <!-- Left Column connections -->
+    <line x1="500" y1="200" x2="200" y2="250" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="200" x2="200" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="200" x2="200" y2="370" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="200" x2="200" y2="430" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Right Column connections -->
+    <line x1="500" y1="200" x2="800" y2="250" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="200" x2="800" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="500" y1="200" x2="800" y2="370" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </svg>
+</div>
+
+</details>
 
 ### Key Dynamic Variables
 
@@ -157,4 +219,3 @@ While this adaptive feature demonstrates Tesla’s technological sophistication,
 
 ```
 ```
-
