@@ -55,39 +55,37 @@ Tesla’s system redefines how mileage is calculated. Instead of relying on phys
 At the core of Tesla's approach is the following equation:
 
 flowchart TD
-A\[Energy Consumed (kWh)]
-B\[Base Efficiency]
-C\[Dynamic Efficiency Factor (η)]
-D\[Denominator: B × C]
-E\[Odometer Miles]
+    A[Energy Consumed (kWh)]
+    B[Base Efficiency]
+    C[Dynamic Efficiency Factor (η)]
+    D[Denominator: B × C]
+    E[Odometer Miles]
 
+    A --> |"Divide by"| D
+    D --> E
 
-A --> |"Divide by"| D
-D --> E
+    %% Breakdown of the Dynamic Efficiency Factor (η)
+    subgraph Dynamic Factors for η
+      F1[Historical Route Efficiency]
+      F2[Ambient Temperature]
+      F3[Tire Pressure Status]
+      F4[Regenerative Braking Utilization]
+      F5[Cabin Climate Load]
+      F6[Software Updates]
+      F7[Battery Impedance]
+    end
 
-%% Breakdown of the Dynamic Efficiency Factor (η)
-subgraph Dynamic Factors for η
-  F1[Historical Route Efficiency]
-  F2[Ambient Temperature]
-  F3[Tire Pressure Status]
-  F4[Regenerative Braking Utilization]
-  F5[Cabin Climate Load]
-  F6[Software Updates]
-  F7[Battery Impedance]
-end
+    %% Connect η to the dynamic factors
+    C --- F1
+    C --- F2
+    C --- F3
+    C --- F4
+    C --- F5
+    C --- F6
+    C --- F7
 
-%% Connect η to the dynamic factors
-C --- F1
-C --- F2
-C --- F3
-C --- F4
-C --- F5
-C --- F6
-C --- F7
-
-%% Labeling the equation process
-D --- |"Base Efficiency × η"| C
-
+    %% Labeling the equation process
+    D --- |"Base Efficiency × η"| C
 
 $$
 \text{Odometer Miles} = \frac{\text{Energy Consumed (kWh)}}{\text{Base Efficiency} \times \eta}
