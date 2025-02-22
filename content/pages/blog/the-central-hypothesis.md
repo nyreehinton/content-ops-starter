@@ -54,7 +54,7 @@ Tesla’s system redefines how mileage is calculated. Instead of relying on phys
 
 At the core of Tesla's approach is the following equation:
 
-
+![](/images/Energy%20converion%20miles%20fact.png)
 
 In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
 
@@ -92,8 +92,6 @@ C --- F7
 %% Labeling the equation process
 D --- |"Base Efficiency × η"| C
 ```
-
-
 
 ### Key Dynamic Variables
 
@@ -159,3 +157,4 @@ While this adaptive feature demonstrates Tesla’s technological sophistication,
 
 ```
 ```
+
