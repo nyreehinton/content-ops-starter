@@ -108,17 +108,7 @@ By analyzing charging logs, we can independently estimate how far the vehicle sh
 
 Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected mileage based on the total energy consumed:
 
-
-\text{Mileage}_{\text{EPA}} = \frac{\text{Energy Consumed} \times 1000}{\text{EPA Efficiency}}
-
-
-
-\text{Mileage}_{\text{EPA}} = \frac{5582 \times 1000 \text{ kWh}}{265 \text{ Wh/mi}}
-
-
-
-\text{Mileage}_{\text{EPA}} = 21,064 \text{ miles}
-
+![](/images/EPA-Estimated%20Mileage.png)
 
 ***
 
@@ -126,17 +116,8 @@ Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected milea
 
 Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
 
-$
-text{Mileage}\_{\text{Tesla}} = frac{text{Energy Consumed} times 1000}{text{Tesla Efficiency}}
-$
 
-$$
-text{Mileage}\_{text{Tesla}} = frac{5582 times 1000 text{ kWh}}{370 text{ Wh/mi}}
-$$
-
-$$
-\text{Mileage}\_{\text{Tesla}} = 15,089 \text{ miles}
-$$
+![](/images/Tesla%20Energy-Efficiency%20Mileage.png)
 
 This value represents the expected mileage based on Tesla’s **real-world energy consumption metrics**.
 
@@ -146,9 +127,7 @@ This value represents the expected mileage based on Tesla’s **real-world energ
 
 The **physical mileage** was calculated using the sum of GPS-verified trip distances:
 
-$$
-\text{Mileage}\_{\text{Physical}} = 11,743 \text{ miles}
-$$
+![](/images/Physical%20Mileage.png)
 
 This represents the actual ground distance traveled and serves as the baseline for comparison.
 
@@ -158,17 +137,7 @@ This represents the actual ground distance traveled and serves as the baseline f
 
 Finally, we calculate the **percentage discrepancy** between Tesla’s reported odometer mileage and the physically measured mileage:
 
-$$
-\text{Discrepancy} = \frac{\text{Mileage}*{\text{Odometer}} - \text{Mileage}*{\text{Physical}}}{\text{Mileage}\_{\text{Physical}}} \times 100
-$$
-
-$$
-\text{Discrepancy} = \frac{13,228 - 11,743}{11,743} \times 100
-$$
-
-$$
-\text{Discrepancy} = 12.64% \text{ (Inflation)}
-$$
+![](/images/Odometer%20Discrepancy.png)
 
 Tesla’s odometer reading is **inflated by 12.64%** relative to the actual physical distance measured.
 
@@ -188,3 +157,4 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 ### Observations
 
 1.  **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
+
