@@ -106,7 +106,7 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | **Odometer Mileage (miles)** | 13,228  | Tesla Dashboard  |
 | **Physical Mileage (miles)** | 11,743  | GPS Tracking     |
 
-### **Step-by-Step Calculations**
+<div style="text-align: center">### **Step-by-Step Calculations**</div>
 
 #### **1. EPA-Estimated Mileage**
 
