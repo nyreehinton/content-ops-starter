@@ -66,27 +66,32 @@ The analysis relies on multiple independent data sources to cross-validate the m
 | **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
 |            **Discrepancy**           | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
 
-A. Tesla’s In-Car Data Logs
 
-Tesla vehicles store various logs locally, including:
-Odometer Readings: The official mileage displayed inside the vehicle.
-Trip Data: Energy efficiency metrics (Wh/mi), distance traveled, and energy consumed.
-Range Estimations: Projected range remaining based on battery percentage.
+# Telementry Data
 
-The Tesla Vehicle Data Request provided official logs that included:
+<details>
+  <summary><strong>A. Tesla’s In-Car Data Logs</strong></summary>
+  - **Local Logs Stored:**
+    - Odometer Readings: Official vehicle mileage.
+    - Trip Data: Energy efficiency (Wh/mi), distance, energy consumed.
+    - Range Estimations based on battery percentage.
+  - **Data Request Logs:**
+    - Charge Start/End Time (UTC)
+    - Charge Duration (s)
+    - Energy Added (kWh)
+    - Odometer Readings (sometimes unavailable)
+</details>
 
-Charge Start/End Time (UTC)
-Charge Duration (s).
-Energy Added (kWh).
-Odometer Readings (not consistently available).
+<details>
+  <summary><strong>B. Service Center Odometer Logs</strong></summary>
+  - Provides third-party mileage validation.
+  - Comparison with in-car logs to ensure mileage increase is reasonable.
+</details>
 
-B. Service Center Odometer Logs
-
-Tesla service visits provide third-party validation of mileage readings. By comparing these timestamped odometer readings to the in-car logs, we can check whether the mileage increase was reasonable.
-
-C. Charging Session Data
-
-By analyzing charging logs, we can independently estimate how far the vehicle should have traveled based on energy consumption rather than odometer data.
+<details>
+  <summary><strong>C. Charging Session Data</strong></summary>
+  - Uses charging logs to estimate the vehicle's traveled distance based on energy consumption.
+</details>
 
 ***
 
@@ -156,4 +161,3 @@ Tesla’s odometer reading is **inflated by 12.64%** relative to the actual phys
 ### Observations
 
 **EPA Overestimation**: The EPA mileage expectation exceeds odometer mileage by nearly 80%, reflecting the limitations of standardized laboratory tests for real-world driving.
-
