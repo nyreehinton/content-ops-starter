@@ -230,7 +230,7 @@ sections:
           - pr-3
   - posts:
       - content/pages/blog/lime-scooters.md
-      - content/pages/blog/case-study-2.md
+      - content/pages/blog/apple-suppliers.md
       - content/pages/blog/case-study-3.md
     showThumbnail: true
     showDate: true
