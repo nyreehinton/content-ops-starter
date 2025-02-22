@@ -59,7 +59,7 @@ At the core of Tesla's approach is the following equation:
 In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
 
 <details>
-  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization: Vertical Flow Diagram</summary>
+  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization(Click to Expand)</summary>
 
 <div style="margin: 20px auto; text-align: center;">
   <svg viewBox="0 0 500 700" style="width: 100%; max-width: 500px; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -81,44 +81,47 @@ In this equation, **η** represents a dynamic efficiency factor that adjusts bas
       </linearGradient>
     </defs>
 
-    <!-- Energy Consumed -->
-    <rect x="150" y="30" width="200" height="50" fill="url(#gradA2)" stroke="#d81b60" stroke-width="2" rx="10"/>
-    <text x="250" y="60" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Energy Consumed (kWh)</text>
+```
+<!-- Energy Consumed -->
+<rect x="150" y="30" width="200" height="50" fill="url(#gradA2)" stroke="#d81b60" stroke-width="2" rx="10"/>
+<text x="250" y="60" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Energy Consumed (kWh)</text>
 
-    <!-- Arrow -->
-    <line x1="250" y1="80" x2="250" y2="120" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+<!-- Arrow -->
+<line x1="250" y1="80" x2="250" y2="120" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-    <!-- Equation -->
-    <rect x="100" y="120" width="300" height="50" fill="url(#gradB2)" stroke="#8e24aa" stroke-width="2" rx="10"/>
-    <text x="250" y="150" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
+<!-- Equation -->
+<rect x="100" y="120" width="300" height="50" fill="url(#gradB2)" stroke="#8e24aa" stroke-width="2" rx="10"/>
+<text x="250" y="150" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
 
-    <!-- Arrow -->
-    <line x1="250" y1="170" x2="250" y2="210" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+<!-- Arrow -->
+<line x1="250" y1="170" x2="250" y2="210" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-    <!-- Odometer Miles -->
-    <rect x="150" y="210" width="200" height="50" fill="url(#gradC2)" stroke="#039be5" stroke-width="2" rx="10"/>
-    <text x="250" y="240" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Odometer Miles</text>
+<!-- Odometer Miles -->
+<rect x="150" y="210" width="200" height="50" fill="url(#gradC2)" stroke="#039be5" stroke-width="2" rx="10"/>
+<text x="250" y="240" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Odometer Miles</text>
 
-    <!-- Arrow -->
-    <line x1="250" y1="260" x2="250" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+<!-- Arrow -->
+<line x1="250" y1="260" x2="250" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-    <!-- Dynamic Efficiency Factor -->
-    <rect x="100" y="300" width="300" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
-    <text x="250" y="330" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Dynamic Efficiency Factor (η)</text>
+<!-- Dynamic Efficiency Factor -->
+<rect x="100" y="300" width="300" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
+<text x="250" y="330" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Dynamic Efficiency Factor (η)</text>
 
-    <!-- Arrow -->
-    <line x1="250" y1="350" x2="250" y2="390" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+<!-- Arrow -->
+<line x1="250" y1="350" x2="250" y2="390" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
 
-    <!-- Dynamic Factors List -->
-    <rect x="50" y="390" width="400" height="250" fill="#e0e0e0" stroke="#757575" stroke-width="2" rx="10"/>
-    <text x="250" y="420" text-anchor="middle" fill="#424242" font-size="14" font-weight="bold">Dynamic Factors</text>
-    <text x="250" y="450" text-anchor="middle" fill="#424242" font-size="12">• Historical Route Efficiency</text>
-    <text x="250" y="470" text-anchor="middle" fill="#424242" font-size="12">• Ambient Temperature</text>
-    <text x="250" y="490" text-anchor="middle" fill="#424242" font-size="12">• Tire Pressure Status</text>
-    <text x="250" y="510" text-anchor="middle" fill="#424242" font-size="12">• Regenerative Braking Utilization</text>
-    <text x="250" y="530" text-anchor="middle" fill="#424242" font-size="12">• Cabin Climate Load</text>
-    <text x="250" y="550" text-anchor="middle" fill="#424242" font-size="12">• Software Updates</text>
-    <text x="250" y="570" text-anchor="middle" fill="#424242" font-size="12">• Battery Impedance</text>
+<!-- Dynamic Factors List -->
+<rect x="50" y="390" width="400" height="250" fill="#e0e0e0" stroke="#757575" stroke-width="2" rx="10"/>
+<text x="250" y="420" text-anchor="middle" fill="#424242" font-size="14" font-weight="bold">Dynamic Factors</text>
+<text x="250" y="450" text-anchor="middle" fill="#424242" font-size="12">• Historical Route Efficiency</text>
+<text x="250" y="470" text-anchor="middle" fill="#424242" font-size="12">• Ambient Temperature</text>
+<text x="250" y="490" text-anchor="middle" fill="#424242" font-size="12">• Tire Pressure Status</text>
+<text x="250" y="510" text-anchor="middle" fill="#424242" font-size="12">• Regenerative Braking Utilization</text>
+<text x="250" y="530" text-anchor="middle" fill="#424242" font-size="12">• Cabin Climate Load</text>
+<text x="250" y="550" text-anchor="middle" fill="#424242" font-size="12">• Software Updates</text>
+<text x="250" y="570" text-anchor="middle" fill="#424242" font-size="12">• Battery Impedance</text>
+```
+
   </svg>
 </div>
 
