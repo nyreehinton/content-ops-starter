@@ -50,83 +50,94 @@ The central hypothesis of this report is that the mileage displayed on Tesla’s
 
 Tesla’s system redefines how mileage is calculated. Instead of relying on physical wheel rotations, Tesla uses an energy-based metric to estimate the distance traveled. **Patent US8054038B2** reveals that Tesla’s engineers have transformed “mileage” into a predictive energy consumption metric that is dynamically weighted by seven key variables.
 
-<div style="text-align: center">### Tesla’s Energy-Based Mileage Calculation</div>
-
-At the core of Tesla's approach is the following equation:
-
-![](/images/Energy%20converion%20miles%20fact.png)
-
-In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
-
 <details>
-  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization (Click to Expand)</summary>
+  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization Option 3: Interactive Diagram with Hover Effects</summary>
 
 <div style="margin: 20px auto; text-align: center;">
-  <svg viewBox="0 0 500 700" style="width: 100%; max-width: 500px; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <svg viewBox="0 0 1000 400" style="width: 100%; max-width: 900px; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
     <defs>
-      <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-        <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50" />
+      <style type="text/css">
+        <![CDATA[
+          .box { transition: transform 0.3s, fill 0.3s; cursor: pointer; }
+          .box:hover { transform: scale(1.05); }
+          .arrow { stroke: #34495e; stroke-width: 2; }
+          .label { font-family: "Segoe UI", sans-serif; font-size: 14px; fill: #fff; }
+          .label-dark { fill: #fff; }
+        ]]>
+      </style>
+      <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
       </marker>
-      <linearGradient id="gradA2" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#f093fb"/>
-        <stop offset="100%" stop-color="#f5576c"/>
+      <linearGradient id="gradEnergy3" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#6a11cb"/>
+        <stop offset="100%" stop-color="#2575fc"/>
       </linearGradient>
-      <linearGradient id="gradB2" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#5ee7df"/>
-        <stop offset="100%" stop-color="#b490ca"/>
+      <linearGradient id="gradEquation3" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#43cea2"/>
+        <stop offset="100%" stop-color="#185a9d"/>
       </linearGradient>
-      <linearGradient id="gradC2" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#a1c4fd"/>
-        <stop offset="100%" stop-color="#c2e9fb"/>
+      <linearGradient id="gradMiles3" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff9a9e"/>
+        <stop offset="100%" stop-color="#fad0c4"/>
       </linearGradient>
     </defs>
 
-```
-<!-- Energy Consumed -->
-<rect x="150" y="30" width="200" height="50" fill="url(#gradA2)" stroke="#d81b60" stroke-width="2" rx="10"/>
-<text x="250" y="60" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Energy Consumed (kWh)</text>
+    <!-- Energy Consumed -->
+    <rect class="box" x="30" y="50" width="220" height="60" fill="url(#gradEnergy3)" stroke="#2575fc" stroke-width="2" rx="10"/>
+    <text x="140" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Energy Consumed</text>
+    <text x="140" y="105" text-anchor="middle" class="label label-dark">(kWh)</text>
 
-<!-- Arrow -->
-<line x1="250" y1="80" x2="250" y2="120" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+    <!-- Equation -->
+    <rect class="box" x="280" y="50" width="340" height="60" fill="url(#gradEquation3)" stroke="#185a9d" stroke-width="2" rx="10"/>
+    <text x="450" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
 
-<!-- Equation -->
-<rect x="100" y="120" width="300" height="50" fill="url(#gradB2)" stroke="#8e24aa" stroke-width="2" rx="10"/>
-<text x="250" y="150" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
+    <!-- Odometer Miles -->
+    <rect class="box" x="640" y="50" width="220" height="60" fill="url(#gradMiles3)" stroke="#e91e63" stroke-width="2" rx="10"/>
+    <text x="750" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Odometer Miles</text>
 
-<!-- Arrow -->
-<line x1="250" y1="170" x2="250" y2="210" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
+    <!-- Arrows -->
+    <line class="arrow" x1="250" y1="80" x2="280" y2="80" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="620" y1="80" x2="640" y2="80" marker-end="url(#arrowhead3)"/>
 
-<!-- Odometer Miles -->
-<rect x="150" y="210" width="200" height="50" fill="url(#gradC2)" stroke="#039be5" stroke-width="2" rx="10"/>
-<text x="250" y="240" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Odometer Miles</text>
+    <!-- Dynamic Efficiency Factor -->
+    <rect class="box" x="390" y="140" width="220" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
+    <text x="500" y="170" text-anchor="middle" class="label label-dark" font-weight="bold">Dynamic Efficiency Factor (η)</text>
+    <line class="arrow" x1="450" y1="110" x2="500" y2="140" marker-end="url(#arrowhead3)"/>
 
-<!-- Arrow -->
-<line x1="250" y1="260" x2="250" y2="300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
-
-<!-- Dynamic Efficiency Factor -->
-<rect x="100" y="300" width="300" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
-<text x="250" y="330" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Dynamic Efficiency Factor (η)</text>
-
-<!-- Arrow -->
-<line x1="250" y1="350" x2="250" y2="390" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead2)"/>
-
-<!-- Dynamic Factors List -->
-<rect x="50" y="390" width="400" height="250" fill="#e0e0e0" stroke="#757575" stroke-width="2" rx="10"/>
-<text x="250" y="420" text-anchor="middle" fill="#424242" font-size="14" font-weight="bold">Dynamic Factors</text>
-<text x="250" y="450" text-anchor="middle" fill="#424242" font-size="12">• Historical Route Efficiency</text>
-<text x="250" y="470" text-anchor="middle" fill="#424242" font-size="12">• Ambient Temperature</text>
-<text x="250" y="490" text-anchor="middle" fill="#424242" font-size="12">• Tire Pressure Status</text>
-<text x="250" y="510" text-anchor="middle" fill="#424242" font-size="12">• Regenerative Braking Utilization</text>
-<text x="250" y="530" text-anchor="middle" fill="#424242" font-size="12">• Cabin Climate Load</text>
-<text x="250" y="550" text-anchor="middle" fill="#424242" font-size="12">• Software Updates</text>
-<text x="250" y="570" text-anchor="middle" fill="#424242" font-size="12">• Battery Impedance</text>
-```
-
+    <!-- Dynamic Factors (Icons/Labels) -->
+    <rect class="box" x="50" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="150" y="265" text-anchor="middle" class="label" font-weight="bold">Historical Route</text>
+    
+    <rect class="box" x="280" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="380" y="265" text-anchor="middle" class="label" font-weight="bold">Ambient Temp</text>
+    
+    <rect class="box" x="510" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="610" y="265" text-anchor="middle" class="label" font-weight="bold">Tire Pressure</text>
+    
+    <rect class="box" x="50" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="150" y="325" text-anchor="middle" class="label" font-weight="bold">Regen Braking</text>
+    
+    <rect class="box" x="280" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="380" y="325" text-anchor="middle" class="label" font-weight="bold">Cabin Climate</text>
+    
+    <rect class="box" x="510" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="610" y="325" text-anchor="middle" class="label" font-weight="bold">Software Updates</text>
+    
+    <rect class="box" x="280" y="360" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="380" y="385" text-anchor="middle" class="label" font-weight="bold">Battery Impedance</text>
+    
+    <!-- Connecting Arrows from Dynamic Efficiency Factor -->
+    <line class="arrow" x1="500" y1="190" x2="150" y2="240" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="380" y2="240" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="610" y2="240" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="150" y2="300" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="380" y2="300" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="610" y2="300" marker-end="url(#arrowhead3)"/>
+    <line class="arrow" x1="500" y1="190" x2="380" y2="360" marker-end="url(#arrowhead3)"/>
   </svg>
 </div>
 
 </details>
-
 ### Key Dynamic Variables
 
 Patent US8054038B2 outlines seven variables that modify the energy-to-mile conversion rate:
