@@ -51,7 +51,7 @@ The central hypothesis of this report is that the mileage displayed on Tesla’s
 Tesla’s system redefines how mileage is calculated. Instead of relying on physical wheel rotations, Tesla uses an energy-based metric to estimate the distance traveled. **Patent US8054038B2** reveals that Tesla’s engineers have transformed “mileage” into a predictive energy consumption metric that is dynamically weighted by seven key variables.
 
 <details>
-  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization Option 3: Interactive Diagram with Hover Effects</summary>
+  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization </summary>
 
 <div style="margin: 20px auto; text-align: center;">
   <svg viewBox="0 0 1000 400" style="width: 100%; max-width: 900px; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -82,58 +82,61 @@ Tesla’s system redefines how mileage is calculated. Instead of relying on phys
       </linearGradient>
     </defs>
 
-    <!-- Energy Consumed -->
-    <rect class="box" x="30" y="50" width="220" height="60" fill="url(#gradEnergy3)" stroke="#2575fc" stroke-width="2" rx="10"/>
-    <text x="140" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Energy Consumed</text>
-    <text x="140" y="105" text-anchor="middle" class="label label-dark">(kWh)</text>
+```
+<!-- Energy Consumed -->
+<rect class="box" x="30" y="50" width="220" height="60" fill="url(#gradEnergy3)" stroke="#2575fc" stroke-width="2" rx="10"/>
+<text x="140" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Energy Consumed</text>
+<text x="140" y="105" text-anchor="middle" class="label label-dark">(kWh)</text>
 
-    <!-- Equation -->
-    <rect class="box" x="280" y="50" width="340" height="60" fill="url(#gradEquation3)" stroke="#185a9d" stroke-width="2" rx="10"/>
-    <text x="450" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
+<!-- Equation -->
+<rect class="box" x="280" y="50" width="340" height="60" fill="url(#gradEquation3)" stroke="#185a9d" stroke-width="2" rx="10"/>
+<text x="450" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Mileage = Energy / (BaseEff. × η)</text>
 
-    <!-- Odometer Miles -->
-    <rect class="box" x="640" y="50" width="220" height="60" fill="url(#gradMiles3)" stroke="#e91e63" stroke-width="2" rx="10"/>
-    <text x="750" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Odometer Miles</text>
+<!-- Odometer Miles -->
+<rect class="box" x="640" y="50" width="220" height="60" fill="url(#gradMiles3)" stroke="#e91e63" stroke-width="2" rx="10"/>
+<text x="750" y="85" text-anchor="middle" class="label label-dark" font-weight="bold">Odometer Miles</text>
 
-    <!-- Arrows -->
-    <line class="arrow" x1="250" y1="80" x2="280" y2="80" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="620" y1="80" x2="640" y2="80" marker-end="url(#arrowhead3)"/>
+<!-- Arrows -->
+<line class="arrow" x1="250" y1="80" x2="280" y2="80" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="620" y1="80" x2="640" y2="80" marker-end="url(#arrowhead3)"/>
 
-    <!-- Dynamic Efficiency Factor -->
-    <rect class="box" x="390" y="140" width="220" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
-    <text x="500" y="170" text-anchor="middle" class="label label-dark" font-weight="bold">Dynamic Efficiency Factor (η)</text>
-    <line class="arrow" x1="450" y1="110" x2="500" y2="140" marker-end="url(#arrowhead3)"/>
+<!-- Dynamic Efficiency Factor -->
+<rect class="box" x="390" y="140" width="220" height="50" fill="#ffcc80" stroke="#fb8c00" stroke-width="2" rx="10"/>
+<text x="500" y="170" text-anchor="middle" class="label label-dark" font-weight="bold">Dynamic Efficiency Factor (η)</text>
+<line class="arrow" x1="450" y1="110" x2="500" y2="140" marker-end="url(#arrowhead3)"/>
 
-    <!-- Dynamic Factors (Icons/Labels) -->
-    <rect class="box" x="50" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="150" y="265" text-anchor="middle" class="label" font-weight="bold">Historical Route</text>
-    
-    <rect class="box" x="280" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="380" y="265" text-anchor="middle" class="label" font-weight="bold">Ambient Temp</text>
-    
-    <rect class="box" x="510" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="610" y="265" text-anchor="middle" class="label" font-weight="bold">Tire Pressure</text>
-    
-    <rect class="box" x="50" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="150" y="325" text-anchor="middle" class="label" font-weight="bold">Regen Braking</text>
-    
-    <rect class="box" x="280" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="380" y="325" text-anchor="middle" class="label" font-weight="bold">Cabin Climate</text>
-    
-    <rect class="box" x="510" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="610" y="325" text-anchor="middle" class="label" font-weight="bold">Software Updates</text>
-    
-    <rect class="box" x="280" y="360" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
-    <text x="380" y="385" text-anchor="middle" class="label" font-weight="bold">Battery Impedance</text>
-    
-    <!-- Connecting Arrows from Dynamic Efficiency Factor -->
-    <line class="arrow" x1="500" y1="190" x2="150" y2="240" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="380" y2="240" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="610" y2="240" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="150" y2="300" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="380" y2="300" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="610" y2="300" marker-end="url(#arrowhead3)"/>
-    <line class="arrow" x1="500" y1="190" x2="380" y2="360" marker-end="url(#arrowhead3)"/>
+<!-- Dynamic Factors (Icons/Labels) -->
+<rect class="box" x="50" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="150" y="265" text-anchor="middle" class="label" font-weight="bold">Historical Route</text>
+
+<rect class="box" x="280" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="380" y="265" text-anchor="middle" class="label" font-weight="bold">Ambient Temp</text>
+
+<rect class="box" x="510" y="240" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="610" y="265" text-anchor="middle" class="label" font-weight="bold">Tire Pressure</text>
+
+<rect class="box" x="50" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="150" y="325" text-anchor="middle" class="label" font-weight="bold">Regen Braking</text>
+
+<rect class="box" x="280" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="380" y="325" text-anchor="middle" class="label" font-weight="bold">Cabin Climate</text>
+
+<rect class="box" x="510" y="300" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="610" y="325" text-anchor="middle" class="label" font-weight="bold">Software Updates</text>
+
+<rect class="box" x="280" y="360" width="200" height="40" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+<text x="380" y="385" text-anchor="middle" class="label" font-weight="bold">Battery Impedance</text>
+
+<!-- Connecting Arrows from Dynamic Efficiency Factor -->
+<line class="arrow" x1="500" y1="190" x2="150" y2="240" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="380" y2="240" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="610" y2="240" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="150" y2="300" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="380" y2="300" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="610" y2="300" marker-end="url(#arrowhead3)"/>
+<line class="arrow" x1="500" y1="190" x2="380" y2="360" marker-end="url(#arrowhead3)"/>
+```
+
   </svg>
 </div>
 
