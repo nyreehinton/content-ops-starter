@@ -59,7 +59,7 @@ At the core of Tesla's approach is the following equation:
 In this equation, **η** represents a dynamic efficiency factor that adjusts based on a variety of conditions. This energy-based estimation system is embedded within the vehicle's software, allowing it to compute mileage by tracking energy consumption rather than relying solely on physical measurements.
 
 <details>
-  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization(Click to Expand)</summary>
+  <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization (Click to Expand)</summary>
 
 <div style="margin: 20px auto; text-align: center;">
   <svg viewBox="0 0 500 700" style="width: 100%; max-width: 500px; height: auto; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
