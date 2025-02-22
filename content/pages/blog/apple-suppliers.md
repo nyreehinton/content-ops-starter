@@ -1,6 +1,6 @@
 ---
 title: 'Apple Semiconductor Analysis: AMS SW Primer'
-slug: case-study-2
+slug: apple-suppliers
 date: '2020-02-16'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem,
