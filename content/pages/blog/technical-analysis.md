@@ -128,7 +128,7 @@ This value represents the expected mileage based on Tesla’s **real-world energ
 
 #### **3. Physical Mileage**
 
-The **physical mileage** was calculated using the sum of GPS-verified trip distances:
+The **physical mileage** was calculated using the using odometer displayed in-vehicle:
 
 ![](/images/Physical%20Mileage.png)
 
