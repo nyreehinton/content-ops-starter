@@ -81,7 +81,7 @@ sections:
             self:
               borderRadius: x-large
       - title: '125'
-        subtitle: Recovered Through Compliance
+        subtitle: Moderated Calls
         text: >
           Built a custom seeding-money tracker that flagged unreported
           transactions, strengthening regulatory adherence and minimizing risk
