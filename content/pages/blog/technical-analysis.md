@@ -35,6 +35,7 @@ styles:
   self:
     flexDirection: row
     textAlign: left
+author: content/data/nyree.json
 ---
 With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
 ![](/images/1F8BAC34-F885-46D9-882B-03D772A6BDD7.png)
