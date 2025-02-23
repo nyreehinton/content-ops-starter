@@ -81,7 +81,7 @@ sections:
             self:
               borderRadius: x-large
       - title: '125'
-        subtitle: Moderated Calls
+        subtitle: Executive-level discussions
         text: >
           executive-level discussions with C-suite leaders—uncovering vital
           trends in consumer staples, services, and agricultural markets.
