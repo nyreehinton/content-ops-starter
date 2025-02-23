@@ -80,7 +80,7 @@ sections:
           styles:
             self:
               borderRadius: x-large
-      - title: $170M
+      - title: '125'
         subtitle: Recovered Through Compliance
         text: >
           Built a custom seeding-money tracker that flagged unreported
