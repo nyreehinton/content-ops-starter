@@ -13,6 +13,7 @@ seo:
   type: Seo
   metaTitle: ETF
   socialImage: /images/Bloomberg Princeton.JPG
+author: content/data/nyree.json
 ---
 <div style="text-align: left">**Exchange-traded funds** (ETFs) represent a transformative shift in investment vehicles, combining the intraday liquidity of stocks with the diversified exposure of mutual funds. Unlike mutual funds, which settle at end-of-day net asset values (NAVs), ETFs require real-time price discovery mechanisms to maintain parity between market prices and underlying assets. </div>
 
