@@ -83,8 +83,8 @@ sections:
       - title: '125'
         subtitle: Executive-level discussions
         text: >
-          I conducted market research—uncovering vital trends in consumer
-          staples, services, and agricultural markets.
+          Conducted market research—uncovering vital trends in consumer staples,
+          services, and agricultural markets.
         image:
           url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
           altText: Featured icon two
