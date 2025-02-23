@@ -85,6 +85,7 @@ styles:
     borderRadius: none
     flexDirection: col
 type: PostLayout
+author: content/data/nyree.json
 ---
 <div style="text-align: center">![](/images/IMG_1166.jpeg)</div>
 
