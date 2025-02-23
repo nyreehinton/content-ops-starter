@@ -80,12 +80,11 @@ sections:
           styles:
             self:
               borderRadius: x-large
-      - title: $170M
-        subtitle: Recovered Through Compliance
+      - title: '125'
+        subtitle: Executive-level discussions
         text: >
-          Built a custom seeding-money tracker that flagged unreported
-          transactions, strengthening regulatory adherence and minimizing risk
-          exposure.
+          Conducted market research—uncovering vital trends in consumer staples,
+          services, and agricultural markets.
         image:
           url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
           altText: Featured icon two
@@ -229,9 +228,9 @@ sections:
           - pb-3
           - pr-3
   - posts:
-      - content/pages/blog/case-study-1.md
-      - content/pages/blog/case-study-2.md
-      - content/pages/blog/case-study-3.md
+      - content/pages/blog/lime-scooters.md
+      - content/pages/blog/apple-suppliers.md
+      - content/pages/blog/purple-innovation.md
     showThumbnail: true
     showDate: true
     showAuthor: true

@@ -1,6 +1,6 @@
 ---
 title: 'Purple Innovation Inc: Insights from Former CEO '
-slug: case-study-3
+slug: purple-innovation
 date: '2021-08-18'
 excerpt: ''
 featuredImage:

@@ -1,6 +1,6 @@
 ---
 title: 'Lime Scooters: Identifying Trends in Battery Theft'
-slug: case-study-1
+slug: lime-scooters
 date: '2024-06-05'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante lorem,
