@@ -83,9 +83,8 @@ sections:
       - title: '125'
         subtitle: Moderated Calls
         text: >
-          Built a custom seeding-money tracker that flagged unreported
-          transactions, strengthening regulatory adherence and minimizing risk
-          exposure.
+          executive-level discussions with C-suite leaders—uncovering vital
+          trends in consumer staples, services, and agricultural markets.
         image:
           url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
           altText: Featured icon two
