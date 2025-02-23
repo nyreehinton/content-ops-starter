@@ -86,6 +86,7 @@ styles:
     borderRadius: none
     flexDirection: col
 type: PostLayout
+author: content/data/nyree.json
 ---
  <hr />
 
