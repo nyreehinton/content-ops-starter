@@ -96,6 +96,7 @@ seo:
   type: Seo
   socialImage: /images/960x0.webp
   metaDescription: lime scooters
+author: content/data/nyree.json
 ---
 **Battery Theft Analysis**
 
