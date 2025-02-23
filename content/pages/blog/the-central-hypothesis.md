@@ -35,6 +35,7 @@ featuredImage:
 seo:
   type: Seo
   socialImage: /images/IMG_0129.png
+author: content/data/nyree.json
 ---
 Well......what's an odometer?
 
