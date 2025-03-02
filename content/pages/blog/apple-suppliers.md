@@ -1,9 +1,27 @@
+# Apple Semiconductor Analysis: AMS SW Primer
+**February 16, 2020 | Nyree Hinton**
+
 ## Table of Contents
 - [Ams Well Positioned to Benefit from 3D Sensor Demand](#ams-well-positioned-to-benefit-from-3d-sensor-demand)
 - [Financial Review](#financial-review)
-  - [Earnings](#earnings)
-  - [Optical Sensing Growth](#optical-sensing-growth)
-- [Key Research](#key-research)
+
+## Ams Well Positioned to Benefit from 3D Sensor Demand
+Ams is well positioned to take advantage of growing demand for 3D technology in Apple, Android, and self-driving cars. Their strategic acquisitions have driven revenue growth, making them a leader in optical sensors. (08/10/18)
+
+## Financial Review
+### Earnings
+Ams’ strong 2Q results and 3Q outlook reinforce their position with Apple in 3D sensing. Revenues are up 18% from 2017, though gross margin hit a low of 9% due to underutilized facilities.
+
+### Optical Sensing Growth
+From 2016, the consumer & communications segment grew from 51% to 73% of total revenues, driven by 3D technology adoption.
+
+![Revenue by Market Segment](/images/revenue-by-market.png)
+*Figure 1: Revenue by Market Segment*
+
+<div class="social-sharing">
+    <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/apple-suppliers&text=Check out this AMS SW analysis" target="_blank">Share on Twitter</a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://yourdomain.com/blog/apple-suppliers&title=Apple Semiconductor Analysis: AMS SW Primer" target="_blank">Share on LinkedIn</a>
+</div>
 ---
 title: 'Apple Semiconductor Analysis: AMS SW Primer'
 slug: apple-suppliers
