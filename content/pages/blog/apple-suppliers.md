@@ -1,3 +1,9 @@
+## Table of Contents
+- [Ams Well Positioned to Benefit from 3D Sensor Demand](#ams-well-positioned-to-benefit-from-3d-sensor-demand)
+- [Financial Review](#financial-review)
+  - [Earnings](#earnings)
+  - [Optical Sensing Growth](#optical-sensing-growth)
+- [Key Research](#key-research)
 ---
 title: 'Apple Semiconductor Analysis: AMS SW Primer'
 slug: apple-suppliers
