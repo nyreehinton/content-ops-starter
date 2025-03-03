@@ -42,6 +42,7 @@ author: content/data/nyree.json
   <p>Ams's Q2 results represent a stable non-Apple core business, which could add a favorable boost to earnings if
   expanded into 2020. This will come from capitalizing off of Android customers and winning significant product
   designs in the automotive industry. (08/10/18)</p>
+![](/images/Screenshot%202024-03-25%20at%2020.04.06.12%E2%88%9208%AFPM.png)
 
   <p><strong>Highlights From Recent Results:</strong><br />
   Second Quarter Revenues Came in at $252.8 Million, Above Top-End Guidance Range and Up 18% Compared Second Quarter Last Year | EE »<br />
