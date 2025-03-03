@@ -5,8 +5,8 @@ date: 2020-02-16
 author: Nyree Hinton
 excerpt: Ams is well-positioned to benefit from the growing demand for 3D sensor technology in Apple devices, Android, and self-driving cars, driven by strategic acquisitions.
 featuredImage:
-  url: /images/revenue-by-market.png
-  altText: Chart showing revenue by market segment
+  url: /images/total-revenues-by-market.jpg
+  altText: Chart showing total revenues by market segment
 ---
 
 # Apple Semiconductor Analysis: AMS SW Primer
@@ -46,17 +46,23 @@ Ams's Q2 results represent a stable non-Apple core business, which could add a f
 - [Company Presentation](https://example.com/presentation)
 - [Additional Resources: Analyzer](https://example.com/analyzer) | [Earnings Release](https://example.com/earnings)
 
+![EPS Chart](/images/eps.jpg)
+*Figure 1: EPS Chart*
+
 ### Financial Trends
 #### Optical Sensing Growth
 Ams has placed a large bet on the growth and adoption of 3D technology. So far, 3D sensing has proved to be a well-timed investment strategy. From 2016, total revenues by segment have shifted from equal to overweight consumer & communications. The consumer & communications segment of total revenues has grown from 51% to almost 73%. We can attribute this 22% increase to large customers such as Apple, who are leading the way in 3D implementation.
 
 To sustain growth in this market, Ams must continue to win product designs from its primary customer. Demand for 3D technology provided an additional EUR 200 million in total revenues for Q4 of 2017. (08/10/18)
 
-![Revenue by Market Segment](/images/revenue-by-market.png)
-*Figure 1: Revenue by Market Segment*
+![Total Revenues by Market](/images/total-revenues-by-market.jpg)
+*Figure 2: Total Revenues by Market*
 
 #### Margins Are Suffering At The Expense of Growth
 Ams's gross margin dropped from 50% in 2016 to 9% in Q2. Ams attributed the drop in gross margin to acquisition-based costs and the consumer side, placing the blame on larger programs and larger customers. Operating margins have also suffered, falling from 33% in Q4 of 2016 to -29%, fueled by higher expenses and a slowdown in seasonality. According to Ams, 30% yearly gross margins are here to stay, which can pose a risk to profitability if they are unable to sustain other parts of the business. (08/10/18)
+
+![Margins Chart](/images/margins.jpg)
+*Figure 3: Margins Chart*
 
 #### IPhone Ramp-Up Should Play Favorably to Ams's 3Q Earnings
 Looking past a weak second quarter relative to Q1, Ams has indicated that the 2H18 ramp-up will produce strong revenue results led by optical sensing products. 3Q 2018 revenues are expected to reach $450 million to $490 million, up 78% to 94% sequentially and 46% to 59% year-on-year. So far, Ams has driven revenue by feeding off Apple's high demand for 3D sensors. Higher revenues are not without risk; margins have plummeted and profitability has lowered sequentially. Going forward, 2H18 revenues should provide a much-needed boost to EPS.
@@ -73,8 +79,14 @@ Ams continues to see optical sensing as its highest volume opportunity through 2
 #### Meeting Expectations Should Be A Breeze
 Through 2021, consensus implies Ams will continue to supply $7.5 per device worth of content for Apple to implement front-facing 3D sensing. If Ams can hold onto market share at the current ASP, they should be well on their way to beating revenue expectations for the next three years. (08/10/18)
 
+![Revenue Estimates](/images/revenue-estimates.jpg)
+*Figure 4: Revenue Estimates*
+
 #### Winning Apple's Good Grace Could Make Things Interesting
 If Apple were to introduce just 30% of iPads with Face ID for FY20, it could provide an additional $90 million in revenues for Ams. As with fingerprint authentication, Apple introduced this technology with the latest iPhone and then applied it to all next-generation devices, including iPads. (08/10/18)
+
+![Face ID Shipments](/images/face-id-shipments.jpg)
+*Figure 5: Face ID Shipments*
 
 ### Hardware
 #### VCSELs Primed for Boom
@@ -85,15 +97,27 @@ VCSELs are estimated to cost $6-7 per phone. Lumentum is the current supplier of
 
 If Ams can capture 20% of the VCSEL market share from Apple, it would translate to an additional $110 million in revenues for FY20. (08/10/18)
 
+![TrueDepth Components](/images/true-depth-components.jpg)
+*Figure 6: TrueDepth Components*
+
 #### The Androids Are Coming
 Although Apple has had a two-year head start, Android providers are participating in the growing trend of 3D implementation. Ams announced an impressive win for its VCSEL array business, supplying 3D technology for Xiaomi's new Mi8 smartphone, solidifying itself as the first Android platform to implement user facial recognition. Xiaomi's Mi8 sold out within a minute of its release, which could imply more orders from Ams for VCSELs, potentially not yet priced in. With 10% market share, Xiaomi is the fourth-largest smartphone maker in China. (08/10/18)
+
+![Potential Android Sales](/images/potential-android-sales.jpg)
+*Figure 7: Potential Android Sales*
 
 #### Using FY20 as an Inflection Point
 Providing 20% of VCSELs to Apple, 30% of iPad content, and 10% of Android market share would translate to a total revenue number of $2.85 billion for FY20. A 6% upside may not sound exciting, but this doesn’t include the added benefit that may come from the automotive industry, which Ams forecasts to grow 49% through 2020. (08/10/18)
 
+![Possible Revenue](/images/possible-revenue.jpg)
+*Figure 8: Possible Revenue*
+
 ### Automotive
 #### The Hype of Self-Driving Cars
 Ams is looking to shift business revenues by segment to 60% consumer & 40% non-consumer, which will largely depend on the growth of non-smartphone revenue. According to IHS, the market for automotive LIDAR systems will grow from $290 million in 2016 to $2.7 billion by 2026. (08/10/18)
+
+![Ams Growth Markets](/images/ams-growth-markets.jpg)
+*Figure 9: Ams Growth Markets*
 
 #### Can Automotive Demand Meet Expectations?
 Ams expects a large part of its future revenue to come from the growth of other segments such as automotive, but so far, these expectations have yet to materialize. With a forecast of 49% through 2020, Ams plans to supply the LIDAR technology used in autonomous vehicles and claims they are seeing growing interest from industry leaders. The autonomous vehicle industry faces significant headwinds such as regulatory footing, technical challenges, and timing of implementation. (08/10/18)
