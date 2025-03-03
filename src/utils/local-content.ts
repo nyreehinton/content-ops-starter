@@ -34,8 +34,9 @@ function readContent(file) {
     switch (path.extname(file).substring(1)) {
         case 'md':
             const parsedMd = frontmatter(rawContent);
+            const attributes = parsedMd.attributes && typeof parsedMd.attributes === 'object' ? parsedMd.attributes : {};
             content = {
-                ...parsedMd.attributes,
+                ...attributes,
                 markdown_content: parsedMd.body
             };
             break;
