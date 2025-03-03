@@ -2,6 +2,26 @@ import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapEntry
 import { GitContentSource } from '@stackbit/cms-git';
 import { allModels } from 'sources/local/models';
 
+export default defineStackbitConfig({
+  // ...
+  contentSources: [
+    new GitContentSource({
+      rootPath: __dirname,
+      contentDirs: ["content"],
+      models: [
+        {
+          name: "Page",
+          // Define the model as a page model
+          type: "page",
+          urlPath: "/{slug}",
+          filePath: "content/pages/{slug}.json",
+          fields: [{ name: "title", type: "string", required: true }]
+        }
+      ],
+    })
+  ]
+});
+
 const gitContentSource = new GitContentSource({
     rootPath: __dirname,
     contentDirs: ['content'],
@@ -17,7 +37,7 @@ const gitContentSource = new GitContentSource({
 export const config = defineStackbitConfig({
     stackbitVersion: '~0.7.0',
     ssgName: 'nextjs',
-    nodeVersion: '18',
+    nodeVersion: '18',=
     styleObjectModelName: 'ThemeStyle',
     contentSources: [gitContentSource],
     presetSource: {
