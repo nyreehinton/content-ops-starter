@@ -1,8 +1,13 @@
 ---
 title: Apple Semiconductor Analysis: AMS SW Primer
-slug: apple-suppliers/
-date: 2020-02-16
-excerpt: Ams is well-positioned to benefit from the growing demand for 3D sensor technology in Apple devices, Android, and self-driving cars.
+slug: apple-suppliers
+date: '2020-01-02'
+excerpt: ''
+isFeatured: true
+colors: bg-light-fg-dark
+styles:
+  self:
+    flexDirection: row
 type: PostLayout
 ---
 
