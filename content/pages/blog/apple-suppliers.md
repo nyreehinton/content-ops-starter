@@ -1,6 +1,6 @@
 ---
-title: What's a Data Product?
-slug: data-product
+title: Apple Semiconductor Analysis: AMS SW Primer
+slug: apple-suppliers
 date: '2025-01-02'
 excerpt: ''
 isFeatured: true
