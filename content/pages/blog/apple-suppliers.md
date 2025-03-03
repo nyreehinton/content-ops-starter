@@ -6,21 +6,21 @@ excerpt: >-
 type: PostLayout
 author: content/data/nyree.json
 ---
- <hr />
-# Apple Semiconductor Analysis: AMS SW Primer
-**February 16, 2020 | Nyree Hinton**
+  <hr />
+  # Apple Semiconductor Analysis: AMS SW Primer
+  **February 16, 2020 | Nyree Hinton**
 
-## Table of Contents
-- [Ams Well Positioned to Benefit from 3D Sensor Demand](#ams-well-positioned-to-benefit-from-3d-sensor-demand)
-- [Financial Review](#financial-review)
+  ## Table of Contents
+  - [Ams Well Positioned to Benefit from 3D Sensor Demand](#ams-well-positioned-to-benefit-from-3d-sensor-demand)
+  - [Financial Review](#financial-review)
   - [Earnings](#earnings)
   - [Financial Trends](#financial-trends)
-- [Key Research](#key-research)
+  - [Key Research](#key-research)
   - [Smartphone Opportunity](#smartphone-opportunity)
   - [Hardware](#hardware)
   - [Automotive](#automotive)
-- [Competitive Strategy](#competitive-strategy)
-- [Valuation](#valuation)
+  - [Competitive Strategy](#competitive-strategy)
+  - [Valuation](#valuation)
 
   <h3>1. TEST-Ams Well Positioned to Benefit from 3D Sensor Demand</h3>
   <p>(Bloomberg Intelligence) -- Ams is well positioned to take advantage of the growing demand of 3D technology
