@@ -1,3 +1,11 @@
+---
+title: Apple Semiconductor Analysis: AMS SW Primer
+slug: apple-suppliers
+date: 2020-02-16
+author: Nyree Hinton
+excerpt: Ams is well-positioned to benefit from the growing demand for 3D sensor technology in Apple devices, Android, and self-driving cars, driven by strategic acquisitions.
+---
+
 # Apple Semiconductor Analysis: AMS SW Primer
 **February 16, 2020 | Nyree Hinton**
 
@@ -40,9 +48,7 @@ Ams's Q2 results represent a stable non-Apple core business, which could add a f
 
 ### Financial Trends
 #### Optical Sensing Growth
-Ams has placed a large bet on the growth and adoption of 3D technology. So far, 3D sensing has proved to be a well-timed investment strategy. From 2016, total revenues by segment have shifted from equal to overweight consumer & communications. The consumer & communications segment of total revenues has grown from 51% to almost 73%. We can attribute this 22% increase to large customers such as Apple, who are leading the way in 3D implementation.
-
-To sustain growth in this market, Ams must continue to win product designs from its primary customer. Demand for 3D technology provided an additional EUR 200 million in total revenues for Q4 of 2017. (08/10/18)
+Ams has placed a large bet on the growth and adoption of 3D technology. From 2016, total revenues by segment have shifted from equal to overweight consumer & communications. The consumer & communications segment of total revenues has grown from 51% to almost 73%.
 
 ![Total Revenues by Market](/images/total-revenues-by-market.jpg)
 *Figure 2: Total Revenues by Market*
@@ -60,7 +66,6 @@ Consensus implies Ams will continue to provide a large share of Apple's 3D sensi
 *Bloomberg ® 08/10/2018 10:29:29*
 
 ## Key Research
-
 ### Smartphone Opportunity
 #### iOS Demand
 Ams continues to see optical sensing as its highest volume opportunity through 2020. According to IHS, global shipments of 3D facial sensors are expected to reach 370 million units by 2021, up from 32 million units in 2017. The demand for 3D sensing is bolstered by its use in handset markets, most notably iPhones. (08/10/18)
