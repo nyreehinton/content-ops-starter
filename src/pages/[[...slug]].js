@@ -8,11 +8,7 @@ function Page(props) {
   const { page, site } = props;
   const { modelName } = page.__metadata || {};
 
-  if (!page || !page.__metadata || !page.__metadata.modelName) {
-    console.error('No modelName in page metadata:', page);
-    return <div>Error: Page data is missing or invalid</div>;
-}
-  if (!modelName) {
+    if (!modelName) {
     console.error('No modelName in page metadata:', page);
     throw new Error(`Page has no type, page "${props.path || 'unknown'}"`);
   }
