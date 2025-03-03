@@ -127,8 +127,3 @@ Cumulatively, if Ams is able to supply VCSELs for Apple devices, capture Android
 
 #### P/E
 Historically, Ams has traded around 30x and sometimes as high as 80x. If we apply just a 12.5x P/E on a forecasted EPS of $8.20, Ams should be trading at $102.44 for FY20. A 30% increase in share price may be worth keeping an eye on. At a time when Apple suppliers are dropping in valuation, Ams continues to demand a steep premium. (08/10/18)
-
-<div class="social-sharing">
-  <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blog/apple-suppliers&text=Check out this AMS SW analysis by Nyree Hinton" target="_blank">Share on Twitter</a>
-  <a href="https://www.linkedin.com/shareArticle?url=https://yourdomain.com/blog/apple-suppliers&title=Apple Semiconductor Analysis: AMS SW Primer" target="_blank">Share on LinkedIn</a>
-</div>
