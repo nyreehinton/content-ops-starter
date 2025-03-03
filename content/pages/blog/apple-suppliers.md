@@ -11,7 +11,7 @@ styles:
 type: PostLayout
 ---
 
-<div style="text-align: center"># Apple Semiconductor Analysis: AMS SW Primer
+<div style="text-align: center"># Apple Semiconductor Analysis: AMS SW Primer</div>
 **February 16, 2020 | Nyree Hinton**
 
 ## Table of Contents
