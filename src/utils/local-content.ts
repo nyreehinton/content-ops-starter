@@ -6,8 +6,6 @@ import { allModels } from '../../sources/local/models';
 import { Config } from '../../sources/local/models/Config';
 import { getPageUrl } from './page-utils';
 
-// TODO use types?
-
 const pagesDir = 'content/pages';
 const dataDir = 'content/data';
 
@@ -20,22 +18,22 @@ Object.entries(allModels).forEach(([modelName, model]) => {
     });
 });
 
-function isRefField(modelName: string, fieldName: string) {
+function isRefField(modelName, fieldName) {
     return !!allReferenceFields[modelName + ':' + fieldName];
 }
 
 const supportedFileTypes = ['md', 'json'];
-function contentFilesInPath(dir: string) {
+function contentFilesInPath(dir) {
     const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
     return globSync(globPattern);
 }
 
-function readContent(file: string) {
+function readContent(file) {
     const rawContent = fs.readFileSync(file, 'utf8');
     let content = null;
     switch (path.extname(file).substring(1)) {
         case 'md':
-            const parsedMd = frontmatter<Record<string, any>>(rawContent);
+            const parsedMd = frontmatter(rawContent);
             content = {
                 ...parsedMd.attributes,
                 markdown_content: parsedMd.body
@@ -45,30 +43,27 @@ function readContent(file: string) {
             content = JSON.parse(rawContent);
             break;
         default:
-            throw Error(`Unhandled file type: ${file}`);
+            throw new Error(`Unhandled file type: ${file}`);
     }
 
-    // Make Sourcebit-compatible
     content.__metadata = {
         id: file,
-        modelName: content.type
+        modelName: content.type || 'PostLayout', // Default to PostLayout if type is missing
+        urlPath: getPageUrl({ slug: content.slug || path.basename(file, path.extname(file)) })
     };
-
+    console.log(`Read content from ${file}:`, content); // Add logging
     return content;
 }
 
 function resolveReferences(content, fileToContent) {
     if (!content || !content.type) return;
 
-    const modelName = content.type;
-    // Make Sourcebit-compatible
     if (!content.__metadata) content.__metadata = { modelName: content.type };
-
     for (const fieldName in content) {
         let fieldValue = content[fieldName];
         if (!fieldValue) continue;
 
-        const isRef = isRefField(modelName, fieldName);
+        const isRef = isRefField(content.type, fieldName);
         if (Array.isArray(fieldValue)) {
             if (fieldValue.length === 0) continue;
             if (isRef && typeof fieldValue[0] === 'string') {
@@ -94,15 +89,17 @@ export function allContent() {
     const [data, pages] = [dataDir, pagesDir].map((dir) => {
         return contentFilesInPath(dir).map((file) => readContent(file));
     });
+    console.log('Raw pages:', pages); // Add logging
     const objects = [...pages, ...data];
     const fileToContent = Object.fromEntries(objects.map((e) => [e.__metadata.id, e]));
 
     objects.forEach((e) => resolveReferences(e, fileToContent));
 
     pages.forEach((page) => {
-        page.__metadata.urlPath = getPageUrl(page);
+        page.__metadata.urlPath = getPageUrl(page) || `/${page.slug || 'default'}`;
     });
 
     const siteConfig = data.find((e) => e.__metadata.modelName === Config.name);
+    console.log('Final data structure:', { objects, pages, props: { site: siteConfig } }); // Add logging
     return { objects, pages, props: { site: siteConfig } };
 }
