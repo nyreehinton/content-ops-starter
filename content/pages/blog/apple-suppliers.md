@@ -1,4 +1,16 @@
 ---
+title: What's a Data Product?
+slug: data-product
+date: '2025-01-02'
+excerpt: ''
+isFeatured: true
+colors: bg-light-fg-dark
+styles:
+  self:
+    flexDirection: row
+type: PostLayout
+---
+---
 title: Apple Semiconductor Analysis: AMS SW Primer
 slug: apple-suppliers
 date: '2020-01-02'
