@@ -27,13 +27,4 @@ export function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-  const data = allContent();
-  console.log('getStaticProps data:', data); // Add logging
-  const uriPath = '/' + (params.slug || ['apple-suppliers']).join('/'); // Default to 'apple-suppliers'
-  const props = await resolveStaticProps(uriPath, data || []);
-  console.log('getStaticProps props:', props); // Add logging
-  return { props };
-}
-
 export default Page;
