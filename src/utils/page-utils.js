@@ -12,15 +12,23 @@ function cssClassesFromUrlPath(urlPath) {
 }
 
 function getPageUrl(page) {
-    if (!page || !page.slug) {
-        return null;
+    if (!page || !page.__metadata) {
+        console.error("🚨 Error: Missing metadata in getPageUrl", page);
+        return "/error"; // Safe fallback
     }
 
-    if (['PostLayout'].includes(page?.__metadata.modelName)) {
-        return `/blog${page.slug.startsWith('/') ? page.slug : `/${page.slug}`}`;
+    const { modelName, slug } = page.__metadata;
+
+    if (!slug) {
+        console.warn("⚠️ Warning: Page missing slug", page);
+        return "/error";
     }
 
-    return page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
+    if (modelName === "PostLayout") {
+        return `/blog${slug.startsWith('/') ? slug : `/${slug}`}`;
+    }
+
+    return slug.startsWith('/') ? slug : `/${slug}`;
 }
 
 function setEnvironmentVariables() {
