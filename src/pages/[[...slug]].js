@@ -7,7 +7,6 @@ import { resolveStaticPaths } from '../utils/static-paths-resolvers';
 function Page(props) {
     const { page, site } = props;
 
-    // Ensure `page` and `__metadata` exist before using them
     if (!page || !page.__metadata) {
         console.error("🚨 Error: Missing page or metadata", props);
         return <div>Error loading the page. Please try again later.</div>;
@@ -15,7 +14,6 @@ function Page(props) {
 
     const { modelName } = page.__metadata;
 
-    // Ensure `modelName` exists before using it
     if (!modelName) {
         console.error(`🚨 Error: Page has no type, page '${props.path}'`, page);
         return <div>Invalid page type.</div>;
@@ -36,7 +34,6 @@ export function getStaticPaths() {
 
     console.log("🔍 Debug: allContent() output:", JSON.stringify(data, null, 2));
 
-    // Ensure data is valid
     if (!data || !Array.isArray(data)) {
         console.error("🚨 Error: allContent() returned an invalid value.");
         return { paths: [], fallback: false };
@@ -58,7 +55,6 @@ export async function getStaticProps({ params }) {
     const data = allContent();
     const urlPath = '/' + (params.slug || []).join('/');
 
-    // Ensure data is valid
     if (!data) {
         console.error("🚨 Error: allContent() returned undefined");
         return { notFound: true };
@@ -66,7 +62,6 @@ export async function getStaticProps({ params }) {
 
     const props = await resolveStaticProps(urlPath, data);
 
-    // Ensure props are valid
     if (!props || !props.page) {
         console.error("🚨 Error: resolveStaticProps returned invalid data", props);
         return { notFound: true };
