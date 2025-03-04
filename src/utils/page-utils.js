@@ -17,7 +17,12 @@ function getPageUrl(page) {
         return "/error"; // Safe fallback
     }
 
-    const { modelName, slug } = page.__metadata;
+    const { modelName, slug } = page.__metadata || {};
+
+    if (!modelName) {
+        console.warn("⚠️ Warning: Missing modelName, using default", page);
+        return "/default-page"; // Prevent crashes
+    }
 
     if (!slug) {
         console.warn("⚠️ Warning: Page missing slug", page);
@@ -36,7 +41,6 @@ function setEnvironmentVariables() {
     ...(process?.env?.URL && { URL: process.env.URL }),
   }
 }
-
 
 module.exports = {
     cssClassesFromUrlPath,
