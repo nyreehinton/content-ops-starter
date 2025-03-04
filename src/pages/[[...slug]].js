@@ -32,8 +32,6 @@ function Page(props) {
 export function getStaticPaths() {
     const data = allContent();
 
-    console.log("🔍 Debug: allContent() output:", JSON.stringify(data, null, 2));
-
     if (!data || !Array.isArray(data)) {
         console.error("🚨 Error: allContent() returned an invalid value.");
         return { paths: [], fallback: false };
@@ -41,10 +39,7 @@ export function getStaticPaths() {
 
     const paths = resolveStaticPaths(data);
 
-    if (!paths || !Array.isArray(paths)) {
-        console.error("🚨 Error: resolveStaticPaths() returned an invalid value.");
-        return { paths: [], fallback: false };
-    }
+    console.log("✅ getStaticPaths returning paths:", JSON.stringify(paths, null, 2));
 
     return { paths, fallback: false };
 }
