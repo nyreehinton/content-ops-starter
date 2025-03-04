@@ -32,6 +32,8 @@ function Page(props) {
 export function getStaticPaths() {
     const data = allContent();
 
+    console.log("🔍 Debug: allContent() output:", JSON.stringify(data, null, 2));
+
     if (!data || !Array.isArray(data)) {
         console.error("🚨 Error: allContent() returned an invalid value.");
         return { paths: [], fallback: false };
@@ -39,13 +41,16 @@ export function getStaticPaths() {
 
     const paths = resolveStaticPaths(data);
 
-    console.log("✅ getStaticPaths returning paths:", JSON.stringify(paths, null, 2));
+    if (!paths || !Array.isArray(paths)) {
+        console.error("🚨 Error: resolveStaticPaths() returned an invalid value.");
+        return { paths: [], fallback: false };
+    }
 
     return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-    console.log("🔍 Debug: Fetching static props for:", params);
+    console.log("🔍 Fetching static props for:", params);
 
     const data = allContent();
     const urlPath = '/' + (params.slug || []).join('/');
@@ -60,6 +65,13 @@ export async function getStaticProps({ params }) {
     if (!props || !props.page) {
         console.error("🚨 Error: resolveStaticProps returned invalid data", props);
         return { notFound: true };
+    }
+
+    // ✅ Log missing modelName cases
+    if (!props.page.__metadata || !props.page.__metadata.modelName) {
+        console.warn("⚠️ Warning: Page is missing modelName", props.page);
+        props.page.__metadata = props.page.__metadata || {};
+        props.page.__metadata.modelName = "default-model"; // Assign fallback
     }
 
     return { props };
