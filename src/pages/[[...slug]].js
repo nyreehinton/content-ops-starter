@@ -6,21 +6,52 @@ import { resolveStaticPaths } from '../utils/static-paths-resolvers';
 
 function Page(props) {
     const { page, site } = props;
+
+    // Ensure `page` and `__metadata` exist
+    if (!page || !page.__metadata) {
+        console.error("Error: page or __metadata is missing", props);
+        return <div>Error loading the page. Please try again later.</div>;
+    }
+
     const { modelName } = page.__metadata;
+
+    // Ensure `modelName` exists before using it
     if (!modelName) {
-        throw new Error(`page has no type, page '${props.path}'`);
+        console.error(`Error: Page has no type, page '${props.path}'`);
+        return <div>Invalid page type.</div>;
     }
+
     const PageLayout = getComponent(modelName);
+
     if (!PageLayout) {
-        throw new Error(`no page layout matching the page model: ${modelName}`);
+        console.error(`Error: No layout for model '${modelName}'`);
+        return <div>Invalid page layout.</div>;
     }
+
     return <PageLayout page={page} site={site} />;
 }
 
-export function getStaticPaths() {
+export async function getStaticProps({ params }) {
+    console.log("Fetching static props for:", params);
+
     const data = allContent();
-    const paths = resolveStaticPaths(data);
-    return { paths, fallback: false };
+    const urlPath = '/' + (params.slug || []).join('/');
+
+    // Ensure data is valid
+    if (!data) {
+        console.error("Error: allContent() returned undefined");
+        return { notFound: true };
+    }
+
+    const props = await resolveStaticProps(urlPath, data);
+
+    // Ensure props are valid
+    if (!props || !props.page) {
+        console.error("Error: resolveStaticProps returned invalid data", props);
+        return { notFound: true };
+    }
+
+    return { props };
 }
 
 export async function getStaticProps({ params }) {
