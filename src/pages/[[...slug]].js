@@ -1,8 +1,8 @@
 import React from 'react';
-import { allContent } from '../utils/local-content';
+import { getSiteData } from '../utils/local-content';
 import { getComponent } from '../components/components-registry';
 import { resolveStaticProps } from '../utils/static-props-resolvers';
-import { resolveStaticPaths } from '../utils/static-paths-resolvers';
+import { resolveStaticPaths } from '../utils/static-paths-resolvers'; // Correct import
 
 function Page(props) {
     const { page, site } = props;
@@ -15,7 +15,7 @@ function Page(props) {
     const { modelName } = page.__metadata;
 
     if (!modelName) {
-        console.error(`🚨 Error: Page has no type, page '${props.path}'`, page);
+        console.error(`🚨 Error: Page has no type`, page);
         return <div>Invalid page type.</div>;
     }
 
@@ -30,51 +30,49 @@ function Page(props) {
 }
 
 export function getStaticPaths() {
-    const data = allContent();
+    const data = getSiteData();
+    console.log("🔍 Debug: getSiteData() pages output:", JSON.stringify(data.pages, null, 2));
 
-    console.log("🔍 Debug: allContent() output:", JSON.stringify(data, null, 2));
-
-    if (!data || !Array.isArray(data)) {
-        console.error("🚨 Error: allContent() returned an invalid value.");
+    if (!data || !data.pages || !Array.isArray(data.pages)) {
+        console.error("🚨 Error: getSiteData() returned an invalid value.");
         return { paths: [], fallback: false };
     }
 
-    const paths = resolveStaticPaths(data);
-
-    if (!paths || !Array.isArray(paths)) {
-        console.error("🚨 Error: resolveStaticPaths() returned an invalid value.");
+    const pathStrings = resolveStaticPaths(data);
+    if (!pathStrings || !Array.isArray(pathStrings)) {
+        console.error("🚨 Error: resolveStaticPaths() returned an invalid value:", pathStrings);
         return { paths: [], fallback: false };
     }
+
+    const paths = pathStrings.map(path => ({
+        params: { slug: path === '/' ? [] : path.slice(1).split('/').filter(Boolean) }
+    }));
+    console.log("🔍 Debug: Resolved paths:", JSON.stringify(paths, null, 2));
 
     return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
     console.log("🔍 Fetching static props for:", params);
-
-    const data = allContent();
+    const data = getSiteData();
     const urlPath = '/' + (params.slug || []).join('/');
 
-    if (!data) {
-        console.error("🚨 Error: allContent() returned undefined");
+    if (!data || !data.pages.length) {
+        console.error("🚨 Error: getSiteData() returned invalid or empty data");
         return { notFound: true };
     }
 
-    const props = await resolveStaticProps(urlPath, data);
-
-    if (!props || !props.page) {
-        console.error("🚨 Error: resolveStaticProps returned invalid data", props);
+    try {
+        const props = await resolveStaticProps(urlPath, data);
+        if (!props || !props.page) {
+            console.error(`🚨 Error: No page found for ${urlPath}`, props);
+            return { notFound: true };
+        }
+        return { props };
+    } catch (error) {
+        console.error(`🚨 Error resolving props for ${urlPath}:`, error);
         return { notFound: true };
     }
-
-    // ✅ Log missing modelName cases
-    if (!props.page.__metadata || !props.page.__metadata.modelName) {
-        console.warn("⚠️ Warning: Page is missing modelName", props.page);
-        props.page.__metadata = props.page.__metadata || {};
-        props.page.__metadata.modelName = "default-model"; // Assign fallback
-    }
-
-    return { props };
 }
 
 export default Page;

@@ -7,6 +7,12 @@ export function resolveStaticPaths({ pages, objects }) {
         }
         const objectType = page.__metadata?.modelName;
         const pageUrlPath = page.__metadata?.urlPath;
+
+        if (!pageUrlPath) {
+            console.error(`🚨 Missing urlPath for page:`, page);
+            return paths;
+        }
+
         if (objectType && StaticPathsResolvers[objectType]) {
             const resolver = StaticPathsResolvers[objectType];
             return paths.concat(resolver(page, objects));
