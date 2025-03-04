@@ -48,18 +48,20 @@ function readContent(file) {
             throw new Error(`Unhandled file type: ${file}`);
     }
 
-    // Ensure metadata exists
+    // ✅ Ensure metadata always exists
     if (!content.__metadata) {
         content.__metadata = {};
     }
 
-    // Ensure modelName exists, fallback to "PostLayout" or another default
-    content.__metadata.modelName = content.type || content.__metadata.modelName || 'default-model';
+    // ✅ Ensure modelName always exists, fallback to "default-model"
+    content.__metadata.modelName = content.__metadata.modelName || content.type || 'default-model';
 
-    // Ensure urlPath is valid
-    content.__metadata.urlPath = getPageUrl({
-        slug: content.slug || path.basename(file, path.extname(file))
-    });
+    // ✅ Ensure slug and urlPath are set correctly
+    content.__metadata.slug = content.slug || path.basename(file, path.extname(file));
+    content.__metadata.urlPath = getPageUrl(content);
+
+    // ✅ Ensure metadata ID is assigned
+    content.__metadata.id = file;
 
     // ✅ Debug Log - This will show all content objects before returning
     console.log(`🛠 Processed file: ${file}`, JSON.stringify(content, null, 2));
@@ -71,6 +73,7 @@ function resolveReferences(content, fileToContent) {
     if (!content || !content.type) return;
 
     if (!content.__metadata) content.__metadata = { modelName: content.type };
+
     for (const fieldName in content) {
         let fieldValue = content[fieldName];
         if (!fieldValue) continue;
@@ -79,7 +82,7 @@ function resolveReferences(content, fileToContent) {
         if (Array.isArray(fieldValue)) {
             if (fieldValue.length === 0) continue;
             if (isRef && typeof fieldValue[0] === 'string') {
-                fieldValue = fieldValue.map((filename) => fileToContent[filename]);
+                fieldValue = fieldValue.map((filename) => fileToContent[filename] || null).filter(Boolean);
                 content[fieldName] = fieldValue;
             }
             if (typeof fieldValue[0] === 'object') {
@@ -87,7 +90,7 @@ function resolveReferences(content, fileToContent) {
             }
         } else {
             if (isRef && typeof fieldValue === 'string') {
-                fieldValue = fileToContent[fieldValue];
+                fieldValue = fileToContent[fieldValue] || null;
                 content[fieldName] = fieldValue;
             }
             if (typeof fieldValue === 'object') {
@@ -101,17 +104,36 @@ export function allContent() {
     const [data, pages] = [dataDir, pagesDir].map((dir) => {
         return contentFilesInPath(dir).map((file) => readContent(file));
     });
-    console.log('Raw pages:', pages); // Add logging
+
+    console.log('🔍 Raw pages before processing:', JSON.stringify(pages, null, 2));
+
     const objects = [...pages, ...data];
-    const fileToContent = Object.fromEntries(objects.map((e) => [e.__metadata.id, e]));
+
+    // ✅ Validate processed content
+    const fileToContent = Object.fromEntries(
+        objects
+            .filter(e => e?.__metadata?.id && e?.__metadata?.modelName)
+            .map((e) => [e.__metadata.id, e])
+    );
+
+    // ✅ Log invalid entries for debugging
+    objects.forEach((e) => {
+        if (!e.__metadata?.id || !e.__metadata?.modelName) {
+            console.warn("⚠️ Skipping invalid content entry", e);
+        }
+    });
 
     objects.forEach((e) => resolveReferences(e, fileToContent));
 
+    // ✅ Ensure all pages have a valid `urlPath`
     pages.forEach((page) => {
-        page.__metadata.urlPath = getPageUrl(page) || `/${page.slug || 'default'}`;
+        if (!page.__metadata.urlPath) {
+            page.__metadata.urlPath = getPageUrl(page) || `/${page.slug || 'default'}`;
+        }
     });
 
     const siteConfig = data.find((e) => e.__metadata.modelName === Config.name);
-    console.log('Final data structure:', { objects, pages, props: { site: siteConfig } }); // Add logging
+    console.log('✅ Final data structure:', { objects, pages, props: { site: siteConfig } });
+
     return { objects, pages, props: { site: siteConfig } };
 }
