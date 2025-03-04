@@ -1,6 +1,6 @@
 [build]
-  command = "next build && next export"
-  publish = "out"
+  command = "next build" # Remove `next export`
+  publish = "out" # This remains as the static output folder
   functions = "netlify/functions"
 
 [dev]
@@ -18,4 +18,4 @@
   node_bundler = "esbuild"
 
 [context.production]
-  command = "next build && next export"
+  command = "next build"
