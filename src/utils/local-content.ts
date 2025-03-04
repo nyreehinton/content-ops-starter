@@ -53,15 +53,16 @@ function readContent(file) {
         content.__metadata = {};
     }
 
-    // Ensure modelName is defined, fallback to "PostLayout" or another default
+    // Ensure modelName exists, fallback to "PostLayout" or another default
     content.__metadata.modelName = content.type || content.__metadata.modelName || 'default-model';
 
-    // Ensure urlPath is defined
+    // Ensure urlPath is valid
     content.__metadata.urlPath = getPageUrl({
         slug: content.slug || path.basename(file, path.extname(file))
     });
 
-    console.log(`✅ Read content from ${file}:`, content); // Logging for debugging
+    // ✅ Debug Log - This will show all content objects before returning
+    console.log(`🛠 Processed file: ${file}`, JSON.stringify(content, null, 2));
 
     return content;
 }
