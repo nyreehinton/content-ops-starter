@@ -31,6 +31,7 @@ function contentFilesInPath(dir) {
 function readContent(file) {
     const rawContent = fs.readFileSync(file, 'utf8');
     let content = null;
+
     switch (path.extname(file).substring(1)) {
         case 'md':
             const parsedMd = frontmatter(rawContent);
@@ -47,12 +48,21 @@ function readContent(file) {
             throw new Error(`Unhandled file type: ${file}`);
     }
 
-    content.__metadata = {
-        id: file,
-        modelName: content.type || 'PostLayout', // Default to PostLayout if type is missing
-        urlPath: getPageUrl({ slug: content.slug || path.basename(file, path.extname(file)) })
-    };
-    console.log(`Read content from ${file}:`, content); // Add logging
+    // Ensure metadata exists
+    if (!content.__metadata) {
+        content.__metadata = {};
+    }
+
+    // Ensure modelName is defined, fallback to "PostLayout" or another default
+    content.__metadata.modelName = content.type || content.__metadata.modelName || 'default-model';
+
+    // Ensure urlPath is defined
+    content.__metadata.urlPath = getPageUrl({
+        slug: content.slug || path.basename(file, path.extname(file))
+    });
+
+    console.log(`✅ Read content from ${file}:`, content); // Logging for debugging
+
     return content;
 }
 
