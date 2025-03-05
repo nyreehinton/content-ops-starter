@@ -256,7 +256,7 @@ sections:
           - type: Button
             label: Get started
             altText: ''
-            url: /
+            url: /ams-sw
             showIcon: false
             icon: arrowRight
             iconPosition: right

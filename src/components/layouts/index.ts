@@ -4,5 +4,14 @@ import PostFeedCategoryLayout from './PostFeedCategoryLayout';
 import PostLayout from './PostLayout';
 import BlankBaseLayout from './BlankBaseLayout';
 import DefaultBaseLayout from './DefaultBaseLayout';
+import CustomHTMLLayout from './CustomHTMLLayout';
 
-export { PageLayout, PostFeedLayout, PostFeedCategoryLayout, PostLayout, BlankBaseLayout, DefaultBaseLayout };
+export {
+  PageLayout,
+  PostFeedLayout,
+  PostFeedCategoryLayout,
+  PostLayout,
+  BlankBaseLayout,
+  DefaultBaseLayout,
+  CustomHTMLLayout
+};

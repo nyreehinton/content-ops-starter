@@ -53,6 +53,7 @@ const components = {
     TextFormControl: dynamic(() => import('./blocks/FormBlock/TextFormControl')),
     VideoBlock: dynamic(() => import('./blocks/VideoBlock')),
     PageLayout: dynamic(() => import('./layouts/PageLayout')),
+    CustomHTMLLayout: dynamic(() => import('./layouts/CustomHTMLLayout')),
     PostLayout: dynamic(() => import('./layouts/PostLayout')),
     PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
     PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout'))

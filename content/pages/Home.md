@@ -7,7 +7,7 @@ sections:
       text: Welcome to My Portfolio
       color: text-dark
       type: TitleBlock
-    subtitle: 'Hello, I''m Nyree Hinton'
+    subtitle: "Hello, I'm Nyree Hinton"
     text: >
       I’m a Product Manager & Data Specialist based in Los Angeles with
       experience in data analytics, governance, and product development. Drawing
@@ -215,7 +215,7 @@ sections:
   - posts:
       - content/pages/blog/case-study-1.md
       - content/pages/blog/case-study-2.md
-      - content/pages/blog/case-study-3.md
+      - content/pages/blog/ams-sw-bloomberg-internship
     showThumbnail: true
     showDate: true
     showAuthor: true

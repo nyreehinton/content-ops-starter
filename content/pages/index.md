@@ -229,7 +229,7 @@ sections:
           - pr-3
   - posts:
       - content/pages/blog/lime-scooters.md
-      - content/pages/blog/apple-suppliers.md
+      - content/pages/blog/ams-sw.md
       - content/pages/blog/purple-innovation.md
     showThumbnail: true
     showDate: true
