@@ -215,7 +215,7 @@ sections:
   - posts:
       - content/pages/blog/case-study-1.md
       - content/pages/blog/case-study-2.md
-      - content/pages/blog/ams-sw-bloomberg-internship
+      - content/pages/blog/ams-sw
     showThumbnail: true
     showDate: true
     showAuthor: true

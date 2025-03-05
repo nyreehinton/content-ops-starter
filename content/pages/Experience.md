@@ -254,7 +254,7 @@ sections:
               borderRadius: medium
         actions:
           - type: Button
-            label: Get started
+            label: See More
             altText: ''
             url: /ams-sw
             showIcon: false

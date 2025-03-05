@@ -1,14 +1,91 @@
 ---
-title: 'AMS SW Bloomberg Internship'
-slug: 'ams-sw'
-date: '2025-03-04'
+title: 'AMS SW'
+slug: ams-sw
+date: '2020-03-04'
 excerpt: 'A high-level overview of my internship experience at Bloomberg with AMS SW.'
+featuredImage:
+  url: /images/BBG.webp
+  altText: ''
+  styles:
+    self:
+      borderRadius: large
+  type: ImageBlock
+bottomSections:
+  - title: Divider
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-7
+          - pl-7
+          - pb-7
+          - pr-7
+    type: DividerSection
+  - items:
+      - title: About This Report
+        tagline: ''
+        subtitle: >-
+          Third Bridge is a global research firm that connects investors and
+          business leaders with vital intelligence, leveraging a network of
+          industry specialists and in-depth interviews. By bridging first-hand
+          insights and real-world data, Third Bridge helps clients make informed
+          strategic decisions—particularly where deep market knowledge or niche
+          expertise is essential.
+        image:
+          url: /images/BBG.webp
+          altText: Company logo
+          styles:
+            self:
+              margin:
+                - ml-3
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-6
+              - pl-6
+              - pb-6
+              - pr-6
+            textAlign: left
+            borderColor: border-neutralAlt
+            borderStyle: none
+            borderWidth: 0
+            borderRadius: none
+            flexDirection: row
+        type: FeaturedItem
+    variant: small-list
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        margin:
+          - mb-20
+        padding:
+          - pt-0
+          - pl-0
+          - pb-0
+          - pr-0
+        justifyContent: center
+      subtitle:
+        textAlign: center
+    type: FeaturedItemsSection
 isFeatured: true
-colors: 'bg-light-fg-dark'
+colors: bg-light-fg-dark
 styles:
   self:
-    flexDirection: row
+    padding:
+      - pt-5
+      - pl-5
+      - pb-5
+      - pr-5
+    textAlign: center
+    borderColor: border-light
+    borderStyle: none
+    borderWidth: 0
+    borderRadius: none
+    flexDirection: col
 type: CustomHTMLLayout
+author: content/data/nyree.json
 ---
 
 <!DOCTYPE html>
@@ -98,16 +175,14 @@ type: CustomHTMLLayout
     <h2 class="text-3xl font-bold mb-2">Bloomberg Intelligence - AMS SW Primer</h2>
     
     <p><strong>1. Ams Well Positioned to Benefit from 3D Sensor Demand</strong><br/>
-    (Bloomberg Intelligence) -- Ams is well positioned to take advantage of the growing demand
-    of 3D technology implemented in Apple as well as benefiting from Android and self-driving cars.
-    Ams's strategic acquisitions have allowed them to outpace rivals in revenue growth,
-    making them a favored semiconductor in optical sensors for quarters to come.</p>
+    (Bloomberg Intelligence) -- Ams is well positioned to take advantage of the growing demand of 3D technology implemented in Apple as well as benefiting from Android and self-driving cars. Ams's strategic acquisitions have allowed them out-pace rivals in revenue growth, making them a favored semiconductor in optical sensors for quarters to come.
+    
+    Ams, formally known as austriamicrosystems, designs and manufactures sensor solutions. (08/10/18)</p>
 
     <p><strong>Financial Review & Earnings</strong><br/>
-    Ams’ better than expected 2Q results and strong 3Q sales outlook reinforce our positive view
-    of the company's competitive positioning with Apple in 3D-Sensing ahead of the pending
-    iPhone launch. Revenues are up 18% from the same quarter of 2017. Due to the underutilization
-    of production facilities, gross margin came in at 9%, the lowest ever reported.</p>
+    Ams' better than expected 2Q results and strong 3Q sales outlook reinforces our positive view of the company's competitive positioning with Apple in 3D-Sensing ahead of the pending iPhone launch. Revenues are up 18% from the same quarter of 2017. Due to the underutilization of production facilities, gross margin came in at 9%, the lowest ever reported.
+
+    Ams's Q2 results represent a stable non-Apple core business, which could add a favorable boost to earnings if expanded into 2020. This will come from capitalizing off of Android customers and winning significant product designs in the automotive industry. </p>
 
     <p><strong>Financial Trends</strong><br/>
     Ams has placed a large bet on the growth and adoption of 3D technology. From 2016,
@@ -280,7 +355,7 @@ type: CustomHTMLLayout
 
 <!-- FOOTER -->
 <footer class="text-center text-gray-500 py-6 border-t border-gray-700">
-  <p>© 2025 AMS Dashboard – Dark Mode Demo</p>
+  <p>© 2025 AMS Dashboard</p>
 </footer>
 
 <script>
