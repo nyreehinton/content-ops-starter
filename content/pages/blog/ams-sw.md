@@ -25,12 +25,6 @@ bottomSections:
       - title: About This Report
         tagline: ''
         subtitle: >-
-          Third Bridge is a global research firm that connects investors and
-          business leaders with vital intelligence, leveraging a network of
-          industry specialists and in-depth interviews. By bridging first-hand
-          insights and real-world data, Third Bridge helps clients make informed
-          strategic decisions—particularly where deep market knowledge or niche
-          expertise is essential.
         image:
           url: /images/BBG.webp
           altText: Company logo

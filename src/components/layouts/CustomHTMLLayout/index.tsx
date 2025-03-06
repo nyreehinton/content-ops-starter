@@ -1,5 +1,6 @@
-// CustomHTMLLayout.tsx (example)
+// CustomHTMLLayout.tsx
 import * as React from 'react';
+import Script from 'next/script';
 import DefaultBaseLayout from 'src/components/layouts/DefaultBaseLayout';
 
 interface CustomHTMLLayoutProps {
@@ -13,14 +14,17 @@ export default function CustomHTMLLayout({ page, site }: CustomHTMLLayoutProps) 
 
   return (
     <DefaultBaseLayout page={page} site={site}>
-      {/* 
-        Everything inside <DefaultBaseLayout> will be sandwiched 
-        between the site.header and site.footer automatically.
-      */}
+      {/* Load external libraries using Next/Script */}
+      <Script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://d3js.org/d3.v7.min.js"
+        strategy="beforeInteractive"
+      />
       <div className="custom-html-layout">
-        <div
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
     </DefaultBaseLayout>
   );

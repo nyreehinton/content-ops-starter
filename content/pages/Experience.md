@@ -177,45 +177,9 @@ sections:
             style: secondary
             elementId: ''
           - type: Button
-            label: Get started
+            label: Purple Innovation Inc
             altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
-            showIcon: false
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            elementId: ''
-          - type: Button
-            label: Get started
-            altText: ''
-            url: /
+            url: /blog/purple-innovation
             showIcon: false
             icon: arrowRight
             iconPosition: right

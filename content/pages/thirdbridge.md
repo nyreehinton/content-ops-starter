@@ -2,7 +2,7 @@
 title: 'My Thirdbridge Master Dashboard'
 slug: thirdbridge
 date: '2021-09-14'
-excerpt: 'Alternative Meats – Normalising Production Costs &'
+excerpt: 
 isFeatured: true
 colors: bg-light-fg-dark
 styles:
