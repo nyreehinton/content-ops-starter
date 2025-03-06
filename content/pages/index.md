@@ -307,7 +307,7 @@ sections:
       - type: Button
         label: Enter
         altText: ''
-        url: /blog/tesla
+        url: /tesla
         showIcon: false
         icon: arrowRight
         iconPosition: right
