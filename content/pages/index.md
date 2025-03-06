@@ -10,7 +10,7 @@ sections:
       styles:
         self:
           textAlign: center
-    subtitle: 'Hello, I''m Nyree Hinton'
+    subtitle: "Hello, I'm Nyree Hinton"
     text: "<div style=\"text-align: center\">I’m a Product Manager & Data Specialist based in Los Angeles with experience in data analytics, governance, and product development. Throughout my career, I have cultivated deep expertise at the intersection of data, financial products, and capital markets.\_</div>\n\n<div style=\"text-align: center\">The goal of this portfolio is to highlight my professional journey and showcase my roles at leading organizations, the challenges I overcame, and the metrics that underscore my contributions.</div>\n\n"
     actions: []
     media:
@@ -307,7 +307,7 @@ sections:
       - type: Button
         label: Enter
         altText: ''
-        url: /tesla
+        url: /blog/tesla
         showIcon: false
         icon: arrowRight
         iconPosition: right
