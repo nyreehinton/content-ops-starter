@@ -84,7 +84,7 @@ sections:
         image:
           type: ImageBlock
           url: /images/CaptialGroup_Logo_Horizontal.png
-          altText: Faux Fur Throw
+          altText: Capital Group
           elementId: ''
           styles:
             self:
@@ -168,9 +168,9 @@ sections:
               borderRadius: medium
         actions:
           - type: Button
-            label: Get started
+            label: See More
             altText: ''
-            url: /
+            url: thirdbridge
             showIcon: false
             icon: arrowRight
             iconPosition: right
@@ -246,7 +246,7 @@ sections:
         subtitle: Equity Research Data Analyst (TMT)
         image:
           type: ImageBlock
-          url: /images/IMG_0130.png
+          url: /images/BBG.webp
           altText: Faux Fur Throw
           elementId: ''
           styles:

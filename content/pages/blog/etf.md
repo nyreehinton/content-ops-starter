@@ -9,6 +9,7 @@ styles:
   self:
     flexDirection: col
 isFeatured: false
+author: content/data/nyree.json
 seo:
   type: Seo
   metaTitle: ETF

@@ -1,62 +1,27 @@
 ---
-title: 'My Thirdbridge Master Dashboard'
-slug: thirdbridge
-date: '2021-09-14'
-excerpt: 'Alternative Meats – Normalising Production Costs &'
-isFeatured: true
-colors: bg-light-fg-dark
-styles:
-  self:
-    padding:
-      - pt-5
-      - pl-5
-      - pb-5
-      - pr-5
-    textAlign: center
-    borderColor: border-light
-    borderStyle: none
-    borderWidth: 0
-    borderRadius: none
-    flexDirection: col
+title: 'Interview Archive'
+slug: interview-archive
+date: '2025-03-05'
+excerpt: 'A comprehensive archive of all interviews.'
 type: CustomHTMLLayout
-author: content/data/nyree.json
 ---
 
-  <!-- Tailwind CSS (Remove if already loaded in your base template) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Merriweather', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            neutralBg: '#F5F5F5',
-            accent: '#A67B5B',
-            darkNavy: '#2F3E46',
-            highlight: '#557A95',
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Chart.js (Remove if already loaded) -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Hero / Overview Section -->
-  <section id="overview" class="py-8 text-center">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-serif font-bold text-darkNavy mb-4">
-        A Consolidated Portfolio of C-Suite Conversations, Sector Research, and Strategic Reviews
+<!-- Split-Screen Main Content (excluding header and footer) -->
+<div class="flex flex-col md:flex-row">
+  <!-- Left Panel: Primary Content -->
+  <div class="md:w-2/3 p-4">
+    <!-- Overview / Hero Section -->
+    <section id="overview" class="mb-8">
+      <h1 class="text-4xl font-serif font-bold text-darkNavy mb-4">
+        Exclusive C-Suite Interviews
       </h1>
-      <p class="mb-8 max-w-2xl mx-auto leading-relaxed">
-This portfolio encapsulates the series of rigorous interviews and detailed market analyses I performed during my engagement with Thirdbridge. It represents a curated collection of market research and strategic evaluations, reflecting the depth and precision of the insights I generated across various sectors.
+      <p class="max-w-2xl leading-relaxed">
+        A curated collection of strategic insights and executive conversations across industries.
       </p>
-      
-      <!-- Three Stats -->
+    </section>
+    <!-- Stats & Industries -->
+    <section id="industries" class="mb-8">
+      <!-- Stats Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div class="bg-white p-4 rounded shadow">
           <h2 class="text-gray-600 text-sm">Total Interviews</h2>
@@ -71,54 +36,83 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
           <p class="text-lg">32 Actionable Insights</p>
         </div>
       </div>
-
-      <!-- Industries Section -->
-      <div class="bg-white rounded shadow p-4 mb-6">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4">Industries</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-          <!-- Industry Card 1 -->
-          <div class="border border-gray-200 p-4 rounded">
-            <h4 class="text-lg font-bold mb-2 text-darkNavy">Food &amp; Beverage</h4>
-            <p class="text-sm text-gray-600">
-              From snacking trends to plant-based proteins, see how consumer
-              demand shapes this sector.
-            </p>
-          </div>
-          <!-- Industry Card 2 -->
-          <div class="border border-gray-200 p-4 rounded">
-            <h4 class="text-lg font-bold mb-2 text-darkNavy">Retail &amp; Apparel</h4>
-            <p class="text-sm text-gray-600">
-              Latest insights on omnichannel strategies, e-commerce growth,
-              and brand repositioning.
-            </p>
-          </div>
-          <!-- Industry Card 3 -->
-          <div class="border border-gray-200 p-4 rounded">
-            <h4 class="text-lg font-bold mb-2 text-darkNavy">Agriculture &amp; Agtech</h4>
-            <p class="text-sm text-gray-600">
-              Innovations in modern farming, supply chain challenges,
-              and sustainability developments.
-            </p>
-          </div>
-          <!-- Add more cards as needed -->
+      <!-- Industries Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="border border-gray-200 p-4 rounded">
+          <h4 class="text-lg font-bold mb-2 text-darkNavy">Food &amp; Beverage</h4>
+          <p class="text-sm text-gray-600">
+            From snacking trends to plant-based proteins.
+          </p>
+        </div>
+        <div class="border border-gray-200 p-4 rounded">
+          <h4 class="text-lg font-bold mb-2 text-darkNavy">Retail &amp; Apparel</h4>
+          <p class="text-sm text-gray-600">
+            Omnichannel strategies and e-commerce growth.
+          </p>
         </div>
       </div>
-    </div>
-
-  </section>
-
-  <!-- Bar Chart: Industry Breakdown -->
-  <section id="industry-breakdown" class="py-8 text-center">
-    <div class="container mx-auto px-4">
-      <div class="bg-white p-4 rounded shadow">
+    </section>
+    <!-- Charts Section -->
+    <section id="charts" class="mb-8">
+      <div class="bg-white p-4 rounded shadow mb-6">
         <h3 class="text-xl font-serif font-bold text-accent mb-4">Industry Breakdown</h3>
         <canvas id="barChart" width="400" height="300"></canvas>
       </div>
+    </section>
+  </div>
+  <!-- Right Panel: Interview Cards (Scrollable) -->
+  <div class="md:w-1/3 p-4 bg-gray-100 overflow-y-scroll" style="max-height: 90vh;">
+    <div class="sticky top-4">
+      <h2 class="text-2xl font-bold mb-4">Interviews</h2>
+      <div class="mb-4">
+        <input type="text" placeholder="Search interviews..." class="w-full p-2 border rounded" oninput="filterInterviews(event)">
+      </div>
     </div>
-  </section>
+    <div id="interviewList" class="space-y-4">
+      <!-- Example Interview Card -->
+      <div class="bg-white rounded shadow p-4" data-tags="retail pharmacy rite-aid may-2021">
+        <h3 class="font-semibold">Interview: Rite Aid</h3>
+        <p class="text-sm text-gray-500">(13 May 2021)</p>
+        <p class="text-sm text-gray-600">Explore new strategies in pharmacy services...</p>
+        <a href="/interviews/rite-aid" class="inline-block mt-2 bg-accent text-white py-1 px-3 rounded">View Details</a>
+      </div>
+      <!-- Additional interview cards go here -->
+    </div>
+  </div>
+</div>
 
-  <!-- All Interviews Section -->
-  <section id="all-interviews" class="py-8 text-center">
+<!-- JavaScript for filtering the interview list -->
+<script>
+  function filterInterviews(event) {
+    const query = event.target.value.toLowerCase();
+    const cards = document.querySelectorAll('#interviewList > div');
+    cards.forEach(card => {
+      const tags = card.getAttribute('data-tags') || '';
+      card.style.display = tags.includes(query) ? '' : 'none';
+    });
+  }
+  // Initialize your charts as needed (e.g., for #barChart)
+  const barCtx = document.getElementById('barChart').getContext('2d');
+  new Chart(barCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Food & Bev', 'Retail & Apparel', 'Agriculture', 'Edtech', 'Other'],
+      datasets: [{
+        label: 'Interview Count',
+        data: [30, 25, 20, 10, 15],
+        backgroundColor: ['#A67B5B', '#557A95', '#2F3E46', '#A67B5B', '#557A95']
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } },
+      plugins: { legend: { display: false } }
+    }
+  });
+</script>
+
+<!-- All Interviews Section -->
+<section id="all-interviews" class="py-8 text-center">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-serif font-bold text-darkNavy mb-4">
       All Interviews
@@ -2054,84 +2048,5 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
 
     </div>
 
-    </div>
-
-  </section>
-
-  <!-- Bar Chart: Industry Breakdown -->
-  <section id="industry-breakdown" class="py-8 text-center">
-    <div class="container mx-auto px-4">
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4"> </h3>
-        <canvas id="barChart" width="400" height="300"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scripts -->
-  <script>
-    // 1) Filter logic for the interview list
-    function filterInterviews(event) {
-      const query = event.target.value.toLowerCase();
-      const cards = document.querySelectorAll('#interviewGrid > div');
-      cards.forEach(card => {
-        const tags = card.getAttribute('data-tags') || '';
-        card.style.display = tags.includes(query) ? '' : 'none';
-      });
-    }
-
-    // 2) Bar Chart: Industry Breakdown
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    new Chart(barCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Food & Bev', 'Retail & Apparel', 'Agriculture', 'Edtech', 'Other'],
-        datasets: [{
-          label: 'Interview Count',
-          data: [30, 25, 20, 10, 15],
-          backgroundColor: [
-            '#A67B5B',
-            '#557A95',
-            '#2F3E46',
-            '#A67B5B',
-            '#557A95'
-          ]
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
-        },
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-    });
-
-    // 3) Line Chart: Emerging Trends
-    const lineCtx = document.getElementById('emergingLineChart').getContext('2d');
-    new Chart(lineCtx, {
-      type: 'line',
-      data: {
-        labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q1', 'Q2'],
-        datasets: [{
-          label: 'Trend Indicator',
-          data: [10, 25, 40, 30, 45, 60],
-          fill: false,
-          borderColor: '#A67B5B',
-          tension: 0.2
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-    </script>
-  </body>
-  </html>
+  </div>
+</section>
