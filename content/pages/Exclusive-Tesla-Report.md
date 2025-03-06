@@ -1,12 +1,4 @@
-
 ---
-title: Tesla
-slug: tesla
-date: '2021-09-14'
-excerpt:
-isFeatured:
-type: CustomHTMLLayout
-author: content/data/nyree.json---
 title: Exclusive Tesla Report
 slug: Exclusive-Tesla-Report
 sections:
