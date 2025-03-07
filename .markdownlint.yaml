@@ -1,0 +1,31 @@
+MD033:
+  allowed_elements:
+    - meta
+    - body
+    - html
+    - head
+    - title
+    - section
+    - div
+    - p
+    - h1
+    - h2
+    - h3
+    - h4
+    - style
+    - script
+    - header
+    - nav
+    - ul
+    - li
+    - a
+    - img
+    - table
+    - tr
+    - td
+    - th
+    - blockquote
+    - canvas
+    - footer
+
+MD013: false # Disable line length rule
