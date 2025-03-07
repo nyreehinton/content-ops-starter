@@ -2,68 +2,8 @@
 title: Tesla Report
 slug: tesla
 date: '2025-02-14'
-featuredImage:
-  url:
-  altText: ''
-  styles:
-    self:
-      borderRadius: large
-  type: ImageBlock
-bottomSections:
-  - title: Divider
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-7
-          - pl-7
-          - pb-7
-          - pr-7
-    type: DividerSection
-  - items:
-      - title: About This Report
-        tagline: ''
-        subtitle: >-
-        image:
-          url:
-          altText: Company logo
-          styles:
-            self:
-              margin:
-                - ml-3
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            textAlign: left
-            borderColor: border-neutralAlt
-            borderStyle: none
-            borderWidth: 0
-            borderRadius: none
-            flexDirection: row
-        type: FeaturedItem
-    variant: small-list
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        margin:
-          - mb-20
-        padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
 isFeatured: true
-colors: bg-light-fg-dark
+colors:
 styles:
   self:
     padding:
@@ -79,15 +19,50 @@ styles:
     flexDirection: col
 type: CustomHTMLLayout
 author: content/data/nyree.json
+allowed_elements:
+  - h1
+  - h2
+  - h3
+  - h4
+  - h5
+  - h6
+  - p
+  - a
+  - img
+  - ul
+  - ol
+  - li
+  - strong
+  - em
+  - blockquote
+  - hr
+  - br
+  - div
+  - span
+  - table
+  - thead
+  - tbody
+  - tr
+  - th
+  - td
+  - header
+  - nav
+  - main
+  - footer
+  - section
+  - article
+  - aside
+  - figure
+  - figcaption
+  - canvas
 ---
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Investigative report on Tesla odometer readings and battery performance, revealing discrepancies and technical insights">
+    <meta name="description" content="Techinical report on Tesla odometer readings and battery performance, revealing discrepancies and technical insights">
     <title>Tesla Energy Efficiancy Report</title>
     
     <!-- CSS STYLING -->
@@ -194,49 +169,40 @@ author: content/data/nyree.json
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.5rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
             display: flex;
             align-items: center;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
+            gap: 1rem;
+            font-size: 1.2rem;
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
+            margin: 0;
+            padding: 0;
         }
 
         nav a {
             color: var(--text-light);
+            text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            text-decoration: none;
+            color: var(--accent-color);
         }
 
         nav a.active {
             color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
         }
 
         .mobile-menu-btn {
@@ -767,8 +733,8 @@ author: content/data/nyree.json
     <header>
         <div class="container header-container">
             <div class="logo">
-               
-                <span> Nyree Hinton</span>  Tesla Research</a></li>
+                <span style="color: var(--accent-color);">Nyree<br>Hinton</span>
+                <span style="color: #fff; margin-left: 1rem; border-left: 2px solid var(--accent-color); padding-left: 1rem;">Tesla<br>Research</span>
             </div>
             <nav aria-label="Main navigation">
                 <ul>
@@ -786,8 +752,8 @@ author: content/data/nyree.json
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="overview">
+   <!-- HERO SECTION -->
+  <section class="hero" id="overview">
         <div class="hero-content">
             <h1>Decoding Tesla's Mileage Metrics</h1>
             <p>An investigative report revealing discrepancies between reported and actual Tesla odometer readings, battery degradation patterns, and their implications for owners and the EV market.</p>
@@ -796,8 +762,8 @@ author: content/data/nyree.json
         <div class="animated-odometer" aria-hidden="true">12.64%</div>
     </section>
 
-    <!-- INTRODUCTION SECTION -->
-    <section class="section" id="intro">
+  <!-- INTRODUCTION SECTION -->
+  <section class="section" id="intro">
         <div class="container">
             <h2 class="section-title">Executive Summary</h2>
             <div class="grid">
@@ -807,7 +773,7 @@ author: content/data/nyree.json
                     <p>Our research, conducted over the period from 2023 to March 2025, reveals significant discrepancies between reported and actual mileage, with implications for warranty coverage, battery degradation assessment, and overall vehicle performance metrics. Through patent analysis, real-world data collection, and comparative testing, we've uncovered a pattern that suggests Tesla's methodology may inflate odometer readings by approximately 12.64% compared to physical distance traveled.</p>
 
                     <p>This report presents our findings in a clear, data-driven format, examining the technical mechanisms behind Tesla's approach to mileage calculation and exploring the broader implications for Tesla owners, potential buyers, and the electric vehicle industry as a whole.</p>
-                </div>
+              </div>
                 <div style="grid-column: span 4;">
                     <div class="methodology" style="margin-top: 0;">
                         <h3>Report Highlights</h3>
@@ -822,10 +788,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- METHODOLOGY SECTION -->
-    <section class="section" id="methodology">
+   </section>
+
+   <!-- METHODOLOGY SECTION -->
+   <section class="section" id="methodology">
         <div class="container">
             <h2 class="section-title">Research Methodology</h2>
             <div class="methodology">
@@ -902,10 +869,10 @@ author: content/data/nyree.json
                 </table>
             </div>
         </div>
-    </section>
 
-    <!-- KEY FINDINGS SECTION -->
-    <section class="section" id="findings">
+  </section>
+  <!-- KEY FINDINGS SECTION -->
+  <section class="section" id="findings">
         <div class="container">
             <h2 class="section-title">Key Findings</h2>
 
@@ -955,10 +922,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- DATA ANALYSIS SECTION -->
-    <section class="section" id="data">
+   </section>
+
+   <!-- DATA ANALYSIS SECTION -->
+  <section class="section" id="data">
         <div class="container">
             <h2 class="section-title">Data Analysis & Calculations</h2>
 
@@ -1064,10 +1032,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- TIMELINE SECTION -->
-    <section class="section">
+   </section>
+
+   <!-- TIMELINE SECTION -->
+   <section class="section">
         <div class="container">
             <h2 class="section-title">Investigation Timeline</h2>
 
@@ -1127,10 +1096,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- VISUALIZATION SECTION -->
-    <section class="section data-visualization" id="visualization">
+  </section>
+
+   <!-- VISUALIZATION SECTION -->
+   <section class="section data-visualization" id="visualization">
         <div class="container">
             <h2 class="section-title">Interactive Data Visualization</h2>
 
@@ -1181,10 +1151,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- TECHNICAL FINDINGS SECTION -->
-    <section class="section" id="technical">
+  </section>
+
+   <!-- TECHNICAL FINDINGS SECTION -->
+  <section class="section" id="technical">
         <div class="container">
             <h2 class="section-title">Technical Analysis</h2>
 
@@ -1266,10 +1237,11 @@ author: content/data/nyree.json
                 </table>
             </div>
         </div>
-    </section>
 
-    <!-- IMPLICATIONS SECTION -->
-    <section class="section" id="implications">
+   </section>
+
+  <!-- IMPLICATIONS SECTION -->
+  <section class="section" id="implications">
         <div class="container">
             <h2 class="section-title">Market & Consumer Implications</h2>
 
@@ -1324,10 +1296,11 @@ author: content/data/nyree.json
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CONCLUSION SECTION -->
-    <section class="conclusion" id="conclusion">
+  </section>
+
+  <!-- CONCLUSION SECTION -->
+  <section class="conclusion" id="conclusion">
         <div class="container">
             <div class="conclusion-content">
                 <h2>Conclusion & Recommendations</h2>
@@ -1339,45 +1312,8 @@ author: content/data/nyree.json
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>About This Report</h4>
-                    <p>This investigative report was conducted independently to analyze Tesla's odometer reading methodology and battery performance metrics. All data was collected and analyzed following rigorous research protocols.</p>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Data Sources</h4>
-                    <ul class="footer-links">
-                        <li>US Patent Office Documentation</li>
-                        <li>Vehicle Service Records (2019-2025)</li>
-                        <li>GPS Tracking Data</li>
-                        <li>Tesla Energy App Logs</li>
-                        <li>Third-Party Research Publications</li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Methodology</h4>
-                    <ul class="footer-links">
-                        <li><a href="#methodology">Research Approach</a></li>
-                        <li><a href="#data">Data Collection</a></li>
-                        <li><a href="#technical">Technical Analysis</a></li>
-                        <li><a href="#visualization">Visualization Methods</a></li>
-                    </ul>
-                </div>
-                 </div>
-
-            <div class="copyright">
-                <p>This report is for informational purposes only and does not constitute legal, financial, or technical advice.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT -->
-    <script>
+   <!-- JAVASCRIPT -->
+  <script>
         // Basic interactive elements
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu toggle
@@ -1420,566 +1356,136 @@ author: content/data/nyree.json
 
                 observer.observe(odometer);
             }
-        });
-    </script>
 
-            <div class="dynamic-chart" data-chart-type="visualization" aria-hidden="true">
-                <!-- Interactive visualization of odometer discrepancy trends would be rendered here -->
-            </div>
-
-            <!-- Interactive control elements for the visualization -->
-            <div class="chart-controls">
-                <button class="chart-control-btn active" data-period="1y">1 Year</button>
-                <button class="chart-control-btn" data-period="6m">6 Months</button>
-                <button class="chart-control-btn" data-period="3m">3 Months</button>
-                <button class="chart-control-btn" data-period="1m">1 Month</button>
-            </div>
-
-            <p class="visualization-caption">
-                This interactive chart illustrates the growing divergence between actual physical distance traveled and Tesla's reported odometer readings over time. The discrepancy increases steadily, reaching 12.64% after approximately 25,000 miles.
-            </p>
-        </div>
-    </section>
-
-    <!-- RECENT FINDINGS SECTION -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Recent Developments</h2>
-
-            <div class="methodology">
-                <h3>March 2025 Updates</h3>
-
-                <div class="grid">
-                    <div style="grid-column: span 8;">
-                        <p>Recent corroborating evidence from independent researchers has further validated our findings on Tesla's odometer system. A February 2025 study by Nyree Hinton confirms our conclusion that Tesla's odometer does not measure physical distance but instead relies on energy consumption metrics that can be dynamically adjusted.</p>
-
-                        <p>Hinton's research aligns with our findings on several key points:</p>
-                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                            <li>The identification of a consistent 12.64% inflation in Tesla odometer readings compared to actual physical distance traveled</li>
-                            <li>Analysis of Patent US8054038B2, which reveals Tesla's energy-based mileage calculation methodology</li>
-                            <li>Evidence of battery degradation occurring at 20-25% per 25,000 miles, far exceeding Tesla's claimed 5% rate</li>
-                            <li>Confirmation that Tesla can remotely modify efficiency metrics through software updates</li>
-                        </ul>
-
-                        <p>This independent verification strengthens our conclusion that Tesla's approach to mileage calculation fundamentally redefines how "distance traveled" is measured in electric vehicles, with significant implications for warranty coverage, resale value, and long-term ownership costs.</p>
-                    </div>
-
-                    <div style="grid-column: span 4;">
-                        <div style="background-color: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px; height: 100%;">
-                            <h4>Additional Sources</h4>
-                            <ul class="footer-links">
-                                <li>"How Tesla Redefined Mileage" - Nyree Hinton, Feb 2025</li>
-                                <li>"Comparative Analysis of Tesla Model Y's Odometer" - Nyree Hinton, Feb 2025</li>
-                                <li>"Everyone Else Got It Wrong" - Nyree Hinton, Feb 2025</li>
-                                <li>Reuters Investigation - "Tesla's Secret Team", Jan 2025</li>
-                                <li>Schwartz v. Tesla Lawsuit Documentation, 2023</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JAVASCRIPT IMPLEMENTATION -->
-    <script>
-        // Enhanced interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const nav = document.querySelector('nav ul');
-
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                    this.querySelector('.menu-icon').textContent =
-                        nav.classList.contains('active') ? '✕' : '☰';
+            // Create charts for each chart container
+            const createChart = (canvasId, type, data, options) => {
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                return new Chart(ctx, {
+                    type: type,
+                    data: data,
+                    options: options
                 });
-            }
+            };
 
-            // Animated odometer
-            const odometer = document.querySelector('.animated-odometer');
-            if (odometer) {
-                let startValue = 0;
-                const endValue = 12.64;
-                const duration = 2000; // 2 seconds
-                const increment = endValue / (duration / 16); // 60fps
+            // Convert dynamic-chart divs to canvas elements
+            document.querySelectorAll('.dynamic-chart').forEach((container, index) => {
+                const canvas = document.createElement('canvas');
+                canvas.id = `chart-${index}`;
+                container.appendChild(canvas);
 
-                const animateOdometer = () => {
-                    if (startValue < endValue) {
-                        startValue += increment;
-                        odometer.textContent = startValue.toFixed(2) + '%';
-                        requestAnimationFrame(animateOdometer);
-                    } else {
-                        odometer.textContent = endValue.toFixed(2) + '%';
+                const chartType = container.dataset.chartType;
+                let data, options;
+
+                // Default chart options
+                const defaultOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#F5F5F5'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#F5F5F5' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#F5F5F5' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        }
                     }
                 };
 
-                // Start animation when element is in viewport
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateOdometer();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                });
+                // Configure different charts based on their type
+                switch(chartType) {
+                    case 'discrepancy':
+                        data = {
+                            labels: ['0', '5k', '10k', '15k', '20k', '25k'],
+                            datasets: [{
+                                label: 'Odometer Discrepancy %',
+                                data: [0, 3.2, 6.8, 9.1, 11.2, 12.64],
+                                borderColor: '#E53935',
+                                backgroundColor: 'rgba(229, 57, 53, 0.2)',
+                                fill: true
+                            }]
+                        };
+                        createChart(canvas.id, 'line', data, defaultOptions);
+                        break;
 
-                observer.observe(odometer);
-            }
+                    case 'battery':
+                        data = {
+                            labels: ['New', '10k', '20k', '30k', '40k', '50k'],
+                            datasets: [{
+                                label: 'Actual Degradation',
+                                data: [100, 95, 88, 80, 75, 70],
+                                borderColor: '#E53935',
+                                backgroundColor: 'rgba(229, 57, 53, 0.2)',
+                                fill: true
+                            },
+                            {
+                                label: 'Reported Health',
+                                data: [100, 98, 96, 94, 92, 90],
+                                borderColor: '#4CAF50',
+                                backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                                fill: true
+                            }]
+                        };
+                        createChart(canvas.id, 'line', data, defaultOptions);
+                        break;
 
-            // Chart control buttons
-            const chartControlBtns = document.querySelectorAll('.chart-control-btn');
-            if (chartControlBtns.length > 0) {
-                chartControlBtns.forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        chartControlBtns.forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
+                    case 'energy':
+                        data = {
+                            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                            datasets: [{
+                                label: 'Efficiency (Wh/mi)',
+                                data: [265, 285, 310, 370],
+                                backgroundColor: '#2196F3'
+                            }]
+                        };
+                        createChart(canvas.id, 'bar', data, defaultOptions);
+                        break;
 
-                        // This would update the chart data based on selected period
-                        const period = this.getAttribute('data-period');
-                        console.log(`Chart period changed to: ${period}`);
-                        // updateChartData(period); // This function would be implemented to update chart data
-                    });
-                });
-            }
+                    case 'warranty':
+                        data = {
+                            labels: ['Actual Miles', 'Reported Miles'],
+                            datasets: [{
+                                data: [88760, 100000],
+                                backgroundColor: ['#4CAF50', '#E53935']
+                            }]
+                        };
+                        createChart(canvas.id, 'bar', data, defaultOptions);
+                        break;
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    case 'degradation':
+                        data = {
+                            labels: ['5k', '10k', '15k', '20k', '25k'],
+                            datasets: [{
+                                label: 'Actual Degradation',
+                                data: [5, 10, 15, 20, 25],
+                                borderColor: '#E53935',
+                                fill: false
+                            }]
+                        };
+                        createChart(canvas.id, 'line', data, defaultOptions);
+                        break;
 
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        const headerOffset = 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                });
-            });
-
-
-            // Animation for findings cards
-            const findingCards = document.querySelectorAll('.finding-card');
-            if (findingCards.length > 0) {
-                const cardObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                            cardObserver.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.2
-                });
-
-                findingCards.forEach(card => {
-                    cardObserver.observe(card);
-                });
-            }
-
-            // Last updated timestamp
-            const lastUpdatedElement = document.querySelector('.last-updated');
-            if (lastUpdatedElement) {
-                lastUpdatedElement.textContent = 'Last updated: March 06, 2025';
-            }
-        });
-    </script>
-    <!-- TECHNICAL DEEP DIVE SECTION -->
-    <section class="section" id="deep-dive">
-        <div class="container">
-            <h2 class="section-title">Technical Deep Dive</h2>
-
-            <div class="methodology">
-                <div class="grid">
-                    <div style="grid-column: span 6;">
-                        <h3>Patent Analysis: The Energy-Based Calculation</h3>
-                        <p>Our research into Tesla Patent US8054038B2 reveals the sophisticated system that fundamentally transforms how electric vehicle mileage is recorded. Unlike traditional odometers that count physical wheel rotations, Tesla's patent explicitly describes a system where mileage is determined through energy consumption calculations:</p>
-
-                        <blockquote style="background-color: rgba(0,0,0,0.2); padding: 1.5rem; border-left: 4px solid var(--accent-color); margin: 1.5rem 0;">
-                            "Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information."
-                        </blockquote>
-
-                        <p>This patent describes a system where seven dynamic variables modify the energy-to-mile conversion rate:</p>
-                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                            <li><strong>Historical Route Efficiency:</strong> Data from previous trips influences current calculations</li>
-                            <li><strong>Ambient Temperature:</strong> Colder temperatures typically reduce efficiency</li>
-                            <li><strong>Tire Pressure Status:</strong> Underinflated tires result in efficiency penalties</li>
-                            <li><strong>Regenerative Braking Utilization:</strong> Less regenerative braking lowers efficiency</li>
-                            <li><strong>Cabin Climate Load:</strong> HVAC usage impacts overall efficiency</li>
-                            <li><strong>Software Updates:</strong> Efficiency recalibrations occur after updates</li>
-                            <li><strong>Battery Impedance:</strong> Aging cells change efficiency values</li>
-                        </ul>
-                    </div>
-
-                    <div style="grid-column: span 6;">
-                        <div class="timeline-visual" style="height: 350px; margin-bottom: 1.5rem;">
-                            <!-- Patent diagram would be placed here -->
-                        </div>
-
-                        <div style="background-color: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
-                            <h4>The "Aggressive Driving Penalty"</h4>
-                            <p>Our research uncovered that Tesla applies different multipliers to energy-to-mile conversion rates based on driving style:</p>
-
-                            <table style="margin: 1rem 0;">
-                                <thead>
-                                    <tr>
-                                        <th>Driving Mode</th>
-                                        <th>Multiplier</th>
-                                        <th>Effect</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Aggressive</td>
-                                        <td>&lt;1</td>
-                                        <td>Increases miles recorded per unit of energy</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Normal</td>
-                                        <td>=1</td>
-                                        <td>Baseline conversion factor</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Efficient</td>
-                                        <td>&gt;1</td>
-                                        <td>Decreases miles recorded per energy unit</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <p>This means that drivers classified as "aggressive" accumulate odometer miles faster than "efficient" drivers for the same physical distance traveled.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 3rem;">
-                    <h3>Dealer Recalibration Capability</h3>
-                    <blockquote style="background-color: rgba(0,0,0,0.2); padding: 1.5rem; border-left: 4px solid var(--accent-color); margin: 1.5rem 0;">
-                        "The electrical energy per mile conversion factor is set by the factory/dealer... updated over time to reflect the conversion efficiency obtained by that particular vehicle."
-                    </blockquote>
-
-                    <p>This patent excerpt confirms that Tesla service centers have the capability to manually modify a vehicle's energy efficiency ratings, which directly impacts how miles are recorded on the odometer. This means Tesla can:</p>
-
-                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                        <li>Remotely adjust efficiency metrics through software updates</li>
-                        <li>Modify odometer behavior through service center recalibrations</li>
-                        <li>Account for battery degradation by shifting efficiency assumptions without user notification</li>
-                    </ul>
-
-                    <p>This capability introduces a level of subjectivity into what has traditionally been an objective measurement system, with significant implications for warranty coverage, resale value, and consumer trust.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RECENT DEVELOPMENTS SECTION - UPDATED FOR MARCH 2025 -->
-    <section class="section" id="recent">
-        <div class="container">
-            <h2 class="section-title">Recent Developments</h2>
-
-            <div class="methodology">
-                <h3>March 2025 Updates</h3>
-
-                <div class="grid">
-                    <div style="grid-column: span 8;">
-                        <p>Recent corroborating evidence from independent researcher Nyree Hinton has further validated our findings on Tesla's odometer system. Hinton's February 2025 study confirms our conclusion that Tesla's odometer does not measure physical distance but instead relies on energy consumption metrics that can be dynamically adjusted.</p>
-
-                        <p>Hinton's three-part investigative report, titled "How Tesla Redefined Mileage," aligns with our findings on several key points:</p>
-
-                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                            <li>Identification of a consistent 12.64% inflation in Tesla odometer readings compared to actual physical distance traveled</li>
-                            <li>Analysis of Patent US8054038B2, revealing Tesla's energy-based mileage calculation methodology</li>
-                            <li>Evidence of battery degradation occurring at 20-25% per 25,000 miles, significantly higher than Tesla's claimed 5% rate</li>
-                            <li>Confirmation that Tesla can remotely modify efficiency metrics through software updates</li>
-                        </ul>
-
-                        <p>Part 3 of Hinton's report, "Everyone Else Got It Wrong," provides a compelling argument that Tesla's odometer manipulation is directly tied to concealing accelerated battery degradation rates. As Hinton states: "If battery degradation were truly minimal, there would be no need to continuously adjust energy efficiency multipliers, penalize 'aggressive' drivers with worse efficiency readings, or apply predictive algorithms to mileage tracking."</p>
-
-                        <p>This independent verification strengthens our conclusion that Tesla's approach to mileage calculation fundamentally redefines how "distance traveled" is measured in electric vehicles, with significant implications for warranty coverage, resale value, and long-term ownership costs.</p>
-                    </div>
-
-                    <div style="grid-column: span 4;">
-                        <div style="background-color: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px; height: 100%;">
-                            <h4>Key Findings from Hinton's Research</h4>
-                            <ul class="footer-links" style="margin-top: 1rem;">
-                                <li>"Tesla inflates odometer readings to accelerate warranty expiration, ensuring battery issues emerge outside the warranty period."</li>
-                                <li>"Tesla modifies energy efficiency estimates (Wh/mi) to artificially improve reported performance, making the battery appear healthier than it actually is."</li>
-                                <li>"Tesla overstates range projections at high battery levels and only reveals true performance at lower charge levels, masking long-term degradation trends."</li>
-                                <li>"The entire resale market for used Teslas is built on false assumptions—buyers believe they are getting a vehicle with 95% of its original range when in reality, it may only have 75-80%."</li>
-                            </ul>
-
-                            <h4 style="margin-top: 2rem;">Sources</h4>
-                            <ul class="footer-links">
-                                <li>"How Tesla Redefined Mileage (Part 1)" - Nyree Hinton, Feb 2025</li>
-                                <li>"Comparative Analysis of A Tesla Model Y's Odometer (Part 2)" - Nyree Hinton, Feb 2025</li>
-                                <li>"Everyone Else Got It Wrong (Part 3)" - Nyree Hinton, Feb 2025</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MARKET IMPACT SECTION -->
-    <section class="section" id="market-impact">
-        <div class="container">
-            <h2 class="section-title">Market & Industry Impact</h2>
-
-            <div class="findings-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="finding-card">
-                    <h3>Used Market Distortion</h3>
-                    <div class="dynamic-chart" data-chart-type="used-market"></div>
-                    <p>The used Tesla market relies heavily on odometer readings to determine vehicle value. Our research suggests that inflated readings artificially depress resale values, as vehicles appear to have been driven more than they actually have been.</p>
-                    <p>Based on current market data, a 12.64% odometer inflation could reduce a used Tesla's value by approximately 8-10%, representing thousands of dollars in lost value for owners.</p>
-                </div>
-
-                <div class="finding-card">
-                    <h3>Fleet Operations Impact</h3>
-                    <div class="dynamic-chart" data-chart-type="fleet"></div>
-                    <p>For commercial fleet operators like Hertz and rental companies, accelerated battery degradation and inflated odometer readings significantly alter the economics of Tesla fleet operations, potentially leading to shorter vehicle lifecycles and higher operational costs than initially projected.</p>
-                    <p>This may explain Hertz's recent decision to reduce its Tesla fleet and shift toward other EV manufacturers.</p>
-                </div>
-
-                <div class="finding-card">
-                    <h3>Industry-Wide Implications</h3>
-                    <div class="dynamic-chart" data-chart-type="industry"></div>
-                    <p>Our findings suggest a need for standardized measurement protocols for electric vehicle mileage and performance metrics. Without industry standards, consumers lack reliable comparisons between different EV manufacturers.</p>
-                    <p>Traditional automotive regulations like SAE J218, which ensures ±2% accuracy for traditional odometers, have not been adequately updated for the EV era.</p>
-                </div>
-            </div>
-
-            <div class="methodology" style="margin-top: 3rem;">
-                <h3>Long-Term Industry Considerations</h3>
-                <p>These findings have substantial implications for the broader electric vehicle industry:</p>
-
-                <div class="grid" style="margin-top: 1.5rem;">
-                    <div style="grid-column: span 4;">
-                        <div class="methodology-item">
-                            <h4>Regulatory Oversight</h4>
-                            <p>Current regulatory frameworks for vehicle mileage measurement were designed for internal combustion engines and may not adequately address the complexities of electric vehicle systems, particularly those with software-defined metrics.</p>
-                        </div>
-                    </div>
-
-                    <div style="grid-column: span 4;">
-                        <div class="methodology-item">
-                            <h4>Consumer Protection</h4>
-                            <p>Without standardized measurement systems for EV mileage and battery health, consumers may struggle to make informed decisions about vehicle purchases, warranties, and long-term ownership costs.</p>
-                        </div>
-                    </div>
-
-                    <div style="grid-column: span 4;">
-                        <div class="methodology-item">
-                            <h4>Transparency Standards</h4>
-                            <p>Our research highlights the need for greater transparency in how EV manufacturers calculate and report performance metrics, particularly those tied to warranty coverage and residual value calculations.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ADDITIONAL JAVASCRIPT FUNCTIONS -->
-    <script>
-        // Enhanced visualization and interactive features
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll animation for timeline events
-            const timelineEvents = document.querySelectorAll('.timeline-event');
-            const timelineObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-timeline');
-                        timelineObserver.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            });
-
-            timelineEvents.forEach(event => {
-                timelineObserver.observe(event);
-            });
-
-            // Interactive table highlighting
-            const tableCells = document.querySelectorAll('td');
-            tableCells.forEach(cell => {
-                cell.addEventListener('mouseenter', function() {
-                    const rowIndex = this.parentElement.rowIndex;
-                    const cellIndex = this.cellIndex;
-
-                    // Highlight current row
-                    this.parentElement.classList.add('highlight-row');
-
-                    // Highlight current column
-                    const table = this.closest('table');
-                    const rows = table.querySelectorAll('tr');
-
-                    rows.forEach(row => {
-                        const cells = row.querySelectorAll('td, th');
-                        if (cells[cellIndex]) {
-                            cells[cellIndex].classList.add('highlight-column');
-                        }
-                    });
-                });
-
-                cell.addEventListener('mouseleave', function() {
-                    // Remove all highlights
-                    document.querySelectorAll('.highlight-row').forEach(el => {
-                        el.classList.remove('highlight-row');
-                    });
-
-                    document.querySelectorAll('.highlight-column').forEach(el => {
-                        el.classList.remove('highlight-column');
-                    });
-                });
-            });
-    </script>
-    <!-- Add this JavaScript before closing </body> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Chart configuration
-        const chartConfig = {
-            maintainAspectRatio: false,
-            responsive: true,
-            plugins: {
-                legend: {
-                    labels: { color: var(--text-light) }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(42, 42, 42, 0.9)',
-                    titleFont: { size: 14 },
-                    bodyFont: { size: 12 },
-                    callbacks: {
-                        label: function(context) {
-                            return ` ${context.dataset.label}: ${context.formattedValue}%`;
-                        }
-                    }
+                    default:
+                        data = {
+                            labels: ['Sample Data'],
+                            datasets: [{
+                                label: 'Default Chart',
+                                data: [50],
+                                backgroundColor: '#E53935'
+                            }]
+                        };
+                        createChart(canvas.id, 'bar', data, defaultOptions);
                 }
-            },
-            scales: {
-                x: { ticks: { color: var(--text-light) }, grid: { color: 'rgba(255,255,255,0.1)' } },
-                y: { ticks: { color: var(--text-light) }, grid: { color: 'rgba(255,255,255,0.1)' } }
-            }
-        };
-
-    // Discrepancy Over Time Chart
-    const discrepancyChart = new Chart(document.querySelector('[data-chart-type="discrepancy"]'), {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            datasets: [{
-                label: 'Tesla Reported Mileage',
-                data: [920, 1840, 2760, 3680, 4600, 5520, 6440, 7360, 8280, 9200, 10120, 11040],
-                borderColor: var(--accent-color),
-                tension: 0.4
-            },{
-                label: 'Actual GPS Mileage',
-                data: [820, 1640, 2460, 3280, 4100, 4920, 5740, 6560, 7380, 8200, 9020, 9840],
-                borderColor: var(--secondary-color),
-                tension: 0.4
-            }]
-        },
-        options: chartConfig
-    });
-
-    // Battery Degradation Chart
-    const batteryChart = new Chart(document.querySelector('[data-chart-type="battery"]'), {
-        type: 'bar',
-        data: {
-            labels: ['25k Miles', '50k Miles', '75k Miles', '100k Miles'],
-            datasets: [{
-                label: 'Tesla Claimed',
-                data: [95, 90, 85, 80],
-                backgroundColor: 'rgba(229, 57, 53, 0.7)'
-            },{
-                label: 'Actual Measured',
-                data: [80, 65, 50, 35],
-                backgroundColor: 'rgba(76, 175, 80, 0.7)'
-            }]
-        },
-        options: chartConfig
-    });
-
-    // EPA Comparison Radar Chart
-    const epaChart = new Chart(document.querySelector('[data-chart-type="epa"]'), {
-        type: 'radar',
-        data: {
-            labels: ['Range Accuracy', 'Energy Efficiency', 'Odometer Consistency', 'Battery Health', 'Real-world Match'],
-            datasets: [{
-                label: 'EPA Estimates',
-                data: [90, 85, 95, 88, 70],
-                backgroundColor: 'rgba(255, 152, 0, 0.2)',
-                borderColor: 'rgba(255, 152, 0, 1)'
-            },{
-                label: 'Actual Performance',
-                data: [65, 58, 42, 30, 55],
-                backgroundColor: 'rgba(33, 150, 243, 0.2)',
-                borderColor: 'rgba(33, 150, 243, 1)'
-            }]
-        },
-        options: {
-            ...chartConfig,
-            scales: {
-                r: {
-                    angleLines: { color: 'rgba(255,255,255,0.1)' },
-                    grid: { color: 'rgba(255,255,255,0.1)' },
-                    pointLabels: { color: var(--text-light) },
-                    ticks: { display: false }
-                }
-            }
-        }
-    });
-
-    // Dynamic Chart Loading
-    document.querySelectorAll('.dynamic-chart').forEach(chartElement => {
-        const type = chartElement.dataset.chartType;
-        const config = {
-            'discrepancy': discrepancyChart,
-            'battery': batteryChart,
-            'epa': epaChart
-        };
-        config[type].canvas.parentNode.style.height = '400px';
-    });
-
-    // Chart Period Controls
-    document.querySelectorAll('.chart-control-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const period = this.dataset.period;
-            updateChartData(period);
+            });
         });
-    });
+  </script>
 
-    function updateChartData(period) {
-        // Filter data based on selected period
-        const filteredData = {
-            '1y': [/* Annual data */],
-            '6m': [/* 6-month data */],
-            '3m': [/* 3-month data */],
-            '1m': [/* 1-month data */]
-        };
-
-        discrepancyChart.data.datasets[0].data = filteredData[period];
-        discrepancyChart.update();
-    }
-
-});
-// Timeline Animation
-const timelineEvents = document.querySelectorAll('.timeline-event');
-timelineEvents.forEach((event, index) => {
-event.style.transitionDelay = `${index * 100}ms`;
-event.classList.add('animate');
-});
-</script>
-
-</body>
-</html>
+  </body>
+  </html>
