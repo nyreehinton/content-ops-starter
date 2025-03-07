@@ -20,6 +20,10 @@ styles:
 type: CustomHTMLLayout
 author: content/data/nyree.json
 allowed_elements:
+  - meta
+  - head
+  - html
+  - body
   - h1
   - h2
   - h3
@@ -55,6 +59,8 @@ allowed_elements:
   - figure
   - figcaption
   - canvas
+  - script
+  - style
 ---
 
 <!DOCTYPE html>
@@ -706,26 +712,26 @@ allowed_elements:
                 font-size: 2rem;
             }
         }
-    <!-- Add this CSS in your <style> section -->
-    /* Chart container enhancements */
-    .chart-container canvas {
-        max-height: 600px;
-        width: 100% !important;
-        height: auto !important;
-    }
 
-    .chart-tooltip {
-        background: var(--primary-color) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 4px !important;
-        padding: 0.5rem !important;
-    }
+        /* Chart container enhancements */
+        .chart-container canvas {
+            max-height: 600px;
+            width: 100% !important;
+            height: auto !important;
+        }
 
-    .chart-legend li {
-        color: var(--text-light) !important;
-    }
+        .chart-tooltip {
+            background: var(--primary-color) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 4px !important;
+            padding: 0.5rem !important;
+        }
 
-</style>
+        .chart-legend li {
+            color: var(--text-light) !important;
+        }
+    </style>
+
 </head>
 
 <body>
