@@ -1,6 +1,5 @@
 {
-    "primaryLinks": [
-        {
+    "primaryLinks": [{
             "label": "Home",
             "url": "/",
             "icon": "arrowRight",
@@ -18,10 +17,36 @@
             "type": "Link"
         },
         {
+            "label": "Bloomberg",
+            "altText": "Bloomberg",
+            "url": "/ams-sw",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "Capital Group",
+            "altText": "Capital-Group",
+            "url": "/capital-group",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "Third Bridge",
+            "altText": "thirdbridge",
+            "url": "/thirdbridge",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
             "label": "Projects",
             "altText": "Projects",
-            "links": [
-                {
+            "links": [{
                     "label": "Lime Scooters",
                     "url": "/blog/lime-scooters",
                     "icon": "arrowRight",
@@ -56,8 +81,7 @@
             "type": "SubNav",
             "label": "Exclusive Tesla Report",
             "altText": "Dropdown",
-            "links": [
-                {
+            "links": [{
                     "type": "Link",
                     "label": "Background",
                     "altText": "",
@@ -105,8 +129,7 @@
             "labelStyle": "secondary"
         }
     ],
-    "secondaryLinks": [
-        {
+    "secondaryLinks": [{
             "label": "Github",
             "altText": "Sign up",
             "url": "",

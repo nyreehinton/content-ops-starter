@@ -11,7 +11,7 @@ import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
 
 export default function Header(props) {
-    const { colors = 'bg-light-fg-dark', styles = {}, enableAnnotations } = props;
+    const { colors, styles = {}, enableAnnotations } = props;
     return (
         <header
             className={classNames(
@@ -53,7 +53,7 @@ function HeaderVariants(props) {
 }
 
 function HeaderLogoLeftPrimaryLeft(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, enableAnnotations } = props;
     return (
         <div className="flex items-center relative">
             {(title || logo?.url) && (
@@ -77,7 +77,7 @@ function HeaderLogoLeftPrimaryLeft(props) {
 }
 
 function HeaderLogoLeftPrimaryCentered(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, enableAnnotations } = props;
     return (
         <div className="flex items-center relative">
             {(title || logo?.url) && (
@@ -104,7 +104,7 @@ function HeaderLogoLeftPrimaryCentered(props) {
 }
 
 function HeaderLogoLeftPrimaryRight(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, enableAnnotations } = props;
     return (
         <div className="flex items-center relative">
             {(title || logo?.url) && (
@@ -131,7 +131,7 @@ function HeaderLogoLeftPrimaryRight(props) {
 }
 
 function HeaderLogoCenteredPrimaryLeft(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, enableAnnotations } = props;
     return (
         <div className="flex items-center relative">
             {(title || logo?.url) && (
@@ -155,7 +155,7 @@ function HeaderLogoCenteredPrimaryLeft(props) {
 }
 
 function HeaderLogoCenteredPrimaryCentered(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, enableAnnotations } = props;
     return (
         <>
             <div className="flex items-center relative">
@@ -184,7 +184,7 @@ function HeaderLogoCenteredPrimaryCentered(props) {
 }
 
 function MobileMenu(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', styles = {}, enableAnnotations } = props;
+    const { title, logo, primaryLinks = [], secondaryLinks = [], colors, styles = {}, enableAnnotations } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
 
