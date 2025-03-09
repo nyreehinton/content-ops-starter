@@ -1,5 +1,5 @@
 ---
-title: Managing A Data Product
+title: ETF Data Product Management
 slug: capital-group
 date: '2025-03-26'
 excerpt: 'Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.'
@@ -63,8 +63,64 @@ seo:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETF Product Management | Capital Group Experience</title>
+    <title>ETF Data Product Management</title>
     <meta name="description" content="Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.">
+    <meta name="author" content="Nyree Hinton">
+    <meta name="keywords" content="ETF, data management, Capital Group, product management, financial data, ETF analytics">
+    <link rel="canonical" href="https://nyreehinton.com/capital-group">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="ETF Data Product Management | Nyree Hinton">
+    <meta property="og:description" content="Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.">
+    <meta property="og:image" content="/images/Capital_Group_Companies.jpg">
+    <meta property="og:url" content="https://nyreehinton.com/capital-group">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ETF Data Product Management | Nyree Hinton">
+    <meta name="twitter:description" content="Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.">
+    <meta name="twitter:image" content="/images/Capital_Group_Companies.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Global Tab Function -->
+    <script>
+        // Tab functionality with direct onclick - defined globally
+        function openTab(evt, tabId) {
+            // Hide all tab content
+            var tabPanes = document.getElementsByClassName("tab-pane");
+            for (var i = 0; i < tabPanes.length; i++) {
+                tabPanes[i].classList.remove("active");
+                tabPanes[i].setAttribute("aria-hidden", "true");
+            }
+
+            // Remove active class from all tab links
+            var tabLinks = document.getElementsByClassName("tab-link");
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+                tabLinks[i].setAttribute("aria-selected", "false");
+            }
+
+            // Show the specific tab content
+            var activePane = document.getElementById(tabId);
+            if (activePane) {
+                activePane.classList.add("active");
+                activePane.setAttribute("aria-hidden", "false");
+
+                // Add active class to the button that opened the tab
+                evt.currentTarget.classList.add("active");
+                evt.currentTarget.setAttribute("aria-selected", "true");
+
+                console.log("Tab switched to: " + tabId);
+            } else {
+                console.error("Could not find tab pane with ID: " + tabId);
+            }
+        }
+    </script>
+
     <style>
         :root {
             --primary-color: #002d4b; /* Capital Group dark blue */
@@ -77,6 +133,8 @@ seo:
             --success-color: #28a745;
             --warning-color: #ffc107;
             --danger-color: #dc3545;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
         }
 
         * {
@@ -90,6 +148,7 @@ seo:
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--secondary-color);
+            scroll-behavior: smooth;
         }
 
         /* Typography */
@@ -130,37 +189,76 @@ seo:
         }
 
         section {
-            margin: 3rem 0;
-            padding: 2rem;
+            margin: 5rem 0;  /* Increased from 4rem for better section spacing */
+            padding: 3.5rem 2.5rem;  /* Increased padding for better content spacing */
             background-color: var(--secondary-color);
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;  /* Increased from 10px for more modern look */
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;  /* Increased from 1.5rem for better spacing */
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
         }
 
         .hero {
             background-color: var(--primary-color);
             color: var(--secondary-color);
-            padding: 4rem 2rem;
-            margin-bottom: 3rem;
+            padding: 8rem 2rem;  /* Increased from 6rem for better vertical spacing */
+            margin-bottom: 4rem;  /* Increased from 3rem for better section separation */
             position: relative;
             overflow: hidden;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 550px;  /* Increased from 500px for better visual impact */
+            background-image: linear-gradient(135deg, var(--primary-color) 0%, #004b7c 100%);  /* Added gradient for visual interest */
         }
 
         .hero h1 {
             color: white;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.8rem;  /* Increased from 3.5rem for better hierarchy */
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 2;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* Added text shadow for better readability */
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.5rem;  /* Increased from 1.35rem for better readability */
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             position: relative;
             z-index: 2;
+            line-height: 1.6;
+            opacity: 0.9;  /* Added for subtle contrast */
         }
 
         .hero::after {
@@ -178,72 +276,91 @@ seo:
         /* Card layouts */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;  /* Increased from 2rem for better spacing */
+            margin: 2.5rem 0;
         }
 
         .card {
             background-color: var(--secondary-color);
-            border-radius: 5px;
+            border-radius: 12px;  /* Increased from 8px for consistency */
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);  /* Enhanced shadow for better hover effect */
         }
 
         .card-header {
             background-color: var(--primary-color);
             color: var(--secondary-color);
-            padding: 1rem;
+            padding: 1.5rem;  /* Increased from 1.25rem for better spacing */
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .card-body {
-            padding: 1.5rem;
+            padding: 1.75rem;  /* Increased from 1.5rem for better spacing */
+            flex: 1;
+        }
+
+        .card-footer {
+            padding: 1.25rem 1.75rem;  /* Increased from 1rem 1.5rem for better spacing */
+            background-color: rgba(0,0,0,0.02);
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            margin: 2.5rem 0;
+            font-size: 0.95rem;
+            box-shadow: var(--box-shadow);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th {
             background-color: var(--primary-color);
             color: var(--secondary-color);
-            padding: 12px 15px;
+            padding: 16px 20px;  /* Increased from 14px 18px for better spacing */
             text-align: left;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         td {
-            padding: 10px 15px;
+            padding: 14px 20px;  /* Increased from 12px 18px for better spacing */
             border-bottom: 1px solid var(--medium-gray);
         }
 
         tr:nth-child(even) {
-            background-color: var(--light-gray);
+            background-color: rgba(0,0,0,0.02);
         }
 
         tr:hover {
-            background-color: var(--medium-gray);
+            background-color: rgba(0,0,0,0.05);
         }
 
         /* Charts and data visualization */
         .chart-container {
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             height: 400px;
             position: relative;
-            border: 1px solid var(--medium-gray);
-            border-radius: 5px;
-            padding: 1rem;
+            border-radius: 8px;
+            padding: 1.5rem;
             background-color: var(--light-gray);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
         }
 
         .chart-legend {
@@ -271,49 +388,95 @@ seo:
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
+            margin: 2.5rem 0;  /* Added for consistent spacing */
+            align-items: start;  /* Added to align content at the top */
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;  /* Reduced from 2.5rem for mobile */
+            }
         }
 
         /* Tabs */
         .tabs {
-            margin: 2rem 0;
+            margin: 2.5rem 0;
+            position: relative;
         }
 
         .tab-nav {
             display: flex;
             list-style: none;
             border-bottom: 2px solid var(--medium-gray);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0;
+            padding-left: 0;
         }
 
         .tab-nav li {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.25rem;
             cursor: pointer;
             border: 1px solid transparent;
             border-bottom: none;
-            border-radius: 5px 5px 0 0;
+            border-radius: 8px 8px 0 0;
             margin-right: 5px;
             background-color: var(--light-gray);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tab-nav li:hover {
+            background-color: #e0e0e0;
         }
 
         .tab-nav li.active {
             background-color: var(--primary-color);
-            color: var(--secondary-color);
+            color: white;
             border-color: var(--medium-gray);
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: -2px;
         }
 
         .tab-content {
-            padding: 1.5rem;
-            border: 1px solid var(--medium-gray);
-            border-top: none;
-            border-radius: 0 0 5px 5px;
+            padding: 2rem 0;
         }
 
         .tab-pane {
             display: none;
+            animation: fadeIn 0.5s ease;
         }
 
         .tab-pane.active {
             display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .tab-nav {
+                flex-direction: column;
+                gap: 0.25rem;
+                border-bottom: none;
+            }
+
+            .tab-nav li {
+                border-radius: 8px;
+                margin-right: 0;
+                border: 1px solid var(--medium-gray);
+                text-align: center;
+            }
+
+            .tab-nav li.active {
+                margin-bottom: 0;
+            }
         }
 
         /* Progress bars */
@@ -325,144 +488,298 @@ seo:
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .progress-bar {
-            height: 20px;
-            background-color: var(--medium-gray);
-            border-radius: 10px;
+            height: 10px;
+            background-color: var(--light-gray);
+            border-radius: 5px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
             background-color: var(--accent-color);
-            border-radius: 10px;
-            transition: width 0.5s ease;
+            border-radius: 5px;
+            transition: width 1s ease;
         }
 
-        /* Responsive design */
-        @media (max-width: 992px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            h3 {
-                font-size: 1.25rem;
-            }
-
-            .hero {
-                padding: 3rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-
-            .chart-container {
-                height: 300px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Buttons */
+        /* Interactive elements */
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--accent-color);
-            color: white;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: all var(--transition-speed);
+            border: 2px solid var(--primary-color);
             cursor: pointer;
-            border: none;
             text-align: center;
         }
 
         .btn:hover {
-            background-color: #005d81;
+            background-color: transparent;
+            color: var(--primary-color);
         }
 
         .btn-primary {
             background-color: var(--primary-color);
+            border-color: var(--primary-color);
         }
 
-        .btn-primary:hover {
-            background-color: #001d31;
+        .btn-accent {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            color: var(--accent-color);
         }
 
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
             color: var(--primary-color);
         }
 
         .btn-outline:hover {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--secondary-color);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
         }
 
         /* Navigation */
         .navbar {
             background-color: var(--primary-color);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .nav-logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
             text-decoration: none;
+            transition: opacity var(--transition-speed);
+        }
+
+        .nav-logo:hover {
+            opacity: 0.9;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 2rem;
+            margin: 0;  /* Added to fix alignment */
+            padding: 0;  /* Added to fix alignment */
         }
 
         .nav-links li {
-            margin-left: 1.5rem;
+            position: relative;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color var(--transition-speed);
         }
 
         .nav-links a:hover {
             color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;  /* Added for better touch target */
+        }
+
+        /* Hero section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 8rem 2rem;  /* Increased from 6rem for better vertical spacing */
+            margin-bottom: 4rem;  /* Increased from 3rem for better section separation */
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 550px;  /* Increased from 500px for better visual impact */
+            background-image: linear-gradient(135deg, var(--primary-color) 0%, #004b7c 100%);  /* Added gradient for visual interest */
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.8rem;  /* Increased from 3.5rem for better hierarchy */
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* Added text shadow for better readability */
+        }
+
+        .hero p {
+            font-size: 1.5rem;  /* Increased from 1.35rem for better readability */
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+            opacity: 0.9;  /* Added for subtle contrast */
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2.5rem;  /* Increased from 0.8rem 2rem for better touch target */
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+            position: relative;
+            z-index: 2;
+            border: 2px solid var(--accent-color);
+            font-size: 1.1rem;  /* Added for better proportions */
+            letter-spacing: 0.5px;  /* Added for better text spacing */
+        }
+
+        .hero-btn:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);  /* Added for interactive feedback */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* Added for depth */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;  /* Added to ensure menu appears above content */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem;  /* Adjusted for mobile */
+                min-height: 450px;  /* Reduced for mobile */
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;  /* Adjusted from 2.5rem for better mobile display */
+            }
+
+            .hero p {
+                font-size: 1.2rem;  /* Adjusted from 1.1rem for better readability */
+            }
+
+            /* Improved mobile tab navigation */
+            .tab-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .tab-nav li {
+                width: 100%;
+                margin-right: 0;
+                text-align: center;
+            }
+
+            /* Improved mobile card layout */
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;  /* Reduced for mobile */
+            }
+
+            /* Improved mobile section spacing */
+            section {
+                margin: 3rem 0;
+                padding: 2rem 1.5rem;
+            }
+
+            /* Improved table display on mobile */
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            th, td {
+                padding: 12px 16px;  /* Reduced for mobile */
+            }
         }
 
         /* Accessible features */
@@ -479,7 +796,27 @@ seo:
         }
 
         /* For keyboard navigation */
-        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+        a:focus, button:focus, input:focus, select:focus, textarea:focus, .tab-nav li:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Focus visible only when using keyboard */
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible),
+        input:focus:not(:focus-visible),
+        select:focus:not(:focus-visible),
+        textarea:focus:not(:focus-visible),
+        .tab-nav li:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        .tab-nav li:focus-visible {
             outline: 3px solid var(--accent-color);
             outline-offset: 2px;
         }
@@ -573,6 +910,42 @@ seo:
         .border {
             border: 1px solid var(--medium-gray);
         }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 
 </head>
@@ -580,23 +953,32 @@ seo:
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Nyree Hinton | Capital Group</a>
+            <a href="#" class="nav-logo">Nyree Hinton | ETF Data Product Manager</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             <ul class="nav-links">
                 <li><a href="#etf-fundamentals">ETF Fundamentals</a></li>
                 <li><a href="#capital-group-strategy">CG Strategy</a></li>
                 <li><a href="#data-management">Data Management</a></li>
                 <li><a href="#technical-infrastructure">Technical Infrastructure</a></li>
                 <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#skills-expertise">Skills & Expertise</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero animate-fade-in">
-        <div class="container">
-            <h1>Managing A Data Product</h1>
-            <p>A comprehensive overview of Exchange-Traded Funds, Capital Group's strategy, and the data infrastructure supporting $31+ billion in ETF sales.</p>
-            <a href="#etf-fundamentals" class="btn btn-primary">Explore ETF Fundamentals</a>
+    <div class="hero">
+        <h1 class="animate-fade-in">ETF Data Product Management</h1>
+        <p class="animate-slide-up">A comprehensive overview of my role managing Exchange-Traded Funds at Capital Group, supporting $31+ billion in ETF sales through innovative data infrastructure.</p>
+        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+            <a href="#etf-fundamentals" class="hero-btn">Explore My Work</a>
         </div>
     </div>
 
@@ -605,16 +987,53 @@ seo:
         <h2>ETF Fundamentals</h2>
         <p>Exchange-traded funds (ETFs) represent a transformative shift in investment vehicles, combining the intraday liquidity of stocks with the diversified exposure of mutual funds. Unlike mutual funds, which settle at end-of-day net asset values (NAVs), ETFs require real-time price discovery mechanisms to maintain parity between market prices and underlying assets.</p>
 
+        <!-- Inline script to ensure tab functionality -->
+        <script>
+            // Ensure openTab function is available
+            if (typeof openTab !== 'function') {
+                window.openTab = function(evt, tabId) {
+                    // Hide all tab content
+                    var tabPanes = document.getElementsByClassName("tab-pane");
+                    for (var i = 0; i < tabPanes.length; i++) {
+                        tabPanes[i].classList.remove("active");
+                        tabPanes[i].setAttribute("aria-hidden", "true");
+                    }
+
+                    // Remove active class from all tab links
+                    var tabLinks = document.getElementsByClassName("tab-link");
+                    for (var i = 0; i < tabLinks.length; i++) {
+                        tabLinks[i].classList.remove("active");
+                        tabLinks[i].setAttribute("aria-selected", "false");
+                    }
+
+                    // Show the specific tab content
+                    var activePane = document.getElementById(tabId);
+                    if (activePane) {
+                        activePane.classList.add("active");
+                        activePane.setAttribute("aria-hidden", "false");
+
+                        // Add active class to the button that opened the tab
+                        evt.currentTarget.classList.add("active");
+                        evt.currentTarget.setAttribute("aria-selected", "true");
+
+                        console.log("Tab switched to: " + tabId);
+                    } else {
+                        console.error("Could not find tab pane with ID: " + tabId);
+                    }
+                }
+            }
+        </script>
+
         <div class="tabs">
-            <ul class="tab-nav">
-                <li class="active" data-tab="primary-market">Primary Market</li>
-                <li data-tab="secondary-market">Secondary Market</li>
-                <li data-tab="arbitrage">Arbitrage Mechanism</li>
-                <li data-tab="etf-vs-mutual">ETFs vs. Mutual Funds</li>
+            <ul class="tab-nav" role="tablist">
+                <li class="tab-link active" onclick="openTab(event, 'primary-market')" role="tab" tabindex="0" aria-selected="true" aria-controls="primary-market">Primary Market</li>
+                <li class="tab-link" onclick="openTab(event, 'secondary-market')" role="tab" tabindex="0" aria-selected="false" aria-controls="secondary-market">Secondary Market</li>
+                <li class="tab-link" onclick="openTab(event, 'arbitrage')" role="tab" tabindex="0" aria-selected="false" aria-controls="arbitrage">Arbitrage Mechanism</li>
+                <li class="tab-link" onclick="openTab(event, 'etf-vs-mutual')" role="tab" tabindex="0" aria-selected="false" aria-controls="etf-vs-mutual">ETFs vs. Mutual Funds</li>
             </ul>
 
             <div class="tab-content">
-                <div id="primary-market" class="tab-pane active">
+                <div id="primary-market" class="tab-pane active" role="tabpanel" aria-labelledby="primary-market-tab">
                     <h3>Primary Market Process</h3>
                     <div class="two-column">
                         <div>
@@ -688,7 +1107,7 @@ seo:
                     </div>
                 </div>
 
-                <div id="secondary-market" class="tab-pane">
+                <div id="secondary-market" class="tab-pane" role="tabpanel" aria-labelledby="secondary-market-tab" aria-hidden="true">
                     <h3 class="mb-3">Secondary Market Trading</h3>
                     <div class="two-column">
                         <div>
@@ -754,7 +1173,7 @@ seo:
                     </div>
                 </div>
 
-                <div id="arbitrage" class="tab-pane">
+                <div id="arbitrage" class="tab-pane" role="tabpanel" aria-labelledby="arbitrage-tab" aria-hidden="true">
                     <h3 class="mb-3">ETF Arbitrage Mechanism</h3>
                     <p class="mb-4">The arbitrage mechanism is a critical component that helps maintain the alignment between an ETF's market price and its underlying net asset value (NAV). This process ensures pricing efficiency and is one of the key innovations of the ETF structure.</p>
 
@@ -829,7 +1248,7 @@ seo:
                     </ul>
                 </div>
 
-                <div id="etf-vs-mutual" class="tab-pane">
+                <div id="etf-vs-mutual" class="tab-pane" role="tabpanel" aria-labelledby="etf-vs-mutual-tab" aria-hidden="true">
                     <h3 class="mb-3">ETFs vs. Mutual Funds: Key Differences</h3>
                     <table class="mb-4">
                         <thead>
@@ -1888,73 +2307,127 @@ seo:
         </div>
     </section>
 
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </a>
+
     <script>
-        // Tab functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const tabNavItems = document.querySelectorAll('.tab-nav li');
+            console.log('DOM fully loaded');
 
-            tabNavItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // Remove active class from all tabs
-                    tabNavItems.forEach(tab => tab.classList.remove('active'));
-
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-
-                    // Get the tab ID
-                    const tabId = this.getAttribute('data-tab');
-
-                    // Hide all tab panes
-                    document.querySelectorAll('.tab-pane').forEach(pane => {
-                        pane.classList.remove('active');
-                    });
-
-                    // Show the selected tab pane
-                    document.getElementById(tabId).classList.add('active');
+            // Fallback for tab functionality in case inline onclick doesn't work
+            var tabLinks = document.getElementsByClassName("tab-link");
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].addEventListener("click", function(e) {
+                    var tabId = this.getAttribute("aria-controls");
+                    if (tabId) {
+                        openTab(e, tabId);
+                    }
                 });
-            });
 
-            // Collapsible sections
-            const collapseTriggers = document.querySelectorAll('.collapse-trigger');
-
-            collapseTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('active');
+                // Add keyboard support for tabs
+                tabLinks[i].addEventListener("keydown", function(e) {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        this.click();
+                    }
                 });
-            });
+            }
+
+            // Set initial state for tab panels
+            var tabPanes = document.getElementsByClassName("tab-pane");
+            for (var i = 0; i < tabPanes.length; i++) {
+                if (!tabPanes[i].classList.contains("active")) {
+                    tabPanes[i].setAttribute("aria-hidden", "true");
+                } else {
+                    tabPanes[i].setAttribute("aria-hidden", "false");
+                }
+            }
+
+            // Mobile menu toggle functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+
+                    // Toggle aria-expanded attribute for accessibility
+                    const expanded = navLinks.classList.contains('active');
+                    this.setAttribute('aria-expanded', expanded);
+                });
+            }
 
             // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('nav a, .hero a');
+            const navLinkAnchors = document.querySelectorAll('nav a, .hero a');
 
-            navLinks.forEach(link => {
+            navLinkAnchors.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
 
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
 
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        }
+
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
                     window.scrollTo({
-                        top: targetElement.offsetTop - 70,
+                        top: 0,
                         behavior: 'smooth'
                     });
                 });
-            });
+            }
 
             // Add animation classes on scroll
             const animatedElements = document.querySelectorAll('.card, .chart-container, .progress-container');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in');
-                    }
-                });
-            }, { threshold: 0.1 });
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-fade-in');
+                        }
+                    });
+                }, { threshold: 0.1 });
 
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                animatedElements.forEach(element => {
+                    element.classList.add('animate-fade-in');
+                });
+            }
         });
     </script>
 

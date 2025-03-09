@@ -7,7 +7,11 @@ sections:
       text: Welcome to My Portfolio
       color: text-dark
       type: TitleBlock
-    subtitle: "Hello, I'm Nyree Hinton"
+      styles:
+        self:
+          textAlign: center
+          fontWeight: bold
+    subtitle: ''
     text: >
       I'm a Product Manager & Data Specialist based in Los Angeles with
       experience in data analytics, governance, and product development. Drawing
@@ -15,60 +19,290 @@ sections:
       project management, I aim to turn complex data problems into strategic
       solutions that drive business results.
     actions:
-      - label: Bio
-        altText: ''
-        url: /
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Button
-      - label: Past Projects
-        altText: ''
-        url: /
+      - label: VIEW PORTFOLIO
+        altText: "View Nyree Hinton's portfolio"
+        url: /Experience
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'portfolio-cta'
+        type: Button
+      - label: CONTACT ME
+        altText: 'Contact Nyree Hinton'
+        url: /#contact-section
+        showIcon: true
+        icon: mail
+        iconPosition: right
+        style: secondary
+        elementId: 'contact-cta'
         type: Link
     media:
       url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
+      altText: Nyree Hinton - Financial Analyst and Product Manager professional headshot
+      elementId: 'hero-image'
       type: ImageBlock
     badge:
       label: Data Product Management
       color: text-primary
       type: Badge
-    elementId: ''
+    elementId: 'hero-section'
     colors: bg-light-fg-dark
     styles:
       self:
         alignItems: center
-        flexDirection: row
+        flexDirection: column
         padding:
-          - pt-16
-          - pl-16
-          - pb-16
-          - pr-16
-        borderRadius: medium
-        boxShadow: 'var(--card-shadow)'
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        borderRadius: none
         margin:
           - mt-0
-          - mb-16
+          - mb-0
           - ml-0
           - mr-0
-  - type: FeaturedItemsSection
+        justifyContent: center
+        textAlign: center
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
+  - type: GenericSection
     title:
-      text: What I've Achieved
+      text: Use Case Gallery
       color: text-dark
       styles:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Real metrics and outcomes from my data-driven career
+    subtitle: "Learn how I've solved real-world challenges through data-driven approaches"
+    text: ''
+    elementId: 'use-cases'
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-16
+          - pl-24
+          - pb-8
+          - pr-24
+        justifyContent: center
+        alignItems: center
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: center
+
+  - type: FeaturedItemsSection
+    title:
+      text: ''
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+      type: TitleBlock
+    subtitle: ''
+    items:
+      - type: FeaturedItem
+        title: ETF Analytics
+        subtitle: Capital Markets
+        text: >
+          Spearheaded ingestion of multiple data sources, boosting transparency
+          and advanced analytics for multi-billion-dollar ETF product suites with over $31B in assets.
+        actions:
+          - label: Learn More
+            url: /capital-group
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            type: Link
+        elementId: 'etf-analytics'
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: medium
+            flexDirection: column
+            justifyContent: flex-start
+            textAlign: left
+            boxShadow: 'var(--card-shadow)'
+        image:
+          type: ImageBlock
+          altText: ETF Analytics dashboard visualization
+          elementId: ''
+          url: /images/IMG_1163.png
+          styles:
+            self:
+              borderRadius: medium
+      - title: Compliance Automation
+        subtitle: Risk Management
+        text: >
+          Built a custom seeding-money tracker that flagged unreported
+          transactions, strengthening regulatory adherence and recovering $170M while minimizing risk exposure.
+        image:
+          url: /images/icon2.svg
+          altText: Compliance automation visualization
+          elementId: ''
+          type: ImageBlock
+          styles:
+            self:
+              borderRadius: medium
+        actions:
+          - label: View Case Study
+            url: /blog/case-study-1
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            type: Link
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: medium
+            flexDirection: column
+            textAlign: left
+            justifyContent: flex-start
+            boxShadow: 'var(--card-shadow)'
+        type: FeaturedItem
+        elementId: 'compliance-automation'
+      - title: Data Pipeline Optimization
+        subtitle: Performance Engineering
+        text: >
+          Optimized Apache Spark ETL pipelines with SQL & Python in Databricks,
+          cutting data processing time by 70% and accelerating insights delivery for stakeholders.
+        image:
+          url: /images/IMG_1164.png
+          altText: Data pipeline optimization visualization
+          elementId: ''
+          type: ImageBlock
+          styles:
+            self:
+              borderRadius: medium
+        actions:
+          - label: Explore Solution
+            url: /blog/case-study-2
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            type: Link
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: medium
+            flexDirection: column
+            textAlign: left
+            justifyContent: flex-start
+            boxShadow: 'var(--card-shadow)'
+        type: FeaturedItem
+        elementId: 'data-pipeline'
+    actions:
+      - label: VIEW ALL PROJECTS
+        altText: "View all of Nyree Hinton's projects"
+        url: /Experience
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: 'all-projects-cta'
+        type: Button
+    badge:
+      label: FEATURED WORK
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+      type: Badge
+    elementId: 'featured-work'
+    variant: three-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pb-16
+          - pt-0
+          - pl-24
+          - pr-24
+        justifyContent: center
+        margin:
+          - mt-0
+          - mb-16
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: center
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
+  - type: GenericSection
+    title:
+      text: Benchmarks
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+      type: TitleBlock
+    subtitle: 'Real metrics and outcomes from my data-driven career'
+    text: ''
+    elementId: 'benchmarks'
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-16
+          - pl-24
+          - pb-8
+          - pr-24
+        justifyContent: center
+        alignItems: center
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: center
+
+  - type: FeaturedItemsSection
     items:
       - type: FeaturedItem
         title: $31B+
@@ -77,7 +311,7 @@ sections:
           Spearheaded ingestion of multiple data sources, boosting transparency
           and advanced analytics for multi-billion-dollar ETF product suites.
         actions: []
-        elementId: null
+        elementId: 'metric-etf'
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
@@ -125,6 +359,7 @@ sections:
             justifyContent: center
             boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
+        elementId: 'metric-compliance'
       - title: 70%
         subtitle: Faster Processing
         text: >
@@ -149,84 +384,161 @@ sections:
             flexDirection: row
             boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
-    actions:
-      - label: See more
-        altText: ''
-        url: /
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Button
-    badge:
-      label: MY TRACK RECORD
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: Badge
-    elementId: ''
+        elementId: 'metric-processing'
+    elementId: 'metrics'
     variant: three-col-grid
-    colors: bg-neutral-fg-dark
+    colors: bg-light-fg-dark
     styles:
       self:
         padding:
           - pb-16
-          - pt-16
-          - pl-16
-          - pr-16
+          - pt-0
+          - pl-24
+          - pr-24
         justifyContent: center
         margin:
           - mt-0
           - mb-16
           - ml-0
           - mr-0
-      subtitle:
-        textAlign: center
-  - subtitle: Past Experience
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-neutral-fg-dark
+
+  - subtitle: "Companies I've Worked With"
     images:
-      - altText: Empathy logo
-        type: ImageBlock
       - url: /images/bloomberg-logo-vector.png.jpg
-        altText: Wellster logo
+        altText: Bloomberg logo
         type: ImageBlock
-      - url: /images/CaptialGroup_Logo_Horizontal.jpg
-        altText: Vise logo
-        type: ImageBlock
-      - altText: Telus logo
-        type: ImageBlock
-        url: /images/Thirdbrige.png.jpg
         styles:
           self:
-            borderWidth: 1
-            padding:
-              - pt-1
-              - pl-1
-              - pb-1
-              - pr-1
-            margin:
-              - mt-1
-              - ml-1
-              - mb-1
-              - mr-1
-            borderRadius: x-small
-            borderColor: border-light
-      - altText: Contentful logo
+            borderRadius: none
+            width: narrow
+      - url: /images/CaptialGroup_Logo_Horizontal.jpg
+        altText: Capital Group logo
         type: ImageBlock
-      - altText: Sanity logo
+        styles:
+          self:
+            borderRadius: none
+            width: narrow
+      - url: /images/Thirdbrige.png.jpg
+        altText: Third Bridge logo
         type: ImageBlock
-      - altText: ''
+        styles:
+          self:
+            borderRadius: none
+            width: narrow
+      - url: /images/Screenshot 2025-02-13 at 8.27.35 AM.jpg
+        altText: Additional company logo
         type: ImageBlock
-        url: /images/Screenshot 2025-02-13 at 8.27.35 AM.jpg
+        styles:
+          self:
+            borderRadius: none
+            width: narrow
     motion: move-to-left
-    colors: bg-light-fg-dark
+    colors: bg-neutral-fg-dark
     styles:
       self:
         justifyContent: center
+        padding:
+          - pt-16
+          - pl-24
+          - pb-16
+          - pr-24
       subtitle:
         textAlign: center
     type: ImageGallerySection
+    elementId: 'companies'
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
+  - title:
+      text: Tesla Research Report
+      color: text-primary
+      styles:
+        self:
+          textAlign: left
+          fontWeight: light
+      type: TitleBlock
+    subtitle: 'Deep-Dive Analysis'
+    text: >
+      Uncovered a 12.64% inflation in Tesla's odometer readings through precise analysis of energy consumption versus distance traveled.
+    badge:
+      label: Research Deep Dive
+      color: text-primary
+      styles:
+        self:
+          textAlign: left
+      type: Badge
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        flexDirection: row
+        justifyContent: flex-start
+        alignItems: center
+        padding:
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: left
+    type: GenericSection
+    elementId: 'tesla-research-section'
+    actions:
+      - type: Button
+        label: READ REPORT
+        altText: 'Read Tesla odometer inflation research report'
+        url: /tesla
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: 'tesla-report-cta'
+    media:
+      type: ImageBlock
+      url: /images/IMG_0129.png
+      altText: Tesla research report showing 12.64% odometer inflation analysis by Nyree Hinton
+      elementId: ''
+      styles:
+        self:
+          borderRadius: medium
+          boxShadow: 'var(--card-shadow)'
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-neutral-fg-dark
+
   - posts:
       - content/pages/blog/case-study-1.md
       - content/pages/blog/case-study-2.md
@@ -234,21 +546,27 @@ sections:
     showThumbnail: true
     showDate: true
     showAuthor: true
-    variant: small-list
-    colors: bg-light-fg-dark
+    variant: three-col-grid
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-16
-          - pl-16
-          - pb-16
-          - pr-16
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
         justifyContent: center
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
     type: FeaturedPostsSection
     hoverEffect: move-up
-    subtitle: A cumulation of previous research.
+    subtitle: 'A collection of previous research'
     title:
       type: TitleBlock
       text: Case Studies
@@ -256,210 +574,41 @@ sections:
       styles:
         self:
           textAlign: center
-          fontWeight: 700
+          fontWeight: light
     showExcerpt: false
-  - title:
-      text: Tesla
-      color: text-dark
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: A Deep-Dive Into Tesla's Patents & Technology
-    text: >+
-      <div style="text-align: center">I conducted an in-depth review of Tesla's
-      patent filings and underlying technology to understand how they approach
-      **vehicle range, odometer systems, and battery management**. My analysis
-      focused on comparing Tesla's predictive algorithms and real-world metrics,
-      offering insights into the broader implications for both consumers and the
-      EV market. While there were additional considerations that arose during my
-      research, I primarily concentrated on how Tesla's core engineering
-      decisions impact everyday drivers.![](/images/IMG_0129.png)</div>
-
-    badge:
-      label: Exclusive consumer Report
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: Badge
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: row-reverse
-        justifyContent: center
-        alignItems: center
-        padding:
-          - pt-12
-          - pl-12
-          - pb-12
-          - pr-12
-        borderRadius: medium
-        boxShadow: 'var(--card-shadow)'
-        margin:
-          - mt-0
-          - mb-16
-          - ml-0
-          - mr-0
-      subtitle:
-        textAlign: center
-    type: GenericSection
+    elementId: 'case-studies-section'
     actions:
       - type: Button
-        label: Enter
-        altText: ''
-        url: /tesla
-        showIcon: false
+        label: VIEW ALL
+        altText: 'View all case studies and research'
+        url: /blog
+        showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'case-studies-cta'
+
   - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
     styles:
       self:
         padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
-  - type: GenericSection
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
+  - type: CarouselSection
     title:
-      text: Education
+      type: TitleBlock
+      text: Technical Proficiency
       color: text-dark
       styles:
         self:
           textAlign: center
-      type: TitleBlock
-    subtitle: The Pennsylvania State University
-    text: ''
-    actions: []
-    elementId: null
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: col-reverse
-        justifyContent: center
-        alignItems: center
-      subtitle:
-        textAlign: center
-    backgroundImage:
-      type: BackgroundImage
-      altText: altText of the image
-      backgroundSize: auto
-      backgroundPosition: center
-      backgroundRepeat: no-repeat
-      opacity: 100
-    media:
-      type: ImageBlock
-      altText: Image alt text placeholder
-      elementId: ''
-      styles:
-        self:
-          borderRadius: medium
-  - title:
-      text: Certifications
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: ''
-    items:
-      - title: Certificate in ESG Investing from CFA
-        tagline: Charted Financial Analyst Institute
-        subtitle: ''
-        text: >
-          An industry-recognized credential demonstrating advanced insight into
-          how environmental, social, and governance factors shape investment
-          decisions. Widely adopted by finance professionals, this certificate
-          emphasizes responsible and sustainable approaches to portfolio
-          management.
-        image:
-          url: /images/IMG_0135.jpeg
-          altText: Placeholder Image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Certified SAFe® 6 Practitioner from
-        tagline: 'Scaled Agile, Inc.'
-        subtitle: ''
-        text: >
-          A recognized qualification in the Scaled Agile Framework (SAFe),
-          emphasizing an ability to coordinate and streamline agile practices
-          across large teams. This certification underscores my capacity to
-          drive collaborative planning, continuous delivery, and iterative
-          improvements at the enterprise level.
-        image:
-          url: /images/Certified SAFe 6 Practitioner.png
-          altText: Placeholder image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Securities Industry Essentials® (SIE®)
-        tagline: Financial Industry Regulatory Authority
-        subtitle: Exam Scheduled*
-        text: ''
-        image:
-          url: /images/IMG_0138.png
-          altText: Placeholder image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-    variant: three-col-grid
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-16
-          - pl-8
-          - pb-16
-          - pr-8
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
-  - type: CarouselSection
-    title: null
-    subtitle: Tech Stack
+          fontWeight: light
+    subtitle: "Tools and technologies I've mastered"
     items:
       - title: Visualization
         tagline: Tableau
@@ -475,19 +624,21 @@ sections:
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
+        elementId: 'tableau-skill'
         image:
           type: ImageBlock
           url: /images/IMG_1163.png
-          altText: ''
+          altText: Tableau visualization dashboard example showing ETF analytics and data insights
           elementId: ''
           styles:
             self:
@@ -503,34 +654,35 @@ sections:
           and external teams.
         image:
           url: /images/IMG_1164.png
-          altText: ''
+          altText: Databricks platform interface used for ETL pipeline optimization and data processing
           styles:
             self:
-              borderRadius: full
+              borderRadius: medium
           type: ImageBlock
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
       - title: 'SQL, Python, Excel'
         tagline: ''
         subtitle: Preferred coding languages
-        text: >+
+        text: >
           I use SQL as the primary tool to structure and optimize large
-          datasets. My experience with advanced SQL techniques—such as window
-          functions, partitioning, and indexing—helps me maintain data
-          integrity and improve query performance, which is essential for both
-          reporting and analytical projects.
+          datasets. My experience with advanced SQL techniques, such as window
+          functions, partitioning, and indexing helps me maintain data integrity
+          and improve query performance, which is essential for both reporting
+          and analytical projects.
 
 
           Python complements my SQL skills by allowing me to build flexible ETL
@@ -538,85 +690,140 @@ sections:
           I extend SQL's capabilities to handle diverse data transformation
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
-
-
         image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
+          url: /images/techstack.png
+          altText: SQL, Python, and Excel technical skills visualization representing Nyree Hinton's coding proficiency
           styles:
             self:
-              borderRadius: full
+              borderRadius: medium
           type: ImageBlock
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
-    elementId: null
+    elementId: 'technical-skills'
     variant: next-prev-nav
     colors: bg-light-fg-dark
     styles:
       self:
         justifyContent: center
+        padding:
+          - pt-24
+          - pb-24
+          - pl-24
+          - pr-24
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-neutral-fg-dark
+
   - title:
-      text: '"Open to Work"'
+      text: Open to New Opportunities
       color: text-dark
       type: TitleBlock
-    subtitle: Artificial Intelligence Reshaping the Meaning of "White-collar Employment"
-    text: "As_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI'm looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!\n"
+      styles:
+        self:
+          textAlign: center
+          fontWeight: light
+    subtitle: 'Artificial Intelligence Reshaping the Meaning of White-collar Employment'
+    text: "<div style=\"text-align: left\">As organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity*.</div>\n\n<div style=\"text-align: left\">If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!</div>\n\n"
     actions:
-      - label: LinkedIn
+      - label: LINKEDIN
         url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
         iconPosition: right
         style: secondary
         type: Button
-      - label: Contact
-        url: /
+        altText: 'Connect with Nyree Hinton on LinkedIn'
+        elementId: 'linkedin-cta'
+      - type: Link
+        label: EMAIL ME
+        altText: 'Send email to Nyree Hinton'
+        url: 'mailto:nyreehinton@gmail.com'
         showIcon: true
-        icon: arrowRight
+        icon: mail
         iconPosition: right
-        style: primary
-        type: Link
+        style: secondary
+        elementId: 'email-cta'
     media:
       url: /images/HeadshotAI.gif
-      altText: Fun feature preview
+      altText: Nyree Hinton AI-generated professional headshot animation showcasing technology expertise
       type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
+      styles:
+        self:
+          borderRadius: medium
+          boxShadow: 'var(--card-shadow)'
     colors: bg-light-fg-dark
     styles:
       self:
         alignItems: center
+        flexDirection: row-reverse
+        justifyContent: center
+        padding:
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
+      subtitle:
+        textAlign: center
     type: GenericSection
-  - title: Divider
-    colors: bg-light-fg-dark
+    elementId: 'contact-section'
+    badge:
+      type: Badge
+      label: Contact Me
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+
+  - type: DividerSection
     styles:
       self:
         padding:
-          - pt-7
-          - pl-7
-          - pb-7
-          - pr-7
-    type: DividerSection
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
   - title:
       text: Always Happy to Chat
       color: text-dark
       type: TitleBlock
-    subtitle: "\U0001F4F2"
+    subtitle: '📲'
     text: >
       If you found something of interest or have a general question feel free to
       reach out!

@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Home | Nyree Hinton | Financial Analyst & Product Manager
 slug: /
 sections:
   - type: GenericSection
@@ -16,18 +16,18 @@ sections:
       A collection of my work as an Equity Analyst & Product Manager within the Financial sector spanning technology & consumer markets, M&A strategy, and ETF analytics—crafted with architectural primers.
     actions:
       - label: VIEW PORTFOLIO
-        altText: ''
+        altText: "View Nyree Hinton's financial analysis portfolio"
         url: /Experience
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'portfolio-cta'
         type: Button
     media:
       url: /images/Hinton_Nyree_Default_Lifestyle 2_Headshot.jpeg
-      altText: Nyree Hinton headshot
-      elementId: ''
+      altText: Nyree Hinton - Financial Analyst and Product Manager professional headshot
+      elementId: 'hero-image'
       type: ImageBlock
       styles:
         self:
@@ -37,7 +37,7 @@ sections:
       label: Nyree Hinton
       color: text-primary
       type: Badge
-    elementId: ''
+    elementId: 'hero-section'
     colors: bg-light-fg-dark
     styles:
       self:
@@ -86,7 +86,7 @@ sections:
           - mr-0
       subtitle:
         textAlign: center
-    elementId: expertise
+    elementId: 'expertise-section'
   - type: FeaturedItemsSection
     title:
       text: ''
@@ -123,7 +123,7 @@ sections:
             borderColor: border-dark
         image:
           type: ImageBlock
-          altText: Bloomberg financial data visualization
+          altText: Bloomberg financial data visualization and analytics platform used for ETF transaction analysis
           elementId: ''
           url: /images/bloomberg-logo-vector.png.jpg
           styles:
@@ -136,7 +136,7 @@ sections:
           Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.
         image:
           url: /images/Capital_Group_Companies.jpg
-          altText: Capital Group logo
+          altText: Capital Group logo - where Nyree Hinton engineered ETL pipelines and data governance solutions
           elementId: ''
           type: ImageBlock
           styles:
@@ -167,7 +167,7 @@ sections:
           Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.
         image:
           url: /images/Thirdbrige.png.jpg
-          altText: Third Bridge logo
+          altText: Third Bridge logo - where Nyree Hinton conducted market intelligence research and executive-level discussions
           elementId: ''
           type: ImageBlock
           styles:
@@ -266,20 +266,21 @@ sections:
       subtitle:
         textAlign: left
     type: GenericSection
+    elementId: 'tesla-research-section'
     actions:
       - type: Button
         label: READ REPORT
-        altText: ''
+        altText: 'Read Tesla odometer inflation research report'
         url: /tesla
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'tesla-report-cta'
     media:
       type: ImageBlock
       url: /images/IMG_0129.png
-      altText: Tesla Investigation
+      altText: Tesla research report showing 12.64% odometer inflation analysis by Nyree Hinton
       elementId: ''
       styles:
         self:
@@ -334,16 +335,17 @@ sections:
           textAlign: center
           fontWeight: light
     showExcerpt: false
+    elementId: 'case-studies-section'
     actions:
       - type: Button
         label: VIEW ALL
-        altText: ''
+        altText: 'View all case studies and research'
         url: /blog
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'case-studies-cta'
 
   - type: DividerSection
     styles:
@@ -391,10 +393,11 @@ sections:
             justifyContent: center
             boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
+        elementId: 'tableau-skill'
         image:
           type: ImageBlock
           url: /images/IMG_1163.png
-          altText: ''
+          altText: Tableau visualization dashboard example showing ETF analytics and data insights
           elementId: ''
           styles:
             self:
@@ -410,7 +413,7 @@ sections:
           and external teams.
         image:
           url: /images/IMG_1164.png
-          altText: ''
+          altText: Databricks platform interface used for ETL pipeline optimization and data processing
           styles:
             self:
               borderRadius: medium
@@ -448,7 +451,7 @@ sections:
           various project complexities.
         image:
           url: /images/techstack.png
-          altText: ''
+          altText: SQL, Python, and Excel technical skills visualization representing Nyree Hinton's coding proficiency
           styles:
             self:
               borderRadius: medium
@@ -520,7 +523,7 @@ sections:
           management.
         image:
           url: /images/IMG_0135.jpeg
-          altText: ESG Investing Certificate
+          altText: ESG Investing Certificate from CFA Institute - environmental, social, and governance investment credential
           styles:
             self:
               borderRadius: medium
@@ -537,6 +540,7 @@ sections:
             flexDirection: col
             boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
+        elementId: 'esg-certificate'
       - title: Certified SAFe® 6 Practitioner
         tagline: 'Scaled Agile, Inc.'
         subtitle: ''
@@ -548,7 +552,7 @@ sections:
           improvements at the enterprise level.
         image:
           url: /images/Certified SAFe 6 Practitioner.png
-          altText: SAFe Practitioner Certificate
+          altText: Certified SAFe 6 Practitioner certificate from Scaled Agile Inc. for agile framework expertise
           styles:
             self:
               borderRadius: medium
@@ -571,7 +575,7 @@ sections:
         text: ''
         image:
           url: /images/IMG_0138.png
-          altText: SIE Certificate
+          altText: Securities Industry Essentials (SIE) certification from Financial Industry Regulatory Authority
           styles:
             self:
               borderRadius: medium
@@ -600,7 +604,7 @@ sections:
         image:
           type: ImageBlock
           url: /images/Bloomberg Market Concepts.jpg
-          altText: Bloomberg Market Concepts Certificate
+          altText: Bloomberg Market Concepts (BMC) certificate showing financial markets and instruments expertise
           styles:
             self:
               borderRadius: medium
@@ -645,13 +649,13 @@ sections:
     actions:
       - type: Button
         label: SEE MORE
-        altText: ''
+        altText: "See more about Nyree Hinton's education and credentials"
         url: /Experience
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: primary
-        elementId: ''
+        elementId: 'education-cta'
 
   - type: DividerSection
     styles:
@@ -673,7 +677,7 @@ sections:
           textAlign: center
           fontWeight: light
     subtitle: Artificial Intelligence Reshaping the Meaning of "White-collar Employment"
-    text: "<div style=\"text-align: left\">As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity*.</div>\n\n<div style=\"text-align: left\">If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!</div>\n\n"
+    text: "<div style=\"text-align: left\">As organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity*.</div>\n\n<div style=\"text-align: left\">If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!</div>\n\n"
     actions:
       - label: LINKEDIN
         url: 'https://www.linkedin.com/in/nyree-hinton'
@@ -681,18 +685,20 @@ sections:
         iconPosition: right
         style: secondary
         type: Button
+        altText: 'Connect with Nyree Hinton on LinkedIn'
+        elementId: 'linkedin-cta'
       - type: Link
         label: EMAIL ME
-        altText: Send email
+        altText: 'Send email to Nyree Hinton'
         url: 'mailto:nyreehinton@gmail.com'
         showIcon: true
         icon: mail
         iconPosition: right
         style: secondary
-        elementId: ''
+        elementId: 'email-cta'
     media:
       url: /images/HeadshotAI.gif
-      altText: Nyree Hinton AI-generated headshot
+      altText: Nyree Hinton AI-generated professional headshot animation showcasing technology expertise
       type: ImageBlock
       styles:
         self:
@@ -718,6 +724,7 @@ sections:
       subtitle:
         textAlign: center
     type: GenericSection
+    elementId: 'contact-section'
     badge:
       type: Badge
       label: Contact Me
@@ -727,11 +734,108 @@ sections:
           textAlign: center
 
 seo:
-  metaTitle: Financial Analysis Portfolio - Nyree Hinton
+  metaTitle: Nyree Hinton | Financial Analyst & Product Manager Portfolio | ETF Analytics Expert
   metaDescription: >-
-    A collection of precise financial insights and research spanning equity markets, 
-    M&A strategy, and ETF analytics—crafted with architectural elegance.
+    Nyree Hinton's professional portfolio showcasing expertise in financial analysis, ETF data governance, 
+    and product management. Specialized in capital markets, Bloomberg analytics, and data-driven insights 
+    with proven results in optimizing ETL pipelines and market intelligence.
+  additionalMetaTags:
+    - name: keywords
+      content: Nyree Hinton, financial analyst, product manager, ETF analytics, capital markets, Bloomberg, data governance, market intelligence, SQL, Python, Tableau, Databricks, portfolio
+    - name: author
+      content: Nyree Hinton
+    - name: robots
+      content: index, follow
+    - name: canonical
+      content: https://nyreehinton.com/
+  openGraph:
+    title: Nyree Hinton | Financial Analysis & Product Management Portfolio
+    description: Expert in ETF analytics, capital markets data, and product management with proven results at Bloomberg, Capital Group, and Third Bridge.
+    images:
+      - url: /images/Bloomberg Princeton.JPG
+        width: 1200
+        height: 630
+        alt: Nyree Hinton - Financial Analyst & Product Manager
+    type: website
+  twitter:
+    cardType: summary_large_image
+    title: Nyree Hinton | Financial Analysis & ETF Data Expert
+    description: Specialized in capital markets, ETF analytics, and data-driven product management with expertise in SQL, Python, and Tableau.
+    image: /images/Bloomberg Princeton.JPG
   socialImage: /images/Bloomberg Princeton.JPG
+  structuredData:
+    - type: Person
+      properties:
+        name: Nyree Hinton
+        jobTitle: Financial Analyst & Product Manager
+        worksFor:
+          type: Organization
+          properties:
+            name: Open to Opportunities
+        alumniOf:
+          type: EducationalOrganization
+          properties:
+            name: The Pennsylvania State University
+        knowsAbout:
+          - ETF Analytics
+          - Capital Markets
+          - Data Governance
+          - Market Intelligence
+          - SQL
+          - Python
+          - Tableau
+          - Databricks
+        url: https://nyreehinton.com
+        image: /images/Hinton_Nyree_Default_Lifestyle 2_Headshot.jpeg
+    - type: WebSite
+      properties:
+        name: Nyree Hinton | Financial Analyst & Product Manager Portfolio
+        description: Professional portfolio showcasing expertise in financial analysis, ETF data governance, and product management.
+        url: https://nyreehinton.com
+    - type: ProfilePage
+      properties:
+        mainEntity:
+          type: Person
+          properties:
+            name: Nyree Hinton
+            jobTitle: Financial Analyst & Product Manager
+            url: https://nyreehinton.com
+    - type: ItemList
+      properties:
+        itemListElement:
+          - type: ListItem
+            properties:
+              position: 1
+              item:
+                type: Course
+                properties:
+                  name: Certificate in ESG Investing
+                  provider:
+                    type: Organization
+                    properties:
+                      name: Charted Financial Analyst Institute (CFA)
+          - type: ListItem
+            properties:
+              position: 2
+              item:
+                type: Course
+                properties:
+                  name: Certified SAFe® 6 Practitioner
+                  provider:
+                    type: Organization
+                    properties:
+                      name: Scaled Agile, Inc.
+          - type: ListItem
+            properties:
+              position: 3
+              item:
+                type: Course
+                properties:
+                  name: Bloomberg Market Concepts (BMC)
+                  provider:
+                    type: Organization
+                    properties:
+                      name: Bloomberg L.P.
   type: Seo
 type: PageLayout
 ---
