@@ -1,14 +1,14 @@
 {
     "light": "#ffffff",
-    "dark": "#4A4A4A",
-    "neutral": "#E8E8EB",
-    "neutralAlt": "#DCDCDC",
-    "primary": "#2a2a2a",
-    "fontBody": "sans",
-    "fontHeadlines": "sans",
+    "dark": "#212529",
+    "neutral": "#F8F9FA",
+    "neutralAlt": "#E8E8EB",
+    "primary": "#0F4C81",
+    "fontBody": "Raleway, sans-serif",
+    "fontHeadlines": "Cormorant Garamond, serif",
     "h1": {
         "size": "6xl",
-        "weight": "normal",
+        "weight": "light",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal",
@@ -16,7 +16,7 @@
     },
     "h2": {
         "size": "5xl",
-        "weight": "normal",
+        "weight": "light",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal",
@@ -24,7 +24,7 @@
     },
     "h3": {
         "size": "3xl",
-        "weight": "normal",
+        "weight": "semibold",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal",
@@ -75,9 +75,9 @@
         "type": "ThemeStyleButton"
     },
     "linkPrimary": {
-        "weight": "normal",
-        "case": "none",
-        "letterSpacing": "normal",
+        "weight": "medium",
+        "case": "uppercase",
+        "letterSpacing": "wide",
         "type": "ThemeStyleLink"
     },
     "linkSecondary": {
@@ -86,5 +86,6 @@
         "letterSpacing": "normal",
         "type": "ThemeStyleLink"
     },
-    "type": "ThemeStyle"
+    "type": "ThemeStyle",
+    "customCSS": "/* Marble & Glass Design - Background Texture */\nhtml, body {\n  background-image: url(\"data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23767676' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5v-1H1z'/%3E%3C/g%3E%3C/svg%3E\") !important;\n  background-size: auto !important;\n  background-position: center !important;\n  background-repeat: repeat !important;\n}\n\n.sb-component-section, .sb-component-hero-section, .sb-component-featured-items-section, .sb-component-generic-section, .sb-component-carousel-section, .sb-component-featured-posts-section, .sb-component-form-section, .sb-component-image-gallery-section, .section, .page-layout, .page-layout-section, .page-layout-content, .page-layout-container, .page-layout-main, .page-layout-body, .page-layout-header, .page-layout-footer {\n  background-color: transparent !important;\n  background-image: none !important;\n}\n\n/* Card styling */\n.featured-item, .form-block, .image-block, .generic-section {\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n  background-color: #ffffff;\n}\n\n.featured-item:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);\n}\n\n/* Improved spacing */\n.section {\n  margin-bottom: 80px;\n}\n\n/* Info block styling for special content */\n.info-block {\n  background-color: #ffffff;\n  padding: 30px;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);\n  position: relative;\n  z-index: 2;\n}\n\n.info-title {\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 24px;\n  font-weight: 600;\n  margin-bottom: 10px;\n  color: #0F4C81;\n}\n\n.info-text {\n  color: #212529;\n  font-size: 14px;\n  line-height: 1.6;\n}"
 }

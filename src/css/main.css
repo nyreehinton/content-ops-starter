@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
     body {
         @apply text-base;
@@ -39,7 +37,7 @@
         em {
             @apply italic;
         }
-        * + * {
+        *+* {
             margin-top: 1.5em;
         }
         h1,
@@ -68,11 +66,11 @@
             @apply list-disc;
             padding-left: 1.25em;
         }
-        li > ul,
-        li > ol {
+        li>ul,
+        li>ol {
             margin: 0;
         }
-        li + li {
+        li+li {
             margin-top: 0.5rem;
         }
         blockquote {
@@ -122,31 +120,36 @@
             font-weight: bold;
         }
     }
-
     /* Buttons */
     .sb-component-button {
-        @apply inline-flex justify-center items-center text-center border transition duration-200 ease-in hover:-translate-y-1;
+        @apply inline-flex justify-center items-center text-center border transition duration-200 ease-in;
     }
-
+    .sb-component-button:hover {
+        transform: translateY(-1px);
+    }
     /* Links */
     .sb-component-link {
         @apply inline-flex justify-center items-center text-center transition duration-200 ease-linear;
     }
     .sb-component-link-primary {
-        @apply text-primary hover:underline;
+        @apply text-primary;
+    }
+    .sb-component-link-primary:hover {
+        @apply underline;
     }
     .sb-component-link-secondary {
-        @apply text-current hover:text-primary;
+        @apply text-current;
     }
-
+    .sb-component-link-secondary:hover {
+        @apply text-primary;
+    }
     /* Form controls */
     option {
         color: initial;
     }
-    .sb-checkbox:checked + .sb-label:before {
+    .sb-checkbox:checked+.sb-label:before {
         content: '\2713';
     }
-
     /* Image gallery */
     .sb-image-strip-track {
         min-width: 160rem;
@@ -154,12 +157,10 @@
     .sb-image-strip-content {
         min-width: 80rem;
     }
-
     /* Carousel */
     .sb-carousel-dot {
         @apply w-4 h-4 cursor-pointer;
     }
-
     .sb-carousel-tab-title {
         @apply cursor-pointer opacity-40 max-w-xs;
         display: -webkit-box;
@@ -173,7 +174,6 @@
     .sb-carousel-tab-title-active {
         @apply opacity-100;
     }
-
     /* Color palettes */
     .bg-light-fg-dark,
     .sb-card.bg-light-fg-dark {
@@ -304,10 +304,10 @@
     }
     @keyframes slideLeft {
         from {
-            transform: translate3d(0,0,0)
+            transform: translate3d(0, 0, 0)
         }
         to {
-            transform: translate3d(-50%,0,0)
+            transform: translate3d(-50%, 0, 0)
         }
     }
     .sb-animate-slide-right {
@@ -318,10 +318,105 @@
     }
     @keyframes slideRight {
         from {
-            transform: translate3d(-50%,0,0)
+            transform: translate3d(-50%, 0, 0)
         }
         to {
-            transform: translate3d(0,0,0)
+            transform: translate3d(0, 0, 0)
         }
     }
+}
+
+
+/* Marble & Glass Design Enhancements */
+
+.featured-item,
+.form-block,
+.image-block,
+.generic-section {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+.featured-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+
+/* Info block styling for special content */
+
+.info-block {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.info-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0F4C81;
+}
+
+.info-text {
+    color: #212529;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Background pattern for entire site */
+
+html,
+body {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23767676' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5v-1H1z'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: auto !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
+}
+
+
+/* Ensure sections and components have transparent backgrounds to show the pattern */
+
+.sb-component-section,
+.sb-component-hero-section,
+.sb-component-featured-items-section,
+.sb-component-generic-section,
+.sb-component-carousel-section,
+.sb-component-featured-posts-section,
+.sb-component-form-section,
+.sb-component-image-gallery-section,
+.section,
+.page-layout,
+.page-layout-section,
+.page-layout-content,
+.page-layout-container,
+.page-layout-main,
+.page-layout-body,
+.page-layout-header,
+.page-layout-footer,
+.bg-light-fg-dark,
+.bg-neutral-fg-dark,
+.bg-dark-fg-light,
+.bg-neutralAlt-fg-dark {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+
+/* Override any section background colors to ensure transparency */
+
+.bg-light-fg-dark,
+.bg-neutral-fg-dark,
+.bg-dark-fg-light,
+.bg-neutralAlt-fg-dark {
+    background: transparent !important;
 }

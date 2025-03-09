@@ -9,7 +9,7 @@ sections:
       type: TitleBlock
     subtitle: "Hello, I'm Nyree Hinton"
     text: >
-      I’m a Product Manager & Data Specialist based in Los Angeles with
+      I'm a Product Manager & Data Specialist based in Los Angeles with
       experience in data analytics, governance, and product development. Drawing
       on years of hands-on work in capital markets, machine learning, and agile
       project management, I aim to turn complex data problems into strategic
@@ -53,9 +53,16 @@ sections:
           - pl-16
           - pb-16
           - pr-16
+        borderRadius: medium
+        boxShadow: 'var(--card-shadow)'
+        margin:
+          - mt-0
+          - mb-16
+          - ml-0
+          - mr-0
   - type: FeaturedItemsSection
     title:
-      text: What I’ve Achieved
+      text: What I've Achieved
       color: text-dark
       styles:
         self:
@@ -83,6 +90,7 @@ sections:
             flexDirection: row
             justifyContent: center
             textAlign: left
+            boxShadow: 'var(--card-shadow)'
         image:
           type: ImageBlock
           altText: Lightning bolt symbol on red background
@@ -115,6 +123,7 @@ sections:
             flexDirection: row
             textAlign: left
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
       - title: 70%
         subtitle: Faster Processing
@@ -138,6 +147,7 @@ sections:
               - pr-8
             borderRadius: x-large
             flexDirection: row
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
     actions:
       - label: See more
@@ -167,6 +177,11 @@ sections:
           - pl-16
           - pr-16
         justifyContent: center
+        margin:
+          - mt-0
+          - mb-16
+          - ml-0
+          - mr-0
       subtitle:
         textAlign: center
   - subtitle: Past Experience
@@ -250,15 +265,15 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: A Deep-Dive Into Tesla’s Patents & Technology
+    subtitle: A Deep-Dive Into Tesla's Patents & Technology
     text: >+
-      <div style="text-align: center">I conducted an in-depth review of Tesla’s
+      <div style="text-align: center">I conducted an in-depth review of Tesla's
       patent filings and underlying technology to understand how they approach
       **vehicle range, odometer systems, and battery management**. My analysis
-      focused on comparing Tesla’s predictive algorithms and real-world metrics,
+      focused on comparing Tesla's predictive algorithms and real-world metrics,
       offering insights into the broader implications for both consumers and the
       EV market. While there were additional considerations that arose during my
-      research, I primarily concentrated on how Tesla’s core engineering
+      research, I primarily concentrated on how Tesla's core engineering
       decisions impact everyday drivers.![](/images/IMG_0129.png)</div>
 
     badge:
@@ -274,6 +289,18 @@ sections:
         flexDirection: row-reverse
         justifyContent: center
         alignItems: center
+        padding:
+          - pt-12
+          - pl-12
+          - pb-12
+          - pr-12
+        borderRadius: medium
+        boxShadow: 'var(--card-shadow)'
+        margin:
+          - mt-0
+          - mb-16
+          - ml-0
+          - mr-0
       subtitle:
         textAlign: center
     type: GenericSection
@@ -442,7 +469,7 @@ sections:
           decision-making for global stakeholders. By leveraging hyper-extract
           automation and optimized data sources, my Tableau implementations have
           significantly reduced load times and improved usability across Capital
-          Groupâ€™s ETF product suite.
+          Group's ETF product suite.
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
@@ -500,15 +527,15 @@ sections:
         subtitle: Preferred coding languages
         text: >+
           I use SQL as the primary tool to structure and optimize large
-          datasets. My experience with advanced SQL techniquesâ€”such as window
-          functions, partitioning, and indexingâ€”helps me maintain data
+          datasets. My experience with advanced SQL techniques—such as window
+          functions, partitioning, and indexing—helps me maintain data
           integrity and improve query performance, which is essential for both
           reporting and analytical projects.
 
 
           Python complements my SQL skills by allowing me to build flexible ETL
           pipelines. Using libraries like Pandas and PySpark within Databricks,
-          I extend SQLâ€™s capabilities to handle diverse data transformation
+          I extend SQL's capabilities to handle diverse data transformation
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
 
@@ -546,8 +573,8 @@ sections:
       text: '"Open to Work"'
       color: text-dark
       type: TitleBlock
-    subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
-    text: "As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI’m looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!\n"
+    subtitle: Artificial Intelligence Reshaping the Meaning of "White-collar Employment"
+    text: "As_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity* rather than a setback. \n\n\nI'm looking to help a forward-thinking company harness the power of AI for data governance, product insights, and fintech innovation. If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!\n"
     actions:
       - label: LinkedIn
         url: 'https://www.linkedin.com/in/nyree-hinton'
@@ -627,6 +654,7 @@ sections:
           borderStyle: solid
           borderWidth: 1
           borderRadius: large
+          boxShadow: 'var(--card-shadow)'
       type: FormBlock
       submitButton:
         type: SubmitButtonFormControl
@@ -641,11 +669,20 @@ sections:
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-12
+          - pl-12
+          - pb-12
+          - pr-12
+        borderRadius: medium
+        boxShadow: 'var(--card-shadow)'
     type: GenericSection
 seo:
   metaTitle: Home - Nyree Hinton
   metaDescription: >-
-    Explore Nyree Hinton’s professional portfolio. Discover his background in
+    Explore Nyree Hinton's professional portfolio. Discover his background in
     data analytics, product management, and cross-functional collaboration.
   socialImage: /images/main-hero.jpg
   type: Seo

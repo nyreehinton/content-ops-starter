@@ -178,6 +178,7 @@ allowed_elements:
 
         /* Button styles */
         .btn {
+            @apply inline-flex justify-center items-center text-center border transition duration-200 ease-in hover:-translate-y-1;
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background-color: var(--white);

@@ -5,19 +5,38 @@ sections:
   - type: GenericSection
     title:
       text: Welcome to My Portfolio
-      color: text-dark
+      color: text-primary
       type: TitleBlock
       styles:
         self:
-          textAlign: center
-    subtitle: "Hello, I'm Nyree Hinton"
-    text: "<div style=\"text-align: center\">I’m a Product Manager & Data Specialist based in Los Angeles with experience in data analytics, governance, and product development. Throughout my career, I have cultivated deep expertise at the intersection of data, financial products, and capital markets.\_</div>\n\n<div style=\"text-align: center\">The goal of this portfolio is to highlight my professional journey and showcase my roles at leading organizations, the challenges I overcame, and the metrics that underscore my contributions.</div>\n\n"
-    actions: []
+          textAlign: left
+          fontWeight: light
+    subtitle: ''
+    text: >
+      A collection of my work as an Equity Analyst & Product Manager within the Financial sector spanning technology & consumer markets, M&A strategy, and ETF analytics—crafted with architectural primers.
+    actions:
+      - label: VIEW PORTFOLIO
+        altText: ''
+        url: /Experience
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+        type: Button
     media:
-      url: /images/Hinton_Nyree_Default_Beige_Headshot.jpeg
-      altText: Unblock your team boost your time to production preview
+      url: /images/Hinton_Nyree_Default_Lifestyle 2_Headshot.jpeg
+      altText: Nyree Hinton headshot
       elementId: ''
       type: ImageBlock
+      styles:
+        self:
+          width: narrow
+          borderRadius: medium
+    badge:
+      label: Nyree Hinton
+      color: text-primary
+      type: Badge
     elementId: ''
     colors: bg-light-fg-dark
     styles:
@@ -25,120 +44,155 @@ sections:
         alignItems: center
         flexDirection: row
         padding:
-          - pt-16
-          - pl-16
-          - pb-16
-          - pr-16
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
       subtitle:
-        textAlign: center
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
+        textAlign: left
+
+  - type: GenericSection
+    title:
+      text: Professional Expertise
+      color: text-dark
+      type: TitleBlock
+      styles:
+        self:
+          textAlign: center
+          fontWeight: light
+    subtitle: ''
+    text: ''
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
+          - pt-16
+          - pl-24
+          - pb-0
+          - pr-24
+        justifyContent: center
+        alignItems: center
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: center
+    elementId: expertise
   - type: FeaturedItemsSection
     title:
-      text: What I’ve Achieved
+      text: ''
       color: text-dark
       styles:
         self:
           textAlign: center
+          fontWeight: light
       type: TitleBlock
-    subtitle: Real metrics and outcomes from my data-driven career
+    subtitle: ''
     items:
       - type: FeaturedItem
-        title: $31B+
-        subtitle: Global ETF Transaction Data
+        title: Capital Markets
+        subtitle: Bloomberg
         text: >
-          Spearheaded ingestion of multiple data sources, boosting transparency
-          and advanced analytics for multi-billion-dollar ETF product suites.
+          Analyzed global ETF transaction data exceeding $31B, enhancing transparency and providing advanced analytics for multi-billion-dollar product suites.
         actions: []
         elementId: null
-        colors: bg-neutralAlt-fg-dark
+        colors: bg-light-fg-dark
         styles:
           self:
             padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
             flexDirection: row
             justifyContent: center
             textAlign: left
+            boxShadow: 'var(--card-shadow)'
+            borderWidth: 0
+            borderStyle: none
+            borderColor: border-dark
         image:
           type: ImageBlock
-          altText: Lightning bolt symbol on red background
+          altText: Bloomberg financial data visualization
           elementId: ''
-          url: /images/IMG_1167.jpeg
+          url: /images/bloomberg-logo-vector.png.jpg
           styles:
             self:
-              borderRadius: x-large
-      - title: '125'
-        subtitle: Executive-level discussions
+              borderRadius: none
+              width: narrow
+      - title: Data Governance
+        subtitle: Capital Group
         text: >
-          Conducted market research—uncovering vital trends in consumer staples,
-          services, and agricultural markets.
+          Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.
         image:
-          url: /images/8FA65200-3DFE-4520-83FC-9B63D6FF0CD4.jpeg
-          altText: Featured icon two
+          url: /images/Capital_Group_Companies.jpg
+          altText: Capital Group logo
           elementId: ''
           type: ImageBlock
+          styles:
+            self:
+              borderRadius: none
+              width: narrow
         actions: []
-        colors: bg-neutralAlt-fg-dark
+        colors: bg-light-fg-dark
         styles:
           self:
             padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
             flexDirection: row
             textAlign: left
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
+            borderWidth: 0
+            borderStyle: none
+            borderColor: border-dark
         type: FeaturedItem
-      - title: 70%
-        subtitle: Faster Processing
+      - title: Market Intelligence
+        subtitle: Third Bridge
         text: >
-          Optimized Apache Spark ETL pipelines with SQL & Python in Databricks,
-          cutting data processing time by over two-thirds and accelerating
-          insights.
+          Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.
         image:
-          url: /images/152794C6-0491-49D7-9CAE-CFD3DC70FEB7.jpeg
-          altText: Featured icon three
+          url: /images/Thirdbrige.png.jpg
+          altText: Third Bridge logo
           elementId: ''
           type: ImageBlock
+          styles:
+            self:
+              borderRadius: none
+              width: narrow
         actions: []
-        colors: bg-neutralAlt-fg-dark
+        colors: bg-light-fg-dark
         styles:
           self:
             padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
             flexDirection: row
+            boxShadow: 'var(--card-shadow)'
+            borderWidth: 0
+            borderStyle: none
+            borderColor: border-dark
         type: FeaturedItem
-    actions:
-      - label: See more
-        altText: ''
-        url: /Experience
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Button
+    actions: []
     badge:
-      label: MY TRACK RECORD
+      label: ''
       color: text-primary
       styles:
         self:
@@ -150,83 +204,99 @@ sections:
     styles:
       self:
         padding:
-          - pb-16
-          - pt-16
-          - pl-16
-          - pr-16
+          - pb-24
+          - pt-0
+          - pl-24
+          - pr-24
         justifyContent: center
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
   - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
     styles:
       self:
         padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
-  - subtitle: ''
-    images:
-      - url: /images/bloomberg-logo-vector.png.jpg
-        altText: Wellster logo
-        type: ImageBlock
-      - url: /images/Capital_Group_Companies.jpg
-        altText: Vise logo
-        type: ImageBlock
-      - altText: Telus logo
-        type: ImageBlock
-        url: /images/Thirdbrige.png.jpg
-        styles:
-          self:
-            borderWidth: 1
-            padding:
-              - pt-1
-              - pl-1
-              - pb-1
-              - pr-1
-            margin:
-              - mt-1
-              - ml-1
-              - mb-1
-              - mr-1
-            borderRadius: x-small
-            borderColor: border-light
-      - altText: Contentful logo
-        type: ImageBlock
-      - altText: Sanity logo
-        type: ImageBlock
-      - altText: ''
-        type: ImageBlock
-        url: /images/Screenshot 2025-02-13 at 8.27.35 AM.jpg
-    motion: move-to-left
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
     colors: bg-light-fg-dark
-    styles:
-      self:
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: ImageGallerySection
-    title:
-      type: TitleBlock
-      text: Past Experience
-      color: text-dark
+
+  - title:
+      text: Tesla Report
+      color: text-primary
       styles:
         self:
-          textAlign: center
-  - type: DividerSection
-    title: Divider
-    elementId: ''
+          textAlign: left
+          fontWeight: light
+      type: TitleBlock
+    subtitle: ''
+    text: >
+      Uncovered a 12.64% inflation in Tesla's odometer readings through precise analysis of energy consumption versus distance traveled.
+    badge:
+      label: Research Deep Dive
+      color: text-primary
+      styles:
+        self:
+          textAlign: left
+      type: Badge
     colors: bg-light-fg-dark
     styles:
       self:
+        flexDirection: row
+        justifyContent: flex-start
+        alignItems: center
         padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        borderRadius: none
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+      subtitle:
+        textAlign: left
+    type: GenericSection
+    actions:
+      - type: Button
+        label: READ REPORT
+        altText: ''
+        url: /tesla
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+    media:
+      type: ImageBlock
+      url: /images/IMG_0129.png
+      altText: Tesla Investigation
+      elementId: ''
+      styles:
+        self:
+          borderRadius: medium
+          boxShadow: 'var(--card-shadow)'
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-neutral-fg-dark
+
   - posts:
       - content/pages/blog/lime-scooters.md
       - content/pages/blog/ams-sw.md
@@ -235,20 +305,26 @@ sections:
     showDate: true
     showAuthor: true
     variant: three-col-grid
-    colors: bg-light-fg-dark
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
         justifyContent: center
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
     type: FeaturedPostsSection
     hoverEffect: move-up
-    subtitle: A cumulation of previous research.
+    subtitle: A collection of previous research
     title:
       type: TitleBlock
       text: Case Studies
@@ -256,233 +332,40 @@ sections:
       styles:
         self:
           textAlign: center
-          fontWeight: 700
+          fontWeight: light
     showExcerpt: false
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
-  - title:
-      text: Tesla
-      color: text-dark
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: A Deep-Dive Into Tesla’s Patents & Technology
-    text: >+
-      <div style="text-align: center">I conducted an in-depth review of Tesla’s
-      patent filings and underlying technology to understand how they approach
-      **vehicle range, odometer systems, and battery management**. My analysis
-      focused on comparing Tesla’s predictive algorithms and real-world metrics,
-      offering insights into the broader implications for both consumers and the
-      EV market. While there were additional considerations that arose during my
-      research, I primarily concentrated on how Tesla’s core engineering
-      decisions impact everyday drivers.![](/images/IMG_0129.png)</div>
+    actions:
+      - type: Button
+        label: VIEW ALL
+        altText: ''
+        url: /blog
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
 
-    badge:
-      label: Exclusive consumer Report
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: Badge
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: row-reverse
-        justifyContent: center
-        alignItems: center
-      subtitle:
-        textAlign: center
-    type: GenericSection
-    actions:
-      - type: Button
-        label: Enter
-        altText: ''
-        url: /tesla
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
   - type: DividerSection
-    title: Divider
-    elementId: ''
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
     colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
-  - title:
-      text: The Pennsylvania State University
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: Certifications
-    items:
-      - title: Certificate in ESG Investing
-        tagline: Charted Financial Analyst Institute (CFA)
-        subtitle: ''
-        text: >
-          An industry-recognized credential demonstrating advanced insight into
-          how environmental, social, and governance factors shape investment
-          decisions. Widely adopted by finance professionals, this certificate
-          emphasizes responsible and sustainable approaches to portfolio
-          management.
-        image:
-          url: /images/IMG_0135.jpeg
-          altText: Placeholder Image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Certified SAFe® 6 Practitioner
-        tagline: 'Scaled Agile, Inc.'
-        subtitle: ''
-        text: >
-          A recognized qualification in the Scaled Agile Framework (SAFe),
-          emphasizing an ability to coordinate and streamline agile practices
-          across large teams. This certification underscores my capacity to
-          drive collaborative planning, continuous delivery, and iterative
-          improvements at the enterprise level.
-        image:
-          url: /images/Certified SAFe 6 Practitioner.png
-          altText: Placeholder image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Securities Industry Essentials® (SIE®)
-        tagline: Financial Industry Regulatory Authority
-        subtitle: Exam Scheduled*
-        text: ''
-        image:
-          url: /images/IMG_0138.png
-          altText: Placeholder image
-          styles:
-            self:
-              borderRadius: x-large
-          type: ImageBlock
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-        type: FeaturedItem
-      - type: FeaturedItem
-        title: Bloomberg Market Concepts (BMC)
-        tagline: Bloomberg L.P.
-        subtitle: ''
-        text: >
-          BMC offers a comprehensive overview of key financial markets and
-          instruments. Through modules on Economic Indicators, Fixed Income,
-          Currencies, and Equities, I gained a solid grounding in market
-          mechanics and the principles that drive global financial markets.
-        image:
-          type: ImageBlock
-          url: /images/Bloomberg Market Concepts.jpg
-          altText: Placeholder text
-          styles:
-            self:
-              borderRadius: x-large
-        actions: []
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-8
-              - pl-8
-              - pb-8
-              - pr-8
-            borderRadius: x-large
-            flexDirection: col
-    variant: three-col-grid
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-16
-          - pl-8
-          - pb-16
-          - pr-8
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
-    badge:
-      type: Badge
-      label: Education
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-    actions:
-      - type: Button
-        label: See More
-        altText: ''
-        url: /Experience
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
+
   - type: CarouselSection
     title:
       type: TitleBlock
-      text: Tech Stack
+      text: Technical Proficiency
       color: text-dark
-    subtitle: ''
+      styles:
+        self:
+          textAlign: center
+          fontWeight: light
+    subtitle: Tools and technologies I've mastered
     items:
       - title: Visualization
         tagline: Tableau
@@ -492,20 +375,21 @@ sections:
           decision-making for global stakeholders. By leveraging hyper-extract
           automation and optimized data sources, my Tableau implementations have
           significantly reduced load times and improved usability across Capital
-          Group’s ETF product suite.
+          Group's ETF product suite.
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
         image:
           type: ImageBlock
@@ -529,21 +413,22 @@ sections:
           altText: ''
           styles:
             self:
-              borderRadius: full
+              borderRadius: medium
           type: ImageBlock
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
       - title: 'SQL, Python, Excel'
         tagline: ''
@@ -558,7 +443,7 @@ sections:
 
           Python complements my SQL skills by allowing me to build flexible ETL
           pipelines. Using libraries like Pandas and PySpark within Databricks,
-          I extend SQL’s capabilities to handle diverse data transformation
+          I extend SQL's capabilities to handle diverse data transformation
           tasks. This approach enables me to automate workflows and adjust to
           various project complexities.
         image:
@@ -566,21 +451,22 @@ sections:
           altText: ''
           styles:
             self:
-              borderRadius: full
+              borderRadius: medium
           type: ImageBlock
         actions: []
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
+              - pt-12
+              - pb-12
+              - pl-12
+              - pr-12
             textAlign: left
-            borderRadius: large
+            borderRadius: none
             flexDirection: row
             justifyContent: center
+            boxShadow: 'var(--card-shadow)'
         type: FeaturedItem
     elementId: null
     variant: next-prev-nav
@@ -588,38 +474,216 @@ sections:
     styles:
       self:
         justifyContent: center
+        padding:
+          - pt-24
+          - pb-24
+          - pl-24
+          - pr-24
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
+
   - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-light-fg-dark
     styles:
       self:
         padding:
-          - pt-3
-          - pl-3
-          - pb-3
-          - pr-3
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-neutral-fg-dark
+
   - title:
-      text: '"Open to Work"'
+      text: Academic Credentials
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+          fontWeight: light
+      type: TitleBlock
+    subtitle: The Pennsylvania State University
+    items:
+      - title: Certificate in ESG Investing
+        tagline: Charted Financial Analyst Institute (CFA)
+        subtitle: ''
+        text: >
+          An industry-recognized credential demonstrating advanced insight into
+          how environmental, social, and governance factors shape investment
+          decisions. Widely adopted by finance professionals, this certificate
+          emphasizes responsible and sustainable approaches to portfolio
+          management.
+        image:
+          url: /images/IMG_0135.jpeg
+          altText: ESG Investing Certificate
+          styles:
+            self:
+              borderRadius: medium
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
+            flexDirection: col
+            boxShadow: 'var(--card-shadow)'
+        type: FeaturedItem
+      - title: Certified SAFe® 6 Practitioner
+        tagline: 'Scaled Agile, Inc.'
+        subtitle: ''
+        text: >
+          A recognized qualification in the Scaled Agile Framework (SAFe),
+          emphasizing an ability to coordinate and streamline agile practices
+          across large teams. This certification underscores my capacity to
+          drive collaborative planning, continuous delivery, and iterative
+          improvements at the enterprise level.
+        image:
+          url: /images/Certified SAFe 6 Practitioner.png
+          altText: SAFe Practitioner Certificate
+          styles:
+            self:
+              borderRadius: medium
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
+            flexDirection: col
+            boxShadow: 'var(--card-shadow)'
+        type: FeaturedItem
+      - title: Securities Industry Essentials® (SIE®)
+        tagline: Financial Industry Regulatory Authority
+        subtitle: Exam Scheduled*
+        text: ''
+        image:
+          url: /images/IMG_0138.png
+          altText: SIE Certificate
+          styles:
+            self:
+              borderRadius: medium
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
+            flexDirection: col
+            boxShadow: 'var(--card-shadow)'
+        type: FeaturedItem
+      - type: FeaturedItem
+        title: Bloomberg Market Concepts (BMC)
+        tagline: Bloomberg L.P.
+        subtitle: ''
+        text: >
+          BMC offers a comprehensive overview of key financial markets and
+          instruments. Through modules on Economic Indicators, Fixed Income,
+          Currencies, and Equities, I gained a solid grounding in market
+          mechanics and the principles that drive global financial markets.
+        image:
+          type: ImageBlock
+          url: /images/Bloomberg Market Concepts.jpg
+          altText: Bloomberg Market Concepts Certificate
+          styles:
+            self:
+              borderRadius: medium
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-12
+              - pl-12
+              - pb-12
+              - pr-12
+            borderRadius: none
+            flexDirection: col
+            boxShadow: 'var(--card-shadow)'
+    variant: three-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        justifyContent: center
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
+      subtitle:
+        textAlign: center
+    type: FeaturedItemsSection
+    badge:
+      type: Badge
+      label: Education
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+    actions:
+      - type: Button
+        label: SEE MORE
+        altText: ''
+        url: /Experience
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+
+  - type: DividerSection
+    styles:
+      self:
+        padding:
+          - pt-4
+          - pb-4
+        margin:
+          - mt-0
+          - mb-0
+    colors: bg-light-fg-dark
+
+  - title:
+      text: Open to New Opportunities
       color: text-dark
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Artificial Intelligence Reshaping the Meaning of “White-collar Employment”
-    text: "<div style=\"text-align: left\">As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity*.</div>\n\n<div style=\"text-align: left\">If you’re seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let’s connect!</div>\n\n"
+          fontWeight: light
+    subtitle: Artificial Intelligence Reshaping the Meaning of "White-collar Employment"
+    text: "<div style=\"text-align: left\">As\_organizations reassess how AI can revolutionize their business models, many have made sweeping workforce reductions—including my own role. Yet I see this shift as an *opportunity*.</div>\n\n<div style=\"text-align: left\">If you're seeking someone who can align emerging technology with strategic goals—and drive real value in the face of industry transformation—let's connect!</div>\n\n"
     actions:
-      - label: LinkedIn
+      - label: LINKEDIN
         url: 'https://www.linkedin.com/in/nyree-hinton'
         icon: arrowRight
-        iconPosition: left
+        iconPosition: right
         style: secondary
         type: Button
       - type: Link
-        label: Send email
-        altText: Play
+        label: EMAIL ME
+        altText: Send email
         url: 'mailto:nyreehinton@gmail.com'
         showIcon: true
         icon: mail
@@ -628,32 +692,45 @@ sections:
         elementId: ''
     media:
       url: /images/HeadshotAI.gif
-      altText: Fun feature preview
+      altText: Nyree Hinton AI-generated headshot
       type: ImageBlock
+      styles:
+        self:
+          borderRadius: medium
+          boxShadow: 'var(--card-shadow)'
     colors: bg-light-fg-dark
     styles:
       self:
-        alignItems: flex-start
+        alignItems: center
         flexDirection: row-reverse
-        justifyContent: flex-end
+        justifyContent: center
+        padding:
+          - pt-24
+          - pl-24
+          - pb-24
+          - pr-24
+        margin:
+          - mt-0
+          - mb-0
+          - ml-0
+          - mr-0
+        borderRadius: none
       subtitle:
         textAlign: center
     type: GenericSection
-  - title: Divider
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-7
-          - pl-7
-          - pb-7
-          - pr-7
-    type: DividerSection
+    badge:
+      type: Badge
+      label: Contact Me
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+
 seo:
-  metaTitle: Home - Nyree Hinton
+  metaTitle: Financial Analysis Portfolio - Nyree Hinton
   metaDescription: >-
-    Explore Nyree Hinton’s professional portfolio. Discover his background in
-    data analytics, product management, and cross-functional collaboration.
+    A collection of precise financial insights and research spanning equity markets, 
+    M&A strategy, and ETF analytics—crafted with architectural elegance.
   socialImage: /images/Bloomberg Princeton.JPG
   type: Seo
 type: PageLayout

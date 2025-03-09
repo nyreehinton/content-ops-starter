@@ -43,6 +43,7 @@
             "style": "secondary",
             "type": "Link"
         },
+
         {
             "label": "Projects",
             "altText": "Projects",
@@ -78,9 +79,8 @@
             "type": "SubNav"
         },
         {
-            "type": "SubNav",
-            "label": "Exclusive Tesla Report",
-            "altText": "Dropdown",
+            "label": "Tesla",
+            "altText": "Tesla",
             "links": [{
                     "type": "Link",
                     "label": "Background",
@@ -126,7 +126,8 @@
                     "label": "Everyone Else Got It Wrong"
                 }
             ],
-            "labelStyle": "secondary"
+            "labelStyle": "primary",
+            "type": "SubNav"
         }
     ],
     "secondaryLinks": [{
