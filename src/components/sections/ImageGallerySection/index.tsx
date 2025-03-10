@@ -8,7 +8,71 @@ import TitleBlock from '../../blocks/TitleBlock';
 import ImageBlock from '../../blocks/ImageBlock';
 import Badge from '../../atoms/Badge';
 
-export default function ImageGallerySection(props) {
+interface ImageProps {
+    url?: string;
+    altText?: string;
+    caption?: string;
+    elementId?: string;
+    styles?: {
+        self?: {
+            margin?: any;
+            padding?: any;
+            borderWidth?: number;
+            borderStyle?: string;
+            borderColor?: string;
+            borderRadius?: string;
+            opacity?: number;
+        };
+    };
+    'data-sb-field-path'?: string;
+}
+
+interface ImageGallerySectionProps {
+    elementId?: string;
+    colors?: string;
+    backgroundImage?: any;
+    badge?: any;
+    title?: any;
+    subtitle?: string;
+    images?: ImageProps[];
+    motion?: 'static' | 'move-to-left' | 'move-to-right';
+    styles?: {
+        self?: {
+            margin?: any;
+            padding?: any;
+            justifyContent?: string;
+        };
+        subtitle?: any;
+    };
+    enableAnnotations?: boolean;
+    __metadata?: {
+        id?: string;
+    };
+}
+
+interface ImageGalleryVariantsProps {
+    motion?: 'static' | 'move-to-left' | 'move-to-right';
+    images?: ImageProps[];
+    hasTopMargin: boolean;
+    justifyContent?: string;
+    hasAnnotations?: boolean;
+}
+
+interface ImageGalleryGridProps {
+    images?: ImageProps[];
+    hasTopMargin: boolean;
+    justifyContent?: string;
+    hasAnnotations?: boolean;
+}
+
+interface ImageGalleryAnimatedGridProps {
+    images?: ImageProps[];
+    motion?: 'static' | 'move-to-left' | 'move-to-right';
+    hasTopMargin: boolean;
+    hasAnnotations?: boolean;
+}
+
+export default function ImageGallerySection(props: ImageGallerySectionProps) {
     const { elementId, colors, backgroundImage, badge, title, subtitle, images = [], motion, styles = {}, enableAnnotations } = props;
 
     return (
@@ -58,7 +122,7 @@ export default function ImageGallerySection(props) {
     );
 }
 
-function ImageGalleryVariants(props) {
+function ImageGalleryVariants(props: ImageGalleryVariantsProps) {
     const { motion = 'static' } = props;
     switch (motion) {
         case 'move-to-left':
@@ -69,7 +133,7 @@ function ImageGalleryVariants(props) {
     }
 }
 
-function ImageGalleryStaticGrid({ images = [], hasTopMargin, justifyContent = 'flex-start', hasAnnotations }) {
+function ImageGalleryStaticGrid({ images = [], hasTopMargin, justifyContent = 'flex-start', hasAnnotations }: ImageGalleryGridProps) {
     if (images.length === 0) {
         return null;
     }
@@ -85,7 +149,7 @@ function ImageGalleryStaticGrid({ images = [], hasTopMargin, justifyContent = 'f
     );
 }
 
-function ImageGalleryAnimatedGrid({ images = [], motion, hasTopMargin, hasAnnotations }) {
+function ImageGalleryAnimatedGrid({ images = [], motion, hasTopMargin, hasAnnotations }: ImageGalleryAnimatedGridProps) {
     if (images.length === 0) {
         return null;
     }

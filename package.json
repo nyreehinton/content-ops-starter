@@ -30,10 +30,13 @@
         "@stackbit/cms-git": "^1.0.0",
         "@stackbit/types": "^2.1.10",
         "@types/glob": "^8.1.0",
+        "@types/jest": "^29.5.14",
         "@types/react": "^18.2.0",
         "@types/react-dom": "^18.2.0",
         "autoprefixer": "^10.4.19",
+        "jest": "^29.7.0",
         "prettier": "^3.3.2",
+        "ts-jest": "^29.2.6",
         "typescript": "^5.6.2"
     },
     "main": "next.config.js"

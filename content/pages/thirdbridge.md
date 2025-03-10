@@ -141,6 +141,20 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
     <!-- Interview Cards Grid -->
     <div id="interviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
 
+        <!-- Featured Analysis Card -->
+        <div class="bg-white rounded shadow p-4 border-l-4 border-accent" data-tags="egg price crisis analysis 2025">
+          <h3 class="text-lg font-semibold mb-2">
+            Featured Analysis: The Egg Price Crisis of 2025<br />
+            <span class="text-sm text-gray-500">(2025-03-10)</span>
+          </h3>
+          <p class="text-sm text-gray-600">
+            Comprehensive analysis of projected egg price increases, supply chain disruptions, and expert recommendations for industry stakeholders.
+          </p>
+          <a href="/blog/egg-price-crisis-2025" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
+            Read Analysis
+          </a>
+        </div>
+
         <div class="bg-white rounded shadow p-4" data-tags="hanesbrands margin 2021-10-28">
           <h3 class="text-lg font-semibold mb-2">
             Interview: Hanesbrands Margin<br />
@@ -667,7 +681,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             <span class="text-sm text-gray-500">(2021-08-27)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            Hain Celestial Group – Volume Trends’ Impact on Margins
+            Hain Celestial Group – Volume Trends' Impact on Margins
           </p>
           <a href="/interviews/hain-celestial" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -797,7 +811,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             <span class="text-sm text-gray-500">(2021-08-18)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            Nature’s Fynd – Alternative Protein Through Fungi & USD
+            Nature's Fynd – Alternative Protein Through Fungi & USD
           </p>
           <a href="/interviews/natures-fynd" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -1005,7 +1019,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             <span class="text-sm text-gray-500">(2021-07-21)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            Casey’s – Convenience Store Outlook & Q3 2021 Update
+            Casey's – Convenience Store Outlook & Q3 2021 Update
           </p>
           <a href="/interviews/caseys-convenience" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -1226,7 +1240,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             <span class="text-sm text-gray-500">(2021-06-18)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            Nature’s Sunshine Products – Nutritional Product Trends –
+            Nature's Sunshine Products – Nutritional Product Trends –
           </p>
           <a href="/interviews/natures-sunshine" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -1369,7 +1383,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             <span class="text-sm text-gray-500">(2021-05-27)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            General Mills to Acquire Tyson’s Pet Treat Business for
+            General Mills to Acquire Tyson's Pet Treat Business for
           </p>
           <a href="/interviews/general-mills" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -1805,13 +1819,13 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
           </a>
         </div>
 
-        <div class="bg-white rounded shadow p-4" data-tags="pilgrim’s pride 2021-03-31">
+        <div class="bg-white rounded shadow p-4" data-tags="pilgrim's pride 2021-03-31">
           <h3 class="text-lg font-semibold mb-2">
-            Interview: Pilgrim’s Pride<br />
+            Interview: Pilgrim's Pride<br />
             <span class="text-sm text-gray-500">(2021-03-31)</span>
           </h3>
           <p class="text-sm text-gray-600">
-            Pilgrim’s Pride – North American Strategic Update – 31
+            Pilgrim's Pride – North American Strategic Update – 31
           </p>
           <a href="/interviews/pilgrims-pride" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
@@ -2052,6 +2066,19 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
           </a>
         </div>
 
+        <div class="bg-white rounded shadow p-4" data-tags="egg price crisis 2025-03-10">
+          <h3 class="text-lg font-semibold mb-2">
+            The Egg Price Crisis of 2025<br />
+            <span class="text-sm text-gray-500">(2025-03-10)</span>
+          </h3>
+          <p class="text-sm text-gray-600">
+            A deep dive into the factors driving unprecedented egg prices, featuring insights from Cal-Maine Foods' former CFO
+          </p>
+          <a href="/blog/egg-price-crisis-2025" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
+            View Analysis
+          </a>
+        </div>
+
     </div>
 
     </div>
@@ -2062,7 +2089,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
   <section id="industry-breakdown" class="py-8 text-center">
     <div class="container mx-auto px-4">
       <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4"> </h3>
+        <h3 class="text-xl font-serif font-bold text-accent mb-4">Industry Breakdown</h3>
         <canvas id="barChart" width="400" height="300"></canvas>
       </div>
     </div>
@@ -2076,7 +2103,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
       const cards = document.querySelectorAll('#interviewGrid > div');
       cards.forEach(card => {
         const tags = card.getAttribute('data-tags') || '';
-        card.style.display = tags.includes(query) ? '' : 'none';
+        card.style.display = tags.toLowerCase().includes(query) ? '' : 'none';
       });
     }
 
@@ -2085,27 +2112,49 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
     new Chart(barCtx, {
       type: 'bar',
       data: {
-        labels: ['Food & Bev', 'Retail & Apparel', 'Agriculture', 'Edtech', 'Other'],
+        labels: ['Food & Beverage', 'Retail & Apparel', 'Agriculture & Agtech', 'Consumer Goods', 'Education', 'Healthcare', 'Technology', 'Other'],
         datasets: [{
-          label: 'Interview Count',
-          data: [30, 25, 20, 10, 15],
+          label: 'Number of Interviews',
+          data: [45, 30, 15, 10, 8, 5, 4, 3],
           backgroundColor: [
             '#A67B5B',
             '#557A95',
             '#2F3E46',
-            '#A67B5B',
-            '#557A95'
+            '#6B8E23',
+            '#8B4513',
+            '#4682B4',
+            '#483D8B',
+            '#708090'
           ]
         }]
       },
       options: {
         responsive: true,
         scales: {
-          y: { beginAtZero: true }
+          y: { 
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Number of Interviews'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Industry Sectors'
+            }
+          }
         },
         plugins: {
           legend: {
             display: false
+          },
+          title: {
+            display: true,
+            text: 'Distribution of Interviews by Industry',
+            font: {
+              size: 16
+            }
           }
         }
       }

@@ -6,7 +6,45 @@ import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles
 import Action from '../../../atoms/Action';
 import ImageBlock from '../../../blocks/ImageBlock';
 
-export default function FeaturedItem(props) {
+interface FeaturedItemProps {
+    elementId?: string;
+    title?: string;
+    tagline?: string;
+    subtitle?: string;
+    text?: string;
+    image?: any;
+    actions?: any[];
+    colors?: string;
+    styles?: {
+        self?: {
+            flexDirection?: string;
+            margin?: any;
+            padding?: any;
+            borderWidth?: number;
+            borderStyle?: string;
+            borderColor?: string;
+            borderRadius?: string;
+            textAlign?: string;
+            justifyContent?: string;
+        };
+    };
+    hasSectionTitle?: boolean;
+    'data-sb-field-path'?: string;
+}
+
+function mapFlexDirectionStyles(flexDirection: string | undefined, hasTextContent: boolean, hasImage: boolean): string {
+    if (!hasTextContent || !hasImage) return 'flex-col';
+    switch (flexDirection) {
+        case 'row':
+            return 'flex-col xs:flex-row';
+        case 'row-reverse':
+            return 'flex-col xs:flex-row-reverse';
+        default:
+            return 'flex-col';
+    }
+}
+
+export default function FeaturedItem(props: FeaturedItemProps) {
     const { elementId, title, tagline, subtitle, text, image, actions = [], colors = 'bg-light-fg-dark', styles = {}, hasSectionTitle } = props;
     const fieldPath = props['data-sb-field-path'];
     const TitleTag = hasSectionTitle ? 'h3' : 'h2';
@@ -116,19 +154,4 @@ export default function FeaturedItem(props) {
             </div>
         </div>
     );
-}
-
-function mapFlexDirectionStyles(flexDirection: string, hasTextContent: boolean, hasImage: boolean) {
-    switch (flexDirection) {
-        case 'row':
-            return hasTextContent && hasImage ? 'flex-col xs:flex-row xs:items-start' : 'flex-col';
-        case 'row-reverse':
-            return hasTextContent && hasImage ? 'flex-col xs:flex-row-reverse xs:items-start' : 'flex-col';
-        case 'col':
-            return 'flex-col';
-        case 'col-reverse':
-            return 'flex-col-reverse';
-        default:
-            return null;
-    }
 }

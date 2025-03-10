@@ -1,4 +1,4 @@
-import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapEntry } from '@stackbit/types';
+import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapEntry, DocumentWithSource, SiteMapDocumentEntry } from '@stackbit/types';
 import { GitContentSource } from '@stackbit/cms-git';
 import { allModels } from 'sources/local/models';
 
@@ -26,9 +26,9 @@ export const config = defineStackbitConfig({
     },
     siteMap: ({ documents, models }): SiteMapEntry[] => {
         const pageModels = models.filter((model) => model.type === 'page').map((model) => model.name);
-        return documents
+        const entries = documents
             .filter((document) => pageModels.includes(document.modelName))
-            .map((document) => {
+            .map((document): SiteMapDocumentEntry | null => {
                 let slug = (document.fields.slug as DocumentStringLikeFieldNonLocalized)?.value;
                 if (!slug) return null;
                 /* Remove the leading slash in order to generate correct urlPath
@@ -52,6 +52,7 @@ export const config = defineStackbitConfig({
                         };
                 }
             });
+        return entries.filter((entry): entry is SiteMapDocumentEntry => entry !== null);
     }
 });
 

@@ -9,7 +9,7 @@ import { ComponentType } from 'react';
  * is bundled only when used.
  */
 
-export function getComponent(key: string): ComponentType {
+export function getComponent(key: string): ComponentType<any> {
     return components[key];
 }
 

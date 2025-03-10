@@ -9,7 +9,63 @@ import TitleBlock from '../../blocks/TitleBlock';
 import ImageBlock from '../../blocks/ImageBlock';
 import { Action, Badge } from '../../atoms';
 
-export default function FeaturedPeopleSection(props) {
+interface FeaturedPersonProps {
+    elementId?: string;
+    name?: string;
+    image?: any;
+    role?: string;
+    bio?: string;
+    colors?: string;
+    styles?: {
+        self?: {
+            margin?: any;
+            padding?: any;
+            borderWidth?: number;
+            borderStyle?: string;
+            borderColor?: string;
+            borderRadius?: string;
+            textAlign?: string;
+            justifyContent?: string;
+        };
+    };
+    className?: string;
+    hasSectionTitle?: boolean;
+    'data-sb-field-path'?: string;
+}
+
+interface FeaturedPeopleSectionProps {
+    elementId?: string;
+    colors?: string;
+    backgroundImage?: any;
+    badge?: any;
+    title?: any;
+    subtitle?: string;
+    actions?: any[];
+    people?: FeaturedPersonProps[];
+    variant?: string;
+    styles?: {
+        self?: any;
+        subtitle?: any;
+    };
+    enableAnnotations?: boolean;
+}
+
+interface FeaturedPeopleVariantsProps {
+    variant?: string;
+    people: FeaturedPersonProps[];
+    hasTopMargin: boolean;
+    hasSectionTitle: boolean;
+    hasAnnotations: boolean;
+}
+
+interface FeaturedPeopleGridProps {
+    people: FeaturedPersonProps[];
+    hasTopMargin: boolean;
+    hasSectionTitle: boolean;
+    hasAnnotations: boolean;
+}
+
+export default function FeaturedPeopleSection(props: FeaturedPeopleSectionProps) {
     const { elementId, colors, backgroundImage, badge, title, subtitle, actions = [], people = [], variant, styles = {}, enableAnnotations } = props;
 
     return (
@@ -52,7 +108,7 @@ export default function FeaturedPeopleSection(props) {
                     people={people}
                     hasTopMargin={!!(badge?.label || title?.text || subtitle)}
                     hasSectionTitle={!!title?.text}
-                    hasAnnotations={enableAnnotations}
+                    hasAnnotations={!!enableAnnotations}
                 />
                 {actions.length > 0 && (
                     <div
@@ -76,7 +132,7 @@ export default function FeaturedPeopleSection(props) {
     );
 }
 
-function FeaturedPeopleVariants(props) {
+function FeaturedPeopleVariants(props: FeaturedPeopleVariantsProps) {
     const { variant = 'three-col-grid', ...rest } = props;
     switch (variant) {
         case 'four-col-grid':
@@ -88,7 +144,7 @@ function FeaturedPeopleVariants(props) {
     }
 }
 
-function FeaturedPeopleThreeCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }) {
+function FeaturedPeopleThreeCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }: FeaturedPeopleGridProps) {
     if (people.length === 0) {
         return null;
     }
@@ -103,7 +159,8 @@ function FeaturedPeopleThreeCol({ people = [], hasTopMargin, hasSectionTitle, ha
         </div>
     );
 }
-function FeaturedPeopleFourCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }) {
+
+function FeaturedPeopleFourCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }: FeaturedPeopleGridProps) {
     if (people.length === 0) {
         return null;
     }
@@ -119,7 +176,7 @@ function FeaturedPeopleFourCol({ people = [], hasTopMargin, hasSectionTitle, has
     );
 }
 
-function FeaturedPeopleMixedCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }) {
+function FeaturedPeopleMixedCol({ people = [], hasTopMargin, hasSectionTitle, hasAnnotations }: FeaturedPeopleGridProps) {
     if (people.length === 0) {
         return null;
     }
@@ -144,7 +201,7 @@ function FeaturedPeopleMixedCol({ people = [], hasTopMargin, hasSectionTitle, ha
     );
 }
 
-function FeaturedPerson(props) {
+function FeaturedPerson(props: FeaturedPersonProps) {
     const { elementId, name, image, role, bio, colors = 'bg-light-fg-dark', styles = {}, className, hasSectionTitle } = props;
     const fieldPath = props['data-sb-field-path'];
     const TitleTag = hasSectionTitle ? 'h3' : 'h2';

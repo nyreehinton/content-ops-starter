@@ -6,31 +6,63 @@ import { allModels } from '../../sources/local/models';
 import { Config } from '../../sources/local/models/Config';
 import { getPageUrl } from './page-utils';
 
+interface ContentMetadata {
+    modelName: string;
+    id?: string;
+    slug?: string;
+    urlPath?: string;
+}
+
+interface ContentObject {
+    __metadata?: ContentMetadata;
+    type?: string;
+    slug?: string;
+    [key: string]: any;
+}
+
+interface ModelField {
+    type: string;
+    name: string;
+    items?: {
+        type: string;
+    };
+}
+
+interface Model {
+    fields?: ModelField[];
+}
+
+interface AllModels {
+    [key: string]: Model;
+}
+
 const pagesDir = 'content/pages';
 const dataDir = 'content/data';
 
-const allReferenceFields = {};
-Object.entries(allModels).forEach(([modelName, model]) => {
-    model.fields.forEach((field) => {
-        if (field.type === 'reference' || (field.type === 'list' && field.items?.type === 'reference')) {
-            allReferenceFields[modelName + ':' + field.name] = true;
-        }
-    });
+const allReferenceFields: { [key: string]: boolean } = {};
+Object.entries(allModels as AllModels).forEach(([modelName, model]) => {
+    if (model.fields) {
+        model.fields.forEach((field) => {
+            if (field.type === 'reference' || (field.type === 'list' && field.items?.type === 'reference')) {
+                allReferenceFields[modelName + ':' + field.name] = true;
+            }
+        });
+    }
 });
 
-function isRefField(modelName, fieldName) {
+function isRefField(modelName: string, fieldName: string): boolean {
     return !!allReferenceFields[modelName + ':' + fieldName];
 }
 
 const supportedFileTypes = ['md', 'json'];
-function contentFilesInPath(dir) {
+function contentFilesInPath(dir: string): string[] {
     const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
     return globSync(globPattern);
 }
 
-function readContent(file) {
+function readContent(file: string): ContentObject {
     const rawContent = fs.readFileSync(file, 'utf8');
-    let content = null;
+    let content: ContentObject = {};
 
     switch (path.extname(file).substring(1)) {
         case 'md':
@@ -50,7 +82,7 @@ function readContent(file) {
 
     // ✅ Ensure metadata always exists
     if (!content.__metadata) {
-        content.__metadata = {};
+        content.__metadata = { modelName: '' };
     }
 
     // ✅ Ensure modelName always exists, fallback to "default-model"
@@ -69,7 +101,7 @@ function readContent(file) {
     return content;
 }
 
-function resolveReferences(content, fileToContent) {
+function resolveReferences(content: ContentObject, fileToContent: { [key: string]: ContentObject }): void {
     if (!content || !content.type) return;
 
     if (!content.__metadata) content.__metadata = { modelName: content.type };
@@ -100,7 +132,15 @@ function resolveReferences(content, fileToContent) {
     }
 }
 
-export function allContent() {
+interface ContentResult {
+    objects: ContentObject[];
+    pages: ContentObject[];
+    props: {
+        site: ContentObject | undefined;
+    };
+}
+
+export function allContent(): ContentResult {
     const [data, pages] = [dataDir, pagesDir].map((dir) => {
         return contentFilesInPath(dir).map((file) => readContent(file));
     });
@@ -113,7 +153,7 @@ export function allContent() {
     const fileToContent = Object.fromEntries(
         objects
             .filter(e => e?.__metadata?.id && e?.__metadata?.modelName)
-            .map((e) => [e.__metadata.id, e])
+            .map((e) => [e.__metadata!.id!, e])
     );
 
     // ✅ Log invalid entries for debugging
@@ -127,12 +167,12 @@ export function allContent() {
 
     // ✅ Ensure all pages have a valid `urlPath`
     pages.forEach((page) => {
-        if (!page.__metadata.urlPath) {
-            page.__metadata.urlPath = getPageUrl(page) || `/${page.slug || 'default'}`;
+        if (!page.__metadata?.urlPath) {
+            page.__metadata!.urlPath = getPageUrl(page) || `/${page.slug || 'default'}`;
         }
     });
 
-    const siteConfig = data.find((e) => e.__metadata.modelName === Config.name);
+    const siteConfig = data.find((e) => e.__metadata?.modelName === Config.name);
     console.log('✅ Final data structure:', { objects, pages, props: { site: siteConfig } });
 
     return { objects, pages, props: { site: siteConfig } };

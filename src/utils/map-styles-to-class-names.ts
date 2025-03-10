@@ -1,4 +1,32 @@
-const TAILWIND_MAP = {
+interface TailwindMapValue {
+    [key: string]: string;
+}
+
+interface TailwindMapFunction {
+    (value: any): string;
+}
+
+interface TailwindMap {
+    [key: string]: TailwindMapValue | TailwindMapFunction;
+    alignItems: TailwindMapValue;
+    backgroundPosition: TailwindMapValue;
+    backgroundRepeat: TailwindMapValue;
+    backgroundSize: TailwindMapValue;
+    borderRadius: TailwindMapValue;
+    borderStyle: TailwindMapValue;
+    borderWidth: TailwindMapValue;
+    boxShadow: TailwindMapValue;
+    fontSize: TailwindMapValue;
+    fontStyle: TailwindMapValue;
+    fontWeight: TailwindMapValue;
+    justifyContent: TailwindMapValue;
+    margin: TailwindMapFunction;
+    padding: TailwindMapFunction;
+    textAlign: TailwindMapValue;
+    textDecoration: TailwindMapValue;
+}
+
+const TAILWIND_MAP: TailwindMap = {
     alignItems: {
         'flex-start': 'items-start',
         'flex-end': 'items-end',
@@ -88,14 +116,14 @@ const TAILWIND_MAP = {
         'flex-end': 'justify-end',
         center: 'justify-center'
     },
-    margin: function (value) {
+    margin: function (value: string[] | Record<string, number> | null) {
         // for tailwind margins - ['twt0:16', 'twb0:16'], the value will be array ['mt-0', 'mb-4']
         if (Array.isArray(value)) {
             return value.join(' ');
         }
         // for regular margins - ['x0:8', 'y0:16'], the value will be object: { left: 4, top: 10 }
         if (typeof value === 'object' && value !== null) {
-            const classNames = [];
+            const classNames: string[] = [];
             Object.entries(value).forEach(([styleProp, styleValue]) => {
                 const twValue = styleValue === 1 ? 'px' : String(Number(styleValue) / 4);
                 if (styleProp === 'top') {
@@ -114,14 +142,14 @@ const TAILWIND_MAP = {
         console.warn('cannot convert "margin" style field value to class name');
         return '';
     },
-    padding: function (value) {
+    padding: function (value: string[] | Record<string, number> | null) {
         // for tailwind paddings - ['twt0:16', 'twb0:16'], the value will be array ['pt-0', 'pb-4']
         if (Array.isArray(value)) {
             return value.join(' ');
         }
         // for regular paddings - ['x0:8', 'y0:16'], the value will be object: { left: 4, top: 10 }
         if (typeof value === 'object' && value !== null) {
-            const classNames = [];
+            const classNames: string[] = [];
             Object.entries(value).forEach(([styleProp, styleValue]) => {
                 const twValue = styleValue === 1 ? 'px' : String(Number(styleValue) / 4);
                 if (styleProp === 'top') {
@@ -153,20 +181,21 @@ const TAILWIND_MAP = {
     }
 };
 
-export function mapStylesToClassNames(styles: Record<string, any>) {
+export function mapStylesToClassNames(styles: Record<string, any>): string {
     return Object.entries(styles)
         .map(([prop, value]) => {
             if (prop in TAILWIND_MAP) {
-                if (typeof TAILWIND_MAP[prop] === 'function') {
-                    return TAILWIND_MAP[prop](value);
-                } else if (value in TAILWIND_MAP[prop]) {
-                    return TAILWIND_MAP[prop][value];
+                const mapValue = TAILWIND_MAP[prop];
+                if (typeof mapValue === 'function') {
+                    return mapValue(value);
+                } else if (value in mapValue) {
+                    return mapValue[value];
                 }
-            } else {
-                // if prop or value don't exist in the map, use the value as is,
-                // useful for direct color values.
-                return value;
             }
+            // if prop or value don't exist in the map, use the value as is,
+            // useful for direct color values.
+            return value;
         })
+        .filter(Boolean)
         .join(' ');
 }
