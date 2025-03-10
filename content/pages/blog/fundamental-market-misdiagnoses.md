@@ -28,14 +28,15 @@ styles:
     textAlign: center
 author: content/data/nyree.json
 ---
+
 <div style="text-align: center">![](/images/IMG_1245.webp)
 For years, the focus of scrutiny on Tesla has been misdirected. Investigations, lawsuits, and consumer complaints have zeroed in on range discrepancies, cold weather performance issues, efficiency inconsistencies, and misleading odometer readings. From the Schwartz v. Tesla lawsuit on exaggerated range claims to the Reuters exposé on Tesla’s secret team suppressing range complaints, everyone has been looking at individual symptoms instead of the root cause.</div>
 
-But the real issue, as my analysis proves, is far more fundamental—Tesla’s batteries are degrading at an accelerated rate, much faster than the company acknowledges, and everything else (range, odometer manipulation, and energy efficiency distortions) stems from this fact. 
+But the real issue, as my analysis proves, is far more fundamental—Tesla’s batteries are degrading at an accelerated rate, much faster than the company acknowledges, and everything else (range, odometer manipulation, and energy efficiency distortions) stems from this fact.
 
 ### 1. Odometer Manipulation Proves the Batteries Are Deficient
 
-Tesla odometer analysis proved that Tesla’s vehicles do not record mileage purely based on physical distance traveled. Instead, they use energy-based calculations that Tesla actively modifies through predictive algorithms, driving behavior multipliers, and efficiency recalibrations. 
+Tesla odometer analysis proved that Tesla’s vehicles do not record mileage purely based on physical distance traveled. Instead, they use energy-based calculations that Tesla actively modifies through predictive algorithms, driving behavior multipliers, and efficiency recalibrations.
 
 This manipulation is directly tied to concealing how fast the battery degrades. If Tesla allowed the odometer to reflect real-world driving distances without interference, the degradation rate would become immediately apparent to consumers. Instead:
 
@@ -43,11 +44,11 @@ This manipulation is directly tied to concealing how fast the battery degrades. 
 
 • Tesla modifies energy efficiency estimates (Wh/mi) to artificially improve reported performance, making the battery appear healthier than it actually is.
 
-• Tesla overstates range projections at high battery levels and only reveals true performance at lower charge levels, masking long-term degradation trends. 
+• Tesla overstates range projections at high battery levels and only reveals true performance at lower charge levels, masking long-term degradation trends.
 
 The fact that my odometer data doesn’t match energy consumption-based calculations proves that the real-world efficiency of Tesla’s battery declines far faster than expected.
 
-#### Tesla’s Reported vs. Real Battery Degradation 
+#### Tesla’s Reported vs. Real Battery Degradation
 
 Tesla officially claims battery degradation is only 5% every 25,000 miles. My research and real-world energy efficiency tracking indicate that this number is vastly understated. Degradation is more likely in the range of 20-25% per 25,000 miles, meaning Tesla’s batteries:
 
@@ -55,11 +56,11 @@ Tesla officially claims battery degradation is only 5% every 25,000 miles. My re
 
 2\. Force more frequent charging, leading to higher long-term costs for owners.
 
-3\. Make Tesla vehicles more dependent on Supercharging, which in turn further accelerates degradation. 
+3\. Make Tesla vehicles more dependent on Supercharging, which in turn further accelerates degradation.
 
 If Tesla batteries were truly as resilient as claimed, there would be no need for odometer manipulation, efficiency recalibrations, or deceptive range projections.
 
-### 2. Tesla’s Own Patents Confirm This Scheme 
+### 2. Tesla’s Own Patents Confirm This Scheme
 
 Tesla’s patents disclose a system that does not directly measure distance traveled but instead calculates it based on energy consumption.
 
@@ -73,7 +74,7 @@ One patent in particular, US8054038B2, reveals that Tesla’s mileage tracking i
 
 This is the key link between odometer inflation, range exaggeration, and energy efficiency misreporting: Tesla adjusts all three to hide battery degradation.
 
-If battery degradation were truly minimal, there would be no need to continuously adjust energy efficiency multipliers, penalize “aggressive” drivers with worse efficiency readings, or apply predictive algorithms to mileage tracking. 
+If battery degradation were truly minimal, there would be no need to continuously adjust energy efficiency multipliers, penalize “aggressive” drivers with worse efficiency readings, or apply predictive algorithms to mileage tracking.
 
 Tesla’s entire odometer system is built around projecting an optimized battery performance profile, rather than reflecting reality.
 
@@ -91,11 +92,11 @@ Here’s What Everyone Has Been Looking At Instead of the Real Problem:
 
 • Consumer Complaints About Energy Efficiency Drop-Offs – Many Tesla owners report that their vehicles require more kWh per mile over time, meaning they must charge more frequently. This is classic battery degradation, but Tesla blames it on driving style instead.
 
-What all of these issues have in common is Tesla’s failing battery technology, and no one has made this connection—until now. 
+What all of these issues have in common is Tesla’s failing battery technology, and no one has made this connection—until now.
 
 ### 4. The True Market Implications of Tesla’s Battery Shortcomings
 
-The EV Market Relies on Tesla’s Claims Being True 
+The EV Market Relies on Tesla’s Claims Being True
 
 Tesla’s battery longevity claims are the foundation of the company’s resale values, leasing agreements, and cost-per-mile economics. If battery degradation is occurring at 20-25% per 25,000 miles instead of 5%, it means:
 
@@ -113,7 +114,7 @@ If Tesla admitted that real-world degradation is closer to 20-25% per 25,000 mil
 
 • Destroy resale values, as used Teslas would be exposed as far less capable than advertised.
 
-• Expose Tesla’s entire Supercharger network as a stopgap for failing battery longevity—frequent Supercharging is required not because of range anxiety, but because Tesla’s batteries lose usable capacity much faster than disclosed. 
+• Expose Tesla’s entire Supercharger network as a stopgap for failing battery longevity—frequent Supercharging is required not because of range anxiety, but because Tesla’s batteries lose usable capacity much faster than disclosed.
 
 ### 5. Conclusion: The Cover-Up is the Battery
 
