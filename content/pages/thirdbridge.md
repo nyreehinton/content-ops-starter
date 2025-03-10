@@ -23,39 +23,34 @@ author: content/data/nyree.json
 ---
 
 <!-- Featured Analysis: Egg Price Crisis -->
-<section id="featured-analysis" class="py-8">
-  <div class="container mx-auto px-4">
-    <div class="bg-gradient-to-r from-accent/10 to-white rounded-xl shadow-lg p-8 border-l-4 border-accent">
-      <div class="flex flex-col lg:flex-row items-start gap-8">
-        <div class="flex-1">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="bg-accent text-white text-xs px-3 py-1 rounded-full">Featured Analysis</span>
-            <span class="text-sm text-gray-500">(2025-03-10)</span>
+<section id="featured-analysis" class="py-4">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <a href="/blog/egg-price-crisis-2025" class="block">
+      <div class="bg-gradient-to-r from-accent/10 to-white rounded-lg shadow p-6 border-l-4 border-accent hover:shadow-lg transition-shadow">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="bg-accent text-white text-xs px-2 py-1 rounded-full">Featured Analysis</span>
+              <span class="text-sm text-gray-500">(2025-03-10)</span>
+            </div>
+            <h2 class="text-2xl font-bold text-darkNavy mb-3">
+              The Egg Price Crisis of 2025
+            </h2>
+            <p class="text-gray-600 text-base mb-4">
+              A comprehensive analysis of projected egg price increases and supply chain disruptions. Key findings reveal a 39% price surge and critical adaptation strategies.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-0">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Supply Chain</span>
+              <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Market Analysis</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Industry Insights</span>
+            </div>
           </div>
-          <h1 class="text-3xl font-bold text-darkNavy mb-4">
-            The Egg Price Crisis of 2025
-          </h1>
-          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-            A comprehensive analysis of projected egg price increases, supply chain disruptions, and expert recommendations for industry stakeholders. Key findings reveal a 39% price surge and critical adaptation strategies.
-          </p>
-          <div class="flex flex-wrap gap-3 mb-6">
-            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Supply Chain</span>
-            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Market Analysis</span>
-            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Industry Insights</span>
+          <div class="md:w-1/3 min-w-[200px]">
+            <ChartBlock type="egg-price" className="w-full h-40 rounded-lg shadow-sm" />
           </div>
-          <a href="/blog/egg-price-crisis-2025" 
-             class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-highlight transition-all transform hover:scale-105">
-            Read Full Analysis
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-        <div class="lg:w-1/3">
-          <ChartBlock type="egg-price" className="w-full h-64 rounded-xl shadow-md" />
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
