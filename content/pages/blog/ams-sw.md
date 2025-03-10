@@ -5,7 +5,7 @@ date: '2020-03-04'
 excerpt: 'A high-level overview of my internship experience at Bloomberg with AMS SW.'
 featuredImage:
   url: /images/BBG.webp
-  altText: ''
+  altText: 'Bloomberg logo'
   styles:
     self:
       borderRadius: large
@@ -27,7 +27,7 @@ bottomSections:
         subtitle: ''
         image:
           url: /images/BBG.webp
-          altText: Company logo
+          altText: 'Company logo'
           styles:
             self:
               margin:
