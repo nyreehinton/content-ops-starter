@@ -23,30 +23,30 @@ author: content/data/nyree.json
 ---
 
 <!-- Featured Analysis: Egg Price Crisis -->
-<section id="featured-analysis" class="py-4">
-  <div class="container mx-auto px-4 max-w-4xl">
+<section id="featured-analysis" class="py-4 px-4 sm:px-6">
+  <div class="container mx-auto max-w-4xl">
     <a href="/blog/egg-price-crisis-2025" class="block">
-      <div class="bg-gradient-to-r from-accent/10 to-white rounded-lg shadow p-6 border-l-4 border-accent hover:shadow-lg transition-shadow">
-        <div class="flex flex-col md:flex-row items-start gap-6">
-          <div class="flex-1">
-            <div class="flex items-center gap-2 mb-2">
+      <div class="bg-gradient-to-r from-accent/10 to-white rounded-lg shadow p-4 sm:p-6 border-l-4 border-accent hover:shadow-lg transition-shadow">
+        <div class="flex flex-col md:flex-row items-start gap-4 sm:gap-6">
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
               <span class="bg-accent text-white text-xs px-2 py-1 rounded-full">Featured Analysis</span>
               <span class="text-sm text-gray-500">(2025-03-10)</span>
             </div>
-            <h2 class="text-2xl font-bold text-darkNavy mb-3">
+            <h2 class="text-xl sm:text-2xl font-bold text-darkNavy mb-3 line-clamp-2">
               The Egg Price Crisis of 2025
             </h2>
-            <p class="text-gray-600 text-base mb-4">
+            <p class="text-gray-600 text-sm sm:text-base mb-4 line-clamp-3">
               A comprehensive analysis of projected egg price increases and supply chain disruptions. Key findings reveal a 39% price surge and critical adaptation strategies.
             </p>
-            <div class="flex flex-wrap gap-2 mb-0">
+            <div class="flex flex-wrap gap-2 mb-4 md:mb-0">
               <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Supply Chain</span>
               <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Market Analysis</span>
               <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Industry Insights</span>
             </div>
           </div>
-          <div class="md:w-1/3 min-w-[200px]">
-            <ChartBlock type="egg-price" className="w-full h-40 rounded-lg shadow-sm" />
+          <div class="w-full md:w-1/3 md:min-w-[200px]">
+            <ChartBlock type="egg-price" className="w-full h-32 sm:h-40 rounded-lg shadow-sm" />
           </div>
         </div>
       </div>
@@ -79,24 +79,24 @@ author: content/data/nyree.json
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Hero / Overview Section -->
-  <section id="overview" class="py-8 text-center">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-serif font-bold text-darkNavy mb-4">
+  <section id="overview" class="py-6 sm:py-8 px-4 sm:px-6 text-center">
+    <div class="container mx-auto">
+      <h1 class="text-2xl sm:text-3xl font-serif font-bold text-darkNavy mb-4">
         A Consolidated Portfolio of C-Suite Conversations, Sector Research, and Strategic Reviews
       </h1>
-      <p class="mb-8 max-w-2xl mx-auto leading-relaxed">
-This portfolio encapsulates the series of rigorous interviews and detailed market analyses I performed during my engagement with Thirdbridge. It represents a curated collection of market research and strategic evaluations, reflecting the depth and precision of the insights I generated across various sectors.
+      <p class="mb-8 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
+        This portfolio encapsulates the series of rigorous interviews and detailed market analyses I performed during my engagement with Thirdbridge. It represents a curated collection of market research and strategic evaluations, reflecting the depth and precision of the insights I generated across various sectors.
       </p>
       
       <!-- Three Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6">
         <div class="bg-white p-4 rounded shadow">
           <h2 class="text-gray-600 text-sm">Total Interviews</h2>
-          <p class="text-3xl font-bold">120</p>
+          <p class="text-2xl sm:text-3xl font-bold">120</p>
         </div>
         <div class="bg-white p-4 rounded shadow">
           <h2 class="text-gray-600 text-sm">Industries Covered</h2>
-          <p class="text-3xl font-bold">8</p>
+          <p class="text-2xl sm:text-3xl font-bold">8</p>
         </div>
         <div class="bg-white p-4 rounded shadow">
           <h2 class="text-gray-600 text-sm">Key Findings</h2>
@@ -105,11 +105,11 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
       </div>
 
       <!-- Industries Section -->
-      <div class="bg-white rounded shadow p-4 mb-6">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4">Industries</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+      <div class="bg-white rounded-lg shadow p-6 mb-8">
+        <h3 class="text-xl font-serif font-bold text-accent mb-6">Industries</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
           <!-- Industry Card 1 -->
-          <div class="border border-gray-200 p-4 rounded">
+          <div class="border border-gray-200 p-4 rounded-lg hover:border-accent/50 transition-colors">
             <h4 class="text-lg font-bold mb-2 text-darkNavy">Food &amp; Beverage</h4>
             <p class="text-sm text-gray-600">
               From snacking trends to plant-based proteins, see how consumer
@@ -117,7 +117,7 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             </p>
           </div>
           <!-- Industry Card 2 -->
-          <div class="border border-gray-200 p-4 rounded">
+          <div class="border border-gray-200 p-4 rounded-lg hover:border-accent/50 transition-colors">
             <h4 class="text-lg font-bold mb-2 text-darkNavy">Retail &amp; Apparel</h4>
             <p class="text-sm text-gray-600">
               Latest insights on omnichannel strategies, e-commerce growth,
@@ -125,14 +125,13 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
             </p>
           </div>
           <!-- Industry Card 3 -->
-          <div class="border border-gray-200 p-4 rounded">
+          <div class="border border-gray-200 p-4 rounded-lg hover:border-accent/50 transition-colors">
             <h4 class="text-lg font-bold mb-2 text-darkNavy">Agriculture &amp; Agtech</h4>
             <p class="text-sm text-gray-600">
               Innovations in modern farming, supply chain challenges,
               and sustainability developments.
             </p>
           </div>
-          <!-- Add more cards as needed -->
         </div>
       </div>
     </div>
@@ -140,12 +139,12 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
   </section>
 
   <!-- Bar Chart: Industry Breakdown -->
-  <section id="industry-breakdown" class="py-8 text-center">
+  <section id="industry-breakdown" class="py-6 sm:py-8 text-center">
     <div class="container mx-auto px-4">
-      <div class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-serif font-bold text-accent mb-6">Industry Breakdown</h3>
-        <div class="relative h-80">
-          <svg class="w-full h-full" viewBox="0 0 800 400">
+        <div class="relative h-60 sm:h-80">
+          <svg class="w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
             <!-- Y-axis -->
             <line x1="60" y1="350" x2="60" y2="50" stroke="#333" stroke-width="2"/>
             <!-- X-axis -->
@@ -212,28 +211,43 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
   </section>
 
   <!-- All Interviews Section -->
-  <section id="all-interviews" class="py-8 text-center">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-serif font-bold text-darkNavy mb-4">
-      All Interviews
-    </h2>
-    <p class="max-w-2xl mx-auto mb-6 leading-relaxed">
-      Search or browse through the entire collection of Thirdbridge interviews, 
-      spanning multiple industries and focus areas.
-    </p>
+  <section id="all-interviews" class="py-6 sm:py-8 px-4 sm:px-6 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-darkNavy mb-4">
+        All Interviews
+      </h2>
+      <p class="max-w-2xl mx-auto mb-6 leading-relaxed text-sm sm:text-base">
+        Search or browse through the entire collection of Thirdbridge interviews, 
+        spanning multiple industries and focus areas.
+      </p>
 
-    <!-- Filter / Search Input -->
-    <div class="max-w-xl mx-auto mb-4">
-      <input
-        type="text"
-        placeholder="Search interviews..."
-        class="w-full p-2 border border-gray-300 rounded"
-        oninput="filterInterviews(event)"
-      />
-    </div>
+      <!-- Filter / Search Input -->
+      <div class="max-w-xl mx-auto mb-6">
+        <input
+          type="text"
+          placeholder="Search interviews..."
+          class="w-full p-3 border border-gray-300 rounded-lg text-sm sm:text-base"
+          oninput="filterInterviews(event)"
+        />
+      </div>
 
-    <!-- Interview Cards Grid -->
-    <div id="interviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+      <!-- Interview Cards Grid -->
+      <div id="interviewGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto text-left">
+        <div class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow" data-tags="egg price crisis 2025-03-10">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold mb-2 flex-1">
+              The Egg Price Crisis of 2025<br />
+              <span class="text-sm text-gray-500">(2025-03-10)</span>
+            </h3>
+            <span class="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full">Featured</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+            A deep dive into the factors driving unprecedented egg prices, featuring insights from Cal-Maine Foods' former CFO
+          </p>
+          <a href="/blog/egg-price-crisis-2025" class="inline-block mt-2 bg-accent text-white py-2 px-4 rounded-lg hover:bg-highlight transition-colors text-sm">
+            View Analysis
+          </a>
+        </div>
 
         <div class="bg-white rounded shadow p-4" data-tags="hanesbrands margin 2021-10-28">
           <h3 class="text-lg font-semibold mb-2">
@@ -2143,19 +2157,6 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
           </p>
           <a href="/interviews/lamb-weston" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
             View Details
-          </a>
-        </div>
-
-        <div class="bg-white rounded shadow p-4" data-tags="egg price crisis 2025-03-10">
-          <h3 class="text-lg font-semibold mb-2">
-            The Egg Price Crisis of 2025<br />
-            <span class="text-sm text-gray-500">(2025-03-10)</span>
-          </h3>
-          <p class="text-sm text-gray-600">
-            A deep dive into the factors driving unprecedented egg prices, featuring insights from Cal-Maine Foods' former CFO
-          </p>
-          <a href="/blog/egg-price-crisis-2025" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
-            View Analysis
           </a>
         </div>
 
