@@ -80,6 +80,53 @@ styles:
     flexDirection: col
 type: CustomHTMLLayout
 author: content/data/nyree.json
+allowed_elements:
+  - html
+  - head
+  - body
+  - meta
+  - title
+  - h1
+  - h2
+  - h3
+  - h4
+  - h5
+  - h6
+  - p
+  - a
+  - img
+  - ul
+  - ol
+  - li
+  - strong
+  - em
+  - blockquote
+  - hr
+  - br
+  - div
+  - span
+  - table
+  - thead
+  - tbody
+  - tr
+  - th
+  - td
+  - header
+  - nav
+  - main
+  - footer
+  - section
+  - article
+  - aside
+  - figure
+  - figcaption
+  - canvas
+  - script
+  - style
+seo:
+  metaTitle: Bloomberg Intelligence Analysis | AMS SW Experience
+  metaDescription: A detailed overview of semiconductor analysis and market research experience at Bloomberg Intelligence, focusing on AMS SW.
+  socialImage: /images/BBG.webp
 ---
 
 <!DOCTYPE html>

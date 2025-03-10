@@ -52,6 +52,8 @@ allowed_elements:
   - figure
   - figcaption
   - canvas
+  - script
+  - style
 seo:
   metaTitle: ETF Product Management | Capital Group Experience
   metaDescription: Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.
