@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const BaseLayout = ({ children, pageTitle, pageDescription }) => {
     return (
@@ -18,7 +19,12 @@ const BaseLayout = ({ children, pageTitle, pageDescription }) => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
                 <link rel="stylesheet" href="/css/global-header.css" />
             </Head>{' '}
-            <div className="site-wrapper"> {children} </div> <script src="/js/header-behavior.js"> </script>{' '}
+            <div className="site-wrapper"> {children} </div>{' '}
+            <Script
+                src="/js / header - behavior.js "
+                strategy="
+        lazyOnload "
+            />{' '}
         </>
     );
 };
