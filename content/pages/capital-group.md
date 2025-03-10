@@ -60,6 +60,8 @@ seo:
   socialImage: /images/Capital_Group_Companies.jpg
 ---
 
+{% raw %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2435,3 +2437,4 @@ seo:
 
 </body>
 </html>
+{% endraw %}
