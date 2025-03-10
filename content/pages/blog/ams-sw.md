@@ -12,7 +12,7 @@ featuredImage:
   type: ImageBlock
 bottomSections:
   - title: Divider
-    colors:
+    colors: {}
     styles:
       self:
         padding:
@@ -33,7 +33,7 @@ bottomSections:
               margin:
                 - ml-3
           type: ImageBlock
-        colors:
+        colors: {}
         styles:
           self:
             padding:
@@ -49,7 +49,7 @@ bottomSections:
             flexDirection: row
         type: FeaturedItem
     variant: small-list
-    colors:
+    colors: {}
     styles:
       self:
         margin:
@@ -64,7 +64,7 @@ bottomSections:
         textAlign: center
     type: FeaturedItemsSection
 isFeatured: true
-colors:
+colors: {}
 styles:
   self:
     padding:
@@ -80,48 +80,6 @@ styles:
     flexDirection: col
 type: CustomHTMLLayout
 author: content/data/nyree.json
-allowed_elements:
-  - meta
-  - head
-  - html
-  - body
-  - h1
-  - h2
-  - h3
-  - h4
-  - h5
-  - h6
-  - p
-  - a
-  - img
-  - ul
-  - ol
-  - li
-  - strong
-  - em
-  - blockquote
-  - hr
-  - br
-  - div
-  - span
-  - table
-  - thead
-  - tbody
-  - tr
-  - th
-  - td
-  - header
-  - nav
-  - main
-  - footer
-  - section
-  - article
-  - aside
-  - figure
-  - figcaption
-  - canvas
-  - script
-  - style
 ---
 
 <!DOCTYPE html>
