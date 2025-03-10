@@ -70,31 +70,31 @@ seo:
             --accent-purple: #0A66C2; /* Changed to LinkedIn blue */
             --bg-gradient-start: #FFFFFF;
             --bg-gradient-end: #EDEDED;
-            
+
             /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
             --space-lg: 2rem;
             --space-xl: 4rem;
-            
+
             /* Border Radius */
             --border-radius-sm: 4px;
             --border-radius-md: 8px;
             --border-radius-lg: 16px;
-            
+
             /* Transitions */
             --transition-fast: 0.2s ease;
             --transition-normal: 0.3s ease;
             --transition-slow: 0.5s ease;
-            
+
             /* Shadows */
             --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
             --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
             --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         /* Global Styles */
         body {
             font-family: "Inter", sans-serif;
@@ -103,40 +103,40 @@ seo:
             margin: 0;
             padding: 0;
         }
-        
+
         main {
             background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 100%);
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--space-md);
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             margin-top: 0;
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         a {
             text-decoration: none;
             color: #0A66C2; /* LinkedIn blue */
             transition: color var(--transition-fast);
         }
-        
+
         a:hover {
             color: #0A66C2; /* LinkedIn blue */
         }
-        
+
         img {
             max-width: 100%;
             height: auto;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 5px 10px;
@@ -148,32 +148,32 @@ seo:
             background-color: #0A66C2; /* LinkedIn official blue color */
             color: #FFFFFF; /* White text color */
         }
-        
+
         .btn-primary {
             background-color: #0A66C2; /* LinkedIn official blue color */
             color: white;
             border: none;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             color: white;
         }
-        
+
         .btn-outline {
             background: transparent;
             color: var(--text-dark);
             border: 2px solid #0A66C2;
         }
-        
+
         .btn-outline:hover {
             background-color: #0A66C2;
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Animation Keyframes */
         @keyframes fadeIn {
             from {
@@ -185,7 +185,7 @@ seo:
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -196,7 +196,7 @@ seo:
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes slideInRight {
             from {
                 opacity: 0;
@@ -207,7 +207,7 @@ seo:
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -220,6 +220,7 @@ seo:
             }
         }
     </style>
+
 </head>
 <body>
     <!-- Main Hero Section -->
