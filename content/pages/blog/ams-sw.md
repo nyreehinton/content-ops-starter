@@ -123,6 +123,7 @@ allowed_elements:
   - canvas
   - script
   - style
+allowed_elements: []  # Add this line
 seo:
   metaTitle: Bloomberg Intelligence Analysis | AMS SW Experience
   metaDescription: A detailed overview of semiconductor analysis and market research experience at Bloomberg Intelligence, focusing on AMS SW.

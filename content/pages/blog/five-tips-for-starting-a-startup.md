@@ -30,6 +30,7 @@ styles:
     textAlign: center
 type: PostLayout
 ---
+
 Ive built my career around transforming data into strategic advantage, with roles that span equity research, product management, and cross-functional collaboration. At Bloomberg L.P., I learned the fundamentals of equity analysis in the TMT space, managing a 70-company portfolio and ensuring timely, accurate insights for clients. From there, I moved to Reorg Research, where I leveraged machine learning to detect potential shareholder-activist and M\&A scenarios, championing a Pre-Deal-M\&A Database that tracked hundreds of companies under strategic review.
 
 Subsequently, at Third Bridge Group, I moderated over 125 executive-level discussions on consumer staples and adjacent sectors, deepening my capacity to extract critical insights from industry leaders. And most recently, as an ETF Data Product Manager for a multi-billion-dollar product suite at Capital Group, I orchestrated data ingestion for nine new ETF data sources, implemented governance frameworks across cross-functional teams, and enhanced global transparency into buyer/seller trends. Each chapter of my career has reinforced a core skill: the ability to blend analytics, communication, and product visionâ€”ensuring data and technology consistently drive business impact.

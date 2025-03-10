@@ -36,13 +36,14 @@ seo:
   type: Seo
   socialImage: /images/IMG_0129.png
 ---
+
 Well......what's an odometer?
 
 The central hypothesis of this report is that the mileage displayed on Tesla’s MCU isn't the true distance you traveled.. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
 ![](/images/IMG_1270.jpeg)
 
-***
+---
 
 <div style="text-align: center"># Energy-to-Miles Conversion Factors</div>
 
@@ -145,13 +146,13 @@ Tesla’s system redefines how mileage is calculated. Instead of relying on phys
 
 Patent US8054038B2 outlines seven variables that modify the energy-to-mile conversion rate:
 
-*   **Historical Route Efficiency:** Efficiency data gathered from previous trips.
-*   **Ambient Temperature:** Colder temperatures tend to reduce efficiency.
-*   **Tire Pressure Status:** Underinflated tires result in efficiency penalties.
-*   **Regenerative Braking Utilization:** Reduced use of regenerative braking lowers the efficiency factor (reduces η).
-*   **Cabin Climate Load:** Increased HVAC usage negatively affects overall efficiency (degrades η).
-*   **Software Updates:** Efficiency recalibrations occur after updates.
-*   **Battery Impedance:** Aging cells increase η values.
+- **Historical Route Efficiency:** Efficiency data gathered from previous trips.
+- **Ambient Temperature:** Colder temperatures tend to reduce efficiency.
+- **Tire Pressure Status:** Underinflated tires result in efficiency penalties.
+- **Regenerative Braking Utilization:** Reduced use of regenerative braking lowers the efficiency factor (reduces η).
+- **Cabin Climate Load:** Increased HVAC usage negatively affects overall efficiency (degrades η).
+- **Software Updates:** Efficiency recalibrations occur after updates.
+- **Battery Impedance:** Aging cells increase η values.
 
 Each variable is assigned a proprietary weight within Tesla's algorithm, meaning that even when driving the same route, the calculated mileage can vary based on environmental conditions and driving behavior.
 
@@ -204,4 +205,5 @@ Conclusion
 While this adaptive feature demonstrates Tesla’s technological sophistication, it introduces subjectivity into the odometer system, diverging from the objective nature of traditional odometers.Stay tuned for further analysis on how this issue affects real-world Tesla ownership.
 
 ```
+
 ```

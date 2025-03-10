@@ -87,6 +87,7 @@ styles:
 type: PostLayout
 author: content/data/nyree.json
 ---
+
 <div style="text-align: center">![](/images/IMG_1166.jpeg)</div>
 
 In a recent interview, I had the privilege of speaking with Sam Bernards, Former CEO at Purple Innovation Inc. My goal was to uncover how Purple differentiates itself in the premium comfort market, explore its manufacturing strategy, and understand its future trajectory in a crowded field of mattress competitors. By setting an open, conversational tone, I was able to quickly build rapport and guide the discussion toward strategic issues like proprietary technology, brand positioning, and supply chain challenges.
@@ -95,15 +96,15 @@ In a recent interview, I had the privilege of speaking with Sam Bernards, Former
 
 To kick things off, I emphasized the importance of understanding Purples origins, pressing Sam on how its product innovation, specialized Mattress Max manufacturing machinery, and signature marketing style converged to create a unique competitive edge. I then pivoted the dialogue to how consumer trends”particularly the shift to e-commerce and direct-to-consumer channels”have impacted Purple long-term growth potential.
 
-#### Question #1:
+#### Question #1
 
-> *Given the crowded bed-in-a-box market and the drop in average mattress price points, how do you see Purple sustaining premium pricing without sacrificing market share?*
+> _Given the crowded bed-in-a-box market and the drop in average mattress price points, how do you see Purple sustaining premium pricing without sacrificing market share?_
 
 Sam highlighted that much of Purples success stems from genuine product differentiation”an intersection of geometry and chemistry that few rivals can replicate. This, in turn, supports premium pricing and helps maintain brand loyalty.
 
-#### Question #2:
+#### Question #2
 
-> *With Purple proprietary machinery and R\&D focus, how do you manage capacity constraints while ensuring consistent quality across multiple manufacturing facilities?*
+> _With Purple proprietary machinery and R\&D focus, how do you manage capacity constraints while ensuring consistent quality across multiple manufacturing facilities?_
 
 Sam acknowledged that while rapid growth can strain production, the vertical integration and tailored machinery allow Purple to carefully scale. He also touched on how building a new facility on the East Coast was a deliberate step to expand capacity without compromising product quality.
 

@@ -98,11 +98,12 @@ seo:
   metaDescription: lime scooters
 author: content/data/nyree.json
 ---
+
 **Battery Theft Analysis**
 
 In Q4 2022, I analyzed a simulated dataset on scooter battery theft to uncover where and how losses occurred most frequently. By scrutinizing city-by-city breakdowns and model-specific vulnerabilities, I discovered that London, Los Angeles, and Paris accounted for a disproportionate share of theft incidents, suggesting the need for heightened security measures in those regions. Additionally, the data indicated that certain battery models—particularly the B40S—were targeted more often, hinting at design or security gaps that merited a hardware-focused response. I recommended creating a centralized reporting and alert system to highlight sudden spikes in loss rates and streamline interventions across Lime’s global footprint.
 
-![](/images/Lime%20Battery%20Loss%20Analysis%20\(2\).png)
+![](</images/Lime%20Battery%20Loss%20Analysis%20(2).png>)
 
 **SQL Proficiency**
 

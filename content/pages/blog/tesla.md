@@ -70,7 +70,7 @@ allowed_elements:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Techinical report on Tesla odometer readings and battery performance, revealing discrepancies and technical insights">
     <title>Tesla Energy Efficiancy Report</title>
-    
+
     <!-- CSS STYLING -->
     <style>
         /* COLOR THEME VARIABLES */

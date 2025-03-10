@@ -98,7 +98,7 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 <div style="text-align: center">## Parameters</div>
 
-1.  Input Data from Case Study: For this analysis, we used telematics and charging data collected over a 7-month period with the following details:
+1. Input Data from Case Study: For this analysis, we used telematics and charging data collected over a 7-month period with the following details:
 
 | Metric                       | Value   | Source           |
 | ---------------------------- | ------- | ---------------- |
