@@ -57,15 +57,20 @@ function isRefField(modelName: string, fieldName: string): boolean {
 const supportedFileTypes = ['md', 'json'];
 function contentFilesInPath(dir: string): string[] {
     const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
-    return globSync(globPattern);
+    console.log(`🔍 Searching for files with pattern: ${globPattern}`);
+    const files = globSync(globPattern);
+    console.log(`📁 Found ${files.length} files in ${dir}:`, files);
+    return files;
 }
 
 function readContent(file: string): ContentObject {
+    console.log(`📖 Reading content from file: ${file}`);
     const rawContent = fs.readFileSync(file, 'utf8');
     let content: ContentObject = {};
 
     switch (path.extname(file).substring(1)) {
         case 'md':
+            console.log(`📝 Processing markdown file: ${file}`);
             const parsedMd = frontmatter(rawContent);
             const attributes = parsedMd.attributes && typeof parsedMd.attributes === 'object' ? parsedMd.attributes : {};
             content = {
@@ -74,6 +79,7 @@ function readContent(file: string): ContentObject {
             };
             break;
         case 'json':
+            console.log(`📋 Processing JSON file: ${file}`);
             content = JSON.parse(rawContent);
             break;
         default:
@@ -82,21 +88,21 @@ function readContent(file: string): ContentObject {
 
     // ✅ Ensure metadata always exists
     if (!content.__metadata) {
+        console.log(`⚠️ No metadata found for ${file}, creating default metadata`);
         content.__metadata = { modelName: '' };
     }
 
     // ✅ Ensure modelName always exists, fallback to "default-model"
     content.__metadata.modelName = content.__metadata.modelName || content.type || 'default-model';
+    console.log(`📌 Model name for ${file}: ${content.__metadata.modelName}`);
 
     // ✅ Ensure slug and urlPath are set correctly
     content.__metadata.slug = content.slug || path.basename(file, path.extname(file));
     content.__metadata.urlPath = getPageUrl(content);
+    console.log(`🔗 URL path for ${file}: ${content.__metadata.urlPath}`);
 
     // ✅ Ensure metadata ID is assigned
     content.__metadata.id = file;
-
-    // ✅ Debug Log - This will show all content objects before returning
-    console.log(`🛠 Processed file: ${file}`, JSON.stringify(content, null, 2));
 
     return content;
 }

@@ -13,33 +13,53 @@ function cssClassesFromUrlPath(urlPath) {
 
 function getPageUrl(page) {
     if (!page || !page.__metadata) {
-        console.error("🚨 Error: Missing metadata in getPageUrl", page);
-        return "/error"; // Safe fallback
+        console.error('🚨 Error: Missing metadata in getPageUrl', page);
+        return '/error';
     }
 
-    const { modelName, slug } = page.__metadata || {};
+    const { modelName, slug } = page.__metadata;
+    const fileSlug = page.slug || slug;
+
+    console.log(`🔍 Getting URL for page:`, {
+        modelName,
+        slug: fileSlug,
+        metadata: page.__metadata,
+        filename: page.__metadata.id
+    });
 
     if (!modelName) {
-        console.warn("⚠️ Warning: Missing modelName, using default", page);
-        return "/default-page"; // Prevent crashes
+        console.warn('⚠️ Warning: Missing modelName, using default', page);
+        return '/default-page';
     }
 
-    if (!slug) {
-        console.warn("⚠️ Warning: Page missing slug", page);
-        return "/error";
+    if (!fileSlug) {
+        console.warn('⚠️ Warning: Page missing slug', page);
+        return '/error';
     }
 
-    if (modelName === "PostLayout") {
-        return `/blog${slug.startsWith('/') ? slug : `/${slug}`}`;
+    // Handle index/home page
+    if (fileSlug === 'index' || fileSlug === 'home') {
+        console.log('🏠 Detected home page');
+        return '/';
     }
 
-    return slug.startsWith('/') ? slug : `/${slug}`;
+    // Handle blog posts
+    if (modelName === 'PostLayout' || (page.__metadata && page.__metadata.id && page.__metadata.id.includes('/blog/'))) {
+        const blogPath = `/blog${fileSlug.startsWith('/') ? fileSlug : `/${fileSlug}`}`;
+        console.log(`📝 Generated blog URL: ${blogPath}`);
+        return blogPath;
+    }
+
+    // Handle regular pages
+    const pagePath = fileSlug.startsWith('/') ? fileSlug : `/${fileSlug}`;
+    console.log(`📄 Generated page URL: ${pagePath}`);
+    return pagePath;
 }
 
 function setEnvironmentVariables() {
-  return {
-    ...(process?.env?.URL && { URL: process.env.URL }),
-  }
+    return {
+        ...(process?.env?.URL && { URL: process.env.URL })
+    };
 }
 
 module.exports = {
