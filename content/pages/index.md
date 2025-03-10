@@ -1,6 +1,6 @@
 ---
-title: Home | Nyree Hinton | Financial Analyst & Product Manager
-slug: /
+title: ETF Data Product Management
+slug: new-home-page
 sections:
   - type: GenericSection
     title:

@@ -1,6 +1,6 @@
 ---
-title: ETF Data Product Management
-slug: new-home-page
+title: Home | Nyree Hinton | Financial Analyst & Product Manager
+slug: /
 date: '2025-03-26'
 excerpt: 'Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.'
 isFeatured: true
@@ -43,7 +43,7 @@ allowed_elements:
   - figcaption
   - canvas
 seo:
-  metaTitle: ETF Product Management | Capital Group Experience
+  metaTitle: Nyree Hinton | Financial Analyst & Product Manager Portfolio
   metaDescription: Portfolio showcasing ETF data product management experience at Capital Group, featuring ETF fundamentals, strategy, and data management achievements.
   socialImage: /images/Capital_Group_Companies.jpg
 ---
@@ -420,6 +420,243 @@ seo:
         }
     </style>
 
+    <!-- Portfolio Highlights Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Portfolio Highlights</h2>
+                <p class="section-subtitle">Selected projects showcasing my expertise in financial analysis and product management</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Capital Markets Item -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="/images/bloomberg-logo-vector.png.jpg" alt="Bloomberg financial data visualization and analytics platform used for ETF transaction analysis" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Capital Markets</div>
+                            <a href="#" class="portfolio-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Bloomberg Intelligence</h3>
+                        <p class="portfolio-description">Analyzed Apple semiconductor supplier ams-SW during my internship, evaluating technologies, financial performance, and market opportunities across mobile, IoT, and automotive segments. Developed proprietary analytical models that provide unique market insights.</p>
+                        <div class="portfolio-tags">
+                            <span>Financial Analysis</span>
+                            <span>Market Research</span>
+                            <span>Technology Evaluation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Governance Item -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="/images/Capital_Group_Companies.jpg" alt="Capital Group logo - where Nyree Hinton engineered ETL pipelines and data governance solutions" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Data Governance</div>
+                            <a href="#" class="portfolio-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Capital Group</h3>
+                        <p class="portfolio-description">Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.</p>
+                        <div class="portfolio-tags">
+                            <span>ETL Pipelines</span>
+                            <span>Data Integration</span>
+                            <span>Process Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Intelligence Item -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="/images/Thirdbrige.png.jpg" alt="Third Bridge logo - where Nyree Hinton conducted market intelligence research and executive-level discussions" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-category">Market Intelligence</div>
+                            <a href="#" class="portfolio-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Third Bridge</h3>
+                        <p class="portfolio-description">Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.</p>
+                        <div class="portfolio-tags">
+                            <span>Market Research</span>
+                            <span>Investment Strategy</span>
+                            <span>Trend Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-cta">
+                <a href="/Experience" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Portfolio Section Styles */
+        .portfolio-section {
+            padding: var(--space-xl) 0;
+            background-color: transparent;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .portfolio-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .portfolio-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .portfolio-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .portfolio-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--space-md);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
+
+        .portfolio-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .portfolio-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width var(--transition-normal);
+        }
+
+        .portfolio-link:hover::after {
+            width: 100%;
+        }
+
+        .portfolio-content {
+            padding: var(--space-md);
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-xs);
+            color: var(--text-dark);
+        }
+
+        .portfolio-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .portfolio-tags span {
+            background-color: rgba(10, 102, 194, 0.1); /* LinkedIn blue with opacity */
+            color: #0A66C2; /* LinkedIn blue */
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-cta {
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+
+        /* Responsive Styles for Portfolio Section */
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
     <!-- Professional Expertise Section -->
     <section id="expertise" class="expertise-section">
         <div class="container">
@@ -536,10 +773,7 @@ seo:
         .section-title {
             font-size: 2.2rem;
             margin-bottom: var(--space-sm);
-            background: #0A66C2; /* LinkedIn blue */
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--text-dark);
         }
 
         .section-subtitle {
@@ -719,243 +953,6 @@ seo:
         }
     </style>
 
-    <!-- Portfolio Highlights Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Portfolio Highlights</h2>
-                <p class="section-subtitle">Selected projects showcasing my expertise in financial analysis and product management</p>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Capital Markets Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/bloomberg-logo-vector.png.jpg" alt="Bloomberg financial data visualization and analytics platform used for ETF transaction analysis" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Capital Markets</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Bloomberg</h3>
-                        <p class="portfolio-description">Analyzed global ETF transaction data exceeding $31B, enhancing transparency and providing advanced analytics for multi-billion-dollar product suites.</p>
-                        <div class="portfolio-tags">
-                            <span>ETF Analytics</span>
-                            <span>Data Visualization</span>
-                            <span>Financial Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Governance Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/Capital_Group_Companies.jpg" alt="Capital Group logo - where Nyree Hinton engineered ETL pipelines and data governance solutions" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Data Governance</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Capital Group</h3>
-                        <p class="portfolio-description">Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.</p>
-                        <div class="portfolio-tags">
-                            <span>ETL Pipelines</span>
-                            <span>Data Integration</span>
-                            <span>Process Optimization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Market Intelligence Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/Thirdbrige.png.jpg" alt="Third Bridge logo - where Nyree Hinton conducted market intelligence research and executive-level discussions" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Market Intelligence</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Third Bridge</h3>
-                        <p class="portfolio-description">Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.</p>
-                        <div class="portfolio-tags">
-                            <span>Market Research</span>
-                            <span>Investment Strategy</span>
-                            <span>Trend Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-cta">
-                <a href="/portfolio" class="btn btn-primary">View Full Portfolio</a>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        /* Portfolio Section Styles */
-        .portfolio-section {
-            padding: var(--space-xl) 0;
-            background-color: transparent;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-lg);
-        }
-
-        .portfolio-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .portfolio-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .portfolio-card:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .portfolio-card:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-normal);
-        }
-
-        .portfolio-card:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: var(--space-md);
-            opacity: 0;
-            transition: opacity var(--transition-normal);
-        }
-
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-category {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: var(--space-xs);
-        }
-
-        .portfolio-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        .portfolio-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: white;
-            transition: width var(--transition-normal);
-        }
-
-        .portfolio-link:hover::after {
-            width: 100%;
-        }
-
-        .portfolio-content {
-            padding: var(--space-md);
-        }
-
-        .portfolio-title {
-            font-size: 1.3rem;
-            margin-bottom: var(--space-xs);
-            color: var(--text-dark);
-        }
-
-        .portfolio-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-sm);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .portfolio-tags span {
-            background-color: rgba(10, 102, 194, 0.1); /* LinkedIn blue with opacity */
-            color: #0A66C2; /* LinkedIn blue */
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .portfolio-cta {
-            text-align: center;
-            margin-top: var(--space-xl);
-        }
-
-        /* Responsive Styles for Portfolio Section */
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-md);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -972,6 +969,11 @@ seo:
                         <a href="https://www.linkedin.com/in/nyree-hinton" class="contact-method linkedin">
                             <i class="fab fa-linkedin"></i>
                             <span>Connect on LinkedIn</span>
+                        </a>
+
+                        <a href="https://github.com/nyreehinton" class="contact-method github">
+                            <i class="fab fa-github"></i>
+                            <span>Follow on GitHub</span>
                         </a>
 
                         <a href="mailto:nyreehinton@gmail.com" class="contact-method email">
@@ -1028,11 +1030,14 @@ seo:
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: var(--space-md);
-            border-radius: var(--border-radius-md);
+            padding: 12px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            margin: 0 auto;
+            max-width: 300px;
+            width: 100%;
         }
 
         .contact-method:hover {
@@ -1048,15 +1053,16 @@ seo:
         .contact-method.linkedin {
             background-color: #0A66C2; /* LinkedIn official blue color */
             color: white;
-            border-radius: 5px;
-            padding: 5px 10px;
+        }
+
+        .contact-method.github {
+            background-color: #000000; /* GitHub black color */
+            color: white;
         }
 
         .contact-method.email {
             background-color: #0A66C2; /* LinkedIn official blue color */
             color: white;
-            border-radius: 5px;
-            padding: 5px 10px;
         }
 
         /* Responsive Styles for Contact Section */
