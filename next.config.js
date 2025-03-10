@@ -2,8 +2,8 @@
 const nextConfig = {
     reactStrictMode: true, // Keep strict mode enabled
     images: {
-      unoptimized: true // Prevents image optimization issues
+        unoptimized: true // Prevents image optimization issues
     }
-  };
-  
-  module.exports = nextConfig;
+};
+
+module.exports = nextConfig;
