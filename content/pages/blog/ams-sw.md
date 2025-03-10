@@ -12,7 +12,7 @@ featuredImage:
   type: ImageBlock
 bottomSections:
   - title: Divider
-    colors: {}
+    colors:
     styles:
       self:
         padding:
@@ -33,7 +33,7 @@ bottomSections:
               margin:
                 - ml-3
           type: ImageBlock
-        colors: {}
+        colors:
         styles:
           self:
             padding:
@@ -49,7 +49,7 @@ bottomSections:
             flexDirection: row
         type: FeaturedItem
     variant: small-list
-    colors: {}
+    colors:
     styles:
       self:
         margin:
@@ -64,7 +64,7 @@ bottomSections:
         textAlign: center
     type: FeaturedItemsSection
 isFeatured: true
-colors: {}
+colors:
 styles:
   self:
     padding:
@@ -123,7 +123,6 @@ allowed_elements:
   - canvas
   - script
   - style
-allowed_elements: []  # Add this line
 seo:
   metaTitle: Bloomberg Intelligence Analysis | AMS SW Experience
   metaDescription: A detailed overview of semiconductor analysis and market research experience at Bloomberg Intelligence, focusing on AMS SW.

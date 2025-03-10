@@ -9,6 +9,8 @@
     "dependencies": {
         "@algolia/autocomplete-js": "^1.17.1",
         "@algolia/autocomplete-theme-classic": "^1.17.1",
+        "@hookform/resolvers": "^3.3.4",
+        "@netlify/content-engine": "^0.1.0",
         "algoliasearch": "^4.24.0",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.11",
@@ -17,20 +19,19 @@
         "glob": "^10.4.2",
         "markdown-to-jsx": "^7.7.3",
         "marked": "^14.1.2",
-        "next": "15.1.6",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
+        "next": "14.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "swiper": "^11.1.4",
-        "tailwindcss": "^3.4.3",
-        "@hookform/resolvers": "^3.3.4"
+        "tailwindcss": "^3.4.3"
     },
     "devDependencies": {
         "@base2/pretty-print-object": "^1.0.2",
-        "@stackbit/cms-git": "^1.0.32",
+        "@stackbit/cms-git": "^1.0.0",
         "@stackbit/types": "^2.1.10",
         "@types/glob": "^8.1.0",
-        "@types/react": "^19.0.4",
-        "@types/react-dom": "^19.0.1",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
         "autoprefixer": "^10.4.19",
         "prettier": "^3.3.2",
         "typescript": "^5.6.2"
