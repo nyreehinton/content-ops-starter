@@ -1,0 +1,26 @@
+Test Suite: Header Configuration Validation
+
+Test Case 1: Validate Primary Links Types
+    - Description: Checks if the "type" property of each primary link is one of the allowed types ("Link", "Button", "SubNav").
+    - Steps:
+        1. Parse the header.json file.
+        2. Iterate through the primaryLinks array.
+        3. For each link, check if the "type" property is present in the allowedTypes array.
+        4. Assert that the "type" property is valid.
+
+Test Case 2: Validate Secondary Links Types
+    - Description: Checks if the "type" property of each secondary link is one of the allowed types ("Link", "Button").
+    - Steps:
+        1. Parse the header.json file.
+        2. Iterate through the secondaryLinks array.
+        3. For each link, check if the "type" property is present in the allowedTypes array.
+        4. Assert that the "type" property is valid.
+
+Test Case 3: Validate Subnav Links Types
+    - Description: Checks if the "type" property of each subnav link is one of the allowed types ("Link", "Button").
+    - Steps:
+        1. Parse the header.json file.
+        2. Iterate through the primaryLinks array.
+        3. For each link, if the "type" is "SubNav", iterate through its "links" array.
+        4. For each sublink, check if the "type" property is present in the allowedTypes array.
+        5. Assert that the "type" property is valid. 
