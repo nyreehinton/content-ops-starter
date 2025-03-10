@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
+import ChartBlock from './blocks/ChartBlock';
 
 /**
  * The getComponent() function loads a component using dynamic import.
@@ -56,5 +57,6 @@ const components = {
     CustomHTMLLayout: dynamic(() => import('./layouts/CustomHTMLLayout')),
     PostLayout: dynamic(() => import('./layouts/PostLayout')),
     PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
-    PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout'))
+    PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout')),
+    ChartBlock: ChartBlock,
 };

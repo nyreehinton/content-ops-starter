@@ -43,7 +43,7 @@
         {
             "label": "Third Bridge",
             "altText": "thirdbridge",
-            "url": "",
+            "url": "/thirdbridge",
             "icon": "",
             "iconPosition": "right",
             "style": "secondary",

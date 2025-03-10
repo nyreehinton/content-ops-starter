@@ -22,29 +22,66 @@ type: CustomHTMLLayout
 author: content/data/nyree.json
 ---
 
-  <!-- Tailwind CSS (Remove if already loaded in your base template) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Merriweather', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            neutralBg: '#F5F5F5',
-            accent: '#A67B5B',
-            darkNavy: '#2F3E46',
-            highlight: '#557A95',
-          }
+<!-- Featured Analysis: Egg Price Crisis -->
+<section id="featured-analysis" class="py-8">
+  <div class="container mx-auto px-4">
+    <div class="bg-gradient-to-r from-accent/10 to-white rounded-xl shadow-lg p-8 border-l-4 border-accent">
+      <div class="flex flex-col lg:flex-row items-start gap-8">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="bg-accent text-white text-xs px-3 py-1 rounded-full">Featured Analysis</span>
+            <span class="text-sm text-gray-500">(2025-03-10)</span>
+          </div>
+          <h1 class="text-3xl font-bold text-darkNavy mb-4">
+            The Egg Price Crisis of 2025
+          </h1>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            A comprehensive analysis of projected egg price increases, supply chain disruptions, and expert recommendations for industry stakeholders. Key findings reveal a 39% price surge and critical adaptation strategies.
+          </p>
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Supply Chain</span>
+            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Market Analysis</span>
+            <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Industry Insights</span>
+          </div>
+          <a href="/blog/egg-price-crisis-2025" 
+             class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-highlight transition-all transform hover:scale-105">
+            Read Full Analysis
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+        <div class="lg:w-1/3">
+          <ChartBlock type="egg-price" className="w-full h-64 rounded-xl shadow-md" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['Merriweather', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          neutralBg: '#F5F5F5',
+          accent: '#A67B5B',
+          darkNavy: '#2F3E46',
+          highlight: '#557A95',
         }
       }
     }
-  </script>
+  }
+</script>
 
-  <!-- Chart.js (Remove if already loaded) -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Chart.js (Remove if already loaded) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Hero / Overview Section -->
   <section id="overview" class="py-8 text-center">
@@ -110,9 +147,71 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
   <!-- Bar Chart: Industry Breakdown -->
   <section id="industry-breakdown" class="py-8 text-center">
     <div class="container mx-auto px-4">
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4">Industry Breakdown</h3>
-        <canvas id="barChart" width="400" height="300"></canvas>
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-serif font-bold text-accent mb-6">Industry Breakdown</h3>
+        <div class="relative h-80">
+          <svg class="w-full h-full" viewBox="0 0 800 400">
+            <!-- Y-axis -->
+            <line x1="60" y1="350" x2="60" y2="50" stroke="#333" stroke-width="2"/>
+            <!-- X-axis -->
+            <line x1="60" y1="350" x2="750" y2="350" stroke="#333" stroke-width="2"/>
+            
+            <!-- Bars -->
+            <g>
+              <!-- Food & Beverage -->
+              <rect x="100" y="100" width="60" height="250" fill="#A67B5B" />
+              <text x="130" y="370" text-anchor="middle" font-size="12">F&B</text>
+              
+              <!-- Retail & Apparel -->
+              <rect x="200" y="150" width="60" height="200" fill="#557A95" />
+              <text x="230" y="370" text-anchor="middle" font-size="12">Retail</text>
+              
+              <!-- Agriculture -->
+              <rect x="300" y="250" width="60" height="100" fill="#2F3E46" />
+              <text x="330" y="370" text-anchor="middle" font-size="12">Agri</text>
+              
+              <!-- Consumer Goods -->
+              <rect x="400" y="280" width="60" height="70" fill="#6B8E23" />
+              <text x="430" y="370" text-anchor="middle" font-size="12">Consumer</text>
+              
+              <!-- Education -->
+              <rect x="500" y="300" width="60" height="50" fill="#8B4513" />
+              <text x="530" y="370" text-anchor="middle" font-size="12">Edu</text>
+              
+              <!-- Healthcare -->
+              <rect x="600" y="310" width="60" height="40" fill="#4682B4" />
+              <text x="630" y="370" text-anchor="middle" font-size="12">Health</text>
+              
+              <!-- Technology -->
+              <rect x="700" y="320" width="60" height="30" fill="#483D8B" />
+              <text x="730" y="370" text-anchor="middle" font-size="12">Tech</text>
+            </g>
+            
+            <!-- Y-axis labels -->
+            <text x="50" y="350" text-anchor="end" font-size="12">0</text>
+            <text x="50" y="250" text-anchor="end" font-size="12">25</text>
+            <text x="50" y="150" text-anchor="end" font-size="12">50</text>
+            <text x="50" y="50" text-anchor="end" font-size="12">75</text>
+          </svg>
+        </div>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex items-center">
+            <div class="w-4 h-4 bg-[#A67B5B] mr-2"></div>
+            <span class="text-sm">Food & Beverage (45)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 bg-[#557A95] mr-2"></div>
+            <span class="text-sm">Retail & Apparel (30)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 bg-[#2F3E46] mr-2"></div>
+            <span class="text-sm">Agriculture (15)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 bg-[#6B8E23] mr-2"></div>
+            <span class="text-sm">Consumer Goods (10)</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -140,20 +239,6 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
 
     <!-- Interview Cards Grid -->
     <div id="interviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-
-        <!-- Featured Analysis Card -->
-        <div class="bg-white rounded shadow p-4 border-l-4 border-accent" data-tags="egg price crisis analysis 2025">
-          <h3 class="text-lg font-semibold mb-2">
-            Featured Analysis: The Egg Price Crisis of 2025<br />
-            <span class="text-sm text-gray-500">(2025-03-10)</span>
-          </h3>
-          <p class="text-sm text-gray-600">
-            Comprehensive analysis of projected egg price increases, supply chain disruptions, and expert recommendations for industry stakeholders.
-          </p>
-          <a href="/blog/egg-price-crisis-2025" class="inline-block mt-3 bg-accent text-white py-1 px-3 rounded hover:bg-highlight transition-colors">
-            Read Analysis
-          </a>
-        </div>
 
         <div class="bg-white rounded shadow p-4" data-tags="hanesbrands margin 2021-10-28">
           <h3 class="text-lg font-semibold mb-2">
@@ -2085,19 +2170,9 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
 
   </section>
 
-  <!-- Bar Chart: Industry Breakdown -->
-  <section id="industry-breakdown" class="py-8 text-center">
-    <div class="container mx-auto px-4">
-      <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-serif font-bold text-accent mb-4">Industry Breakdown</h3>
-        <canvas id="barChart" width="400" height="300"></canvas>
-      </div>
-    </div>
-  </section>
-
   <!-- Scripts -->
   <script>
-    // 1) Filter logic for the interview list
+    // Filter logic for the interview list
     function filterInterviews(event) {
       const query = event.target.value.toLowerCase();
       const cards = document.querySelectorAll('#interviewGrid > div');
@@ -2106,81 +2181,6 @@ This portfolio encapsulates the series of rigorous interviews and detailed marke
         card.style.display = tags.toLowerCase().includes(query) ? '' : 'none';
       });
     }
-
-    // 2) Bar Chart: Industry Breakdown
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    new Chart(barCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Food & Beverage', 'Retail & Apparel', 'Agriculture & Agtech', 'Consumer Goods', 'Education', 'Healthcare', 'Technology', 'Other'],
-        datasets: [{
-          label: 'Number of Interviews',
-          data: [45, 30, 15, 10, 8, 5, 4, 3],
-          backgroundColor: [
-            '#A67B5B',
-            '#557A95',
-            '#2F3E46',
-            '#6B8E23',
-            '#8B4513',
-            '#4682B4',
-            '#483D8B',
-            '#708090'
-          ]
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { 
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Number of Interviews'
-            }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Industry Sectors'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: true,
-            text: 'Distribution of Interviews by Industry',
-            font: {
-              size: 16
-            }
-          }
-        }
-      }
-    });
-
-    // 3) Line Chart: Emerging Trends
-    const lineCtx = document.getElementById('emergingLineChart').getContext('2d');
-    new Chart(lineCtx, {
-      type: 'line',
-      data: {
-        labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q1', 'Q2'],
-        datasets: [{
-          label: 'Trend Indicator',
-          data: [10, 25, 40, 30, 45, 60],
-          fill: false,
-          borderColor: '#A67B5B',
-          tension: 0.2
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-    </script>
+  </script>
   </body>
   </html>
