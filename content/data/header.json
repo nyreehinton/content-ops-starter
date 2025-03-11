@@ -1,7 +1,7 @@
 {
     "primaryLinks": [{
             "label": "Home",
-            "url": "",
+            "url": "/",
             "icon": "",
             "iconPosition": "right",
             "style": "secondary",
@@ -22,7 +22,7 @@
             "type": "Link",
             "label": "Bloomberg",
             "altText": "Bloomberg",
-            "url": "",
+            "url": "bloomberg",
             "showIcon": false,
             "icon": "",
             "iconPosition": "right",
@@ -129,7 +129,7 @@
                     "iconPosition": "left",
                     "style": "primary",
                     "elementId": "",
-                    "label": "Everyone Else Got It Wrong"
+                    "label": "Batteries"
                 }
             ],
             "labelStyle": "primary",
@@ -191,5 +191,5 @@
             "padding": "5px 10px"
         }
     },
-    "title": "Nyree Hinton"
+    "title": ""
 }

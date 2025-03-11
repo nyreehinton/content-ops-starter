@@ -231,8 +231,7 @@ seo:
                 <h1 class="hero-title">Welcome to My Portfolio</h1>
                 <p class="hero-description">
                     A collection of my work as an Equity Analyst & Product Manager within the Financial sector
-                    spanning technology & consumer markets, M&A strategy, and ETF analytics—crafted with
-                    architectural primers.
+                    spanning technology & consumer markets, M&A strategy, and ETF analytics.
                 </p>
                 <a href="#expertise" class="hero-cta">
                     VIEW PORTFOLIO
@@ -243,7 +242,7 @@ seo:
                 </a>
             </div>
             <div class="hero-image-container">
-                <img src="/images/Hinton_Nyree_Default_Lifestyle 2_Headshot.jpeg" alt="Nyree Hinton - Financial Analyst and Product Manager" class="hero-image">
+                <img src="/images/Hinton_Nyree_Default_Office - 3_Headshot.jpeg" alt="Nyree Hinton - Financial Analyst and Product Manager" class="hero-image">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -402,7 +401,16 @@ seo:
             }
 
             .hero-image-container {
-                flex: 0 0 250px; /* Even smaller on tablets */
+                flex: 0 1 auto; /* Flexible width */
+                max-width: 100%; /* Allows it to shrink properly */
+                padding: 0.5rem; /* Add padding if needed */
+            }
+
+            .hero-image {
+                max-width: 100%; /* Makes the image responsive */
+                height: auto; /* Maintain aspect ratio */
+                border-radius: var(--border-radius-md);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             }
         }
 
@@ -426,7 +434,7 @@ seo:
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Portfolio Highlights</h2>
-                <p class="section-subtitle">Selected projects showcasing my expertise in financial analysis and product management</p>
+                <p class="section-subtitle"></p>
             </div>
 
             <div class="portfolio-grid">
@@ -662,8 +670,8 @@ seo:
     <section id="expertise" class="expertise-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Professional Expertise</h2>
-                <p class="section-subtitle">Specialized skills in financial analysis, product management, and data-driven decision making</p>
+                <h2 class="section-title">Subject Matter</h2>
+                <p class="section-subtitle"></p>
             </div>
 
             <div class="expertise-grid">
@@ -959,7 +967,7 @@ seo:
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">I'm currently open to new opportunities in financial analysis, product management, and ETF analytics.</p>
+                <p class="section-subtitle"></p>
             </div>
 
             <div class="contact-container">

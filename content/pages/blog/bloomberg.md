@@ -1,6 +1,6 @@
 ---
-title: 'AMS SW'
-slug: ams-sw
+title: 'Bloomberg'
+slug: bloomberg
 date: '2020-03-04'
 excerpt: 'A high-level overview of my internship experience at Bloomberg with AMS SW.'
 featuredImage:
@@ -135,7 +135,14 @@ seo:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloomberg Intelligence: ams-SW Semiconductor Analysis</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    
+    <!-- Additional Chart.js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    
+    <!-- Custom styles -->
     <style>
         /* Bloomberg Color Theme */
         :root {
@@ -150,6 +157,28 @@ seo:
             --bloomberg-chart-green: #16a34a;
             --bloomberg-chart-red: #dc2626;
             --bloomberg-chart-yellow: #eab308;
+        }
+
+        /* Hide site header and its containers */
+        header[data-sb-object-id="header"],
+        div[data-sb-object-id="header"],
+        [data-sb-field-path="header"],
+        nav[data-sb-field-path="header"],
+        .sb-component-header {
+            display: none !important;
+            height: 0 !important;
+            min-height: 0 !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            visibility: hidden !important;
+        }
+
+        /* Adjust main content to account for hidden header */
+        main[data-sb-object-id="main"],
+        div[data-sb-object-id="main"],
+        .sb-component-main {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
         }
 
         * {
@@ -240,6 +269,33 @@ seo:
             color: white;
             background-color: rgba(255, 255, 255, 0.05);
             border-left-color: var(--bloomberg-orange);
+        }
+
+        /* Add styles for nested navigation */
+        .nav-sublinks {
+            margin-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-sublink {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .nav-sublink.active, .nav-sublink:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left-color: var(--bloomberg-orange);
+        }
+
+        /* Remove the old sidebar styles */
+        .sidebar {
+            display: none;
         }
 
         .user-profile {
@@ -334,18 +390,6 @@ seo:
             margin: 0 auto;
             padding: 0 2rem;
             gap: 2rem;
-        }
-
-        .sidebar {
-            width: 280px;
-            background: white;
-            padding: 2rem;
-            position: sticky;
-            top: 0;
-            height: calc(100vh - 4rem);
-            overflow-y: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .toc-title {
@@ -492,12 +536,19 @@ seo:
 
         /* Chart Containers */
         .chart-container {
+            position: relative;
+            margin: 2rem 0;
+            padding: 1.5rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
             border: 1px solid #e2e8f0;
+        }
+
+        .chart {
+            position: relative;
+            height: 300px;
+            width: 100%;
         }
 
         .chart-header {
@@ -513,11 +564,12 @@ seo:
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--bloomberg-navy);
+            margin: 0;
         }
 
         .chart-controls {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .chart-control {
@@ -526,19 +578,21 @@ seo:
             border-radius: 4px;
             padding: 0.4rem 0.8rem;
             font-size: 0.85rem;
+            color: var(--bloomberg-gray);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
-        .chart-control:hover, .chart-control.active {
+        .chart-control:hover {
             background: var(--bloomberg-navy);
             color: white;
             border-color: var(--bloomberg-navy);
         }
 
-        .chart {
-            height: 300px;
-            position: relative;
+        .chart-control.active {
+            background: var(--bloomberg-navy);
+            color: white;
+            border-color: var(--bloomberg-navy);
         }
 
         /* Timeline component */
@@ -753,23 +807,18 @@ seo:
         /* Interactive slider */
         .slider-container {
             margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
         }
 
         .slider-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
-        }
-
-        .slider-label {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .slider-value {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--bloomberg-navy);
         }
 
         .slider {
@@ -780,6 +829,12 @@ seo:
             background: #e2e8f0;
             border-radius: 5px;
             outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
         }
 
         .slider::-webkit-slider-thumb {
@@ -792,6 +847,11 @@ seo:
             cursor: pointer;
             border: 2px solid white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
         }
 
         .slider::-moz-range-thumb {
@@ -802,14 +862,20 @@ seo:
             cursor: pointer;
             border: 2px solid white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .slider::-moz-range-thumb:hover {
+            transform: scale(1.1);
         }
 
         /* Result display for interactive elements */
         .result-display {
-            background: #f8fafc;
-            padding: 1.25rem;
-            border-radius: 4px;
             margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 4px;
+            text-align: center;
             font-size: 1.1rem;
             border: 1px solid #e2e8f0;
         }
@@ -990,14 +1056,30 @@ seo:
             </a>
         </div>
         <div class="side-header-content" suppressHydrationWarning={true}>
-            <div class="date-display" suppressHydrationWarning={true}>Contents</div>
+            <div class="date-display" suppressHydrationWarning={true}>Table of Contents</div>
             <nav class="navigation" suppressHydrationWarning={true}>
-                <a href="#professional-summary" class="nav-link active" suppressHydrationWarning={true}>Professional Summary</a>
-                <a href="#experience" class="nav-link" suppressHydrationWarning={true}>Experience</a>
-                <a href="#bloomberg-intelligence" class="nav-link" suppressHydrationWarning={true}>Bloomberg Intelligence</a>
-                <a href="#equity-research" class="nav-link" suppressHydrationWarning={true}>Equity Research</a>
-                <a href="#skills" class="nav-link" suppressHydrationWarning={true}>Skills & Tools</a>
-                <a href="#contact" class="nav-link" suppressHydrationWarning={true}>Contact</a>
+                <a href="#professional-summary" class="nav-link">Professional Summary</a>
+                
+                <a href="#experience" class="nav-link">Experience Timeline</a>
+                
+                <a href="#bloomberg-intelligence" class="nav-link">Bloomberg Intelligence Internship</a>
+                <div class="nav-sublinks">
+                    <a href="#executive-summary" class="nav-sublink">Executive Summary</a>
+                    <a href="#financial-analysis" class="nav-sublink">Financial Analysis</a>
+                    <a href="#market-opportunity" class="nav-sublink">Market Opportunity</a>
+                    <a href="#competitive-analysis" class="nav-sublink">Competitive Analysis</a>
+                    <a href="#valuation" class="nav-sublink">Valuation & Investment Thesis</a>
+                </div>
+                
+                <a href="#equity-research" class="nav-link">Equity Research Achievements</a>
+                <div class="nav-sublinks">
+                    <a href="#key-projects" class="nav-sublink">Key Projects</a>
+                    <a href="#technical-skills" class="nav-sublink">Technical Skills</a>
+                    <a href="#industry-insights" class="nav-sublink">Industry Insights</a>
+                </div>
+                
+                <a href="#skills" class="nav-link">Skills & Tools</a>
+                <a href="#contact" class="nav-link">Contact Information</a>
             </nav>
             <div class="user-profile" suppressHydrationWarning={true}>
                 <div class="user-avatar" suppressHydrationWarning={true}>A</div>
@@ -1946,391 +2028,417 @@ seo:
 
 
     <script>
+    // Initialize Chart.js with defaults
+    Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = '#1a1e29';
 
-    // Complete the script section with working chart implementations and interactive elements
     document.addEventListener('DOMContentLoaded', function() {
-    // Update date in header to match current date
-    document.querySelector('.date-display').textContent = 'Friday, March 07, 2025, 6:29 PM PST';
+        // Utility function to create gradient backgrounds
+        function createGradient(ctx, color) {
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            return gradient;
+        }
 
-            // Create Revenue Segment Pie Chart
-            const revenueSegmentCtx = document.getElementById('revenueSegmentChart').getContext('2d');
-            new Chart(revenueSegmentCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Consumer & Communications', 'Automotive, Industrial & Medical'],
-                    datasets: [{
-                        data: [73, 27],
-                        backgroundColor: [
-                            'rgba(45, 55, 72, 0.8)',
-                            'rgba(249, 115, 22, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(45, 55, 72, 1)',
-                            'rgba(249, 115, 22, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+        // Common chart options
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        font: {
+                            size: 12
+                        }
+                    }
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
+                tooltip: {
+                    backgroundColor: 'rgba(26, 30, 41, 0.9)',
+                    titleFont: {
+                        size: 13
+                    },
+                    bodyFont: {
+                        size: 12
+                    },
+                    padding: 12,
+                    cornerRadius: 8
+                }
+            }
+        };
+
+        // Initialize all charts with error handling
+        try {
+            // Revenue Segment Chart
+            const revenueSegmentCtx = document.getElementById('revenueSegmentChart')?.getContext('2d');
+            if (revenueSegmentCtx) {
+                new Chart(revenueSegmentCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Consumer & Communications', 'Automotive, Industrial & Medical'],
+                        datasets: [{
+                            data: [73, 27],
+                            backgroundColor: [
+                                'rgba(249, 115, 22, 0.8)',
+                                'rgba(45, 55, 72, 0.8)'
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#ffffff'
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        cutout: '60%',
+                        plugins: {
+                            ...commonOptions.plugins,
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Margin Trends Chart
+            const marginTrendsCtx = document.getElementById('marginTrendsChart')?.getContext('2d');
+            if (marginTrendsCtx) {
+                new Chart(marginTrendsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                        datasets: [{
+                            label: 'Gross Margin (%)',
+                            data: [49, 48, 51, 50, 40, 35, 25, 20, 15, 9],
+                            borderColor: '#0d73ff',
+                            backgroundColor: createGradient(marginTrendsCtx, 'rgba(13, 115, 255, 0.1)'),
+                            tension: 0.4,
+                            fill: true
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.label + ': ' + context.raw + '%';
+                        {
+                            label: 'Operating Margin (%)',
+                            data: [30, 28, 32, 33, 25, 20, 5, -10, -20, -29],
+                            borderColor: '#16a34a',
+                            backgroundColor: createGradient(marginTrendsCtx, 'rgba(22, 163, 74, 0.1)'),
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    callback: value => `${value}%`
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
                                 }
                             }
                         }
                     }
-                }
-            });
+                });
+            }
 
-            // Create Margin Trends Line Chart
-            const marginTrendsCtx = document.getElementById('marginTrendsChart').getContext('2d');
-            new Chart(marginTrendsCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'Gross Margin (%)',
-                        data: [49, 48, 51, 50, 40, 35, 25, 20, 15, 9],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Operating Margin (%)',
-                        data: [30, 28, 32, 33, 25, 20, 5, -10, -20, -29],
-                        borderColor: 'rgba(22, 163, 74, 1)',
-                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            min: -30,
-                            max: 60,
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create Stock Performance Chart
-            const stockPerformanceCtx = document.getElementById('stockPerformanceChart').getContext('2d');
-            new Chart(stockPerformanceCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
-                    datasets: [{
-                        label: 'ams-SW',
-                        data: [100, 110, 105, 115, 125, 140, 130, 135, 150, 145, 160, 155, 170],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Semiconductor Index',
-                        data: [100, 105, 108, 112, 115, 120, 118, 125, 130, 132, 138, 140, 145],
-                        borderColor: 'rgba(45, 55, 72, 1)',
-                        backgroundColor: 'transparent',
-                        tension: 0.3,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Indexed Performance (Base 100)'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create Quarterly Revenue Chart
-            const quarterlyRevenueCtx = document.getElementById('quarterlyRevenueChart').getContext('2d');
-            new Chart(quarterlyRevenueCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018', 'Q3 2018 (Est)'],
-                    datasets: [{
-                        label: 'Revenue (USD Million)',
-                        data: [150, 214, 253, 445, 432.7, 252.8, 470],
-                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
-                        borderColor: 'rgba(45, 55, 72, 1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'YoY Growth (%)',
-                        data: [10, 12, 15, 50, 188, 18, 85],
-                        type: 'line',
-                        yAxisID: 'y1',
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.2)',
-                        tension: 0.3,
-                        pointBackgroundColor: 'rgba(249, 115, 22, 1)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
+            // Stock Performance Chart
+            const stockPerformanceCtx = document.getElementById('stockPerformanceChart')?.getContext('2d');
+            if (stockPerformanceCtx) {
+                const stockChart = new Chart(stockPerformanceCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                        datasets: [{
+                            label: 'ams-SW',
+                            data: [100, 110, 105, 115, 125, 140, 130, 135, 150, 145, 160, 155, 170],
+                            borderColor: '#ff9900',
+                            backgroundColor: createGradient(stockPerformanceCtx, 'rgba(249, 115, 22, 0.1)'),
+                            tension: 0.4,
+                            fill: true
                         },
-                        y1: {
-                            position: 'right',
-                            beginAtZero: true,
-                            grid: {
-                                drawOnChartArea: false
+                        {
+                            label: 'Semiconductor Index',
+                            data: [100, 105, 108, 112, 115, 120, 118, 125, 130, 132, 138, 140, 145],
+                            borderColor: '#2d3748',
+                            borderDash: [5, 5],
+                            tension: 0.4,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    callback: value => `${value}`
+                                }
                             },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
+                            x: {
+                                grid: {
+                                    display: false
                                 }
                             }
                         }
                     }
-                }
-            });
+                });
 
-            // Create Android Adoption Chart
-            const androidAdoptionCtx = document.getElementById('androidAdoptionChart').getContext('2d');
-            new Chart(androidAdoptionCtx, {
-                type: 'line',
-                data: {
-                    labels: ['H2 2018', 'H1 2019', 'H2 2019', 'H1 2020', 'H2 2020', 'H1 2021'],
-                    datasets: [{
-                        label: 'Apple Devices with 3D Sensing (Millions)',
-                        data: [170, 185, 200, 209, 213, 218],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Android Devices with 3D Sensing (Millions)',
-                        data: [5, 15, 35, 60, 90, 120],
-                        borderColor: 'rgba(22, 163, 74, 1)',
-                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Devices (Millions)'
-                            }
-                        }
-                    }
-                }
-            });
+                // Handle time period controls
+                document.querySelectorAll('.chart-control').forEach(control => {
+                    control.addEventListener('click', function() {
+                        const period = this.textContent;
+                        // Update chart data based on period...
+                        // For demo, we'll just update active state
+                        this.parentNode.querySelectorAll('.chart-control').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    });
+                });
+            }
 
-            // Create LIDAR Market Chart
-            const lidarMarketCtx = document.getElementById('lidarMarketChart').getContext('2d');
-            new Chart(lidarMarketCtx, {
-                type: 'line',
-                data: {
-                    labels: ['2016', '2018', '2020', '2022', '2024', '2026'],
-                    datasets: [{
-                        label: 'LIDAR Market Size (USD Billion)',
-                        data: [0.29, 0.5, 0.9, 1.4, 2.0, 2.7],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': $' + context.raw + ' Billion';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Market Size (USD Billion)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return '$' + value + 'B';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create Competitor Revenue Chart
-            const competitorRevenueCtx = document.getElementById('competitorRevenueChart').getContext('2d');
-            new Chart(competitorRevenueCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'ams Revenue Growth (YoY %)',
-                        data: [10, 12, 15, 50, 188, 18],
-                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
-                    },
-                    {
-                        label: 'Lumentum Revenue Growth (YoY %)',
-                        data: [15, 66, 40, 35, 30, 25],
-                        backgroundColor: 'rgba(249, 115, 22, 0.7)',
-                    },
-                    {
-                        label: 'Finisar Revenue Growth (YoY %)',
-                        data: [8, 10, 12, 20, 15, 10],
-                        backgroundColor: 'rgba(13, 115, 255, 0.7)',
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + context.raw + '%';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Revenue Growth (YoY %)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create P/E Analysis Chart
-            const peAnalysisCtx = document.getElementById('peAnalysisChart').getContext('2d');
-            new Chart(peAnalysisCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'P/E Ratio (Historical)',
-                        data: [25, 28, 35, 40, 45, 50, 80, 70, 40, 30],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Average P/E (30x)',
-                        data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'transparent',
-                        tension: 0.3,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            title: {
-                                display: true,
-                                text: 'P/E Ratio'
-                            },
-                            min: 0,
-                            max: 85
-                        }
-                    }
-                }
-            });
-
-            // iPad Adoption Slider
+            // Initialize iPad adoption slider with smooth updates
             const ipadAdoptionSlider = document.getElementById('ipadAdoptionSlider');
             const sliderValue = document.querySelector('.slider-value');
             const resultValue = document.querySelector('.result-value');
 
-            if (ipadAdoptionSlider) {
-                ipadAdoptionSlider.addEventListener('input', function() {
-                    sliderValue.textContent = this.value + '%';
-                    const revenue = Math.round(this.value * 3);
-                    resultValue.textContent = '$' + revenue + ' Million';
+            if (ipadAdoptionSlider && sliderValue && resultValue) {
+                function updateSliderValues() {
+                    const value = ipadAdoptionSlider.value;
+                    sliderValue.textContent = `${value}%`;
+                    const revenue = Math.round(value * 3);
+                    resultValue.textContent = `$${revenue} Million`;
+                }
+
+                ipadAdoptionSlider.addEventListener('input', updateSliderValues);
+                updateSliderValues(); // Initialize values
+            }
+
+            // Smooth scroll implementation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Initialize TrueDepth visualization interactivity
+            const components = document.querySelectorAll('.component');
+            const componentInfo = document.getElementById('componentInfo');
+
+            if (components && componentInfo) {
+                components.forEach(component => {
+                    component.addEventListener('mouseenter', function() {
+                        const name = this.getAttribute('data-component');
+                        componentInfo.textContent = name;
+                        this.style.transform = 'scale(1.1)';
+                        this.style.transition = 'transform 0.2s ease';
+                    });
+
+                    component.addEventListener('mouseleave', function() {
+                        componentInfo.textContent = 'Hover over components for details';
+                        this.style.transform = 'scale(1)';
+                    });
                 });
             }
 
-            // TrueDepth Visualization
+            // LIDAR Market Chart
+            const lidarMarketCtx = document.getElementById('lidarMarketChart')?.getContext('2d');
+            if (lidarMarketCtx) {
+                new Chart(lidarMarketCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2016', '2018', '2020', '2022', '2024', '2026'],
+                        datasets: [{
+                            label: 'LIDAR Market Size (USD Billion)',
+                            data: [0.29, 0.5, 0.9, 1.4, 2.0, 2.7],
+                            borderColor: '#ff9900',
+                            backgroundColor: createGradient(lidarMarketCtx, 'rgba(249, 115, 22, 0.1)'),
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    callback: value => `$${value}B`
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Competitor Revenue Chart
+            const competitorRevenueCtx = document.getElementById('competitorRevenueChart')?.getContext('2d');
+            if (competitorRevenueCtx) {
+                new Chart(competitorRevenueCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                        datasets: [{
+                            label: 'ams Revenue Growth (YoY %)',
+                            data: [10, 12, 15, 50, 188, 18],
+                            backgroundColor: 'rgba(45, 55, 72, 0.8)',
+                            borderColor: 'rgba(45, 55, 72, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Lumentum Revenue Growth (YoY %)',
+                            data: [15, 66, 40, 35, 30, 25],
+                            backgroundColor: 'rgba(249, 115, 22, 0.8)',
+                            borderColor: 'rgba(249, 115, 22, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Finisar Revenue Growth (YoY %)',
+                            data: [8, 10, 12, 20, 15, 10],
+                            backgroundColor: 'rgba(13, 115, 255, 0.8)',
+                            borderColor: 'rgba(13, 115, 255, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    callback: value => `${value}%`
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // P/E Analysis Chart
+            const peAnalysisCtx = document.getElementById('peAnalysisChart')?.getContext('2d');
+            if (peAnalysisCtx) {
+                new Chart(peAnalysisCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                        datasets: [{
+                            label: 'P/E Ratio (Historical)',
+                            data: [25, 28, 35, 40, 45, 50, 80, 70, 40, 30],
+                            borderColor: '#0d73ff',
+                            backgroundColor: createGradient(peAnalysisCtx, 'rgba(13, 115, 255, 0.1)'),
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Average P/E (30x)',
+                            data: Array(10).fill(30),
+                            borderColor: '#ff9900',
+                            borderDash: [5, 5],
+                            tension: 0.4,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                min: 0,
+                                max: 85,
+                                ticks: {
+                                    stepSize: 10
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Android Adoption Chart
+            const androidAdoptionCtx = document.getElementById('androidAdoptionChart')?.getContext('2d');
+            if (androidAdoptionCtx) {
+                new Chart(androidAdoptionCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['H2 2018', 'H1 2019', 'H2 2019', 'H1 2020', 'H2 2020', 'H1 2021'],
+                        datasets: [{
+                            label: 'Apple Devices with 3D Sensing (Millions)',
+                            data: [170, 185, 200, 209, 213, 218],
+                            borderColor: '#0d73ff',
+                            backgroundColor: createGradient(androidAdoptionCtx, 'rgba(13, 115, 255, 0.1)'),
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Android Devices with 3D Sensing (Millions)',
+                            data: [5, 15, 35, 60, 90, 120],
+                            borderColor: '#16a34a',
+                            backgroundColor: createGradient(androidAdoptionCtx, 'rgba(22, 163, 74, 0.1)'),
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    callback: value => `${value}M`
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize TrueDepth visualization
             const truedepthVisualization = document.getElementById('truedepthVisualization');
             if (truedepthVisualization) {
                 truedepthVisualization.innerHTML = `
@@ -2351,86 +2459,69 @@ seo:
                     </svg>
                     <div id="componentInfo" style="text-align: center; margin-top: 10px; font-weight: bold;">Hover over components for details</div>
                 `;
+            }
 
-                const components = truedepthVisualization.querySelectorAll('.component');
-                const componentInfo = document.getElementById('componentInfo');
+            // Update scroll spy functionality for nested navigation
+            const navLinks = document.querySelectorAll('.nav-link, .nav-sublink');
+            const sections = document.querySelectorAll('section[id]');
 
-                components.forEach(component => {
-                    component.addEventListener('mouseover', function() {
-                        const componentName = this.getAttribute('data-component');
-                        componentInfo.textContent = componentName;
-                        this.setAttribute('stroke', 'white');
-                        this.setAttribute('stroke-width', '2');
-                    });
+            function updateActiveNavigation() {
+                const scrollPos = window.scrollY + 100;
 
-                    component.addEventListener('mouseout', function() {
-                        componentInfo.textContent = 'Hover over components for details';
-                        this.setAttribute('stroke', 'none');
-                    });
+                sections.forEach(section => {
+                    if (
+                        section.offsetTop <= scrollPos &&
+                        section.offsetTop + section.offsetHeight > scrollPos
+                    ) {
+                        // Remove active class from all navigation links
+                        navLinks.forEach(link => link.classList.remove('active'));
+
+                        // Find and activate the corresponding nav link
+                        const targetLink = document.querySelector(`a[href="#${section.id}"]`);
+                        if (targetLink) {
+                            targetLink.classList.add('active');
+
+                            // If it's a sublink, also activate its parent
+                            if (targetLink.classList.contains('nav-sublink')) {
+                                const parentNav = targetLink.closest('.nav-sublinks').previousElementSibling;
+                                if (parentNav) {
+                                    parentNav.classList.add('active');
+                                }
+                            }
+                        }
+                    }
                 });
             }
 
-            // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('.nav-link, .toc-link');
-            navLinks.forEach(link => {
+            // Add scroll event listener
+            window.addEventListener('scroll', updateActiveNavigation);
+
+            // Initial call to set active state
+            updateActiveNavigation();
+
+            // Smooth scroll with offset for fixed header
+            document.querySelectorAll('.nav-link, .nav-sublink').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
+                        const offset = 80; // Adjust this value based on your header height
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: targetPosition,
                             behavior: 'smooth'
                         });
-
-                        // Update active state
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        this.classList.add('active');
                     }
                 });
             });
 
-            // Add active class handling for table of contents based on scroll position
-            window.addEventListener('scroll', function() {
-                const scrollPosition = window.scrollY;
-
-                // Find all sections
-                const sections = document.querySelectorAll('section[id]');
-
-                // Check which section is currently visible
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        // Remove active class from all TOC links
-                        document.querySelectorAll('.toc-link').forEach(link => {
-                            link.classList.remove('active');
-                        });
-
-                        // Add active class to corresponding TOC link
-                        const correspondingLink = document.querySelector(`.toc-link[href="#${section.id}"]`);
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('active');
-                        }
-                    }
-                });
-            });
-
-            // Add chart control functionality
-            document.querySelectorAll('.chart-control').forEach(control => {
-                control.addEventListener('click', function() {
-                    // Remove active class from all controls in the same group
-                    this.parentNode.querySelectorAll('.chart-control').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-
-                    // Add active class to the clicked control
-                    this.classList.add('active');
-                });
-            });
-        });
+        } catch (error) {
+            console.error('Error initializing charts and interactive elements:', error);
+        }
+    });
     </script>
 
 </body>
