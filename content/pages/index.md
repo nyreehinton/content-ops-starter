@@ -334,7 +334,7 @@ seo:
         }
 
         .hero-image-container {
-            flex: 0 0 300px; /* Reduced from flex: 1 to a fixed width */
+            flex: 0 0 300px; /* Fixed width for desktop */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -387,13 +387,13 @@ seo:
             .hero-container {
                 flex-direction: column-reverse;
                 gap: var(--space-lg);
-                padding-top: 40px;
-                padding-bottom: 80px;
+                padding: var(--space-lg) var(--space-md);
+                text-align: center;
             }
 
             .hero-content {
                 max-width: 100%;
-                text-align: center;
+                padding: 0 var(--space-md);
             }
 
             .hero-title {
@@ -401,20 +401,17 @@ seo:
             }
 
             .hero-image-container {
-                flex: 0 1 auto; /* Flexible width */
-                max-width: 100%; /* Allows it to shrink properly */
-                padding: 0.5rem; /* Add padding if needed */
-            }
-
-            .hero-image {
-                max-width: 100%; /* Makes the image responsive */
-                height: auto; /* Maintain aspect ratio */
-                border-radius: var(--border-radius-md);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                flex: 0 0 250px; /* Smaller fixed width for tablets */
+                width: 250px; /* Explicit width */
+                margin: 0 auto;
             }
         }
 
         @media (max-width: 768px) {
+            .hero-container {
+                padding: var(--space-md);
+            }
+
             .hero-title {
                 font-size: 2rem;
             }
@@ -424,7 +421,16 @@ seo:
             }
 
             .hero-image-container {
-                flex: 0 0 200px; /* Smallest on mobile */
+                flex: 0 0 200px; /* Even smaller fixed width for mobile */
+                width: 200px; /* Explicit width */
+            }
+
+            .hero-name {
+                font-size: 1.1rem;
+            }
+
+            .hero-content {
+                padding: 0;
             }
         }
     </style>
