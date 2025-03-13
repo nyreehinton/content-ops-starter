@@ -136,181 +136,94 @@ seo:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloomberg Intelligence: ams-SW Semiconductor Analysis</title>
     
-    <!-- Load Chart.js and plugins with specific versions -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <!-- Chart Initialization Script -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing Bloomberg charts from frontmatter...');
 
-    <!-- Add test framework -->
-    <script>
-        // Wait for both Chart.js and the plugin to load
-        window.addEventListener('load', function() {
-            if (typeof Chart === 'undefined') {
-                console.error('Chart.js failed to load');
-                document.querySelectorAll('.chart-container').forEach(container => {
-                    container.innerHTML = '<div style="color: red; text-align: center; padding: 20px;">Error: Chart.js failed to load. Please check your internet connection and refresh the page.</div>';
+            // Function to create chart containers based on frontmatter sections
+            function createChartContainers() {
+                // This will be called after the DOM is loaded
+                // It will look for chart placeholders and initialize them
+
+                // Define the chart types from frontmatter
+                const chartSections = [
+                    {
+                        index: 0,
+                        title: 'Bloomberg Stock Performance Chart',
+                        subtitle: 'ams-SW Stock Performance vs Semiconductor Index (Bloomberg Style)',
+                        type: 'bloomberg-stock-performance'
+                    },
+                    {
+                        index: 1,
+                        title: 'Bloomberg Revenue Chart',
+                        subtitle: 'Quarterly Revenue Performance (Millions USD)',
+                        type: 'bloomberg-revenue'
+                    },
+                    {
+                        index: 2,
+                        title: 'Bloomberg Margin Chart',
+                        subtitle: 'Gross & Operating Margin Performance',
+                        type: 'bloomberg-margin'
+                    },
+                    {
+                        index: 3,
+                        title: 'Stock Performance Chart',
+                        subtitle: 'ams-SW Stock Performance vs Semiconductor Index (Standard Style)',
+                        type: 'stock-performance'
+                    },
+                    {
+                        index: 4,
+                        title: 'Egg Price Chart',
+                        subtitle: 'Egg Price Trends (2022-2025)',
+                        type: 'egg-price'
+                    }
+                ];
+
+                // Find all chart placeholders
+                const chartPlaceholders = document.querySelectorAll('.chart-placeholder');
+                console.log('Found ' + chartPlaceholders.length + ' chart placeholders');
+
+                // Initialize each placeholder with the corresponding chart
+                chartPlaceholders.forEach(placeholder => {
+                    const index = parseInt(placeholder.getAttribute('data-chart-index'));
+                    if (isNaN(index) || index < 0 || index >= chartSections.length) {
+                        console.error('Invalid chart index:', index);
+                        return;
+                    }
+
+                    const chartInfo = chartSections[index];
+
+                    // Create a container for the chart
+                    const chartContainer = document.createElement('div');
+                    chartContainer.setAttribute('data-sb-object-id', `sections[${chartInfo.index}]`);
+                    chartContainer.style.width = '100%';
+                    chartContainer.style.height = '280px';
+
+                    // Create the chart element
+                    const chartElement = document.createElement('div');
+                    chartElement.setAttribute('data-sb-field-path', '.charts[0].type');
+                    chartElement.setAttribute('data-chart-type', chartInfo.type);
+                    chartElement.style.width = '100%';
+                    chartElement.style.height = '100%';
+
+                    // Append elements
+                    chartContainer.appendChild(chartElement);
+                    placeholder.appendChild(chartContainer);
+
+                    console.log(`Initialized chart: ${chartInfo.type} at index ${index}`);
                 });
-                return;
+
+                // Dispatch an event to notify that charts are ready
+                document.dispatchEvent(new CustomEvent('bloombergChartsReady'));
             }
 
-            try {
-                // Initialize charts
-                initializeCharts();
-            } catch (error) {
-                console.error('Error initializing charts:', error);
-                document.querySelectorAll('.chart-container').forEach(container => {
-                    container.innerHTML = '<div style="color: red; text-align: center; padding: 20px;">Error initializing charts: ' + error.message + '</div>';
-                });
-            }
+            // Call the function to create chart containers
+            createChartContainers();
+
+            // Also try to initialize after a delay as a fallback
+            setTimeout(createChartContainers, 1000);
         });
-
-        function initializeCharts() {
-            // Register Chart.js plugins
-            Chart.register(ChartDataLabels);
-
-            // Set default styles
-            Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
-            Chart.defaults.font.size = 12;
-            Chart.defaults.color = '#1a1e29';
-
-            // Common chart options
-            const commonOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            padding: 20,
-                            usePointStyle: true,
-                            font: { size: 12 }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(26, 30, 41, 0.9)',
-                        titleFont: { size: 13 },
-                        bodyFont: { size: 12 },
-                        padding: 12,
-                        cornerRadius: 8
-                    }
-                }
-            };
-
-            // Initialize Revenue Growth Chart
-            const revenueCtx = document.getElementById('revenueChart');
-            if (revenueCtx) {
-                console.log('Initializing Revenue Chart');
-                new Chart(revenueCtx.getContext('2d'), {
-                    type: 'line',
-                    data: {
-                        labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                        datasets: [{
-                            label: 'Revenue (Millions USD)',
-                            data: [180, 214, 240, 470, 432.6, 252.8],
-                            borderColor: '#0d73ff',
-                            backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                            tension: 0.1,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        ...commonOptions,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                grid: { color: 'rgba(0, 0, 0, 0.05)' },
-                                ticks: {
-                                    callback: function(value) {
-                                        return '$' + value + 'M';
-                                    }
-                                }
-                            },
-                            x: {
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error('Revenue Chart canvas not found');
-            }
-
-            // Initialize Stock Performance Chart
-            const stockPerformanceCtx = document.getElementById('stockPerformanceChart');
-            if (stockPerformanceCtx) {
-                console.log('Initializing Stock Performance Chart');
-                new Chart(stockPerformanceCtx.getContext('2d'), {
-                    type: 'line',
-                    data: {
-                        labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
-                        datasets: [{
-                            label: 'ams-SW',
-                            data: [100, 110, 105, 115, 125, 140, 130, 135, 150, 145, 160, 155, 170],
-                            borderColor: '#ff9900',
-                            backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        },
-                        {
-                            label: 'Semiconductor Index',
-                            data: [100, 105, 108, 112, 115, 120, 118, 125, 130, 132, 138, 140, 145],
-                            borderColor: '#2d3748',
-                            borderDash: [5, 5],
-                            tension: 0.4,
-                            fill: false
-                        }]
-                    },
-                    options: commonOptions
-                });
-            } else {
-                console.error('Stock Performance Chart canvas not found');
-            }
-
-            // Initialize Margin Trends Chart
-            const marginTrendsCtx = document.getElementById('marginTrendsChart');
-            if (marginTrendsCtx) {
-                console.log('Initializing Margin Trends Chart');
-                new Chart(marginTrendsCtx.getContext('2d'), {
-                    type: 'line',
-                    data: {
-                        labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                        datasets: [{
-                            label: 'Gross Margin (%)',
-                            data: [49, 48, 51, 50, 40, 35, 25, 20, 15, 9],
-                            borderColor: '#0d73ff',
-                            backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        },
-                        {
-                            label: 'Operating Margin (%)',
-                            data: [30, 28, 32, 33, 25, 20, 5, -10, -20, -29],
-                            borderColor: '#16a34a',
-                            backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        ...commonOptions,
-                        scales: {
-                            y: {
-                                grid: { color: 'rgba(0, 0, 0, 0.05)' },
-                                ticks: {
-                                    callback: function(value) {
-                                        return value + '%';
-                                    }
-                                }
-                            },
-                            x: {
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error('Margin Trends Chart canvas not found');
-            }
-        }
     </script>
 
     <!-- Custom styles -->

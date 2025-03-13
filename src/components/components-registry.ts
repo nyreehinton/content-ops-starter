@@ -59,4 +59,5 @@ const components = {
     PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
     PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout')),
     ChartBlock: ChartBlock,
+    ChartSection: dynamic(() => import('./sections/ChartSection')),
 };

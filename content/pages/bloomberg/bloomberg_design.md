@@ -3,83 +3,18 @@ title: 'Bloomberg Better'
 slug: bloomberg4
 date: '2020-03-04'
 excerpt: 'A high-level overview of my internship experience at Bloomberg with AMS SW.'
-featuredImage:
-  url: /images/BBG.webp
-  altText: 'Bloomberg logo'
-  styles:
-    self:
-      borderRadius: large
-  type: ImageBlock
-bottomSections:
-  - title: Divider
-    colors:
-    styles:
-      self:
-        padding:
-          - pt-7
-          - pl-7
-          - pb-7
-          - pr-7
-    type: DividerSection
-  - items:
-      - title: About This Report
-        tagline: ''
-        subtitle: ''
-        image:
-          url: /images/BBG.webp
-          altText: 'Company logo'
-          styles:
-            self:
-              margin:
-                - ml-3
-          type: ImageBlock
-        colors:
-        styles:
-          self:
-            padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            textAlign: left
-            borderColor: border-neutralAlt
-            borderStyle: none
-            borderWidth: 0
-            borderRadius: none
-            flexDirection: row
-        type: FeaturedItem
-    variant: small-list
-    colors:
-    styles:
-      self:
-        margin:
-          - mb-20
-        padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
 isFeatured: true
 colors:
 styles:
-  self:
-    padding:
-      - pt-5
-      - pl-5
-      - pb-5
-      - pr-5
-    textAlign: center
-    borderColor: border-light
-    borderStyle: none
-    borderWidth: 0
-    borderRadius: none
-    flexDirection: col
 type: CustomHTMLLayout
 author: content/data/nyree.json
+sections:
+  - title: Bloomberg Revenue Chart
+    subtitle: Quarterly Revenue Performance (Millions USD)
+    charts:
+      - type: bloomberg-revenue
+    type: ChartSection
+    id: revenue-chart-section
 allowed_elements:
   - html
   - head
@@ -535,8 +470,6 @@ seo:
 
         .chart {
             width: 100%;
-            height: 400px;
-            margin: 1rem 0;
         }
 
         .quote {
@@ -751,6 +684,41 @@ seo:
             color: var(--bloomberg-gray);
         }
 
+        /* Chart section specific styles */
+        .chart-container-placeholder {
+            min-height: 400px;
+            width: 100%;
+            margin: 2rem 0;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* Ensure chart sections from frontmatter are visible */
+        [id^="revenue-chart-section"] {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            min-height: 400px;
+            width: 100%;
+            margin: 2rem 0;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Override any conflicting styles */
+        #revenue-chart-section .chart-block,
+        #revenue-chart-section svg,
+        #revenue-chart-section canvas {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            min-height: 300px;
+            width: 100%;
+        }
+
     </style>
 
 </head>
@@ -867,123 +835,27 @@ seo:
             </div>
         </section>
 
-        <!-- Key Research Section -->
-        <section id="key-research" class="section">
-            <h2 class="section-title">Key Research</h2>
-            <div class="content-section">
-                <h3>iOS Demand Outlook</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <p>Global 3D facial sensor shipments are projected to reach 370 million units by 2021, a significant increase from 32 million units in 2017. This substantial growth is primarily driven by the iPhone market, which remains the main revenue source for ams.</p>
-                    </div>
-                </div>
+        <!-- Placeholder for Bloomberg Revenue Chart -->
+        <div id="bloomberg-revenue-chart-placeholder" class="chart-container-placeholder"></div>
 
-                <h3>VCSEL Technology</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <p>VCSELs offer significant advantages over other laser technologies, primarily their testability throughout the production process. This leads to superior quality control compared to EELs.  The acquisition of Princeton Optronics further strengthens ams' competitive position in this area. VCSELs are estimated to cost $6-7 per phone.</p>
-                    </div>
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Detailed Analysis</h3>
             </div>
-        </section>
+            <div class="card-body">
+                <p>Ams' better than expected 2Q results and strong 3Q sales outlook reinforces our positive view of the company's competitive positioning with Apple in 3D-Sensing ahead of the pending iPhone launch. Revenues are up 18% from the same quarter of 2017. Due to the underutilization of production facilities, gross margin came in at 9%, the lowest ever reported.</p>
 
-        <!-- Market Opportunity Section -->
-        <section id="market-opportunity" class="section">
-            <h2 class="section-title">Market Opportunity</h2>
-            <div class="content-section">
-                <h3>iOS Ecosystem Demand</h3>
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">3D Sensing Market Growth</h3>
-                    </div>
-                    <div class="chart">
-                        <canvas id="marketGrowthChart" height="300"></canvas>
-                    </div>
-                </div>
+                <p>Ams's Q2 results represent a stable non-Apple core business, which could add a favorable boost to earnings if expanded into 2020. This will come from capitalizing off of Android customers and winning significant product designs in the automotive industry.</p>
 
-                <div class="card">
-                    <div class="card-body">
-                        <p>Ams continues to see optical sensing as its highest volume opportunity through 2020. According to IHS, global shipments of 3D facial sensors are expected to reach 370 million units by 2021 from a mere, but still impressive, 32 million units in 2017. The demand for 3D sensing is bolstered by its use in handset markets, most notably, iPhones.</p>
-
-                        <h4>Meeting Expectations</h4>
-                        <p>Through 2021, consensus is implying ams will continue to supply $7.5 per device worth of content for Apple to help implement front-facing 3D sensing. If ams can hold on to market share at current ASP, they should be well on their way to beating revenue expectations for the next 3 years.</p>
-
-                        <h4>Apple iPad Opportunity</h4>
-                        <p>If Apple were to introduce just 30% of iPads with face ID for FY20, it could provide an added $90 million in revenues for ams. As with fingerprint authentication, Apple introduced this technology with the latest iPhone and then applied it to all next generation devices, including iPad.</p>
-                    </div>
-                </div>
-
-                <h3>Android Market Expansion</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <p>Although Apple has had a two-year head start, Android providers are participating in the growing trend of 3D implementation. Ams announced an impressive win for its VCSEL array business, supplying 3D technology for Xiaomi's new Mi8 smartphone, solidifying itself as the first Android platform to implement user facial recognition.</p>
-
-                        <p>Xiaomi's Mi8 sold out within a minute of its release which could imply more orders from ams for VCSELs, which may not be priced in. With 10% market share, Xiaomi is the fourth-largest smartphone maker in China.</p>
-
-                        <h4>2020 Inflection Point</h4>
-                        <p>Providing 20% of VCSELs to Apple, 30% of iPad content, and 10% of Android market share would translate to a total revenue number of $2.85 billion FY20. A 6% upside may not sound exciting, but this doesn't include the added benefit that may come from the automotive industry which ams forecasts to grow 49% through 2020.</p>
-                    </div>
-                </div>
-
-                <h3>VCSEL Technology</h3>
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">VCSEL Market Share Distribution</h3>
-                    </div>
-                    <div class="chart">
-                        <canvas id="vcselChart" height="300"></canvas>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <p>VCSELs (vertical-cavity-surface-emitting-lasers) are a key component for 3D sensing, which help push light through the dot projector. A key edge that VCSELs have over other lasers is that they can be tested at several phases throughout the production process allowing suppliers to check for any quality or production issues. EELs cannot be tested until the end of its production cycle.</p>
-
-                        <h4>Market Competition</h4>
-                        <p>VCSELs are estimated to cost $6-7 per phone. Lumentum is the current supplier of VCSELs for Apple, however, Finisar was recently awarded US$390 million as a prepayment for future orders. The recent purchase of Princeton Optronics, a developer of VCSELs, could open the door for ams to capture market share.</p>
-                    </div>
-                </div>
-
-                <h3>Automotive Opportunity</h3>
-                <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 class="chart-title">LIDAR Market Growth Projection</h3>
-                    </div>
-                    <div class="chart">
-                        <canvas id="lidarChart" height="300"></canvas>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <p>Ams is looking to shift business revenues by segment to 60% consumer & 40% non-consumer, which will largely depend on the growth of non-smartphone revenue. According to IHS, the market for automotive LIDAR systems will grow from $290 million in 2016 to $2.7 billion by 2026.</p>
-
-                        <h4>Growth Expectations</h4>
-                        <p>Ams expects a large part of its future revenue to come from the growth of other segments such as automotive, but so far these expectations have yet to materialize. With forecast of 49% through 2020, ams plans to supply the LIDAR technology used in autonomous vehicles and claims they are seeing growing interest from industry leaders.</p>
-                        <div class="quote">
-                            <p>The autonomous vehicle industry faces significant headwinds such regulatory footings, technical challenges, and timing of implementation.</p>
-                        </div>
-                    </div>
-                </div>
+                <h4>Key Metrics:</h4>
+                <ul>
+                    <li>Second Quarter Revenues: $252.8 Million (Above Top-End Guidance Range)</li>
+                    <li>18% Growth Year-over-Year</li>
+                    <li>Group revenues for H1 2018: $685.5 Million</li>
+                    <li>Operating cash flow for Q2: $-72.3 Million</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Competitive Analysis Section -->
-        <section id="competitive-analysis" class="section">
-            <h2 class="section-title">Competitive Analysis</h2>
-            <div class="content-section">
-                <h3>Strategic Acquisitions Impact</h3>
-                <div class="card">
-                    <div class="card-body">
-                        <p>Ams's strategic acquisitions of Heptagon ($850 million), Princeton Optronics ($75 million), and KeyLemon have significantly impacted its competitive landscape.  Heptagon's expertise in high-end optical packaging, Princeton Optronics' VCSEL technology, and KeyLemon's biometric software have all contributed to ams's growth and market positioning.</p>
-                        <div class="quote">
-                            <p>"Ams has shown its competitive advantage by tripling its market cap within a year to almost $6 billion thanks to various acquisitions driving revenue growth."</p>
-                            <span class="quote-source">- Bloomberg Intelligence Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 
     <footer class="footer">
@@ -1003,6 +875,108 @@ seo:
           // Your chart initialization code here
         };
         document.head.appendChild(script);
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, initializing charts...');
+
+        // Load D3.js for chart rendering
+        if (!window.d3) {
+          console.log('Loading D3.js...');
+          var d3Script = document.createElement('script');
+          d3Script.src = 'https://d3js.org/d3.v7.min.js';
+          document.head.appendChild(d3Script);
+        }
+
+        // Function to check if elements exist and log their state
+        function debugElement(id) {
+          const element = document.getElementById(id);
+          console.log(`Element #${id}: ${element ? 'Found' : 'Not found'}`);
+          if (element) {
+            console.log(`- Display: ${getComputedStyle(element).display}`);
+            console.log(`- Visibility: ${getComputedStyle(element).visibility}`);
+            console.log(`- Height: ${getComputedStyle(element).height}`);
+            console.log(`- Position: ${getComputedStyle(element).position}`);
+            console.log(`- Z-index: ${getComputedStyle(element).zIndex}`);
+          }
+          return element;
+        }
+
+        // Debug the chart placeholder
+        debugElement('bloomberg-revenue-chart-placeholder');
+
+        // Function to move the chart section
+        function moveChartSection() {
+          console.log('Attempting to move chart section...');
+
+          // Find the chart section rendered by the layout component
+          const revenueChartSection = debugElement('revenue-chart-section');
+
+          // Find the financial review section
+          const financialReviewSection = debugElement('financial-review');
+
+          if (!financialReviewSection) {
+            console.error('Financial Review section not found!');
+            return;
+          }
+
+          // Find the chart placeholder
+          const chartPlaceholder = debugElement('bloomberg-revenue-chart-placeholder');
+
+          if (revenueChartSection) {
+            console.log('Chart section found, moving to placeholder...');
+
+            if (chartPlaceholder) {
+              // Replace the placeholder with the chart section
+              chartPlaceholder.innerHTML = '';
+              chartPlaceholder.appendChild(revenueChartSection);
+
+              // Apply styles to ensure visibility
+              revenueChartSection.style.display = 'block';
+              revenueChartSection.style.visibility = 'visible';
+              revenueChartSection.style.opacity = '1';
+              revenueChartSection.style.position = 'relative';
+              revenueChartSection.style.zIndex = '100';
+              revenueChartSection.style.minHeight = '400px';
+              revenueChartSection.style.width = '100%';
+
+              console.log('Chart section moved successfully!');
+            } else {
+              console.error('Chart placeholder not found!');
+
+              // Try to insert after the first chart container as fallback
+              const targetLocation = financialReviewSection.querySelector('.chart-container');
+              if (targetLocation) {
+                console.log('Using fallback: inserting after first chart container');
+                const parent = targetLocation.parentNode;
+                parent.insertBefore(revenueChartSection, targetLocation.nextSibling);
+              }
+            }
+          } else {
+            console.error('Revenue chart section not found in the DOM!');
+
+            // Create a message in the placeholder
+            if (chartPlaceholder) {
+              chartPlaceholder.innerHTML = '<div style="padding: 2rem; text-align: center; color: #666;">Chart section not found. Please check the console for details.</div>';
+            }
+          }
+        }
+
+        // Try moving the chart section after a delay
+        setTimeout(moveChartSection, 1000);
+
+        // Try again after a longer delay as fallback
+        setTimeout(function() {
+          const revenueChartSection = document.getElementById('revenue-chart-section');
+          const chartPlaceholder = document.getElementById('bloomberg-revenue-chart-placeholder');
+
+          if (revenueChartSection && chartPlaceholder && !chartPlaceholder.contains(revenueChartSection)) {
+            console.log('Retrying chart section move after longer delay...');
+            moveChartSection();
+          }
+        }, 3000);
       });
     </script>
 

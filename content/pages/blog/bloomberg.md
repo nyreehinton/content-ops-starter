@@ -1140,17 +1140,6 @@ seo:
             const allContents = document.querySelectorAll('.bloomberg-tab-content');
             const allButtons = document.querySelectorAll('.bloomberg-tab-button');
 
-            // First hide all contents and deactivate all buttons
-            allContents.forEach(content => {
-                content.style.display = 'none';
-                content.classList.remove('active');
-                content.style.opacity = '0';
-            });
-
-            allButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-
             // Show the selected content and activate the button
             const selectedContent = document.getElementById(tabId);
             const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
@@ -1218,6 +1207,493 @@ seo:
         setTimeout(tryInitialize, 500);
     </script>
 
+   <script>
+// Complete the script section with working chart implementations and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update date in header to match current date
+            document.querySelector('.date-display').textContent = 'Friday, March 07, 2025, 6:29 PM PST';
+            
+            // Create Revenue Segment Pie Chart
+            const revenueSegmentCtx = document.getElementById('revenueSegmentChart').getContext('2d');
+            new Chart(revenueSegmentCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Consumer & Communications', 'Automotive, Industrial & Medical'],
+                    datasets: [{
+                        data: [73, 27],
+                        backgroundColor: [
+                            'rgba(45, 55, 72, 0.8)',
+                            'rgba(249, 115, 22, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(45, 55, 72, 1)',
+                            'rgba(249, 115, 22, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Create Margin Trends Line Chart
+            const marginTrendsCtx = document.getElementById('marginTrendsChart').getContext('2d');
+            new Chart(marginTrendsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                    datasets: [{
+                        label: 'Gross Margin (%)',
+                        data: [49, 48, 51, 50, 40, 35, 25, 20, 15, 9],
+                        borderColor: 'rgba(13, 115, 255, 1)',
+                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'Operating Margin (%)',
+                        data: [30, 28, 32, 33, 25, 20, 5, -10, -20, -29],
+                        borderColor: 'rgba(22, 163, 74, 1)',
+                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: -30,
+                            max: 60,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create Stock Performance Chart
+            const stockPerformanceCtx = document.getElementById('stockPerformanceChart').getContext('2d');
+            new Chart(stockPerformanceCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                    datasets: [{
+                        label: 'ams-SW',
+                        data: [100, 110, 105, 115, 125, 140, 130, 135, 150, 145, 160, 155, 170],
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'Semiconductor Index',
+                        data: [100, 105, 108, 112, 115, 120, 118, 125, 130, 132, 138, 140, 145],
+                        borderColor: 'rgba(45, 55, 72, 1)',
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Indexed Performance (Base 100)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create Quarterly Revenue Chart
+            const quarterlyRevenueCtx = document.getElementById('quarterlyRevenueChart').getContext('2d');
+            new Chart(quarterlyRevenueCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018', 'Q3 2018 (Est)'],
+                    datasets: [{
+                        label: 'Revenue (USD Million)',
+                        data: [150, 214, 253, 445, 432.7, 252.8, 470],
+                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
+                        borderColor: 'rgba(45, 55, 72, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'YoY Growth (%)',
+                        data: [10, 12, 15, 50, 188, 18, 85],
+                        type: 'line',
+                        yAxisID: 'y1',
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        backgroundColor: 'rgba(249, 115, 22, 0.2)',
+                        tension: 0.3,
+                        pointBackgroundColor: 'rgba(249, 115, 22, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        },
+                        y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create Android Adoption Chart
+            const androidAdoptionCtx = document.getElementById('androidAdoptionChart').getContext('2d');
+            new Chart(androidAdoptionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['H2 2018', 'H1 2019', 'H2 2019', 'H1 2020', 'H2 2020', 'H1 2021'],
+                    datasets: [{
+                        label: 'Apple Devices with 3D Sensing (Millions)',
+                        data: [170, 185, 200, 209, 213, 218],
+                        borderColor: 'rgba(13, 115, 255, 1)',
+                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'Android Devices with 3D Sensing (Millions)',
+                        data: [5, 15, 35, 60, 90, 120],
+                        borderColor: 'rgba(22, 163, 74, 1)',
+                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Devices (Millions)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create LIDAR Market Chart
+            const lidarMarketCtx = document.getElementById('lidarMarketChart').getContext('2d');
+            new Chart(lidarMarketCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2016', '2018', '2020', '2022', '2024', '2026'],
+                    datasets: [{
+                        label: 'LIDAR Market Size (USD Billion)',
+                        data: [0.29, 0.5, 0.9, 1.4, 2.0, 2.7],
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.raw + ' Billion';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Market Size (USD Billion)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value + 'B';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create Competitor Revenue Chart
+            const competitorRevenueCtx = document.getElementById('competitorRevenueChart').getContext('2d');
+            new Chart(competitorRevenueCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                    datasets: [{
+                        label: 'ams Revenue Growth (YoY %)',
+                        data: [10, 12, 15, 50, 188, 18],
+                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
+                    },
+                    {
+                        label: 'Lumentum Revenue Growth (YoY %)',
+                        data: [15, 66, 40, 35, 30, 25],
+                        backgroundColor: 'rgba(249, 115, 22, 0.7)',
+                    },
+                    {
+                        label: 'Finisar Revenue Growth (YoY %)',
+                        data: [8, 10, 12, 20, 15, 10],
+                        backgroundColor: 'rgba(13, 115, 255, 0.7)',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Revenue Growth (YoY %)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Create P/E Analysis Chart
+            const peAnalysisCtx = document.getElementById('peAnalysisChart').getContext('2d');
+            new Chart(peAnalysisCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
+                    datasets: [{
+                        label: 'P/E Ratio (Historical)',
+                        data: [25, 28, 35, 40, 45, 50, 80, 70, 40, 30],
+                        borderColor: 'rgba(13, 115, 255, 1)',
+                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'Average P/E (30x)',
+                        data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'P/E Ratio'
+                            },
+                            min: 0,
+                            max: 85
+                        }
+                    }
+                }
+            });
+
+            // iPad Adoption Slider
+            const ipadAdoptionSlider = document.getElementById('ipadAdoptionSlider');
+            const sliderValue = document.querySelector('.slider-value');
+            const resultValue = document.querySelector('.result-value');
+            
+            if (ipadAdoptionSlider) {
+                ipadAdoptionSlider.addEventListener('input', function() {
+                    sliderValue.textContent = this.value + '%';
+                    const revenue = Math.round(this.value * 3);
+                    resultValue.textContent = '$' + revenue + ' Million';
+                });
+            }
+            
+            // TrueDepth Visualization
+            const truedepthVisualization = document.getElementById('truedepthVisualization');
+            if (truedepthVisualization) {
+                truedepthVisualization.innerHTML = `
+                    <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Phone outline -->
+                        <rect x="100" y="20" width="300" height="260" rx="20" fill="#1a1e29" />
+                        <rect x="110" y="30" width="280" height="240" rx="15" fill="#f8fafc" />
+                        
+                        <!-- Notch -->
+                        <rect x="170" y="30" width="160" height="40" rx="10" fill="#1a1e29" />
+                        
+                        <!-- Components -->
+                        <circle cx="200" cy="50" r="10" fill="#ff9900" class="component" data-component="Infrared Camera" />
+                        <circle cx="230" cy="50" r="10" fill="#0d73ff" class="component" data-component="Flood Illuminator" />
+                        <circle cx="260" cy="50" r="10" fill="#16a34a" class="component" data-component="Proximity Sensor" />
+                        <circle cx="290" cy="50" r="10" fill="#dc2626" class="component" data-component="Ambient Light Sensor" />
+                        <circle cx="245" cy="50" r="15" fill="#eab308" class="component" data-component="Dot Projector (VCSEL)" />
+                    </svg>
+                    <div id="componentInfo" style="text-align: center; margin-top: 10px; font-weight: bold;">Hover over components for details</div>
+                `;
+                
+                const components = truedepthVisualization.querySelectorAll('.component');
+                const componentInfo = document.getElementById('componentInfo');
+                
+                components.forEach(component => {
+                    component.addEventListener('mouseover', function() {
+                        const componentName = this.getAttribute('data-component');
+                        componentInfo.textContent = componentName;
+                        this.setAttribute('stroke', 'white');
+                        this.setAttribute('stroke-width', '2');
+                    });
+                    
+                    component.addEventListener('mouseout', function() {
+                        componentInfo.textContent = 'Hover over components for details';
+                        this.setAttribute('stroke', 'none');
+                    });
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.nav-link, .toc-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active state
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Add active class handling for table of contents based on scroll position
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                
+                // Find all sections
+                const sections = document.querySelectorAll('section[id]');
+                
+                // Check which section is currently visible
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Remove active class from all TOC links
+                        document.querySelectorAll('.toc-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to corresponding TOC link
+                        const correspondingLink = document.querySelector(`.toc-link[href="#${section.id}"]`);
+                        if (correspondingLink) {
+                            correspondingLink.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // Add chart control functionality
+            document.querySelectorAll('.chart-control').forEach(control => {
+                control.addEventListener('click', function() {
+                    // Remove active class from all controls in the same group
+                    this.parentNode.querySelectorAll('.chart-control').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to the clicked control
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
 </head>
 <body suppressHydrationWarning={true}>
     <!-- Side Header -->
@@ -1251,7 +1727,6 @@ seo:
                 </div>
                 
                 <a href="#skills" class="nav-link">Skills & Tools</a>
-                <a href="#contact" class="nav-link">Contact Information</a>
             </nav>
             <div class="user-profile" suppressHydrationWarning={true}>
                 <div class="user-avatar" suppressHydrationWarning={true}>A</div>
@@ -1351,7 +1826,7 @@ seo:
 
                             <p>As an Equity Research Data Analyst, I've expanded my expertise to include advanced data analysis techniques, comprehensive sector coverage, and the development of proprietary analytical models that provide unique market perspectives. My work consistently delivers value through rigorous analysis, clear communication, and strategic insights.</p>
 
-                            <p>DISCLAIMER: This portfolio showcases my professional experience and analytical capabilities. The analyses presented are for illustrative purposes only and do not constitute investment advice or recommendations. All information is based on publicly available data and my professional experience. The views expressed are my own and do not necessarily reflect those of current or previous employers. References to specific securities should not be construed as recommendations to buy, sell or hold those securities.</p>
+                            <p>This portfolio showcases my professional experience and analytical capabilities. The analyses presented are for illustrative purposes only and do not constitute investment advice or recommendations. All information is based on publicly available data and my professional experience. The views expressed are my own and do not necessarily reflect those of current or previous employers. References to specific securities should not be construed as recommendations to buy, sell or hold those securities.</p>
                         </div>
                     </div>
 
@@ -1378,7 +1853,7 @@ seo:
                                 <div class="timeline-marker"></div>
                                 <div class="timeline-content">
                                     <h3 class="timeline-title">Equity Research Data Analyst</h3>
-                                    <p class="timeline-date">2018 - Present</p>
+                                    <p class="timeline-date">2018</p>
                                     <div class="timeline-description">
                                         <p>Expanded expertise to include advanced data analysis techniques, comprehensive sector coverage, and the development of proprietary analytical models that provide unique market perspectives. Consistently delivered value through rigorous analysis, clear communication, and strategic insights.</p>
                                     </div>
@@ -1397,125 +1872,570 @@ seo:
                         <p class="section-description">Comprehensive analysis of ams-SW, a key Apple semiconductor supplier for facial recognition technology.</p>
                     </div>
 
-                    <!-- Executive Summary Section -->
-                    <section id="executive-summary" class="subsection">
-                        <h3 class="section-title">Executive Summary</h3>
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">ams-SW: Positioned to Benefit from 3D Sensor Growth</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>Ams is well positioned to take advantage of the growing demand for 3D technology implemented in Apple devices while also benefiting from Android adoption and self-driving car applications. The company's strategic acquisitions have allowed it to outpace rivals in revenue growth, making it a favored semiconductor in optical sensors for quarters to come.</p>
+                                    <!-- Executive Summary Section -->
+                <section id="executive-summary" class="section">
+                    <h3 class="section-title">Executive Summary</h3>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">ams-SW: Positioned to Benefit from 3D Sensor Growth</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Ams is well positioned to take advantage of the growing demand for 3D technology implemented in Apple devices while also benefiting from Android adoption and self-driving car applications. The company's strategic acquisitions have allowed it to outpace rivals in revenue growth, making it a favored semiconductor in optical sensors for quarters to come.</p>
+                        </div>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-value">18%</div>
+                            <div class="kpi-label">YoY Revenue Growth</div>
+                            <div class="kpi-trend trend-up">↑ vs Q2 2017</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">9%</div>
+                            <div class="kpi-label">Gross Margin (Q2)</div>
+                            <div class="kpi-trend trend-down">↓ from 35% in Q2 last year</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">73%</div>
+                            <div class="kpi-label">Consumer & Communications</div>
+                            <div class="kpi-trend trend-up">↑ from 51% in 2016</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">$7.50</div>
+                            <div class="kpi-label">Est. Content per iPhone</div>
+                            <div class="kpi-trend">Through 2021</div>
+                        </div>
+                    </div>
+                </section>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3 class="chart-title">ams-SW Stock Performance vs Semiconductor Index</h3>
+                        <div class="chart-controls">
+                            <button class="chart-control active">1Y</button>
+                            <button class="chart-control">YTD</button>
+                            <button class="chart-control">3M</button>
+                            <button class="chart-control">1M</button>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <canvas id="stockPerformanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Key Investment Highlights</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Prime Position:</strong> ams's strategic acquisitions have allowed it to outpace rivals in revenue growth, making it a favored semiconductor in optical sensors.</li>
+                            <li><strong>Apple Relationship:</strong> Positioned to continue supplying $7.50 per device worth of content for Apple's 3D sensing technology through 2021.</li>
+                            <li><strong>Growth Catalysts:</strong> Expansion opportunities in Android adoption (starting 2019-2020) and automotive LIDAR applications (projected market growth from $290M in 2016 to $2.7B by 2026).</li>
+                            <li><strong>Technology Edge:</strong> VCSEL technology advantages over EELs, with testing capabilities throughout production process.</li>
+                            <li><strong>Valuation Upside:</strong> With a historically higher P/E multiple of 30x, ams could reach $102.44 by FY20, representing 30% growth potential.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Financial Analysis Section -->
+                <section id="financial-analysis" class="section">
+                    <h3 class="section-title">Financial Analysis</h3>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Q2 2018 Revenue Highlights</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Q2 revenues reached $252.8 million, exceeding the top-end of guidance range</li>
+                                <li>18% year-over-year growth compared to Q2 2017</li>
+                                <li>Consumer & Communications segment now accounts for 73% of total revenues, up from 51% in 2016</li>
+                                <li>First half 2018 revenues totaled $685.5 million</li>
+                                <li>Operating cash flow for Q2 was $-72.3 million</li>
+                            </ul>
+
+                            <div class="quote">
+                                "Ams's Q2 results represent a stable non-Apple core business, which could add a favorable boost to earnings if expanded into 2020. This will come from capitalizing off of Android customers and winning significant product designs in the automotive industry."
+                                <span class="quote-source">- Bloomberg Intelligence Analysis</span>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <!-- Financial Analysis Section -->
-                    <section id="financial-analysis" class="subsection">
-                        <h3 class="section-title">Financial Analysis</h3>
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Revenue Growth by Segment</h3>
+                        </div>
+                        <div class="chart">
+                            <canvas id="revenueSegmentChart"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Consumer & Communications: <strong>73%</strong> (up from 51% in 2016)</p>
+                            <p>Automotive, Industrial & Medical: <strong>27%</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Gross & Operating Margin Trends</h3>
+                        </div>
+                        <div class="chart">
+                            <canvas id="marginTrendsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Margin Performance</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Gross margin significantly declined from 50% in 2016 to just 9% in Q2 2018</li>
+                                <li>Operating margins fell from 33% in Q4 2016 to -29% in recent quarters</li>
+                                <li>Margin deterioration attributed to acquisition-based costs and underutilization of manufacturing capacity in Singapore</li>
+                                <li>Management guidance suggests 30% yearly gross margins as the new norm</li>
+                                <li>Margin pressure remains a key risk to profitability if other business segments cannot compensate</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Quarterly Revenue Performance</h3>
+                            <div class="chart-controls">
+                                <button class="chart-control active">Quarterly</button>
+                                <button class="chart-control">Annual</button>
+                                <button class="chart-control">YoY Growth</button>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <canvas id="quarterlyRevenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">H2 2018 Outlook</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Despite a weaker Q2, ams has indicated a strong H2 2018 ramp-up driven by optical sensing products:</p>
+                            <ul>
+                                <li>Q3 2018 revenues expected to reach $450-490 million</li>
+                                <li>This represents 78-94% sequential growth and 46-59% year-on-year growth</li>
+                                <li>iPhone production cycle is expected to provide significant boost to earnings</li>
+                                <li>Consensus estimates imply ams will maintain a significant share of Apple's 3D sensing needs through 2020</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Market Opportunity Section -->
+                <section id="market-opportunity" class="section">
+                    <h3 class="section-title">Market Opportunity</h3>
+
+                    <!-- iOS Ecosystem -->
+                    <section id="ios-ecosystem" class="section">
+                        <h3 class="section-title">iOS Ecosystem</h3>
+
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Financial Performance Overview</h3>
+                                <h3 class="card-title">Apple Relationship Analysis</h3>
                             </div>
                             <div class="card-body">
-                                <p>Key financial metrics demonstrate strong growth trajectory:</p>
+                                <p>Ams continues to see optical sensing as its highest volume opportunity through 2020. According to IHS, global shipments of 3D facial sensors are expected to reach 370 million units by 2021 from 32 million units in 2017. The demand for 3D sensing is bolstered by its primary implementation in iPhones:</p>
                                 <ul>
-                                    <li>Revenue Growth: 18% YoY increase</li>
-                                    <li>Gross Margin: 9% in Q2 (down from 35% previous year)</li>
-                                    <li>Consumer & Communications Segment: 73% of revenue</li>
-                                    <li>R&D Investment: Significant increase in 3D sensing technology</li>
+                                    <li>Estimated content value of $7.50 per iPhone device through 2021</li>
+                                    <li>If ams can maintain market share at current ASP, they should exceed revenue expectations for the next 3 years</li>
+                                    <li>iPhone implementation remains the primary revenue driver</li>
+                                    <li>Q4 2017 saw an additional €200 million in total revenues from 3D technology demand</li>
                                 </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Market Opportunity Section -->
-                    <section id="market-opportunity" class="subsection">
-                        <h3 class="section-title">Market Opportunity</h3>
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Growth Drivers & Market Expansion</h3>
+                        <div class="interactive-container">
+                            <div class="interactive-header">
+                                <h3 class="interactive-title">iPad Face ID Adoption Calculator</h3>
+                                <p class="interactive-description">Adjust the slider to see potential revenue impact from iPad Face ID adoption.</p>
                             </div>
-                            <div class="card-body">
-                                <p>Primary market opportunities include:</p>
-                                <ul>
-                                    <li>Mobile 3D Sensing: Estimated $7.50 content per iPhone</li>
-                                    <li>Android Adoption: Expanding market share in Asian markets</li>
-                                    <li>Automotive Applications: Growing demand in ADAS systems</li>
-                                    <li>IoT Integration: Emerging opportunities in smart devices</li>
-                                </ul>
+
+                            <div class="slider-container">
+                                <div class="slider-header">
+                                    <div class="slider-label">iPad Face ID Adoption Rate (FY20)</div>
+                                    <div class="slider-value">30%</div>
+                                </div>
+                                <input type="range" min="0" max="100" value="30" class="slider" id="ipadAdoptionSlider">
                             </div>
+
+                            <div class="result-display">
+                                Projected Additional Revenue: <span class="result-value">$90 Million</span>
+                            </div>
+
+                            <p class="interactive-description">Note: As with fingerprint authentication, Apple typically introduces new technology with iPhones before applying it to all next-generation devices including iPads.</p>
                         </div>
                     </section>
 
-                    <!-- Competitive Analysis Section -->
-                    <section id="competitive-analysis" class="subsection">
-                        <h3 class="section-title">Competitive Analysis</h3>
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Competitive Position & Market Share</h3>
+                    <!-- VCSEL Technology -->
+                    <section id="vcsel-technology" class="section">
+                        <h3 class="section-title">VCSEL Technology</h3>
+
+                        <div class="grid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">VCSEL Technology Overview</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p>Vertical-Cavity Surface-Emitting Lasers (VCSELs) are a key component for 3D sensing, helping push light through dot projectors for facial recognition systems. Key advantages include:</p>
+                                    <ul>
+                                        <li>Can be tested at multiple phases throughout production process</li>
+                                        <li>Allows for quality control checks throughout manufacturing</li>
+                                        <li>More reliable than Edge-Emitting Lasers (EELs), which can only be tested after complete production</li>
+                                        <li>Estimated cost of $6-7 per smartphone</li>
+                                        <li>Princeton Optronics acquisition gives ams strong VCSEL capabilities with over 10 years of optimization experience (previously funded by US military)</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="swot-container">
-                                    <div class="swot-box strengths">
-                                        <h3>Strengths</h3>
-                                        <ul>
-                                            <li>Market leader in 3D sensing technology</li>
-                                            <li>Strong relationship with Apple</li>
-                                            <li>Advanced R&D capabilities</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swot-box weaknesses">
-                                        <h3>Weaknesses</h3>
-                                        <ul>
-                                            <li>High customer concentration</li>
-                                            <li>Margin pressure</li>
-                                            <li>Integration challenges</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swot-box opportunities">
-                                        <h3>Opportunities</h3>
-                                        <ul>
-                                            <li>Android market expansion</li>
-                                            <li>Automotive sector growth</li>
-                                            <li>IoT applications</li>
-                                        </ul>
-                                    </div>
-                                    <div class="swot-box threats">
-                                        <h3>Threats</h3>
-                                        <ul>
-                                            <li>Increasing competition</li>
-                                            <li>Technology shifts</li>
-                                            <li>Supply chain risks</li>
-                                        </ul>
-                                    </div>
+
+                            <div class="chart-container">
+                                <div class="chart-header">
+                                    <h3 class="chart-title">TrueDepth Camera Components</h3>
+                                </div>
+                                <div class="chart">
+                                    <div id="truedepthVisualization"></div>
                                 </div>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Valuation Section -->
-                    <section id="valuation" class="subsection">
-                        <h3 class="section-title">Valuation & Investment Thesis</h3>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Investment Analysis</h3>
+                                <h3 class="card-title">VCSEL Supplier Landscape</h3>
                             </div>
                             <div class="card-body">
-                                <p>Key investment considerations:</p>
+                                <p>The VCSEL market is experiencing significant competition with several key players:</p>
                                 <ul>
-                                    <li>Market Position: Leading provider in growing 3D sensing market</li>
-                                    <li>Growth Potential: Multiple expansion opportunities across sectors</li>
-                                    <li>Technology Leadership: Strong IP portfolio and R&D pipeline</li>
-                                    <li>Risk Factors: Customer concentration and margin pressure</li>
+                                    <li><strong>Lumentum:</strong> Current primary supplier of VCSELs for Apple's iPhones with 66% year-on-year revenue growth in Q2 2017</li>
+                                    <li><strong>Finisar:</strong> Received $390 million prepayment from Apple for future VCSEL orders</li>
+                                    <li><strong>Princeton Optronics (ams):</strong> Acquired by ams, provides critical VCSEL technology for 3D sensing applications</li>
+                                    <li><strong>Philips Photonics:</strong> Working to overcome technical challenges for smartphone integration</li>
                                 </ul>
+                                <p>If ams can capture 20% of VCSEL market share from Apple, it would generate an additional $110 million in revenues by FY20.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Android Market -->
+                    <section id="android-market" class="section">
+                        <h3 class="section-title">Android Market Potential</h3>
+
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3 class="chart-title">Android Adoption Timeline</h3>
+                            </div>
+                            <div class="chart">
+                                <canvas id="androidAdoptionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Xiaomi Mi8 Case Study</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>While Apple has had a two-year head start, Android providers are now adopting 3D implementation:</p>
+                                <ul>
+                                    <li>Xiaomi's Mi8 is the first Android platform to implement facial recognition using ams technology</li>
+                                    <li>Initial Mi8 release sold out within minutes, suggesting strong demand</li>
+                                    <li>Xiaomi holds approximately 10% market share in China (fourth-largest smartphone maker)</li>
+                                    <li>This early win positions ams well for broader Android adoption in 2019-2020</li>
+                                </ul>
+
                                 <div class="quote">
-                                    <p>"ams-SW's strategic positioning in the 3D sensing market, combined with its expansion into automotive and IoT applications, presents a compelling growth story despite near-term margin pressures."</p>
+                                    "Although Apple has had a two-year head start, Android providers are participating in the growing trend of 3D implementation. Ams's win with Xiaomi solidifies it as a key player in this expanding market."
                                     <span class="quote-source">- Bloomberg Intelligence Analysis</span>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">FY20 Inflection Point</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Providing 20% of VCSELs to Apple, 30% of iPad content, and 10% of Android market share would translate to a total revenue of $2.85 billion by FY20.</p>
+                                <p>While a 6% upside over consensus estimates may not sound dramatic, this analysis doesn't include the potential benefit from automotive applications, which ams forecasts to grow 49% through 2020.</p>
+
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Component</th>
+                                            <th>FY20 Revenue Contribution</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Core Business</td>
+                                            <td>$2,406.10M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCSEL Revenue (20% Share)</td>
+                                            <td>$271.9M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>iPad Revenue</td>
+                                            <td>$105.0M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Android Revenue</td>
+                                            <td>$72.0M</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Total Revenue</strong></td>
+                                            <td><strong>$2,855.0M</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Consensus Estimate</td>
+                                            <td>$2,392.2M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Difference</td>
+                                            <td>+$462.8M (+19.3%)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </section>
+                    <!-- Automotive Opportunity -->
+                    <section id="automotive-opportunity" class="section">
+                        <h3 class="section-title">Automotive Opportunity</h3>
+
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3 class="chart-title">Automotive LIDAR Market Growth</h3>
+                            </div>
+                            <div class="chart">
+                                <canvas id="lidarMarketChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Self-Driving Car Technology Integration</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Ams is targeting a shift in business revenue to 60% consumer and 40% non-consumer segments, with automotive applications representing a significant opportunity:</p>
+                                <ul>
+                                    <li>The market for automotive LIDAR systems projected to grow from $290 million in 2016 to $2.7 billion by 2026</li>
+                                    <li>Ams expects 49% growth through 2020 in its automotive segment</li>
+                                    <li>Company plans to supply LIDAR technology used in autonomous vehicles</li>
+                                    <li>Reports growing interest from industry leaders in automotive applications</li>
+                                </ul>
+
+                                <p>However, the autonomous vehicle industry faces significant challenges:</p>
+                                <ul>
+                                    <li>Regulatory uncertainties and evolving standards</li>
+                                    <li>Technical challenges in sensor integration and reliability</li>
+                                    <li>Uncertain timing of widespread implementation</li>
+                                    <li>Intense competition from other sensor technology providers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2016</div>
+                                    <div class="timeline-title">LIDAR Market Valued at $290M</div>
+                                    <div class="timeline-description">Initial phase of automotive LIDAR implementation, primarily in high-end prototypes and research vehicles.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2020</div>
+                                    <div class="timeline-title">ams Projects 49% Growth in Automotive</div>
+                                    <div class="timeline-description">Expected expansion of LIDAR technology in production vehicles and advanced driver assistance systems.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023</div>
+                                    <div class="timeline-title">Mainstream Adoption Expected</div>
+                                    <div class="timeline-description">LIDAR systems anticipated to become standard in mid-range vehicles as costs decrease and technology matures.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2026</div>
+                                    <div class="timeline-title">Market Projected to Reach $2.7B</div>
+                                    <div class="timeline-description">Full industry adoption with LIDAR becoming essential for Level 3+ autonomous driving capabilities.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Competitive Analysis Section -->
+                <section id="competitive-analysis" class="section">
+                    <h3 class="section-title">Competitive Analysis</h3>
+
+                    <div class="grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Heptagon</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Acquisition Value:</strong> $850 million</p>
+                                <p><strong>Focus:</strong> High-end supplier of optical packaging</p>
+                                <p><strong>Strategic Impact:</strong> Enhanced ams's ability to provide complete optical sensing solutions, though underutilization of facilities has placed drag on margins.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Princeton Optronics</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Acquisition Value:</strong> $75 million</p>
+                                <p><strong>Focus:</strong> Developer of high-performance VCSELs</p>
+                                <p><strong>Strategic Impact:</strong> Provides critical VCSEL technology for 3D sensing applications, opening opportunities to capture Apple market share from competitors.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">KeyLemon</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Focus:</strong> Developer of biometric software for facial recognition</p>
+                                <p><strong>Strategic Impact:</strong> Enhances ams's facial recognition capabilities with specialized software to complement hardware solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Competitor Revenue Comparison</h3>
+                        </div>
+                        <div class="chart">
+                            <canvas id="competitorRevenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Key Competitor Analysis</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>The 3D sensing market is experiencing intense competition:</p>
+
+                            <h4>Lumentum</h4>
+                            <ul>
+                                <li>Current primary supplier of VCSELs for Apple's iPhones</li>
+                                <li>Experienced 66% year-on-year revenue growth in Q2 2017</li>
+                                <li>Expanding capacity to meet 2H 2018 demand</li>
+                            </ul>
+
+                            <h4>Finisar</h4>
+                            <ul>
+                                <li>Received $390 million prepayment from Apple for future VCSEL orders</li>
+                                <li>Expanding manufacturing capacity</li>
+                                <li>Working through technical challenges for smartphone integration</li>
+                            </ul>
+
+                            <div class="quote">
+                                "Ams has shown its competitive advantage by tripling its market cap within a year to almost $6 billion thanks to various acquisitions driving revenue growth."
+                                <span class="quote-source">- Bloomberg Intelligence Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Valuation Section -->
+                <section id="valuation" class="section">
+                    <h3 class="section-title">Valuation & Investment Thesis</h3>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">P/E Ratio Historical Trend</h3>
+                        </div>
+                        <div class="chart">
+                            <canvas id="peAnalysisChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Valuation Analysis</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Historically, ams has traded at premium multiples, reflecting its growth potential:</p>
+                            <ul>
+                                <li>Historical P/E ratio around 30x, occasionally reaching as high as 80x</li>
+                                <li>Current valuation does not fully account for potential revenue streams from VCSELs, iPad adoption, and Android market penetration</li>
+                                <li>Applying a conservative 12.5x P/E on forecasted EPS of $8.20, ams could trade at $102.44 by FY20</li>
+                                <li>This represents approximately 30% upside potential from current levels</li>
+                                <li>ams continues to command a premium valuation despite pressure on other Apple suppliers</li>
+                            </ul>
+
+                            <div class="quote">
+                                "Cumulatively, if ams is able to supply VCSELs for Apple devices, capture Android market share, and grow their core business at least 10%, the market could be under-pricing ams by $1.6 billion over the next 4 years."
+                                <span class="quote-source">- Bloomberg Intelligence Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Bull Case</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Maintain 20% of Apple's VCSEL market</li>
+                                    <li>50% iPad Face ID adoption by FY21</li>
+                                    <li>15% Android market penetration by FY22</li>
+                                    <li>Automotive revenue grows at 49% through 2020</li>
+                                    <li>Margins recover to 30% average</li>
+                                    <li><strong>Price Target:</strong> $125.00 (FY20)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Base Case</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Capture 20% of Apple's VCSEL market</li>
+                                    <li>30% iPad Face ID adoption</li>
+                                    <li>10% Android market penetration</li>
+                                    <li>Automotive growth meets 35% of targets</li>
+                                    <li>Margins stabilize at 30%</li>
+                                    <li><strong>Price Target:</strong> $102.44 (FY20)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Bear Case</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Lose VCSEL market to Lumentum and Finisar</li>
+                                    <li>iPad Face ID limited to Pro models only</li>
+                                    <li>Android adoption slower than expected</li>
+                                    <li>Automotive applications delayed</li>
+                                    <li>Margins remain under pressure</li>
+                                    <li><strong>Price Target:</strong> $78.20 (FY20)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 </section>
             </div>
 
@@ -1586,47 +2506,6 @@ seo:
                     <!-- Additional skills content can be added here -->
                     <div class="section-footer">
                         <p class="note">These skills represent my technical toolkit developed through both academic training and professional experience at Bloomberg and beyond.</p>
-                    </div>
-                </section>
-
-                <!-- Contact Information Section -->
-                <section id="contact" class="section">
-                    <div class="section-header">
-                        <h2 class="section-title">Contact Information</h2>
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="contact-icon email-icon"></i>
-                                <span class="contact-text">nyree.hinton@example.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="contact-icon linkedin-icon"></i>
-                                <span class="contact-text">linkedin.com/in/nyreehinton</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="contact-icon website-icon"></i>
-                                <span class="contact-text">nyreehinton.com</span>
-                            </div>
-                        </div>
-                        <div class="contact-form-container">
-                            <h3>Send a Message</h3>
-                            <form class="contact-form">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="submit-button">Send Message</button>
-                            </form>
-                        </div>
                     </div>
                 </section>
             </div>

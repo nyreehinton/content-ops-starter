@@ -1,6 +1,11 @@
 import React from 'react';
 
-export const EggPriceChart: React.FC = () => {
+interface EggPriceChartProps {
+  className?: string;
+  [key: string]: any;
+}
+
+export const EggPriceChart: React.FC<EggPriceChartProps> = ({ className }) => {
   const data = [
     { year: '2022', price: 2.50 },
     { year: '2023', price: 3.15 },
@@ -27,82 +32,84 @@ export const EggPriceChart: React.FC = () => {
   ).join(' ');
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
-      {/* Y-axis */}
-      <line 
-        x1={margin.left} 
-        y1={margin.top} 
-        x2={margin.left} 
-        y2={height - margin.bottom} 
-        stroke="#666" 
-      />
-      
-      {/* X-axis */}
-      <line 
-        x1={margin.left} 
-        y1={height - margin.bottom} 
-        x2={width - margin.right} 
-        y2={height - margin.bottom} 
-        stroke="#666" 
-      />
-
-      {/* Data line */}
-      <path 
-        d={pathData} 
-        fill="none" 
-        stroke="rgb(75, 192, 192)" 
-        strokeWidth="2" 
-      />
-
-      {/* Data points */}
-      {data.map((point, i) => (
-        <circle 
-          key={point.year}
-          cx={xScale(i)} 
-          cy={yScale(point.price)} 
-          r="4" 
-          fill="rgb(75, 192, 192)" 
+    <div className={className}>
+      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
+        {/* Y-axis */}
+        <line 
+          x1={margin.left} 
+          y1={margin.top} 
+          x2={margin.left} 
+          y2={height - margin.bottom} 
+          stroke="#666" 
         />
-      ))}
+        
+        {/* X-axis */}
+        <line 
+          x1={margin.left} 
+          y1={height - margin.bottom} 
+          x2={width - margin.right} 
+          y2={height - margin.bottom} 
+          stroke="#666" 
+        />
 
-      {/* X-axis labels */}
-      {data.map((point, i) => (
+        {/* Data line */}
+        <path 
+          d={pathData} 
+          fill="none" 
+          stroke="rgb(75, 192, 192)" 
+          strokeWidth="2" 
+        />
+
+        {/* Data points */}
+        {data.map((point, i) => (
+          <circle 
+            key={point.year}
+            cx={xScale(i)} 
+            cy={yScale(point.price)} 
+            r="4" 
+            fill="rgb(75, 192, 192)" 
+          />
+        ))}
+
+        {/* X-axis labels */}
+        {data.map((point, i) => (
+          <text 
+            key={point.year}
+            x={xScale(i)} 
+            y={height - margin.bottom + 20} 
+            textAnchor="middle"
+            fill="#666"
+          >
+            {point.year}
+          </text>
+        ))}
+
+        {/* Y-axis labels */}
+        {Array.from({ length: maxPrice + 1 }).map((_, i) => (
+          <text 
+            key={i}
+            x={margin.left - 10} 
+            y={yScale(i)} 
+            textAnchor="end" 
+            alignmentBaseline="middle"
+            fill="#666"
+          >
+            ${i.toFixed(2)}
+          </text>
+        ))}
+
+        {/* Title */}
         <text 
-          key={point.year}
-          x={xScale(i)} 
-          y={height - margin.bottom + 20} 
-          textAnchor="middle"
-          fill="#666"
+          x={width / 2} 
+          y={margin.top} 
+          textAnchor="middle" 
+          fill="#333"
+          fontSize="16"
         >
-          {point.year}
+          Egg Price Trends (2022-2025)
         </text>
-      ))}
-
-      {/* Y-axis labels */}
-      {Array.from({ length: maxPrice + 1 }).map((_, i) => (
-        <text 
-          key={i}
-          x={margin.left - 10} 
-          y={yScale(i)} 
-          textAnchor="end" 
-          alignmentBaseline="middle"
-          fill="#666"
-        >
-          ${i.toFixed(2)}
-        </text>
-      ))}
-
-      {/* Title */}
-      <text 
-        x={width / 2} 
-        y={margin.top} 
-        textAnchor="middle" 
-        fill="#333"
-        fontSize="16"
-      >
-        Egg Price Trends (2022-2025)
-      </text>
-    </svg>
+      </svg>
+    </div>
   );
 };
 
