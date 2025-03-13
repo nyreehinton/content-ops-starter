@@ -55,7 +55,7 @@
             "altText": "Projects",
             "links": [{
                     "label": "Lime Scooters",
-                    "url": "",
+                    "url": "lime-scooters",
                     "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
@@ -64,7 +64,7 @@
                 },
                 {
                     "label": "Purple Innovation Inc.",
-                    "url": "",
+                    "url": "purple-innovation",
                     "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
@@ -73,7 +73,7 @@
                 },
                 {
                     "label": "Apple Semiconductor Supplier",
-                    "url": "",
+                    "url": "/bloomberg#bloomberg-intelligence",
                     "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
@@ -136,26 +136,7 @@
             "type": "SubNav"
         }
     ],
-    "secondaryLinks": [{
-            "label": "Github",
-            "altText": "Github",
-            "url": "https://github.com/nyreehinton",
-            "icon": "",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Button",
-            "disabled": true
-        },
-        {
-            "label": "LinkedIn",
-            "url": "https://www.linkedin.com/in/nyree-hinton",
-            "icon": "",
-            "iconPosition": "right",
-            "style": "primary",
-            "type": "Button",
-            "disabled": true
-        }
-    ],
+
     "variant": "logo-left-primary-nav-centered",
     "colors": "bg-transparent-fg-dark",
     "type": "Header",
