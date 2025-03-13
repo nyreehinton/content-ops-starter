@@ -1853,7 +1853,7 @@ seo:
                                 <div class="timeline-marker"></div>
                                 <div class="timeline-content">
                                     <h3 class="timeline-title">Equity Research Data Analyst</h3>
-                                    <p class="timeline-date">2018</p>
+                                    <p class="timeline-date">2019</p>
                                     <div class="timeline-description">
                                         <p>Expanded expertise to include advanced data analysis techniques, comprehensive sector coverage, and the development of proprietary analytical models that provide unique market perspectives. Consistently delivered value through rigorous analysis, clear communication, and strategic insights.</p>
                                     </div>
