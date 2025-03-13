@@ -55,7 +55,7 @@
             "altText": "Projects",
             "links": [{
                     "label": "Lime Scooters",
-                    "url": "lime-scooters",
+                    "url": "/lime-scooters",
                     "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",
@@ -64,7 +64,7 @@
                 },
                 {
                     "label": "Purple Innovation Inc.",
-                    "url": "purple-innovation",
+                    "url": "/purple-innovation",
                     "icon": "arrowRight",
                     "iconPosition": "left",
                     "style": "primary",

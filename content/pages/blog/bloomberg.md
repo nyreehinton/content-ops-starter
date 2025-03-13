@@ -1908,7 +1908,7 @@ seo:
                         </div>
                     </div>
                 </section>
-                <div class="chart-container">
+                <div class="chart-container" style="width: 100%; max-width: 800px; margin: 0 auto 30px auto; overflow: hidden; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                     <div class="chart-header">
                         <h3 class="chart-title">ams-SW Stock Performance vs Semiconductor Index</h3>
                         <div class="chart-controls">
@@ -1918,10 +1918,12 @@ seo:
                             <button class="chart-control">1M</button>
                         </div>
                     </div>
-                    <div class="chart">
-                        <canvas id="stockPerformanceChart"></canvas>
+                    <div class="chart" style="padding: 0px; text-align: center;">
+                        <img src="/images/ams-SW Stock Performance.png" style="width: 56%; height: auto;"/>
                     </div>
                 </div>
+
+                <div style="clear: both;"></div>
 
                 <div class="card">
                     <div class="card-header">
@@ -1966,8 +1968,8 @@ seo:
                         <div class="chart-header">
                             <h3 class="chart-title">Revenue Growth by Segment</h3>
                         </div>
-                        <div class="chart">
-                            <canvas id="revenueSegmentChart"></canvas>
+                        <div class="chart" style="padding: 0px; text-align: center;">
+                            <img src="/images/Revenue Growth and Margins.png" style="width: 56%; height: auto;"/>
                         </div>
                         <div class="card-body">
                             <p>Consumer & Communications: <strong>73%</strong> (up from 51% in 2016)</p>
