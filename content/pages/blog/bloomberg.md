@@ -241,10 +241,11 @@ seo:
             width: 280px;
             position: fixed;
             height: 100vh;
-            left: 0;
+            left: auto;
+            right: 0;
             top: 0;
             z-index: 1000;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -359,8 +360,8 @@ seo:
 
         /* Main Content Area */
         .main-wrapper {
-            flex: 1;
-            margin-left: 280px;
+            margin-right: 280px;
+            margin-left: 0;
             width: calc(100% - 280px);
         }
 
@@ -978,10 +979,11 @@ seo:
                 width: 100%;
                 height: auto;
                 position: relative;
+                right: auto;
             }
 
             .main-wrapper {
-                margin-left: 0;
+                margin-right: 0;
                 width: 100%;
             }
 

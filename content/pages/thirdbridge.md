@@ -22,6 +22,47 @@ type: CustomHTMLLayout
 author: content/data/nyree.json
 ---
 
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['Merriweather', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          neutralBg: '#F5F5F5',
+          accent: '#A67B5B',
+          darkNavy: '#2F3E46',
+          highlight: '#557A95',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <nav class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-center">
+            <ul class="flex space-x-8 py-4">
+                <li><a href="/" class="text-gray-700 hover:text-[#0A66C2] transition">Home</a></li>
+                <li><a href="/work-experience" class="text-gray-700 hover:text-[#0A66C2] transition">Work Experience</a></li>
+                <li><a href="/bloomberg" class="text-gray-700 hover:text-[#0A66C2] transition">Bloomberg</a></li>
+                <li><a href="/capital" class="text-gray-700 hover:text-[#0A66C2] transition">Capital Group</a></li>
+                <li><a href="/thirdbridge" class="text-[#0A66C2] border-b-2 border-[#0A66C2]">Third Bridge</a></li>
+                <li><a href="/projects" class="text-gray-700 hover:text-[#0A66C2] transition">Projects</a></li>
+                <li><a href="/tesla" class="text-gray-700 hover:text-[#0A66C2] transition">Tesla</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Add spacing to account for fixed header -->
+<div class="pt-20"></div>
+
 <!-- Featured Analysis: Egg Price Crisis -->
 <section id="featured-analysis" class="py-4 px-4 sm:px-6">
   <div class="container mx-auto max-w-4xl">
@@ -53,27 +94,6 @@ author: content/data/nyree.json
     </a>
   </div>
 </section>
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          serif: ['Merriweather', 'serif'],
-          sans: ['Inter', 'sans-serif'],
-        },
-        colors: {
-          neutralBg: '#F5F5F5',
-          accent: '#A67B5B',
-          darkNavy: '#2F3E46',
-          highlight: '#557A95',
-        }
-      }
-    }
-  }
-</script>
 
 <!-- Chart.js (Remove if already loaded) -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

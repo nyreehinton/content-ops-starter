@@ -219,10 +219,97 @@ seo:
                 transform: scale(1);
             }
         }
+
+        /* Header Navigation Styles */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .nav-link.active {
+            color: var(--accent-blue);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background-color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: flex-start;
+            }
+
+            .main-nav {
+                gap: 1rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 
 </head>
 <body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <ul class="main-nav">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/work-experience" class="nav-link">Work Experience</a></li>
+                <li><a href="/bloomberg" class="nav-link">Bloomberg</a></li>
+                <li><a href="/capital" class="nav-link">Capital Group</a></li>
+                <li><a href="/thirdbridge" class="nav-link">Third Bridge</a></li>
+                <li><a href="/projects" class="nav-link">Projects</a></li>
+                <li><a href="/tesla" class="nav-link">Tesla</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Main Hero Section -->
     <section class="hero-section" id="intro">
         <div class="container hero-container">
