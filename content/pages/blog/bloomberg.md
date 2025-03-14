@@ -153,26 +153,70 @@ seo:
             --bloomberg-chart-yellow: #eab308;
         }
 
-        /* Hide site header and its containers */
+        /* Adjust main content to account for visible header */
+        main[data-sb-object-id="main"],
+        div[data-sb-object-id="main"],
+        .sb-component-main {
+            padding-top: 0 !important; /* Removed padding to align better */
+            margin-top: 0 !important;
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center the header and make it fit with the content */
         header[data-sb-object-id="header"],
         div[data-sb-object-id="header"],
         [data-sb-field-path="header"],
         nav[data-sb-field-path="header"],
         .sb-component-header {
-            display: none !important;
-            height: 0 !important;
-            min-height: 0 !important;
-            overflow: hidden !important;
-            position: absolute !important;
-            visibility: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important; /* Full width header */
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: var(--bloomberg-navy) !important;
+            color: white !important;
+            position: relative !important;
+            z-index: 100 !important;
         }
 
-        /* Adjust main content to account for hidden header */
-        main[data-sb-object-id="main"],
-        div[data-sb-object-id="main"],
-        .sb-component-main {
-            padding-top: 0 !important;
-            margin-top: 0 !important;
+        /* Style the header navigation */
+        .sb-component-header nav {
+            display: flex !important;
+            justify-content: flex-end !important; /* Align to right */
+            align-items: center !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+        }
+
+        /* Style header links */
+        .sb-component-header a {
+            color: white !important;
+            text-decoration: none !important;
+            padding: 15px !important;
+            font-weight: 500 !important;
+            font-size: 14px !important;
+        }
+
+        .sb-component-header a:hover {
+            color: var(--bloomberg-orange) !important;
+        }
+
+        /* Style the Bloomberg logo in header */
+        .sb-component-header .sb-logo {
+            margin-right: auto !important; /* Push to left */
+            font-weight: bold !important;
+            font-size: 18px !important;
+        }
+
+        /* Add a subtle border to the header */
+        .sb-component-header:after {
+            content: "" !important;
+            display: block !important;
+            height: 1px !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            width: 100% !important;
         }
 
         * {
@@ -531,7 +575,7 @@ seo:
         /* Chart Containers */
         .chart-container {
             position: relative;
-            height: 400px;
+            height: 800px;
             width: 100%;
             margin: 2rem 0;
         }
@@ -1051,7 +1095,7 @@ seo:
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
             margin: 1.5rem 0;
-            min-height: 400px;
+            min-height: 800px;
             width: 100%;
             position: relative;
         }
@@ -1908,9 +1952,9 @@ seo:
                         </div>
                     </div>
                 </section>
-                <div class="chart-container" style="width: 100%; max-width: 800px; margin: 0 auto 30px auto; overflow: hidden; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                     <div class="chart-header">
-                        <h3 class="chart-title">ams-SW Stock Performance vs Semiconductor Index</h3>
+                        <h3 class="chart-title">3D Sensing Market Growth</h3>
                         <div class="chart-controls">
                             <button class="chart-control active">1Y</button>
                             <button class="chart-control">YTD</button>
@@ -1918,8 +1962,8 @@ seo:
                             <button class="chart-control">1M</button>
                         </div>
                     </div>
-                    <div class="chart" style="padding: 0px; text-align: center;">
-                        <img src="/images/ams-SW Stock Performance.png" style="width: 56%; height: auto;"/>
+                    <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                        <img src="/images/3D Sensing Market Growth.png" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                     </div>
                 </div>
 
@@ -1964,12 +2008,12 @@ seo:
                         </div>
                     </div>
 
-                    <div class="chart-container">
+                    <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <div class="chart-header">
                             <h3 class="chart-title">Revenue Growth by Segment</h3>
                         </div>
-                        <div class="chart" style="padding: 0px; text-align: center;">
-                            <img src="/images/Revenue Growth and Margins.png" style="width: 56%; height: auto;"/>
+                        <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                            <img src="/images/Revenue Growth and Margins.png" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                         </div>
                         <div class="card-body">
                             <p>Consumer & Communications: <strong>73%</strong> (up from 51% in 2016)</p>
@@ -1977,12 +2021,12 @@ seo:
                         </div>
                     </div>
 
-                    <div class="chart-container">
+                    <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <div class="chart-header">
                             <h3 class="chart-title">Gross & Operating Margin Trends</h3>
                         </div>
-                        <div class="chart">
-                            <canvas id="marginTrendsChart"></canvas>
+                        <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                            <img src="/images/Margin Trends.png" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                         </div>
                     </div>
 
@@ -2001,7 +2045,7 @@ seo:
                         </div>
                     </div>
 
-                    <div class="chart-container">
+                    <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <div class="chart-header">
                             <h3 class="chart-title">Quarterly Revenue Performance</h3>
                             <div class="chart-controls">
@@ -2010,8 +2054,8 @@ seo:
                                 <button class="chart-control">YoY Growth</button>
                             </div>
                         </div>
-                        <div class="chart">
-                            <canvas id="quarterlyRevenueChart"></canvas>
+                        <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                            <img src="/images/possible-revenue.jpg" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                         </div>
                     </div>
 
@@ -2127,12 +2171,12 @@ seo:
                     <section id="android-market" class="section">
                         <h3 class="section-title">Android Market Potential</h3>
 
-                        <div class="chart-container">
+                        <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                             <div class="chart-header">
                                 <h3 class="chart-title">Android Adoption Timeline</h3>
                             </div>
-                            <div class="chart">
-                                <canvas id="androidAdoptionChart"></canvas>
+                            <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                                <img src="/images/possible-revenue.jpg" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                             </div>
                         </div>
 
@@ -2316,12 +2360,12 @@ seo:
                         </div>
                     </div>
 
-                    <div class="chart-container">
+                    <div class="chart-container" style="width: 100%; margin: 0 auto 30px auto; overflow: visible; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <div class="chart-header">
                             <h3 class="chart-title">Competitor Revenue Comparison</h3>
                         </div>
-                        <div class="chart">
-                            <canvas id="competitorRevenueChart"></canvas>
+                        <div class="chart" style="padding: 15px 15px 0 15px; text-align: center;">
+                            <img src="/images/VCSEL Market Share Distribution.png" style="max-width: 100%; height: auto; display: block; margin: 0;"/>
                         </div>
                     </div>
 
