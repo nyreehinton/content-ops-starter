@@ -245,19 +245,28 @@
 <body>
     <!-- Add Header Section -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-center">
-                <div class="flex items-center space-x-8">
-                    <a href="/" class="text-[#333333] hover:text-[#0A66C2] transition">Home</a>
-                    <a href="#" class="text-[#333333] hover:text-[#0A66C2] transition">Work Experience</a>
-                    <a href="/bloomberg" class="text-[#333333] hover:text-[#0A66C2] transition">Bloomberg</a>
-                    <a href="/capital" class="text-[#333333] hover:text-[#0A66C2] transition">Capital Group</a>
-                    <a href="/thirdbridge" class="text-[#333333] hover:text-[#0A66C2] transition">Third Bridge</a>
+        <nav class="container mx-auto px-4 py-4">
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex justify-end mb-2">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div id="nav-links" class="lg:flex lg:items-center lg:justify-center hidden">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-8 space-y-4 lg:space-y-0">
+                    <a href="/" class="text-[#333333] hover:text-[#0A66C2] transition text-center">Home</a>
+                    <a href="/capital" class="text-[#333333] hover:text-[#0A66C2] transition text-center">Capital Group</a>
+                    <a href="/thirdbridge" class="text-[#333333] hover:text-[#0A66C2] transition text-center">Third Bridge</a>
+                    <a href="/bloomberg" class="text-[#333333] hover:text-[#0A66C2] transition text-center">Bloomberg</a>
 
                     <!-- Projects Dropdown -->
                     <div class="relative group">
-                        <button class="text-[#333333] hover:text-[#0A66C2] transition">Projects</button>
-                        <div class="absolute hidden group-hover:block w-64 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg mt-2 py-2">
+                        <button class="w-full lg:w-auto text-[#333333] hover:text-[#0A66C2] transition text-center">Projects</button>
+                        <div class="hidden group-hover:block absolute left-0 lg:left-auto w-full lg:w-64 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg mt-2 py-2">
                             <a href="/lime-scooters" class="block px-4 py-2 text-[#333333] hover:text-[#0A66C2] hover:bg-gray-50">
                                 <span class="inline-block mr-2">→</span>Lime Scooters
                             </a>
@@ -272,8 +281,8 @@
 
                     <!-- Tesla Dropdown -->
                     <div class="relative group">
-                        <button class="text-[#333333] hover:text-[#0A66C2] transition">Tesla</button>
-                        <div class="absolute hidden group-hover:block w-64 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg mt-2 py-2">
+                        <button class="w-full lg:w-auto text-[#333333] hover:text-[#0A66C2] transition text-center">Tesla</button>
+                        <div class="hidden group-hover:block absolute left-0 lg:left-auto w-full lg:w-64 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg mt-2 py-2">
                             <a href="#" class="block px-4 py-2 text-[#333333] hover:text-[#0A66C2] hover:bg-gray-50">
                                 <span class="inline-block mr-2">→</span>Background
                             </a>
@@ -292,6 +301,37 @@
             </div>
         </nav>
     </header>
+
+    <script>
+        // Add this script right after the header
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const navLinks = document.getElementById('nav-links');
+
+            mobileMenuButton.addEventListener('click', function() {
+                navLinks.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navLinks.contains(event.target);
+                const isClickOnButton = mobileMenuButton.contains(event.target);
+
+                if (!isClickInsideNav && !isClickOnButton && !navLinks.classList.contains('hidden') && window.innerWidth < 1024) {
+                    navLinks.classList.add('hidden');
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    navLinks.classList.remove('hidden');
+                } else {
+                    navLinks.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 
     <!-- Introduction Banner -->
     <div class="glass mt-20 mx-6 rounded-xl">

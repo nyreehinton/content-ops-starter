@@ -300,10 +300,9 @@ seo:
         <nav class="nav-container">
             <ul class="main-nav">
                 <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/work-experience" class="nav-link">Work Experience</a></li>
-                <li><a href="/bloomberg" class="nav-link">Bloomberg</a></li>
                 <li><a href="/capital" class="nav-link">Capital Group</a></li>
                 <li><a href="/thirdbridge" class="nav-link">Third Bridge</a></li>
+                <li><a href="/bloomberg" class="nav-link">Bloomberg</a></li>
                 <li><a href="/projects" class="nav-link">Projects</a></li>
                 <li><a href="/tesla" class="nav-link">Tesla</a></li>
             </ul>

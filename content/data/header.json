@@ -8,28 +8,7 @@
             "type": "Link",
             "disabled": true
         },
-        {
-            "label": "Work Experience",
-            "altText": "Experience",
-            "url": "",
-            "icon": "",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link",
-            "disabled": true
-        },
-        {
-            "type": "Link",
-            "label": "Bloomberg",
-            "altText": "Bloomberg",
-            "url": "bloomberg",
-            "showIcon": false,
-            "icon": "",
-            "iconPosition": "right",
-            "style": "secondary",
-            "elementId": "",
-            "disabled": true
-        },
+
         {
             "label": "Capital Group",
             "altText": "Capital-Group",
@@ -48,6 +27,18 @@
             "iconPosition": "right",
             "style": "secondary",
             "type": "Link",
+            "disabled": true
+        },
+        {
+            "type": "Link",
+            "label": "Bloomberg",
+            "altText": "Bloomberg",
+            "url": "bloomberg",
+            "showIcon": false,
+            "icon": "",
+            "iconPosition": "right",
+            "style": "secondary",
+            "elementId": "",
             "disabled": true
         },
         {

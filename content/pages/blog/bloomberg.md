@@ -1742,6 +1742,25 @@ seo:
 
 </head>
 <body suppressHydrationWarning={true}>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <nav class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-center">
+                <ul class="flex space-x-8 py-4">
+                    <li><a href="/" class="text-gray-700 hover:text-[#0A66C2] transition">Home</a></li>
+                    <li><a href="/capital" class="text-gray-700 hover:text-[#0A66C2] transition">Capital Group</a></li>
+                    <li><a href="/thirdbridge" class="text-gray-700 hover:text-[#0A66C2] transition">Third Bridge</a></li>
+                    <li><a href="/bloomberg" class="text-[#0A66C2] border-b-2 border-[#0A66C2]">Bloomberg</a></li>
+                    <li><a href="/projects" class="text-gray-700 hover:text-[#0A66C2] transition">Projects</a></li>
+                    <li><a href="/tesla" class="text-gray-700 hover:text-[#0A66C2] transition">Tesla</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add spacing to account for fixed header -->
+    <div class="pt-20"></div>
+
     <!-- Side Header -->
     <header class="side-header" suppressHydrationWarning={true}>
         <div class="logo-container" suppressHydrationWarning={true}>
@@ -1753,9 +1772,9 @@ seo:
             <div class="date-display" suppressHydrationWarning={true}>Table of Contents</div>
             <nav class="navigation" suppressHydrationWarning={true}>
                 <a href="#professional-summary" class="nav-link">Professional Summary</a>
-                
+
                 <a href="#experience" class="nav-link">Experience Timeline</a>
-                
+
                 <a href="#bloomberg-intelligence" class="nav-link">Bloomberg Intelligence Internship</a>
                 <div class="nav-sublinks">
                     <a href="#executive-summary" class="nav-sublink">Executive Summary</a>
@@ -1764,14 +1783,14 @@ seo:
                     <a href="#competitive-analysis" class="nav-sublink">Competitive Analysis</a>
                     <a href="#valuation" class="nav-sublink">Valuation & Investment Thesis</a>
                 </div>
-                
+
                 <a href="#equity-research" class="nav-link">Equity Research Achievements</a>
                 <div class="nav-sublinks">
                     <a href="#key-projects" class="nav-sublink">Key Projects</a>
                     <a href="#technical-skills" class="nav-sublink">Technical Skills</a>
                     <a href="#industry-insights" class="nav-sublink">Industry Insights</a>
                 </div>
-                
+
                 <a href="#skills" class="nav-link">Skills & Tools</a>
             </nav>
             <div class="user-profile" suppressHydrationWarning={true}>
@@ -1780,6 +1799,7 @@ seo:
             </div>
         </div>
     </header>
+
 <div class="main-wrapper" suppressHydrationWarning={true}>
     <!-- Report Header -->
     <div class="report-header" suppressHydrationWarning={true}>

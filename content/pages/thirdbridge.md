@@ -49,10 +49,9 @@ author: content/data/nyree.json
         <div class="flex justify-center">
             <ul class="flex space-x-8 py-4">
                 <li><a href="/" class="text-gray-700 hover:text-[#0A66C2] transition">Home</a></li>
-                <li><a href="/work-experience" class="text-gray-700 hover:text-[#0A66C2] transition">Work Experience</a></li>
-                <li><a href="/bloomberg" class="text-gray-700 hover:text-[#0A66C2] transition">Bloomberg</a></li>
                 <li><a href="/capital" class="text-gray-700 hover:text-[#0A66C2] transition">Capital Group</a></li>
                 <li><a href="/thirdbridge" class="text-[#0A66C2] border-b-2 border-[#0A66C2]">Third Bridge</a></li>
+                <li><a href="/bloomberg" class="text-gray-700 hover:text-[#0A66C2] transition">Bloomberg</a></li>
                 <li><a href="/projects" class="text-gray-700 hover:text-[#0A66C2] transition">Projects</a></li>
                 <li><a href="/tesla" class="text-gray-700 hover:text-[#0A66C2] transition">Tesla</a></li>
             </ul>
