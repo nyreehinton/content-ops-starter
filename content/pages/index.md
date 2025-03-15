@@ -541,7 +541,7 @@ seo:
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Bloomberg Intelligence</h3>
-                        <p class="portfolio-description">Analyzed Apple semiconductor supplier ams-SW during my internship, evaluating technologies, financial performance, and market opportunities across mobile, IoT, and automotive segments. Developed proprietary analytical models that provide unique market insights.</p>
+                        <p class="portfolio-description">Analyzed mobile, IoT, and automotive segments within Apple semiconductor suppliers (ams-SW) during my internship - returned full-time as an Equity Research Data Analyst evaluating financial performance and market opportunities across technology, media, and telecommunication (TMT) companies.</p>
                         <div class="portfolio-tags">
                             <span>Financial Analysis</span>
                             <span>Market Research</span>
