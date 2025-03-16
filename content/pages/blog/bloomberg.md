@@ -135,7 +135,7 @@ seo:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloomberg Intelligence: ams-SW Semiconductor Analysis</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom styles -->
     <style>
         /* Bloomberg Color Theme */
@@ -153,33 +153,6 @@ seo:
             --bloomberg-chart-yellow: #eab308;
         }
 
-        /* Adjust main content to account for visible header */
-        main[data-sb-object-id="main"],
-        div[data-sb-object-id="main"],
-        .sb-component-main {
-            padding-top: 0 !important; /* Removed padding to align better */
-            margin-top: 0 !important;
-            max-width: 1200px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-
-        /* Center the header and make it fit with the content */
-        header[data-sb-object-id="header"],
-        div[data-sb-object-id="header"],
-        [data-sb-field-path="header"],
-        nav[data-sb-field-path="header"],
-        .sb-component-header {
-            width: 100% !important;
-            max-width: 100% !important; /* Full width header */
-            margin: 0 !important;
-            padding: 0 !important;
-            background-color: var(--bloomberg-navy) !important;
-            color: white !important;
-            position: relative !important;
-            z-index: 100 !important;
-        }
-
         /* Style the header navigation */
         .sb-component-header nav {
             display: flex !important;
@@ -192,7 +165,7 @@ seo:
 
         /* Style header links */
         .sb-component-header a {
-            color: white !important;
+            color:  !important;
             text-decoration: none !important;
             padding: 15px !important;
             font-weight: 500 !important;
@@ -1254,500 +1227,42 @@ seo:
     </script>
 
    <script>
-// Complete the script section with working chart implementations and interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Update date in header to match current date
-            document.querySelector('.date-display').textContent = 'Friday, March 07, 2025, 6:29 PM PST';
-            
-            // Create Revenue Segment Pie Chart
-            const revenueSegmentCtx = document.getElementById('revenueSegmentChart').getContext('2d');
-            new Chart(revenueSegmentCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Consumer & Communications', 'Automotive, Industrial & Medical'],
-                    datasets: [{
-                        data: [73, 27],
-                        backgroundColor: [
-                            'rgba(45, 55, 72, 0.8)',
-                            'rgba(249, 115, 22, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(45, 55, 72, 1)',
-                            'rgba(249, 115, 22, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.label + ': ' + context.raw + '%';
-                                }
-                            }
-                        }
-                    }
-                }
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const navLinks = document.getElementById('nav-links');
+
+            mobileMenuButton.addEventListener('click', function() {
+                navLinks.classList.toggle('hidden');
             });
-            
-            // Create Margin Trends Line Chart
-            const marginTrendsCtx = document.getElementById('marginTrendsChart').getContext('2d');
-            new Chart(marginTrendsCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'Gross Margin (%)',
-                        data: [49, 48, 51, 50, 40, 35, 25, 20, 15, 9],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Operating Margin (%)',
-                        data: [30, 28, 32, 33, 25, 20, 5, -10, -20, -29],
-                        borderColor: 'rgba(22, 163, 74, 1)',
-                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            min: -30,
-                            max: 60,
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navLinks.contains(event.target);
+                const isClickOnButton = mobileMenuButton.contains(event.target);
+
+                if (!isClickInsideNav && !isClickOnButton && !navLinks.classList.contains('hidden') && window.innerWidth < 1024) {
+                    navLinks.classList.add('hidden');
                 }
             });
 
-            // Create Stock Performance Chart
-            const stockPerformanceCtx = document.getElementById('stockPerformanceChart').getContext('2d');
-            new Chart(stockPerformanceCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
-                    datasets: [{
-                        label: 'ams-SW',
-                        data: [100, 110, 105, 115, 125, 140, 130, 135, 150, 145, 160, 155, 170],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Semiconductor Index',
-                        data: [100, 105, 108, 112, 115, 120, 118, 125, 130, 132, 138, 140, 145],
-                        borderColor: 'rgba(45, 55, 72, 1)',
-                        backgroundColor: 'transparent',
-                        tension: 0.3,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Indexed Performance (Base 100)'
-                            }
-                        }
-                    }
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    navLinks.classList.remove('hidden');
+                } else {
+                    navLinks.classList.add('hidden');
                 }
-            });
-
-            // Create Quarterly Revenue Chart
-            const quarterlyRevenueCtx = document.getElementById('quarterlyRevenueChart').getContext('2d');
-            new Chart(quarterlyRevenueCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018', 'Q3 2018 (Est)'],
-                    datasets: [{
-                        label: 'Revenue (USD Million)',
-                        data: [150, 214, 253, 445, 432.7, 252.8, 470],
-                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
-                        borderColor: 'rgba(45, 55, 72, 1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'YoY Growth (%)',
-                        data: [10, 12, 15, 50, 188, 18, 85],
-                        type: 'line',
-                        yAxisID: 'y1',
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.2)',
-                        tension: 0.3,
-                        pointBackgroundColor: 'rgba(249, 115, 22, 1)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        },
-                        y1: {
-                            position: 'right',
-                            beginAtZero: true,
-                            grid: {
-                                drawOnChartArea: false
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create Android Adoption Chart
-            const androidAdoptionCtx = document.getElementById('androidAdoptionChart').getContext('2d');
-            new Chart(androidAdoptionCtx, {
-                type: 'line',
-                data: {
-                    labels: ['H2 2018', 'H1 2019', 'H2 2019', 'H1 2020', 'H2 2020', 'H1 2021'],
-                    datasets: [{
-                        label: 'Apple Devices with 3D Sensing (Millions)',
-                        data: [170, 185, 200, 209, 213, 218],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Android Devices with 3D Sensing (Millions)',
-                        data: [5, 15, 35, 60, 90, 120],
-                        borderColor: 'rgba(22, 163, 74, 1)',
-                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Devices (Millions)'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create LIDAR Market Chart
-            const lidarMarketCtx = document.getElementById('lidarMarketChart').getContext('2d');
-            new Chart(lidarMarketCtx, {
-                type: 'line',
-                data: {
-                    labels: ['2016', '2018', '2020', '2022', '2024', '2026'],
-                    datasets: [{
-                        label: 'LIDAR Market Size (USD Billion)',
-                        data: [0.29, 0.5, 0.9, 1.4, 2.0, 2.7],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'rgba(249, 115, 22, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': $' + context.raw + ' Billion';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Market Size (USD Billion)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return '$' + value + 'B';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Create Competitor Revenue Chart
-            const competitorRevenueCtx = document.getElementById('competitorRevenueChart').getContext('2d');
-            new Chart(competitorRevenueCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'ams Revenue Growth (YoY %)',
-                        data: [10, 12, 15, 50, 188, 18],
-                        backgroundColor: 'rgba(45, 55, 72, 0.7)',
-                    },
-                    {
-                        label: 'Lumentum Revenue Growth (YoY %)',
-                        data: [15, 66, 40, 35, 30, 25],
-                        backgroundColor: 'rgba(249, 115, 22, 0.7)',
-                    },
-                    {
-                        label: 'Finisar Revenue Growth (YoY %)',
-                        data: [8, 10, 12, 20, 15, 10],
-                        backgroundColor: 'rgba(13, 115, 255, 0.7)',
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + context.raw + '%';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Revenue Growth (YoY %)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-            
-            // Create P/E Analysis Chart
-            const peAnalysisCtx = document.getElementById('peAnalysisChart').getContext('2d');
-            new Chart(peAnalysisCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'],
-                    datasets: [{
-                        label: 'P/E Ratio (Historical)',
-                        data: [25, 28, 35, 40, 45, 50, 80, 70, 40, 30],
-                        borderColor: 'rgba(13, 115, 255, 1)',
-                        backgroundColor: 'rgba(13, 115, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Average P/E (30x)',
-                        data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        backgroundColor: 'transparent',
-                        tension: 0.3,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            title: {
-                                display: true,
-                                text: 'P/E Ratio'
-                            },
-                            min: 0,
-                            max: 85
-                        }
-                    }
-                }
-            });
-
-            // iPad Adoption Slider
-            const ipadAdoptionSlider = document.getElementById('ipadAdoptionSlider');
-            const sliderValue = document.querySelector('.slider-value');
-            const resultValue = document.querySelector('.result-value');
-            
-            if (ipadAdoptionSlider) {
-                ipadAdoptionSlider.addEventListener('input', function() {
-                    sliderValue.textContent = this.value + '%';
-                    const revenue = Math.round(this.value * 3);
-                    resultValue.textContent = '$' + revenue + ' Million';
-                });
-            }
-            
-            // TrueDepth Visualization
-            const truedepthVisualization = document.getElementById('truedepthVisualization');
-            if (truedepthVisualization) {
-                truedepthVisualization.innerHTML = `
-                    <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Phone outline -->
-                        <rect x="100" y="20" width="300" height="260" rx="20" fill="#1a1e29" />
-                        <rect x="110" y="30" width="280" height="240" rx="15" fill="#f8fafc" />
-                        
-                        <!-- Notch -->
-                        <rect x="170" y="30" width="160" height="40" rx="10" fill="#1a1e29" />
-                        
-                        <!-- Components -->
-                        <circle cx="200" cy="50" r="10" fill="#ff9900" class="component" data-component="Infrared Camera" />
-                        <circle cx="230" cy="50" r="10" fill="#0d73ff" class="component" data-component="Flood Illuminator" />
-                        <circle cx="260" cy="50" r="10" fill="#16a34a" class="component" data-component="Proximity Sensor" />
-                        <circle cx="290" cy="50" r="10" fill="#dc2626" class="component" data-component="Ambient Light Sensor" />
-                        <circle cx="245" cy="50" r="15" fill="#eab308" class="component" data-component="Dot Projector (VCSEL)" />
-                    </svg>
-                    <div id="componentInfo" style="text-align: center; margin-top: 10px; font-weight: bold;">Hover over components for details</div>
-                `;
-                
-                const components = truedepthVisualization.querySelectorAll('.component');
-                const componentInfo = document.getElementById('componentInfo');
-                
-                components.forEach(component => {
-                    component.addEventListener('mouseover', function() {
-                        const componentName = this.getAttribute('data-component');
-                        componentInfo.textContent = componentName;
-                        this.setAttribute('stroke', 'white');
-                        this.setAttribute('stroke-width', '2');
-                    });
-                    
-                    component.addEventListener('mouseout', function() {
-                        componentInfo.textContent = 'Hover over components for details';
-                        this.setAttribute('stroke', 'none');
-                    });
-                });
-            }
-
-            // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('.nav-link, .toc-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update active state
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        this.classList.add('active');
-                    }
-                });
-            });
-
-            // Add active class handling for table of contents based on scroll position
-            window.addEventListener('scroll', function() {
-                const scrollPosition = window.scrollY;
-                
-                // Find all sections
-                const sections = document.querySelectorAll('section[id]');
-                
-                // Check which section is currently visible
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        // Remove active class from all TOC links
-                        document.querySelectorAll('.toc-link').forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        
-                        // Add active class to corresponding TOC link
-                        const correspondingLink = document.querySelector(`.toc-link[href="#${section.id}"]`);
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('active');
-                        }
-                    }
-                });
-            });
-
-            // Add chart control functionality
-            document.querySelectorAll('.chart-control').forEach(control => {
-                control.addEventListener('click', function() {
-                    // Remove active class from all controls in the same group
-                    this.parentNode.querySelectorAll('.chart-control').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Add active class to the clicked control
-                    this.classList.add('active');
-                });
             });
         });
     </script>
 
-</head>
-<body suppressHydrationWarning={true}>
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <nav class="max-w-7xl mx-auto px-4">
+        <nav class="container mx-auto px-4 py-4">
             <div class="flex justify-center">
                 <ul class="flex space-x-8 py-4">
                     <li><a href="/" class="text-gray-700 hover:text-[#0A66C2] transition">Home</a></li>
+                    <li><a href="/work-experience" class="text-gray-700 hover:text-[#0A66C2] transition">Work Experience</a></li>
                     <li><a href="/capital" class="text-gray-700 hover:text-[#0A66C2] transition">Capital Group</a></li>
                     <li><a href="/thirdbridge" class="text-gray-700 hover:text-[#0A66C2] transition">Third Bridge</a></li>
                     <li><a href="/bloomberg" class="text-[#0A66C2] border-b-2 border-[#0A66C2]">Bloomberg</a></li>
