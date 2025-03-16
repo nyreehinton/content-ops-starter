@@ -76,58 +76,18 @@
             "type": "SubNav"
         },
         {
+            "type": "Link",
             "label": "Tesla",
             "altText": "Tesla",
-            "links": [{
-                    "type": "Link",
-                    "label": "Background",
-                    "altText": "",
-                    "url": "",
-                    "showIcon": true,
-                    "icon": "arrowRight",
-                    "iconPosition": "left",
-                    "style": "primary",
-                    "elementId": ""
-                },
-                {
-                    "type": "Link",
-                    "label": "The Central Hypothesis",
-                    "altText": "",
-                    "url": "",
-                    "showIcon": true,
-                    "icon": "arrowRight",
-                    "iconPosition": "left",
-                    "style": "primary",
-                    "elementId": ""
-                },
-                {
-                    "type": "Link",
-                    "label": "Technical Analysis",
-                    "altText": "",
-                    "url": "",
-                    "showIcon": true,
-                    "icon": "arrowRight",
-                    "iconPosition": "left",
-                    "style": "primary",
-                    "elementId": ""
-                },
-                {
-                    "type": "Link",
-                    "altText": "",
-                    "url": "",
-                    "showIcon": true,
-                    "icon": "arrowRight",
-                    "iconPosition": "left",
-                    "style": "primary",
-                    "elementId": "",
-                    "label": "Batteries"
-                }
-            ],
-            "labelStyle": "primary",
-            "type": "SubNav"
+            "url": "tesla",
+            "showIcon": false,
+            "icon": "",
+            "iconPosition": "right",
+            "style": "secondary",
+            "elementId": "",
+            "disabled": true
         }
     ],
-
     "variant": "logo-left-primary-nav-centered",
     "colors": "bg-transparent-fg-dark",
     "type": "Header",

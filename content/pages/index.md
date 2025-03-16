@@ -314,7 +314,7 @@ seo:
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-name">NYREE HINTON</div>
-                <h1 class="hero-title">Welcome to My Portfolio</h1>
+                <h1 class="hero-title">Welcome</h1>
                 <p class="hero-description">
                     A collection of my work as an Equity Analyst & Product Manager within the Financial sector
                     spanning technology & consumer markets, M&A strategy, and ETF analytics.
