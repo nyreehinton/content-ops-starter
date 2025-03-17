@@ -312,9 +312,12 @@ seo:
     <!-- Main Hero Section -->
     <section class="hero-section" id="intro">
         <div class="container hero-container">
-            <div class="hero-content">
+            <div class="hero-content slide-down">
+                <h1 class="hero-title">Explore my work</h1>
+                <div class="hero-image-container">
+                    <img src="/images/Hinton_Nyree_Default_Office - 3_Headshot.jpeg" alt="Nyree Hinton - Financial Analyst and Product Manager" class="hero-image">
+                </div>
                 <div class="hero-name">NYREE HINTON</div>
-                <h1 class="hero-title">Welcome</h1>
                 <p class="hero-description">
                     A collection of my work as an Equity Analyst & Product Manager within the Financial sector
                     spanning technology & consumer markets, M&A strategy, and ETF analytics.
@@ -326,9 +329,6 @@ seo:
                         <path d="M12 5l7 7-7 7"></path>
                     </svg>
                 </a>
-            </div>
-            <div class="hero-image-container">
-                <img src="/images/Hinton_Nyree_Default_Office - 3_Headshot.jpeg" alt="Nyree Hinton - Financial Analyst and Product Manager" class="hero-image">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -353,170 +353,148 @@ seo:
             overflow: hidden;
             background: transparent;
             padding: 0;
-            margin-top: 80px; /* Add space for the default header */
+            margin-top: 80px;
         }
 
         .hero-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: var(--space-xl);
+            justify-content: center;
+            text-align: center;
             flex: 1;
-            padding-top: 20px; /* Reduced from 100px since we're using the default header */
+            padding-top: 20px;
         }
 
         .hero-content {
-            flex: 1;
-            max-width: 600px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1.5s ease forwards;
         }
 
-        .hero-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0A66C2; /* LinkedIn blue */
-            margin-bottom: var(--space-sm);
+        .hero-content > * {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         .hero-title {
             font-size: 3rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: var(--space-md);
-            line-height: 1.2;
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+        }
+
+        .hero-image-container {
+            width: 250px;
+            height: 250px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0A66C2;
+            margin: 1.5rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 1s;
         }
 
         .hero-description {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
+            margin: 1.5rem auto;
+            max-width: 600px;
             line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 1.4s;
         }
 
         .hero-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 5px 10px;
+            padding: 12px 24px;
             border-radius: 5px;
             font-weight: 500;
-            background-color: #0A66C2; /* LinkedIn official blue color */
+            background-color: #0A66C2;
             color: white;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: background-color var(--transition-normal), transform var(--transition-normal);
-        }
-
-        .hero-cta:hover {
-            background-color: #0A66C2; /* Keep the same color on hover */
-            transform: translateY(-2px);
-        }
-
-        .hero-cta svg {
+            margin-top: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 1.8s;
             transition: transform var(--transition-normal);
         }
 
-        .hero-cta:hover svg {
-            transform: translateX(4px);
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            background-color: #0A66C2;
+            color: white;
         }
 
-        .hero-image-container {
-            flex: 0 0 300px; /* Fixed width for desktop */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--border-radius-md);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #0A66C2;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .scroll-text {
-            margin-bottom: 8px;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
             }
-            40% {
-                transform: translateY(-10px) translateX(-50%);
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
-            60% {
-                transform: translateY(-5px) translateX(-50%);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero-container {
-                flex-direction: column-reverse;
-                gap: var(--space-lg);
-                padding: var(--space-lg) var(--space-md);
-                text-align: center;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                padding: 0 var(--space-md);
-            }
-
             .hero-title {
                 font-size: 2.5rem;
             }
 
             .hero-image-container {
-                flex: 0 0 250px; /* Smaller fixed width for tablets */
-                width: 250px; /* Explicit width */
-                margin: 0 auto;
+                width: 200px;
+                height: 200px;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-container {
-                padding: var(--space-md);
-            }
-
             .hero-title {
                 font-size: 2rem;
             }
 
+            .hero-image-container {
+                width: 180px;
+                height: 180px;
+            }
+
             .hero-description {
                 font-size: 1rem;
-            }
-
-            .hero-image-container {
-                flex: 0 0 200px; /* Even smaller fixed width for mobile */
-                width: 200px; /* Explicit width */
-            }
-
-            .hero-name {
-                font-size: 1.1rem;
-            }
-
-            .hero-content {
-                padding: 0;
+                padding: 0 var(--space-md);
             }
         }
     </style>
