@@ -409,840 +409,935 @@
 
         <!-- Main Content -->
         <main class="main-content flex-1 ml-[280px] p-6 pb-20">
-            <!-- Role Section -->
-            <section class="mb-12">
-                <div class="glass-card p-6 stagger-item">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">ROLE</span>
-                            <h2 class="text-2xl font-bold text-gray-800 mt-2">Data Product Manager at Capital Group</h2>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Lead the development and optimization of ETF data analytics infrastructure while managing a comprehensive suite of products worth $31 billion in AUM. Successfully integrated 9 distinct data sources while building robust ETL pipelines that enhanced market
-                        transparency and operational efficiency.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">ETF Analytics</span>
-                        <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">Data Pipeline Management</span>
-                        <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">Python & SQL</span>
-                    </div>
-                    <div class="flex gap-8 text-gray-600">
-                        <div>
-                            <div class="text-2xl font-bold text-primary-600">867</div>
-                            <div class="text-xs mt-1">Files Processed</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-primary-600">24+</div>
-                            <div class="text-xs mt-1">Internal Reports</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-primary-600">36</div>
-                            <div class="text-xs mt-1">Dashboards Created</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Overview Section -->
-            <section id="overview" class="fade-in mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl md:text-4xl font-bold text-secondary-900 mb-2">Capital Group ETF Dashboard</h1>
-                    <p class="text-secondary-600">Comprehensive insights into Capital Group's ETF product lineup and performance.</p>
-                </header>
-
-                <div class="glass-card p-6 mb-8 stagger-item">
-                    <h2 class="text-xl font-semibold mb-4">Capital Group's ETF Journey</h2>
-                    <p class="text-secondary-700 mb-4">Capital Group's entry into the ETF market represented a strategic expansion of its product lineup, combining the company's legacy of active management with the operational infrastructure required for ETF innovation.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                        <div>
-                            <h3 class="font-medium text-secondary-800 mb-2">Launch Timeline</h3>
-                            <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
-                                <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
-                                <h4 class="text-lg font-semibold text-primary-600">Wave 1 - February 2022</h4>
-                                <p class="text-secondary-600 mb-2">Initial suite of six equity ETFs established Capital Group's ETF presence.</p>
-                            </div>
-                            <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
-                                <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
-                                <h4 class="text-lg font-semibold text-primary-600">Wave 2 - October 2022</h4>
-                                <p class="text-secondary-600 mb-2">Expansion with fixed-income offerings including Multi-Sector ETF, Municipal Income ETF, and Short Duration ETF.</p>
-                            </div>
-                            <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
-                                <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
-                                <h4 class="text-lg font-semibold text-primary-600">Wave 3 - September 2023</h4>
-                                <p class="text-secondary-600 mb-2">Added Dividend Growers ETF, International Equity ETF, Core Bond ETF, Core Balanced ETF, and Short Duration Municipal Income ETF.</p>
-                            </div>
-                            <div class="relative pl-8 border-l-2 border-primary-200">
-                                <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
-                                <h4 class="text-lg font-semibold text-primary-600">Wave 4 - June 2024</h4>
-                                <p class="text-secondary-600"> Launch of Conservative Equity ETF, International Core Equity ETF, Global Equity ETF, New Geography Equity ETF, Short Duration High-Income ETF, and International Bond ETF.</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="font-medium text-secondary-800 mb-2">ETF Growth</h3>
-                            <div class="chart-container h-60">
-                                <canvas id="etfGrowthChart"></canvas>
-                            </div>
-                            <p class="text-sm text-secondary-500 text-center mt-2">Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <!-- Summary Card 1 -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h3 class="text-secondary-500 font-medium text-sm mb-1">Total ETF Products</h3>
-                        <div class="flex items-baseline">
-                            <span class="text-3xl font-semibold">21</span>
-                            <span class="ml-2 text-sm trend-up">New Product Line</span>
-                        </div>
-                        <div class="mt-2 text-sm text-secondary-500">Across equity and fixed income</div>
-                    </div>
-
-                    <!-- Summary Card 2 -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h3 class="text-secondary-500 font-medium text-sm mb-1">Total Sales</h3>
-                        <div class="flex items-baseline">
-                            <span class="text-3xl font-semibold">$31B+</span>
-                            <span class="ml-2 text-sm trend-up">Growing</span>
-                        </div>
-                        <div class="mt-2 text-sm text-secondary-500">Since initial launch</div>
-                    </div>
-
-                    <!-- Summary Card 3 -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h3 class="text-secondary-500 font-medium text-sm mb-1">Market Coverage</h3>
-                        <div class="flex items-baseline">
-                            <span class="text-3xl font-semibold">99.9%</span>
-                            <span class="ml-2 text-sm trend-up">High Visibility</span>
-                        </div>
-                        <div class="mt-2 text-sm text-secondary-500">Trading activity captured</div>
-                    </div>
-
-                    <!-- Summary Card 4 -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h3 class="text-secondary-500 font-medium text-sm mb-1">Data Latency</h3>
-                        <div class="flex items-baseline">
-                            <span class="text-3xl font-semibold">30s</span>
-                            <span class="ml-2 text-sm trend-down">From 15min</span>
-                        </div>
-                        <div class="mt-2 text-sm text-secondary-500">Near real-time processing</div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 mb-8 stagger-item">
-                    <h2 class="text-xl font-semibold mb-4">ETF vs. Mutual Funds Comparison</h2>
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-full divide-y divide-secondary-200">
-                            <thead>
-                                <tr>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Feature</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">ETFs</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Mutual Funds</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-secondary-200">
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Trading</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Intraday on exchanges</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">End-of-day at NAV</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Pricing</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Market price (may vary from NAV)</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">NAV calculated after market close</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Transparency</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily holdings disclosure (typically)</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Quarterly holdings disclosure (typically)</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Tax Efficiency</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Generally more tax-efficient due to in-kind creation/redemption</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Less tax-efficient due to cash transactions</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Minimum Investment</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">One share</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Varies (often $1,000+)</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Data Infrastructure</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Multiple third-party sources required</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Centralized transfer agent data</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ETF Products Section -->
-            <section id="etf-products" class="mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">ETF Product Portfolio</h1>
-                    <p class="text-secondary-600">Capital Group's comprehensive suite of ETF offerings across equity and fixed income markets.</p>
-                </header>
-
-                <!-- Wave 1 - February 2022 -->
-                <div class="mb-8">
-                    <h2 class="text-xl font-semibold mb-4">Wave 1 - February 2022</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Core Equity ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Core Equity ETF</h3>
-                                    <p class="text-secondary-500">CGUS</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Feb 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">A diversified portfolio of U.S. and international stocks with growth and income objectives.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$3.2B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Dividend Value ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Dividend Value ETF</h3>
-                                    <p class="text-secondary-500">CGDV</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Feb 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Focuses on companies with growing dividend payouts and stable earnings.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$4.8B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Growth ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Growth ETF</h3>
-                                    <p class="text-secondary-500">CGGR</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Feb 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Focuses on companies with strong growth potential and innovative business models.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$2.9B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wave 2 - October 2022 -->
-                <div class="mb-8">
-                    <h2 class="text-xl font-semibold mb-4">Wave 2 - October 2022</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Municipal Income ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Municipal Income ETF</h3>
-                                    <p class="text-secondary-500">CGMU</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Oct 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Tax-exempt income from high-quality municipal bonds.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$1.2B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Short Duration Income ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Short Duration Income ETF</h3>
-                                    <p class="text-secondary-500">CGSD</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Oct 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Lower-volatility fixed-income portfolio with shorter duration focus.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$1.18B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Multi-Sector Income ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Multi-Sector Income ETF</h3>
-                                    <p class="text-secondary-500">CGMS</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Oct 2022</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Diversified fixed-income approach across multiple sectors for enhanced yield.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$1.96B</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wave 3 - September 2023 -->
-                <div class="mb-8">
-                    <h2 class="text-xl font-semibold mb-4">Wave 3 - September 2023</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Dividend Growers ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Dividend Growers ETF</h3>
-                                    <p class="text-secondary-500">CGDG</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Sep 2023</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Focuses on companies with consistent dividend growth history.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$850M</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- International Equity ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">International Equity ETF</h3>
-                                    <p class="text-secondary-500">CGXU</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Sep 2023</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Diversified portfolio of international companies with growth potential.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$920M</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Core Bond ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Core Bond ETF</h3>
-                                    <p class="text-secondary-500">CGCB</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Sep 2023</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Core fixed income portfolio with broad market exposure.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$780M</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Core Balanced ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Balanced</span>
-                                    <h3 class="text-xl font-semibold mt-2">Core Balanced ETF</h3>
-                                    <p class="text-secondary-500">CGBL</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Sep 2023</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Balanced allocation between stocks and bonds for moderate growth.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$690M</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-
-                        <!-- Short Duration Municipal Income ETF -->
-                        <div class="glass-card p-6 stagger-item">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Short Duration Municipal Income ETF</h3>
-                                    <p class="text-secondary-500">CGSM</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Sep 2023</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Tax-exempt income from short-term municipal bonds.</p>
-                            <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
-                                <span class="font-semibold">$560M</span>
-                                <span class="text-xs text-secondary-500">AUM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wave 4 - Planned June 2024 -->
-                <div class="mb-8">
-                    <h2 class="text-xl font-semibold mb-4">Wave 4 - June 2024</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Conservative Equity ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Conservative Equity ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Lower-volatility equity portfolio focused on stable companies.</p>
-                        </div>
-
-                        <!-- International Core Equity ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">International Core Equity ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Core international equity exposure across developed markets.</p>
-                        </div>
-
-                        <!-- Global Equity ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">Global Equity ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Comprehensive global equity exposure across all markets.</p>
-                        </div>
-
-                        <!-- New Geography Equity ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
-                                    <h3 class="text-xl font-semibold mt-2">New Geography Equity ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Focus on emerging markets and frontier economies.</p>
-                        </div>
-
-                        <!-- Short Duration High-Income ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">Short Duration High-Income ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Short-term high-yield bonds for enhanced income.</p>
-                        </div>
-
-                        <!-- International Bond ETF -->
-                        <div class="glass-card p-6 stagger-item opacity-75">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
-                                    <h3 class="text-xl font-semibold mt-2">International Bond ETF</h3>
-                                    <p class="text-secondary-500">Planned</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-secondary-500">Launch</span>
-                                    <p class="font-medium">Jun 2024</p>
-                                </div>
-                            </div>
-                            <p class="text-secondary-600 text-sm mb-4">Global fixed income exposure across international markets.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Primary Market Process Section -->
-            <section id="primary-market" class="mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">Primary Market Process</h1>
-                    <p class="text-secondary-600">Understanding ETF creation and redemption mechanisms.</p>
-                </header>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                    <!-- Creation Process -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h2 class="text-lg font-semibold mb-4">Creation Process</h2>
-                        <div class="flex items-center justify-center mb-6">
-                            <img src="https://via.placeholder.com/600x300?text=ETF+Creation+Process" alt="ETF Creation Process Diagram" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                        <div class="text-secondary-700">
-                            <p class="mb-4">Authorized Participants (APs), often large financial institutions, work directly with the ETF issuer to create new ETF shares.</p>
-                            <p>APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).</p>
-                        </div>
-                    </div>
-
-                    <!-- Redemption Process -->
-                    <div class="glass-card p-6 stagger-item">
-                        <h2 class="text-lg font-semibold mb-4">Redemption Process</h2>
-                        <div class="flex items-center justify-center mb-6">
-                            <img src="public/images/Primary Market.webp" alt="ETF Redemption Process Diagram" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                        <div class="text-secondary-700">
-                            <p class="mb-4">APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.</p>
-                            <p>This mechanism ensures the ETF's supply matches market demand.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Interactive Process Diagram -->
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Interactive ETF Process</h2>
-                    <div class="flex flex-col items-center">
-                        <div id="etfProcessDiagram" class="w-full h-[400px] flex items-center justify-center">
-                            <!-- D3.js visualization will be rendered here -->
-                            <img src="images/Primary Market.webp" alt="ETF Process Diagram" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                        <div class="flex space-x-4 mt-4">
-                            <button id="showCreation" class="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition focus:ring-2 focus:ring-primary-300 focus:outline-none">
-                                Show Creation
+            <!-- Main Section Tabs -->
+            <div class="glass-card p-4 mb-8">
+                <div class="border-b border-secondary-200">
+                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="mainTabs" role="tablist">
+                        <li class="mr-2" role="presentation">
+                            <button class="inline-block p-4 border-b-2 border-primary-500 rounded-t-lg active" id="dashboard-tab" data-main-tab="dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
+                                ETF Dashboard
                             </button>
-                            <button id="showRedemption" class="px-4 py-2 bg-secondary-500 text-white rounded-lg hover:bg-secondary-600 transition focus:ring-2 focus:ring-secondary-300 focus:outline-none">
-                                Show Redemption
+                        </li>
+                        <li class="mr-2" role="presentation">
+                            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-primary-600 hover:border-primary-300" id="data-management-tab" data-main-tab="data-management" role="tab" aria-controls="data-management" aria-selected="false">
+                                ETF Data Management
                             </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NAV Calculation -->
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">NAV Calculation</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-md font-medium mb-2">How NAV is Calculated</h3>
-                            <p class="text-secondary-700 mb-4">The Net Asset Value (NAV) represents the per-share value of the ETF and is calculated daily.</p>
-                            <div class="bg-secondary-50 p-4 rounded-lg">
-                                <code class="text-secondary-800 font-mono">
-                                    NAV = (Total Assets - Total Liabilities) / Shares Outstanding
-                                </code>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-md font-medium mb-2">NAV vs. Market Price</h3>
-                            <p class="text-secondary-700 mb-4">ETFs can trade at a premium or discount to their NAV, though arbitrage mechanisms generally keep these differences small.</p>
-                            <div class="chart-container h-40">
-                                <canvas id="navChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Secondary Market Section -->
-            <section id="secondary-market" class="mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">Secondary Market</h1>
-                    <p class="text-secondary-600">How ETF shares are traded on exchanges between investors.</p>
-                </header>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Secondary Market Trading</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <p class="text-secondary-700 mb-4">Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.</p>
-                            <p class="text-secondary-700 mb-4">Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.</p>
-                            <p class="text-secondary-700">Unlike mutual funds, which settle at end-of-day net asset values (NAVs), ETFs require real-time price discovery mechanisms to maintain parity between market prices and underlying assets.</p>
-                        </div>
-                        <div class="flex items-center justify-center">
-                            <img src="https://via.placeholder.com/500x300?text=Secondary+Market+Trading" alt="Secondary Market Trading" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Arbitrage Mechanism</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="flex items-center justify-center">
-                            <img src="https://via.placeholder.com/500x300?text=Arbitrage+Mechanism" alt="Arbitrage Mechanism" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                        <div>
-                            <h3 class="text-md font-medium mb-2">Role of APs and Market Makers</h3>
-                            <p class="text-secondary-700 mb-4">APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.</p>
-                            <ul class="list-disc list-inside space-y-2 text-secondary-700">
-                                <li>If the ETF trades above its NAV, APs create shares to increase supply, lowering the price.</li>
-                                <li>If it trades below, they redeem shares to decrease supply, raising the price.</li>
-                            </ul>
-                            <p class="text-secondary-700 mt-4">This dual-market structure ensures liquidity, efficient pricing, and a seamless investment vehicle for a wide range of participants.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">ETF Trading Volume by Venue</h2>
-                    <div class="chart-container">
-                        <canvas id="tradingVolumeChart"></canvas>
-                    </div>
-                    <p class="text-sm text-secondary-500 text-center mt-4">ETF trading activity occurs across multiple venues, requiring comprehensive data integration to achieve complete market transparency.</p>
-                </div>
-            </section>
-
-            <!-- Data Management Section -->
-            <section id="data-management" class="mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">ETF Data Management</h1>
-                    <p class="text-secondary-600">Challenges and solutions in ETF data infrastructure.</p>
-                </header>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Data Management Challenges</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">1</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">Fragmented Ecosystem</h3>
-                                    <p class="text-secondary-600 text-sm">Data must be sourced from multiple providers, including exchanges, authorized participants, clearing houses, and fund accountants.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">2</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">Intraday Trading</h3>
-                                    <p class="text-secondary-600 text-sm">Unlike mutual funds, ETFs trade throughout the day, requiring real-time data processing capabilities.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">3</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">Creation/Redemption Activity</h3>
-                                    <p class="text-secondary-600 text-sm">Transactions between authorized participants and the fund require specialized tracking.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">4</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">Market Price vs. NAV</h3>
-                                    <p class="text-secondary-600 text-sm">Both metrics must be tracked and reconciled, with premium/discount analysis.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">5</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">Volume Discovery</h3>
-                                    <p class="text-secondary-600 text-sm">Secondary market trading happens across multiple venues, requiring consolidation.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">6</div>
-                                <div class="ml-4">
-                                    <h3 class="text-md font-medium text-secondary-800">No Transfer Agent</h3>
-                                    <p class="text-secondary-600 text-sm">Unlike mutual funds, ETFs lack a centralized transfer agent for comprehensive data tracking.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Data Integration Architecture</h2>
-                    <div class="flex justify-center mb-6">
-                        <img src="/images/ingestion process.jpg" alt="ETF Data Integration Architecture" class="rounded-lg max-w-full h-auto" />
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Data Ingestion Layer</h3>
-                            <p class="text-sm text-secondary-600">APIs and file-based integrations with multiple data providers.</p>
-                        </div>
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Normalization Engine</h3>
-                            <p class="text-sm text-secondary-600">Standardizes data formats from disparate sources.</p>
-                        </div>
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Validation Framework</h3>
-                            <p class="text-sm text-secondary-600">Multi-level checks ensuring data accuracy and completeness.</p>
-                        </div>
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Master Data Management</h3>
-                            <p class="text-sm text-secondary-600">Centralized repository of ETF reference data.</p>
-                        </div>
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Analytics Layer</h3>
-                            <p class="text-sm text-secondary-600">Provides insights and visualization capabilities.</p>
-                        </div>
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <h3 class="font-medium text-secondary-800 mb-2">Distribution Services</h3>
-                            <p class="text-sm text-secondary-600">Delivers processed data to downstream consumers.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">ETF Data Sources</h2>
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-full divide-y divide-secondary-200">
-                            <thead>
-                                <tr>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Data Source</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Frequency</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Primary Use</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Coverage</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-secondary-200">
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Broadridge</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Monthly</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Trade Matching, Asset reporting, Market Intel</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">95% of Capital Group ETFs</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">State Street (NAV)</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Accounting, Asset reporting</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">100% of Capital Group ETF AUM</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">State Street (UCF)</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Accounting, Market Demand Analysis</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">100% of CG ETF Shares Creation/Outstanding</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Fidelity</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Detailed transaction analysis</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Fidelity Platform only</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Case Studies Section -->
-            <section id="case-studies" class="mb-12">
-                <header class="mb-8">
-                    <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">Case Studies</h1>
-                    <p class="text-secondary-600">Key achievements in ETF data management.</p>
-                </header>
-
-                <div class="glass-card p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-4">Achieving 99.9% Market Transparency</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="font-medium text-secondary-800 mb-2">Challenge</h3>
-                            <p class="text-secondary-700 mb-4">With the launch of Capital Group's first ETFs in February 2022, the firm needed comprehensive visibility into trading activity across all market venues. Unlike mutual funds, which trade once daily at NAV, ETFs trade continuously
-                                throughout the day across multiple exchanges and alternative trading systems (ATS).</p>
-
-                            <h3 class="font-medium text-secondary-800 mb-2">Solution</h3>
-                            <ul class="list-disc list-inside space-y-1 text-secondary-700 mb-4">
-                                <li>Established direct feeds from major exchanges (NYSE, NASDAQ, CBOE)</li>
-                                <li>Integrated with consolidated tape providers for comprehensive market coverage</li>
-                                <li>Developed a custom reconciliation engine to identify and resolve data discrepancies</li>
-                                <li>Built a real-time dashboard for monitoring trading activity across venues</li>
-                            </ul>
-
-                            <h3 class="font-medium text-secondary-800 mb-2">Results</h3>
-                            <ul class="list-disc list-inside space-y-1 text-secondary-700">
-                                <li>Achieved 99.9% visibility into all ETF trading activity across market venues</li>
-                                <li>Reduced data latency from 15 minutes to near real-time (30 seconds)</li>
-                                <li>Identified and addressed data gaps in dark pool and ATS reporting</li>
-                                <li>Enabled comprehensive trading analytics for the investment team</li>
-                            </ul>
-                        </div>
-                        <div class="flex items-center justify-center">
-                            <img src="images/Shares Outstanding.png" alt="Market Transparency Case Study" class="rounded-lg max-w-full h-auto" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Asset Allocation Chart -->
-            <div class="glass-card p-6 mb-8">
-                <h2 class="text-xl font-semibold mb-4">Asset Allocation by Fund Type</h2>
-                <div class="chart-container">
-                    <canvas id="assetAllocationChart"></canvas>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mt-6">
-                    <div class="text-center">
-                        <p class="text-sm font-medium text-secondary-600">Total ETF AUM</p>
-                        <p class="text-2xl font-semibold text-secondary-800">$14.89B</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-sm font-medium text-secondary-600">Number of ETFs</p>
-                        <p class="text-2xl font-semibold text-secondary-800">15</p>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- Main Tab Contents -->
+            <div id="mainTabContent">
+                <!-- ETF Dashboard Tab -->
+                <div class="main-tab-panel block" id="dashboard-panel" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <!-- Role Section -->
+                    <section class="mb-12">
+                        <div class="glass-card p-6 stagger-item">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">ROLE</span>
+                                    <h2 class="text-2xl font-bold text-gray-800 mt-2">Data Product Manager at Capital Group</h2>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                Lead the development and optimization of ETF data analytics infrastructure while managing a comprehensive suite of products worth $31 billion in AUM. Successfully integrated 9 distinct data sources while building robust ETL pipelines that enhanced market
+                                transparency and operational efficiency.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">ETF Analytics</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">Data Pipeline Management</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">Python & SQL</span>
+                            </div>
+                            <div class="flex gap-8 text-gray-600">
+                                <div>
+                                    <div class="text-2xl font-bold text-primary-600">867</div>
+                                    <div class="text-xs mt-1">Files Processed</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-primary-600">24+</div>
+                                    <div class="text-xs mt-1">Internal Reports</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-primary-600">36</div>
+                                    <div class="text-xs mt-1">Dashboards Created</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Overview Section -->
+                    <section id="overview" class="fade-in mb-12">
+                        <header class="mb-8">
+                            <h1 class="font-display text-3xl md:text-4xl font-bold text-secondary-900 mb-2">Capital Group ETF Dashboard</h1>
+                            <p class="text-secondary-600">Comprehensive insights into Capital Group's ETF product lineup and performance.</p>
+                        </header>
+
+                        <div class="glass-card p-6 mb-8 stagger-item">
+                            <h2 class="text-xl font-semibold mb-4">Capital Group's ETF Journey</h2>
+                            <p class="text-secondary-700 mb-4">Capital Group's entry into the ETF market represented a strategic expansion of its product lineup, combining the company's legacy of active management with the operational infrastructure required for ETF innovation.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                <div>
+                                    <h3 class="font-medium text-secondary-800 mb-2">Launch Timeline</h3>
+                                    <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
+                                        <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
+                                        <h4 class="text-lg font-semibold text-primary-600">Wave 1 - February 2022</h4>
+                                        <p class="text-secondary-600 mb-2">Initial suite of six equity ETFs established Capital Group's ETF presence.</p>
+                                    </div>
+                                    <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
+                                        <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
+                                        <h4 class="text-lg font-semibold text-primary-600">Wave 2 - October 2022</h4>
+                                        <p class="text-secondary-600 mb-2">Expansion with fixed-income offerings including Multi-Sector ETF, Municipal Income ETF, and Short Duration ETF.</p>
+                                    </div>
+                                    <div class="relative pl-8 pb-8 border-l-2 border-primary-200">
+                                        <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
+                                        <h4 class="text-lg font-semibold text-primary-600">Wave 3 - September 2023</h4>
+                                        <p class="text-secondary-600 mb-2">Added Dividend Growers ETF, International Equity ETF, Core Bond ETF, Core Balanced ETF, and Short Duration Municipal Income ETF.</p>
+                                    </div>
+                                    <div class="relative pl-8 border-l-2 border-primary-200">
+                                        <div class="absolute top-0 left-0 w-4 h-4 rounded-full bg-primary-500 -translate-x-[9px]"></div>
+                                        <h4 class="text-lg font-semibold text-primary-600">Wave 4 - June 2024</h4>
+                                        <p class="text-secondary-600"> Launch of Conservative Equity ETF, International Core Equity ETF, Global Equity ETF, New Geography Equity ETF, Short Duration High-Income ETF, and International Bond ETF.</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-medium text-secondary-800 mb-2">ETF Growth</h3>
+                                    <div class="chart-container h-60">
+                                        <canvas id="etfGrowthChart"></canvas>
+                                    </div>
+                                    <p class="text-sm text-secondary-500 text-center mt-2">Over two years, Capital Group launched 21 ETFs, representing over $31 billion in sales.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            <!-- Summary Card 1 -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h3 class="text-secondary-500 font-medium text-sm mb-1">Total ETF Products</h3>
+                                <div class="flex items-baseline">
+                                    <span class="text-3xl font-semibold">21</span>
+                                    <span class="ml-2 text-sm trend-up">New Product Line</span>
+                                </div>
+                                <div class="mt-2 text-sm text-secondary-500">Across equity and fixed income</div>
+                            </div>
+
+                            <!-- Summary Card 2 -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h3 class="text-secondary-500 font-medium text-sm mb-1">Total Sales</h3>
+                                <div class="flex items-baseline">
+                                    <span class="text-3xl font-semibold">$31B+</span>
+                                    <span class="ml-2 text-sm trend-up">Growing</span>
+                                </div>
+                                <div class="mt-2 text-sm text-secondary-500">Since initial launch</div>
+                            </div>
+
+                            <!-- Summary Card 3 -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h3 class="text-secondary-500 font-medium text-sm mb-1">Market Coverage</h3>
+                                <div class="flex items-baseline">
+                                    <span class="text-3xl font-semibold">99.9%</span>
+                                    <span class="ml-2 text-sm trend-up">High Visibility</span>
+                                </div>
+                                <div class="mt-2 text-sm text-secondary-500">Trading activity captured</div>
+                            </div>
+
+                            <!-- Summary Card 4 -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h3 class="text-secondary-500 font-medium text-sm mb-1">Data Latency</h3>
+                                <div class="flex items-baseline">
+                                    <span class="text-3xl font-semibold">30s</span>
+                                    <span class="ml-2 text-sm trend-down">From 15min</span>
+                                </div>
+                                <div class="mt-2 text-sm text-secondary-500">Near real-time processing</div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 mb-8 stagger-item">
+                            <h2 class="text-xl font-semibold mb-4">ETF vs. Mutual Funds Comparison</h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full min-w-full divide-y divide-secondary-200">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Feature</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">ETFs</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Mutual Funds</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-secondary-200">
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Trading</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Intraday on exchanges</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">End-of-day at NAV</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Pricing</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Market price (may vary from NAV)</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">NAV calculated after market close</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Transparency</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily holdings disclosure (typically)</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Quarterly holdings disclosure (typically)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Tax Efficiency</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Generally more tax-efficient due to in-kind creation/redemption</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Less tax-efficient due to cash transactions</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Minimum Investment</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">One share</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Varies (often $1,000+)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Data Infrastructure</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Multiple third-party sources required</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Centralized transfer agent data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ETF Products Section -->
+                    <section id="etf-products" class="mb-12">
+                        <header class="mb-8">
+                            <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">ETF Product Portfolio</h1>
+                            <p class="text-secondary-600">Capital Group's comprehensive suite of ETF offerings across equity and fixed income markets.</p>
+                        </header>
+
+                        <!-- Wave 1 - February 2022 -->
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold mb-4">Wave 1 - February 2022</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Core Equity ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Core Equity ETF</h3>
+                                            <p class="text-secondary-500">CGUS</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Feb 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">A diversified portfolio of U.S. and international stocks with growth and income objectives.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$3.2B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Dividend Value ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Dividend Value ETF</h3>
+                                            <p class="text-secondary-500">CGDV</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Feb 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Focuses on companies with growing dividend payouts and stable earnings.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$4.8B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Growth ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Growth ETF</h3>
+                                            <p class="text-secondary-500">CGGR</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Feb 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Focuses on companies with strong growth potential and innovative business models.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$2.9B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wave 2 - October 2022 -->
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold mb-4">Wave 2 - October 2022</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Municipal Income ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Municipal Income ETF</h3>
+                                            <p class="text-secondary-500">CGMU</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Oct 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Tax-exempt income from high-quality municipal bonds.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$1.2B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Short Duration Income ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Short Duration Income ETF</h3>
+                                            <p class="text-secondary-500">CGSD</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Oct 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Lower-volatility fixed-income portfolio with shorter duration focus.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$1.18B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Multi-Sector Income ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Multi-Sector Income ETF</h3>
+                                            <p class="text-secondary-500">CGMS</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Oct 2022</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Diversified fixed-income approach across multiple sectors for enhanced yield.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$1.96B</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wave 3 - September 2023 -->
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold mb-4">Wave 3 - September 2023</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Dividend Growers ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Dividend Growers ETF</h3>
+                                            <p class="text-secondary-500">CGDG</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Sep 2023</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Focuses on companies with consistent dividend growth history.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$850M</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- International Equity ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">International Equity ETF</h3>
+                                            <p class="text-secondary-500">CGXU</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Sep 2023</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Diversified portfolio of international companies with growth potential.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$920M</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Core Bond ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Core Bond ETF</h3>
+                                            <p class="text-secondary-500">CGCB</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Sep 2023</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Core fixed income portfolio with broad market exposure.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$780M</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Core Balanced ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Balanced</span>
+                                            <h3 class="text-xl font-semibold mt-2">Core Balanced ETF</h3>
+                                            <p class="text-secondary-500">CGBL</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Sep 2023</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Balanced allocation between stocks and bonds for moderate growth.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$690M</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Short Duration Municipal Income ETF -->
+                                <div class="glass-card p-6 stagger-item">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Short Duration Municipal Income ETF</h3>
+                                            <p class="text-secondary-500">CGSM</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Sep 2023</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Tax-exempt income from short-term municipal bonds.</p>
+                                    <div class="flex justify-between items-center pt-4 border-t border-secondary-100">
+                                        <span class="font-semibold">$560M</span>
+                                        <span class="text-xs text-secondary-500">AUM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wave 4 - Planned June 2024 -->
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold mb-4">Wave 4 - June 2024</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Conservative Equity ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Conservative Equity ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Lower-volatility equity portfolio focused on stable companies.</p>
+                                </div>
+
+                                <!-- International Core Equity ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">International Core Equity ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Core international equity exposure across developed markets.</p>
+                                </div>
+
+                                <!-- Global Equity ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">Global Equity ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Comprehensive global equity exposure across all markets.</p>
+                                </div>
+
+                                <!-- New Geography Equity ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-primary-100 text-primary-800">Equity</span>
+                                            <h3 class="text-xl font-semibold mt-2">New Geography Equity ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Focus on emerging markets and frontier economies.</p>
+                                </div>
+
+                                <!-- Short Duration High-Income ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">Short Duration High-Income ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Short-term high-yield bonds for enhanced income.</p>
+                                </div>
+
+                                <!-- International Bond ETF -->
+                                <div class="glass-card p-6 stagger-item opacity-75">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <span class="text-xs px-2 py-1 rounded-full bg-accent-100 text-accent-800">Fixed Income</span>
+                                            <h3 class="text-xl font-semibold mt-2">International Bond ETF</h3>
+                                            <p class="text-secondary-500">Planned</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="text-xs text-secondary-500">Launch</span>
+                                            <p class="font-medium">Jun 2024</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary-600 text-sm mb-4">Global fixed income exposure across international markets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Primary Market Process Section -->
+                    <section id="primary-market" class="mb-12">
+                        <header class="mb-8">
+                            <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">Primary Market Process</h1>
+                            <p class="text-secondary-600">Understanding ETF creation and redemption mechanisms.</p>
+                        </header>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                            <!-- Creation Process -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h2 class="text-lg font-semibold mb-4">Creation Process</h2>
+                                <div class="flex items-center justify-center mb-6">
+                                    <img src="https://via.placeholder.com/600x300?text=ETF+Creation+Process" alt="ETF Creation Process Diagram" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                                <div class="text-secondary-700">
+                                    <p class="mb-4">Authorized Participants (APs), often large financial institutions, work directly with the ETF issuer to create new ETF shares.</p>
+                                    <p>APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).</p>
+                                </div>
+                            </div>
+
+                            <!-- Redemption Process -->
+                            <div class="glass-card p-6 stagger-item">
+                                <h2 class="text-lg font-semibold mb-4">Redemption Process</h2>
+                                <div class="flex items-center justify-center mb-6">
+                                    <img src="public/images/Primary Market.webp" alt="ETF Redemption Process Diagram" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                                <div class="text-secondary-700">
+                                    <p class="mb-4">APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.</p>
+                                    <p>This mechanism ensures the ETF's supply matches market demand.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Process Diagram -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-lg font-semibold mb-4">Interactive ETF Process</h2>
+                            <div class="flex flex-col items-center">
+                                <div id="etfProcessDiagram" class="w-full h-[400px] flex items-center justify-center">
+                                    <!-- D3.js visualization will be rendered here -->
+                                    <img src="images/Primary Market.webp" alt="ETF Process Diagram" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                                <div class="flex space-x-4 mt-4">
+                                    <button id="showCreation" class="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition focus:ring-2 focus:ring-primary-300 focus:outline-none">
+                                        Show Creation
+                                    </button>
+                                    <button id="showRedemption" class="px-4 py-2 bg-secondary-500 text-white rounded-lg hover:bg-secondary-600 transition focus:ring-2 focus:ring-secondary-300 focus:outline-none">
+                                        Show Redemption
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NAV Calculation -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-lg font-semibold mb-4">NAV Calculation</h2>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="text-md font-medium mb-2">How NAV is Calculated</h3>
+                                    <p class="text-secondary-700 mb-4">The Net Asset Value (NAV) represents the per-share value of the ETF and is calculated daily.</p>
+                                    <div class="bg-secondary-50 p-4 rounded-lg">
+                                        <code class="text-secondary-800 font-mono">
+                                            NAV = (Total Assets - Total Liabilities) / Shares Outstanding
+                                        </code>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-md font-medium mb-2">NAV vs. Market Price</h3>
+                                    <p class="text-secondary-700 mb-4">ETFs can trade at a premium or discount to their NAV, though arbitrage mechanisms generally keep these differences small.</p>
+                                    <div class="chart-container h-40">
+                                        <canvas id="navChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Secondary Market Section -->
+                    <section id="secondary-market" class="mb-12">
+                        <header class="mb-8">
+                            <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">Secondary Market</h1>
+                            <p class="text-secondary-600">How ETF shares are traded on exchanges between investors.</p>
+                        </header>
+
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-lg font-semibold mb-4">Secondary Market Trading</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <p class="text-secondary-700 mb-4">Retail and institutional investors buy and sell ETF shares in the secondary market through exchanges via brokers, similar to trading individual stocks.</p>
+                                    <p class="text-secondary-700 mb-4">Prices on the secondary market are determined by supply and demand, fluctuating throughout the trading day.</p>
+                                    <p class="text-secondary-700">Unlike mutual funds, which settle at end-of-day net asset values (NAVs), ETFs require real-time price discovery mechanisms to maintain parity between market prices and underlying assets.</p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/500x300?text=Secondary+Market+Trading" alt="Secondary Market Trading" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-lg font-semibold mb-4">Arbitrage Mechanism</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/500x300?text=Arbitrage+Mechanism" alt="Arbitrage Mechanism" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                                <div>
+                                    <h3 class="text-md font-medium mb-2">Role of APs and Market Makers</h3>
+                                    <p class="text-secondary-700 mb-4">APs and market makers use arbitrage to ensure the ETF's market price aligns with the NAV.</p>
+                                    <ul class="list-disc list-inside space-y-2 text-secondary-700">
+                                        <li>If the ETF trades above its NAV, APs create shares to increase supply, lowering the price.</li>
+                                        <li>If it trades below, they redeem shares to decrease supply, raising the price.</li>
+                                    </ul>
+                                    <p class="text-secondary-700 mt-4">This dual-market structure ensures liquidity, efficient pricing, and a seamless investment vehicle for a wide range of participants.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-lg font-semibold mb-4">ETF Trading Volume by Venue</h2>
+                            <div class="chart-container">
+                                <canvas id="tradingVolumeChart"></canvas>
+                            </div>
+                            <p class="text-sm text-secondary-500 text-center mt-4">ETF trading activity occurs across multiple venues, requiring comprehensive data integration to achieve complete market transparency.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ETF Data Management Tab -->
+                <div class="main-tab-panel hidden" id="data-management-panel" role="tabpanel" aria-labelledby="data-management-tab">
+                    <!-- Data Management Section -->
+                    <section id="data-management" class="mb-12">
+                        <header class="mb-8">
+                            <h1 class="font-display text-3xl font-bold text-secondary-900 mb-2">ETF Data Management</h1>
+                            <p class="text-secondary-600">Comprehensive overview of ETF data infrastructure, challenges, and solutions.</p>
+                        </header>
+
+                        <!-- Data Management Challenges Section -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-6">Data Management Challenges</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">1</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">Fragmented Ecosystem</h3>
+                                            <p class="text-secondary-600 text-sm">Data must be sourced from multiple providers, including exchanges, authorized participants, clearing houses, and fund accountants.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">2</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">Intraday Trading</h3>
+                                            <p class="text-secondary-600 text-sm">Unlike mutual funds, ETFs trade throughout the day, requiring real-time data processing capabilities.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">3</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">Creation/Redemption Activity</h3>
+                                            <p class="text-secondary-600 text-sm">Transactions between authorized participants and the fund require specialized tracking.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">4</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">Market Price vs. NAV</h3>
+                                            <p class="text-secondary-600 text-sm">Both metrics must be tracked and reconciled, with premium/discount analysis.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">5</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">Volume Discovery</h3>
+                                            <p class="text-secondary-600 text-sm">Secondary market trading happens across multiple venues, requiring consolidation.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-xs">6</div>
+                                        <div class="ml-4">
+                                            <h3 class="text-md font-medium text-secondary-800">No Transfer Agent</h3>
+                                            <p class="text-secondary-600 text-sm">Unlike mutual funds, ETFs lack a centralized transfer agent for comprehensive data tracking.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Integration Architecture Section -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-6">Data Integration Architecture</h2>
+                            <div class="flex justify-center mb-6">
+                                <img src="/images/ingestion process.jpg" alt="ETF Data Integration Architecture" class="rounded-lg max-w-full h-auto" />
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Data Ingestion Layer</h3>
+                                    <p class="text-sm text-secondary-600">APIs and file-based integrations with multiple data providers.</p>
+                                </div>
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Normalization Engine</h3>
+                                    <p class="text-sm text-secondary-600">Standardizes data formats from disparate sources.</p>
+                                </div>
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Validation Framework</h3>
+                                    <p class="text-sm text-secondary-600">Multi-level checks ensuring data accuracy and completeness.</p>
+                                </div>
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Master Data Management</h3>
+                                    <p class="text-sm text-secondary-600">Centralized repository of ETF reference data.</p>
+                                </div>
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Analytics Layer</h3>
+                                    <p class="text-sm text-secondary-600">Provides insights and visualization capabilities.</p>
+                                </div>
+                                <div class="bg-secondary-50 p-4 rounded-lg">
+                                    <h3 class="font-medium text-secondary-800 mb-2">Distribution Services</h3>
+                                    <p class="text-sm text-secondary-600">Delivers processed data to downstream consumers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ETF Data Sources Section -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-6">ETF Data Sources</h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full min-w-full divide-y divide-secondary-200">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Data Source</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Frequency</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Primary Use</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-secondary-500 uppercase tracking-wider">Coverage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-secondary-200">
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Broadridge</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Monthly</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Trade Matching, Asset reporting, Market Intel</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">95% of Capital Group ETFs</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">State Street (NAV)</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Accounting, Asset reporting</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">100% of Capital Group ETF AUM</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">State Street (UCF)</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Accounting, Market Demand Analysis</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">100% of CG ETF Shares Creation/Outstanding</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-secondary-800">Fidelity</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Daily</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Detailed transaction analysis</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-600">Fidelity Platform only</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Case Study Section -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-6">Case Study: Achieving 99.9% Market Transparency</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-medium text-secondary-800 mb-2">Challenge</h3>
+                                    <p class="text-secondary-700 mb-4">With the launch of Capital Group's first ETFs in February 2022, the firm needed comprehensive visibility into trading activity across all market venues. Unlike mutual funds, which trade once daily at NAV, ETFs trade
+                                        continuously throughout the day across multiple exchanges and alternative trading systems (ATS).</p>
+
+                                    <h3 class="font-medium text-secondary-800 mb-2">Solution</h3>
+                                    <ul class="list-disc list-inside space-y-1 text-secondary-700 mb-4">
+                                        <li>Established direct feeds from major exchanges (NYSE, NASDAQ, CBOE)</li>
+                                        <li>Integrated with consolidated tape providers for comprehensive market coverage</li>
+                                        <li>Developed a custom reconciliation engine to identify and resolve data discrepancies</li>
+                                        <li>Built a real-time dashboard for monitoring trading activity across venues</li>
+                                    </ul>
+
+                                    <h3 class="font-medium text-secondary-800 mb-2">Results</h3>
+                                    <ul class="list-disc list-inside space-y-1 text-secondary-700">
+                                        <li>Achieved 99.9% visibility into all ETF trading activity across market venues</li>
+                                        <li>Reduced data latency from 15 minutes to near real-time (30 seconds)</li>
+                                        <li>Identified and addressed data gaps in dark pool and ATS reporting</li>
+                                        <li>Enabled comprehensive trading analytics for the investment team</li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="images/Shares Outstanding.png" alt="Market Transparency Case Study" class="rounded-lg max-w-full h-auto" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Asset Allocation Section -->
+                        <div class="glass-card p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-6">Asset Allocation by Fund Type</h2>
+                            <div class="chart-container">
+                                <canvas id="assetAllocationChart"></canvas>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="text-center">
+                                    <p class="text-sm font-medium text-secondary-600">Total ETF AUM</p>
+                                    <p class="text-2xl font-semibold text-secondary-800">$14.89B</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm font-medium text-secondary-600">Number of ETFs</p>
+                                    <p class="text-2xl font-semibold text-secondary-800">15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Add Main Tab Switching JavaScript -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Main tab switching functionality
+                    const mainTabs = document.querySelectorAll('[data-main-tab]');
+                    const mainTabPanels = document.querySelectorAll('.main-tab-panel');
+
+                    mainTabs.forEach(tab => {
+                        tab.addEventListener('click', function() {
+                            // Deactivate all tabs
+                            mainTabs.forEach(t => {
+                                t.classList.remove('border-primary-500');
+                                t.classList.add('border-transparent');
+                                t.setAttribute('aria-selected', 'false');
+                            });
+
+                            // Hide all tab panels
+                            mainTabPanels.forEach(panel => {
+                                panel.classList.add('hidden');
+                                panel.classList.remove('block');
+                            });
+
+                            // Activate current tab
+                            this.classList.remove('border-transparent');
+                            this.classList.add('border-primary-500');
+                            this.setAttribute('aria-selected', 'true');
+
+                            // Show the associated panel
+                            const tabId = this.getAttribute('data-main-tab');
+                            const panel = document.getElementById(tabId + '-panel');
+                            panel.classList.remove('hidden');
+                            panel.classList.add('block');
+                        });
+                    });
+
+                    // Data management tab functionality
+                    const dataTabs = document.querySelectorAll('#dataTabs [role="tab"][data-tab]');
+                    const dataTabPanels = document.querySelectorAll('#dataTabContent [role="tabpanel"]');
+
+                    dataTabs.forEach(tab => {
+                        tab.addEventListener('click', function() {
+                            // Deactivate all tabs
+                            dataTabs.forEach(t => {
+                                t.classList.remove('border-primary-500');
+                                t.classList.add('border-transparent');
+                                t.setAttribute('aria-selected', 'false');
+                            });
+
+                            // Hide all tab panels
+                            dataTabPanels.forEach(panel => {
+                                panel.classList.add('hidden');
+                                panel.classList.remove('block');
+                            });
+
+                            // Activate current tab
+                            this.classList.remove('border-transparent');
+                            this.classList.add('border-primary-500');
+                            this.setAttribute('aria-selected', 'true');
+
+                            // Show the associated panel
+                            const tabId = this.getAttribute('data-tab');
+                            const panel = document.getElementById(tabId);
+                            if (panel) {
+                                panel.classList.remove('hidden');
+                                panel.classList.add('block');
+                            }
+                        });
+                    });
+                });
+            </script>
+
+            <!-- Remove the duplicate Case Studies section from the main flow -->
             <!-- Scripts Section -->
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
