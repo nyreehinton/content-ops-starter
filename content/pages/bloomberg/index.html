@@ -815,7 +815,7 @@
                 <li><a href="/capital" class="nav-link">Capital Group</a></li>
                 <li><a href="/thirdbridge" class="nav-link">Third Bridge</a></li>
                 <li><a href="/bloomberg" class="nav-link active">Bloomberg</a></li>
-                <li><a href="/projects" class="nav-link">Projects</a></li>
+                <li><a href="/Experience" class="nav-link">Projects</a></li>
                 <li><a href="/tesla" class="nav-link">Tesla</a></li>
             </ul>
         </nav>
@@ -2237,20 +2237,25 @@
                                 const navLinks = document.querySelectorAll('.nav-link, .toc-link');
                                 navLinks.forEach(link => {
                                     link.addEventListener('click', function(e) {
-                                        e.preventDefault();
                                         const targetId = this.getAttribute('href');
-                                        const targetElement = document.querySelector(targetId);
 
-                                        if (targetElement) {
-                                            window.scrollTo({
-                                                top: targetElement.offsetTop - 80,
-                                                behavior: 'smooth'
-                                            });
+                                        // Check if this is an anchor link (starts with #)
+                                        if (targetId.startsWith('#')) {
+                                            e.preventDefault();
+                                            const targetElement = document.querySelector(targetId);
 
-                                            // Update active state
-                                            navLinks.forEach(l => l.classList.remove('active'));
-                                            this.classList.add('active');
+                                            if (targetElement) {
+                                                window.scrollTo({
+                                                    top: targetElement.offsetTop - 80,
+                                                    behavior: 'smooth'
+                                                });
+
+                                                // Update active state
+                                                navLinks.forEach(l => l.classList.remove('active'));
+                                                this.classList.add('active');
+                                            }
                                         }
+                                        // For external links (starting with /), let the browser handle navigation
                                     });
                                 });
 
