@@ -957,29 +957,30 @@
                             <p class="text-secondary-600">Understanding ETF creation and redemption mechanisms.</p>
                         </header>
 
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                            <!-- Creation Process -->
-                            <div class="glass-card p-6 stagger-item">
-                                <h2 class="text-lg font-semibold mb-4">Creation Process</h2>
-                                <div class="flex items-center justify-center mb-6">
-                                    <img src="https://via.placeholder.com/600x300?text=ETF+Creation+Process" alt="ETF Creation Process Diagram" class="rounded-lg max-w-full h-auto" />
+                        <!-- Combined Creation and Redemption Process -->
+                        <div class="glass-card p-6 mb-8 stagger-item">
+                            <h2 class="text-lg font-semibold mb-4">ETF Creation & Redemption Process</h2>
+
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h3 class="text-md font-medium mb-3">Creation Process</h3>
+                                    <div class="text-secondary-700">
+                                        <p class="mb-4">Authorized Participants (APs), often large financial institutions, work directly with the ETF issuer to create new ETF shares.</p>
+                                        <p>APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).</p>
+                                    </div>
                                 </div>
-                                <div class="text-secondary-700">
-                                    <p class="mb-4">Authorized Participants (APs), often large financial institutions, work directly with the ETF issuer to create new ETF shares.</p>
-                                    <p>APs deliver a "creation basket," which consists of the securities underlying the ETF (or equivalent cash). In return, they receive an equivalent number of ETF shares at the net asset value (NAV).</p>
+
+                                <div>
+                                    <h3 class="text-md font-medium mb-3">Redemption Process</h3>
+                                    <div class="text-secondary-700">
+                                        <p class="mb-4">APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.</p>
+                                        <p>This mechanism ensures the ETF's supply matches market demand.</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Redemption Process -->
-                            <div class="glass-card p-6 stagger-item">
-                                <h2 class="text-lg font-semibold mb-4">Redemption Process</h2>
-                                <div class="flex items-center justify-center mb-6">
-                                    <img src="public/images/Primary Market.webp" alt="ETF Redemption Process Diagram" class="rounded-lg max-w-full h-auto" />
-                                </div>
-                                <div class="text-secondary-700">
-                                    <p class="mb-4">APs redeem ETF shares by returning them to the issuer. In exchange, they receive the underlying securities or cash at the NAV.</p>
-                                    <p>This mechanism ensures the ETF's supply matches market demand.</p>
-                                </div>
+                            <div class="flex items-center justify-center">
+                                <img src="images/etfsketnow.png" alt="ETF Creation and Redemption Process Diagram" class="rounded-lg max-w-full h-auto" />
                             </div>
                         </div>
 
