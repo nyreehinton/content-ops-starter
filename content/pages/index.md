@@ -53,1220 +53,459 @@ seo:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyree Hinton | Financial Analyst & Product Manager Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Nyree Hinton | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN (for demo purposes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* CSS Variables */
-        :root {
-            /* Colors */
-            --bg-light: #f8f9fa;
-            --bg-neutral: #f0f2f5;
-            --bg-dark: #1a1a1a;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --text-secondary: #6c757d;
-            --accent-blue: #0A66C2; /* Updated to LinkedIn blue */
-            --accent-purple: #0A66C2; /* Changed to LinkedIn blue */
-            --bg-gradient-start: #FFFFFF;
-            --bg-gradient-end: #EDEDED;
-
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 4rem;
-
-            /* Border Radius */
-            --border-radius-sm: 4px;
-            --border-radius-md: 8px;
-            --border-radius-lg: 16px;
-
-            /* Transitions */
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
-
-            /* Shadows */
-            --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        /* Additional styles not covered by Tailwind */
+        html {
+            scroll-behavior: smooth;
         }
-
-        /* Global Styles */
-        body {
-            font-family: "Inter", sans-serif;
-            color: var(--text-dark);
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
-
-        main {
-            background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 0;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: #0A66C2; /* LinkedIn blue */
-            transition: color var(--transition-fast);
-        }
-
-        a:hover {
-            color: #0A66C2; /* LinkedIn blue */
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-align: center;
-            transition: all var(--transition-normal);
-            cursor: pointer;
-            background-color: #0A66C2; /* LinkedIn official blue color */
-            color: #FFFFFF; /* White text color */
-        }
-
-        .btn-primary {
-            background-color: #0A66C2; /* LinkedIn official blue color */
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-dark);
-            border: 2px solid #0A66C2;
-        }
-
-        .btn-outline:hover {
-            background-color: #0A66C2;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Animation Keyframes */
+        
+        /* Animations */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
         }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        
+        .animate-delay-100 {
+            animation-delay: 100ms;
         }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        
+        .animate-delay-200 {
+            animation-delay: 200ms;
         }
-
-        /* Header Navigation Styles */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1rem 0;
+        
+        .animate-delay-300 {
+            animation-delay: 300ms;
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        
+        /* Service card hover effect */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .main-nav {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-
-        .nav-link {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-blue);
-        }
-
-        .nav-link.active {
-            color: var(--accent-blue);
-        }
-
-        .nav-link.active::after {
+        
+        /* Processing step indicators */
+        .step-indicator::before {
             content: '';
             position: absolute;
+            top: 0;
+            left: 24px;
             bottom: 0;
-            left: 1rem;
-            right: 1rem;
-            height: 2px;
-            background-color: var(--accent-blue);
+            width: 1px;
+            background-color: #e5e7eb;
+            z-index: -1;
         }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                justify-content: flex-start;
-            }
-
-            .main-nav {
-                gap: 1rem;
-            }
-
-            .nav-link {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
+        
+        .process-step:last-child .step-indicator::before {
+            display: none;
         }
-    </style>
-
-</head>
-<body>
-    <!-- Header Navigation -->
-    <header class="site-header">
-        <nav class="nav-container">
-            <ul class="main-nav">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/capital" class="nav-link">Capital Group</a></li>
-                <li><a href="/thirdbridge" class="nav-link">Third Bridge</a></li>
-                <li><a href="/bloomberg" class="nav-link">Bloomberg</a></li>
-                <li><a href="/projects" class="nav-link">Projects</a></li>
-                <li><a href="/tesla" class="nav-link">Tesla</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Hero Section -->
-    <section class="hero-section" id="intro">
-        <div class="container hero-container">
-            <div class="hero-content slide-down">
-                <h1 class="hero-title">Explore my work</h1>
-                <div class="hero-image-container">
-                    <img src="/images/Hinton_Nyree_Default_Office - 3_Headshot.jpeg" alt="Nyree Hinton - Financial Analyst and Product Manager" class="hero-image">
-                </div>
-                <div class="hero-name">NYREE HINTON</div>
-                <p class="hero-description">
-                    A collection of my work as an Equity Analyst & Product Manager within the Financial sector
-                    spanning technology & consumer markets, M&A strategy, and ETF analytics.
-                </p>
-                <a href="#expertise" class="hero-cta">
-                    VIEW PORTFOLIO
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#expertise">
-                <span class="scroll-text">Scroll Down</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 5v14"></path>
-                    <path d="M19 12l-7 7-7-7"></path>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <style>
-        /* Hero Section Styles */
-        .hero-section {
+        
+        /* Form inputs focus styles */
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 1px #3b82f6;
+        }
+        
+        /* Hero section styles from index.html */
+        .hero {
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: transparent;
-            padding: 0;
-            margin-top: 80px;
-        }
-
-        .hero-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            flex: 1;
-            padding-top: 20px;
+            padding: 0;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: slideDown 1.5s ease forwards;
-        }
-
-        .hero-content > * {
+            margin: 0;
             opacity: 0;
             transform: translateY(20px);
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: var(--space-lg);
-            animation: fadeInUp 0.8s ease forwards 0.2s;
-        }
-
-        .hero-image-container {
-            width: 250px;
-            height: 250px;
-            margin: 2rem auto;
-            border-radius: 50%;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 0.6s;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0A66C2;
-            margin: 1.5rem 0;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 1s;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin: 1.5rem auto;
-            max-width: 600px;
-            line-height: 1.7;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 1.4s;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-weight: 500;
-            background-color: #0A66C2;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 1.8s;
-            transition: transform var(--transition-normal);
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            background-color: #0A66C2;
-            color: white;
-        }
-
-        @keyframes slideDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-image-container {
-                width: 200px;
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-image-container {
-                width: 180px;
-                height: 180px;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-                padding: 0 var(--space-md);
-            }
-        }
-    </style>
-
-    <!-- Portfolio Highlights Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Portfolio Highlights</h2>
-                <p class="section-subtitle"></p>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Capital Markets Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/bloomberg-logo-vector.png.jpg" alt="Bloomberg financial data visualization and analytics platform used for ETF transaction analysis" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Capital Markets</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Bloomberg Intelligence</h3>
-                        <p class="portfolio-description">Analyzed mobile, IoT, and automotive segments within Apple semiconductor suppliers (ams-SW) during my internship - returned full-time as an Equity Research Data Analyst evaluating financial performance and market opportunities across technology, media, and telecommunication (TMT) companies.</p>
-                        <div class="portfolio-tags">
-                            <span>Financial Analysis</span>
-                            <span>Market Research</span>
-                            <span>Technology Evaluation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Governance Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/Capital_Group_Companies.jpg" alt="Capital Group logo - where Nyree Hinton engineered ETL pipelines and data governance solutions" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Data Governance</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Capital Group</h3>
-                        <p class="portfolio-description">Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.</p>
-                        <div class="portfolio-tags">
-                            <span>ETL Pipelines</span>
-                            <span>Data Integration</span>
-                            <span>Process Optimization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Market Intelligence Item -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="/images/Thirdbrige.png.jpg" alt="Third Bridge logo - where Nyree Hinton conducted market intelligence research and executive-level discussions" />
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-category">Market Intelligence</div>
-                            <a href="#" class="portfolio-link">View Details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Third Bridge</h3>
-                        <p class="portfolio-description">Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.</p>
-                        <div class="portfolio-tags">
-                            <span>Market Research</span>
-                            <span>Investment Strategy</span>
-                            <span>Trend Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-cta">
-                <a href="/Experience" class="btn btn-primary">View Full Portfolio</a>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        /* Portfolio Section Styles */
-        .portfolio-section {
-            padding: var(--space-xl) 0;
-            background-color: transparent;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-lg);
-        }
-
-        .portfolio-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .portfolio-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .portfolio-card:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .portfolio-card:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-normal);
-        }
-
-        .portfolio-card:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: var(--space-md);
-            opacity: 0;
-            transition: opacity var(--transition-normal);
-        }
-
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-category {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: var(--space-xs);
-        }
-
-        .portfolio-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        .portfolio-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: white;
-            transition: width var(--transition-normal);
-        }
-
-        .portfolio-link:hover::after {
-            width: 100%;
-        }
-
-        .portfolio-content {
-            padding: var(--space-md);
-        }
-
-        .portfolio-title {
-            font-size: 1.3rem;
-            margin-bottom: var(--space-xs);
-            color: var(--text-dark);
-        }
-
-        .portfolio-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-sm);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .portfolio-tags span {
-            background-color: rgba(10, 102, 194, 0.1); /* LinkedIn blue with opacity */
-            color: #0A66C2; /* LinkedIn blue */
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .portfolio-cta {
-            text-align: center;
-            margin-top: var(--space-xl);
-        }
-
-        /* Responsive Styles for Portfolio Section */
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-md);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
-    <!-- Professional Expertise Section -->
-    <section id="expertise" class="expertise-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Subject Matter</h2>
-                <p class="section-subtitle"></p>
-            </div>
-
-            <div class="expertise-grid">
-                <!-- Financial Analysis Expertise -->
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-blue);">
-                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                            <line x1="6" y1="1" x2="6" y2="4"></line>
-                            <line x1="10" y1="1" x2="10" y2="4"></line>
-                            <line x1="14" y1="1" x2="14" y2="4"></line>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Financial Analysis</h3>
-                    <div class="expertise-divider"></div>
-                    <p class="expertise-description">
-                        Specialized in ETF analytics, transaction data analysis, and financial modeling to drive strategic decision-making and product development.
-                    </p>
-                    <ul class="expertise-skills">
-                        <li>ETF Analytics</li>
-                        <li>Transaction Analysis</li>
-                        <li>Financial Modeling</li>
-                        <li>Market Research</li>
-                    </ul>
-                    <div class="expertise-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-level="95%"></div>
-                        </div>
-                        <div class="level-text">Expert Level</div>
-                    </div>
-                </div>
-
-                <!-- Product Management Expertise -->
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-blue);">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Product Management</h3>
-                    <div class="expertise-divider"></div>
-                    <p class="expertise-description">
-                        Leading product development initiatives with a focus on data-driven decision making, stakeholder management, and agile methodologies.
-                    </p>
-                    <ul class="expertise-skills">
-                        <li>Product Strategy</li>
-                        <li>Stakeholder Management</li>
-                        <li>Agile Methodologies</li>
-                        <li>Product Roadmapping</li>
-                    </ul>
-                    <div class="expertise-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-level="90%"></div>
-                        </div>
-                        <div class="level-text">Advanced Level</div>
-                    </div>
-                </div>
-
-                <!-- Data Governance Expertise -->
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-blue);">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Data Governance</h3>
-                    <div class="expertise-divider"></div>
-                    <p class="expertise-description">
-                        Designing and implementing robust ETL pipelines and data governance frameworks to ensure data quality, compliance, and accessibility.
-                    </p>
-                    <ul class="expertise-skills">
-                        <li>ETL Pipeline Design</li>
-                        <li>Data Integration</li>
-                        <li>Data Quality Management</li>
-                        <li>Compliance Frameworks</li>
-                    </ul>
-                    <div class="expertise-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-level="85%"></div>
-                        </div>
-                        <div class="level-text">Proficient Level</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        /* Professional Expertise Section Styles */
-        .expertise-section {
-            padding: var(--space-xl) 0;
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-lg);
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: var(--space-sm);
-            color: var(--text-dark);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-secondary);
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-lg);
-        }
-
-        .expertise-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: var(--border-radius-md);
-            padding: var(--space-lg);
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .expertise-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .expertise-card:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .expertise-card:nth-child(3) {
+            animation: slideIn 1s ease forwards;
             animation-delay: 0.5s;
         }
 
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #0A66C2; /* LinkedIn blue */
-            opacity: 0.7;
-            transition: opacity var(--transition-normal);
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .expertise-card:hover::before {
-            opacity: 1;
-        }
-
-        .expertise-icon {
-            margin-bottom: var(--space-md);
-            display: inline-block;
-        }
-
-        .expertise-title {
+        .hero h1 {
             font-size: 1.5rem;
-            margin-bottom: var(--space-xs);
-            color: var(--text-dark);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin: 0;
+            color: #111111;
+            text-transform: uppercase;
         }
 
-        .expertise-divider {
-            width: 40px;
-            height: 3px;
-            background: #0A66C2; /* LinkedIn blue */
-            margin: var(--space-sm) 0;
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1.5s;
         }
 
-        .expertise-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-md);
-            line-height: 1.6;
+        .scroll-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a1a1aa;
         }
 
-        .expertise-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-xs);
-            list-style: none;
-            margin-top: var(--space-sm);
-        }
-
-        .expertise-skills li {
-            background-color: rgba(10, 102, 194, 0.1); /* LinkedIn blue with opacity */
-            color: #0A66C2; /* LinkedIn blue */
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .expertise-level {
-            margin-top: var(--space-sm);
-        }
-
-        .level-bar {
-            height: 6px;
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: var(--space-xs);
-        }
-
-        .level-fill {
-            height: 100%;
-            background: #0A66C2; /* LinkedIn blue */
-            border-radius: 3px;
-            width: 0;
-            transition: width 1.5s ease-in-out;
-        }
-
-        .expertise-card:hover .level-fill {
-            width: 95% !important;
-        }
-
-        .level-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .expertise-certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-xs);
-            margin-top: var(--space-sm);
-        }
-
-        .certification-badge {
-            background-color: rgba(10, 102, 194, 0.1); /* LinkedIn blue with opacity */
-            color: #0A66C2; /* LinkedIn blue */
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Responsive Styles for Expertise Section */
-        @media (max-width: 992px) {
-            .expertise-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-md);
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-card {
-                padding: var(--space-md);
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .section-subtitle {
-                font-size: 1rem;
-            }
+        :root {
+            --text-color: #111111;
         }
     </style>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle"></p>
+</head>
+
+<body class="font-sans text-gray-900 antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-16 md:h-20">
+                <a href="#" class="text-xl font-semibold tracking-tight">
+                    Nyree Hinton
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden flex items-center p-2" aria-label="Toggle menu" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li>
+                        <a href="/" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/capital" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Capital Group
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/thirdbridge" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Third Bridge
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/bloomberg" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Bloomberg
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/teslaa" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-blue-500 text-white hover:bg-blue-600 h-9 px-4 py-2">
+                            Tesla
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-5 shadow-lg" id="mobile-menu">
+            <ul class="space-y-4">
+                <li>
+                    <a href="/" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/capital" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Capital Group
+                    </a>
+                </li>
+                <li>
+                    <a href="/thirdbridgee" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Third Bridge
+                    </a>
+                </li>
+                <li>
+                    <a href="/bloomberg" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Bloomberg
+                    </a>
+                </li>
+                <li>
+                    <a href="/tesla" class="block text-center w-full rounded-md bg-blue-500 text-white py-2 px-4 mt-4 hover:bg-blue-600 transition-colors">
+                        Tesla
+                    </a>
+                </li>
+            </ul>
+            </div>
+    </header>
+
+    <!-- Hero Section (from index.html) -->
+    <section class="hero" id="home">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="hero-content flex items-center justify-center gap-12">
+                <div class="flex flex-col">
+                    <h1>Explore My Work</h1>
+                        </div>
+                <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg">
+                    <img src="/images/nyree-hinton-headshot.png" alt="Nyree Hinton" class="w-full h-full object-cover">
+                    </div>
+                        </div>
+                    </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+                </div>
+    </section>
+
+    <!-- Portfolio Highlights -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">Portfolio Highlights</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bloomberg Card -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <img src="/images/bloomberg-logo-vector.png.jpg" alt="Bloomberg" class="h-12 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Bloomberg Intelligence</h3>
+                    <p class="text-gray-600 mb-6">
+                        Analyzed mobile, IoT, and automotive segments within Apple semiconductor suppliers (ams-SW) during my internship - returned full-time as an Equity Research Data Analyst evaluating financial performance and market opportunities across technology, media, and telecommunication (TMT) companies.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Financial Analysis</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Market Research</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Technology Evaluation</span>
+                        </div>
+                    </div>
+
+                <!-- Capital Group Card -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <img src="/images/CaptialGroup_Logo_Horizontal.png" alt="Capital Group" class="h-12 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Capital Group</h3>
+                    <p class="text-gray-600 mb-6">
+                        Engineered robust ETL pipelines integrating 9 data sources, accelerating processing by 70% and ensuring reliable insights for both internal and external stakeholders.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">ETL Pipelines</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Data Integration</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Process Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Third Bridge Card -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <img src="/images/Thirdbrige.png.jpg" alt="Third Bridge" class="h-12 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Third Bridge</h3>
+                    <p class="text-gray-600 mb-6">
+                        Conducted 125+ executive-level discussions, uncovering vital trends in consumer staples, services, and agricultural markets that informed strategic investment decisions.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Market Research</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Investment Strategy</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Trend Analysis</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p>If you're looking for someone who can transform complex data into actionable insights, let's talk!</p>
+            <div class="text-center mt-12">
+                <a href="/portfolio" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    View Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
 
-                    <div class="contact-methods">
-                        <a href="https://www.linkedin.com/in/nyree-hinton" class="contact-method linkedin">
-                            <i class="fab fa-linkedin"></i>
-                            <span>Connect on LinkedIn</span>
-                        </a>
+    <!-- Subject Matter -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">Subject Matter</h2>
 
-                        <a href="https://github.com/nyreehinton" class="contact-method github">
-                            <i class="fab fa-github"></i>
-                            <span>Follow on GitHub</span>
-                        </a>
-
-                        <a href="mailto:nyreehinton@gmail.com" class="contact-method email">
-                            <i class="far fa-envelope"></i>
-                            <span>Email Me</span>
-                        </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Financial Analysis -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-blue-600 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19 15C20.6569 15 22 13.6569 22 12C22 10.3431 20.6569 9 19 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M5 15C3.34315 15 2 13.6569 2 12C2 10.3431 3.34315 9 5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 19C13.6569 19 15 17.6569 15 16C15 14.3431 13.6569 13 12 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 5C13.6569 5 15 6.34315 15 8C15 9.65685 13.6569 11 12 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4">Financial Analysis</h3>
+                    <p class="text-gray-600 mb-6">
+                        Specialized in ETF analytics, transaction data analysis, and financial modeling to drive strategic decision-making and product development.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">ETF Analytics</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Transaction Analysis</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Financial Modeling</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Market Research</span>
+                        </div>
+                    <div class="mt-8 text-gray-500">Expert Level</div>
+        </div>
+
+                <!-- Product Management -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-blue-600 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V6Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M9 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M9 16H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Product Management</h3>
+                    <p class="text-gray-600 mb-6">
+                        Leading product development initiatives with a focus on data-driven decision making, stakeholder management, and agile methodologies.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Product Strategy</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Stakeholder Management</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Agile Methodologies</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Product Roadmapping</span>
+                    </div>
+                </div>
+
+                <!-- Data Governance -->
+                <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-blue-600 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19 15C20.6569 15 22 13.6569 22 12C22 10.3431 20.6569 9 19 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M5 15C3.34315 15 2 13.6569 2 12C2 10.3431 3.34315 9 5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+            </div>
+                    <h3 class="text-2xl font-bold mb-4">Data Governance</h3>
+                    <p class="text-gray-600 mb-6">
+                        Designing and implementing robust ETL pipelines and data governance frameworks to ensure data quality, compliance, and accessibility.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">ETL Pipeline Design</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Data Integration</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Data Quality Management</span>
+                        <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Compliance Frameworks</span>
+        </div>
+                    <div class="mt-8 text-gray-500">Proficient Level</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <style>
-        /* Contact Section Styles */
-        .contact-section {
-            padding: var(--space-xl) 0;
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            position: relative;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
+    <!-- Footer with Social Links -->
+    <footer class="py-12 border-t">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/nyreehinton" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nyreehinton" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:nyree.hinton@gmail.com" class="text-gray-600 hover:text-blue-500 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        </a>
+                    </div>
+                <p class="text-gray-500 text-sm">© 2024 Nyree Hinton. All rights reserved.</p>
+                </div>
+            </div>
+    </footer>
 
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-xl);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-info {
-            text-align: center;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-            margin: 0 auto;
-            max-width: 300px;
-            width: 100%;
-        }
-
-        .contact-method:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-method i {
-            font-size: 1.5rem;
-            margin-right: var(--space-sm);
-        }
-
-        .contact-method.linkedin {
-            background-color: #0A66C2; /* LinkedIn official blue color */
-            color: white;
-        }
-
-        .contact-method.github {
-            background-color: #000000; /* GitHub black color */
-            color: white;
-        }
-
-        .contact-method.email {
-            background-color: #0A66C2; /* LinkedIn official blue color */
-            color: white;
-        }
-
-        /* Responsive Styles for Contact Section */
-        @media (max-width: 768px) {
-            .contact-container {
-                padding: var(--space-lg);
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-            }
-        }
-    </style>
-
-    <!-- JavaScript for Animations and Interactions -->
+    <!-- JavaScript -->
     <script>
+        // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu toggle
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-            const navRight = document.querySelector('.nav-right');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
-                    navRight.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
-            }
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-            // Dropdown toggle for mobile
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    // Only prevent default on mobile
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        this.parentElement.classList.toggle('active');
-                    }
+            // Close mobile menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
                 });
             });
 
-            // Smooth scrolling ONLY for hash links (internal page navigation)
+
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        if (mainNav && mainNav.classList.contains('active')) {
-                            mainNav.classList.remove('active');
-                            navRight.classList.remove('active');
-                            mobileMenuToggle.classList.remove('active');
-                        }
-
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: target.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }
                 });
             });
 
-            // Animate skill level bars
-            const animateSkillBars = () => {
-                document.querySelectorAll('.level-fill').forEach(bar => {
-                    const level = bar.getAttribute('data-level');
-                    bar.style.width = level;
-                });
-            };
-
-            // Animate elements when they come into view
-            const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.expertise-card, .portfolio-card, .contact-container');
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-
-                            // If this is a skill bar container, animate the bars
-                            if (entry.target.classList.contains('expertise-card')) {
-                                const bars = entry.target.querySelectorAll('.level-fill');
-                                bars.forEach(bar => {
-                                    const level = bar.getAttribute('data-level');
-                                    setTimeout(() => {
-                                        bar.style.width = level;
-                                    }, 300);
-                                });
-                            }
-
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1
-                });
-
+            // Scroll animations
+            function checkVisibility() {
+                const elements = document.querySelectorAll('.service-card, .process-step, .pricing-card');
                 elements.forEach(element => {
-                    observer.observe(element);
+                    const position = element.getBoundingClientRect();
+                    // If element is in viewport
+                    if (position.top < window.innerHeight * 0.8) {
+                        element.classList.add('animate-fade-in');
+                    }
                 });
-            };
+            }
 
-            // Initialize animations
-            animateOnScroll();
+            // Check visibility on load
+            checkVisibility();
 
-            // Header scroll effect
-            const header = document.querySelector('.site-header');
-            let lastScrollTop = 0;
-
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                lastScrollTop = scrollTop;
-            });
+            // Check visibility on scroll
+            window.addEventListener('scroll', checkVisibility);
         });
     </script>
 

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyree Hinton | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN (for demo purposes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Additional styles not covered by Tailwind */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+        
+        /* Service card hover effect */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Processing step indicators */
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 24px;
+            bottom: 0;
+            width: 1px;
+            background-color: #e5e7eb;
+            z-index: -1;
+        }
+        
+        .process-step:last-child .step-indicator::before {
+            display: none;
+        }
+        
+        /* Form inputs focus styles */
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 1px #3b82f6;
+        }
+        
+        /* Hero section styles from index.html */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            background: var(--primary-bg);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin: 0;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1.5s;
+        }
+        
+        .scroll-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a1a1aa;
+        }
+        
+        :root {
+            --primary-bg: #ffffff;
+            --text-color: #111111;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-900 antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <nav class="flex items-center justify-between h-16 md:h-20">
+                <a href="#" class="text-xl font-semibold tracking-tight">
+                    Nyree Hinton
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden flex items-center p-2" aria-label="Toggle menu" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li>
+                        <a href="#services" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#process" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Capital Group
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#comparison" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Third Bridge
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#comparison" class="text-sm font-medium hover:text-blue-500 transition-colors">
+                            Bloomberg
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-blue-500 text-white hover:bg-blue-600 h-9 px-4 py-2">
+                            Tesla
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-5 shadow-lg" id="mobile-menu">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#services" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="#process" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Process
+                    </a>
+                </li>
+                <li>
+                    <a href="#comparison" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
+                        Comparison
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="block text-center w-full rounded-md bg-blue-500 text-white py-2 px-4 mt-4 hover:bg-blue-600 transition-colors">
+                        Get Started
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section (from index.html) -->
+    <section class="hero" id="home">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="hero-content">
+                <h1>Explore My Work</h1>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+  
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Service filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('text-white', 'bg-gray-900');
+                        btn.classList.add('text-gray-700', 'hover:text-gray-900');
+                    });
+// Add active class to clicked button
+                    this.classList.remove('text-gray-700', 'hover:text-gray-900');
+                    this.classList.add('text-white', 'bg-gray-900');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter service cards
+                    serviceCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Pricing toggle (monthly/annual)
+            const billingToggle = document.getElementById('billing-toggle');
+            const monthlyPrices = document.querySelectorAll('.price-monthly');
+            const annualPrices = document.querySelectorAll('.price-annual');
+            
+            billingToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Show annual prices
+                    monthlyPrices.forEach(price => price.classList.add('hidden'));
+                    annualPrices.forEach(price => price.classList.remove('hidden'));
+                } else {
+                    // Show monthly prices
+                    monthlyPrices.forEach(price => price.classList.remove('hidden'));
+                    annualPrices.forEach(price => price.classList.add('hidden'));
+                }
+            });
+
+            // Budget calculator
+            const calculatorFeatures = document.querySelectorAll('.calculator-feature');
+            const pagesSlider = document.getElementById('pages-slider');
+            const pagesValue = document.getElementById('pages-value');
+            const complexitySlider = document.getElementById('complexity-slider');
+            const complexityValue = document.getElementById('complexity-value');
+            const calculatorTotal = document.getElementById('calculator-total');
+            
+            // Base price
+            let basePrice = 500;
+            
+            // Update calculator total
+            function updateCalculatorTotal() {
+                let total = basePrice;
+                
+                // Add feature costs
+                calculatorFeatures.forEach(feature => {
+                    if (feature.checked) {
+                        total += parseInt(feature.getAttribute('data-value'));
+                    }
+                });
+                
+                // Pages multiplier (100 per page)
+                total += parseInt(pagesSlider.value) * 100;
+                
+                // Complexity multiplier
+                const complexityMultipliers = {
+                    '1': 0.8, // Basic
+                    '2': 1.0, // Standard
+                    '3': 1.5  // Complex
+                };
+                total *= complexityMultipliers[complexitySlider.value];
+                
+                // Update the display
+                calculatorTotal.textContent = '$' + Math.round(total).toLocaleString();
+            }
+            
+            // Initialize calculator
+            pagesSlider.addEventListener('input', function() {
+                pagesValue.textContent = this.value + ' pages';
+                updateCalculatorTotal();
+            });
+            
+            complexitySlider.addEventListener('input', function() {
+                const complexityLabels = ['Basic', 'Standard', 'Complex'];
+                complexityValue.textContent = complexityLabels[this.value - 1];
+                updateCalculatorTotal();
+            });
+            
+            calculatorFeatures.forEach(feature => {
+                feature.addEventListener('change', updateCalculatorTotal);
+            });
+            
+            // Initialize values
+            updateCalculatorTotal();
+
+            // Contact form submission
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you shortly.');
+                contactForm.reset();
+            });
+
+            // Initialize dashboard preview chart
+            const previewChart = document.getElementById('previewChart');
+            if (previewChart) {
+                new Chart(previewChart, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Website Traffic',
+                            data: [1500, 2500, 2200, 3500, 4500, 5000],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize traffic sources chart
+            const trafficChart = document.getElementById('trafficChart');
+            if (trafficChart) {
+                new Chart(trafficChart, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Organic Search', 'Direct', 'Social Media', 'Referral', 'Email'],
+                        datasets: [{
+                            data: [45, 25, 15, 10, 5],
+                            backgroundColor: [
+                                '#3b82f6', // Blue
+                                '#10b981', // Green
+                                '#8b5cf6', // Purple
+                                '#f59e0b', // Amber
+                                '#ef4444'  // Red
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize engagement metrics chart
+            const engagementChart = document.getElementById('engagementChart');
+            if (engagementChart) {
+                new Chart(engagementChart, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Page Views', 'Avg. Time on Page', 'Bounce Rate', 'Conversion Rate'],
+                        datasets: [{
+                            label: 'Current Month',
+                            data: [15000, 3.2, 35, 5.7],
+                            backgroundColor: '#3b82f6'
+                        },
+                        {
+                            label: 'Previous Month',
+                            data: [12000, 2.8, 42, 4.2],
+                            backgroundColor: '#93c5fd'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll animations
+            function checkVisibility() {
+                const elements = document.querySelectorAll('.service-card, .process-step, .pricing-card');
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    // If element is in viewport
+                    if (position.top < window.innerHeight * 0.8) {
+                        element.classList.add('animate-fade-in');
+                    }
+                });
+            }
+            
+            // Check visibility on load
+            checkVisibility();
+            
+            // Check visibility on scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+</body>
+</html>
