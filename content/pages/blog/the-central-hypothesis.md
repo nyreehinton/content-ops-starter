@@ -10,7 +10,7 @@ excerpt: >-
   model. This means that mileage displayed on the odometer may not reflect the
   actual road distance covered, but rather a software-generated estimation that
   can be adjusted dynamically based on energy efficiency calculations, driving
-  style, and Tesla’s internal algorithms.
+  style, and Tesla's internal algorithms.
 bottomSections: []
 isFeatured: true
 isDraft: false
@@ -21,7 +21,7 @@ styles:
     textAlign: center
 featuredImage:
   type: ImageBlock
-  url: /images/Tesla Patent.png
+  url: /images/tesla/Tesla Patent.png
   altText: Image alt text placeholder
   elementId: ''
   styles:
@@ -39,7 +39,7 @@ seo:
 
 Well......what's an odometer?
 
-The central hypothesis of this report is that the mileage displayed on Tesla’s MCU isn't the true distance you traveled.. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
+The central hypothesis of this report is that the mileage displayed on Tesla's MCU isn't the true distance you traveled.. **Traditional** odometers work like bicycle speedometers - count wheel rotations, multiply by circumference. One revolution = fixed distance. SAE J218 standards ensure ±2% accuracy through this physical method.
 
 ![](/images/IMG_1270.jpeg)
 
@@ -49,7 +49,7 @@ The central hypothesis of this report is that the mileage displayed on Tesla’s
 
 ### Patent US8054038B2: Technical Architecture Explained
 
-Tesla’s system redefines how mileage is calculated. Instead of relying on physical wheel rotations, Tesla uses an energy-based metric to estimate the distance traveled. **Patent US8054038B2** reveals that Tesla’s engineers have transformed “mileage” into a predictive energy consumption metric that is dynamically weighted by seven key variables.
+Tesla's system redefines how mileage is calculated. Instead of relying on physical wheel rotations, Tesla uses an energy-based metric to estimate the distance traveled. **Patent US8054038B2** reveals that Tesla's engineers have transformed "mileage" into a predictive energy consumption metric that is dynamically weighted by seven key variables.
 
 <details>
   <summary style="cursor: pointer; font-size: 18px; font-weight: bold;">Visualization </summary>
@@ -162,23 +162,23 @@ This patent highlights the complexity and customization of Tesla's mileage calcu
 
 <div style="text-align: center">## A Mile is A Mile</div>
 
-<div style="text-align: left">Your Tesla isn’t measuring physical distance in the past, it’s simulating it, subject to future changes.
-Key Excerpts from Tesla’s Patent US8054038B2Tesla’s patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:</div>
+<div style="text-align: left">Your Tesla isn't measuring physical distance in the past, it's simulating it, subject to future changes.
+Key Excerpts from Tesla's Patent US8054038B2Tesla's patent explicitly describes how odometer readings are generated through energy usage projections rather than pure physical measurements:</div>
 
-“Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information.”
+"Converting the total travel miles to a second quantity of electrical energy using a miles-to-electrical energy conversion factor, wherein said miles-to-electrical energy conversion factor varies based on road and traffic condition information."
 
-Tesla’s patent further elaborates on how memory-based data storage and machine learning play a role in mileage calculations.
+Tesla's patent further elaborates on how memory-based data storage and machine learning play a role in mileage calculations.
 
-“Controller 301 is also coupled to memory 311, thereby providing controller 301 with access to historical data, for example driving routines, average vehicle mileage, specific driver practices, previous driving routes.”
+"Controller 301 is also coupled to memory 311, thereby providing controller 301 with access to historical data, for example driving routines, average vehicle mileage, specific driver practices, previous driving routes."
 
-This means that Tesla vehicles “learn” from previous driving behavior and use it to estimate future mileage calculations. If a driver historically drove in an energy-efficient manner, the system might assume similar efficiency going forward, even if conditions change. Conversely, if a driver has been classified as an “aggressive” driver, the system may permanently adjust the odometer’s mileage calculations to assume higher energy consumption, potentially leading to an inflated odometer reading.
+This means that Tesla vehicles "learn" from previous driving behavior and use it to estimate future mileage calculations. If a driver historically drove in an energy-efficient manner, the system might assume similar efficiency going forward, even if conditions change. Conversely, if a driver has been classified as an "aggressive" driver, the system may permanently adjust the odometer's mileage calculations to assume higher energy consumption, potentially leading to an inflated odometer reading.
 
-This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver’s habits—a mile is a mile.
+This is not how a traditional odometer works. In a standard car, mileage is objective and independent of the driver's habits—a mile is a mile.
 
-<div style="text-align: center">## The Role of Factor Multipliers: The “Aggressive Driving Penalty”</div>
+<div style="text-align: center">## The Role of Factor Multipliers: The "Aggressive Driving Penalty"</div>
 
 ![](/images/IMG_1271.jpeg)
-Central to Tesla’s predictive odometer system is the application of multipliers that adjust energy-to-mile conversion rates based on driving style. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption. Driving behaviors are categorized into modes, such as:
+Central to Tesla's predictive odometer system is the application of multipliers that adjust energy-to-mile conversion rates based on driving style. These adjustments effectively mean that some drivers accumulate more miles for the same energy consumption. Driving behaviors are categorized into modes, such as:
 
 | Mode       | Multiplier | Energy-to-mile Conversion                                                                           |
 | ---------- | ---------- | --------------------------------------------------------------------------------------------------- |
@@ -188,13 +188,13 @@ Central to Tesla’s predictive odometer system is the application of multiplier
 
 For example, if a Tesla driver consistently accelerates rapidly and brakes hard, the vehicle may apply a multiplier of 0.95 to the miles-per-kWh ratio. This means that for every 95 miles actually driven, the odometer could record 100 miles. Over time, this artificially inflates the mileage accumulation, pushing the vehicle closer to warranty expiration faster than expected.
 
-Tesla Dealers Have the Ability to Set and Adjust the Vehicle’s Energy Efficiency
+Tesla Dealers Have the Ability to Set and Adjust the Vehicle's Energy Efficiency
 
-Another key discovery in the patent reveals that Tesla’s factory or dealership can manually adjust a vehicle’s energy efficiency rating, which directly impacts how many miles are recorded on the odometer.
+Another key discovery in the patent reveals that Tesla's factory or dealership can manually adjust a vehicle's energy efficiency rating, which directly impacts how many miles are recorded on the odometer.
 
-“The electrical energy per mile conversion factor is set by the factory/dealer… updated over time to reflect the conversion efficiency obtained by that particular vehicle.”
+"The electrical energy per mile conversion factor is set by the factory/dealer... updated over time to reflect the conversion efficiency obtained by that particular vehicle."
 
-This confirms that Tesla has the ability to remotely alter how many miles are recorded per unit of energy consumed. If a Tesla reduces a vehicle’s efficiency setting (in Wh/mi), then more miles will be logged for the same amount of energy used.
+This confirms that Tesla has the ability to remotely alter how many miles are recorded per unit of energy consumed. If a Tesla reduces a vehicle's efficiency setting (in Wh/mi), then more miles will be logged for the same amount of energy used.
 
 Tesla has the ability to: Modify the efficiency conversion factor remotely via software updates. Adjust odometer readings through energy efficiency recalibrations. Account for battery degradation without notifying the user, by shifting efficiency assumptions.
 
@@ -202,7 +202,7 @@ This means that a Tesla can record additional miles simply by recalibrating its 
 
 Conclusion
 
-While this adaptive feature demonstrates Tesla’s technological sophistication, it introduces subjectivity into the odometer system, diverging from the objective nature of traditional odometers.Stay tuned for further analysis on how this issue affects real-world Tesla ownership.
+While this adaptive feature demonstrates Tesla's technological sophistication, it introduces subjectivity into the odometer system, diverging from the objective nature of traditional odometers.Stay tuned for further analysis on how this issue affects real-world Tesla ownership.
 
 ```
 

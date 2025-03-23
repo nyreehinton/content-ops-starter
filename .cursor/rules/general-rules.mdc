@@ -14,20 +14,20 @@ This directory contains the Model Context Protocols (MCPs) that define guideline
    - Provides foundational guidelines for content operations
    - Defines HTML-TSX pairing patterns
    - Establishes content workflow and automation standards
-   - [View Document](mdc:mcp-document.md)
+   - [mcp-document.md](mdc:.cursor/rules/mcp-document.md)
 
 2. **Replit Integration MCP** (`Model Context Protocol (MCP) for Replit Integration.md`)
 
    - Guidelines for integrating Replit applications
    - Component structure and styling standards
    - Build process compatibility requirements
-   - [View Document](mdc:<./Model%20Context%20Protocol%20(MCP)%20for%20Replit%20Integration.md>)
+   - [Model Context Protocol (MCP) for Replit Integration.md](mdc:.cursor/Model Context Protocol (MCP) for Replit Integration.md)
 
 3. **HTML-TSX Protocol MCP** (`HTML_TSX_PROTOCOL.md`)
    - Standardizes HTML-TSX paired web development
    - Defines file structure and component relationships
    - Provides content generation rules and synchronization protocols
-   - [View Document](mdc:HTML_TSX_PROTOCOL.md)
+   - [HTML_TSX_PROTOCOL.md](mdc:.cursor/rules/HTML_TSX_PROTOCOL.md)
 
 ## Using the MCPs
 
@@ -60,5 +60,4 @@ To add a new MCP:
 
 ## Related Resources
 
-- [Cursor Project Rules](mdc:../cursor_project_rules)
-- [Implementation Plan](mdc:../implementation-plan.mdc)
+

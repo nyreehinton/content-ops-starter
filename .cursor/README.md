@@ -22,7 +22,7 @@ This directory contains the Model Context Protocols (MCPs) that define guideline
    - Standardizes HTML-TSX paired web development
    - Defines file structure and component relationships
    - Provides content generation rules and synchronization protocols
-   - [View Document](./HTML_TSX_PROTOCOL.md)
+   - [View Document](./rules/HTML_TSX_PROTOCOL.md)
 
 ## Using the MCPs
 
@@ -52,8 +52,3 @@ To add a new MCP:
    - Content reference
    - Related documents
 3. Update the metadata in `mcp.json`
-
-## Related Resources
-
-- [Cursor Project Rules](../cursor_project_rules)
-- [Implementation Plan](../implementation-plan.mdc)

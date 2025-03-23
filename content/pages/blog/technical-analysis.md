@@ -1,10 +1,10 @@
 ---
 type: PostLayout
-title: Comparative Analysis of A Tesla Model Y’s Odometer (Part 2)
+title: Comparative Analysis of A Tesla Model Y's Odometer (Part 2)
 slug: technical-analysis
 date: '2025-02-14'
 excerpt: >-
-  With the theoretical foundation established regarding Tesla’s software-driven
+  With the theoretical foundation established regarding Tesla's software-driven
   odometer calculations, the next step is to implement a rigorous technical
   analysis using real-world data sources from a subject vehicle: a 2020 Tesla
   Model Y. This section details the methods, data sources, equations, and key
@@ -38,7 +38,7 @@ styles:
 author: content/data/nyree.json
 ---
 
-With the theoretical foundation established regarding Tesla’s software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla’s energy-based odometer system and real-world mileage measurements.
+With the theoretical foundation established regarding Tesla's software-driven odometer calculations, the next step focuses on quantifying discrepancies between Tesla's energy-based odometer system and real-world mileage measurements.
 ![](/images/1F8BAC34-F885-46D9-882B-03D772A6BDD7.png)
 
 The subject of this analysis is a 2020 Tesla Model Y Long Range, purchased in December 2022. The vehicle features an 82-kWh battery pack with an EPA-estimated range of 326 miles (at 265 Wh/mile efficiency).
@@ -64,14 +64,14 @@ The analysis relies on multiple independent data sources to cross-validate the m
 |      **Energy Consumed (kWh)**       | The total amount of electrical energy used by the vehicle over a given period of time or distance.                                                                                                  |
 |            **EPA Wh/mi**             | The U.S. Environmental Protection Agency's (EPA) estimate of energy consumption per mile in watt-hours, based on a controlled test cycle. For the 2020 Model Y Long Range, this value is 265 Wh/mi. |
 |          **Vehicle Wh/mi**           | Real-world energy efficiency, calculated by dividing energy consumed (kWh) by the actual physical distance traveled.                                                                                |
-|          **Odometer Miles**          | Miles displayed on the vehicle’s touchscreen (software-calculated).                                                                                                                                 |
-| **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla’s energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
-|           **Discrepancy**            | The percentage difference between Tesla’s odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
+|          **Odometer Miles**          | Miles displayed on the vehicle's touchscreen (software-calculated).                                                                                                                                 |
+| **Efficiency Adjustment Factor (η)** | A multiplier applied to Tesla's energy-based mileage calculation to account for factors like driving behavior, battery health, and environmental conditions.                                        |
+|           **Discrepancy**            | The percentage difference between Tesla's odometer reading and the real-world mileage, highlighting the extent of mileage inflation or deflation.                                                   |
 
 <div style="text-align: center"># Telementry Data</div>
 
 <details>
-  <summary><strong>A. Tesla’s In-Car Data Logs</strong></summary>
+  <summary><strong>A. Tesla's In-Car Data Logs</strong></summary>
   - **Local Logs Stored:**
     - Odometer Readings: Official vehicle mileage.
     - Trip Data: Energy efficiency (Wh/mi), distance, energy consumed.
@@ -114,17 +114,17 @@ The analysis relies on multiple independent data sources to cross-validate the m
 
 Using the EPA efficiency value of **265 Wh/mi**, we calculate the expected mileage based on the total energy consumed:
 
-![](/images/EPA-Estimated%20Mileage.png)
+![](/images/tesla/EPA-Estimated%20Mileage.png)
 
 ---
 
 #### **2. Tesla Energy-Efficiency Mileage**
 
-Next, we calculate mileage using Tesla’s real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
+Next, we calculate mileage using Tesla's real-world efficiency values, which ranged from **299 to 370 Wh/mi** during the study. Using the **average efficiency (370 Wh/mi)** for simplicity:
 
-![](/images/Tesla%20Energy-Efficiency%20Mileage.png)
+![](/images/tesla/Tesla%20Energy-Efficiency%20Mileage.png)
 
-This value represents the expected mileage based on Tesla’s **real-world energy consumption metrics**.
+This value represents the expected mileage based on Tesla's **real-world energy consumption metrics**.
 
 ---
 
@@ -132,7 +132,7 @@ This value represents the expected mileage based on Tesla’s **real-world energ
 
 The **physical mileage** was calculated using the using odometer displayed in-vehicle:
 
-![](/images/Physical%20Mileage.png)
+![](/images/tesla/Physical%20Mileage.png)
 
 This represents the actual ground distance traveled and serves as the baseline for comparison.
 
@@ -140,11 +140,11 @@ This represents the actual ground distance traveled and serves as the baseline f
 
 #### **4. Odometer Discrepancy**
 
-Finally, we calculate the **percentage discrepancy** between Tesla’s reported odometer mileage and the physically measured mileage:
+Finally, we calculate the **percentage discrepancy** between Tesla's reported odometer mileage and the physically measured mileage:
 
-![](/images/Odometer%20Discrepancy.png)
+![](/images/tesla/Odometer%20Discrepancy.png)
 
-Tesla’s odometer reading is **inflated by 12.64%** relative to the actual physical distance measured.
+Tesla's odometer reading is **inflated by 12.64%** relative to the actual physical distance measured.
 
 ---
 

@@ -2,7 +2,7 @@
 
 This protocol standardizes how AI models interact with your content-ops-starter repository, specifically optimizing for your preferred approach of serving full HTML pages with corresponding TSX components.
 
-> **Note**: This protocol works in conjunction with the [content-ops-starter MCP](./mcp-document.md) and [Replit Integration MCP](<./Model%20Context%20Protocol%20(MCP)%20for%20Replit%20Integration.md>). When developing HTML-TSX paired components, refer to all relevant protocols.
+> **Note**: This protocol works in conjunction with the [content-ops-starter MCP](./mcp-document.md) and [Replit Integration MCP](<./Model Context Protocol (MCP) for Replit Integration.md>). When developing HTML-TSX paired components, refer to all relevant protocols.
 
 ## File Structure Protocol
 
