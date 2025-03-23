@@ -1,12 +1,14 @@
 'use client';
 
 import { mainArticle } from '@/data/analysisData';
+import { getSafeArticle } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
 
 /**
  * Overview tab content for the featured analysis
  */
 export default function OverviewTab() {
+  const article = getSafeArticle(mainArticle);
   return (
     <div className={styles.tabContentSection}>
       <h3 className={styles.tabTitle}>Overview</h3>
@@ -16,14 +18,14 @@ export default function OverviewTab() {
           <div className={styles.contentBlock}>
             <h4 className={styles.contentSubtitle}>Executive Summary</h4>
             <p className={styles.textLarge}>
-              {mainArticle.executiveSummary}
+              {article.executiveSummary}
             </p>
           </div>
           
           <div className={styles.keyPoints}>
             <h4>Key Points</h4>
             <ul>
-              {mainArticle.keyPoints.map((point, index) => (
+              {article.keyPoints.map((point, index) => (
                 <li key={index}>
                   <div className={styles.keyPointIcon}>
                     <i className="fas fa-check-circle"></i>
@@ -49,7 +51,7 @@ export default function OverviewTab() {
               Highlights
             </h4>
             <ul>
-              {mainArticle.highlights.map((highlight, index) => (
+              {article.highlights.map((highlight, index) => (
                 <li key={index}>{highlight}</li>
               ))}
             </ul>
@@ -57,8 +59,8 @@ export default function OverviewTab() {
           
           <div className={styles.analystInfo}>
             <img 
-              src={mainArticle.analyst.imageUrl} 
-              alt={mainArticle.analyst.name}
+              src={article.analyst.imageUrl} 
+              alt={article.analyst.name}
               className={styles.analystImage}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -66,11 +68,11 @@ export default function OverviewTab() {
               }}
             />
             <div>
-              <div className={styles.analystName}>{mainArticle.analyst.name}</div>
-              <div className={styles.analystTitle}>{mainArticle.analyst.title}</div>
+              <div className={styles.analystName}>{article.analyst.name}</div>
+              <div className={styles.analystTitle}>{article.analyst.title}</div>
             </div>
           </div>
-          <p className={styles.analystBio}>{mainArticle.analyst.bio}</p>
+          <p className={styles.analystBio}>{article.analyst.bio}</p>
         </div>
       </div>
     </div>

@@ -1,12 +1,16 @@
 'use client';
 
 import { producerImplications, consumerImplications, keyTakeaway } from '@/data/analysisData';
+import { getSafeImplications, getSafeKeyTakeaway } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
 
 /**
  * Conclusion tab content for the featured analysis
  */
 export default function ConclusionTab() {
+  const safeProducerImplications = getSafeImplications(producerImplications);
+  const safeConsumerImplications = getSafeImplications(consumerImplications);
+  const safeKeyTakeaway = getSafeKeyTakeaway(keyTakeaway);
   return (
     <div className={styles.tabContentSection}>
       <h3 className={styles.tabTitle}>Conclusion & Implications</h3>
@@ -16,7 +20,7 @@ export default function ConclusionTab() {
           <i className="fas fa-quote-left"></i>
           <h4>Key Takeaway</h4>
         </div>
-        <p className={styles.takeawayQuote}>{keyTakeaway}</p>
+        <p className={styles.takeawayQuote}>{safeKeyTakeaway}</p>
       </div>
       
       <div className={styles.contentColumns}>
@@ -30,7 +34,7 @@ export default function ConclusionTab() {
                   <h5>For Producers</h5>
                 </div>
                 <ul className={styles.implicationsList}>
-                  {producerImplications.map((implication, index) => (
+                  {safeProducerImplications.map((implication, index) => (
                     <li key={index}>
                       <span className={styles.implicationIcon}>
                         <i className="fas fa-angle-right"></i>
@@ -46,7 +50,7 @@ export default function ConclusionTab() {
                   <h5>For Consumers</h5>
                 </div>
                 <ul className={styles.implicationsList}>
-                  {consumerImplications.map((implication, index) => (
+                  {safeConsumerImplications.map((implication, index) => (
                     <li key={index}>
                       <span className={styles.implicationIcon}>
                         <i className="fas fa-angle-right"></i>

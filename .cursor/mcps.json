@@ -1,0 +1,18 @@
+{
+    "mcps": [{
+            "id": "content_ops_starter",
+            "name": "Content Operations Starter MCP",
+            "path": "docs/mcp-document.md"
+        },
+        {
+            "id": "replit_integration",
+            "name": "Replit Integration MCP",
+            "path": "docs/Model Context Protocol (MCP) for Replit Integration.md"
+        },
+        {
+            "id": "html_tsx_protocol",
+            "name": "HTML-TSX Protocol MCP",
+            "path": "docs/HTML_TSX_PROTOCOL.md"
+        }
+    ]
+}

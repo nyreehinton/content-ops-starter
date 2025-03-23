@@ -1,24 +1,15 @@
 import { useState } from 'react';
 import styles from '@/styles/ThirdBridge.module.css';
 import HeroSection from '@/components/thirdbridge/featured-analysis/HeroSection';
-import Tabs from '@/components/thirdbridge/ui/Tabs';
-import OverviewTab from '@/components/thirdbridge/featured-analysis/OverviewTab';
-import PriceDataTab from '@/components/thirdbridge/featured-analysis/PriceDataTab';
-import IndustryStructureTab from '@/components/thirdbridge/featured-analysis/IndustryStructureTab';
-import ConclusionTab from '@/components/thirdbridge/featured-analysis/ConclusionTab';
+import Link from 'next/link';
 import FeaturedCard from '@/components/thirdbridge/featured-analysis/FeaturedCard';
 import { featuredAnalyses } from '@/data/analysisData';
+import { getSafeAnalysisCard } from '@/components/thirdbridge/utils/dataHelpers';
 
 /**
  * Main Featured Analysis Section that contains the hero article and cards
  */
 export default function FeaturedAnalysisSection() {
-  const tabs = [
-    { id: 'overview', label: 'Overview', content: <OverviewTab /> },
-    { id: 'data', label: 'Price Data', content: <PriceDataTab /> },
-    { id: 'industry', label: 'Industry Structure', content: <IndustryStructureTab /> },
-    { id: 'conclusion', label: 'Conclusion', content: <ConclusionTab /> },
-  ];
 
   return (
     <section className={styles.sectionContent}>
@@ -41,8 +32,15 @@ export default function FeaturedAnalysisSection() {
         {/* Hero Section with Overlay Text */}
         <HeroSection />
         
-        {/* Content Tabs */}
-        <Tabs tabs={tabs} />
+        {/* Link to full analysis */}
+        <div className={styles.viewFullAnalysisContainer}>
+          <Link href="/egg-price-surge-2025">
+            <button className={styles.viewFullAnalysisButton}>
+              <i className="fas fa-eye"></i>
+              View Full Analysis
+            </button>
+          </Link>
+        </div>
       </div>
       
       {/* More Featured Analyses */}
@@ -54,7 +52,7 @@ export default function FeaturedAnalysisSection() {
       </div>
       
       <div className={styles.cardsGrid}>
-        {featuredAnalyses.map((analysis) => (
+        {(featuredAnalyses || []).map((analysis) => (
           <FeaturedCard key={analysis.id} analysis={analysis} />
         ))}
       </div>

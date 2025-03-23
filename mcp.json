@@ -1,0 +1,39 @@
+{
+    "mcp_documents": {
+        "content_ops_starter": {
+            "title": "Model Context Protocol (MCP) for content-ops-starter Repository",
+            "description": "Guidelines for working with the content-ops-starter codebase to maintain consistency, ensure proper content handling, and streamline development workflows.",
+            "file_path": "docs/mcp-document.md",
+            "content": "@docs/mcp-document.md",
+            "related_documents": [
+                "replit_integration",
+                "html_tsx_protocol"
+            ]
+        },
+        "replit_integration": {
+            "title": "Model Context Protocol (MCP) for Replit Integration",
+            "description": "Guidelines for integrating Replit-based application components into a Next.js content-ops-starter project.",
+            "file_path": "docs/Model Context Protocol (MCP) for Replit Integration.md",
+            "content": "@docs/Model Context Protocol (MCP) for Replit Integration.md",
+            "related_documents": [
+                "content_ops_starter",
+                "html_tsx_protocol"
+            ]
+        },
+        "html_tsx_protocol": {
+            "title": "Model Context Protocol for HTML-TSX Paired Web Development",
+            "description": "Protocol standardizing how AI models interact with HTML-TSX paired web development in the content-ops-starter repository.",
+            "file_path": "docs/HTML_TSX_PROTOCOL.md",
+            "content": "@docs/HTML_TSX_PROTOCOL.md",
+            "related_documents": [
+                "content_ops_starter",
+                "replit_integration"
+            ]
+        }
+    },
+    "metadata": {
+        "version": "1.0",
+        "last_updated": "2024-03-21",
+        "document_count": 3
+    }
+}

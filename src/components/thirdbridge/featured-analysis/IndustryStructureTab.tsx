@@ -1,12 +1,16 @@
 'use client';
 
 import { industryData, structuralChallenges, calMaineImpact } from '@/data/analysisData';
+import { getSafeIndustryData } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
 
 /**
  * Industry Structure tab content for the featured analysis
  */
 export default function IndustryStructureTab() {
+  const safeIndustryData = getSafeIndustryData(industryData);
+  const safeStructuralChallenges = structuralChallenges || [];
+  const safeCalMaineImpact = calMaineImpact || [];
   return (
     <div className={styles.tabContentSection}>
       <h3 className={styles.tabTitle}>Industry Structure Analysis</h3>
@@ -35,7 +39,7 @@ export default function IndustryStructureTab() {
           <div className={styles.contentBlock}>
             <h4 className={styles.contentSubtitle}>Current Industry Metrics</h4>
             <div className={styles.metricsList}>
-              {industryData.metrics.map((metric, index) => (
+              {safeIndustryData.metrics.map((metric, index) => (
                 <div key={index} className={styles.metricItem}>
                   <span className={styles.metricName}>{metric.name}</span>
                   <span className={styles.metricValue}>{metric.value}</span>
@@ -47,7 +51,7 @@ export default function IndustryStructureTab() {
           <div className={styles.structuralChallenges}>
             <h4 className={styles.contentSubtitle}>Structural Vulnerabilities</h4>
             <div className={styles.challengesGrid}>
-              {structuralChallenges.map((challenge, index) => (
+              {safeStructuralChallenges.map((challenge, index) => (
                 <div key={index} className={styles.challengeCard}>
                   <div className={styles.challengeIcon}>
                     <i className={challenge.icon}></i>
@@ -64,7 +68,7 @@ export default function IndustryStructureTab() {
           <div className={styles.impactAnalysis}>
             <h4 className={styles.contentSubtitle}>Impact of California & Maine Regulations</h4>
             <div className={styles.impactGrid}>
-              {calMaineImpact.map((impact, index) => (
+              {safeCalMaineImpact.map((impact, index) => (
                 <div key={index} className={styles.impactCard}>
                   <div className={styles.impactHeader}>
                     <div className={styles.impactIcon}>
@@ -101,7 +105,7 @@ export default function IndustryStructureTab() {
               Market Concentration
             </h4>
             <div className={styles.companiesList}>
-              {industryData.topCompanies.map((company, index) => (
+              {safeIndustryData.topCompanies.map((company, index) => (
                 <div key={index} className={styles.companyItem}>
                   <div className={styles.companyRank}>{index + 1}</div>
                   <div className={styles.companyInfo}>
@@ -119,7 +123,7 @@ export default function IndustryStructureTab() {
               Key Regulations
             </h4>
             <div className={styles.regulationsList}>
-              {industryData.regulations.map((regulation, index) => (
+              {safeIndustryData.regulations.map((regulation, index) => (
                 <div key={index} className={styles.regulationItem}>
                   <span className={styles.regulationName}>{regulation.name}</span>
                   <span 

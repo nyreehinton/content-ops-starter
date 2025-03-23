@@ -99,7 +99,7 @@ export default function Sidebar({ collapsed, setCollapsed, activeSection, setAct
               {!collapsed && expandedMenus.featured && (
                 <ul className={styles.submenu}>
                   <li className={styles.submenuItem}>
-                    <Link href="#egg-price-surge">
+                    <Link href="/egg-price-surge-2025">
                       <div className={styles.submenuLink}>
                         <i className="fas fa-angle-right"></i>
                         <span>2025 Egg Price Surge</span>

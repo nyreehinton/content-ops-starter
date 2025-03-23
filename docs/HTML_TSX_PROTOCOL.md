@@ -2,6 +2,8 @@
 
 This protocol standardizes how AI models interact with your content-ops-starter repository, specifically optimizing for your preferred approach of serving full HTML pages with corresponding TSX components.
 
+> **Note**: This protocol works in conjunction with the [content-ops-starter MCP](./mcp-document.md) and [Replit Integration MCP](<./Model%20Context%20Protocol%20(MCP)%20for%20Replit%20Integration.md>). When developing HTML-TSX paired components, refer to all relevant protocols.
+
 ## File Structure Protocol
 
 **HTML-TSX Pairing Convention**
@@ -62,30 +64,42 @@ This protocol standardizes how AI models interact with your content-ops-starter 
 
 ## Implementation Example
 
-For a new "About Us" page:
+For an "Egg Price Surge" analysis page:
 
-```html
-About Our Company Our Mission We strive to create exceptional digital experiences...
+```md
+---
+title: The Egg Price Crisis of 2025
+slug: egg-price-surge-2025
+---
+
+<div class="bg-blue-50 border-l-4 border-blue-500 p-3 mb-6 rounded-lg">
+  <h2 class="text-2xl font-bold mb-2">The Egg Industry's Perfect Storm</h2>
+  <p class="text-base leading-relaxed">
+    The egg industry faces unprecedented challenges in 2025...
+  </p>
+</div>
 ```
 
 ```tsx
-// about.tsx
-import React from 'react';
+// /src/pages/egg-price-surge-2025/index.tsx
+import { useState } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '@/styles/ThirdBridge.module.css';
+import { mainArticle } from '@/data/analysisData';
+import { getSafeArticle } from '@/components/thirdbridge/utils/dataHelpers';
 
-interface AboutPageProps {
-  lastUpdated: string;
-}
+export default function EggPriceSurgePage() {
+  const article = getSafeArticle(mainArticle);
 
-export default function AboutPage({ lastUpdated }: AboutPageProps) {
   return (
-
-
-        Our Mission
-        We strive to create exceptional digital experiences...
-
-      {/* Additional content sections */}
-      Last updated: {lastUpdated}
-
+    <>
+      <Head>
+        <title>{article.title} | ThirdBridge Analysis</title>
+        <meta name="description" content={article.description} />
+      </Head>
+      <div className={styles.eggPriceAnalysisPage}>{/* Content sections */}</div>
+    </>
   );
 }
 ```

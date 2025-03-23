@@ -2,14 +2,18 @@
 
 import { useState } from 'react';
 import { priceData, regionalPrices } from '@/data/analysisData';
+import { getSafePriceData, getSafeRegionalPrices, getSafeYears } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
+import EggPriceChart from '@/components/charts/EggPriceChart';
 
 /**
  * Price Data tab content for the featured analysis
  */
 export default function PriceDataTab() {
-  const [activeYear, setActiveYear] = useState('2025');
-  const years = Object.keys(priceData).sort();
+  const safeData = getSafePriceData(priceData);
+  const safeRegionalPrices = getSafeRegionalPrices(regionalPrices);
+  const years = getSafeYears(safeData);
+  const [activeYear, setActiveYear] = useState(years[years.length - 1] || '2025');
   
   return (
     <div className={styles.tabContentSection}>
@@ -21,14 +25,7 @@ export default function PriceDataTab() {
           <div className={styles.chartSubtitle}>National Average Retail Price per Dozen (USD)</div>
         </div>
         <div className={styles.chartImage}>
-          <img 
-            src="/images/thirdbridge/egg-price-chart.jpg" 
-            alt="Egg Price Chart"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://placehold.co/800x400/0a2856/ffffff?text=Egg+Price+Chart';
-            }}
-          />
+          <EggPriceChart className={styles.eggPriceChart} />
         </div>
         <div className={styles.chartLegend}>
           <div className={styles.legendItem}>
@@ -49,7 +46,7 @@ export default function PriceDataTab() {
       <div className={styles.contentColumns}>
         <div className={styles.mainColumn}>
           <div className={styles.yearSelector}>
-            {years.map(year => (
+            {years.map((year) => (
               <button 
                 key={year}
                 className={`${styles.yearButton} ${activeYear === year ? styles.activeYear : ''}`}
@@ -61,7 +58,7 @@ export default function PriceDataTab() {
           </div>
           
           <div className={styles.statsList}>
-            {priceData[activeYear].stats.map((stat, index) => (
+            {safeData[activeYear].stats.map((stat, index) => (
               <div key={index} className={styles.statItem}>
                 <div className={styles.statValue}>{stat.value}</div>
                 <div className={styles.statLabel}>{stat.label}</div>
@@ -76,7 +73,7 @@ export default function PriceDataTab() {
           <div className={styles.contentBlock}>
             <h4 className={styles.contentSubtitle}>Primary Price Drivers in {activeYear}</h4>
             <ul className={styles.driversList}>
-              {priceData[activeYear].drivers.map((driver, index) => (
+              {safeData[activeYear].drivers.map((driver, index) => (
                 <li key={index}>
                   <span className={styles.driverName}>{driver.name}</span>
                   <span 
@@ -111,7 +108,7 @@ export default function PriceDataTab() {
                 />
               </div>
               <div className={styles.regionsGrid}>
-                {regionalPrices.map((region, index) => (
+                {safeRegionalPrices.map((region, index) => (
                   <div key={index} className={styles.regionCard}>
                     <div className={styles.regionName}>{region.name}</div>
                     <div className={styles.regionPrice}>${region.price}</div>

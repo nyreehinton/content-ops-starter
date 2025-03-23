@@ -4,6 +4,8 @@
 
 This Model Context Protocol (MCP) provides guidelines for integrating Replit-based application components into a Next.js content-ops-starter project. It ensures consistency, appropriate styling isolation, and proper component structure while respecting the existing application architecture.
 
+> **Note**: This MCP complements the [content-ops-starter MCP](./mcp-document.md) which provides the foundational guidelines for content operations and HTML-TSX pairing. When integrating Replit applications, ensure compliance with both protocols.
+
 ## Key Challenges
 
 When integrating Replit applications into a Next.js project, several challenges must be addressed:
@@ -44,6 +46,7 @@ When integrating Replit applications into a Next.js project, several challenges 
 ### 2. CSS Integration Strategy
 
 - **Use CSS Modules**: Convert all global CSS to CSS Modules to prevent style leakage:
+
   ```css
   /* [AppName].module.css */
   .root {
@@ -52,28 +55,30 @@ When integrating Replit applications into a Next.js project, several challenges 
     --app-secondary-color: #c19b4a;
     /* etc. */
   }
-  
+
   .container {
     /* Container styles */
   }
   ```
 
 - **No Global Styles**: Avoid adding global style imports in components:
+
   ```tsx
   // INCORRECT
   import '../styles/global.css'; // Don't do this in components
-  
+
   // CORRECT
   import styles from '@/styles/[AppName].module.css';
   ```
 
 - **CSS Variables Scoping**: Place CSS variables within a root class selector:
+
   ```css
   /* INCORRECT */
   :root {
     --app-color: blue;
   }
-  
+
   /* CORRECT */
   .root {
     --app-color: blue;
@@ -81,6 +86,7 @@ When integrating Replit applications into a Next.js project, several challenges 
   ```
 
 - **Variable Naming**: Prefix all CSS variables with application-specific prefixes to avoid collisions:
+
   ```css
   .root {
     --tb-primary: #0a2856; /* For ThirdBridge */
@@ -89,10 +95,11 @@ When integrating Replit applications into a Next.js project, several challenges 
   ```
 
 - **CSS Class Replacements**: Replace component-specific utility classes with application-wide CSS module classes:
+
   ```tsx
   // INCORRECT (using component-specific classes)
   <div className="shadow-card hover:shadow-card-hover">
-  
+
   // CORRECT (using application CSS module)
   <div className={styles.card}>
   ```
@@ -120,18 +127,16 @@ import './styles.css';
 
 function MyComponent({ title, items }) {
   const [active, setActive] = useState(false);
-  
+
   return (
     <div className="container">
       <h1>{title}</h1>
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
-      <button onClick={() => setActive(!active)}>
-        {active ? 'Active' : 'Inactive'}
-      </button>
+      <button onClick={() => setActive(!active)}>{active ? 'Active' : 'Inactive'}</button>
     </div>
   );
 }
@@ -154,19 +159,18 @@ interface MyComponentProps {
 
 function MyComponent({ title, items }: MyComponentProps) {
   const [active, setActive] = useState(false);
-  
+
   return (
     <div className={`${styles.root} ${styles.container}`}>
       <h1 className={styles.title}>{title}</h1>
       <ul className={styles.list}>
-        {items.map(item => (
-          <li key={item.id} className={styles.listItem}>{item.name}</li>
+        {items.map((item) => (
+          <li key={item.id} className={styles.listItem}>
+            {item.name}
+          </li>
         ))}
       </ul>
-      <button 
-        className={`${styles.button} ${active ? styles.active : ''}`}
-        onClick={() => setActive(!active)}
-      >
+      <button className={`${styles.button} ${active ? styles.active : ''}`} onClick={() => setActive(!active)}>
         {active ? 'Active' : 'Inactive'}
       </button>
     </div>
@@ -177,6 +181,7 @@ function MyComponent({ title, items }: MyComponentProps) {
 ### 4. Asset Management
 
 - Place all images and static assets in the public directory:
+
   ```
   public/
   └── images/
@@ -187,17 +192,19 @@ function MyComponent({ title, items }: MyComponentProps) {
   ```
 
 - Update image references in components:
+
   ```tsx
   // INCORRECT
   <img src="./images/logo.png" />
-  
+
   // CORRECT
   <img src="/images/[application-name]/logo.png" />
   ```
 
 - Add fallback handling for images:
+
   ```tsx
-  <img 
+  <img
     src="/images/[application-name]/logo.png"
     alt="Logo"
     onError={(e) => {
@@ -208,24 +215,26 @@ function MyComponent({ title, items }: MyComponentProps) {
   ```
 
 - Prefer static imports for critical assets:
+
   ```tsx
   // For critical assets that should be part of the build
   import logoImage from '@/public/images/logo.png';
-  
+
   // Then use with Next.js Image component
   import Image from 'next/image';
-  
-  <Image src={logoImage} alt="Logo" width={200} height={50} />
+
+  <Image src={logoImage} alt="Logo" width={200} height={50} />;
   ```
 
 ### 5. Component Integration
 
 - Create a main page component to render the application:
+
   ```tsx
   // src/pages/[application-name].tsx
   import Head from 'next/head';
   import [AppName]Page from '@/components/[application-name]/[AppName]Page';
-  
+
   export default function [AppName]Platform() {
     return (
       <>
@@ -272,6 +281,7 @@ export default [AppName];
 ### 7. Data Integration & Dependencies
 
 - Create a dedicated data directory for application data:
+
   ```
   src/lib/
   └── data/
@@ -282,6 +292,7 @@ export default [AppName];
   ```
 
 - Use TypeScript interfaces for data structures:
+
   ```tsx
   // src/lib/data/types.ts
   export interface InterviewData {
@@ -290,7 +301,7 @@ export default [AppName];
     description: string;
     industry: string;
   }
-  
+
   export interface IndustryData {
     name: string;
     count: number;
@@ -299,17 +310,18 @@ export default [AppName];
   ```
 
 - Handle mock data for development and testing:
+
   ```tsx
   // src/lib/data/mock-data.ts
   import { InterviewData } from './types';
-  
+
   export const interviews: InterviewData[] = [
     {
-      title: "Industry Interview",
-      date: "2025-01-15",
-      description: "Interview with industry experts",
-      industry: "Technology"
-    },
+      title: 'Industry Interview',
+      date: '2025-01-15',
+      description: 'Interview with industry experts',
+      industry: 'Technology'
+    }
     // Additional mock data
   ];
   ```
@@ -325,11 +337,12 @@ export default [AppName];
 ### 8. Navigation & State Management
 
 - Create a consistent navigation pattern for multi-section applications:
+
   ```tsx
   // src/components/[application-name]/[AppName]Page.tsx
   export default function [AppName]Page() {
     const [activeSection, setActiveSection] = useState('overview');
-    
+
     // Navigation state handler
     const renderContent = () => {
       switch (activeSection) {
@@ -341,10 +354,10 @@ export default [AppName];
           return <Overview setActiveSection={setActiveSection} />;
       }
     };
-    
+
     return (
       <div className={styles.container}>
-        <Sidebar 
+        <Sidebar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
@@ -357,19 +370,18 @@ export default [AppName];
   ```
 
 - Pass navigation functions to child components:
+
   ```tsx
   // Child component with navigation capabilities
   interface OverviewProps {
     setActiveSection: (section: string) => void;
   }
-  
+
   const Overview: React.FC<OverviewProps> = ({ setActiveSection }) => {
     return (
       <div>
         <h1>Overview</h1>
-        <button onClick={() => setActiveSection('details')}>
-          View Details
-        </button>
+        <button onClick={() => setActiveSection('details')}>View Details</button>
       </div>
     );
   };
@@ -382,19 +394,21 @@ export default [AppName];
 **Problem**: Components don't render or initialize properly when integrated into a larger application.
 
 **Solution**:
+
 - Ensure component paths are correct (check for case sensitivity)
 - Verify that all required props are being passed
 - Check for initialization order dependencies
 - Use React DevTools to inspect component hierarchy
 
 **Example Fix**:
+
 ```tsx
 // Check component import path
 import Overview from '@/components/thirdbridge/overview/Overview';
 // NOT: import Overview from '@/components/thirdbridge/Overview';
 
 // Ensure all required props are passed
-<Overview setActiveSection={setActiveSection} />
+<Overview setActiveSection={setActiveSection} />;
 // NOT: <Overview />
 ```
 
@@ -403,11 +417,13 @@ import Overview from '@/components/thirdbridge/overview/Overview';
 **Problem**: Charts or visualizations don't render properly or cause crashes.
 
 **Solution**:
+
 - Use `useRef` and `useEffect` for proper DOM access and cleanup
 - Ensure canvas elements are properly sized
 - Clean up chart instances on unmount to prevent memory leaks
 
 **Example Fix**:
+
 ```tsx
 const chartRef = useRef<HTMLCanvasElement>(null);
 const chartInstance = useRef<Chart | null>(null);
@@ -439,11 +455,13 @@ useEffect(() => {
 **Problem**: Tailwind utility classes conflict with CSS module styling, leading to inconsistent appearance.
 
 **Solution**:
+
 - Use CSS module classes for component-specific styling
 - Use Tailwind for layout and basic utilities
 - Wrap Tailwind classes in a specific container with CSS module styling
 
 **Example Fix**:
+
 ```tsx
 // CSS Module (ThirdBridge.module.css)
 .cardContainer {
@@ -464,12 +482,14 @@ useEffect(() => {
 **Problem**: Components fail to render because data isn't available when needed.
 
 **Solution**:
+
 - Add proper loading states
 - Ensure data files are in the correct location
 - Use conditional rendering to handle missing data gracefully
 - Implement fallback data for development
 
 **Example Fix**:
+
 ```tsx
 // Data file (ensure it exists and is properly exported)
 // src/lib/data.js
@@ -508,11 +528,13 @@ return (
 **Problem**: Navigation state doesn't sync properly between components.
 
 **Solution**:
+
 - Use a centralized state management approach
 - Pass setActiveSection functions consistently
 - Ensure default states are consistent
 
 **Example Fix**:
+
 ```tsx
 // Parent component
 const [activeSection, setActiveSection] = useState('overview');
@@ -535,25 +557,21 @@ const FeatureCard = ({ title, setActiveSection }) => (
 **Problem**: External libraries like Chart.js or third-party UI components don't initialize correctly.
 
 **Solution**:
+
 - Check for required peer dependencies
 - Import libraries correctly for Next.js (dynamic imports when needed)
 - Handle SSR compatibility
 
 **Example Fix**:
+
 ```tsx
 // For client-side only libraries
 import dynamic from 'next/dynamic';
 
-const Chart = dynamic(
-  () => import('chart.js').then((mod) => mod.Chart),
-  { ssr: false }
-);
+const Chart = dynamic(() => import('chart.js').then((mod) => mod.Chart), { ssr: false });
 
 // Or for components that use browser APIs
-const ChartComponent = dynamic(
-  () => import('../components/ChartComponent'),
-  { ssr: false }
-);
+const ChartComponent = dynamic(() => import('../components/ChartComponent'), { ssr: false });
 ```
 
 ### 7. Component Mounting and Cleanup
@@ -561,16 +579,18 @@ const ChartComponent = dynamic(
 **Problem**: Components cause memory leaks or errors on page navigation.
 
 **Solution**:
+
 - Implement proper cleanup in useEffect
 - Cancel pending API calls
 - Dispose of any timers, intervals, or event listeners
 
 **Example Fix**:
+
 ```tsx
 useEffect(() => {
   const controller = new AbortController();
   const { signal } = controller;
-  
+
   const fetchData = async () => {
     try {
       const response = await fetch('/api/data', { signal });
@@ -582,13 +602,13 @@ useEffect(() => {
       }
     }
   };
-  
+
   fetchData();
-  
+
   const interval = setInterval(() => {
     // Periodic updates
   }, 5000);
-  
+
   return () => {
     controller.abort(); // Cancel fetch requests
     clearInterval(interval); // Clear intervals
@@ -662,17 +682,19 @@ public/images/thirdbridge/
 ### 9. Next.js Pages Integration
 
 - **Understand the Next.js Routing System**:
+
   - Pages Router vs App Router
   - Static Generation (SSG) vs Server-Side Rendering (SSR)
   - Client-side navigation patterns
 
 - **Static Generation with Pages Router**:
+
   ```tsx
   // Simple static page
   export default function MyPage() {
     return <div>Static content</div>;
   }
-  
+
   // With getStaticProps for data fetching
   export async function getStaticProps() {
     return {
@@ -684,13 +706,14 @@ public/images/thirdbridge/
   ```
 
 - **DO NOT Use App Router Directives in Pages Router**:
+
   ```tsx
   // INCORRECT: Mixing App Router directives with Pages Router
   'use client'; // Don't include this in pages using Pages Router
-  
+
   // CORRECT: Standard Pages Router pattern
   import { useState } from 'react';
-  
+
   export default function MyPage() {
     const [state, setState] = useState(initialState);
     // ...
