@@ -1,56 +1,48 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import styles from '../../../styles/thirdbridge-new/ThirdBridge.module.css';
+import { mainArticle } from '@/data/analysisData';
+import styles from '@/styles/ThirdBridge.module.css';
+import Link from 'next/link';
 
-// Add this interface definition
-interface HeroSectionProps {
-  title: string;
-  category: string;
-  date: string;
-  description: string;
-  imageSrc: string;
-}
-
-// Update component signature
-const HeroSection: React.FC<HeroSectionProps> = ({
-  title,
-  category,
-  date,
-  description,
-  imageSrc
-}) => {
+/**
+ * Hero section displaying the main featured article with overlay
+ */
+export default function HeroSection() {
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.heroImage}>
-        <Image 
-          src={imageSrc} 
-          alt={title}
-          width={600}
-          height={400}
-          objectFit="cover"
-        />
-      </div>
-      <div className={styles.heroContent}>
-        <div className={styles.heroMeta}>
-          <span className={styles.heroCategory}>{category}</span>
-          <span>•</span>
-          <span>{date}</span>
-        </div>
-        <h3 className={styles.heroTitle}>{title}</h3>
-        <p className={styles.heroDescription}>{description}</p>
-        <div className={styles.heroActions}>
-          <button className={styles.primaryButton}>
-            <i className="fas fa-download"></i> Download Full Report
-          </button>
-          <button className={styles.secondaryButton}>
-            <i className="fas fa-share-alt"></i> Share
-          </button>
+    <div className={styles.heroImage}>
+      {/* Use a placeholder image if the original image is not available */}
+      <img
+        src="/images/thirdbridge/egg-price-hero.jpg"
+        alt={mainArticle.title}
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = 'https://placehold.co/1200x500/0a2856/ffffff?text=Egg+Price+Analysis';
+        }}
+      />
+      <div className={styles.heroOverlay}>
+        <span className={styles.heroCategory}>{mainArticle.category}</span>
+        <span className={styles.heroDate}>{mainArticle.date}</span>
+        <h2 className={styles.heroTitle}>{mainArticle.title}</h2>
+        <p className={styles.heroDescription}>{mainArticle.description}</p>
+        <div className={styles.heroButtons}>
+          <Link href="#egg-price-analysis">
+            <button className={styles.primaryButton}>
+              <i className="fas fa-eye"></i>
+              Read Full Analysis
+            </button>
+          </Link>
+          <div className={styles.actionButtons}>
+            <button className={styles.actionButton}>
+              <i className="fas fa-bookmark"></i>
+              Save
+            </button>
+            <button className={styles.actionButton}>
+              <i className="fas fa-share-alt"></i>
+              Share
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default HeroSection; 
+}

@@ -1,30 +1,31 @@
-'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from '../../../styles/thirdbridge-new/ThirdBridge.module.css';
-import Tooltip from '../ui/Tooltip';
-import type { SectionType } from '../ThirdBridge';
+import styles from '@/styles/ThirdBridge.module.css';
+import Tooltip from '@/components/thirdbridge/ui/Tooltip';
 
 interface SidebarProps {
   collapsed: boolean;
   setCollapsed: (collapsed: boolean) => void;
-  activeSection: SectionType;
-  setActiveSection: (section: SectionType) => void;
+  activeSection: string;
+  setActiveSection: (section: string) => void;
+}
+
+interface ExpandedMenus {
+  [key: string]: boolean;
 }
 
 /**
  * Sidebar component for navigation
  */
 export default function Sidebar({ collapsed, setCollapsed, activeSection, setActiveSection }: SidebarProps) {
-  const [expandedMenus, setExpandedMenus] = useState({
+  const [expandedMenus, setExpandedMenus] = useState<ExpandedMenus>({
     featured: true,
     interviews: false,
     industry: false,
   });
 
   // Toggle submenu expansion
-  const toggleSubmenu = (menu) => {
+  const toggleSubmenu = (menu: string) => {
     setExpandedMenus(prev => ({
       ...prev,
       [menu]: !prev[menu]
@@ -32,11 +33,11 @@ export default function Sidebar({ collapsed, setCollapsed, activeSection, setAct
   };
 
   // Handle navigation item click
-  const handleNavClick = (section) => {
+  const handleNavClick = (section: string) => {
     setActiveSection(section);
     
     // On mobile, collapse sidebar after selection
-    if (window.innerWidth < 768) {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
       setCollapsed(true);
     }
   };

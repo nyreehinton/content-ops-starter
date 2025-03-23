@@ -1,0 +1,32 @@
+/* ThirdBridge Global Variables */
+
+:root {
+  --tb-bg-primary: #ffffff;
+  --tb-bg-secondary: #f8f9fa;
+  --tb-bg-tertiary: #edf2f7;
+  
+  --tb-primary: #0a2856;
+  --tb-primary-hover: #153a79;
+  --tb-secondary: #c19b4a;
+  --tb-secondary-hover: #d4ad5c;
+  
+  --tb-text-primary: #1a202c;
+  --tb-text-secondary: #4a5568;
+  --tb-text-tertiary: #718096;
+  
+  --tb-border-color: #e2e8f0;
+  --tb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --tb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --tb-sidebar-width: 260px;
+  --tb-sidebar-collapsed-width: 70px;
+  --tb-topbar-height: 64px;
+  
+  --tb-radius-sm: 4px;
+  --tb-radius-md: 6px;
+  --tb-radius-lg: 8px;
+  
+  --tb-transition-fast: 0.15s ease;
+  --tb-transition-medium: 0.3s ease;
+}

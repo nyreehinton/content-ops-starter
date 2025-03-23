@@ -1,145 +1,144 @@
 'use client';
 
-import React from 'react';
-import styles from '../../../styles/thirdbridge-new/ThirdBridge.module.css';
+import { industryData, structuralChallenges, calMaineImpact } from '@/data/analysisData';
+import styles from '@/styles/ThirdBridge.module.css';
 
-const IndustryStructureTab: React.FC = () => {
+/**
+ * Industry Structure tab content for the featured analysis
+ */
+export default function IndustryStructureTab() {
   return (
-    <div className={styles.tabContentContainer}>
-      <h3 className={styles.tabTitle}>Industry Structure</h3>
+    <div className={styles.tabContentSection}>
+      <h3 className={styles.tabTitle}>Industry Structure Analysis</h3>
       
-      <div className={styles.overviewSection}>
-        <p>
-          The NLP industry has evolved from a fragmented landscape of specialized providers to a more 
-          consolidated structure dominated by major AI research labs and technology giants. This section 
-          examines the current competitive dynamics, market segmentation, and the evolving value chain.
-        </p>
+      <div className={styles.industryDiagram}>
+        <div className={styles.diagramHeader}>U.S. Egg Industry Structure</div>
+        <div className={styles.diagramContent}>
+          <div className={styles.diagramImage}>
+            <div className={styles.svgPlaceholder}>
+              <img 
+                src="/images/thirdbridge/egg-industry-structure.jpg" 
+                alt="Egg Industry Structure"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/800x400/0a2856/ffffff?text=Egg+Industry+Structure+Diagram';
+                }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.diagramFooter}>Source: USDA Economic Research Service, Industry Reports, Third Bridge Analysis</div>
       </div>
       
-      <div className={styles.structureSection}>
-        <h3 className={styles.sectionTitle}>Competitive Landscape</h3>
-        <div className={styles.structureDiagram}>
-          <img 
-            src="/images/thirdbridge/market-share-diagram.jpg" 
-            alt="NLP Market Share by Company" 
-            className={styles.diagramImage}
-          />
-        </div>
-        <div className={styles.tableContainer}>
-          <table className={styles.dataTable}>
-            <thead>
-              <tr>
-                <th>Company</th>
-                <th>Market Share (%)</th>
-                <th>Key Models</th>
-                <th>Primary Sectors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>OpenAI</td>
-                <td>32.5%</td>
-                <td>GPT-4, GPT-4o</td>
-                <td>Enterprise, Consumer, Healthcare</td>
-              </tr>
-              <tr>
-                <td>Google</td>
-                <td>29.8%</td>
-                <td>Gemini, PaLM</td>
-                <td>Enterprise, Consumer, Education</td>
-              </tr>
-              <tr>
-                <td>Anthropic</td>
-                <td>15.7%</td>
-                <td>Claude 3</td>
-                <td>Enterprise, Healthcare, Finance</td>
-              </tr>
-              <tr>
-                <td>Meta</td>
-                <td>8.4%</td>
-                <td>Llama 3</td>
-                <td>Open Source, Research</td>
-              </tr>
-              <tr>
-                <td>Cohere</td>
-                <td>4.2%</td>
-                <td>Command</td>
-                <td>Enterprise, Search</td>
-              </tr>
-              <tr>
-                <td>Others</td>
-                <td>9.4%</td>
-                <td>Various</td>
-                <td>Mixed</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-      <div className={styles.challengeCards}>
-        <div className={styles.challengeCard}>
-          <div className={styles.challengeTitle}>
-            <i className="fas fa-brain"></i>
-            <span>Model Development Costs</span>
+      <div className={styles.contentColumns}>
+        <div className={styles.mainColumn}>
+          <div className={styles.contentBlock}>
+            <h4 className={styles.contentSubtitle}>Current Industry Metrics</h4>
+            <div className={styles.metricsList}>
+              {industryData.metrics.map((metric, index) => (
+                <div key={index} className={styles.metricItem}>
+                  <span className={styles.metricName}>{metric.name}</span>
+                  <span className={styles.metricValue}>{metric.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <p>
-            Training cutting-edge LLMs requires significant computational resources, with 
-            costs ranging from $5-20 million for state-of-the-art models. This creates substantial 
-            barriers to entry for new market participants.
-          </p>
-        </div>
-        
-        <div className={styles.challengeCard}>
-          <div className={styles.challengeTitle}>
-            <i className="fas fa-shield-alt"></i>
-            <span>Regulatory Compliance</span>
+          
+          <div className={styles.structuralChallenges}>
+            <h4 className={styles.contentSubtitle}>Structural Vulnerabilities</h4>
+            <div className={styles.challengesGrid}>
+              {structuralChallenges.map((challenge, index) => (
+                <div key={index} className={styles.challengeCard}>
+                  <div className={styles.challengeIcon}>
+                    <i className={challenge.icon}></i>
+                  </div>
+                  <div className={styles.challengeContent}>
+                    <div className={styles.challengeTitle}>{challenge.title}</div>
+                    <p className={styles.challengeDescription}>{challenge.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <p>
-            Evolving regulations around AI safety, data privacy, and content generation are 
-            increasing compliance costs and creating uncertainty for market participants.
-          </p>
-        </div>
-        
-        <div className={styles.challengeCard}>
-          <div className={styles.challengeTitle}>
-            <i className="fas fa-server"></i>
-            <span>Infrastructure Bottlenecks</span>
+          
+          <div className={styles.impactAnalysis}>
+            <h4 className={styles.contentSubtitle}>Impact of California & Maine Regulations</h4>
+            <div className={styles.impactGrid}>
+              {calMaineImpact.map((impact, index) => (
+                <div key={index} className={styles.impactCard}>
+                  <div className={styles.impactHeader}>
+                    <div className={styles.impactIcon}>
+                      <i className={impact.icon}></i>
+                    </div>
+                    <h5 className={styles.impactTitle}>{impact.title}</h5>
+                  </div>
+                  <div className={styles.impactBody}>
+                    <p>{impact.description}</p>
+                  </div>
+                  <div className={styles.impactFooter}>
+                    <span 
+                      className={styles.impactSeverity}
+                      style={{ 
+                        backgroundColor: 
+                          impact.severity === 'high' ? '#e53e3e' : 
+                          impact.severity === 'medium' ? '#dd6b20' : 
+                          '#38a169'
+                      }}
+                    >
+                      {impact.severity} impact
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <p>
-            Limited supply of high-performance GPUs and specialized AI chips is creating 
-            deployment constraints and increasing operating costs for NLP service providers.
-          </p>
         </div>
-      </div>
-      
-      <div className={styles.implicationsSection}>
-        <h3 className={styles.sectionTitle}>Strategic Implications</h3>
         
-        <div className={styles.implicationTitle}>
-          <i className="fas fa-chess"></i>
-          <span>For Established Players</span>
+        <div className={styles.sideColumn}>
+          <div className={styles.infoBox}>
+            <h4>
+              <i className="fas fa-building"></i>
+              Market Concentration
+            </h4>
+            <div className={styles.companiesList}>
+              {industryData.topCompanies.map((company, index) => (
+                <div key={index} className={styles.companyItem}>
+                  <div className={styles.companyRank}>{index + 1}</div>
+                  <div className={styles.companyInfo}>
+                    <div className={styles.companyName}>{company.name}</div>
+                    <div className={styles.companyShare}>{company.marketShare}% market share</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className={styles.infoBox}>
+            <h4>
+              <i className="fas fa-gavel"></i>
+              Key Regulations
+            </h4>
+            <div className={styles.regulationsList}>
+              {industryData.regulations.map((regulation, index) => (
+                <div key={index} className={styles.regulationItem}>
+                  <span className={styles.regulationName}>{regulation.name}</span>
+                  <span 
+                    className={styles.regulationImpact}
+                    style={{ 
+                      backgroundColor: 
+                        regulation.impact === 'high' ? '#e53e3e' : 
+                        regulation.impact === 'medium' ? '#dd6b20' : 
+                        '#38a169'
+                    }}
+                  >
+                    {regulation.impact}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <ul className={styles.implicationList}>
-          <li><strong>Vertical Integration:</strong> Leading companies are increasingly acquiring specialized 
-          infrastructure and data providers to secure competitive advantages.</li>
-          <li><strong>API Ecosystem Development:</strong> Expanding partner networks and creating 
-          robust developer ecosystems is becoming critical for market expansion.</li>
-        </ul>
-        
-        <div className={styles.implicationTitle}>
-          <i className="fas fa-rocket"></i>
-          <span>For New Entrants</span>
-        </div>
-        <ul className={styles.implicationList}>
-          <li><strong>Niche Specialization:</strong> Focusing on industry-specific applications and 
-          specialized use cases offers viable entry strategies.</li>
-          <li><strong>Open Source Leverage:</strong> Building on open-source models allows new 
-          entrants to reduce development costs while focusing on application innovation.</li>
-        </ul>
       </div>
     </div>
   );
-};
-
-export default IndustryStructureTab; 
+}

@@ -1,73 +1,63 @@
-'use client';
+import { useState } from 'react';
+import styles from '@/styles/ThirdBridge.module.css';
+import HeroSection from '@/components/thirdbridge/featured-analysis/HeroSection';
+import Tabs from '@/components/thirdbridge/ui/Tabs';
+import OverviewTab from '@/components/thirdbridge/featured-analysis/OverviewTab';
+import PriceDataTab from '@/components/thirdbridge/featured-analysis/PriceDataTab';
+import IndustryStructureTab from '@/components/thirdbridge/featured-analysis/IndustryStructureTab';
+import ConclusionTab from '@/components/thirdbridge/featured-analysis/ConclusionTab';
+import FeaturedCard from '@/components/thirdbridge/featured-analysis/FeaturedCard';
+import { featuredAnalyses } from '@/data/analysisData';
 
-import React, { useState } from 'react';
-import styles from '../../../styles/thirdbridge-new/ThirdBridge.module.css';
-import HeroSection from './HeroSection';
-import OverviewTab from './OverviewTab';
-import IndustryStructureTab from './IndustryStructureTab';
-import PriceDataTab from './PriceDataTab';
-import ConclusionTab from './ConclusionTab';
-
-interface FeaturedAnalysisSectionProps {
-  title?: string;
-}
-
-const FeaturedAnalysisSection: React.FC<FeaturedAnalysisSectionProps> = ({ title = 'Featured Analysis' }) => {
-  const [activeTab, setActiveTab] = useState('overview');
-
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-  };
+/**
+ * Main Featured Analysis Section that contains the hero article and cards
+ */
+export default function FeaturedAnalysisSection() {
+  const tabs = [
+    { id: 'overview', label: 'Overview', content: <OverviewTab /> },
+    { id: 'data', label: 'Price Data', content: <PriceDataTab /> },
+    { id: 'industry', label: 'Industry Structure', content: <IndustryStructureTab /> },
+    { id: 'conclusion', label: 'Conclusion', content: <ConclusionTab /> },
+  ];
 
   return (
-    <div className={styles.analysisContainer}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
-      
-      <HeroSection 
-        title="Natural Language Processing Evolution"
-        category="AI & Machine Learning"
-        date="June 15, 2023"
-        description="An in-depth analysis of the evolving landscape of Natural Language Processing and its implications for enterprise applications in the coming decade."
-        imageSrc="/images/thirdbridge/nlp-hero.jpg"
-      />
-      
-      <div className={styles.tabsContainer}>
-        <div className={styles.tabs}>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'overview' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('overview')}
-          >
-            Overview
-          </button>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'industry' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('industry')}
-          >
-            Industry Structure
-          </button>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'price' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('price')}
-          >
-            Market Data
-          </button>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'conclusion' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('conclusion')}
-          >
-            Conclusion
-          </button>
-        </div>
+    <section className={styles.sectionContent}>
+      {/* Header with visual elements */}
+      <div className={styles.sectionHeader}>
+        <div className={styles.headerBlur1}></div>
+        <div className={styles.headerBlur2}></div>
         
-        <div className={styles.tabContent}>
-          {activeTab === 'overview' && <OverviewTab />}
-          {activeTab === 'industry' && <IndustryStructureTab />}
-          {activeTab === 'price' && <PriceDataTab />}
-          {activeTab === 'conclusion' && <ConclusionTab />}
-        </div>
+        <h1 className={styles.sectionTitle}>
+          Featured Analysis
+          <span className={styles.titleUnderline}></span>
+        </h1>
+        <p className={styles.sectionDescription}>
+          In-depth research and strategic analysis of emerging market trends and industry dynamics.
+        </p>
       </div>
-    </div>
+      
+      {/* Featured Analysis - Hero Article */}
+      <div className={styles.heroArticle}>
+        {/* Hero Section with Overlay Text */}
+        <HeroSection />
+        
+        {/* Content Tabs */}
+        <Tabs tabs={tabs} />
+      </div>
+      
+      {/* More Featured Analyses */}
+      <div className={styles.cardsHeader}>
+        <h2 className={styles.cardsTitle}>
+          <span className={styles.titleIndicator}></span>
+          More Featured Analyses
+        </h2>
+      </div>
+      
+      <div className={styles.cardsGrid}>
+        {featuredAnalyses.map((analysis) => (
+          <FeaturedCard key={analysis.id} analysis={analysis} />
+        ))}
+      </div>
+    </section>
   );
-};
-
-export default FeaturedAnalysisSection;
+}

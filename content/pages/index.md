@@ -79,9 +79,34 @@ seo:
     </script>
     
     <style>
+        /* Global resets to ensure no background textures */
+        body, html, #root, #__next, .page-wrapper, .site-wrapper, .content-wrapper {
+            background-color: #ffffff !important;
+            background-image: none !important;
+        }
+
         /* Additional styles not covered by Tailwind */
-        html {
+        html, body {
             scroll-behavior: smooth;
+            background-color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Background fix to remove texture */
+        #root, #__next, main, div, section {
+            background-color: #ffffff !important;
+        }
+        
+        /* Override any potential background images or textures */
+        body::before, body::after,
+        html::before, html::after {
+            content: none !important;
+            display: none !important;
+            background: none !important;
         }
         
         /* Animations */
@@ -147,6 +172,7 @@ seo:
             justify-content: center;
             padding: 0;
             position: relative;
+            background-color: #ffffff;
         }
 
         .hero-content {
@@ -199,8 +225,9 @@ seo:
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
+    <div class="bg-white w-full min-h-screen">
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <nav class="flex items-center justify-between h-16 md:h-20">
                 <a href="#" class="text-xl font-semibold tracking-tight">
@@ -246,7 +273,7 @@ seo:
         </div>
         
         <!-- Mobile Navigation Menu -->
-        <div class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-5 shadow-lg" id="mobile-menu">
+        <div class="hidden md:hidden bg-white bg-opacity-80 backdrop-blur-md border-t border-gray-100 px-4 py-5 shadow-lg" id="mobile-menu">
             <ul class="space-y-4">
                 <li>
                     <a href="/" class="block py-2 text-sm font-medium hover:text-blue-500 transition-colors w-full text-left">
@@ -295,7 +322,7 @@ seo:
     </section>
 
     <!-- Portfolio Highlights -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-16">Portfolio Highlights</h2>
 
@@ -352,7 +379,7 @@ seo:
     </section>
 
     <!-- Subject Matter -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-16">Subject Matter</h2>
 
@@ -429,7 +456,7 @@ seo:
     </section>
 
     <!-- Footer with Social Links -->
-    <footer class="py-12 border-t">
+    <footer class="py-12 border-t bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="flex flex-col items-center justify-center space-y-4">
                 <div class="flex items-center space-x-6">
@@ -508,6 +535,7 @@ seo:
             window.addEventListener('scroll', checkVisibility);
         });
     </script>
+    </div>
 
 </body>
 </html>
