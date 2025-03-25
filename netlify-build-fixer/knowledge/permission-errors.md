@@ -1,0 +1,317 @@
+# "...does not exist or you do not have permission" with Failing Builds
+
+## Understanding Permission Errors
+
+### Common Permission Error Messages
+- "EACCES: permission denied, open '/opt/build/repo/..."
+- "EACCES: permission denied, mkdir '/opt/build/repo/..."
+- "EACCES: permission denied, chmod '/opt/build/repo/..."
+- "Error: EPERM: operation not permitted, ..."
+- "npm ERR! Error: EACCES: permission denied, ..."
+- "You don't have access to this file"
+- "Path ... does not exist or you do not have permission"
+
+### Root Causes of Permission Issues
+- Attempting to write to restricted directories
+- Scripts trying to modify system files
+- Incorrect file ownership in the repository
+- Executables without proper execution permissions
+- Build commands running with insufficient privileges
+- Node.js/npm permission issues
+- Git hooks with permission problems
+
+## Netlify Build Environment Permissions
+
+### Permission Structure
+- Netlify build environment runs as a non-root user
+- Your build has limited permissions outside of your repository
+- Write access is restricted to your repository directory
+- System directories are read-only
+- Some operations require higher privileges than available
+
+### File System Limitations
+- Cannot write to system directories (/usr, /bin, etc.)
+- Limited access to global npm directories
+- Cannot change ownership of files
+- Cannot run operations requiring elevated privileges
+- Global installations require special handling
+
+## Common Scenarios and Solutions
+
+### Node.js and npm Permission Issues
+
+#### Global Package Installation
+- Problem: `npm install -g` fails with permission errors
+- Solution: Use local installations instead
+```bash
+# Instead of:
+npm install -g some-package
+
+# Use:
+npm install some-package --save-dev
+```
+
+- Alternative: Use npx for one-time command execution
+```bash
+npx some-package
+```
+
+#### Modifying node_modules
+- Problem: Build scripts trying to modify node_modules directly
+- Solution: Use proper npm lifecycle hooks and scripts
+```json
+{
+  "scripts": {
+    "postinstall": "node ./scripts/fix-modules.js"
+  }
+}
+```
+
+#### npm Caching Issues
+- Problem: Permission errors with npm cache
+- Solution: Use local caching or disable caching
+```bash
+npm ci --cache ./local-cache
+```
+
+### Script Execution Problems
+
+#### Shell Script Permissions
+- Problem: Shell scripts failing with "permission denied"
+- Solution: Ensure scripts have execute permissions before committing
+```bash
+# Locally before committing:
+chmod +x ./scripts/*.sh
+git add ./scripts/*.sh
+git commit -m "Make scripts executable"
+```
+
+- Alternative: Add chmod during build
+```bash
+# In netlify.toml
+[build]
+  command = "chmod +x ./scripts/*.sh && ./scripts/build.sh"
+```
+
+#### Git Hooks
+- Problem: Git hooks not executing
+- Solution: Ensure hooks have proper permissions
+```bash
+chmod +x .git/hooks/*
+```
+
+### Build Process Issues
+
+#### Writing Outside Repository
+- Problem: Build attempts to write to restricted locations
+- Solution: Redirect output to your repository directory
+```bash
+# Instead of:
+some-command --output /tmp/output
+
+# Use:
+some-command --output ./build/output
+```
+
+#### System-Level Operations
+- Problem: Build requires system modifications
+- Solution: Modify build process to work within permissions
+- Alternative: Pre-build assets locally and commit them
+
+#### File Ownership
+- Problem: Files with incorrect ownership
+- Solution: Ensure consistent ownership in repository
+```bash
+# Fix locally before committing:
+sudo chown -R $(whoami) .
+```
+
+## Framework-Specific Issues
+
+### Ruby/Jekyll
+- Problem: Gem installations requiring sudo
+- Solution: Use bundler with local installation
+```bash
+bundle install --path vendor/bundle
+```
+
+### Python
+- Problem: Pip trying to install to global directories
+- Solution: Use virtual environments
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### PHP/Composer
+- Problem: Composer permission issues
+- Solution: Use local installations
+```bash
+composer install --no-scripts
+```
+
+### Node.js/npm
+- Problem: npm global installations
+- Solution: Use local dependencies and npx
+```bash
+npm install --save-dev my-dependency
+npx my-dependency
+```
+
+## Implementing Fixes
+
+### Modifying Build Commands
+
+#### netlify.toml Configuration
+```toml
+[build]
+  command = "chmod +x ./scripts/*.sh && npm ci && npm run build"
+
+[build.environment]
+  NPM_CONFIG_PREFIX = "/opt/build/repo/.npm-global"
+```
+
+#### Package.json Scripts
+```json
+{
+  "scripts": {
+    "prebuild": "chmod +x ./scripts/*.sh",
+    "build": "npm run compile && npm run generate",
+    "postinstall": "node ./scripts/fix-permissions.js"
+  }
+}
+```
+
+### Creating Permission-Safe Scripts
+
+#### Example Permission Fix Script
+```javascript
+// scripts/fix-permissions.js
+const fs = require('fs');
+const path = require('path');
+
+// Directories that need executable permissions
+const execDirs = [
+  './scripts',
+  './node_modules/.bin'
+];
+
+// Make scripts executable
+execDirs.forEach(dir => {
+  if (!fs.existsSync(dir)) return;
+  
+  fs.readdirSync(dir).forEach(file => {
+    const filePath = path.join(dir, file);
+    
+    // Skip if not a file
+    if (!fs.statSync(filePath).isFile()) return;
+    
+    try {
+      // Add executable permission (equivalent to chmod +x)
+      const mode = fs.statSync(filePath).mode;
+      const newMode = mode | 0o111; // Add executable bit for user, group, and others
+      fs.chmodSync(filePath, newMode);
+      console.log(`Made executable: ${filePath}`);
+    } catch (error) {
+      console.error(`Error setting permissions on ${filePath}:`, error);
+    }
+  });
+});
+```
+
+#### Ensuring Safe File Operations
+```javascript
+// Safe file writing utility function
+function writeFileSafely(filePath, content) {
+  const dir = path.dirname(filePath);
+  
+  // Create directory if it doesn't exist
+  if (!fs.existsSync(dir)) {
+    try {
+      fs.mkdirSync(dir, { recursive: true });
+    } catch (error) {
+      throw new Error(`Failed to create directory ${dir}: ${error.message}`);
+    }
+  }
+  
+  // Write file
+  try {
+    fs.writeFileSync(filePath, content);
+  } catch (error) {
+    throw new Error(`Failed to write to ${filePath}: ${error.message}`);
+  }
+}
+```
+
+## Preventative Measures
+
+### Local Development Best Practices
+- Use similar permissions in local development
+- Avoid sudo or admin privileges for development tasks
+- Test in Docker or containers to simulate build environment
+- Regularly test build commands locally
+- Use Netlify CLI for local testing
+
+### Repository Maintenance
+- Review and fix file permissions before committing
+- Use .gitattributes to enforce file permissions
+```
+# .gitattributes
+*.sh text eol=lf
+```
+- Document permission requirements in README
+
+### Build Script Guidelines
+- Always redirect output to repository directories
+- Use relative paths instead of absolute paths
+- Prefer local module installations over global
+- Use proper error handling for permission failures
+- Implement permission checks in build scripts
+
+## Troubleshooting Approaches
+
+### Debugging Permission Issues
+- Add verbose logging to identify permission failures
+- Use debug flags when available
+- Add diagnostic commands to build scripts
+```bash
+ls -la ./problematic/directory
+whoami
+groups
+stat ./problematic/file
+```
+
+### Build Environment Exploration
+- Use build plugins to explore the environment
+- Add environment information to build logs
+```bash
+echo "Environment information:"
+echo "User: $(whoami)"
+echo "Directory: $(pwd)"
+echo "Permissions: $(ls -la)"
+```
+
+### Incremental Testing
+- Simplify build commands to isolate issues
+- Add permission fixes incrementally
+- Test changes locally before deploying
+
+## Getting Support
+
+### Providing Helpful Information
+- Full build logs showing permission errors
+- Repository access when possible
+- Details of build commands and scripts
+- Steps to reproduce locally
+- netlify.toml and package.json configurations
+
+### Community Resources
+- Check Netlify forums for similar issues
+- Review GitHub issues for your framework or tools
+- Search for specific error messages
+
+### Professional Support
+- Contact Netlify support with detailed information
+- Provide minimal reproduction cases
+- Document troubleshooting steps attempted

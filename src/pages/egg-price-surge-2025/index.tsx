@@ -22,7 +22,7 @@ import {
   getSafeImplications,
   getSafeKeyTakeaway 
 } from '@/components/thirdbridge/utils/dataHelpers';
-import TabsComponent from './TabsComponent';
+import TabsComponent from '../../../components/TabsComponent';
 import EggPriceChart from '@/components/charts/EggPriceChart';
 
 /**

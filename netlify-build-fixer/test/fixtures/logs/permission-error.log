@@ -1,0 +1,49 @@
+6:45:12 PM: Build ready to start
+6:45:13 PM: build-image version: 1aa98db5fdba0baf5f98765c76b3879c0457b667
+6:45:13 PM: build-image tag: v10.4.0
+6:45:13 PM: buildbot version: 89ee5e2d1fc9efd18ca8efccb5e8d790cfe7c36d
+6:45:13 PM: Fetching cached dependencies
+6:45:13 PM: Failed to fetch cache, continuing with build
+6:45:13 PM: Starting to prepare the repo for build
+6:45:14 PM: No cached dependencies found. Cloning fresh repo
+6:45:14 PM: git clone https://github.com/user/project
+6:45:15 PM: Preparing Git Reference refs/heads/main
+6:45:16 PM: Parsing package.json dependencies
+6:45:17 PM: Starting build script
+6:45:17 PM: Installing dependencies
+6:45:17 PM: Python version set to 3.11
+6:45:18 PM: Downloading and installing node v16.14.0...
+6:45:18 PM: Downloading https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz...
+6:45:19 PM: Computing checksum with sha256sum
+6:45:19 PM: Checksums matched!
+6:45:21 PM: Now using node v16.14.0 (npm v8.3.1)
+6:45:22 PM: Started restoring cached build plugins
+6:45:22 PM: Finished restoring cached build plugins
+6:45:22 PM: Attempting npm build in package.json
+6:45:22 PM: Starting to install dependencies
+6:45:23 PM: npm WARN config production Use \`--omit=dev\` instead.
+6:45:23 PM: npm WARN config resolution_mode This behavior is deprecated, please report to project maintainers.
+6:45:24 PM: npm WARN common@0.0.0 No description
+6:45:24 PM: npm WARN common@0.0.0 No repository field.
+6:45:24 PM: npm WARN common@0.0.0 No license field.
+6:45:25 PM: added 1284 packages in 10s
+6:45:25 PM: 132 packages are looking for funding
+6:45:25 PM: npm run build
+6:45:25 PM: > common@0.0.0 build
+6:45:25 PM: > ./scripts/build.sh
+6:45:26 PM: sh: ./scripts/build.sh: Permission denied
+6:45:26 PM: EACCES: permission denied, execute './scripts/build.sh'
+6:45:26 PM: Error: EACCES: permission denied, access './scripts'
+6:45:26 PM: npm ERR! errno 126
+6:45:26 PM: npm ERR! common@0.0.0 build: `./scripts/build.sh`
+6:45:26 PM: npm ERR! Exit status 126
+6:45:26 PM: npm ERR!
+6:45:26 PM: npm ERR! Failed at the common@0.0.0 build script.
+6:45:26 PM: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+6:45:26 PM: Error: Build script returned non-zero exit code: 126
+6:45:26 PM: Command failed with exit code 126: npm run build
+6:45:26 PM: Failed: build command exited with code: 126
+6:45:26 PM: Build failed due to a user error: Build script returned non-zero exit code: 126
+6:45:26 PM: Failing build: Failed to build site
+6:45:26 PM: Failed during stage 'building site': Build script returned non-zero exit code: 126
+6:45:26 PM: Finished processing build request in 14.126s

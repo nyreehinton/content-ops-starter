@@ -1,0 +1,12 @@
+[build]
+  command = "next build"
+  publish = "out"
+  
+[build.environment]
+  NODE_VERSION = "16"
+  
+# Missing NODE_OPTIONS for memory limit
+# Missing proper export configuration
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

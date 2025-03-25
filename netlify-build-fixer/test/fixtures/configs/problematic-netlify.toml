@@ -1,0 +1,6 @@
+[build]
+  command = "npm run dev"  # Using dev command instead of build command
+  publish = "public"  # Incorrect publish directory for many frameworks
+  
+# Missing environment variables
+# Missing redirects for SPA

@@ -1,0 +1,68 @@
+6:45:12 PM: Build ready to start
+6:45:13 PM: build-image version: 1aa98db5fdba0baf5f98765c76b3879c0457b667
+6:45:13 PM: build-image tag: v10.4.0
+6:45:13 PM: buildbot version: 89ee5e2d1fc9efd18ca8efccb5e8d790cfe7c36d
+6:45:13 PM: Fetching cached dependencies
+6:45:13 PM: Failed to fetch cache, continuing with build
+6:45:13 PM: Starting to prepare the repo for build
+6:45:14 PM: No cached dependencies found. Cloning fresh repo
+6:45:14 PM: git clone https://github.com/user/project
+6:45:15 PM: Preparing Git Reference refs/heads/main
+6:45:16 PM: Parsing package.json dependencies
+6:45:17 PM: Starting build script
+6:45:17 PM: Installing dependencies
+6:45:17 PM: Python version set to 3.11
+6:45:18 PM: Downloading and installing node v16.14.0...
+6:45:18 PM: Downloading https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz...
+6:45:19 PM: Computing checksum with sha256sum
+6:45:19 PM: Checksums matched!
+6:45:21 PM: Now using node v16.14.0 (npm v8.3.1)
+6:45:22 PM: Started restoring cached build plugins
+6:45:22 PM: Finished restoring cached build plugins
+6:45:22 PM: Attempting npm build in package.json
+6:45:22 PM: Starting to install dependencies
+6:45:23 PM: npm WARN config production Use \`--omit=dev\` instead.
+6:45:24 PM: npm WARN common@0.0.0 No description
+6:45:24 PM: npm WARN common@0.0.0 No repository field.
+6:45:24 PM: npm WARN common@0.0.0 No license field.
+6:45:25 PM: added 1284 packages in 10s
+6:45:25 PM: 132 packages are looking for funding
+6:45:25 PM: npm run build
+6:45:25 PM: > common@0.0.0 build
+6:45:25 PM: > next build && next export
+6:45:26 PM: info  - Loaded env from /opt/build/repo/.env
+6:45:26 PM: info  - Using webpack 5. Reason: webpack5 option enabled https://nextjs.org/docs/messages/webpack5
+6:45:27 PM: info  - Checking validity of types
+6:45:41 PM: info  - Creating an optimized production build
+6:45:45 PM: info  - Compiled successfully
+6:45:45 PM: info  - Collecting page data
+6:45:46 PM: Error: Found pages without a React Component as default export:
+6:45:46 PM:   - pages/blog/[...slug].js
+6:45:46 PM: A React Component for dynamic pages must be the default export in every page.
+6:45:46 PM: Read more: https://nextjs.org/docs/messages/page-without-valid-component
+6:45:46 PM: info  - Generating static pages (0/0)
+6:45:46 PM: info  - Finalizing page optimization
+6:45:46 PM: 
+6:45:46 PM: Build error occurred
+6:45:46 PM: Error: Export encountered errors on following paths:
+6:45:46 PM:   /blog/[...slug]
+6:45:46 PM:     at D:\a\next.js\next.js\node_modules\next\dist\export\index.js:398:19
+6:45:46 PM:     at runMicrotasks (<anonymous>)
+6:45:46 PM:     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+6:45:46 PM:     at async Span.traceAsyncFn (D:\a\next.js\next.js\node_modules\next\dist\telemetry\trace\trace.js:60:20)
+6:45:46 PM:     at async D:\a\next.js\next.js\node_modules\next\dist\build\index.js:970:17
+6:45:46 PM:     at async Span.traceAsyncFn (D:\a\next.js\next.js\node_modules\next\dist\telemetry\trace\trace.js:60:20)
+6:45:46 PM:     at async D:\a\next.js\next.js\node_modules\next\dist\build\index.js:914:366
+6:45:46 PM:     at async D:\a\next.js\next.js\node_modules\next\dist\build\index.js:956:15
+6:45:46 PM: npm ERR! code ELIFECYCLE
+6:45:46 PM: npm ERR! errno 1
+6:45:46 PM: npm ERR! common@0.0.0 build: `next build && next export`
+6:45:46 PM: npm ERR! Exit status 1
+6:45:46 PM: npm ERR!
+6:45:46 PM: npm ERR! Failed at the common@0.0.0 build script.
+6:45:46 PM: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+6:45:46 PM: Error: Build script returned non-zero exit code: 1
+6:45:46 PM: Command failed with exit code 1: npm run build
+6:45:46 PM: Failing build: Failed to build site
+6:45:46 PM: Failed during stage 'building site': Build script returned non-zero exit code: 1
+6:45:46 PM: Finished processing build request in 34.726s

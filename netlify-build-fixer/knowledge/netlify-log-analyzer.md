@@ -1,0 +1,334 @@
+# Netlify Build Log Analyzer
+
+## Introduction
+
+This guide will help you analyze Netlify build logs to identify common issues. Understanding build logs is crucial for diagnosing problems with your Netlify deployments.
+
+## Log Structure Overview
+
+Netlify build logs typically contain the following sections:
+
+1. **Build initialization** - Information about the build environment and setup
+2. **Dependency installation** - Package manager operations (npm, yarn, etc.)
+3. **Build command execution** - Output from your specified build command
+4. **Post-processing** - Asset optimization, redirects processing, etc.
+5. **Deployment** - Site publishing information
+6. **Build completion** - Summary of the build process
+
+## Common Error Patterns to Look For
+
+### Non-Zero Exit Codes
+
+```
+1:23:45 PM: Build script returned non-zero exit code: 1
+```
+
+This indicates a command in your build process failed. Look for error messages earlier in the log.
+
+### Missing Dependencies
+
+```
+1:23:45 PM: Cannot find module 'some-package'
+1:23:45 PM: Error: ENOENT: no such file or directory
+```
+
+These errors suggest missing dependencies or incorrect import paths.
+
+### Memory Issues
+
+```
+1:23:45 PM: FATAL ERROR: Ineffective mark-compacts
+1:23:45 PM: JavaScript heap out of memory
+1:23:45 PM: <--- Last few GCs --->
+```
+
+These errors indicate your build is exceeding memory limits (3GB).
+
+### Lingering Processes
+
+```
+1:23:45 PM: Build completed successfully, but the following processes were still running:
+1:23:45 PM: 1234 /usr/local/bin/node server.js
+```
+
+These messages indicate background processes preventing build completion.
+
+### Permission Errors
+
+```
+1:23:45 PM: EACCES: permission denied, open '/opt/build/repo/...
+1:23:45 PM: chmod: cannot access './scripts/build.sh': Permission denied
+```
+
+These suggest permission issues with files in your repository.
+
+### Build Timeouts
+
+```
+1:23:45 PM: Build exceeded maximum allowed runtime
+```
+
+This indicates your build took longer than the 15-minute limit.
+
+### Case Sensitivity Issues
+
+```
+1:23:45 PM: Failed to resolve import '../../components/Header' from './Page.js'
+1:23:45 PM: Error: Cannot find module '../../components/Header'
+```
+
+When the file exists but with different casing (e.g., header.js vs. Header.js).
+
+## Step-by-Step Log Analysis
+
+### 1. Identify the Error Location
+
+- Search for terms like "error", "failed", "warning", or "exited with code"
+- Note the timestamp to understand where in the build process the error occurred
+- Look for the first occurrence of errors, as subsequent errors may be consequences
+
+### 2. Examine Build Environment Information
+
+At the beginning of logs, check for:
+
+```
+1:23:45 PM: Build ready to start
+1:23:45 PM: build-image version: ...
+1:23:45 PM: buildbot version: ...
+1:23:45 PM: Node.js version: ...
+```
+
+Verify this matches your expected environment.
+
+### 3. Review Dependency Installation
+
+Look for package manager output:
+
+```
+1:23:45 PM: Installing dependencies
+1:23:45 PM: npm ci
+```
+
+Check for errors or warnings in this section.
+
+### 4. Analyze Build Command Execution
+
+Examine output from your build command:
+
+```
+1:23:45 PM: > my-site@1.0.0 build
+1:23:45 PM: > next build
+```
+
+Most build errors will appear in this section.
+
+### 5. Check Post-Processing
+
+Review asset processing and optimization:
+
+```
+1:23:45 PM: Creating optimized assets...
+1:23:45 PM: Processing and copying assets...
+```
+
+### 6. Examine Deployment Information
+
+Look for deployment details:
+
+```
+1:23:45 PM: Starting post processing
+1:23:45 PM: Creating deploy upload records
+```
+
+### 7. Review Build Summary
+
+Check the build summary at the end:
+
+```
+1:23:45 PM: Site is live ✨
+```
+
+Or error information:
+
+```
+1:23:45 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+```
+
+## Framework-Specific Error Patterns
+
+### React/Create React App
+
+```
+1:23:45 PM: Failed to compile.
+1:23:45 PM: Module not found: Can't resolve './App' in '/opt/build/repo/src'
+```
+
+### Next.js
+
+```
+1:23:45 PM: error - Failed to compile.
+1:23:45 PM: Error: Cannot find module '@/components/Header'
+```
+
+### Gatsby
+
+```
+1:23:45 PM: ERROR #98123  WEBPACK
+1:23:45 PM: Generating image thumbnails has failed
+```
+
+### Vue/Nuxt
+
+```
+1:23:45 PM:  ERROR  Failed to compile with 1 error
+1:23:45 PM: This dependency was not found
+```
+
+## Using Log Analysis Tools
+
+### Netlify CLI Log Retrieval
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Login to Netlify
+netlify login
+
+# Get recent deploys
+netlify sites:list
+netlify deploy:list --site=your-site-name
+
+# Get logs for a specific deploy
+netlify deploy:logs --site=your-site-name --id=deploy-id
+```
+
+### Creating a Simple Log Analyzer
+
+You can create a simple script to analyze build logs:
+
+```javascript
+// analyze-log.js
+const fs = require('fs');
+
+// Read the log file
+const log = fs.readFileSync('netlify-build.log', 'utf8');
+
+// Define patterns to look for
+const patterns = {
+  nonZeroExit: /Build script returned non-zero exit code: (\d+)/,
+  missingModule: /Cannot find module '([^']+)'/g,
+  memoryIssue: /(JavaScript heap out of memory|FATAL ERROR: Ineffective mark-compacts)/,
+  lingeringProcess: /Build completed successfully, but the following processes were still running:/,
+  permissionError: /EACCES: permission denied/,
+  buildTimeout: /Build exceeded maximum allowed runtime/,
+};
+
+// Check for each pattern
+Object.entries(patterns).forEach(([issue, pattern]) => {
+  const matches = log.match(pattern);
+  if (matches) {
+    console.log(`Detected ${issue}: ${matches.length} occurrences`);
+    
+    // Print relevant log lines for context
+    const lines = log.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      if (pattern.test(lines[i])) {
+        console.log('\nContext:');
+        console.log(lines.slice(Math.max(0, i-5), i+5).join('\n'));
+        break;
+      }
+    }
+  }
+});
+
+// Identify build stages and timing
+const buildStart = log.match(/Build ready to start/);
+const dependencyInstall = log.match(/Installing dependencies/);
+const buildCommand = log.match(/> ([^>\n]+)/);
+const buildComplete = log.match(/Site is live|Build failed/);
+
+if (buildStart && buildComplete) {
+  console.log('\nBuild Stages:');
+  console.log('- Build initialization');
+  if (dependencyInstall) console.log('- Dependency installation');
+  if (buildCommand) console.log(`- Build command execution: ${buildCommand[1]}`);
+  console.log(`- Build ${log.includes('Site is live') ? 'completed successfully' : 'failed'}`);
+}
+```
+
+## Troubleshooting Based on Log Analysis
+
+### Failed Dependency Installation
+
+If logs show:
+```
+1:23:45 PM: npm ERR! code ETARGET
+1:23:45 PM: npm ERR! notarget No matching version found for package@x.y.z
+```
+
+**Solutions:**
+- Check package.json for incorrect version constraints
+- Ensure all dependencies are available in npm registry
+- Verify lockfile integrity with `npm ci` locally
+
+### Build Command Errors
+
+If logs show:
+```
+1:23:45 PM: sh: 1: gatsby: not found
+```
+
+**Solutions:**
+- Ensure build command is correctly specified
+- Check if dependencies are properly installed
+- Verify script names in package.json
+
+### Memory Issues
+
+If logs show:
+```
+1:23:45 PM: <--- JS stacktrace --->
+1:23:45 PM: FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed
+```
+
+**Solutions:**
+- Add `NODE_OPTIONS="--max-old-space-size=3072"` to build environment
+- Optimize large operations (image processing, data generation)
+- Split build into smaller tasks
+
+### Lingering Processes
+
+If logs show:
+```
+1:23:45 PM: Build completed successfully, but the following processes were still running:
+1:23:45 PM: 1234 /usr/local/bin/node /opt/build/repo/node_modules/.bin/next dev
+```
+
+**Solutions:**
+- Change from development to production build commands
+- Add process termination to your build command
+- Implement proper cleanup in build scripts
+
+## Creating a Log-Based Action Plan
+
+1. **Collect** the complete build log
+2. **Identify** specific error patterns and timestamps
+3. **Analyze** the context around errors
+4. **Formulate** a hypothesis about the root cause
+5. **Test** potential solutions locally if possible
+6. **Implement** the solution and deploy again
+7. **Verify** the fix by examining new build logs
+8. **Document** the issue and solution for future reference
+
+## Conclusion
+
+Effective log analysis is a crucial skill for debugging Netlify build issues. By systematically examining logs, identifying patterns, and applying targeted fixes, you can resolve most build problems efficiently.
+
+Remember to always:
+- Look for the earliest occurrence of errors
+- Consider the context around error messages
+- Test solutions locally before deploying
+- Document your findings and solutions
+
+With these techniques, you'll be able to quickly diagnose and fix issues with your Netlify builds.
