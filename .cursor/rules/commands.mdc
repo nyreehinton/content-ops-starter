@@ -1,0 +1,141 @@
+---
+description: Netlify Debug Agent Command Reference
+globs: 
+alwaysApply: false
+---
+# Netlify Debug Agent - Command Reference
+
+This document lists all commands to run tools and agents configured in our project.
+
+## Core Agent Commands
+
+### Simplified Agent
+
+```bash
+# Run the simplified Netlify debug agent
+python3 netlify_agent.py
+
+# Or use the start script (recommended)
+./start-agent.sh
+```
+
+### Full Agent
+
+```bash
+# Run the full Netlify debug agent
+python3 netlify_debug_agent.py
+
+# Interactive agent with Agno features
+python3 netlify-debug-agent.py
+```
+
+## Setup and Environment Commands
+
+```bash
+# Set up the virtual environment and install dependencies
+./setup-venv.sh
+
+# Activate the virtual environment manually
+source venv/bin/activate
+
+# Set OpenAI API key directly (alternative to .env file)
+export OPENAI_API_KEY=your_openai_api_key
+```
+
+## Netlify CLI Commands
+
+```bash
+# Install Netlify CLI globally
+npm install -g netlify-cli
+
+# Verify Netlify CLI installation
+netlify --version
+
+# Initialize a Netlify site
+netlify init
+
+# Test Netlify build locally
+netlify build
+
+# Deploy site to Netlify
+netlify deploy
+
+# View site status
+netlify status
+
+# List Netlify sites
+netlify sites:list
+
+# View build logs
+netlify logs:deploy
+
+# View function logs
+netlify logs:function
+```
+
+## Testing Commands
+
+```bash
+# Run the test suite
+python3 tests/netlify_toolkit_tests.py
+
+# Run individual test file
+python3 netlify-toolkit-tests.py
+```
+
+## Environment Setup
+
+```bash
+# Check Python version
+python3 --version
+
+# Create a new .env file
+cat > .env << 'EOL'
+OPENAI_API_KEY=your_openai_api_key
+NETLIFY_AUTH_TOKEN=your_netlify_auth_token
+EOL
+
+# Install required packages manually
+pip install agno openai python-dotenv requests pydantic
+```
+
+## Directory Navigation
+
+```bash
+# Navigate to the agent directory
+cd agno/netlify-debug-agent
+
+# Navigate to the project root
+cd ../../
+
+# Create required directories
+mkdir -p agno/netlify-debug-agent/tests
+```
+
+## Debugging Commands
+
+```bash
+# Check Netlify configuration
+cat netlify.toml
+
+# Validate environment variables
+echo $OPENAI_API_KEY | grep -o '.\{5\}$'
+
+# Check for required files
+ls -la agno/netlify-debug-agent/
+
+# Check virtual environment status
+which python
+```
+
+## Advanced Usage
+
+```bash
+# Run the agent with additional configurations
+OPENAI_API_KEY=your_key LOG_LEVEL=debug python3 netlify_debug_agent.py
+
+# Run the agent in a one-off command without enabling the virtual environment
+python3 -c "import sys; sys.path.append('./venv/lib/python3.x/site-packages'); import netlify_debug_agent; netlify_debug_agent.main()"
+```
+
+Remember to replace placeholder values (like `your_openai_api_key`) with your actual values when running these commands.

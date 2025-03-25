@@ -1,0 +1,250 @@
+---
+description: 
+globs: *.json,*.config.js,*.toml
+alwaysApply: false
+---
+# Frequently Encountered Problems During Builds
+
+## Common Build Failures
+
+### Non-Zero Exit Codes
+- Most common type of build failure
+- Occurs when a build command returns an error status
+- Look for specific error messages in the build log
+- Usually caused by syntax errors, missing dependencies, or configuration issues
+
+### Missing Dependencies
+- Package not installed or missing from package.json
+- Command or tool not available in the build environment
+- Missing system-level dependencies
+- Incompatible package versions
+
+### Configuration Issues
+- Incorrect settings in netlify.toml or site settings
+- Mismatched Node.js or other runtime versions
+- Incorrect build commands or pathways
+- Environment variables missing or misconfigured
+
+### Resource Limits
+- Exceeding the 15-minute build timeout
+- Running out of memory (3GB limit)
+- Too many processes or connections
+- Large repositories or deployment sizes
+
+### File System Issues
+- Case sensitivity differences (MacOS vs. Linux)
+- File permission problems
+- Path length limitations
+- Special characters in filenames
+
+## Framework-Specific Issues
+
+### React
+- Missing build script in package.json
+- Incorrect import paths
+- Environment variable formatting (REACT_APP_ prefix)
+- Invalid JSX syntax
+
+### Next.js
+- Incompatible Node.js version
+- API routes not handled correctly for static export
+- Incorrect export configuration
+- Missing required dependencies
+
+### Gatsby
+- GraphQL query errors
+- Plugin configuration issues
+- Image processing failures
+- Memory issues with large sites
+
+### Vue/Nuxt
+- Incorrect Nuxt configuration
+- SSR vs. static generation settings
+- Plugin compatibility problems
+- Transpilation issues
+
+### Angular
+- AOT compilation errors
+- Zone.js compatibility
+- Polyfill configurations
+- Memory-intensive builds
+
+## Debugging Approaches
+
+### Reading Build Logs
+- Look for error messages and warnings
+- Identify which command failed
+- Check for environment information
+- Look for known patterns like "npm ERR!" or "Failed to compile"
+
+### Reproducing Issues Locally
+- Use the same build command locally
+- Match the Netlify environment where possible
+- Test with a clean installation
+- Use Netlify CLI to simulate the build environment
+
+### Isolated Testing
+- Comment out parts of the build process
+- Test individual commands separately
+- Add debugging output at various stages
+- Build incrementally to isolate the failure point
+
+## Common Solutions
+
+### For Dependency Issues
+- Ensure all dependencies are in package.json
+- Use lockfiles (package-lock.json, yarn.lock)
+- Specify exact versions for critical packages
+- Check for peer dependencies
+- Use the right package manager commands:
+  - `npm ci` instead of `npm install`
+  - `yarn install --frozen-lockfile`
+
+### For Configuration Problems
+- Validate JSON and YAML files for syntax errors
+- Use consistent casing in paths and imports
+- Reference files using relative paths correctly
+- Check environment variable usage and formatting
+
+### For Memory Issues
+- Optimize large operations (image processing, etc.)
+- Split builds into smaller chunks
+- Pre-process large assets before deployment
+- Use incremental builds where possible
+
+### For Timeout Problems
+- Optimize build steps to reduce duration
+- Use caching strategies
+- Consider pre-building portions of your site
+- Split large sites into multiple deployments
+
+### For File System Issues
+- Use consistent casing in imports and filenames
+- Avoid special characters in filenames
+- Keep paths reasonably short
+- Be aware of different file permissions
+
+## Environment-Specific Fixes
+
+### Node.js Projects
+- Specify Node.js version in package.json or netlify.toml
+- Use compatible NPM/Yarn versions
+- Handle environment variables correctly
+- Ensure build scripts are defined properly
+
+### Ruby/Jekyll Projects
+- Set Ruby version in netlify.toml
+- Specify Gemfile dependencies correctly
+- Handle bundler versions appropriately
+- Set correct build directory
+
+### Python Projects
+- Specify Python version
+- Use requirements.txt or Pipfile
+- Handle virtual environments correctly
+- Configure build command to use correct Python
+
+### PHP Projects
+- Handle Composer dependencies
+- Configure build process for PHP applications
+- Consider using a build step for PHP applications
+- Set up appropriate directory structure
+
+## Advanced Troubleshooting
+
+### Environment Overrides
+```toml
+# netlify.toml
+[build.environment]
+  NODE_VERSION = "16"
+  NPM_FLAGS = "--no-audit --no-fund"
+  DEBUG = "true"
+```
+
+### Custom Build Commands
+```toml
+[build]
+  command = "npm run build:debug"
+```
+
+### Build Hooks
+```bash
+# Add to your build command
+echo "==== Environment Information ===="
+node --version
+npm --version
+ls -la
+env | grep NETLIFY
+```
+
+### Diagnostic Commands
+```bash
+# Add to package.json scripts
+"debug": "npm run build || (echo '==== DEBUG INFO =====' && ls -la && exit 1)"
+```
+
+## Common Error Messages and Solutions
+
+### "Failed during stage 'building site': Build script returned non-zero exit code"
+- Check for syntax errors in your code
+- Verify all dependencies are installed
+- Look for more specific error messages earlier in the log
+
+### "Error: EACCES: permission denied"
+- Check file permissions in your repository
+- Ensure build commands don't try to write to protected directories
+- Use relative paths within your project directory
+
+### "JavaScript heap out of memory"
+- Reduce memory usage in build process
+- Add NODE_OPTIONS="--max-old-space-size=3072" to increase memory limit
+- Split large operations into smaller chunks
+
+### "Cannot find module"
+- Ensure all dependencies are in package.json
+- Check for typos in import statements
+- Verify file paths and casing
+- Run npm install or yarn install locally to test
+
+### "Build exceeded maximum allowed runtime"
+- Optimize build process to complete faster
+- Use caching strategies
+- Consider splitting into multiple deployments
+- Remove unnecessary build steps
+
+## Best Practices
+
+### Version Control
+- Pin dependency versions to prevent unexpected changes
+- Use .nvmrc or specify Node version in netlify.toml
+- Commit lockfiles to ensure consistent installations
+
+### Testing
+- Test builds locally before pushing
+- Use Netlify CLI for local build testing
+- Run a clean install to verify dependency setup
+
+### Monitoring
+- Keep track of build times and resource usage
+- Set up alerts for failed builds
+- Review build logs regularly
+
+### Documentation
+- Document your build process
+- Note environment requirements
+- Maintain troubleshooting guides for team members
+
+## Seeking Support
+
+### Before Contacting Support
+- Review build logs thoroughly
+- Test locally with the same configuration
+- Check Netlify status for service issues
+- Search community forums for similar issues
+
+### Providing Information
+- Complete build logs
+- netlify.toml configuration
+- package.json and lockfiles
+- Repository access or sample code
+- Steps to reproduce the issue

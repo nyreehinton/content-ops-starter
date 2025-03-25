@@ -1,0 +1,206 @@
+---
+description: 
+globs: *toml,*.config.js,*.js,*.json
+alwaysApply: false
+---
+# My Site Deploy Fails Unless Netlify's Build Cache is Cleared
+
+## Understanding Build Cache Issues
+
+### What is Netlify's Build Cache?
+- Netlify provides a persistent cache between builds
+- Located at `/opt/build/cache/` in the build environment
+- Can significantly speed up builds by preserving dependencies
+- Particularly useful for node_modules, Ruby gems, etc.
+- Package managers like npm and yarn utilize this cache
+
+### Common Cache-Related Problems
+- Corrupted dependency installations
+- Incompatible cached versions
+- Build succeeds locally but fails on Netlify
+- Errors that disappear after clearing cache
+- Inconsistent behavior between builds
+- Dependency version conflicts
+
+### Signs That Cache Might Be the Issue
+- Builds intermittently fail with dependency errors
+- Clearing cache manually fixes the problem
+- Error messages reference missing or corrupted files
+- Package manager reports unexpected version conflicts
+- Build fails after dependency updates
+
+## Diagnosing Cache Issues
+
+### Error Patterns to Look For
+- "Cannot find module" errors despite the package being in package.json
+- "Unexpected token" or syntax errors in node_modules
+- Version conflicts between installed packages
+- Native module binding errors
+- "Invalid hook call" React errors
+- Gatsby or Next.js specific module resolution errors
+
+### Confirming Cache as the Culprit
+- Manually clear the cache in Netlify UI
+- Observe if the build succeeds after cache clearing
+- Compare logs between failed and successful builds
+- Look for differences in installed dependencies
+- Test with cache disabled temporarily
+
+## Short-Term Solutions
+
+### Manually Clearing Cache
+- In the Netlify UI, go to Site settings > Build & deploy > Clear cache and deploy site
+- Use this when you need an immediate fix
+- Helpful during debugging to establish a baseline
+- Not a long-term solution for recurring problems
+
+### Force Clean Installs
+- Modify build command to force clean installations:
+```bash
+# For npm
+rm -rf node_modules && npm ci
+
+# For yarn
+rm -rf node_modules && yarn install --frozen-lockfile
+```
+- Add to netlify.toml:
+```toml
+[build]
+  command = "rm -rf node_modules && npm ci && npm run build"
+```
+
+### Skipping Cache for Specific Builds
+- Add environment variables to skip caching when needed:
+```toml
+[build.environment]
+  NETLIFY_USE_YARN_CACHE = "false"
+  NETLIFY_USE_NPM_CACHE = "false"
+```
+
+## Long-Term Solutions
+
+### Lockfile Maintenance
+- Ensure package-lock.json or yarn.lock is committed to your repository
+- Keep lockfiles updated with your dependencies
+- Regenerate lockfiles when making dependency changes
+- Use `npm ci` or `yarn install --frozen-lockfile` for consistent installs
+
+### Dependency Management
+- Regularly update dependencies to avoid conflicts
+- Pin exact versions for critical dependencies
+- Use npm or yarn audit to identify problematic packages
+- Consider using dependency management tools like Renovate or Dependabot
+
+### Build Script Optimization
+- Implement more resilient build scripts
+- Add verification steps to ensure correct installations
+- Add cleanup steps for problematic cached files
+- Implement better error handling in build scripts
+
+### Package Manager Configuration
+- Configure package managers to handle cache more effectively
+- Use npm or yarn configuration settings for better caching
+- Consider alternative package managers like pnpm
+
+## Framework-Specific Solutions
+
+### Node.js/npm/yarn
+- Use `npm ci` instead of `npm install`
+- Implement `.npmrc` with appropriate settings
+- Configure Yarn with `.yarnrc` for better caching
+- Consider yarn's zero-installs or Plug'n'Play
+
+### Gatsby
+- Use gatsby-plugin-netlify-cache selectively
+- Clear .cache directory in build command
+- Use more specific cache invalidation
+```bash
+gatsby clean && gatsby build
+```
+
+### Next.js
+- Clear .next cache directory when needed
+- Implement proper dependency management
+- Use specific cache directories for persistent caching
+
+### Other Frameworks
+- Follow framework-specific cache recommendations
+- Implement appropriate cache invalidation
+- Consult framework documentation for Netlify deployments
+
+## Implementing Custom Cache Controls
+
+### Selective Cache Clearing
+- Clear only problematic directories:
+```bash
+# Example: Clear only problematic cache directories
+rm -rf node_modules/.cache/babel-loader
+```
+
+### Cache Validation
+- Add validation steps to your build process:
+```bash
+# Check for common cache issues before building
+node ./scripts/validate-cache.js || rm -rf node_modules
+```
+
+### Custom Caching Logic
+- Implement your own caching mechanism for specific files
+- Use Netlify's persistent cache directory for custom caching
+- Create cache manifests to track cached content
+
+### Cache Warming
+- Implement cache warming scripts
+- Pre-populate cache with known good content
+- Verify cache integrity during builds
+
+## Advanced Techniques
+
+### Hybrid Caching Strategies
+- Selectively cache certain dependencies
+- Implement tiered caching approaches
+- Use different strategies for development vs. production
+
+### Build Environment Analysis
+- Add diagnostic commands to analyze the build environment
+- Track cache usage and performance
+- Identify specific problematic packages
+
+### Custom Build Plugins
+- Create Netlify Build Plugins for custom cache handling
+- Implement pre-build and post-build cache management
+- Add cache validation logic
+
+## Preventative Measures
+
+### Regular Maintenance
+- Schedule regular cache clearing
+- Update dependencies on a consistent schedule
+- Test builds with and without cache periodically
+
+### Monitoring and Alerts
+- Set up alerts for build failures
+- Monitor build times for unexpected changes
+- Track cache hit rates and effectiveness
+
+### Team Practices
+- Document cache clearing procedures
+- Establish protocols for dependency updates
+- Create standard approaches to handling cache issues
+
+## Getting Support
+
+### Documentation and Resources
+- Netlify documentation on caching
+- Package manager caching guides
+- Framework-specific caching recommendations
+
+### Community Support
+- Netlify Community forums
+- Framework-specific communities
+- Stack Overflow for specific error patterns
+
+### Netlify Support
+- Provide detailed build logs
+- Document steps to reproduce cache issues
+- Share netlify.toml and package manager configurations

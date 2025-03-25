@@ -1,0 +1,58 @@
+[2025-03-25T16:23:15.501Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:23:15.507Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:23:15.922Z] [INFO] Running unit tests...
+[2025-03-25T16:23:15.922Z] [INFO] Starting: npm run test
+[2025-03-25T16:23:16.014Z] [INFO] Finished: npm run test (exit code: 1, time: 0s)
+[2025-03-25T16:24:26.287Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:24:26.292Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:24:26.636Z] [INFO] Running unit tests...
+[2025-03-25T16:24:26.636Z] [INFO] Starting: jest
+[2025-03-25T16:24:26.643Z] [INFO] Finished: jest (exit code: 127, time: 0s)
+[2025-03-25T16:27:02.048Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:27:02.053Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:27:02.376Z] [INFO] Running unit tests...
+[2025-03-25T16:27:02.376Z] [INFO] Starting: jest
+[2025-03-25T16:27:02.385Z] [INFO] Finished: jest (exit code: 127, time: 0s)
+[2025-03-25T16:27:02.385Z] [INFO] Running integration tests...
+[2025-03-25T16:27:02.479Z] [INFO] Running end-to-end tests...
+[2025-03-25T16:27:02.573Z] [INFO] All tests passed successfully
+[2025-03-25T16:28:20.979Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:28:20.984Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:28:21.317Z] [INFO] Running unit tests...
+[2025-03-25T16:28:21.317Z] [INFO] Starting: jest
+[2025-03-25T16:28:21.323Z] [INFO] Finished: jest (exit code: 127, time: 0s)
+[2025-03-25T16:28:21.324Z] [INFO] Running integration tests...
+[2025-03-25T16:28:21.417Z] [INFO] Running end-to-end tests...
+[2025-03-25T16:28:21.511Z] [INFO] All tests passed successfully
+[2025-03-25T16:28:53.483Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:28:53.488Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:28:53.829Z] [INFO] Running unit tests...
+[2025-03-25T16:28:53.829Z] [INFO] Executing command: npx jest
+[2025-03-25T16:28:56.902Z] [INFO] Running integration tests...
+[2025-03-25T16:28:57.014Z] [INFO] Running end-to-end tests...
+[2025-03-25T16:28:57.115Z] [INFO] All tests passed successfully
+[2025-03-25T16:29:14.396Z] [INFO] Netlify Test Executor started
+[2025-03-25T16:29:14.402Z] [INFO] Options: {
+  "deployUrl": null,
+  "skipTests": []
+}
+[2025-03-25T16:29:14.731Z] [INFO] Running unit tests...
+[2025-03-25T16:29:14.732Z] [INFO] Executing command: npx jest
+[2025-03-25T16:29:17.697Z] [INFO] Running integration tests...
+[2025-03-25T16:29:17.802Z] [INFO] Running end-to-end tests...
+[2025-03-25T16:29:17.899Z] [INFO] All tests passed successfully

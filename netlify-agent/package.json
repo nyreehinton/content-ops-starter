@@ -1,0 +1,40 @@
+{
+    "name": "netlify-agents",
+    "version": "1.0.0",
+    "description": "Comprehensive agent tools for Netlify build and deployment management",
+    "main": "index.js",
+    "scripts": {
+        "debug": "node debug-agent.sh",
+        "monitor": "node resource-monitor.js",
+        "test-exec": "node test-executor.js",
+        "deploy": "node deployment-manager.js",
+        "process": "node process-manager.js",
+        "check-build": "node enhanced-netlify-debug-agent.sh"
+    },
+    "bin": {
+        "netlify-debug": "./debug-agent.sh",
+        "netlify-monitor": "./resource-monitor.js",
+        "netlify-tests": "./test-executor.js",
+        "netlify-deploy": "./deployment-manager.js",
+        "netlify-process": "./process-manager.js",
+        "netlify-build-check": "./enhanced-netlify-debug-agent.sh"
+    },
+    "keywords": [
+        "netlify",
+        "deployment",
+        "build",
+        "testing",
+        "monitoring",
+        "process",
+        "resource"
+    ],
+    "author": "Netlify Build Team",
+    "license": "MIT",
+    "dependencies": {
+        "ps-node": "^0.1.6"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=14"
+    }
+}

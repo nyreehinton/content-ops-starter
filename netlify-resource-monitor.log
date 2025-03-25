@@ -1,0 +1,84 @@
+[2025-03-25T16:23:15.500Z] [INFO] Resource monitoring started
+[2025-03-25T16:23:15.505Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:23:15.505Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:23:15.505Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:23:15.505Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:23:15.528Z] [INFO] Memory: 33.59 MB (0.4% of limit)
+[2025-03-25T16:23:15.528Z] [INFO] CPU: 363.2% (121.1% of limit)
+[2025-03-25T16:23:15.528Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:23:15.528Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 363.2%
+[2025-03-25T16:23:15.534Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:23:15.534Z] [WARN] 
+[2025-03-25T16:23:16.103Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:24:26.286Z] [INFO] Resource monitoring started
+[2025-03-25T16:24:26.291Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:24:26.291Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:24:26.291Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:24:26.291Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:24:26.312Z] [INFO] Memory: 33.67 MB (0.4% of limit)
+[2025-03-25T16:24:26.312Z] [INFO] CPU: 509.3% (169.8% of limit)
+[2025-03-25T16:24:26.312Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:24:26.312Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 509.3%
+[2025-03-25T16:24:26.318Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:24:26.318Z] [WARN] 
+[2025-03-25T16:24:27.404Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:26:28.587Z] [INFO] Resource monitoring started
+[2025-03-25T16:26:28.591Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:26:28.591Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:26:28.591Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:26:28.591Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:26:28.613Z] [INFO] Memory: 34.17 MB (0.4% of limit)
+[2025-03-25T16:26:28.613Z] [INFO] CPU: 428.8% (142.9% of limit)
+[2025-03-25T16:26:28.613Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:26:28.614Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 428.8%
+[2025-03-25T16:26:28.620Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:26:28.620Z] [WARN] 
+[2025-03-25T16:26:29.360Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:27:02.047Z] [INFO] Resource monitoring started
+[2025-03-25T16:27:02.051Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:27:02.051Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:27:02.051Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:27:02.052Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:27:02.073Z] [INFO] Memory: 34.02 MB (0.4% of limit)
+[2025-03-25T16:27:02.073Z] [INFO] CPU: 411.9% (137.3% of limit)
+[2025-03-25T16:27:02.073Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:27:02.073Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 411.9%
+[2025-03-25T16:27:02.079Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:27:02.079Z] [WARN] 
+[2025-03-25T16:27:03.310Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:28:20.978Z] [INFO] Resource monitoring started
+[2025-03-25T16:28:20.983Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:28:20.983Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:28:20.983Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:28:20.983Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:28:21.007Z] [INFO] Memory: 33.84 MB (0.4% of limit)
+[2025-03-25T16:28:21.007Z] [INFO] CPU: 637.1% (212.4% of limit)
+[2025-03-25T16:28:21.008Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:28:21.008Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 637.1%
+[2025-03-25T16:28:21.015Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:28:21.015Z] [WARN] 
+[2025-03-25T16:28:22.228Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:28:22.228Z] [INFO] Total build time: 0m 1s
+[2025-03-25T16:28:22.228Z] [INFO] Peak memory usage: 33.84 MB
+[2025-03-25T16:28:22.228Z] [INFO] Peak CPU usage: 637.1%
+[2025-03-25T16:29:14.395Z] [INFO] Resource monitoring started
+[2025-03-25T16:29:14.400Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:29:14.400Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:29:14.400Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:29:14.400Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:29:14.423Z] [INFO] Memory: 33.58 MB (0.4% of limit)
+[2025-03-25T16:29:14.423Z] [INFO] CPU: 416.3% (138.8% of limit)
+[2025-03-25T16:29:14.423Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:29:14.424Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 416.3%
+[2025-03-25T16:29:14.430Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:29:14.430Z] [WARN] 
+[2025-03-25T16:29:18.627Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:29:18.628Z] [INFO] Total build time: 0m 4s
+[2025-03-25T16:29:18.628Z] [INFO] Peak memory usage: 33.58 MB
+[2025-03-25T16:29:18.628Z] [INFO] Peak CPU usage: 416.3%
