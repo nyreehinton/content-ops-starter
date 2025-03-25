@@ -1,5 +1,5 @@
 [build]
-  command = "next build && (pkill -f node || true)"
+  command = "next build"
   publish = ".next"
   functions = "netlify/functions"
 
