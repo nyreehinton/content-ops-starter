@@ -1,6 +1,6 @@
 'use client';
 
-import { AnalysisCard } from '@/data/analysisData';
+import { AnalysisCard } from '@/data';
 import { getSafeAnalysisCard } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
 import Link from 'next/link';

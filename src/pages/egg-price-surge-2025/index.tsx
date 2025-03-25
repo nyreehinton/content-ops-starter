@@ -1,6 +1,17 @@
 import React from 'react';
 import { DefaultBaseLayout } from '@/components/layouts';
 import Head from 'next/head';
+import { 
+  mainArticle, 
+  producerImplications, 
+  consumerImplications, 
+  keyTakeaway, 
+  priceData, 
+  regionalPrices, 
+  industryData, 
+  structuralChallenges, 
+  calMaineImpact 
+} from '@/data';
 
 const EggPriceSurge = () => {
   // Create a complete site object with the required properties

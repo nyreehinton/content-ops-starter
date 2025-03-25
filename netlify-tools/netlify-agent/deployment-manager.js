@@ -16,6 +16,8 @@ const https = require('https');
 const querystring = require('querystring');
 const fs = require('fs');
 const path = require('path');
+const netlify = require('netlify');
+const { exec } = require('child_process');
 
 // Configuration
 const CONFIG = {
@@ -34,8 +36,8 @@ const CONFIG = {
 
 // State
 const STATE = {
-    authToken: process.env.NETLIFY_AUTH_TOKEN || null,
-    siteId: process.env.NETLIFY_SITE_ID || null,
+    authToken: process.env.NETLIFY_AUTH_TOKEN,
+    siteId: process.env.NETLIFY_SITE_ID,
     deploySha: null,
     deployId: null,
     siteName: null
@@ -148,11 +150,13 @@ function configure(options = {}) {
 
     // Validate configuration
     if (!STATE.authToken) {
-        log('No Netlify authentication token provided', 'warn');
+        log('No Netlify authentication token provided', 'error');
+        process.exit(1);
     }
 
     if (!STATE.siteId) {
-        log('No Netlify site ID provided', 'warn');
+        log('No Netlify site ID provided', 'error');
+        process.exit(1);
     }
 
     return {

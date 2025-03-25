@@ -299,7 +299,7 @@ mcp_apple_mcp_calendar - Search, create, and open calendar events in Apple Calen
 
 # Run only the Netlify debug team with empirical verification
 
-./run_agents.sh netlify https://your-netlify-site.com path/to/build-logs.txt
+./run_agents.sh netlify <https://your-netlify-site.com> path/to/build-logs.txt
 
 # Run a specific team of agents
 

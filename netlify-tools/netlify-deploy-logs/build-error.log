@@ -1,0 +1,14 @@
+
+> content-ops-starter@0.1.0 build
+> npm run type-check && next build
+
+
+> content-ops-starter@0.1.0 type-check
+> tsc --noEmit
+
+   ▲ Next.js 14.1.0
+   - Environments: .env
+
+   Skipping linting
+   Checking validity of types ...
+   Creating an optimized production build ...

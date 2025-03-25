@@ -82,3 +82,79 @@ Monitoring Summary:
 [2025-03-25T16:29:18.628Z] [INFO] Total build time: 0m 4s
 [2025-03-25T16:29:18.628Z] [INFO] Peak memory usage: 33.58 MB
 [2025-03-25T16:29:18.628Z] [INFO] Peak CPU usage: 416.3%
+[2025-03-25T16:54:25.581Z] [INFO] Resource monitoring started
+[2025-03-25T16:54:25.587Z] [INFO] Starting Netlify build resource monitoring
+[2025-03-25T16:54:25.587Z] [INFO] Memory limit: 8 GB
+[2025-03-25T16:54:25.587Z] [INFO] CPU limit: 3 vCPUs
+[2025-03-25T16:54:25.587Z] [INFO] Build time limit: 15m 0s
+[2025-03-25T16:54:25.611Z] [INFO] Memory: 33.8 MB (0.4% of limit)
+[2025-03-25T16:54:25.611Z] [INFO] CPU: 473.3% (157.8% of limit)
+[2025-03-25T16:54:25.611Z] [INFO] Time: 0m 0s (0.0% of limit)
+[2025-03-25T16:54:25.611Z] [WARN] WARNING: CPU usage is approaching Netlify's limit. Current: 473.3%
+[2025-03-25T16:54:25.617Z] [WARN] Top processes by CPU usage:
+[2025-03-25T16:54:25.617Z] [WARN] 
+[2025-03-25T16:54:30.617Z] [INFO] Memory: 30.88 MB (0.4% of limit)
+[2025-03-25T16:54:30.618Z] [INFO] CPU: 692.2% (230.7% of limit)
+[2025-03-25T16:54:30.618Z] [INFO] Time: 0m 5s (0.6% of limit)
+[2025-03-25T16:54:35.611Z] [INFO] Memory: 32.83 MB (0.4% of limit)
+[2025-03-25T16:54:35.611Z] [INFO] CPU: 275.5% (91.8% of limit)
+[2025-03-25T16:54:35.611Z] [INFO] Time: 0m 10s (1.1% of limit)
+[2025-03-25T16:54:40.623Z] [INFO] Memory: 32.27 MB (0.4% of limit)
+[2025-03-25T16:54:40.623Z] [INFO] CPU: 253.6% (84.5% of limit)
+[2025-03-25T16:54:40.623Z] [INFO] Time: 0m 15s (1.7% of limit)
+[2025-03-25T16:54:45.617Z] [INFO] Memory: 29.73 MB (0.4% of limit)
+[2025-03-25T16:54:45.617Z] [INFO] CPU: 261.3% (87.1% of limit)
+[2025-03-25T16:54:45.617Z] [INFO] Time: 0m 20s (2.2% of limit)
+[2025-03-25T16:54:50.614Z] [INFO] Memory: 30.06 MB (0.4% of limit)
+[2025-03-25T16:54:50.614Z] [INFO] CPU: 254.1% (84.7% of limit)
+[2025-03-25T16:54:50.614Z] [INFO] Time: 0m 25s (2.8% of limit)
+[2025-03-25T16:54:55.614Z] [INFO] Memory: 29.41 MB (0.4% of limit)
+[2025-03-25T16:54:55.614Z] [INFO] CPU: 142.2% (47.4% of limit)
+[2025-03-25T16:54:55.614Z] [INFO] Time: 0m 30s (3.3% of limit)
+[2025-03-25T16:55:00.616Z] [INFO] Memory: 29.3 MB (0.4% of limit)
+[2025-03-25T16:55:00.616Z] [INFO] CPU: 252.6% (84.2% of limit)
+[2025-03-25T16:55:00.616Z] [INFO] Time: 0m 35s (3.9% of limit)
+[2025-03-25T16:55:05.616Z] [INFO] Memory: 29.8 MB (0.4% of limit)
+[2025-03-25T16:55:05.616Z] [INFO] CPU: 150.1% (50.0% of limit)
+[2025-03-25T16:55:05.616Z] [INFO] Time: 0m 40s (4.4% of limit)
+[2025-03-25T16:55:10.618Z] [INFO] Memory: 29.67 MB (0.4% of limit)
+[2025-03-25T16:55:10.618Z] [INFO] CPU: 277.9% (92.6% of limit)
+[2025-03-25T16:55:10.619Z] [INFO] Time: 0m 45s (5.0% of limit)
+[2025-03-25T16:55:15.626Z] [INFO] Memory: 29.64 MB (0.4% of limit)
+[2025-03-25T16:55:15.626Z] [INFO] CPU: 227.2% (75.7% of limit)
+[2025-03-25T16:55:15.626Z] [INFO] Time: 0m 50s (5.6% of limit)
+[2025-03-25T16:55:20.629Z] [INFO] Memory: 30.13 MB (0.4% of limit)
+[2025-03-25T16:55:20.629Z] [INFO] CPU: 231.2% (77.1% of limit)
+[2025-03-25T16:55:20.629Z] [INFO] Time: 0m 55s (6.1% of limit)
+[2025-03-25T16:55:25.626Z] [INFO] Memory: 29.03 MB (0.4% of limit)
+[2025-03-25T16:55:25.626Z] [INFO] CPU: 234.1% (78.0% of limit)
+[2025-03-25T16:55:25.626Z] [INFO] Time: 1m 0s (6.7% of limit)
+[2025-03-25T16:55:30.625Z] [INFO] Memory: 23.17 MB (0.3% of limit)
+[2025-03-25T16:55:30.625Z] [INFO] CPU: 289.6% (96.5% of limit)
+[2025-03-25T16:55:30.625Z] [INFO] Time: 1m 5s (7.2% of limit)
+[2025-03-25T16:55:35.624Z] [INFO] Memory: 26.75 MB (0.3% of limit)
+[2025-03-25T16:55:35.624Z] [INFO] CPU: 360.8% (120.3% of limit)
+[2025-03-25T16:55:35.624Z] [INFO] Time: 1m 10s (7.8% of limit)
+[2025-03-25T16:55:40.631Z] [INFO] Memory: 27.97 MB (0.3% of limit)
+[2025-03-25T16:55:40.631Z] [INFO] CPU: 280.4% (93.5% of limit)
+[2025-03-25T16:55:40.631Z] [INFO] Time: 1m 15s (8.3% of limit)
+[2025-03-25T16:55:45.626Z] [INFO] Memory: 26.48 MB (0.3% of limit)
+[2025-03-25T16:55:45.626Z] [INFO] CPU: 254.9% (85.0% of limit)
+[2025-03-25T16:55:45.626Z] [INFO] Time: 1m 20s (8.9% of limit)
+[2025-03-25T16:55:50.632Z] [INFO] Memory: 23.59 MB (0.3% of limit)
+[2025-03-25T16:55:50.632Z] [INFO] CPU: 312.2% (104.1% of limit)
+[2025-03-25T16:55:50.632Z] [INFO] Time: 1m 25s (9.5% of limit)
+[2025-03-25T16:55:55.632Z] [INFO] Memory: 26.14 MB (0.3% of limit)
+[2025-03-25T16:55:55.632Z] [INFO] CPU: 244.2% (81.4% of limit)
+[2025-03-25T16:55:55.632Z] [INFO] Time: 1m 30s (10.0% of limit)
+[2025-03-25T16:56:00.634Z] [INFO] Memory: 26.27 MB (0.3% of limit)
+[2025-03-25T16:56:00.634Z] [INFO] CPU: 241.0% (80.3% of limit)
+[2025-03-25T16:56:00.634Z] [INFO] Time: 1m 35s (10.6% of limit)
+[2025-03-25T16:56:05.634Z] [INFO] Memory: 24.13 MB (0.3% of limit)
+[2025-03-25T16:56:05.634Z] [INFO] CPU: 259.3% (86.4% of limit)
+[2025-03-25T16:56:05.634Z] [INFO] Time: 1m 40s (11.1% of limit)
+[2025-03-25T16:56:06.854Z] [INFO] 
+Monitoring Summary:
+[2025-03-25T16:56:06.854Z] [INFO] Total build time: 1m 41s
+[2025-03-25T16:56:06.854Z] [INFO] Peak memory usage: 33.8 MB
+[2025-03-25T16:56:06.854Z] [INFO] Peak CPU usage: 692.2%

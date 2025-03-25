@@ -24,7 +24,6 @@ fetch_rules - Fetches rules provided by the user to help with navigating the cod
 
 ## GitHub Integration Tools
 
-```
 mcp_github_create_or_update_file - Create or update a single file in a GitHub repository
 mcp_github_search_repositories - Search for GitHub repositories
 mcp_github_create_repository - Create a new GitHub repository in your account
@@ -42,7 +41,8 @@ mcp_github_search_code - Search for code across GitHub repositories
 mcp_github_search_issues - Search for issues and pull requests across GitHub repositories
 mcp_github_search_users - Search for users on GitHub
 mcp_github_get_issue - Get details of a specific issue in a GitHub repository
-```
+
+````
 
 ## Agno Tool Modules
 
@@ -62,7 +62,7 @@ file_tools = FileTools(
     enable_copy=True,       # Enable copying files
     enable_move=True,       # Enable moving/renaming files
 )
-```
+
 
 ### Docker Tools
 
@@ -205,7 +205,6 @@ mcp_deeplucid3d_mcp_manage_state - Control the state management for UCPF process
 
 ## Apple Integration Tools
 
-```
 mcp_apple_mcp_contacts - Search and retrieve contacts from Apple Contacts app
 mcp_apple_mcp_notes - Search and retrieve notes from Apple Notes app
 mcp_apple_mcp_messages - Interact with Apple Messages app (send, read, schedule messages and check unread messages)
@@ -213,4 +212,4 @@ mcp_apple_mcp_mail - Interact with Apple Mail app (read unread emails, search em
 mcp_apple_mcp_reminders - Search, create, and open reminders in Apple Reminders app
 mcp_apple_mcp_webSearch - Search the web using DuckDuckGo and retrieve content from search results
 mcp_apple_mcp_calendar - Search, create, and open calendar events in Apple Calendar app
-```
+````

@@ -1,0 +1,45 @@
+[build]
+  command = "npm run netlify-build"
+  publish = ".next"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_OPTIONS = "--max-old-space-size=4096"
+  NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_IGNORE_ESLINT = "1"
+  # Improve Next.js build stability
+  NPM_FLAGS = "--no-audit --no-fund"
+
+[build.processing]
+  skip_processing = false
+
+[dev]
+  command = "next dev"
+  framework = "next"
+  targetPort = 3000
+  publish = ".next"
+
+# Set necessary headers for Next.js static assets
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Set caching for static data pages
+[[headers]]
+  for = "/_next/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+  # Enable Next.js ISR capabilities
+  enable_isr = true
+  # Use automatic installation
+  use_automatic_installation = true
+  # Skip debug logs
+  debug = false
+
+[[plugins]]
+package = "netlify-plugin-cache-nextjs"

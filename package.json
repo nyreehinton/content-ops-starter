@@ -8,8 +8,13 @@
         "start": "next start",
         "lint": "next lint",
         "type-check": "tsc --noEmit",
-        "netlify-build": "NODE_ENV=production NEXT_IGNORE_ESLINT=1 NODE_OPTIONS=\"--max-old-space-size=4096\" npm run build && cp _redirects .next/",
-        "test": "jest"
+        "netlify-build": "NODE_ENV=production NEXT_IGNORE_ESLINT=1 NODE_OPTIONS=\"--max-old-space-size=4096\" npm run build",
+        "test": "jest",
+        "run-netlify-agents": "sh netlify-tools/scripts/run_netlify_agents.sh",
+        "run-agents": "sh netlify-tools/scripts/run_agents.sh",
+        "start-agent": "sh netlify-tools/scripts/start-agent.sh",
+        "deploy-site": "sh netlify-tools/scripts/deploy-site.sh",
+        "setup-netlify": "sh netlify-tools/scripts/setup-netlify-env.sh"
     },
     "dependencies": {
         "@algolia/autocomplete-js": "^1.17.1",
