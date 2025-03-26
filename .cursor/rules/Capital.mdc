@@ -1,0 +1,126 @@
+---
+description: 
+globs: content/pages/capital/index.html,src/pages/capital/index.tsx
+alwaysApply: false
+---
+# Capital Group Page Management Guidelines
+
+## Overview
+
+The Capital Group page is a specialized dashboard that displays ETF (Exchange-Traded Fund) information and market analysis using a glass morphism design aesthetic. It features interactive elements and data visualizations.
+
+## Page Structure
+
+1. **Main Component**: `src/pages/capital/index.tsx`
+
+   - Handles HTML content loading via `getStaticProps`
+   - Manages client-side script initialization
+   - Implements SEO settings
+
+2. **Content Source**: `content/pages/capital/index.html`
+
+   - Contains the main dashboard HTML structure
+   - Implements glass morphism design
+   - Houses ETF product cards and data tables
+
+3. **Required Dependencies**:
+   - Chart.js for data visualization
+   - D3.js for advanced charts
+   - Anime.js for animations
+   - Tailwind CSS for styling
+
+## Component Features
+
+1. **Navigation**:
+
+   - Glass-effect sidebar with ETF categories
+   - Responsive top navigation bar
+   - Mobile-friendly menu toggle
+
+2. **ETF Cards**:
+
+   - Product information display
+   - Launch dates and AUM figures
+   - Category badges (Equity, Fixed Income, Balanced)
+
+3. **Data Visualization**:
+   - Performance charts
+   - Asset allocation diagrams
+   - Market trend analysis
+
+## Content Management
+
+1. **Adding New ETFs**:
+
+   - Create new glass-card components in the HTML
+   - Follow the existing structure for consistency
+   - Include all required metadata (ticker, launch date, AUM)
+
+2. **Updating ETF Data**:
+
+   - Modify values in the HTML content
+   - Update charts and visualizations
+   - Maintain consistent formatting
+
+3. **Market Analysis**:
+   - Add new sections using the glass-card design
+   - Include relevant charts and data tables
+   - Follow the established grid layout
+
+## Styling Guidelines
+
+1. **Glass Morphism**:
+
+   ```css
+   .glass {
+     background: rgba(255, 255, 255, 0.7);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+   }
+   ```
+
+2. **Color Scheme**:
+   - Primary: #0A66C2 (LinkedIn Blue)
+   - Secondary: #333333 (Dark Gray)
+   - Accent colors for category badges
+   - Transparent overlays for glass effect
+
+## Maintenance
+
+1. **Script Updates**:
+
+   - Keep Chart.js and D3.js versions current
+   - Test visualizations after updates
+   - Verify mobile responsiveness
+
+2. **Content Refresh**:
+
+   - Regular updates to ETF data
+   - Quarterly performance updates
+   - Market analysis revisions
+
+3. **Error Handling**:
+   - Implement loading states
+   - Provide fallbacks for failed chart loads
+   - Maintain error boundaries
+
+## Integration
+
+The Capital Group page integrates with the main site through:
+
+1. Consistent navigation structure
+2. Shared styling variables
+3. Common layout components
+4. Cross-linking with other analysis sections
+
+## SEO Considerations
+
+Maintain the following meta tags:
+
+```html
+<head>
+  <title>Capital Group ETF Dashboard - Glass Elegance</title>
+  <meta name="description" content="Interactive dashboard for Capital Group ETF analysis and market insights" />
+  <meta name="keywords" content="Capital Group, ETF, investment, market analysis" />
+</head>
+```

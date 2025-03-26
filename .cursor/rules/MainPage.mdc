@@ -1,0 +1,188 @@
+---
+description: 
+globs: content/pages/index.md,src/pages/index.tsx
+alwaysApply: false
+---
+# Main Page Management Guidelines
+
+## Overview
+
+The main page serves as the central hub of the site, featuring a modern design with a responsive layout. It showcases different analysis sections and provides navigation to specialized dashboards including Capital Group, Third Bridge, Bloomberg, and Tesla analysis.
+
+## Page Structure
+
+1. **Main Component**: `src/pages/index.tsx`
+
+   - Uses `getStaticProps` for content loading
+   - Implements the CustomHTMLLayout
+   - Manages SEO and metadata
+
+2. **Content Source**: `content/pages/index.md`
+
+   - Contains the main page HTML/Markdown content
+   - Includes hero section and feature cards
+   - Houses navigation structure
+
+3. **Layout Components**:
+   - `src/components/layouts/CustomHTMLLayout` - Main layout wrapper
+   - `src/components/layouts/DefaultBaseLayout` - Base layout structure
+   - Navigation components for desktop and mobile
+
+## Component Features
+
+1. **Navigation**:
+
+   - Responsive header with mobile menu
+   - Main navigation links
+   - Smooth transitions
+   - Consistent styling across viewports
+
+2. **Content Sections**:
+
+   - Hero section with main messaging
+   - Feature cards for different analysis sections
+   - Interactive elements and hover states
+   - Responsive grid layouts
+
+3. **Integration Points**:
+   - Links to specialized dashboards
+   - Cross-references to analysis sections
+   - Shared component usage
+
+## Content Management
+
+1. **Page Content**:
+
+   - Update content in `index.md`
+   - Maintain frontmatter metadata
+   - Follow markdown formatting guidelines
+
+2. **Feature Cards**:
+   ```html
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div class="rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow">
+       <img src="/images/logo.jpg" alt="Section" class="h-12 mb-8" />
+       <h3 class="text-2xl font-bold mb-4">Section Title</h3>
+       <p class="text-gray-600 mb-6">Section description and content...</p>
+       <div class="flex flex-wrap gap-2">
+         <span class="px-3 py-1 border border-blue-200 text-blue-600 rounded-full text-sm">Tag</span>
+       </div>
+     </div>
+   </div>
+   ```
+
+## Navigation Structure
+
+1. **Desktop Navigation**:
+
+```html
+<ul class="hidden md:flex items-center space-x-8">
+  <li>
+    <a href="/" class="text-sm font-medium hover:text-blue-500 transition-colors"> Home </a>
+  </li>
+  <!-- Additional navigation items -->
+</ul>
+```
+
+2. **Mobile Navigation**:
+
+```html
+<div class="hidden md:hidden bg-white bg-opacity-80 backdrop-blur-md" id="mobile-menu">
+  <ul class="space-y-4">
+    <li>
+      <a href="/" class="block py-2 text-sm font-medium hover:text-blue-500"> Home </a>
+    </li>
+    <!-- Additional navigation items -->
+  </ul>
+</div>
+```
+
+## Styling Guidelines
+
+1. **Color Scheme**:
+
+   - Primary Blue: #0A66C2
+   - Text Gray: #333333
+   - Background: white
+   - Accent colors for different sections
+
+2. **Typography**:
+
+   ```css
+   .font-display {
+     font-family: 'Playfair Display', serif;
+   }
+
+   .font-body {
+     font-family: 'Inter', sans-serif;
+   }
+   ```
+
+3. **Responsive Design**:
+   - Mobile-first approach
+   - Breakpoint-specific layouts
+   - Flexible grid system
+
+## Maintenance
+
+1. **Content Updates**:
+
+   - Regular review of feature cards
+   - Update links and references
+   - Maintain consistent styling
+
+2. **Performance**:
+
+   - Optimize images
+   - Minimize script loading
+   - Implement lazy loading
+
+3. **Testing**:
+   - Cross-browser compatibility
+   - Responsive design verification
+   - Link validation
+
+## Integration
+
+The main page integrates with specialized sections through:
+
+1. Consistent navigation structure
+2. Shared styling and components
+3. Cross-linking between sections
+4. Unified user experience
+
+## SEO Considerations
+
+1. **Meta Tags**:
+
+```html
+<head>
+  <title>Nyree Hinton - Financial Analysis & Market Research</title>
+  <meta name="description" content="Expert analysis across Capital Group, Third Bridge, Bloomberg, and Tesla markets" />
+  <meta name="keywords" content="financial analysis, market research, ETF analysis, semiconductor industry" />
+</head>
+```
+
+2. **Content Structure**:
+   - Proper heading hierarchy
+   - Descriptive alt text for images
+   - Semantic HTML structure
+
+## Performance Optimization
+
+1. **Asset Loading**:
+
+   - Optimize image sizes
+   - Use appropriate image formats
+   - Implement lazy loading
+
+2. **Script Management**:
+
+   - Minimize third-party scripts
+   - Defer non-critical JavaScript
+   - Optimize bundle size
+
+3. **Styling Optimization**:
+   - Purge unused styles
+   - Minimize CSS bundle
+   - Use efficient selectors

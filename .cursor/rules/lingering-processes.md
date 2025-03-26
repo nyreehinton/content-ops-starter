@@ -47,13 +47,16 @@
 ```
 
 ### Diagnosing Local Issues
+
 - Run your build command locally
 - Check for background processes using:
+
 ```bash
 ps aux | grep node
 ps aux | grep npm
 ps aux | grep yarn
 ```
+
 - Ensure processes terminate after completion
 
 ## Common Causes and Solutions
@@ -61,8 +64,10 @@ ps aux | grep yarn
 ### Incorrect Build Commands
 
 #### Development vs. Production Commands
+
 - Problem: Using development commands instead of production build commands
 - Solution: Use proper production build commands
+
 ```bash
 # INCORRECT
 npm start
@@ -76,8 +81,10 @@ next build
 ```
 
 #### Watch Mode
+
 - Problem: Commands with watch flags that never exit
 - Solution: Remove watch flags from build commands
+
 ```bash
 # INCORRECT
 webpack --watch
@@ -93,8 +100,10 @@ tsc
 ### Framework-Specific Solutions
 
 #### Next.js
+
 - Problem: Using `next dev` instead of `next build`
 - Solution: Use the correct build command
+
 ```bash
 # In netlify.toml
 [build]
@@ -102,8 +111,10 @@ tsc
 ```
 
 #### Gatsby
+
 - Problem: Using `gatsby develop` instead of `gatsby build`
 - Solution: Use the correct build command
+
 ```bash
 # In netlify.toml
 [build]
@@ -111,6 +122,7 @@ tsc
 ```
 
 #### React Applications
+
 - Problem: Using `react-scripts start` instead of `react-scripts build`
 - Solution: Use the correct build command
 
@@ -127,6 +139,7 @@ tsc
 
 - Problem: Using dev server instead of generating static files
 - Solution: Use static generation commands
+
 ```bash
 # For Nuxt.js
 nuxt generate
@@ -170,7 +183,9 @@ process.on('SIGTERM', () => {
 ### Build Command Modifications
 
 #### Force Process Termination
+
 - Add commands to kill lingering processes
+
 ```bash
 # In netlify.toml
 [build]
@@ -188,7 +203,9 @@ process.on('SIGTERM', () => {
 ```
 
 #### Using Build Hooks
+
 - Implement cleanup in post-build hooks
+
 ```json
 // In package.json
 {
@@ -202,6 +219,7 @@ process.on('SIGTERM', () => {
 ### Cleanup Script Examples
 
 #### Node.js Process Cleanup
+
 ```javascript
 // scripts/cleanup.js
 const { execSync } = require('child_process');
@@ -211,7 +229,7 @@ try {
   const nodeProcesses = execSync('ps aux | grep node').toString();
   console.log('Current Node.js processes:');
   console.log(nodeProcesses);
-  
+
   // Kill all node processes except the current one
   console.log('Attempting to terminate Node.js processes...');
   execSync('pkill -f node || true');
@@ -223,6 +241,7 @@ try {
 ```
 
 #### Shell Script Cleanup
+
 ```bash
 #!/bin/bash
 # cleanup.sh
@@ -247,12 +266,15 @@ echo "Cleanup completed"
 ### Advanced Solutions
 
 #### Build Process Isolation
+
 - Use isolated build steps to prevent process leaks
 - Split your build into distinct phases
 - Use separate scripts for different build stages
 
 #### Environment Variable Controls
+
 - Use environment variables to control process behavior
+
 ```bash
 # In netlify.toml
 [build.environment]
@@ -261,6 +283,7 @@ echo "Cleanup completed"
 ```
 
 #### Custom Build Plugins
+
 - Create Netlify Build Plugins for process management
 - Implement pre-build and post-build hooks
 - Ensure proper cleanup in onEnd events
@@ -268,6 +291,7 @@ echo "Cleanup completed"
 ## Prevention Strategies
 
 ### Development Best Practices
+
 - Always use production build commands for deployment
 - Avoid watch mode in build scripts
 - Implement proper process termination in custom scripts
@@ -275,14 +299,17 @@ echo "Cleanup completed"
 - Use Netlify CLI for local testing
 
 ### Common Process Management Patterns
+
 - Always prefer synchronous builds over servers
 - Use proper exit codes and signal handling
 - Implement timeouts for long-running processes
 - Document process behavior in your project
 
 ### CI/CD Considerations
+
 - Use different commands for CI/CD vs. local development
 - Implement environment-specific behavior
+
 ```json
 // package.json
 {
@@ -297,6 +324,7 @@ echo "Cleanup completed"
 ## Troubleshooting Guide
 
 ### Diagnostic Steps
+
 1. Identify lingering processes in build logs
 2. Check build commands for development mode flags
 3. Review scripts for background processes
@@ -305,12 +333,14 @@ echo "Cleanup completed"
 6. Verify fix with a new deployment
 
 ### Quick Fixes
+
 - Replace development commands with production commands
 - Add process termination to build command
 - Implement signal handlers in custom scripts
 - Use build plugins for process management
 
 ### When to Contact Support
+
 - Persistent issues despite following best practices
 - Unexpected process behavior in the build environment
 - Build-specific issues not reproducible locally
@@ -319,11 +349,13 @@ echo "Cleanup completed"
 ## Additional Resources
 
 ### Documentation and References
+
 - Netlify Build Documentation
 - Process Management Best Practices
 - Framework-specific build guides
 
 ### Community Solutions
+
 - Build Plugins for process management
 - Community-contributed deployment patterns
 - Framework-specific deployment templates

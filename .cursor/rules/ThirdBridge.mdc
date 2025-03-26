@@ -1,5 +1,5 @@
 ---
-description: 
+description: ThirdBridge Page Management Guidelines
 globs: 
 alwaysApply: false
 ---
@@ -82,8 +82,13 @@ Example of maintenance mode implementation:
 // Maintenance mode implementation
 <div className="container mx-auto px-4 py-12">
   <h1 className="text-3xl font-bold mb-6">Third Bridge Analysis</h1>
-  <p className="text-lg mb-4">This page is currently under maintenance while we update our data models.</p>
-  <p className="text-lg mb-4">Our team is working to bring you the latest market analysis and insights soon.</p>
+  <p className="text-lg mb-4">
+    This page is currently under maintenance while we update our data models.
+  </p>
+  <p className="text-lg mb-4">
+    Our team is working to bring you the latest market analysis and insights
+    soon.
+  </p>
   <div className="mt-8 p-6 bg-blue-50 rounded-lg">
     <h2 className="text-xl font-semibold mb-4">Coming Soon</h2>
     <ul className="list-disc list-inside space-y-2">
@@ -113,7 +118,10 @@ The ThirdBridge page has custom SEO settings in the page wrapper:
 ```tsx
 <Head>
   <title>Third Bridge Analysis</title>
-  <meta name="description" content="Expert market analysis and industry insights..." />
+  <meta
+    name="description"
+    content="Expert market analysis and industry insights..."
+  />
 </Head>
 ```
 

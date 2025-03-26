@@ -1,0 +1,174 @@
+---
+description: 
+globs: src/pages/bloomberg/index.tsx,src/components/BloombergCharts.tsx,src/components/BloombergClientScript.tsx,src/components/ClientOnly.tsx,content/pages/bloomberg/index.html
+alwaysApply: false
+---
+# Bloomberg Page Management Guidelines
+
+## Overview
+
+The Bloomberg page is a specialized analysis dashboard focusing on semiconductor and technology sector research. It features interactive charts, market data visualization, and detailed industry analysis using Bloomberg Intelligence data.
+
+## Page Structure
+
+1. **Main Component**: `src/pages/bloomberg/index.tsx`
+
+   - Implements `getStaticProps` for content loading
+   - Manages client-side script initialization
+   - Handles SEO configuration
+
+2. **Custom Components**:
+
+   - `src/components/BloombergCharts.tsx` - Chart rendering component
+   - `src/components/BloombergClientScript.tsx` - Client-side functionality
+   - `src/components/ClientOnly.tsx` - Client-side rendering wrapper
+
+3. **Content Source**: `content/pages/bloomberg/index.html`
+   - Contains the main dashboard HTML
+   - Houses interactive tabs and data sections
+   - Includes chart configurations
+
+## Component Features
+
+1. **Tab System**:
+
+   - Interactive tab navigation
+   - Content switching functionality
+   - Smooth transitions between sections
+
+2. **Charts and Visualizations**:
+
+   - Chart.js integration
+   - D3.js for complex visualizations
+   - Real-time data updates
+
+3. **Analysis Sections**:
+   - Semiconductor industry analysis
+   - Market trend visualization
+   - Company performance metrics
+
+## Content Management
+
+1. **Adding New Analysis**:
+
+   - Create new tab sections in the HTML
+   - Follow the tab structure pattern
+   - Include necessary chart configurations
+
+2. **Updating Data**:
+
+   - Modify chart data in the HTML
+   - Update analysis text content
+   - Maintain consistent formatting
+
+3. **Chart Management**:
+   - Add new charts using Chart.js or D3.js
+   - Follow the established chart configuration pattern
+   - Implement responsive design
+
+## JavaScript Integration
+
+1. **Tab System Implementation**:
+
+```javascript
+function switchTab(tabId) {
+  // Hide all contents
+  document.querySelectorAll('.bloomberg-tab-content').forEach((content) => {
+    content.style.display = 'none';
+    content.classList.remove('active');
+  });
+
+  // Show selected content
+  const selectedContent = document.getElementById(tabId);
+  if (selectedContent) {
+    selectedContent.style.display = 'block';
+    selectedContent.classList.add('active');
+  }
+}
+```
+
+2. **Chart Initialization**:
+   - Load Chart.js and D3.js asynchronously
+   - Initialize charts after DOM content loads
+   - Handle window resize events
+
+## Styling Guidelines
+
+1. **Tab Styling**:
+
+```css
+.bloomberg-tab-button {
+  @apply px-4 py-2 font-medium text-gray-600 hover:text-blue-600 transition-colors;
+}
+
+.bloomberg-tab-button.active {
+  @apply text-blue-600 border-b-2 border-blue-600;
+}
+```
+
+2. **Chart Container Styling**:
+
+```css
+.chart-container {
+  @apply bg-white rounded-lg shadow-md p-6 my-4;
+}
+```
+
+## Maintenance
+
+1. **Script Dependencies**:
+
+   - Keep Chart.js updated to latest stable version
+   - Maintain D3.js compatibility
+   - Test all visualizations after updates
+
+2. **Content Updates**:
+
+   - Regular data refreshes
+   - Analysis text updates
+   - Chart configuration maintenance
+
+3. **Error Handling**:
+   - Implement chart loading fallbacks
+   - Handle data loading errors
+   - Provide user feedback for interactions
+
+## Integration
+
+The Bloomberg page integrates with the main site through:
+
+1. The CustomHTMLLayout component
+2. Shared navigation structure
+3. Common styling themes
+4. Cross-referencing with other analysis sections
+
+## SEO Considerations
+
+Maintain the following meta tags:
+
+```html
+<head>
+  <title>Bloomberg Intelligence: Semiconductor Analysis</title>
+  <meta name="description" content="In-depth semiconductor industry analysis and market insights" />
+  <meta name="keywords" content="Bloomberg Intelligence, semiconductor, market analysis, technology sector" />
+</head>
+```
+
+## Performance Optimization
+
+1. **Script Loading**:
+
+   - Use dynamic imports for heavy components
+   - Implement proper code splitting
+   - Optimize chart rendering
+
+2. **Data Management**:
+
+   - Implement efficient data structures
+   - Cache frequently used data
+   - Optimize chart updates
+
+3. **User Experience**:
+   - Add loading indicators
+   - Implement smooth transitions
+   - Maintain responsive design
