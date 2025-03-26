@@ -3,18 +3,21 @@
 ## Understanding Lingering Processes
 
 ### What Are Lingering Processes?
+
 - Background processes that continue running after the main build script completes
 - Prevent Netlify from completing the deployment
 - Result in builds appearing stuck at the "Processing" stage
 - Common with development servers, watchers, or daemon processes
 
 ### How Netlify Handles Processes
+
 - Netlify waits for all processes to exit before completing deployment
 - After a timeout, Netlify may report the lingering processes
 - Build logs will show: "Build completed successfully, but the following processes were still running:"
 - Followed by a list of processes that are preventing deployment completion
 
 ### Common Culprits
+
 - Node.js development servers (Express, Next.js dev server)
 - Webpack dev server in watch mode
 - Gatsby develop command (instead of gatsby build)
@@ -26,6 +29,7 @@
 ## Identifying Lingering Processes
 
 ### Build Log Analysis
+
 - Look for messages about lingering processes at the end of your build log
 - Note the process IDs (PIDs) and commands that are listed
 - Common patterns include:
@@ -35,6 +39,7 @@
   - Processes containing "dev" or "watch" in their name
 
 ### Example Build Log Output
+
 ```
 1:29:38 PM: Build completed successfully, but the following processes were still running:
 1:29:38 PM: 1491 /root/.nvm/versions/node/v16.14.0/bin/node /opt/build/repo/node_modules/.bin/next dev
@@ -108,6 +113,7 @@ tsc
 #### React Applications
 - Problem: Using `react-scripts start` instead of `react-scripts build`
 - Solution: Use the correct build command
+
 ```bash
 # In package.json
 {
@@ -118,6 +124,7 @@ tsc
 ```
 
 #### Vue/Nuxt Applications
+
 - Problem: Using dev server instead of generating static files
 - Solution: Use static generation commands
 ```bash
@@ -130,8 +137,10 @@ vue-cli-service build
 ### Process Management Issues
 
 #### Child Processes Not Terminating
+
 - Problem: Scripts spawn child processes that continue running
 - Solution: Ensure proper process termination
+
 ```javascript
 // In Node.js scripts, use:
 process.on('exit', () => {
@@ -140,8 +149,10 @@ process.on('exit', () => {
 ```
 
 #### Signal Handling
+
 - Problem: Processes not responding to termination signals
 - Solution: Implement proper signal handling
+
 ```javascript
 // In Node.js scripts
 process.on('SIGINT', () => {
@@ -167,7 +178,9 @@ process.on('SIGTERM', () => {
 ```
 
 #### Process Logging
+
 - Add diagnostic commands to identify issues
+
 ```bash
 # In netlify.toml
 [build]

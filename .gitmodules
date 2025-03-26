@@ -1,0 +1,3 @@
+[submodule "agents/agno"]
+    path = agents/agno
+    url = https://github.com/nyreehinton/agno.git 
