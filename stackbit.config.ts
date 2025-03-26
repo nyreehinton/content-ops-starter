@@ -1,8 +1,10 @@
-import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapEntry, DocumentWithSource, SiteMapDocumentEntry } from '@stackbit/types';
-import { GitContentSource } from '@stackbit/cms-git';
+import { defineStackbitConfig, DocumentStringLikeFieldNonLocalized, SiteMapEntry, DocumentWithSource, SiteMapDocumentEntry, ContentSourceInterface } from '@stackbit/types';
+import { EncoderDelegate, loadContent, addMetadata, saveContent } from '@stackbit/cms-git';
 import { allModels } from 'sources/local/models';
 
-const gitContentSource = new GitContentSource({
+// Define a simplified content source for local development
+const gitContentSource = {
+    type: 'git',
     rootPath: __dirname,
     contentDirs: ['content'],
     models: Object.values(allModels),
@@ -12,7 +14,7 @@ const gitContentSource = new GitContentSource({
         uploadDir: 'images',
         publicPath: '/'
     }
-});
+} as unknown as ContentSourceInterface<any, any, any, any, any>;
 
 export const config = defineStackbitConfig({
     stackbitVersion: '~0.7.0',

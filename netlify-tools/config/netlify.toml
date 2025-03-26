@@ -1,5 +1,5 @@
 [build]
-  command = "npm run netlify-build"
+  command = "npm run netlify-build && (pkill -f 'node|next' || true)"
   publish = ".next"
   functions = "netlify/functions"
 
@@ -34,12 +34,6 @@
 [[plugins]]
 package = "@netlify/plugin-nextjs"
   [plugins.inputs]
-  # Enable Next.js ISR capabilities
-  enable_isr = true
-  # Use automatic installation
-  use_automatic_installation = true
-  # Skip debug logs
-  debug = false
 
 [[plugins]]
 package = "netlify-plugin-cache-nextjs"

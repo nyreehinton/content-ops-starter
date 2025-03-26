@@ -1,4 +1,5 @@
 import { Article, AnalysisCard, RegionalPrice, PriceData, IndustryData } from '@/data/analysisData';
+import type { AnalysisCard as AnalysisCardType, Article as ArticleType, RegionalPrice as RegionalPriceType } from '@/data';
 
 /**
  * Default values to use when data is missing
@@ -63,31 +64,112 @@ export const defaultIndustryData: IndustryData = {
 };
 
 /**
+ * Default values for an Article
+ */
+export const DEFAULT_ARTICLE: ArticleType = {
+  id: '',
+  title: 'Analysis not found',
+  description: 'This analysis is no longer available or has been moved.',
+  imageUrl: '/images/thirdbridge/placeholder.svg',
+  category: 'N/A',
+  date: 'No date',
+  executiveSummary: '',
+  keyPoints: [],
+  highlights: [],
+  analyst: {
+    name: 'Unknown',
+    title: 'Analyst',
+    imageUrl: '/images/thirdbridge/placeholder-analyst.svg',
+    bio: 'No biography available'
+  }
+};
+
+/**
+ * Default values for an AnalysisCard
+ */
+export const DEFAULT_ANALYSIS_CARD: AnalysisCardType = {
+  id: '',
+  title: 'Analysis not found',
+  preview: 'This analysis is no longer available or has been moved.',
+  imageUrl: '/images/thirdbridge/placeholder.svg',
+  category: 'N/A',
+  date: 'No date',
+  views: '0',
+  saves: '0'
+};
+
+/**
+ * Default values for a RegionalPrice
+ */
+export const DEFAULT_REGIONAL_PRICE: RegionalPriceType = {
+  name: 'Unknown Region',
+  price: '0.00',
+  change: 0
+};
+
+/**
  * Helper functions to safely access data
  */
 
-export function getSafeArticle(article?: Article | null): Article {
-  return article || defaultArticle;
+export function getSafeArticle(article: ArticleType | null | undefined): ArticleType {
+  if (!article) return DEFAULT_ARTICLE;
+  
+  return {
+    id: article.id || DEFAULT_ARTICLE.id,
+    title: article.title || DEFAULT_ARTICLE.title,
+    description: article.description || DEFAULT_ARTICLE.description,
+    imageUrl: article.imageUrl || DEFAULT_ARTICLE.imageUrl,
+    category: article.category || DEFAULT_ARTICLE.category,
+    date: article.date || DEFAULT_ARTICLE.date,
+    executiveSummary: article.executiveSummary || DEFAULT_ARTICLE.executiveSummary,
+    keyPoints: article.keyPoints || DEFAULT_ARTICLE.keyPoints,
+    highlights: article.highlights || DEFAULT_ARTICLE.highlights,
+    analyst: {
+      name: article.analyst?.name || DEFAULT_ARTICLE.analyst.name,
+      title: article.analyst?.title || DEFAULT_ARTICLE.analyst.title,
+      imageUrl: article.analyst?.imageUrl || DEFAULT_ARTICLE.analyst.imageUrl,
+      bio: article.analyst?.bio || DEFAULT_ARTICLE.analyst.bio
+    }
+  };
 }
 
-export function getSafeAnalysisCard(card?: AnalysisCard | null): AnalysisCard {
-  return card || defaultAnalysisCard;
+export function getSafeAnalysisCard(card: AnalysisCardType | null | undefined): AnalysisCardType {
+  if (!card) return DEFAULT_ANALYSIS_CARD;
+  
+  return {
+    id: card.id || DEFAULT_ANALYSIS_CARD.id,
+    title: card.title || DEFAULT_ANALYSIS_CARD.title,
+    preview: card.preview || DEFAULT_ANALYSIS_CARD.preview,
+    imageUrl: card.imageUrl || DEFAULT_ANALYSIS_CARD.imageUrl,
+    category: card.category || DEFAULT_ANALYSIS_CARD.category,
+    date: card.date || DEFAULT_ANALYSIS_CARD.date,
+    views: card.views?.toString() || DEFAULT_ANALYSIS_CARD.views,
+    saves: card.saves?.toString() || DEFAULT_ANALYSIS_CARD.saves
+  };
 }
 
-export function getSafeRegionalPrices(prices?: RegionalPrice[] | null): RegionalPrice[] {
-  return prices?.length ? prices : [defaultRegionalPrice];
+export function getSafeRegionalPrice(price: RegionalPriceType | null | undefined): RegionalPriceType {
+  if (!price) return DEFAULT_REGIONAL_PRICE;
+  
+  return {
+    name: price.name || DEFAULT_REGIONAL_PRICE.name,
+    price: price.price || DEFAULT_REGIONAL_PRICE.price,
+    change: typeof price.change === 'number' ? price.change : DEFAULT_REGIONAL_PRICE.change
+  };
 }
 
-export function getSafePriceData(data?: PriceData | null): PriceData {
-  return data || defaultPriceData;
+export function getSafePriceData(data: Record<string, any> | null | undefined): Record<string, any> {
+  if (!data) return {'2025': DEFAULT_YEAR_DATA};
+  return data;
 }
 
 export function getSafeIndustryData(data?: IndustryData | null): IndustryData {
   return data || defaultIndustryData;
 }
 
-export function getSafeYears(data?: PriceData | null): string[] {
-  return data ? Object.keys(data).sort() : Object.keys(defaultPriceData).sort();
+export function getSafeYears(data: Record<string, any>): string[] {
+  if (!data) return ['2025'];
+  return Object.keys(data).sort();
 }
 
 export function getSafeImplications(implications?: string[] | null): string[] {
@@ -97,3 +179,15 @@ export function getSafeImplications(implications?: string[] | null): string[] {
 export function getSafeKeyTakeaway(takeaway?: string | null): string {
   return takeaway || 'Key takeaway information is not available.';
 }
+
+/**
+ * Default year data structure
+ */
+const DEFAULT_YEAR_DATA = {
+  stats: [
+    { label: 'No data available', value: 'N/A', change: 0 }
+  ],
+  drivers: [
+    { name: 'No data available', impact: 'low' as const }
+  ]
+};

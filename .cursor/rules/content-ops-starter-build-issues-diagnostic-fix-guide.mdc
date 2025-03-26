@@ -1,0 +1,303 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Content-Ops-Starter Build Issues: Diagnostic & Fix Guide
+
+This guide addresses common build issues for content-ops-starter projects that follow the Model Context Protocol (MCP), specifically focusing on problems in the `.cursor` configuration and related components.
+
+## 1. CSS Module Issues
+
+### Symptoms
+
+- Build errors related to CSS imports
+- "Global CSS cannot be imported from files other than `_app.js`" errors
+- ":root selector is not allowed in CSS Modules" errors
+- Style inconsistencies or missing styles
+
+### Solutions
+
+#### Fix CSS Module Structure
+
+```css
+/* INCORRECT */
+:root {
+  --app-color: blue;
+}
+
+/* CORRECT */
+.root {
+  --app-color: blue;
+}
+```
+
+#### Update CSS Variable Naming
+
+```css
+/* Add component or app-specific prefixes to avoid collisions */
+.root {
+  --tb-primary: #0a2856; /* For ThirdBridge */
+  --app-primary: #0a2856; /* For your specific app */
+}
+```
+
+#### Move Global CSS to `_app.js` Only
+
+```tsx
+// pages/_app.tsx
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+## 2. TypeScript Configuration Issues
+
+### Symptoms
+
+- "Cannot find module" errors
+- "Property does not exist on type" errors
+- Path alias resolution failures
+- Missing type definitions
+
+### Solutions
+
+#### Update `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+```
+
+#### Fix Component Type Definitions
+
+```tsx
+// Add proper interfaces for all props
+interface ComponentProps {
+  title: string;
+  description?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+// Use proper event types
+const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  // Handle click
+};
+```
+
+## 3. Asset Management Issues
+
+### Symptoms
+
+- Images not loading or 404 errors
+- "Cannot find module" errors for assets
+- Missing fonts or other static files
+
+### Solutions
+
+#### Correct Public Directory Structure
+
+```
+public/
+└── images/
+    └── [application-name]/
+        ├── image1.jpg
+        ├── image2.png
+        └── ...
+```
+
+#### Update Image References
+
+```tsx
+// INCORRECT
+<img src="./images/logo.png" />
+
+// CORRECT
+<img src="/images/[application-name]/logo.png" />
+```
+
+#### Add Error Handling for Images
+
+```tsx
+<img
+  src="/images/[application-name]/logo.png"
+  alt="Logo"
+  onError={(e) => {
+    const target = e.target as HTMLImageElement;
+    target.src = '/placeholder.png';
+  }}
+/>
+```
+
+## 4. Next.js Configuration Issues
+
+### Symptoms
+
+- Build failures with no clear error message
+- "Cannot resolve module" errors
+- Performance issues
+- Module federation errors
+
+### Solutions
+
+#### Update `next.config.js`
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['example.com'] // Add domains for remote images if needed
+  },
+  webpack: (config, { isServer }) => {
+    // Add any webpack customizations here
+    return config;
+  }
+};
+
+module.exports = nextConfig;
+```
+
+#### Fix Module Resolution
+
+```js
+// next.config.js
+const path = require('path');
+
+module.exports = {
+  // ...other config
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.join(__dirname, 'src');
+    return config;
+  }
+};
+```
+
+## 5. Component Integration Issues
+
+### Symptoms
+
+- Components not rendering correctly
+- Props not being passed correctly
+- Styling inconsistencies
+- Layout shifts
+
+### Solutions
+
+#### Fix Component Directory Structure
+
+```
+src/components/[application-name]/
+├── layout/
+│   ├── Sidebar.tsx
+│   └── TopBar.tsx
+├── ui/
+│   ├── Button.tsx
+│   └── Card.tsx
+└── [AppName]Page.tsx
+```
+
+#### Create Compatibility Layer
+
+```tsx
+// src/components/[application-name]/[AppName].tsx
+import React from 'react';
+import [AppName]Page from './[AppName]Page';
+
+/**
+ * [AppName] compatibility component
+ * This redirects to the new implementation for backward compatibility
+ */
+const [AppName]: React.FC = () => {
+  return <[AppName]Page />;
+};
+
+export default [AppName];
+```
+
+## 6. Cursor Configuration Issues
+
+### Symptoms
+
+- `.cursor` directory causing build errors
+- Editor tools not working correctly
+- Integration validation failures
+
+### Solutions
+
+#### Fix MCP JSON Configuration
+
+```json
+{
+  "version": "2.0",
+  "contexts": [
+    {
+      "id": "content-ops",
+      "name": "Content Operations",
+      "description": "Context for content operations",
+      "settings": {
+        "model": "gpt-4",
+        "temperature": 0.5,
+        "max_tokens": 2000
+      },
+      "tools": ["component-creator", "mcp-validator", "html-tsx-pairing"]
+    }
+  ]
+}
+```
+
+#### Update VS Code Settings
+
+```json
+{
+  "cursor.mcpContext": "content-ops",
+  "cursor.enableAutoValidation": true,
+  "cursor.validateOnSave": true,
+  "cursor.tools.path": "~/.cursor/config/tools",
+  "cursor.diagnostics.mcp": true
+}
+```
+
+## How to Apply These Fixes
+
+1. **Identify the specific issue category** from the symptoms above
+2. **Make targeted changes** to the specific files causing problems
+3. **Run incremental builds** to verify each fix (`npm run dev`)
+4. **Check for type errors** separately (`npx tsc --noEmit`)
+5. **Validate component structure** against MCP guidelines
+
+## MCP Validation Checklist
+
+- [ ] CSS is properly modularized with scoped variables
+- [ ] Components have proper TypeScript interfaces
+- [ ] Asset references use correct public paths
+- [ ] HTML-TSX pairing follows protocol guidelines
+- [ ] Directory structure matches MCP recommendations
+- [ ] Build completes without errors

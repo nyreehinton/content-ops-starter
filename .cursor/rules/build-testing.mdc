@@ -1,7 +1,7 @@
 ---
 description: 
-globs: *.json
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Testing Your Netlify Builds
 

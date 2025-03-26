@@ -1,5 +1,5 @@
 const plugin = require('tailwindcss/plugin');
-const themeStyle = require('../content/data/style.json');
+const themeStyle = require('../../content/data/style.json');
 
 module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx}', './content/**/*', './.sourcebit-nextjs-cache.json'],

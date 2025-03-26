@@ -1,0 +1,120 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# ThirdBridge Page Management Guidelines
+
+## Overview
+
+The ThirdBridge page is a custom dashboard application that displays market analysis and financial data. It has a specialized interface distinct from the standard site layouts and requires special handling.
+
+## Page Structure
+
+The ThirdBridge page consists of:
+
+1. **Main Wrapper Component**: `src/pages/thirdbridge.tsx`
+
+   - Provides SEO settings
+   - Wraps the ThirdBridge application with the DefaultBaseLayout
+   - Routes to the main ThirdBridgePage component
+
+2. **Application Component**: `src/components/thirdbridge/ThirdBridgePage.tsx`
+
+   - Main interactive dashboard component
+   - Controls state management for the ThirdBridge interface
+   - Manages navigation between different sections
+
+3. **Layout Components**:
+
+   - `src/components/thirdbridge/layout/Sidebar.tsx` - Navigation sidebar
+   - `src/components/thirdbridge/layout/TopBar.tsx` - Top navigation bar
+
+4. **Section Components**:
+
+   - `src/components/thirdbridge/overview/Overview.tsx` - Dashboard overview
+   - `src/components/thirdbridge/featured-analysis/FeaturedAnalysisSection.tsx` - Featured analysis content
+
+5. **Styling**:
+
+   - `src/styles/ThirdBridge.module.css` - CSS Module for component styling
+
+6. **Content Source**:
+   - `content/pages/thirdbridge/index.html` - HTML content for the ThirdBridge page
+   - `content/pages/thirdbridge/egg-price-surge-2025.md` - Additional markdown content
+
+## Update Guidelines
+
+When updating the ThirdBridge page:
+
+1. **Interface Changes**:
+
+   - Modifications to the interface structure should be made in the main ThirdBridgePage component
+   - Keep sidebar and content area in sync when adding new sections
+
+2. **Content Updates**:
+
+   - New analysis content should be added to the content directory
+   - For HTML content, update `content/pages/thirdbridge/index.html`
+   - For markdown content, create or update files in `content/pages/thirdbridge/`
+
+3. **Data Visualization**:
+
+   - Chart components should be placed in `src/components/thirdbridge/charts/`
+   - Ensure any data visualizations are responsive and accessible
+
+4. **Testing**:
+   - Always test the ThirdBridge page on multiple screen sizes
+   - Verify that navigation between sections works properly
+   - Ensure data visualizations render correctly
+
+## Maintenance Mode
+
+If maintenance is required on the ThirdBridge page:
+
+1. Comment out the ThirdBridgePage component import and usage in `src/pages/thirdbridge.tsx`
+2. Replace with a maintenance message component
+3. When ready to restore functionality, uncomment the ThirdBridgePage component
+
+Example of maintenance mode implementation:
+
+```tsx
+// Maintenance mode implementation
+<div className="container mx-auto px-4 py-12">
+  <h1 className="text-3xl font-bold mb-6">Third Bridge Analysis</h1>
+  <p className="text-lg mb-4">This page is currently under maintenance while we update our data models.</p>
+  <p className="text-lg mb-4">Our team is working to bring you the latest market analysis and insights soon.</p>
+  <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+    <h2 className="text-xl font-semibold mb-4">Coming Soon</h2>
+    <ul className="list-disc list-inside space-y-2">
+      <li>Updated egg price analysis for Q1 2025</li>
+      <li>Regional price comparison data</li>
+      <li>Industry structure evaluation</li>
+      <li>Regulatory impact assessment</li>
+    </ul>
+  </div>
+</div>
+```
+
+## Integration with Main Site
+
+The ThirdBridge page is integrated with the main site through:
+
+1. The DefaultBaseLayout wrapper which provides consistent site header and footer
+2. Shared styling variables and theme settings
+3. Common navigation elements
+
+When making site-wide changes, ensure the ThirdBridge page continues to function properly and maintain visual consistency with the rest of the site.
+
+## SEO Considerations
+
+The ThirdBridge page has custom SEO settings in the page wrapper:
+
+```tsx
+<Head>
+  <title>Third Bridge Analysis</title>
+  <meta name="description" content="Expert market analysis and industry insights..." />
+</Head>
+```
+
+Keep these SEO elements updated when modifying the page purpose or content focus.

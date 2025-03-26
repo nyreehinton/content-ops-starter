@@ -1,6 +1,6 @@
 'use client';
 
-import { mainArticle } from '@/data/analysisData';
+import { mainArticle } from '@/data';
 import { getSafeArticle } from '@/components/thirdbridge/utils/dataHelpers';
 import styles from '@/styles/ThirdBridge.module.css';
 import Link from 'next/link';
