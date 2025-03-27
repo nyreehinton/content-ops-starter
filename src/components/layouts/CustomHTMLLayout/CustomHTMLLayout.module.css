@@ -1,0 +1,165 @@
+/* CustomHTMLLayout.module.css */
+
+.customHtmlLayout {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.customHtmlContent {
+    min-height: 300px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.contentError {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contentLoading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 2rem;
+}
+
+.spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid #f3f3f3;
+    border-top-color: #3b82f6;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+
+/* Animation for the loading spinner */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Styling for HTML content from markdown */
+
+.customHtmlContent :global(h1) {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.customHtmlContent :global(h2) {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+    color: #1f2937;
+}
+
+.customHtmlContent :global(h3) {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.customHtmlContent :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.customHtmlContent :global(ul),
+.customHtmlContent :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.customHtmlContent :global(li) {
+    margin-bottom: 0.5rem;
+}
+
+.customHtmlContent :global(a) {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.customHtmlContent :global(a:hover) {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.customHtmlContent :global(img) {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.375rem;
+}
+
+.customHtmlContent :global(blockquote) {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #4b5563;
+}
+
+.customHtmlContent :global(code) {
+    font-family: monospace;
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.customHtmlContent :global(pre) {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.customHtmlContent :global(pre code) {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+.customHtmlContent :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.customHtmlContent :global(th),
+.customHtmlContent :global(td) {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+}
+
+.customHtmlContent :global(th) {
+    background-color: #f9fafb;
+    font-weight: bold;
+    text-align: left;
+}
+
+.customHtmlContent :global(tr:nth-child(even)) {
+    background-color: #f9fafb;
+}

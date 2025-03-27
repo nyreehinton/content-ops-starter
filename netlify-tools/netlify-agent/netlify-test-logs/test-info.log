@@ -1,8 +1,0 @@
-[2025-03-25T16:21:17.252Z] [INFO] Netlify Test Executor started
-[2025-03-25T16:21:17.264Z] [INFO] Options: {
-  "deployUrl": null,
-  "skipTests": []
-}
-[2025-03-25T16:21:17.772Z] [INFO] Running unit tests...
-[2025-03-25T16:21:17.773Z] [INFO] Starting: npm run test
-[2025-03-25T16:21:17.867Z] [INFO] Finished: npm run test (exit code: 1, time: 0s)

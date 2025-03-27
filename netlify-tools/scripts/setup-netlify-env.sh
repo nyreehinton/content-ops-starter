@@ -1,111 +1,155 @@
 #!/bin/bash
 
-# Colors for terminal output
+# Script to set up Netlify environment variables and configurations
+
+# Exit on any error
+set -e
+
+# Define colors for output
 GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
 RED='\033[0;31m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Helper functions
-print_header() {
-  echo -e "\n${BLUE}=== $1 ===${NC}\n"
-}
+echo -e "${BLUE}Setting up Netlify environment...${NC}"
 
-print_success() {
-  echo -e "${GREEN}✓ $1${NC}"
-}
-
-print_error() {
-  echo -e "${RED}✗ $1${NC}"
-}
-
-print_warning() {
-  echo -e "${YELLOW}⚠ $1${NC}"
-}
-
-print_header "Netlify Environment Setup"
-echo "This script will help you set up the required Netlify environment variables."
-echo "You will need a Netlify personal access token and your site ID."
-echo ""
-echo "You can find your site ID in the Netlify dashboard under:"
-echo "Site Settings > General > Site Details > API ID"
-echo ""
-echo "To create a personal access token, go to:"
-echo "User Settings > Applications > Personal Access Tokens"
-echo ""
-
-# Check if .env file exists
-ENV_FILE=".env"
-if [ -f "$ENV_FILE" ]; then
-  # Load existing .env file
-  print_warning "Existing .env file found. Checking for Netlify settings..."
-  
-  # Check if we already have the variables
-  NETLIFY_AUTH_TOKEN=$(grep -o 'NETLIFY_AUTH_TOKEN=.*' "$ENV_FILE" | cut -d= -f2)
-  NETLIFY_SITE_ID=$(grep -o 'NETLIFY_SITE_ID=.*' "$ENV_FILE" | cut -d= -f2)
-  
-  if [ ! -z "$NETLIFY_AUTH_TOKEN" ]; then
-    print_success "NETLIFY_AUTH_TOKEN already exists."
-  fi
-  
-  if [ ! -z "$NETLIFY_SITE_ID" ]; then
-    print_success "NETLIFY_SITE_ID already exists."
-  fi
-else
-  print_warning "No .env file found. Creating a new one."
-  touch "$ENV_FILE"
+# Check if Netlify CLI is installed
+if ! command -v netlify &> /dev/null; then
+  echo -e "${YELLOW}Netlify CLI not found, installing...${NC}"
+  npm install -g netlify-cli
 fi
 
-# Ask for missing variables
-if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
-  echo ""
-  echo "Enter your Netlify personal access token:"
-  read -s token
+# Check if user is logged in to Netlify
+netlify status >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo -e "${YELLOW}You are not logged in to Netlify. Please login:${NC}"
+  netlify login
+fi
+
+# Create or update netlify.toml if it doesn't exist or is minimal
+if [ ! -f "netlify.toml" ] || [ $(wc -l < netlify.toml) -lt 5 ]; then
+  echo -e "${YELLOW}Creating/updating netlify.toml with default settings...${NC}"
   
-  if [ -z "$token" ]; then
-    print_error "No token provided. Exiting."
-    exit 1
+  cat > netlify.toml << 'EOF'
+[build]
+  command = "npm run netlify-build"
+  publish = ".next"
+  
+[build.environment]
+  NODE_VERSION = "18"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+  NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_IGNORE_ESLINT = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cache-nextjs"
+
+[[redirects]]
+  from = "/_next/static/*"
+  to = "/static/:splat"
+  status = 200
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+EOF
+
+  echo -e "${GREEN}netlify.toml created/updated successfully.${NC}"
+fi
+
+# Prompt for environment variables
+echo -e "${BLUE}Setting up environment variables for Netlify...${NC}"
+echo -e "${YELLOW}These variables will be synced with your Netlify site.${NC}"
+
+# Function to add/update environment variables
+add_env_var() {
+  local var_name="$1"
+  local var_prompt="$2"
+  local var_default="$3"
+  local is_sensitive="${4:-false}"
+  
+  # Read current value from .env if it exists
+  local current_value=""
+  if [ -f ".env" ]; then
+    current_value=$(grep "^$var_name=" .env | cut -d '=' -f2)
   fi
   
-  # Check if variable already exists in .env
-  if grep -q "NETLIFY_AUTH_TOKEN" "$ENV_FILE"; then
-    # Replace existing token
-    sed -i '' "s/NETLIFY_AUTH_TOKEN=.*/NETLIFY_AUTH_TOKEN=$token/" "$ENV_FILE"
+  # Set default from current value if available
+  if [ -n "$current_value" ]; then
+    var_default="$current_value"
+  fi
+  
+  # Prompt for value
+  local prompt_text="$var_prompt"
+  if [ -n "$var_default" ]; then
+    prompt_text="$var_prompt (default: $var_default)"
+  fi
+  
+  local var_value=""
+  if [ "$is_sensitive" = "true" ]; then
+    read -p "$prompt_text: " -s var_value
+    echo ""
   else
-    # Add new token
-    echo "NETLIFY_AUTH_TOKEN=$token" >> "$ENV_FILE"
+    read -p "$prompt_text: " var_value
   fi
   
-  print_success "Added NETLIFY_AUTH_TOKEN to $ENV_FILE"
-fi
-
-if [ -z "$NETLIFY_SITE_ID" ]; then
-  echo ""
-  echo "Enter your Netlify site ID:"
-  read site_id
-  
-  if [ -z "$site_id" ]; then
-    print_error "No site ID provided. Exiting."
-    exit 1
+  # Use default if no input provided
+  if [ -z "$var_value" ]; then
+    var_value="$var_default"
   fi
   
-  # Check if variable already exists in .env
-  if grep -q "NETLIFY_SITE_ID" "$ENV_FILE"; then
-    # Replace existing site ID
-    sed -i '' "s/NETLIFY_SITE_ID=.*/NETLIFY_SITE_ID=$site_id/" "$ENV_FILE"
+  # Add to .env file
+  if [ -f ".env" ]; then
+    if grep -q "^$var_name=" .env; then
+      # Variable exists, update it
+      sed -i'' -e "s|^$var_name=.*|$var_name=$var_value|" .env
+    else
+      # Variable doesn't exist, add it
+      echo "$var_name=$var_value" >> .env
+    fi
   else
-    # Add new site ID
-    echo "NETLIFY_SITE_ID=$site_id" >> "$ENV_FILE"
+    # .env doesn't exist, create it
+    echo "$var_name=$var_value" > .env
   fi
   
-  print_success "Added NETLIFY_SITE_ID to $ENV_FILE"
+  echo -e "${GREEN}Environment variable $var_name has been set.${NC}"
+}
+
+# Add required environment variables
+add_env_var "OPENAI_API_KEY" "Enter your OpenAI API key" "" "true"
+add_env_var "NETLIFY_SITE_ID" "Enter your Netlify site ID (leave blank to set later)" ""
+add_env_var "NETLIFY_AUTH_TOKEN" "Enter your Netlify authentication token (leave blank to set later)" "" "true"
+
+# Ask if user wants to sync environment variables with Netlify
+read -p "Do you want to sync these environment variables with your Netlify site? (y/N): " SYNC_ENV
+if [[ "$SYNC_ENV" == "y" || "$SYNC_ENV" == "Y" ]]; then
+  echo -e "${BLUE}Syncing environment variables with Netlify...${NC}"
+  
+  # Check if site is linked
+  if ! netlify status | grep -q "Linked sites"; then
+    echo -e "${YELLOW}No site is linked. Please link a site:${NC}"
+    netlify link
+  fi
+  
+  # Extract variables from .env and set them in Netlify
+  if [ -f ".env" ]; then
+    while IFS='=' read -r key value || [ -n "$key" ]; do
+      # Skip comments and empty lines
+      if [[ $key == \#* ]] || [ -z "$key" ]; then
+        continue
+      fi
+      
+      echo -e "Setting Netlify environment variable: ${BLUE}$key${NC}"
+      netlify env:set "$key" "$value"
+    done < .env
+  fi
+  
+  echo -e "${GREEN}Environment variables synced with Netlify.${NC}"
 fi
 
-print_header "Setup Complete"
-echo "Your Netlify environment is now configured."
-echo "You can now use the deployment tools with:"
-echo "  npm run deploy-site build-deploy"
-echo ""
-echo "To check your settings, run:"
-echo "  npm run deploy-site status" 
+echo -e "${GREEN}Netlify environment setup completed successfully!${NC}" 

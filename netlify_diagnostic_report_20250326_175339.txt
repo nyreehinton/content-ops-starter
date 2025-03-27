@@ -1,0 +1,33 @@
+Netlify Diagnostic Report
+========================
+Timestamp: 2025-03-26 17:53:39
+Project directory: /Users/ree/Library/CloudStorage/OneDrive-Personal/0_NyreeHinton_com/Github Repo/content-ops-starter
+
+Netlify CLI Information:
+  netlify-cli/19.0.3 darwin-arm64 node-v23.9.0
+
+Netlify Site Information:
+  Not linked to a Netlify site or unable to retrieve site information
+
+Environment Information:
+  Node.js: v23.9.0
+  npm: 10.9.2
+
+Configuration Analysis:
+  No netlify.toml configuration found
+
+Package Analysis:
+  Framework detected: react
+  Build script: npm run type-check && next build
+
+Build Command Test:
+  Command: npm run build
+  Result: Success
+
+Issues Detected:
+  - Large files detected (7 files over 10MB)
+
+Suggestions:
+  - Link your site with 'netlify link'
+  - Create a netlify.toml file at the root of your project
+  - Consider using Netlify Large Media or excluding large files

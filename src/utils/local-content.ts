@@ -73,6 +73,14 @@ function readContent(file: string): ContentObject {
             console.log(`📝 Processing markdown file: ${file}`);
             const parsedMd = frontmatter(rawContent);
             const attributes = parsedMd.attributes && typeof parsedMd.attributes === 'object' ? parsedMd.attributes : {};
+            
+            if (file.includes('index.md') || (attributes as any).slug === '/') {
+                console.log(`🏠 Found homepage content file: ${file}`);
+                console.log(`🔍 Homepage markdown content length: ${parsedMd.body.length}`);
+                console.log(`🔍 Homepage markdown content preview: ${parsedMd.body.substring(0, 100)}...`);
+                console.log(`🔍 Homepage frontmatter: ${JSON.stringify(attributes)}`);
+            }
+            
             content = {
                 ...attributes,
                 markdown_content: parsedMd.body
@@ -104,8 +112,17 @@ function readContent(file: string): ContentObject {
     // ✅ Ensure metadata ID is assigned
     content.__metadata.id = file;
 
+    // Special debug for homepage content
+    if ((content as ContentObject).slug === '/' || content.__metadata?.urlPath === '/') {
+        console.log(`🏠 Found homepage by slug: ${(content as ContentObject).slug}`);
+        console.log(`📄 Homepage content exists: ${!!content.markdown_content}`);
+        console.log(`📄 Homepage content length: ${content.markdown_content?.length || 0}`);
+    }
+
     return content;
 }
+
+export { contentFilesInPath, readContent };
 
 function resolveReferences(content: ContentObject, fileToContent: { [key: string]: ContentObject }): void {
     if (!content || !content.type) return;

@@ -1,0 +1,841 @@
+#!/usr/bin/env python3
+"""
+Netlify Case Sensitivity Checker
+-------------------------------
+This tool helps identify case sensitivity issues that may cause Netlify builds to fail.
+Since Netlify runs on Linux (case-sensitive), but many developers use macOS or Windows
+(case-insensitive), this tool finds potential filename conflicts and import issues.
+"""
+
+import os
+import sys
+import re
+import json
+import argparse
+from pathlib import Path
+from datetime import datetime
+import fnmatch
+from collections import defaultdict
+import importlib.util
+
+def is_git_repo():
+    """Check if the current directory is a git repository."""
+    return os.path.exists('.git')
+
+def has_netlify_config():
+    """Check if there's a Netlify configuration file."""
+    return os.path.exists('netlify.toml')
+
+class CaseSensitivityChecker:
+    """A tool to check for case sensitivity issues in a project."""
+    
+    def __init__(self, project_dir=None, verbose=False):
+        self.project_dir = project_dir or os.getcwd()
+        self.verbose = verbose
+        self.issues = []
+        self.ignore_patterns = [
+            '**/node_modules/**',
+            '**/.git/**',
+            '**/dist/**',
+            '**/build/**',
+            '**/.next/**',
+            '**/.cache/**',
+            '**/public/assets/**',
+            '**/*.min.js',
+            '**/*.min.css'
+        ]
+        
+        # Look for specific patterns based on common frameworks
+        self.framework_patterns = {
+            'react': [
+                'import.*from [\'"].*React.*[\'"]',
+                'import.*from [\'"].*Component.*[\'"]',
+                'import.*from [\'"].*\.(jsx?|tsx?)[\'"]'
+            ],
+            'vue': [
+                'import.*from [\'"].*Vue.*[\'"]',
+                'import.*from [\'"].*\.vue[\'"]'
+            ],
+            'angular': [
+                'import.*from [\'"]@angular.*[\'"]',
+                'import.*from [\'"].*\.component[\'"]'
+            ],
+            'svelte': [
+                'import.*from [\'"].*\.svelte[\'"]'
+            ],
+            'next.js': [
+                'import.*from [\'"]next.*[\'"]',
+                'import.*from [\'"]next/.*[\'"]'
+            ],
+            'gatsby': [
+                'import.*from [\'"]gatsby.*[\'"]',
+                'import.*from [\'"]gatsby-.*[\'"]'
+            ]
+        }
+        
+        # Add custom ignore patterns from .gitignore if available
+        gitignore_path = os.path.join(self.project_dir, '.gitignore')
+        if os.path.exists(gitignore_path):
+            with open(gitignore_path, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        self.ignore_patterns.append(f'**/{line}/**')
+    
+    def should_ignore(self, file_path):
+        """Check if a file should be ignored based on patterns."""
+        rel_path = os.path.relpath(file_path, self.project_dir)
+        
+        # Convert Windows path to Unix-style for pattern matching
+        rel_path = rel_path.replace('\\', '/')
+        
+        for pattern in self.ignore_patterns:
+            if fnmatch.fnmatch(rel_path, pattern):
+                return True
+        
+        return False
+    
+    def find_case_conflicts(self):
+        """Find files with the same name but different case."""
+        print("[1/4] Checking for case conflicts in filenames...")
+        
+        file_map = defaultdict(list)
+        count = 0
+        
+        # Walk the directory and collect files
+        for root, dirs, files in os.walk(self.project_dir):
+            # Skip ignored directories
+            dirs[:] = [d for d in dirs if not self.should_ignore(os.path.join(root, d))]
+            
+            for file in files:
+                file_path = os.path.join(root, file)
+                
+                # Skip ignored files
+                if self.should_ignore(file_path):
+                    continue
+                
+                rel_path = os.path.relpath(file_path, self.project_dir)
+                lower_path = rel_path.lower()
+                
+                file_map[lower_path].append(rel_path)
+                count += 1
+        
+        if self.verbose:
+            print(f"Examined {count} files for case conflicts")
+        
+        # Find conflicts
+        conflicts = []
+        for lower_path, paths in file_map.items():
+            if len(paths) > 1:
+                conflicts.append((lower_path, paths))
+        
+        if conflicts:
+            print(f"Found {len(conflicts)} case conflicts in filenames:")
+            for lower_path, paths in conflicts:
+                print(f"  Conflict for '{lower_path}':")
+                for path in paths:
+                    print(f"    - {path}")
+                
+                self.issues.append({
+                    'type': 'filename_conflict',
+                    'lower_path': lower_path,
+                    'paths': paths
+                })
+        else:
+            print("No filename case conflicts found.")
+        
+        return bool(conflicts)
+    
+    def find_case_sensitive_imports(self):
+        """Find import statements that might have case sensitivity issues."""
+        print("[2/4] Checking for case sensitivity issues in imports...")
+        
+        file_extensions = ['.js', '.jsx', '.ts', '.tsx', '.vue', '.svelte']
+        import_pattern = re.compile(r'(?:import|require)\s*\(?\s*[\'"](.+?)[\'"]')
+        
+        all_files = set()
+        import_issues = []
+        count = 0
+        
+        # First, collect all files for later validation
+        for root, dirs, files in os.walk(self.project_dir):
+            # Skip ignored directories
+            dirs[:] = [d for d in dirs if not self.should_ignore(os.path.join(root, d))]
+            
+            for file in files:
+                file_path = os.path.join(root, file)
+                
+                # Skip ignored files
+                if self.should_ignore(file_path):
+                    continue
+                
+                rel_path = os.path.relpath(file_path, self.project_dir)
+                all_files.add(rel_path)
+        
+        # Now check imports in code files
+        for root, dirs, files in os.walk(self.project_dir):
+            # Skip ignored directories
+            dirs[:] = [d for d in dirs if not self.should_ignore(os.path.join(root, d))]
+            
+            for file in files:
+                file_path = os.path.join(root, file)
+                
+                # Skip ignored files
+                if self.should_ignore(file_path):
+                    continue
+                
+                # Only check relevant file types
+                if not any(file.endswith(ext) for ext in file_extensions):
+                    continue
+                
+                count += 1
+                rel_path = os.path.relpath(file_path, self.project_dir)
+                
+                try:
+                    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                    
+                    # Find all imports
+                    imports = import_pattern.findall(content)
+                    
+                    for imp in imports:
+                        # Skip package imports (no ./ or ../)
+                        if not imp.startswith('.'):
+                            continue
+                        
+                        # Process relative import
+                        dir_name = os.path.dirname(file_path)
+                        
+                        # Handle extension-less imports by trying common extensions
+                        if not os.path.splitext(imp)[1]:
+                            potential_exts = ['.js', '.jsx', '.ts', '.tsx', '.vue', '.svelte']
+                            for ext in potential_exts:
+                                potential_import = imp + ext
+                                try:
+                                    potential_path = os.path.normpath(os.path.join(dir_name, potential_import))
+                                    potential_rel_path = os.path.relpath(potential_path, self.project_dir)
+                                    
+                                    # Check if the file exists with a different case
+                                    if not os.path.exists(potential_path):
+                                        lower_rel_path = potential_rel_path.lower()
+                                        
+                                        for actual_file in all_files:
+                                            if actual_file.lower() == lower_rel_path and actual_file != potential_rel_path:
+                                                import_issues.append({
+                                                    'file': rel_path,
+                                                    'import': imp,
+                                                    'expected': potential_rel_path,
+                                                    'actual': actual_file
+                                                })
+                                                break
+                                except Exception as e:
+                                    if self.verbose:
+                                        print(f"Error processing import '{imp}' in '{rel_path}': {str(e)}")
+                        
+                        # Handle imports with extensions
+                        else:
+                            try:
+                                import_path = os.path.normpath(os.path.join(dir_name, imp))
+                                import_rel_path = os.path.relpath(import_path, self.project_dir)
+                                
+                                # Check if the file exists with a different case
+                                if not os.path.exists(import_path):
+                                    lower_import_path = import_rel_path.lower()
+                                    
+                                    for actual_file in all_files:
+                                        if actual_file.lower() == lower_import_path and actual_file != import_rel_path:
+                                            import_issues.append({
+                                                'file': rel_path,
+                                                'import': imp,
+                                                'expected': import_rel_path,
+                                                'actual': actual_file
+                                            })
+                                            break
+                            except Exception as e:
+                                if self.verbose:
+                                    print(f"Error processing import '{imp}' in '{rel_path}': {str(e)}")
+                
+                except Exception as e:
+                    if self.verbose:
+                        print(f"Error reading file '{rel_path}': {str(e)}")
+        
+        if self.verbose:
+            print(f"Examined {count} files for case-sensitive imports")
+        
+        if import_issues:
+            print(f"Found {len(import_issues)} case sensitivity issues in imports:")
+            for issue in import_issues:
+                print(f"  In '{issue['file']}', import '{issue['import']}':")
+                print(f"    Expected: '{issue['expected']}'")
+                print(f"    Actual:   '{issue['actual']}'")
+                
+                self.issues.append({
+                    'type': 'import_case_issue',
+                    'file': issue['file'],
+                    'import': issue['import'],
+                    'expected': issue['expected'],
+                    'actual': issue['actual']
+                })
+        else:
+            print("No case sensitivity issues found in imports.")
+        
+        return bool(import_issues)
+    
+    def find_inconsistent_component_usage(self):
+        """Find inconsistent component usage in JSX/TSX files."""
+        print("[3/4] Checking for inconsistent component usage...")
+        
+        file_extensions = ['.js', '.jsx', '.ts', '.tsx']
+        component_pattern = re.compile(r'<([A-Z][a-zA-Z0-9]*)\s*/?\s*>|<([A-Z][a-zA-Z0-9]*)\s+[^>]*>')
+        
+        component_usages = defaultdict(set)
+        component_issues = []
+        count = 0
+        
+        # Collect all component usages
+        for root, dirs, files in os.walk(self.project_dir):
+            # Skip ignored directories
+            dirs[:] = [d for d in dirs if not self.should_ignore(os.path.join(root, d))]
+            
+            for file in files:
+                file_path = os.path.join(root, file)
+                
+                # Skip ignored files
+                if self.should_ignore(file_path):
+                    continue
+                
+                # Only check relevant file types
+                if not any(file.endswith(ext) for ext in file_extensions):
+                    continue
+                
+                count += 1
+                rel_path = os.path.relpath(file_path, self.project_dir)
+                
+                try:
+                    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                    
+                    # Find all component usages
+                    for match in component_pattern.finditer(content):
+                        component_name = match.group(1) or match.group(2)
+                        if component_name:
+                            component_usages[component_name.lower()].add(component_name)
+                
+                except Exception as e:
+                    if self.verbose:
+                        print(f"Error reading file '{rel_path}': {str(e)}")
+        
+        if self.verbose:
+            print(f"Examined {count} files for component usage")
+        
+        # Find inconsistent component usages
+        for lower_name, names in component_usages.items():
+            if len(names) > 1:
+                component_issues.append({
+                    'lower_name': lower_name,
+                    'variations': list(names)
+                })
+        
+        if component_issues:
+            print(f"Found {len(component_issues)} inconsistent component usages:")
+            for issue in component_issues:
+                print(f"  Component '{issue['lower_name']}' used with different cases:")
+                for variation in issue['variations']:
+                    print(f"    - {variation}")
+                
+                self.issues.append({
+                    'type': 'component_case_issue',
+                    'lower_name': issue['lower_name'],
+                    'variations': issue['variations']
+                })
+        else:
+            print("No inconsistent component usages found.")
+        
+        return bool(component_issues)
+    
+    def analyze_framework_specific_issues(self):
+        """Analyze framework-specific case sensitivity issues."""
+        print("[4/4] Analyzing framework-specific case sensitivity issues...")
+        
+        # Detect the framework
+        framework = self.detect_framework()
+        if framework:
+            print(f"Detected framework: {framework}")
+        else:
+            print("No specific framework detected.")
+            return False
+        
+        # Framework-specific checks
+        if framework == 'react':
+            return self.check_react_issues()
+        elif framework == 'vue':
+            return self.check_vue_issues()
+        elif framework == 'next.js':
+            return self.check_nextjs_issues()
+        elif framework == 'gatsby':
+            return self.check_gatsby_issues()
+        else:
+            print(f"No specific case sensitivity checks for {framework}.")
+            return False
+    
+    def detect_framework(self):
+        """Detect the framework used in the project."""
+        # Check package.json for dependencies
+        package_json_path = os.path.join(self.project_dir, 'package.json')
+        if os.path.exists(package_json_path):
+            try:
+                with open(package_json_path, 'r') as f:
+                    package_data = json.load(f)
+                
+                dependencies = package_data.get('dependencies', {})
+                dev_dependencies = package_data.get('devDependencies', {})
+                all_deps = {**dependencies, **dev_dependencies}
+                
+                # Check for frameworks
+                if 'react' in all_deps:
+                    if 'next' in all_deps:
+                        return 'next.js'
+                    elif 'gatsby' in all_deps:
+                        return 'gatsby'
+                    else:
+                        return 'react'
+                elif 'vue' in all_deps:
+                    return 'vue'
+                elif '@angular/core' in all_deps:
+                    return 'angular'
+                elif 'svelte' in all_deps:
+                    return 'svelte'
+            except Exception as e:
+                if self.verbose:
+                    print(f"Error reading package.json: {str(e)}")
+        
+        # Check for framework-specific files
+        if os.path.exists(os.path.join(self.project_dir, 'gatsby-config.js')):
+            return 'gatsby'
+        elif os.path.exists(os.path.join(self.project_dir, 'next.config.js')):
+            return 'next.js'
+        elif os.path.exists(os.path.join(self.project_dir, 'angular.json')):
+            return 'angular'
+        elif os.path.exists(os.path.join(self.project_dir, 'vue.config.js')):
+            return 'vue'
+        
+        return None
+    
+    def check_react_issues(self):
+        """Check for React-specific case sensitivity issues."""
+        pages_dir = os.path.join(self.project_dir, 'src', 'pages')
+        components_dir = os.path.join(self.project_dir, 'src', 'components')
+        react_issues = []
+        
+        # Check for component files with inconsistent naming
+        if os.path.exists(components_dir):
+            component_files = {}
+            for root, dirs, files in os.walk(components_dir):
+                for file in files:
+                    if file.endswith(('.js', '.jsx', '.tsx')):
+                        # Extract component name (usually the same as the file name without extension)
+                        component_name = os.path.splitext(file)[0]
+                        lower_name = component_name.lower()
+                        
+                        if lower_name in component_files:
+                            # Found a potential conflict
+                            existing_file = component_files[lower_name]
+                            if existing_file != component_name:
+                                react_issues.append({
+                                    'type': 'react_component_naming',
+                                    'lower_name': lower_name,
+                                    'variations': [existing_file, component_name]
+                                })
+                        else:
+                            component_files[lower_name] = component_name
+        
+        if react_issues:
+            print(f"Found {len(react_issues)} React-specific case sensitivity issues:")
+            for issue in react_issues:
+                print(f"  Component '{issue['lower_name']}' has inconsistent file naming:")
+                for variation in issue['variations']:
+                    print(f"    - {variation}")
+                
+                self.issues.append(issue)
+            return True
+        else:
+            print("No React-specific case sensitivity issues found.")
+            return False
+    
+    def check_nextjs_issues(self):
+        """Check for Next.js-specific case sensitivity issues."""
+        pages_dir = os.path.join(self.project_dir, 'pages')
+        components_dir = os.path.join(self.project_dir, 'components')
+        nextjs_issues = []
+        
+        # Next.js pages must match the URL path case exactly
+        if os.path.exists(pages_dir):
+            page_files = []
+            for root, dirs, files in os.walk(pages_dir):
+                rel_root = os.path.relpath(root, pages_dir)
+                if rel_root == '.':
+                    rel_root = ''
+                
+                for file in files:
+                    if file.endswith(('.js', '.jsx', '.tsx', '.ts')) and not file.startsWith('_'):
+                        page_path = os.path.join(rel_root, os.path.splitext(file)[0])
+                        page_files.append(page_path)
+            
+            # Check for pages that differ only by case
+            page_map = defaultdict(list)
+            for page in page_files:
+                page_map[page.lower()].append(page)
+            
+            for lower_page, pages in page_map.items():
+                if len(pages) > 1:
+                    nextjs_issues.append({
+                        'type': 'nextjs_page_naming',
+                        'lower_path': lower_page,
+                        'variations': pages
+                    })
+        
+        if nextjs_issues:
+            print(f"Found {len(nextjs_issues)} Next.js-specific case sensitivity issues:")
+            for issue in nextjs_issues:
+                print(f"  Page '{issue['lower_path']}' has inconsistent file naming:")
+                for variation in issue['variations']:
+                    print(f"    - {variation}")
+                
+                self.issues.append(issue)
+            return True
+        else:
+            print("No Next.js-specific case sensitivity issues found.")
+            return False
+    
+    def check_gatsby_issues(self):
+        """Check for Gatsby-specific case sensitivity issues."""
+        pages_dir = os.path.join(self.project_dir, 'src', 'pages')
+        components_dir = os.path.join(self.project_dir, 'src', 'components')
+        templates_dir = os.path.join(self.project_dir, 'src', 'templates')
+        gatsby_issues = []
+        
+        # Check for Gatsby page naming issues (similar to Next.js)
+        if os.path.exists(pages_dir):
+            page_files = []
+            for root, dirs, files in os.walk(pages_dir):
+                rel_root = os.path.relpath(root, pages_dir)
+                if rel_root == '.':
+                    rel_root = ''
+                
+                for file in files:
+                    if file.endswith(('.js', '.jsx', '.tsx', '.ts')):
+                        page_path = os.path.join(rel_root, os.path.splitext(file)[0])
+                        page_files.append(page_path)
+            
+            # Check for pages that differ only by case
+            page_map = defaultdict(list)
+            for page in page_files:
+                page_map[page.lower()].append(page)
+            
+            for lower_page, pages in page_map.items():
+                if len(pages) > 1:
+                    gatsby_issues.append({
+                        'type': 'gatsby_page_naming',
+                        'lower_path': lower_page,
+                        'variations': pages
+                    })
+        
+        # Check for template naming issues
+        if os.path.exists(templates_dir):
+            template_files = {}
+            for root, dirs, files in os.walk(templates_dir):
+                for file in files:
+                    if file.endswith(('.js', '.jsx', '.tsx', '.ts')):
+                        template_name = os.path.splitext(file)[0]
+                        lower_name = template_name.lower()
+                        
+                        if lower_name in template_files:
+                            # Found a potential conflict
+                            existing_template = template_files[lower_name]
+                            if existing_template != template_name:
+                                gatsby_issues.append({
+                                    'type': 'gatsby_template_naming',
+                                    'lower_name': lower_name,
+                                    'variations': [existing_template, template_name]
+                                })
+                        else:
+                            template_files[lower_name] = template_name
+        
+        if gatsby_issues:
+            print(f"Found {len(gatsby_issues)} Gatsby-specific case sensitivity issues:")
+            for issue in gatsby_issues:
+                if issue['type'] == 'gatsby_page_naming':
+                    print(f"  Page '{issue['lower_path']}' has inconsistent file naming:")
+                    for variation in issue['variations']:
+                        print(f"    - {variation}")
+                else:
+                    print(f"  Template '{issue['lower_name']}' has inconsistent file naming:")
+                    for variation in issue['variations']:
+                        print(f"    - {variation}")
+                
+                self.issues.append(issue)
+            return True
+        else:
+            print("No Gatsby-specific case sensitivity issues found.")
+            return False
+    
+    def check_vue_issues(self):
+        """Check for Vue-specific case sensitivity issues."""
+        components_dir = os.path.join(self.project_dir, 'src', 'components')
+        vue_issues = []
+        
+        # Check for Vue component naming issues
+        if os.path.exists(components_dir):
+            component_files = {}
+            for root, dirs, files in os.walk(components_dir):
+                for file in files:
+                    if file.endswith('.vue'):
+                        component_name = os.path.splitext(file)[0]
+                        lower_name = component_name.lower()
+                        
+                        if lower_name in component_files:
+                            # Found a potential conflict
+                            existing_component = component_files[lower_name]
+                            if existing_component != component_name:
+                                vue_issues.append({
+                                    'type': 'vue_component_naming',
+                                    'lower_name': lower_name,
+                                    'variations': [existing_component, component_name]
+                                })
+                        else:
+                            component_files[lower_name] = component_name
+        
+        if vue_issues:
+            print(f"Found {len(vue_issues)} Vue-specific case sensitivity issues:")
+            for issue in vue_issues:
+                print(f"  Component '{issue['lower_name']}' has inconsistent file naming:")
+                for variation in issue['variations']:
+                    print(f"    - {variation}")
+                
+                self.issues.append(issue)
+            return True
+        else:
+            print("No Vue-specific case sensitivity issues found.")
+            return False
+    
+    def generate_report(self):
+        """Generate a report of all issues found."""
+        print("\n=== Case Sensitivity Issues Report ===")
+        print(f"Project directory: {self.project_dir}")
+        print(f"Report generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"Total issues found: {len(self.issues)}")
+        print("")
+        
+        # Group issues by type
+        issue_types = defaultdict(list)
+        for issue in self.issues:
+            issue_types[issue['type']].append(issue)
+        
+        # Print issues by type
+        for issue_type, issues in issue_types.items():
+            print(f"=== {issue_type.replace('_', ' ').title()} ({len(issues)}) ===")
+            for issue in issues:
+                if issue_type == 'filename_conflict':
+                    print(f"  Conflict for '{issue['lower_path']}':")
+                    for path in issue['paths']:
+                        print(f"    - {path}")
+                elif issue_type == 'import_case_issue':
+                    print(f"  In '{issue['file']}', import '{issue['import']}':")
+                    print(f"    Expected: '{issue['expected']}'")
+                    print(f"    Actual:   '{issue['actual']}'")
+                elif issue_type == 'component_case_issue':
+                    print(f"  Component '{issue['lower_name']}' used with different cases:")
+                    for variation in issue['variations']:
+                        print(f"    - {variation}")
+                elif issue_type in ['react_component_naming', 'vue_component_naming', 'gatsby_template_naming']:
+                    print(f"  Component '{issue['lower_name']}' has inconsistent file naming:")
+                    for variation in issue['variations']:
+                        print(f"    - {variation}")
+                elif issue_type in ['nextjs_page_naming', 'gatsby_page_naming']:
+                    print(f"  Page '{issue['lower_path']}' has inconsistent file naming:")
+                    for variation in issue['variations']:
+                        print(f"    - {variation}")
+            print("")
+        
+        # Generate recommendations
+        print("=== Recommendations ===")
+        
+        if issue_types['filename_conflict']:
+            print("1. Resolve filename conflicts by renaming files to ensure consistent casing:")
+            print("   - To fix git filename case issues:")
+            print("     a. Rename files to a temporary name: `git mv File.js temp.js`")
+            print("     b. Then rename to the correct case: `git mv temp.js file.js`")
+        
+        if issue_types['import_case_issue']:
+            print("2. Fix import statements to match the actual case of the files:")
+            print("   - Update imports to match the exact case of the target files")
+            print("   - Consider standardizing all filenames to lowercase to avoid case issues")
+        
+        if issue_types['component_case_issue']:
+            print("3. Use consistent case for component names in JSX/TSX:")
+            print("   - React components should use PascalCase consistently")
+            print("   - Ensure component usage matches component definition case")
+        
+        framework = self.detect_framework()
+        if framework == 'react' and (issue_types['react_component_naming'] or issue_types['component_case_issue']):
+            print("4. For React projects:")
+            print("   - Use PascalCase for component files (e.g., MyComponent.jsx)")
+            print("   - Use camelCase for non-component files (e.g., utils.js)")
+        elif framework == 'next.js' and (issue_types['nextjs_page_naming']):
+            print("4. For Next.js projects:")
+            print("   - Page files must match URL paths exactly, including case")
+            print("   - Consider using lowercase for all page filenames for consistency with URL conventions")
+        elif framework == 'gatsby' and (issue_types['gatsby_page_naming'] or issue_types['gatsby_template_naming']):
+            print("4. For Gatsby projects:")
+            print("   - Standardize page and template filenames to consistent casing")
+            print("   - Consider using lowercase for all page files")
+        elif framework == 'vue' and issue_types['vue_component_naming']:
+            print("4. For Vue projects:")
+            print("   - Use PascalCase for single-file component filenames (Vue's recommended convention)")
+        
+        print("\n5. General recommendations:")
+        print("   - Standardize on a consistent filename casing convention throughout your project")
+        print("   - For most web projects, lowercase filenames are safest for cross-platform compatibility")
+        print("   - Configure your editor/IDE to match case exactly when importing files")
+        print("   - Add a linting rule to enforce consistent import casing")
+        print("   - Consider setting up a CI check to catch case sensitivity issues before deploying to Netlify")
+        
+        # Save report to file
+        report_filename = f"case_sensitivity_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+        try:
+            with open(report_filename, 'w') as f:
+                f.write("=== Case Sensitivity Issues Report ===\n")
+                f.write(f"Project directory: {self.project_dir}\n")
+                f.write(f"Report generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write(f"Total issues found: {len(self.issues)}\n\n")
+                
+                for issue_type, issues in issue_types.items():
+                    f.write(f"=== {issue_type.replace('_', ' ').title()} ({len(issues)}) ===\n")
+                    for issue in issues:
+                        if issue_type == 'filename_conflict':
+                            f.write(f"  Conflict for '{issue['lower_path']}':\n")
+                            for path in issue['paths']:
+                                f.write(f"    - {path}\n")
+                        elif issue_type == 'import_case_issue':
+                            f.write(f"  In '{issue['file']}', import '{issue['import']}':\n")
+                            f.write(f"    Expected: '{issue['expected']}'\n")
+                            f.write(f"    Actual:   '{issue['actual']}'\n")
+                        elif issue_type == 'component_case_issue':
+                            f.write(f"  Component '{issue['lower_name']}' used with different cases:\n")
+                            for variation in issue['variations']:
+                                f.write(f"    - {variation}\n")
+                        elif issue_type in ['react_component_naming', 'vue_component_naming', 'gatsby_template_naming']:
+                            f.write(f"  Component '{issue['lower_name']}' has inconsistent file naming:\n")
+                            for variation in issue['variations']:
+                                f.write(f"    - {variation}\n")
+                        elif issue_type in ['nextjs_page_naming', 'gatsby_page_naming']:
+                            f.write(f"  Page '{issue['lower_path']}' has inconsistent file naming:\n")
+                            for variation in issue['variations']:
+                                f.write(f"    - {variation}\n")
+                    f.write("\n")
+                
+                # Add recommendations to the report
+                f.write("=== Recommendations ===\n")
+                
+                if issue_types['filename_conflict']:
+                    f.write("1. Resolve filename conflicts by renaming files to ensure consistent casing:\n")
+                    f.write("   - To fix git filename case issues:\n")
+                    f.write("     a. Rename files to a temporary name: `git mv File.js temp.js`\n")
+                    f.write("     b. Then rename to the correct case: `git mv temp.js file.js`\n\n")
+                
+                if issue_types['import_case_issue']:
+                    f.write("2. Fix import statements to match the actual case of the files:\n")
+                    f.write("   - Update imports to match the exact case of the target files\n")
+                    f.write("   - Consider standardizing all filenames to lowercase to avoid case issues\n\n")
+                
+                if issue_types['component_case_issue']:
+                    f.write("3. Use consistent case for component names in JSX/TSX:\n")
+                    f.write("   - React components should use PascalCase consistently\n")
+                    f.write("   - Ensure component usage matches component definition case\n\n")
+                
+                if framework == 'react' and (issue_types['react_component_naming'] or issue_types['component_case_issue']):
+                    f.write("4. For React projects:\n")
+                    f.write("   - Use PascalCase for component files (e.g., MyComponent.jsx)\n")
+                    f.write("   - Use camelCase for non-component files (e.g., utils.js)\n\n")
+                elif framework == 'next.js' and (issue_types['nextjs_page_naming']):
+                    f.write("4. For Next.js projects:\n")
+                    f.write("   - Page files must match URL paths exactly, including case\n")
+                    f.write("   - Consider using lowercase for all page filenames for consistency with URL conventions\n\n")
+                elif framework == 'gatsby' and (issue_types['gatsby_page_naming'] or issue_types['gatsby_template_naming']):
+                    f.write("4. For Gatsby projects:\n")
+                    f.write("   - Standardize page and template filenames to consistent casing\n")
+                    f.write("   - Consider using lowercase for all page files\n\n")
+                elif framework == 'vue' and issue_types['vue_component_naming']:
+                    f.write("4. For Vue projects:\n")
+                    f.write("   - Use PascalCase for single-file component filenames (Vue's recommended convention)\n\n")
+                
+                f.write("5. General recommendations:\n")
+                f.write("   - Standardize on a consistent filename casing convention throughout your project\n")
+                f.write("   - For most web projects, lowercase filenames are safest for cross-platform compatibility\n")
+                f.write("   - Configure your editor/IDE to match case exactly when importing files\n")
+                f.write("   - Add a linting rule to enforce consistent import casing\n")
+                f.write("   - Consider setting up a CI check to catch case sensitivity issues before deploying to Netlify\n")
+            
+            print(f"\nReport saved to {report_filename}")
+        except Exception as e:
+            print(f"\nError saving report: {str(e)}")
+    
+    def run(self):
+        """Run all checks."""
+        print("=== Netlify Case Sensitivity Checker ===")
+        print(f"Checking project: {self.project_dir}")
+        print("=" * 60)
+        
+        # Check if project is suitable for checking
+        if not is_git_repo():
+            print("Warning: This doesn't appear to be a git repository.")
+            print("Some checks may not be accurate without git.")
+        
+        if not has_netlify_config():
+            print("Warning: No netlify.toml found. This may not be a Netlify project.")
+        
+        # Run all checks
+        has_issues = False
+        
+        if self.find_case_conflicts():
+            has_issues = True
+        
+        if self.find_case_sensitive_imports():
+            has_issues = True
+        
+        if self.find_inconsistent_component_usage():
+            has_issues = True
+        
+        if self.analyze_framework_specific_issues():
+            has_issues = True
+        
+        if has_issues:
+            print("\nCase sensitivity issues found that could cause Netlify builds to fail.")
+            self.generate_report()
+        else:
+            print("\nNo case sensitivity issues found that would cause Netlify builds to fail.")
+
+def main():
+    parser = argparse.ArgumentParser(description="Netlify Case Sensitivity Checker")
+    parser.add_argument(
+        "--dir", 
+        help="The directory to analyze (defaults to current directory)",
+        default=os.getcwd()
+    )
+    parser.add_argument(
+        "--verbose", 
+        help="Enable verbose output",
+        action="store_true"
+    )
+    args = parser.parse_args()
+    
+    # Run the checker
+    checker = CaseSensitivityChecker(args.dir, args.verbose)
+    checker.run()
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nChecker interrupted. Exiting...")
+        sys.exit(1)

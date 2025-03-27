@@ -1,23 +1,27 @@
 /** @type {import('next').NextConfig} */
+
+const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
+
+// Simple config without bundle analyzer
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        unoptimized: true
+        domains: ['images.ctfassets.net', 'nyreehinton.com', 'nyreehinton.netlify.app']
     },
-    typescript: {
-        // Type checking enabled for production builds
-        ignoreBuildErrors: false
-    },
-    eslint: {
-        // We need to ignore during netlify builds to prevent issues
-        ignoreDuringBuilds: true,
-        // Specify directories to lint
-        dirs: ['pages', 'components', 'src', 'utils']
-    },
-    // Ensure proper trailing slash handling for compatibility
-    trailingSlash: false,
-    // Add asset prefix if needed for CDN
-    assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.yourdomain.com' : ''
+    // No environment variables that could affect routing
+    // No asset prefix to avoid CDN issues
+    assetPrefix: '',
+    // Make sure static assets load correctly
+    staticPageGenerationTimeout: 180,
+    // Production optimizations
+    compiler: {
+        removeConsole:
+            process.env.NODE_ENV === 'production'
+                ? {
+                      exclude: ['error', 'warn']
+                  }
+                : false
+    }
 };
 
 module.exports = nextConfig;

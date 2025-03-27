@@ -1,0 +1,978 @@
+#!/usr/bin/env python3
+"""
+Netlify Cache Issue Fixer
+------------------------
+This tool helps diagnose and fix common cache-related issues in Netlify builds.
+It can identify potential problems and suggest solutions to issues that often require
+cache clearing in Netlify.
+"""
+
+import os
+import sys
+import json
+import subprocess
+import argparse
+import re
+from datetime import datetime
+
+class CacheFixer:
+    """Tool for diagnosing and fixing Netlify cache issues."""
+    
+    def __init__(self, project_dir=None):
+        """Initialize the cache fixer tool."""
+        self.project_dir = project_dir or os.getcwd()
+        self.issues_found = []
+        self.fixes_applied = []
+        self.suggestions = []
+        
+    def print_header(self, text):
+        """Print a formatted header."""
+        print("\n" + "=" * 80)
+        print(f"  {text}")
+        print("=" * 80)
+        
+    def print_status(self, message, status="info"):
+        """Print a status message with formatting."""
+        prefix = {
+            "info": "[INFO] ",
+            "success": "[SUCCESS] ",
+            "warning": "[WARNING] ",
+            "error": "[ERROR] ",
+        }.get(status, "[INFO] ")
+        
+        print(f"{prefix}{message}")
+    
+    def run_command(self, cmd, cwd=None):
+        """Run a shell command and return its output."""
+        try:
+            result = subprocess.run(
+                cmd, 
+                shell=isinstance(cmd, str),
+                capture_output=True, 
+                text=True, 
+                check=False,
+                cwd=cwd or self.project_dir
+            )
+            return {
+                "success": result.returncode == 0,
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "returncode": result.returncode
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "stdout": "",
+                "stderr": str(e),
+                "returncode": -1
+            }
+    
+    def check_node_modules_committed(self):
+        """Check if node_modules is committed to the repository."""
+        self.print_header("Checking for committed node_modules")
+        
+        # Check if node_modules exists
+        node_modules_path = os.path.join(self.project_dir, "node_modules")
+        if not os.path.exists(node_modules_path):
+            self.print_status("node_modules directory not found", "info")
+            return False
+        
+        # Check if node_modules is in .gitignore
+        gitignore_path = os.path.join(self.project_dir, ".gitignore")
+        if os.path.exists(gitignore_path):
+            with open(gitignore_path, 'r') as f:
+                gitignore_content = f.read()
+                
+            # Check for node_modules in .gitignore
+            if "node_modules" in gitignore_content:
+                self.print_status("node_modules is properly ignored in .gitignore", "success")
+                return False
+            else:
+                self.print_status("node_modules is not listed in .gitignore", "warning")
+                self.issues_found.append("node_modules directory not ignored in .gitignore")
+                self.suggestions.append("Add 'node_modules/' to your .gitignore file")
+        else:
+            self.print_status("No .gitignore file found", "warning")
+            self.issues_found.append("No .gitignore file found to exclude node_modules")
+            self.suggestions.append("Create a .gitignore file with 'node_modules/' entry")
+        
+        # Check if node_modules is tracked in git
+        result = self.run_command("git ls-files node_modules | head -n 5")
+        if result["success"] and result["stdout"].strip():
+            self.print_status("node_modules is committed to git repository!", "error")
+            self.issues_found.append("node_modules directory is committed to git repository")
+            self.suggestions.append("Remove node_modules from git tracking and add to .gitignore")
+            
+            # Show some of the committed files
+            files = result["stdout"].strip().split("\n")
+            for file in files[:5]:
+                self.print_status(f"Committed file: {file}", "info")
+            
+            if len(files) > 5:
+                self.print_status(f"...and {len(files) - 5} more files", "info")
+                
+            return True
+        else:
+            self.print_status("node_modules does not appear to be committed to git", "success")
+            return False
+    
+    def check_package_lockfile(self):
+        """Check for package lock file issues."""
+        self.print_header("Checking package lock files")
+        
+        # Check for package-lock.json and yarn.lock coexistence
+        package_lock_path = os.path.join(self.project_dir, "package-lock.json")
+        yarn_lock_path = os.path.join(self.project_dir, "yarn.lock")
+        
+        has_package_lock = os.path.exists(package_lock_path)
+        has_yarn_lock = os.path.exists(yarn_lock_path)
+        
+        if has_package_lock:
+            # Update package-lock.json
+            self.print_status("Updating package-lock.json...", "info")
+            result = self.run_command("npm install")
+            
+            if result["success"]:
+                self.print_status("Successfully updated package-lock.json", "success")
+                self.fixes_applied.append("Updated package-lock.json to match package.json")
+                return True
+            else:
+                self.print_status(f"Failed to update package-lock.json: {result['stderr']}", "error")
+                return False
+        elif has_yarn_lock:
+            # Update yarn.lock
+            self.print_status("Updating yarn.lock...", "info")
+            result = self.run_command("yarn")
+            
+            if result["success"]:
+                self.print_status("Successfully updated yarn.lock", "success")
+                self.fixes_applied.append("Updated yarn.lock to match package.json")
+                return True
+            else:
+                self.print_status(f"Failed to update yarn.lock: {result['stderr']}", "error")
+                return False
+        else:
+            self.print_status("No lock file found to update", "warning")
+            return False
+    
+    def add_node_version(self):
+        """Add Node.js version specification."""
+        self.print_header("Adding Node.js version specification")
+        
+        # Get current Node.js version
+        result = self.run_command("node --version")
+        if not result["success"]:
+            self.print_status("Failed to get current Node.js version", "error")
+            return False
+        
+        node_version = result["stdout"].strip()
+        self.print_status(f"Current Node.js version: {node_version}", "info")
+        
+        # Check if we should add to package.json, .nvmrc, or netlify.toml
+        options = [
+            ("package.json", "Add to package.json engines field"),
+            (".nvmrc", "Create .nvmrc file"),
+            ("netlify.toml", "Add to netlify.toml build.environment section")
+        ]
+        
+        print("Where would you like to add the Node.js version specification?")
+        for i, (file, desc) in enumerate(options, 1):
+            print(f"{i}. {desc}")
+        
+        choice = input("Enter choice (1-3): ").strip()
+        
+        if choice == "1":
+            # Add to package.json
+            package_json_path = os.path.join(self.project_dir, "package.json")
+            if not os.path.exists(package_json_path):
+                self.print_status("package.json not found", "error")
+                return False
+            
+            try:
+                with open(package_json_path, 'r') as f:
+                    package_data = json.load(f)
+                
+                if "engines" not in package_data:
+                    package_data["engines"] = {}
+                
+                package_data["engines"]["node"] = node_version
+                
+                with open(package_json_path, 'w') as f:
+                    json.dump(package_data, f, indent=2)
+                
+                self.print_status(f"Added Node.js version {node_version} to package.json engines", "success")
+                self.fixes_applied.append(f"Added Node.js version {node_version} to package.json engines")
+                return True
+            except Exception as e:
+                self.print_status(f"Failed to update package.json: {str(e)}", "error")
+                return False
+        elif choice == "2":
+            # Create .nvmrc
+            nvmrc_path = os.path.join(self.project_dir, ".nvmrc")
+            try:
+                with open(nvmrc_path, 'w') as f:
+                    f.write(node_version)
+                
+                self.print_status(f"Created .nvmrc with Node.js version {node_version}", "success")
+                self.fixes_applied.append(f"Created .nvmrc with Node.js version {node_version}")
+                return True
+            except Exception as e:
+                self.print_status(f"Failed to create .nvmrc: {str(e)}", "error")
+                return False
+        elif choice == "3":
+            # Add to netlify.toml
+            netlify_toml_path = os.path.join(self.project_dir, "netlify.toml")
+            
+            if not os.path.exists(netlify_toml_path):
+                # Create new netlify.toml
+                try:
+                    with open(netlify_toml_path, 'w') as f:
+                        f.write(f"[build.environment]\n  NODE_VERSION = \"{node_version}\"\n")
+                    
+                    self.print_status(f"Created netlify.toml with NODE_VERSION = {node_version}", "success")
+                    self.fixes_applied.append(f"Created netlify.toml with NODE_VERSION = {node_version}")
+                    return True
+                except Exception as e:
+                    self.print_status(f"Failed to create netlify.toml: {str(e)}", "error")
+                    return False
+            else:
+                # Update existing netlify.toml
+                try:
+                    with open(netlify_toml_path, 'r') as f:
+                        content = f.read()
+                    
+                    if "[build.environment]" in content:
+                        # Replace NODE_VERSION if it exists
+                        if re.search(r'NODE_VERSION\s*=', content):
+                            content = re.sub(
+                                r'NODE_VERSION\s*=\s*[\'"].*?[\'"]', 
+                                f'NODE_VERSION = "{node_version}"', 
+                                content
+                            )
+                        else:
+                            # Add NODE_VERSION under build.environment
+                            content = re.sub(
+                                r'(\[build\.environment\][^\[]*)',
+                                f'\\1  NODE_VERSION = "{node_version}"\n',
+                                content
+                            )
+                    else:
+                        # Add build.environment section
+                        content += f"\n[build.environment]\n  NODE_VERSION = \"{node_version}\"\n"
+                    
+                    with open(netlify_toml_path, 'w') as f:
+                        f.write(content)
+                    
+                    self.print_status(f"Added NODE_VERSION = {node_version} to netlify.toml", "success")
+                    self.fixes_applied.append(f"Added NODE_VERSION = {node_version} to netlify.toml")
+                    return True
+                except Exception as e:
+                    self.print_status(f"Failed to update netlify.toml: {str(e)}", "error")
+                    return False
+        else:
+            self.print_status("Invalid choice, skipping fix", "warning")
+            return False
+    
+    def fix_postinstall_script(self):
+        """Fix problematic postinstall script."""
+        self.print_header("Fixing postinstall script")
+        
+        package_json_path = os.path.join(self.project_dir, "package.json")
+        if not os.path.exists(package_json_path):
+            self.print_status("package.json not found", "error")
+            return False
+        
+        try:
+            with open(package_json_path, 'r') as f:
+                package_data = json.load(f)
+            
+            scripts = package_data.get("scripts", {})
+            postinstall = scripts.get("postinstall")
+            
+            if not postinstall:
+                self.print_status("No postinstall script found", "info")
+                return False
+            
+            # Check for problematic patterns
+            problematic_patterns = [
+                "node_modules", 
+                "netlify-lambda install", 
+                "webpack", 
+                "build",
+                "bower install"
+            ]
+            
+            found_problem = False
+            for pattern in problematic_patterns:
+                if pattern in postinstall:
+                    found_problem = True
+                    break
+            
+            if not found_problem:
+                self.print_status("No problematic patterns found in postinstall script", "info")
+                return False
+            
+            # Move postinstall to prebuild
+            if "prebuild" not in scripts:
+                scripts["prebuild"] = postinstall
+            else:
+                scripts["prebuild"] = f"{scripts['prebuild']} && {postinstall}"
+            
+            # Remove postinstall
+            del scripts["postinstall"]
+            
+            # Update package.json
+            package_data["scripts"] = scripts
+            with open(package_json_path, 'w') as f:
+                json.dump(package_data, f, indent=2)
+            
+            self.print_status("Moved postinstall script to prebuild", "success")
+            self.fixes_applied.append("Moved problematic postinstall script to prebuild script")
+            return True
+        except Exception as e:
+            self.print_status(f"Failed to update package.json: {str(e)}", "error")
+            return False
+    
+    def create_netlify_toml(self):
+        """Create or update netlify.toml with cache settings."""
+        self.print_header("Creating/updating netlify.toml with cache settings")
+        
+        netlify_toml_path = os.path.join(self.project_dir, "netlify.toml")
+        
+        if not os.path.exists(netlify_toml_path):
+            # Create new netlify.toml
+            try:
+                with open(netlify_toml_path, 'w') as f:
+                    f.write("""[build]
+  publish = "dist" # Adjust this to your build output directory
+
+[build.environment]
+  # Uncomment these lines when needed
+  # NODE_VERSION = "16"
+  # NPM_FLAGS = "--no-audit --production"
+  # YARN_FLAGS = "--frozen-lockfile"
+
+# Uncomment these lines to disable asset optimization if needed
+# [build.processing]
+#   skip_processing = true
+
+# Cache settings
+[build.environment]
+  NETLIFY_USE_YARN_CACHE = "true"
+
+[functions]
+  # Adjust this to your functions directory if you use them
+  directory = "functions"
+""")
+                
+                self.print_status("Created netlify.toml with cache settings", "success")
+                self.fixes_applied.append("Created netlify.toml with recommended cache settings")
+                return True
+            except Exception as e:
+                self.print_status(f"Failed to create netlify.toml: {str(e)}", "error")
+                return False
+        else:
+            # Update existing netlify.toml
+            try:
+                with open(netlify_toml_path, 'r') as f:
+                    content = f.read()
+                
+                # Check if cache settings are already present
+                if "NETLIFY_USE_YARN_CACHE" in content or "NETLIFY_USE_NPM_CACHE" in content:
+                    self.print_status("Cache settings already present in netlify.toml", "info")
+                    return False
+                
+                # Add cache settings
+                if "[build.environment]" in content:
+                    # Add cache settings under build.environment
+                    content = re.sub(
+                        r'(\[build\.environment\][^\[]*)',
+                        f'\\1  # Cache settings\n  NETLIFY_USE_YARN_CACHE = "true"\n',
+                        content
+                    )
+                else:
+                    # Add build.environment section with cache settings
+                    content += f"""
+[build.environment]
+  # Cache settings
+  NETLIFY_USE_YARN_CACHE = "true"
+"""
+                
+                with open(netlify_toml_path, 'w') as f:
+                    f.write(content)
+                
+                self.print_status("Updated netlify.toml with cache settings", "success")
+                self.fixes_applied.append("Added recommended cache settings to netlify.toml")
+                return True
+            except Exception as e:
+                self.print_status(f"Failed to update netlify.toml: {str(e)}", "error")
+                return False
+    
+    def add_build_script(self):
+        """Add a more robust build script that handles cache issues."""
+        self.print_header("Adding robust build script")
+        
+        package_json_path = os.path.join(self.project_dir, "package.json")
+        if not os.path.exists(package_json_path):
+            self.print_status("package.json not found", "error")
+            return False
+        
+        try:
+            with open(package_json_path, 'r') as f:
+                package_data = json.load(f)
+            
+            scripts = package_data.get("scripts", {})
+            
+            # Check if we have yarn or npm based on lock files
+            has_yarn_lock = os.path.exists(os.path.join(self.project_dir, "yarn.lock"))
+            
+            if has_yarn_lock:
+                # Create a more robust build script for yarn
+                if "build" in scripts:
+                    original_build = scripts["build"]
+                    scripts["build:original"] = original_build
+                    scripts["build"] = "yarn cache clean && yarn && " + original_build
+                    
+                    self.print_status("Added robust build script with yarn cache cleaning", "success")
+                    self.fixes_applied.append("Added robust build script that cleans yarn cache before building")
+                else:
+                    self.print_status("No build script found in package.json", "warning")
+                    return False
+            else:
+                # Create a more robust build script for npm
+                if "build" in scripts:
+                    original_build = scripts["build"]
+                    scripts["build:original"] = original_build
+                    scripts["build"] = "npm cache clean --force && rm -rf node_modules && npm ci && " + original_build
+                    
+                    self.print_status("Added robust build script with npm cache cleaning", "success")
+                    self.fixes_applied.append("Added robust build script that cleans npm cache before building")
+                else:
+                    self.print_status("No build script found in package.json", "warning")
+                    return False
+            
+            # Update package.json
+            package_data["scripts"] = scripts
+            with open(package_json_path, 'w') as f:
+                json.dump(package_data, f, indent=2)
+            
+            return True
+        except Exception as e:
+            self.print_status(f"Failed to update package.json: {str(e)}", "error")
+            return False
+    
+    def generate_report(self):
+        """Generate a report of issues found and fixes applied."""
+        self.print_header("Cache Issues Report")
+        
+        print(f"Project directory: {self.project_dir}")
+        print(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        
+        print("\nIssues Found:")
+        if self.issues_found:
+            for issue in self.issues_found:
+                print(f"  - {issue}")
+        else:
+            print("  No issues found")
+        
+        print("\nFixes Applied:")
+        if self.fixes_applied:
+            for fix in self.fixes_applied:
+                print(f"  - {fix}")
+        else:
+            print("  No fixes applied")
+        
+        print("\nAdditional Suggestions:")
+        if self.suggestions:
+            for suggestion in self.suggestions:
+                print(f"  - {suggestion}")
+        else:
+            print("  No additional suggestions")
+        
+        # Add general Netlify cache advice
+        print("\nGeneral Netlify Cache Advice:")
+        print("  - Always use a lock file (package-lock.json or yarn.lock) to ensure consistent installations")
+        print("  - Specify Node.js version in netlify.toml or package.json to avoid version mismatches")
+        print("  - Use 'npm ci' instead of 'npm install' in build scripts for more reliable installations")
+        print("  - Don't commit 'node_modules' to your repository")
+        print("  - Consider adding a 'netlify.toml' file to configure your builds more precisely")
+        print("  - If builds still fail, use 'Clear cache and deploy site' option in Netlify UI")
+        
+        # Save report to file if requested
+        try:
+            save_report = input("\nWould you like to save this report to a file? (y/N): ").strip().lower()
+            if save_report == 'y':
+                report_filename = f"netlify_cache_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+                with open(report_filename, 'w') as f:
+                    f.write(f"Netlify Cache Issues Report\n")
+                    f.write(f"========================\n")
+                    f.write(f"Project directory: {self.project_dir}\n")
+                    f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                    
+                    f.write("\nIssues Found:\n")
+                    if self.issues_found:
+                        for issue in self.issues_found:
+                            f.write(f"  - {issue}\n")
+                    else:
+                        f.write("  No issues found\n")
+                    
+                    f.write("\nFixes Applied:\n")
+                    if self.fixes_applied:
+                        for fix in self.fixes_applied:
+                            f.write(f"  - {fix}\n")
+                    else:
+                        f.write("  No fixes applied\n")
+                    
+                    f.write("\nAdditional Suggestions:\n")
+                    if self.suggestions:
+                        for suggestion in self.suggestions:
+                            f.write(f"  - {suggestion}\n")
+                    else:
+                        f.write("  No additional suggestions\n")
+                    
+                    f.write("\nGeneral Netlify Cache Advice:\n")
+                    f.write("  - Always use a lock file (package-lock.json or yarn.lock) to ensure consistent installations\n")
+                    f.write("  - Specify Node.js version in netlify.toml or package.json to avoid version mismatches\n")
+                    f.write("  - Use 'npm ci' instead of 'npm install' in build scripts for more reliable installations\n")
+                    f.write("  - Don't commit 'node_modules' to your repository\n")
+                    f.write("  - Consider adding a 'netlify.toml' file to configure your builds more precisely\n")
+                    f.write("  - If builds still fail, use 'Clear cache and deploy site' option in Netlify UI\n")
+                
+                print(f"Report saved to {report_filename}")
+        except KeyboardInterrupt:
+            print("\nSkipping report save")
+    
+    def run_diagnostic(self):
+        """Run diagnostics to identify cache-related issues."""
+        self.print_header("Netlify Cache Issue Diagnostics")
+        print("Running diagnostics for potential cache-related issues...")
+        
+        issues_found = False
+        
+        # Run all diagnostic checks
+        if self.check_node_modules_committed():
+            issues_found = True
+            
+        if self.check_package_lockfile():
+            issues_found = True
+            
+        if self.check_node_version():
+            issues_found = True
+            
+        if self.check_native_dependencies():
+            issues_found = True
+            
+        if self.check_postinstall_scripts():
+            issues_found = True
+        
+        # Generate report
+        self.generate_report()
+        
+        # Return whether any issues were found
+        return issues_found
+    
+    def fix_issues(self):
+        """Apply fixes for identified issues."""
+        self.print_header("Applying Fixes for Cache Issues")
+        
+        if not self.issues_found:
+            print("No issues found to fix.")
+            return
+        
+        # Ask user which issues to fix
+        print("The following issues can be fixed automatically:")
+        for i, issue in enumerate(self.issues_found, 1):
+            print(f"{i}. {issue}")
+        
+        print("\nEnter issue numbers to fix (comma-separated, or 'all' for all issues):")
+        choice = input().strip().lower()
+        
+        if not choice:
+            print("No issues selected for fixing.")
+            return
+        
+        # Determine which issues to fix
+        issues_to_fix = []
+        if choice == 'all':
+            issues_to_fix = list(range(len(self.issues_found)))
+        else:
+            try:
+                # Parse comma-separated list of issue numbers
+                for num in choice.split(','):
+                    idx = int(num.strip()) - 1
+                    if 0 <= idx < len(self.issues_found):
+                        issues_to_fix.append(idx)
+            except ValueError:
+                print("Invalid input. Please enter comma-separated numbers or 'all'.")
+                return
+        
+        # Apply fixes for selected issues
+        for idx in issues_to_fix:
+            issue = self.issues_found[idx]
+            
+            if "node_modules directory not ignored" in issue or "No .gitignore file" in issue:
+                self.fix_gitignore()
+            elif "Both package-lock.json and yarn.lock exist" in issue:
+                self.fix_package_lock_conflicts()
+            elif "package.json is newer than" in issue:
+                self.update_lock_file()
+            elif "No Node.js version specified" in issue or "Node.js version mismatch" in issue:
+                self.add_node_version()
+            elif "postinstall script" in issue:
+                self.fix_postinstall_script()
+            elif "No netlify.toml" in issue:
+                self.create_netlify_toml()
+        
+        # Generate updated report
+        self.generate_report()
+
+def main():
+    parser = argparse.ArgumentParser(description="Netlify Cache Issue Fixer")
+    parser.add_argument(
+        "--dir", 
+        help="The directory to analyze (defaults to current directory)",
+        default=os.getcwd()
+    )
+    parser.add_argument(
+        "--fix", 
+        help="Automatically fix identified issues",
+        action="store_true"
+    )
+    parser.add_argument(
+        "--create-toml", 
+        help="Create or update netlify.toml with cache settings",
+        action="store_true"
+    )
+    args = parser.parse_args()
+    
+    # Change to specified directory
+    os.chdir(args.dir)
+    
+    # Create cache fixer
+    cache_fixer = CacheFixer(args.dir)
+    
+    # Run diagnostics
+    issues_found = cache_fixer.run_diagnostic()
+    
+    # Apply fixes if requested
+    if args.fix and issues_found:
+        cache_fixer.fix_issues()
+    elif args.create_toml:
+        cache_fixer.create_netlify_toml()
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nCache fixer interrupted. Exiting...")
+        sys.exit(1) and has_yarn_lock:
+            self.print_status("Both package-lock.json and yarn.lock found", "error")
+            self.issues_found.append("Both package-lock.json and yarn.lock exist in the repository")
+            self.suggestions.append("Remove either package-lock.json or yarn.lock depending on which package manager you use")
+            return True
+        elif not has_package_lock and not has_yarn_lock:
+            self.print_status("No lock file found (package-lock.json or yarn.lock)", "warning")
+            self.issues_found.append("No package lock file found")
+            self.suggestions.append("Add a lock file (package-lock.json or yarn.lock) to ensure consistent installations")
+            return True
+        else:
+            lock_file = "package-lock.json" if has_package_lock else "yarn.lock"
+            self.print_status(f"Found lock file: {lock_file}", "success")
+            
+            # Check if lock file is in sync with package.json
+            package_json_path = os.path.join(self.project_dir, "package.json")
+            if os.path.exists(package_json_path):
+                # Get modified times
+                package_json_mtime = os.path.getmtime(package_json_path)
+                lock_file_mtime = os.path.getmtime(package_lock_path if has_package_lock else yarn_lock_path)
+                
+                if package_json_mtime > lock_file_mtime:
+                    self.print_status(f"package.json is newer than {lock_file}", "warning")
+                    self.issues_found.append(f"package.json is newer than {lock_file}")
+                    self.suggestions.append(f"Update {lock_file} to match package.json by running {'npm install' if has_package_lock else 'yarn'}")
+                    return True
+        
+        return False
+    
+    def check_node_version(self):
+        """Check for Node.js version issues."""
+        self.print_header("Checking Node.js version configuration")
+        
+        # Check for Node.js version in package.json engines
+        package_json_path = os.path.join(self.project_dir, "package.json")
+        if os.path.exists(package_json_path):
+            try:
+                with open(package_json_path, 'r') as f:
+                    package_data = json.load(f)
+                
+                engines = package_data.get("engines", {})
+                node_version = engines.get("node")
+                
+                if node_version:
+                    self.print_status(f"Node.js version specified in package.json: {node_version}", "info")
+                    
+                    # Check for .nvmrc
+                    nvmrc_path = os.path.join(self.project_dir, ".nvmrc")
+                    if os.path.exists(nvmrc_path):
+                        with open(nvmrc_path, 'r') as f:
+                            nvmrc_version = f.read().strip()
+                        
+                        if nvmrc_version != node_version:
+                            self.print_status(f"Node.js version mismatch: package.json ({node_version}) vs .nvmrc ({nvmrc_version})", "error")
+                            self.issues_found.append(f"Node.js version mismatch between package.json ({node_version}) and .nvmrc ({nvmrc_version})")
+                            self.suggestions.append("Make Node.js versions consistent across package.json and .nvmrc")
+                            return True
+                    
+                    # Check for netlify.toml NODE_VERSION
+                    netlify_toml_path = os.path.join(self.project_dir, "netlify.toml")
+                    if os.path.exists(netlify_toml_path):
+                        with open(netlify_toml_path, 'r') as f:
+                            netlify_toml_content = f.read()
+                        
+                        node_version_match = re.search(r'NODE_VERSION\s*=\s*[\'"](.+?)[\'"]', netlify_toml_content)
+                        if node_version_match:
+                            netlify_node_version = node_version_match.group(1)
+                            
+                            # Simple version comparison (not perfect but catches major discrepancies)
+                            if netlify_node_version not in node_version and node_version not in netlify_node_version:
+                                self.print_status(f"Node.js version mismatch: package.json ({node_version}) vs netlify.toml ({netlify_node_version})", "error")
+                                self.issues_found.append(f"Node.js version mismatch between package.json ({node_version}) and netlify.toml ({netlify_node_version})")
+                                self.suggestions.append("Make Node.js versions consistent across package.json and netlify.toml")
+                                return True
+                else:
+                    self.print_status("No Node.js version specified in package.json", "info")
+                    
+                    # Check if we have a .nvmrc or netlify.toml with Node.js version
+                    nvmrc_path = os.path.join(self.project_dir, ".nvmrc")
+                    netlify_toml_path = os.path.join(self.project_dir, "netlify.toml")
+                    
+                    if os.path.exists(nvmrc_path):
+                        self.print_status("Node.js version specified in .nvmrc", "info")
+                    elif os.path.exists(netlify_toml_path):
+                        with open(netlify_toml_path, 'r') as f:
+                            netlify_toml_content = f.read()
+                        
+                        node_version_match = re.search(r'NODE_VERSION\s*=\s*[\'"](.+?)[\'"]', netlify_toml_content)
+                        if node_version_match:
+                            self.print_status(f"Node.js version specified in netlify.toml: {node_version_match.group(1)}", "info")
+                        else:
+                            self.print_status("No Node.js version specified in netlify.toml", "warning")
+                            self.issues_found.append("No Node.js version specified in any configuration file")
+                            self.suggestions.append("Specify Node.js version in package.json engines, .nvmrc, or netlify.toml")
+                            return True
+                    else:
+                        self.print_status("No Node.js version specification found", "warning")
+                        self.issues_found.append("No Node.js version specified in any configuration file")
+                        self.suggestions.append("Specify Node.js version in package.json engines, .nvmrc, or netlify.toml")
+                        return True
+            except json.JSONDecodeError:
+                self.print_status("Invalid JSON in package.json", "error")
+                self.issues_found.append("package.json contains invalid JSON")
+                self.suggestions.append("Fix JSON syntax in package.json")
+                return True
+        
+        return False
+    
+    def check_native_dependencies(self):
+        """Check for native dependencies that might need rebuilding."""
+        self.print_header("Checking for native dependencies")
+        
+        # Check if package.json exists
+        package_json_path = os.path.join(self.project_dir, "package.json")
+        if not os.path.exists(package_json_path):
+            self.print_status("No package.json found", "info")
+            return False
+        
+        try:
+            with open(package_json_path, 'r') as f:
+                package_data = json.load(f)
+            
+            # List of known dependencies that often have native components
+            native_deps = [
+                "node-sass", 
+                "node-gyp", 
+                "node-pre-gyp", 
+                "canvas", 
+                "sharp", 
+                "bcrypt", 
+                "sqlite3", 
+                "imagemagick", 
+                "fsevents", 
+                "phantomjs", 
+                "puppeteer", 
+                "cypress",
+                "fibers"
+            ]
+            
+            # Check dependencies
+            dependencies = package_data.get("dependencies", {})
+            dev_dependencies = package_data.get("devDependencies", {})
+            all_deps = {**dependencies, **dev_dependencies}
+            
+            found_native_deps = []
+            for dep in native_deps:
+                if dep in all_deps:
+                    found_native_deps.append(dep)
+            
+            if found_native_deps:
+                self.print_status(f"Found native dependencies: {', '.join(found_native_deps)}", "warning")
+                self.issues_found.append(f"Native dependencies found: {', '.join(found_native_deps)}")
+                self.suggestions.append("Native dependencies may need rebuilding when Node.js version changes")
+                
+                # Check if we have a postinstall script that rebuilds native modules
+                scripts = package_data.get("scripts", {})
+                has_rebuild_script = False
+                
+                for script_name, script in scripts.items():
+                    if script_name in ["postinstall", "rebuild"] and any(dep in script for dep in ["rebuild", "node-gyp"]):
+                        has_rebuild_script = True
+                        break
+                
+                if not has_rebuild_script:
+                    self.suggestions.append("Consider adding a rebuild script for native dependencies")
+                
+                return True
+            else:
+                self.print_status("No known native dependencies found", "success")
+        except json.JSONDecodeError:
+            self.print_status("Invalid JSON in package.json", "error")
+            return False
+        
+        return False
+    
+    def check_postinstall_scripts(self):
+        """Check for postinstall scripts that might cause issues."""
+        self.print_header("Checking for problematic postinstall scripts")
+        
+        # Check if package.json exists
+        package_json_path = os.path.join(self.project_dir, "package.json")
+        if not os.path.exists(package_json_path):
+            self.print_status("No package.json found", "info")
+            return False
+        
+        try:
+            with open(package_json_path, 'r') as f:
+                package_data = json.load(f)
+            
+            # Check for postinstall script
+            scripts = package_data.get("scripts", {})
+            postinstall = scripts.get("postinstall")
+            
+            if postinstall:
+                self.print_status(f"Found postinstall script: {postinstall}", "info")
+                
+                # Check for potentially problematic patterns
+                problematic_patterns = [
+                    "node_modules", 
+                    "netlify-lambda install", 
+                    "webpack", 
+                    "build",
+                    "bower install"
+                ]
+                
+                for pattern in problematic_patterns:
+                    if pattern in postinstall:
+                        self.print_status(f"Potentially problematic pattern in postinstall script: {pattern}", "warning")
+                        self.issues_found.append(f"Potentially problematic postinstall script using {pattern}")
+                        self.suggestions.append(f"Consider moving {pattern} operations from postinstall to a prebuild script")
+                        return True
+            else:
+                self.print_status("No postinstall script found", "success")
+        except json.JSONDecodeError:
+            self.print_status("Invalid JSON in package.json", "error")
+            return False
+        
+        return False
+    
+    def fix_gitignore(self):
+        """Fix .gitignore to properly ignore node_modules."""
+        self.print_header("Fixing .gitignore")
+        
+        gitignore_path = os.path.join(self.project_dir, ".gitignore")
+        
+        if not os.path.exists(gitignore_path):
+            # Create new .gitignore
+            try:
+                with open(gitignore_path, 'w') as f:
+                    f.write("# Dependencies\nnode_modules/\n")
+                self.print_status("Created .gitignore with node_modules/ entry", "success")
+                self.fixes_applied.append("Created .gitignore file with node_modules/ entry")
+                return True
+            except Exception as e:
+                self.print_status(f"Failed to create .gitignore: {str(e)}", "error")
+                return False
+        else:
+            # Update existing .gitignore
+            with open(gitignore_path, 'r') as f:
+                content = f.read()
+            
+            if "node_modules" not in content:
+                try:
+                    with open(gitignore_path, 'a') as f:
+                        f.write("\n# Dependencies\nnode_modules/\n")
+                    self.print_status("Added node_modules/ entry to .gitignore", "success")
+                    self.fixes_applied.append("Added node_modules/ entry to .gitignore")
+                    return True
+                except Exception as e:
+                    self.print_status(f"Failed to update .gitignore: {str(e)}", "error")
+                    return False
+            else:
+                self.print_status("node_modules is already in .gitignore", "info")
+                return False
+    
+    def fix_package_lock_conflicts(self):
+        """Fix package lock file conflicts."""
+        self.print_header("Fixing package lock conflicts")
+        
+        package_lock_path = os.path.join(self.project_dir, "package-lock.json")
+        yarn_lock_path = os.path.join(self.project_dir, "yarn.lock")
+        
+        has_package_lock = os.path.exists(package_lock_path)
+        has_yarn_lock = os.path.exists(yarn_lock_path)
+        
+        if has_package_lock and has_yarn_lock:
+            # Ask which one to keep
+            print("Both package-lock.json and yarn.lock found. Which one do you want to keep?")
+            print("1. Keep package-lock.json (npm)")
+            print("2. Keep yarn.lock (yarn)")
+            
+            choice = input("Enter choice (1 or 2): ").strip()
+            
+            if choice == "1":
+                # Keep package-lock.json
+                try:
+                    os.remove(yarn_lock_path)
+                    self.print_status("Removed yarn.lock", "success")
+                    self.fixes_applied.append("Removed yarn.lock to avoid conflicts with package-lock.json")
+                    return True
+                except Exception as e:
+                    self.print_status(f"Failed to remove yarn.lock: {str(e)}", "error")
+                    return False
+            elif choice == "2":
+                # Keep yarn.lock
+                try:
+                    os.remove(package_lock_path)
+                    self.print_status("Removed package-lock.json", "success")
+                    self.fixes_applied.append("Removed package-lock.json to avoid conflicts with yarn.lock")
+                    return True
+                except Exception as e:
+                    self.print_status(f"Failed to remove package-lock.json: {str(e)}", "error")
+                    return False
+            else:
+                self.print_status("Invalid choice, skipping fix", "warning")
+                return False
+        else:
+            self.print_status("No package lock conflict found", "info")
+            return False
+    
+    def update_lock_file(self):
+        """Update the lock file to match package.json."""
+        self.print_header("Updating lock file")
+        
+        package_lock_path = os.path.join(self.project_dir, "package-lock.json")
+        yarn_lock_path = os.path.join(self.project_dir, "yarn.lock")
+        
+        has_package_lock = os.path.exists(package_lock_path)
+        has_yarn_lock = os.path.exists(yarn_lock_path)
+        
+        if has_package_lock

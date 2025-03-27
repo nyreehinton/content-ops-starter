@@ -1,0 +1,75 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-42372ed130431b0a.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/PXHTaZT0kuyVIngka_Xt0/_buildManifest.js",
+    "static/PXHTaZT0kuyVIngka_Xt0/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/427-3dc3877799aff44e.js",
+      "static/chunks/901-1faf75cabf6cfe8f.js",
+      "static/chunks/pages/index-6b79916e7e1da9c6.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/css/83e46b80b907fac2.css",
+      "static/chunks/pages/_app-f26efb209d469258.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/pages/_error-7a92967bea80186d.js"
+    ],
+    "/bloomberg": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/pages/bloomberg-4fbe6ec2b96b0997.js"
+    ],
+    "/capital": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/pages/capital-1952d05325071adf.js"
+    ],
+    "/egg-price-surge-2025": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/427-3dc3877799aff44e.js",
+      "static/chunks/901-1faf75cabf6cfe8f.js",
+      "static/chunks/553-debd7c635c25beec.js",
+      "static/chunks/pages/egg-price-surge-2025-c8b0ded84d6fa8d9.js"
+    ],
+    "/tesla": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/pages/tesla-4b8883878e92c034.js"
+    ],
+    "/thirdbridge": [
+      "static/chunks/webpack-1ac6ea5e8e11f94e.js",
+      "static/chunks/framework-64ad27b21261a9ce.js",
+      "static/chunks/main-e30fe18e329541a0.js",
+      "static/chunks/ee8b1517-af93de490846fac2.js",
+      "static/chunks/427-3dc3877799aff44e.js",
+      "static/chunks/435-a332ae91b9807178.js",
+      "static/chunks/901-1faf75cabf6cfe8f.js",
+      "static/chunks/553-debd7c635c25beec.js",
+      "static/css/5290e7e9490d2d1e.css",
+      "static/chunks/pages/thirdbridge-0bbacce63afa41ba.js"
+    ]
+  },
+  "ampFirstPages": []
+}

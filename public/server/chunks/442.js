@@ -1,0 +1,1 @@
+"use strict";exports.id=442,exports.ids=[442],exports.modules={3442:(t,s,e)=>{e.r(s),e.d(s,{default:()=>d});var r=e(997),o=e(7631);function d(t){return r.jsx(o.default,{...t,annotatePosts:!0})}}};
